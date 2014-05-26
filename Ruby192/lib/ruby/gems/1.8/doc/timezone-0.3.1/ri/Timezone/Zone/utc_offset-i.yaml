@@ -1,0 +1,14 @@
+--- !ruby/object:RI::MethodDescription 
+aliases: []
+
+block_params: 
+comment: 
+- !ruby/struct:SM::Flow::P 
+  body: Get the current UTC offset in seconds for this timezone.
+- !ruby/struct:SM::Flow::VERB 
+  body: "  timezone.utc_offset(reference)\n"
+full_name: Timezone::Zone#utc_offset
+is_singleton: false
+name: utc_offset
+params: (reference=Time.now)
+visibility: public

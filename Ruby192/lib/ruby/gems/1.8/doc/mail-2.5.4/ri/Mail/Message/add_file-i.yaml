@@ -1,0 +1,24 @@
+--- !ruby/object:RI::MethodDescription 
+aliases: []
+
+block_params: 
+comment: 
+- !ruby/struct:SM::Flow::P 
+  body: Adds a file to the message. You have two options with this method, you can just pass in the absolute path to the file you want and Mail will read the file, get the filename from the path you pass in and guess the MIME media type, or you can pass in the filename as a string, and pass in the file content as a blob.
+- !ruby/struct:SM::Flow::P 
+  body: "Example:"
+- !ruby/struct:SM::Flow::VERB 
+  body: " m = Mail.new\n m.add_file('/path/to/filename.png')\n\n m = Mail.new\n m.add_file(:filename =&gt; 'filename.png', :content =&gt; File.read('/path/to/file.jpg'))\n"
+- !ruby/struct:SM::Flow::P 
+  body: Note also that if you add a file to an existing message, Mail will convert that message to a MIME multipart email, moving whatever plain text body you had into its own text plain part.
+- !ruby/struct:SM::Flow::P 
+  body: "Example:"
+- !ruby/struct:SM::Flow::VERB 
+  body: " m = Mail.new do\n   body 'this is some text'\n end\n m.multipart? #=&gt; false\n m.add_file('/path/to/filename.png')\n m.multipart? #=&gt; true\n m.parts.first.content_type.content_type #=&gt; 'text/plain'\n m.parts.last.content_type.content_type #=&gt; 'image/png'\n"
+- !ruby/struct:SM::Flow::P 
+  body: "See also #attachments"
+full_name: Mail::Message#add_file
+is_singleton: false
+name: add_file
+params: (values)
+visibility: public

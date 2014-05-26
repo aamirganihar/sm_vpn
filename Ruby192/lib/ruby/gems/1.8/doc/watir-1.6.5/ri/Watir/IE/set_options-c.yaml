@@ -1,0 +1,12 @@
+--- !ruby/object:RI::MethodDescription 
+aliases: []
+
+block_params: 
+comment: 
+- !ruby/struct:SM::Flow::P 
+  body: set values for options used when creating new instances of IE.
+full_name: Watir::IE::set_options
+is_singleton: true
+name: set_options
+params: (options)
+visibility: public

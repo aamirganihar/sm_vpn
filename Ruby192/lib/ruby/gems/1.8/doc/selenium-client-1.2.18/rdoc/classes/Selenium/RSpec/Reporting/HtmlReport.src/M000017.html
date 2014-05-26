@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+<!DOCTYPE html 
+     PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+     "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html>
+<head>
+  <title>logs_and_screenshot_sections (Selenium::RSpec::Reporting::HtmlReport)</title>
+  <meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" />
+  <link rel="stylesheet" href="../../../../.././rdoc-style.css" type="text/css" media="screen" />
+</head>
+<body class="standalone-code">
+  <pre>    <span class="ruby-comment cmt"># File lib/selenium/rspec/reporting/html_report.rb, line 21</span>
+21:         <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">logs_and_screenshot_sections</span>(<span class="ruby-identifier">example</span>)
+22:           <span class="ruby-identifier">dom_id</span> = <span class="ruby-value str">&quot;example_&quot;</span> <span class="ruby-operator">+</span> <span class="ruby-identifier">example</span>.<span class="ruby-identifier">reporting_uid</span>
+23:           <span class="ruby-identifier">system_screenshot_url</span> = <span class="ruby-ivar">@file_path_strategy</span>.<span class="ruby-identifier">relative_file_path_for_system_screenshot</span>(<span class="ruby-identifier">example</span>)
+24:           <span class="ruby-identifier">page_screenshot_url</span> = <span class="ruby-ivar">@file_path_strategy</span>.<span class="ruby-identifier">relative_file_path_for_page_screenshot</span>(<span class="ruby-identifier">example</span>)
+25:           <span class="ruby-identifier">snapshot_url</span> = <span class="ruby-ivar">@file_path_strategy</span>.<span class="ruby-identifier">relative_file_path_for_html_capture</span>(<span class="ruby-identifier">example</span>)
+26:           <span class="ruby-identifier">remote_control_logs_url</span> = <span class="ruby-ivar">@file_path_strategy</span>.<span class="ruby-identifier">relative_file_path_for_remote_control_logs</span>(<span class="ruby-identifier">example</span>)
+27:           
+28:           <span class="ruby-identifier">html</span> = <span class="ruby-value str">&quot;&quot;</span>
+29:           <span class="ruby-keyword kw">if</span> <span class="ruby-constant">File</span>.<span class="ruby-identifier">exists?</span> <span class="ruby-ivar">@file_path_strategy</span>.<span class="ruby-identifier">file_path_for_html_capture</span>(<span class="ruby-identifier">example</span>)
+30:             <span class="ruby-identifier">html</span> <span class="ruby-operator">&lt;&lt;</span> <span class="ruby-identifier">toggable_section</span>(<span class="ruby-identifier">dom_id</span>, <span class="ruby-identifier">:id</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-value str">&quot;snapshot&quot;</span>, <span class="ruby-identifier">:url=</span><span class="ruby-operator">&gt;</span> <span class="ruby-identifier">snapshot_url</span>, <span class="ruby-identifier">:name</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-value str">&quot;Dynamic HTML Snapshot&quot;</span>)
+31:           <span class="ruby-keyword kw">end</span>
+32:           <span class="ruby-keyword kw">if</span> <span class="ruby-constant">File</span>.<span class="ruby-identifier">exists?</span> <span class="ruby-ivar">@file_path_strategy</span>.<span class="ruby-identifier">file_path_for_remote_control_logs</span>(<span class="ruby-identifier">example</span>)          
+33:             <span class="ruby-identifier">html</span> <span class="ruby-operator">&lt;&lt;</span> <span class="ruby-identifier">toggable_section</span>(<span class="ruby-identifier">dom_id</span>, <span class="ruby-identifier">:id</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-value str">&quot;rc_logs&quot;</span>, <span class="ruby-identifier">:url=</span><span class="ruby-operator">&gt;</span> <span class="ruby-identifier">remote_control_logs_url</span>, <span class="ruby-identifier">:name</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-value str">&quot;Remote Control Logs&quot;</span>)
+34:           <span class="ruby-keyword kw">end</span>
+35:           <span class="ruby-keyword kw">if</span> <span class="ruby-constant">File</span>.<span class="ruby-identifier">exists?</span> <span class="ruby-ivar">@file_path_strategy</span>.<span class="ruby-identifier">file_path_for_page_screenshot</span>(<span class="ruby-identifier">example</span>)
+36:             <span class="ruby-identifier">html</span> <span class="ruby-operator">&lt;&lt;</span> <span class="ruby-identifier">toggable_image_section</span>(<span class="ruby-identifier">dom_id</span>, <span class="ruby-identifier">:id</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-value str">&quot;page_screenshot&quot;</span>, <span class="ruby-identifier">:name</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-value str">&quot;Page Screenshot&quot;</span>, <span class="ruby-identifier">:url</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-identifier">page_screenshot_url</span>)
+37:           <span class="ruby-keyword kw">end</span>
+38:           <span class="ruby-keyword kw">if</span> <span class="ruby-constant">File</span>.<span class="ruby-identifier">exists?</span> <span class="ruby-ivar">@file_path_strategy</span>.<span class="ruby-identifier">file_path_for_system_screenshot</span>(<span class="ruby-identifier">example</span>)
+39:             <span class="ruby-identifier">html</span> <span class="ruby-operator">&lt;&lt;</span> <span class="ruby-identifier">toggable_image_section</span>(<span class="ruby-identifier">dom_id</span>, <span class="ruby-identifier">:id</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-value str">&quot;system_screenshot&quot;</span>, <span class="ruby-identifier">:name</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-value str">&quot;System Screenshot&quot;</span>, <span class="ruby-identifier">:url</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-identifier">system_screenshot_url</span>)
+40:           <span class="ruby-keyword kw">end</span>
+41:           
+42:           <span class="ruby-keyword kw">return</span> <span class="ruby-identifier">html</span>
+43:         <span class="ruby-keyword kw">end</span></pre>
+</body>
+</html>

@@ -1,0 +1,36 @@
+--- !ruby/object:RI::ClassDescription 
+attributes: 
+- !ruby/object:RI::Attribute 
+  comment: 
+  name: element_name
+  rw: RW
+class_methods: 
+- !ruby/object:RI::MethodSummary 
+  name: new
+comment: 
+- !ruby/struct:SM::Flow::P 
+  body: "Description:"
+- !ruby/struct:SM::Flow::VERB 
+  body: "  Base class for checkbox and radio button elements.\n"
+constants: []
+
+full_name: FireWatir::RadioCheckCommon
+includes: []
+
+instance_methods: 
+- !ruby/object:RI::MethodSummary 
+  name: checked?
+- !ruby/object:RI::MethodSummary 
+  name: clear
+- !ruby/object:RI::MethodSummary 
+  name: getState
+- !ruby/object:RI::MethodSummary 
+  name: isSet?
+- !ruby/object:RI::MethodSummary 
+  name: locate
+- !ruby/object:RI::MethodSummary 
+  name: set
+- !ruby/object:RI::MethodSummary 
+  name: set?
+name: RadioCheckCommon
+superclass: Element

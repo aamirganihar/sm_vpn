@@ -1,0 +1,12 @@
+--- !ruby/object:RI::MethodDescription 
+aliases: []
+
+block_params: 
+comment: 
+- !ruby/struct:SM::Flow::P 
+  body: Same as the standard MRI Dir.glob method except that it handles backslashes in path names.
+full_name: Dir::glob
+is_singleton: true
+name: glob
+params: (glob_pattern, flags = 0, &block)
+visibility: public

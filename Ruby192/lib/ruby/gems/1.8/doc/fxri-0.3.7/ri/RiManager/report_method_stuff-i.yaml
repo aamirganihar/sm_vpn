@@ -1,0 +1,10 @@
+--- !ruby/object:RI::MethodDescription 
+aliases: []
+
+block_params: 
+comment: 
+full_name: RiManager#report_method_stuff
+is_singleton: false
+name: report_method_stuff
+params: (requested_method_name, methods)
+visibility: public

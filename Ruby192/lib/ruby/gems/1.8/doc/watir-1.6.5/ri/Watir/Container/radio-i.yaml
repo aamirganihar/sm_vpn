@@ -1,0 +1,30 @@
+--- !ruby/object:RI::MethodDescription 
+aliases: []
+
+block_params: 
+comment: 
+- !ruby/struct:SM::Flow::P 
+  body: This is the main method for accessing a radio button. Usually an &lt;input type = radio&gt; HTML tag.
+- !ruby/struct:SM::Flow::VERB 
+  body: " *  how   - symbol - how we access the radio button, :index, :id, :name etc\n *  what  - string, integer or regular expression - what we are looking for,\n *  value - string - when  there are multiple objects with different value attributes, this can be used to find the correct object\n"
+- !ruby/struct:SM::Flow::P 
+  body: Valid values for 'how' are listed in the Watir Wiki - http://wiki.openqa.org/display/WTR/Methods+supported+by+Element
+- !ruby/struct:SM::Flow::P 
+  body: returns a Radio object
+- !ruby/struct:SM::Flow::P 
+  body: Typical usage
+- !ruby/struct:SM::Flow::VERB 
+  body: "   ie.radio(:id, 'send_email')                   # access the radio button with an id of currency\n   ie.radio(:name, 'send_copy')                  # access the radio button with a name of country\n   ie.radio(:name, /n_/)                        # access the first radio button whose name matches n_\n   ie.radio(:index, 2)                           # access the second radio button on the page (1 based, so the first field is accessed with :index,1)\n"
+- !ruby/struct:SM::Flow::P 
+  body: In many instances, radio buttons on an html page have the same name, but are identified by different values. An example is shown next.
+- !ruby/struct:SM::Flow::VERB 
+  body: " &lt;input type=&quot;radio&quot; name=&quot;email_frequency&quot; value=&quot;daily&quot;&gt;Daily Email&lt;/input&gt;\n &lt;input type=&quot;radio&quot; name=&quot;email_frequency&quot; value=&quot;weekly&quot;&gt;Weekly Email&lt;/input&gt;\n &lt;input type=&quot;radio&quot; name=&quot;email_frequency&quot; value=&quot;monthly&quot;&gt;Monthly Email&lt;/input&gt;\n"
+- !ruby/struct:SM::Flow::P 
+  body: "Watir can access these using the following:"
+- !ruby/struct:SM::Flow::VERB 
+  body: "   ie.radio(:id, 'day_to_send', 'monday')         # access the radio button with an id of day_to_send and a value of monday\n   ie.radio(:name,'email_frequency', 'weekly')     # access the radio button with a name of email_frequency and a value of 'weekly'\n   ie.radio(:xpath, &quot;//input[@name='email_frequency' and @value='daily']/&quot;)     # access the radio button with a name of email_frequency and a value of 'daily'\n"
+full_name: Watir::Container#radio
+is_singleton: false
+name: radio
+params: (how, what=nil, value=nil)
+visibility: public

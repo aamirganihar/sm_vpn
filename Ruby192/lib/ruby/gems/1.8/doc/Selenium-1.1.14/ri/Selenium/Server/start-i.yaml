@@ -1,0 +1,12 @@
+--- !ruby/object:RI::MethodDescription 
+aliases: []
+
+block_params: 
+comment: 
+- !ruby/struct:SM::Flow::P 
+  body: Starts the server, returns when the server is up and running
+full_name: Selenium::Server#start
+is_singleton: false
+name: start
+params: (*argv)
+visibility: public

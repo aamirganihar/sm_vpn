@@ -1,0 +1,14 @@
+--- !ruby/object:RI::MethodDescription 
+aliases: []
+
+block_params: 
+comment: 
+- !ruby/struct:SM::Flow::P 
+  body: "Create a new Packet_Item. After the icon, you can specify the text for each of the columns. Here is an example:"
+- !ruby/struct:SM::Flow::VERB 
+  body: " list.create_item(my_icon, &quot;Martin&quot;, &quot;Ankerl&quot;, &quot;2005&quot;)\n"
+full_name: Packet_List#create_item
+is_singleton: false
+name: create_item
+params: (icon, *args)
+visibility: public

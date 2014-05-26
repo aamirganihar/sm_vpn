@@ -1,0 +1,22 @@
+--- !ruby/object:RI::MethodDescription 
+aliases: []
+
+block_params: 
+comment: 
+- !ruby/object:SM::Flow::LIST 
+  contents: 
+  - !ruby/struct:SM::Flow::LI 
+    label: "*"
+    body: container - the containing object, normally an instance of IE
+  - !ruby/struct:SM::Flow::LI 
+    label: "*"
+    body: how - symbol - how we access the form (:name, :id, :index, :action, :method)
+  - !ruby/struct:SM::Flow::LI 
+    label: "*"
+    body: what - what we use to access the form
+  type: :BULLET
+full_name: Watir::Form::new
+is_singleton: true
+name: new
+params: (container, how, what)
+visibility: public

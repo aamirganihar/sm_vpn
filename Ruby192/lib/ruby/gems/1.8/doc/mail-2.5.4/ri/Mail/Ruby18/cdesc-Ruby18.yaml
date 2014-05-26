@@ -1,0 +1,42 @@
+--- !ruby/object:RI::ClassDescription 
+attributes: []
+
+class_methods: 
+- !ruby/object:RI::MethodSummary 
+  name: b_value_decode
+- !ruby/object:RI::MethodSummary 
+  name: b_value_encode
+- !ruby/object:RI::MethodSummary 
+  name: bracket
+- !ruby/object:RI::MethodSummary 
+  name: decode_base64
+- !ruby/object:RI::MethodSummary 
+  name: encode_base64
+- !ruby/object:RI::MethodSummary 
+  name: escape_bracket
+- !ruby/object:RI::MethodSummary 
+  name: escape_paren
+- !ruby/object:RI::MethodSummary 
+  name: get_constant
+- !ruby/object:RI::MethodSummary 
+  name: has_constant?
+- !ruby/object:RI::MethodSummary 
+  name: param_decode
+- !ruby/object:RI::MethodSummary 
+  name: param_encode
+- !ruby/object:RI::MethodSummary 
+  name: paren
+- !ruby/object:RI::MethodSummary 
+  name: q_value_decode
+- !ruby/object:RI::MethodSummary 
+  name: q_value_encode
+comment: 
+constants: []
+
+full_name: Mail::Ruby18
+includes: []
+
+instance_methods: []
+
+name: Ruby18
+superclass: Object

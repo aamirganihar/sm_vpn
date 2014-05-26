@@ -1,0 +1,12 @@
+--- !ruby/object:RI::MethodDescription 
+aliases: []
+
+block_params: 
+comment: 
+- !ruby/struct:SM::Flow::P 
+  body: Returns true if the current platform is Windows 2003 (any version). i.e. major version 5, minor version 2.
+full_name: Windows::SystemInfo#windows_2003?
+is_singleton: false
+name: windows_2003?
+params: ()
+visibility: public

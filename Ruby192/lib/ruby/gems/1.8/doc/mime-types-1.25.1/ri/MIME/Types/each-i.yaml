@@ -1,0 +1,10 @@
+--- !ruby/object:RI::MethodDescription 
+aliases: []
+
+block_params: t
+comment: 
+full_name: MIME::Types#each
+is_singleton: false
+name: each
+params: () {|t| ...}
+visibility: public

@@ -1,0 +1,12 @@
+--- !ruby/object:RI::MethodDescription 
+aliases: []
+
+block_params: 
+comment: 
+- !ruby/struct:SM::Flow::P 
+  body: Escapes any parenthesis in a string that are unescaped. This can't use the Ruby 1.9.1 regexp feature of negative look behind so we have to do two replacement, first unescape everything, then re-escape it
+full_name: Mail::Ruby18::escape_paren
+is_singleton: true
+name: escape_paren
+params: ( str )
+visibility: public

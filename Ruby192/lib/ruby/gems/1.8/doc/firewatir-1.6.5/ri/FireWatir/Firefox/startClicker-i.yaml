@@ -1,0 +1,18 @@
+--- !ruby/object:RI::MethodDescription 
+aliases: []
+
+block_params: 
+comment: 
+- !ruby/struct:SM::Flow::P 
+  body: "Description:"
+- !ruby/struct:SM::Flow::VERB 
+  body: "  Tells FireWatir to click javascript button in case one comes after performing some action on an element. Matches\n  text of pop up with one if supplied as parameter. If text matches clicks the button else stop script execution until\n  pop up is dismissed by manual intervention.\n"
+- !ruby/struct:SM::Flow::P 
+  body: "Input:"
+- !ruby/struct:SM::Flow::VERB 
+  body: "  button      - JavaScript button to be clicked. Values can be OK or Cancel\n  waitTime    - Time to wait for pop up to come. Not used just for compatibility with Watir.\n  userInput   - Not used just for compatibility with Watir\n  text        - Text that should appear on pop up.\n"
+full_name: FireWatir::Firefox#startClicker
+is_singleton: false
+name: startClicker
+params: (button, waitTime = 1, userInput = nil, text = nil)
+visibility: public

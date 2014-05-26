@@ -1,0 +1,16 @@
+--- !ruby/object:RI::MethodDescription 
+aliases: []
+
+block_params: 
+comment: 
+- !ruby/struct:SM::Flow::P 
+  body: Wraps supplied string in double quotes and applies \-escaping as necessary, unless it is already wrapped.
+- !ruby/struct:SM::Flow::P 
+  body: "Example:"
+- !ruby/struct:SM::Flow::VERB 
+  body: " string = 'This is a string'\n dquote(string) #=&gt; '&quot;This is a string&quot;'\n\n string = 'This is &quot;a string&quot;'\n dquote(string #=&gt; '&quot;This is \\&quot;a string\\&quot;'\n"
+full_name: Mail::Utilities#dquote
+is_singleton: false
+name: dquote
+params: ( str )
+visibility: public

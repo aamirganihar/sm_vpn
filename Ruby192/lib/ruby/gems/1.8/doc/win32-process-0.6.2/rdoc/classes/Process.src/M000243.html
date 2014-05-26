@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+<!DOCTYPE html 
+     PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+     "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html>
+<head>
+  <title>get_affinity (Process)</title>
+  <meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" />
+  <link rel="stylesheet" href="../.././rdoc-style.css" type="text/css" media="screen" />
+</head>
+<body class="standalone-code">
+  <pre><span class="ruby-comment cmt"># File lib/win32/process.rb, line 100</span>
+  <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">get_affinity</span>(<span class="ruby-identifier">int</span> = <span class="ruby-constant">Process</span>.<span class="ruby-identifier">pid</span>)
+    <span class="ruby-identifier">pmask</span> = <span class="ruby-value">0</span>.<span class="ruby-identifier">chr</span> <span class="ruby-operator">*</span> <span class="ruby-value">4</span>
+    <span class="ruby-identifier">smask</span> = <span class="ruby-value">0</span>.<span class="ruby-identifier">chr</span> <span class="ruby-operator">*</span> <span class="ruby-value">4</span>
+
+    <span class="ruby-keyword kw">if</span> <span class="ruby-identifier">int</span> <span class="ruby-operator">==</span> <span class="ruby-constant">Process</span>.<span class="ruby-identifier">pid</span>
+      <span class="ruby-keyword kw">unless</span> <span class="ruby-constant">GetProcessAffinityMask</span>(<span class="ruby-constant">GetCurrentProcess</span>(), <span class="ruby-identifier">pmask</span>, <span class="ruby-identifier">smask</span>)
+        <span class="ruby-identifier">raise</span> <span class="ruby-constant">Error</span>, <span class="ruby-identifier">get_last_error</span>
+      <span class="ruby-keyword kw">end</span>
+    <span class="ruby-keyword kw">else</span>
+      <span class="ruby-keyword kw">begin</span>
+        <span class="ruby-identifier">handle</span> = <span class="ruby-constant">OpenProcess</span>(<span class="ruby-constant">PROCESS_QUERY_INFORMATION</span>, <span class="ruby-value">0</span> , <span class="ruby-identifier">int</span>)
+
+        <span class="ruby-keyword kw">if</span> <span class="ruby-identifier">handle</span> <span class="ruby-operator">==</span> <span class="ruby-constant">INVALID_HANDLE_VALUE</span>
+          <span class="ruby-identifier">raise</span> <span class="ruby-constant">Error</span>, <span class="ruby-identifier">get_last_error</span>
+        <span class="ruby-keyword kw">end</span>
+
+        <span class="ruby-keyword kw">unless</span> <span class="ruby-constant">GetProcessAffinityMask</span>(<span class="ruby-identifier">handle</span>, <span class="ruby-identifier">pmask</span>, <span class="ruby-identifier">smask</span>)
+          <span class="ruby-identifier">raise</span> <span class="ruby-constant">Error</span>, <span class="ruby-identifier">get_last_error</span>
+        <span class="ruby-keyword kw">end</span>
+      <span class="ruby-keyword kw">ensure</span>
+        <span class="ruby-constant">CloseHandle</span>(<span class="ruby-identifier">handle</span>) <span class="ruby-keyword kw">if</span> <span class="ruby-identifier">handle</span> <span class="ruby-operator">!=</span> <span class="ruby-constant">INVALID_HANDLE_VALUE</span>
+      <span class="ruby-keyword kw">end</span>
+    <span class="ruby-keyword kw">end</span>
+
+    <span class="ruby-identifier">pmask</span> = <span class="ruby-identifier">pmask</span>.<span class="ruby-identifier">unpack</span>(<span class="ruby-value str">'L'</span>).<span class="ruby-identifier">first</span>
+    <span class="ruby-identifier">smask</span> = <span class="ruby-identifier">smask</span>.<span class="ruby-identifier">unpack</span>(<span class="ruby-value str">'L'</span>).<span class="ruby-identifier">first</span>
+
+    [<span class="ruby-identifier">pmask</span>, <span class="ruby-identifier">smask</span>]
+  <span class="ruby-keyword kw">end</span></pre>
+</body>
+</html>

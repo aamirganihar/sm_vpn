@@ -1,0 +1,33 @@
+--- !ruby/object:RI::ClassDescription 
+attributes: []
+
+class_methods: 
+- !ruby/object:RI::MethodSummary 
+  name: capture_system_state
+- !ruby/object:RI::MethodSummary 
+  name: file_path_strategy
+- !ruby/object:RI::MethodSummary 
+  name: new
+comment: 
+constants: []
+
+full_name: Selenium::RSpec::SeleniumTestReportFormatter
+includes: []
+
+instance_methods: 
+- !ruby/object:RI::MethodSummary 
+  name: example_failed
+- !ruby/object:RI::MethodSummary 
+  name: example_pending
+- !ruby/object:RI::MethodSummary 
+  name: extra_failure_content
+- !ruby/object:RI::MethodSummary 
+  name: global_scripts
+- !ruby/object:RI::MethodSummary 
+  name: global_styles
+- !ruby/object:RI::MethodSummary 
+  name: move_progress
+- !ruby/object:RI::MethodSummary 
+  name: start
+name: SeleniumTestReportFormatter
+superclass: Spec::Runner::Formatter::HtmlFormatter

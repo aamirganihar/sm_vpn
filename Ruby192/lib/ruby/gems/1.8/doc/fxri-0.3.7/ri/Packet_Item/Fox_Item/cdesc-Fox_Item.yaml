@@ -1,0 +1,36 @@
+--- !ruby/object:RI::ClassDescription 
+attributes: 
+- !ruby/object:RI::Attribute 
+  comment: 
+  name: reversed
+  rw: RW
+- !ruby/object:RI::Attribute 
+  comment: 
+  - !ruby/struct:SM::Flow::P 
+    body: "optimization: directly sort by sort_key and reversed"
+  name: sort_key
+  rw: RW
+class_methods: 
+- !ruby/object:RI::MethodSummary 
+  name: new
+comment: 
+- !ruby/struct:SM::Flow::P 
+  body: Fox_Item is a very thin wrapper that calles Packet_Item functionality.
+constants: []
+
+full_name: Packet_Item::Fox_Item
+includes: []
+
+instance_methods: 
+- !ruby/object:RI::MethodSummary 
+  name: <=>
+- !ruby/object:RI::MethodSummary 
+  name: data
+- !ruby/object:RI::MethodSummary 
+  name: deleted
+- !ruby/object:RI::MethodSummary 
+  name: draw
+- !ruby/object:RI::MethodSummary 
+  name: packet_item
+name: Fox_Item
+superclass: FXIconItem

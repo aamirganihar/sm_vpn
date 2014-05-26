@@ -1,0 +1,47 @@
+--- !ruby/object:RI::ClassDescription 
+attributes: 
+- !ruby/object:RI::Attribute 
+  comment: 
+  name: final_report_file_path
+  rw: R
+class_methods: 
+- !ruby/object:RI::MethodSummary 
+  name: new
+comment: 
+constants: 
+- !ruby/object:RI::Constant 
+  comment: 
+  name: REPORT_DEFAULT_FILE_PATH
+  value: File.join(Dir::tmpdir, "selenium_test_report", "index.html")
+full_name: Selenium::RSpec::Reporting::FilePathStrategy
+includes: []
+
+instance_methods: 
+- !ruby/object:RI::MethodSummary 
+  name: base_report_dir
+- !ruby/object:RI::MethodSummary 
+  name: file_path
+- !ruby/object:RI::MethodSummary 
+  name: file_path_for_browser_network_traffic
+- !ruby/object:RI::MethodSummary 
+  name: file_path_for_html_capture
+- !ruby/object:RI::MethodSummary 
+  name: file_path_for_page_screenshot
+- !ruby/object:RI::MethodSummary 
+  name: file_path_for_remote_control_logs
+- !ruby/object:RI::MethodSummary 
+  name: file_path_for_system_screenshot
+- !ruby/object:RI::MethodSummary 
+  name: relative_dir
+- !ruby/object:RI::MethodSummary 
+  name: relative_file_path_for_browser_network_traffic
+- !ruby/object:RI::MethodSummary 
+  name: relative_file_path_for_html_capture
+- !ruby/object:RI::MethodSummary 
+  name: relative_file_path_for_page_screenshot
+- !ruby/object:RI::MethodSummary 
+  name: relative_file_path_for_remote_control_logs
+- !ruby/object:RI::MethodSummary 
+  name: relative_file_path_for_system_screenshot
+name: FilePathStrategy
+superclass: Object

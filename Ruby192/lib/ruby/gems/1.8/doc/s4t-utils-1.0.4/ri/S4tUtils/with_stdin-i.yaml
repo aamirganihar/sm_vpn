@@ -1,0 +1,10 @@
+--- !ruby/object:RI::MethodDescription 
+aliases: []
+
+block_params: ""
+comment: 
+full_name: S4tUtils#with_stdin
+is_singleton: false
+name: with_stdin
+params: (string) {|| ...}
+visibility: public

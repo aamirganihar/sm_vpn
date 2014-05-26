@@ -1,0 +1,59 @@
+--- !ruby/object:RI::ClassDescription 
+attributes: []
+
+class_methods: 
+- !ruby/object:RI::MethodSummary 
+  name: data
+- !ruby/object:RI::MethodSummary 
+  name: extension
+- !ruby/object:RI::MethodSummary 
+  name: from_rule
+- !ruby/object:RI::MethodSummary 
+  name: from_zone
+- !ruby/object:RI::MethodSummary 
+  name: link
+- !ruby/object:RI::MethodSummary 
+  name: parse
+- !ruby/object:RI::MethodSummary 
+  name: rule
+- !ruby/object:RI::MethodSummary 
+  name: rules
+- !ruby/object:RI::MethodSummary 
+  name: select_rules
+- !ruby/object:RI::MethodSummary 
+  name: zone
+- !ruby/object:RI::MethodSummary 
+  name: zones
+comment: 
+constants: 
+- !ruby/object:RI::Constant 
+  comment: 
+  name: START_DATE
+  value: "-377705116800000"
+- !ruby/object:RI::Constant 
+  comment: 
+  name: END_DATE
+  value: "253402300799000"
+- !ruby/object:RI::Constant 
+  comment: 
+  name: COMMENT_REGEXP
+  value: /^\s*#/
+- !ruby/object:RI::Constant 
+  comment: 
+  name: RULE_REGEXP
+  value: /^Rule/
+- !ruby/object:RI::Constant 
+  comment: 
+  name: LINK_REGEXP
+  value: /^Link/
+- !ruby/object:RI::Constant 
+  comment: 
+  name: ZONE_REGEXP
+  value: /^Zone/
+full_name: Timezone::Parser
+includes: []
+
+instance_methods: []
+
+name: Parser
+superclass: 

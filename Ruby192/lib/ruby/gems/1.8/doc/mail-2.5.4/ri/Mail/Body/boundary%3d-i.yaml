@@ -1,0 +1,12 @@
+--- !ruby/object:RI::MethodDescription 
+aliases: []
+
+block_params: 
+comment: 
+- !ruby/struct:SM::Flow::P 
+  body: Allows you to change the boundary of this Body object
+full_name: Mail::Body#boundary=
+is_singleton: false
+name: boundary=
+params: ( val )
+visibility: public

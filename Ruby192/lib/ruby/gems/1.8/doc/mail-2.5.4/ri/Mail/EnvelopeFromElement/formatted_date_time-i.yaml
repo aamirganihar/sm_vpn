@@ -1,0 +1,14 @@
+--- !ruby/object:RI::MethodDescription 
+aliases: []
+
+block_params: 
+comment: 
+- !ruby/struct:SM::Flow::P 
+  body: "RFC 4155:"
+- !ruby/struct:SM::Flow::VERB 
+  body: "  a timestamp indicating the UTC date and time when the message\n  was originally received, conformant with the syntax of the\n  traditional UNIX 'ctime' output sans timezone (note that the\n  use of UTC precludes the need for a timezone indicator);\n"
+full_name: Mail::EnvelopeFromElement#formatted_date_time
+is_singleton: false
+name: formatted_date_time
+params: ()
+visibility: public

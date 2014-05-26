@@ -1,0 +1,20 @@
+--- !ruby/object:RI::MethodDescription 
+aliases: []
+
+block_params: 
+comment: 
+- !ruby/struct:SM::Flow::P 
+  body: Returns a pretty-printed string of the object. Requires libraries <tt>pp</tt> and <tt>stringio</tt> from the Ruby standard library.
+- !ruby/struct:SM::Flow::P 
+  body: "The following code pretty-prints an object (much like <tt>p</tt> plain-prints an object):"
+- !ruby/struct:SM::Flow::VERB 
+  body: "  pp object\n"
+- !ruby/struct:SM::Flow::P 
+  body: The following code captures the pretty-printing in <tt>str</tt> instead of sending it to <tt>STDOUT</tt>.
+- !ruby/struct:SM::Flow::VERB 
+  body: "  str = object.pp_s\n"
+full_name: Object#pp_s
+is_singleton: false
+name: pp_s
+params: ()
+visibility: public

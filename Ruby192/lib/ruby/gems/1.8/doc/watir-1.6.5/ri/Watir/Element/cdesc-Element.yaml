@@ -1,0 +1,186 @@
+--- !ruby/object:RI::ClassDescription 
+attributes: 
+- !ruby/object:RI::Attribute 
+  comment: 
+  name: alt
+  rw: R
+- !ruby/object:RI::Attribute 
+  comment: 
+  - !ruby/struct:SM::Flow::P 
+    body: return the class name of the element raise an ObjectNotFound exception if the object cannot be found
+  name: className
+  rw: R
+- !ruby/object:RI::Attribute 
+  comment: 
+  - !ruby/struct:SM::Flow::P 
+    body: return the class name of the element raise an ObjectNotFound exception if the object cannot be found
+  name: class_name
+  rw: R
+- !ruby/object:RI::Attribute 
+  comment: 
+  name: container
+  rw: RW
+- !ruby/object:RI::Attribute 
+  comment: 
+  - !ruby/struct:SM::Flow::P 
+    body: return whether the element is disabled
+  name: disabled
+  rw: R
+- !ruby/object:RI::Attribute 
+  comment: 
+  - !ruby/struct:SM::Flow::P 
+    body: return the ID of the control that this label is associated with
+  name: for
+  rw: R
+- !ruby/object:RI::Attribute 
+  comment: 
+  - !ruby/struct:SM::Flow::P 
+    body: return the url the link points to
+  name: href
+  rw: R
+- !ruby/object:RI::Attribute 
+  comment: 
+  - !ruby/struct:SM::Flow::P 
+    body: Return the outer html of the object - see http://msdn.microsoft.com/workshop/author/dhtml/reference/properties/outerhtml.asp?frame=true
+  name: html
+  rw: R
+- !ruby/object:RI::Attribute 
+  comment: 
+  - !ruby/struct:SM::Flow::P 
+    body: return the ID of the control that this label is associated with
+  name: htmlFor
+  rw: R
+- !ruby/object:RI::Attribute 
+  comment: 
+  - !ruby/struct:SM::Flow::P 
+    body: return the id of the element
+  name: id
+  rw: R
+- !ruby/object:RI::Attribute 
+  comment: 
+  - !ruby/struct:SM::Flow::P 
+    body: return the name of the element (as defined in html)
+  name: name
+  rw: R
+- !ruby/object:RI::Attribute 
+  comment: 
+  - !ruby/struct:SM::Flow::P 
+    body: Return the outer html of the object - see http://msdn.microsoft.com/workshop/author/dhtml/reference/properties/outerhtml.asp?frame=true
+  name: outerHTML
+  rw: R
+- !ruby/object:RI::Attribute 
+  comment: 
+  name: src
+  rw: R
+- !ruby/object:RI::Attribute 
+  comment: 
+  - !ruby/struct:SM::Flow::P 
+    body: return the style of the element
+  name: style
+  rw: R
+- !ruby/object:RI::Attribute 
+  comment: 
+  - !ruby/struct:SM::Flow::P 
+    body: return the title of the element
+  name: title
+  rw: R
+- !ruby/object:RI::Attribute 
+  comment: 
+  - !ruby/struct:SM::Flow::P 
+    body: return the type of the element
+  name: type
+  rw: R
+- !ruby/object:RI::Attribute 
+  comment: 
+  - !ruby/struct:SM::Flow::P 
+    body: return the unique COM number for the element
+  name: uniqueNumber
+  rw: R
+- !ruby/object:RI::Attribute 
+  comment: 
+  - !ruby/struct:SM::Flow::P 
+    body: return the unique COM number for the element
+  name: unique_number
+  rw: R
+- !ruby/object:RI::Attribute 
+  comment: 
+  - !ruby/struct:SM::Flow::P 
+    body: return the value of the element
+  name: value
+  rw: R
+class_methods: 
+- !ruby/object:RI::MethodSummary 
+  name: new
+comment: 
+- !ruby/struct:SM::Flow::P 
+  body: Base class for html elements. This is not a class that users would normally access.
+constants: 
+- !ruby/object:RI::Constant 
+  comment: 
+  - !ruby/struct:SM::Flow::P 
+    body: number of spaces that separate the property from the value in the to_s method
+  name: TO_S_SIZE
+  value: "14"
+full_name: Watir::Element
+includes: 
+- !ruby/object:RI::IncludedModule 
+  name: Watir::Exception
+- !ruby/object:RI::IncludedModule 
+  name: Container
+- !ruby/object:RI::IncludedModule 
+  name: Comparable
+instance_methods: 
+- !ruby/object:RI::MethodSummary 
+  name: <=>
+- !ruby/object:RI::MethodSummary 
+  name: activeObjectHighLightColor
+- !ruby/object:RI::MethodSummary 
+  name: after_text
+- !ruby/object:RI::MethodSummary 
+  name: assert_enabled
+- !ruby/object:RI::MethodSummary 
+  name: assert_exists
+- !ruby/object:RI::MethodSummary 
+  name: attribute_value
+- !ruby/object:RI::MethodSummary 
+  name: before_text
+- !ruby/object:RI::MethodSummary 
+  name: click
+- !ruby/object:RI::MethodSummary 
+  name: click!
+- !ruby/object:RI::MethodSummary 
+  name: click_no_wait
+- !ruby/object:RI::MethodSummary 
+  name: document
+- !ruby/object:RI::MethodSummary 
+  name: enabled?
+- !ruby/object:RI::MethodSummary 
+  name: exist?
+- !ruby/object:RI::MethodSummary 
+  name: exists?
+- !ruby/object:RI::MethodSummary 
+  name: fire_event
+- !ruby/object:RI::MethodSummary 
+  name: flash
+- !ruby/object:RI::MethodSummary 
+  name: focus
+- !ruby/object:RI::MethodSummary 
+  name: inspect
+- !ruby/object:RI::MethodSummary 
+  name: ole_object
+- !ruby/object:RI::MethodSummary 
+  name: ole_object=
+- !ruby/object:RI::MethodSummary 
+  name: parent
+- !ruby/object:RI::MethodSummary 
+  name: text
+- !ruby/object:RI::MethodSummary 
+  name: to_s
+- !ruby/object:RI::MethodSummary 
+  name: type_keys
+- !ruby/object:RI::MethodSummary 
+  name: typingspeed
+- !ruby/object:RI::MethodSummary 
+  name: visible?
+name: Element
+superclass: Object

@@ -1,0 +1,10 @@
+--- !ruby/object:RI::MethodDescription 
+aliases: []
+
+block_params: 
+comment: 
+full_name: Selenium::RSpec::Reporting::FilePathStrategy#file_path_for_html_capture
+is_singleton: false
+name: file_path_for_html_capture
+params: (example)
+visibility: public

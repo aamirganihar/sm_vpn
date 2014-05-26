@@ -1,0 +1,48 @@
+--- !ruby/object:RI::ClassDescription 
+attributes: []
+
+class_methods: []
+
+comment: 
+constants: []
+
+full_name: Mail::Part
+includes: []
+
+instance_methods: 
+- !ruby/object:RI::MethodSummary 
+  name: action
+- !ruby/object:RI::MethodSummary 
+  name: add_content_id
+- !ruby/object:RI::MethodSummary 
+  name: add_required_fields
+- !ruby/object:RI::MethodSummary 
+  name: add_required_message_fields
+- !ruby/object:RI::MethodSummary 
+  name: bounced?
+- !ruby/object:RI::MethodSummary 
+  name: cid
+- !ruby/object:RI::MethodSummary 
+  name: delivery_status_data
+- !ruby/object:RI::MethodSummary 
+  name: delivery_status_report_part?
+- !ruby/object:RI::MethodSummary 
+  name: diagnostic_code
+- !ruby/object:RI::MethodSummary 
+  name: error_status
+- !ruby/object:RI::MethodSummary 
+  name: final_recipient
+- !ruby/object:RI::MethodSummary 
+  name: has_content_id?
+- !ruby/object:RI::MethodSummary 
+  name: inline?
+- !ruby/object:RI::MethodSummary 
+  name: inline_content_id
+- !ruby/object:RI::MethodSummary 
+  name: remote_mta
+- !ruby/object:RI::MethodSummary 
+  name: retryable?
+- !ruby/object:RI::MethodSummary 
+  name: url
+name: Part
+superclass: Message

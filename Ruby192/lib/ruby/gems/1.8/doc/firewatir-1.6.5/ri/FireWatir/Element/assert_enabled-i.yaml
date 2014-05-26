@@ -1,0 +1,14 @@
+--- !ruby/object:RI::MethodDescription 
+aliases: []
+
+block_params: 
+comment: 
+- !ruby/struct:SM::Flow::P 
+  body: "Description:"
+- !ruby/struct:SM::Flow::VERB 
+  body: "  Checks if element is enabled or not. Raises ObjectDisabledException if object is disabled and\n  you are trying to use the object.\n"
+full_name: FireWatir::Element#assert_enabled
+is_singleton: false
+name: assert_enabled
+params: ()
+visibility: public

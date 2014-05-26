@@ -1,0 +1,22 @@
+--- !ruby/object:RI::MethodDescription 
+aliases: []
+
+block_params: 
+comment: 
+- !ruby/struct:SM::Flow::P 
+  body: "Description:"
+- !ruby/struct:SM::Flow::VERB 
+  body: "  Matches the given text with the current text shown in the browser for that particular element.\n"
+- !ruby/struct:SM::Flow::P 
+  body: "Input:"
+- !ruby/struct:SM::Flow::VERB 
+  body: "  target - Text to match. Can be a string or regex\n"
+- !ruby/struct:SM::Flow::P 
+  body: "Output:"
+- !ruby/struct:SM::Flow::VERB 
+  body: "  Returns the index if the specified text was found.\n  Returns matchdata object if the specified regexp was found.\n"
+full_name: FireWatir::Element#contains_text
+is_singleton: false
+name: contains_text
+params: (target)
+visibility: public

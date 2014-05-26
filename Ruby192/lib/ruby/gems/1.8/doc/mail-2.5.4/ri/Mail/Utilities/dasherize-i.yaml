@@ -1,0 +1,16 @@
+--- !ruby/object:RI::MethodDescription 
+aliases: []
+
+block_params: 
+comment: 
+- !ruby/struct:SM::Flow::P 
+  body: Swaps out all underscores (_) for hyphens (-) good for stringing from symbols a field name.
+- !ruby/struct:SM::Flow::P 
+  body: "Example:"
+- !ruby/struct:SM::Flow::VERB 
+  body: " string = :resent_from_field\n dasherize ( string ) #=&gt; 'resent_from_field'\n"
+full_name: Mail::Utilities#dasherize
+is_singleton: false
+name: dasherize
+params: ( str )
+visibility: public

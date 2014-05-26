@@ -1,0 +1,10 @@
+--- !ruby/object:RI::MethodDescription 
+aliases: []
+
+block_params: 
+comment: 
+full_name: Mail::RFC2822::ItemName1#ALPHA
+is_singleton: false
+name: ALPHA
+params: ()
+visibility: public

@@ -1,0 +1,16 @@
+--- !ruby/object:RI::MethodDescription 
+aliases: []
+
+block_params: 
+comment: 
+- !ruby/struct:SM::Flow::P 
+  body: Pick a Ruby encoding corresponding to the message charset. Most charsets have a Ruby encoding, but some need manual aliasing here.
+- !ruby/struct:SM::Flow::P 
+  body: "TODO: add this as a test somewhere:"
+- !ruby/struct:SM::Flow::VERB 
+  body: "  Encoding.list.map { |e| [e.to_s.upcase == pick_encoding(e.to_s.downcase.gsub(&quot;-&quot;, &quot;&quot;)), e.to_s] }.select {|a,b| !b}\n  Encoding.list.map { |e| [e.to_s == pick_encoding(e.to_s), e.to_s] }.select {|a,b| !b}\n"
+full_name: Mail::Ruby19::pick_encoding
+is_singleton: true
+name: pick_encoding
+params: (charset)
+visibility: public

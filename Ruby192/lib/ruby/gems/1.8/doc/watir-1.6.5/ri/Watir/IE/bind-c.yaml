@@ -1,0 +1,12 @@
+--- !ruby/object:RI::MethodDescription 
+aliases: []
+
+block_params: 
+comment: 
+- !ruby/struct:SM::Flow::P 
+  body: Return an IE object that wraps the given window, typically obtained from Shell.Application.windows.
+full_name: Watir::IE::bind
+is_singleton: true
+name: bind
+params: (window)
+visibility: public

@@ -1,0 +1,14 @@
+--- !ruby/object:RI::MethodDescription 
+aliases: []
+
+block_params: 
+comment: 
+- !ruby/struct:SM::Flow::P 
+  body: Returns an array containing all the text values in the specified column Raises an UnknownCellException if the specified column does not exist in every Raises an UnknownObjectException if the table doesn't exist. row of the table
+- !ruby/struct:SM::Flow::VERB 
+  body: "  * columnnumber  - column index to extract values from\n"
+full_name: Watir::Table#column_values
+is_singleton: false
+name: column_values
+params: (columnnumber)
+visibility: public

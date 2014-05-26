@@ -1,0 +1,14 @@
+--- !ruby/object:RI::MethodDescription 
+aliases: []
+
+block_params: 
+comment: 
+- !ruby/struct:SM::Flow::P 
+  body: Adds a content type and charset if the body is US-ASCII
+- !ruby/struct:SM::Flow::P 
+  body: Otherwise raises a warning
+full_name: Mail::Message#add_charset
+is_singleton: false
+name: add_charset
+params: ()
+visibility: public

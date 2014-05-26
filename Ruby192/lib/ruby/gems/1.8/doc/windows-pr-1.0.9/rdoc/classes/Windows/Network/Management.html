@@ -1,0 +1,1789 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+<!DOCTYPE html 
+     PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+     "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+  <title>Module: Windows::Network::Management</title>
+  <meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" />
+  <meta http-equiv="Content-Script-Type" content="text/javascript" />
+  <link rel="stylesheet" href="../../.././rdoc-style.css" type="text/css" media="screen" />
+  <script type="text/javascript">
+  // <![CDATA[
+
+  function popupCode( url ) {
+    window.open(url, "Code", "resizable=yes,scrollbars=yes,toolbar=no,status=no,height=150,width=400")
+  }
+
+  function toggleCode( id ) {
+    if ( document.getElementById )
+      elem = document.getElementById( id );
+    else if ( document.all )
+      elem = eval( "document.all." + id );
+    else
+      return false;
+
+    elemStyle = elem.style;
+    
+    if ( elemStyle.display != "block" ) {
+      elemStyle.display = "block"
+    } else {
+      elemStyle.display = "none"
+    }
+
+    return true;
+  }
+  
+  // Make codeblocks hidden by default
+  document.writeln( "<style type=\"text/css\">div.method-source-code { display: none }</style>" )
+  
+  // ]]>
+  </script>
+
+</head>
+<body>
+
+
+
+    <div id="classHeader">
+        <table class="header-table">
+        <tr class="top-aligned-row">
+          <td><strong>Module</strong></td>
+          <td class="class-name-in-header">Windows::Network::Management</td>
+        </tr>
+        <tr class="top-aligned-row">
+            <td><strong>In:</strong></td>
+            <td>
+                <a href="../../../files/lib/windows/network/management_rb.html">
+                lib/windows/network/management.rb
+                </a>
+        <br />
+            </td>
+        </tr>
+
+        </table>
+    </div>
+  <!-- banner header -->
+
+  <div id="bodyContent">
+
+
+
+  <div id="contextContent">
+
+
+
+   </div>
+
+    <div id="method-list">
+      <h3 class="section-bar">Methods</h3>
+
+      <div class="name-list">
+      <a href="#M000155">GetNetScheduleAccountInformation</a>&nbsp;&nbsp;
+      <a href="#M000077">NetAlertRaise</a>&nbsp;&nbsp;
+      <a href="#M000078">NetAlertRaiseEx</a>&nbsp;&nbsp;
+      <a href="#M000079">NetApiBufferAllocate</a>&nbsp;&nbsp;
+      <a href="#M000080">NetApiBufferFree</a>&nbsp;&nbsp;
+      <a href="#M000081">NetApiBufferReallocate</a>&nbsp;&nbsp;
+      <a href="#M000082">NetApiBufferSize</a>&nbsp;&nbsp;
+      <a href="#M000083">NetGetAnyDCName</a>&nbsp;&nbsp;
+      <a href="#M000084">NetGetDCName</a>&nbsp;&nbsp;
+      <a href="#M000085">NetGetDisplayInformationIndex</a>&nbsp;&nbsp;
+      <a href="#M000087">NetGetJoinInformation</a>&nbsp;&nbsp;
+      <a href="#M000086">NetGetJoinableOUs</a>&nbsp;&nbsp;
+      <a href="#M000088">NetGroupAdd</a>&nbsp;&nbsp;
+      <a href="#M000089">NetGroupAddUser</a>&nbsp;&nbsp;
+      <a href="#M000090">NetGroupDel</a>&nbsp;&nbsp;
+      <a href="#M000091">NetGroupDelUser</a>&nbsp;&nbsp;
+      <a href="#M000092">NetGroupEnum</a>&nbsp;&nbsp;
+      <a href="#M000093">NetGroupGetInfo</a>&nbsp;&nbsp;
+      <a href="#M000094">NetGroupGetUsers</a>&nbsp;&nbsp;
+      <a href="#M000095">NetGroupSetInfo</a>&nbsp;&nbsp;
+      <a href="#M000096">NetGroupSetUsers</a>&nbsp;&nbsp;
+      <a href="#M000097">NetJoinDomain</a>&nbsp;&nbsp;
+      <a href="#M000098">NetLocalGroupAdd</a>&nbsp;&nbsp;
+      <a href="#M000099">NetLocalGroupAddMembers</a>&nbsp;&nbsp;
+      <a href="#M000100">NetLocalGroupDel</a>&nbsp;&nbsp;
+      <a href="#M000101">NetLocalGroupDelMembers</a>&nbsp;&nbsp;
+      <a href="#M000102">NetLocalGroupEnum</a>&nbsp;&nbsp;
+      <a href="#M000103">NetLocalGroupGetInfo</a>&nbsp;&nbsp;
+      <a href="#M000104">NetLocalGroupGetMembers</a>&nbsp;&nbsp;
+      <a href="#M000105">NetLocalGroupSetInfo</a>&nbsp;&nbsp;
+      <a href="#M000106">NetLocalGroupSetMembers</a>&nbsp;&nbsp;
+      <a href="#M000107">NetMessageBufferSend</a>&nbsp;&nbsp;
+      <a href="#M000108">NetMessageNameAdd</a>&nbsp;&nbsp;
+      <a href="#M000109">NetMessageNameDel</a>&nbsp;&nbsp;
+      <a href="#M000110">NetMessageNameEnum</a>&nbsp;&nbsp;
+      <a href="#M000111">NetMessageNameGetInfo</a>&nbsp;&nbsp;
+      <a href="#M000112">NetQueryDisplayInformation</a>&nbsp;&nbsp;
+      <a href="#M000113">NetRemoteComputerSupports</a>&nbsp;&nbsp;
+      <a href="#M000114">NetRemoteTOD</a>&nbsp;&nbsp;
+      <a href="#M000115">NetRenameMachineInDomain</a>&nbsp;&nbsp;
+      <a href="#M000116">NetScheduleJobAdd</a>&nbsp;&nbsp;
+      <a href="#M000117">NetScheduleJobDel</a>&nbsp;&nbsp;
+      <a href="#M000118">NetScheduleJobEnum</a>&nbsp;&nbsp;
+      <a href="#M000119">NetScheduleJobGetInfo</a>&nbsp;&nbsp;
+      <a href="#M000120">NetServerComputerNameAdd</a>&nbsp;&nbsp;
+      <a href="#M000121">NetServerComputerNameDel</a>&nbsp;&nbsp;
+      <a href="#M000122">NetServerDiskEnum</a>&nbsp;&nbsp;
+      <a href="#M000123">NetServerEnum</a>&nbsp;&nbsp;
+      <a href="#M000124">NetServerGetInfo</a>&nbsp;&nbsp;
+      <a href="#M000125">NetServerSetInfo</a>&nbsp;&nbsp;
+      <a href="#M000126">NetServerTransportAdd</a>&nbsp;&nbsp;
+      <a href="#M000127">NetServerTransportAddEx</a>&nbsp;&nbsp;
+      <a href="#M000128">NetServerTransportDel</a>&nbsp;&nbsp;
+      <a href="#M000129">NetServerTransportEnum</a>&nbsp;&nbsp;
+      <a href="#M000130">NetUnjoinDomain</a>&nbsp;&nbsp;
+      <a href="#M000131">NetUseAdd</a>&nbsp;&nbsp;
+      <a href="#M000132">NetUseDel</a>&nbsp;&nbsp;
+      <a href="#M000133">NetUseEnum</a>&nbsp;&nbsp;
+      <a href="#M000134">NetUseGetInfo</a>&nbsp;&nbsp;
+      <a href="#M000135">NetUserAdd</a>&nbsp;&nbsp;
+      <a href="#M000136">NetUserChangePassword</a>&nbsp;&nbsp;
+      <a href="#M000137">NetUserDel</a>&nbsp;&nbsp;
+      <a href="#M000138">NetUserEnum</a>&nbsp;&nbsp;
+      <a href="#M000139">NetUserGetGroups</a>&nbsp;&nbsp;
+      <a href="#M000140">NetUserGetInfo</a>&nbsp;&nbsp;
+      <a href="#M000141">NetUserGetLocalGroups</a>&nbsp;&nbsp;
+      <a href="#M000142">NetUserModalsGet</a>&nbsp;&nbsp;
+      <a href="#M000143">NetUserModalsSet</a>&nbsp;&nbsp;
+      <a href="#M000144">NetUserSetGroups</a>&nbsp;&nbsp;
+      <a href="#M000145">NetUserSetInfo</a>&nbsp;&nbsp;
+      <a href="#M000146">NetValidateName</a>&nbsp;&nbsp;
+      <a href="#M000147">NetWkstaGetInfo</a>&nbsp;&nbsp;
+      <a href="#M000148">NetWkstaSetInfo</a>&nbsp;&nbsp;
+      <a href="#M000149">NetWkstaTransportAdd</a>&nbsp;&nbsp;
+      <a href="#M000150">NetWkstaTransportDel</a>&nbsp;&nbsp;
+      <a href="#M000151">NetWkstaTransportEnum</a>&nbsp;&nbsp;
+      <a href="#M000152">NetWkstaUserEnum</a>&nbsp;&nbsp;
+      <a href="#M000153">NetWkstaUserGetInfo</a>&nbsp;&nbsp;
+      <a href="#M000154">NetWkstaUserSetInfo</a>&nbsp;&nbsp;
+      <a href="#M000156">SetNetScheduleAccountInformation</a>&nbsp;&nbsp;
+      </div>
+    </div>
+
+  </div>
+
+
+    <!-- if includes -->
+
+    <div id="section">
+
+
+    <div id="constants-list">
+      <h3 class="section-bar">Constants</h3>
+
+      <div class="name-list">
+        <table summary="Constants">
+        <tr class="top-aligned-row context-row">
+          <td class="context-item-name">NERR_Success</td>
+          <td>=</td>
+          <td class="context-item-value">0</td>
+        </tr>
+        <tr class="top-aligned-row context-row">
+          <td class="context-item-name">NERR_BASE</td>
+          <td>=</td>
+          <td class="context-item-value">2100</td>
+        </tr>
+        <tr class="top-aligned-row context-row">
+          <td class="context-item-name">NERR_NetNotStarted</td>
+          <td>=</td>
+          <td class="context-item-value">NERR_BASE + 2</td>
+        </tr>
+        <tr class="top-aligned-row context-row">
+          <td class="context-item-name">NERR_UnknownServer</td>
+          <td>=</td>
+          <td class="context-item-value">NERR_BASE + 3</td>
+        </tr>
+        <tr class="top-aligned-row context-row">
+          <td class="context-item-name">NERR_ShareMem</td>
+          <td>=</td>
+          <td class="context-item-value">NERR_BASE + 4</td>
+        </tr>
+        <tr class="top-aligned-row context-row">
+          <td class="context-item-name">NERR_NoNetworkResource</td>
+          <td>=</td>
+          <td class="context-item-value">NERR_BASE + 5</td>
+        </tr>
+        <tr class="top-aligned-row context-row">
+          <td class="context-item-name">NERR_RemoteOnly</td>
+          <td>=</td>
+          <td class="context-item-value">NERR_BASE + 6</td>
+        </tr>
+        <tr class="top-aligned-row context-row">
+          <td class="context-item-name">NERR_DevNotRedirected</td>
+          <td>=</td>
+          <td class="context-item-value">NERR_BASE + 7</td>
+        </tr>
+        <tr class="top-aligned-row context-row">
+          <td class="context-item-name">NERR_AlreadyLoggedOn</td>
+          <td>=</td>
+          <td class="context-item-value">NERR_BASE + 100</td>
+        </tr>
+        <tr class="top-aligned-row context-row">
+          <td class="context-item-name">NERR_NotLoggedOn</td>
+          <td>=</td>
+          <td class="context-item-value">NERR_BASE + 101</td>
+        </tr>
+        <tr class="top-aligned-row context-row">
+          <td class="context-item-name">NERR_BadUsername</td>
+          <td>=</td>
+          <td class="context-item-value">NERR_BASE + 102</td>
+        </tr>
+        <tr class="top-aligned-row context-row">
+          <td class="context-item-name">NERR_BadPassword</td>
+          <td>=</td>
+          <td class="context-item-value">NERR_BASE + 103</td>
+        </tr>
+        <tr class="top-aligned-row context-row">
+          <td class="context-item-name">NERR_UnableToAddName_W</td>
+          <td>=</td>
+          <td class="context-item-value">NERR_BASE + 104</td>
+        </tr>
+        <tr class="top-aligned-row context-row">
+          <td class="context-item-name">NERR_UnableToAddName_F</td>
+          <td>=</td>
+          <td class="context-item-value">NERR_BASE + 105</td>
+        </tr>
+        <tr class="top-aligned-row context-row">
+          <td class="context-item-name">NERR_UnableToDelName_W</td>
+          <td>=</td>
+          <td class="context-item-value">NERR_BASE + 106</td>
+        </tr>
+        <tr class="top-aligned-row context-row">
+          <td class="context-item-name">NERR_UnableToDelName_F</td>
+          <td>=</td>
+          <td class="context-item-value">NERR_BASE + 107</td>
+        </tr>
+        <tr class="top-aligned-row context-row">
+          <td class="context-item-name">NERR_LogonsPaused</td>
+          <td>=</td>
+          <td class="context-item-value">NERR_BASE + 109</td>
+        </tr>
+        <tr class="top-aligned-row context-row">
+          <td class="context-item-name">NERR_LogonServerConflict</td>
+          <td>=</td>
+          <td class="context-item-value">NERR_BASE + 110</td>
+        </tr>
+        <tr class="top-aligned-row context-row">
+          <td class="context-item-name">NERR_LogonNoUserPath</td>
+          <td>=</td>
+          <td class="context-item-value">NERR_BASE + 111</td>
+        </tr>
+        <tr class="top-aligned-row context-row">
+          <td class="context-item-name">NERR_LogonScriptError</td>
+          <td>=</td>
+          <td class="context-item-value">NERR_BASE + 112</td>
+        </tr>
+        <tr class="top-aligned-row context-row">
+          <td class="context-item-name">NERR_StandaloneLogon</td>
+          <td>=</td>
+          <td class="context-item-value">NERR_BASE + 114</td>
+        </tr>
+        <tr class="top-aligned-row context-row">
+          <td class="context-item-name">NERR_LogonServerNotFound</td>
+          <td>=</td>
+          <td class="context-item-value">NERR_BASE + 115</td>
+        </tr>
+        <tr class="top-aligned-row context-row">
+          <td class="context-item-name">NERR_LogonDomainExists</td>
+          <td>=</td>
+          <td class="context-item-value">NERR_BASE + 116</td>
+        </tr>
+        <tr class="top-aligned-row context-row">
+          <td class="context-item-name">NERR_NonValidatedLogon</td>
+          <td>=</td>
+          <td class="context-item-value">NERR_BASE + 117</td>
+        </tr>
+        <tr class="top-aligned-row context-row">
+          <td class="context-item-name">NERR_ACFNotFound</td>
+          <td>=</td>
+          <td class="context-item-value">NERR_BASE + 119</td>
+        </tr>
+        <tr class="top-aligned-row context-row">
+          <td class="context-item-name">NERR_GroupNotFound</td>
+          <td>=</td>
+          <td class="context-item-value">NERR_BASE + 120</td>
+        </tr>
+        <tr class="top-aligned-row context-row">
+          <td class="context-item-name">NERR_UserNotFound</td>
+          <td>=</td>
+          <td class="context-item-value">NERR_BASE + 121</td>
+        </tr>
+        <tr class="top-aligned-row context-row">
+          <td class="context-item-name">NERR_ResourceNotFound</td>
+          <td>=</td>
+          <td class="context-item-value">NERR_BASE + 122</td>
+        </tr>
+        <tr class="top-aligned-row context-row">
+          <td class="context-item-name">NERR_GroupExists</td>
+          <td>=</td>
+          <td class="context-item-value">NERR_BASE + 123</td>
+        </tr>
+        <tr class="top-aligned-row context-row">
+          <td class="context-item-name">NERR_UserExists</td>
+          <td>=</td>
+          <td class="context-item-value">NERR_BASE + 124</td>
+        </tr>
+        <tr class="top-aligned-row context-row">
+          <td class="context-item-name">NERR_ResourceExists</td>
+          <td>=</td>
+          <td class="context-item-value">NERR_BASE + 125</td>
+        </tr>
+        <tr class="top-aligned-row context-row">
+          <td class="context-item-name">NERR_NotPrimary</td>
+          <td>=</td>
+          <td class="context-item-value">NERR_BASE + 126</td>
+        </tr>
+        <tr class="top-aligned-row context-row">
+          <td class="context-item-name">NERR_ACFNotLoaded</td>
+          <td>=</td>
+          <td class="context-item-value">NERR_BASE + 127</td>
+        </tr>
+        <tr class="top-aligned-row context-row">
+          <td class="context-item-name">NERR_ACFNoRoom</td>
+          <td>=</td>
+          <td class="context-item-value">NERR_BASE + 128</td>
+        </tr>
+        <tr class="top-aligned-row context-row">
+          <td class="context-item-name">NERR_ACFFileIOFail</td>
+          <td>=</td>
+          <td class="context-item-value">NERR_BASE + 129</td>
+        </tr>
+        <tr class="top-aligned-row context-row">
+          <td class="context-item-name">NERR_ACFTooManyLists</td>
+          <td>=</td>
+          <td class="context-item-value">NERR_BASE + 130</td>
+        </tr>
+        <tr class="top-aligned-row context-row">
+          <td class="context-item-name">NERR_UserLogon</td>
+          <td>=</td>
+          <td class="context-item-value">NERR_BASE + 131</td>
+        </tr>
+        <tr class="top-aligned-row context-row">
+          <td class="context-item-name">NERR_ACFNoParent</td>
+          <td>=</td>
+          <td class="context-item-value">NERR_BASE + 132</td>
+        </tr>
+        <tr class="top-aligned-row context-row">
+          <td class="context-item-name">NERR_CanNotGrowSegment</td>
+          <td>=</td>
+          <td class="context-item-value">NERR_BASE + 133</td>
+        </tr>
+        <tr class="top-aligned-row context-row">
+          <td class="context-item-name">NERR_SpeGroupOp</td>
+          <td>=</td>
+          <td class="context-item-value">NERR_BASE + 134</td>
+        </tr>
+        <tr class="top-aligned-row context-row">
+          <td class="context-item-name">NERR_NotInCache</td>
+          <td>=</td>
+          <td class="context-item-value">NERR_BASE + 135</td>
+        </tr>
+        <tr class="top-aligned-row context-row">
+          <td class="context-item-name">NERR_UserInGroup</td>
+          <td>=</td>
+          <td class="context-item-value">NERR_BASE + 136</td>
+        </tr>
+        <tr class="top-aligned-row context-row">
+          <td class="context-item-name">NERR_UserNotInGroup</td>
+          <td>=</td>
+          <td class="context-item-value">NERR_BASE + 137</td>
+        </tr>
+        <tr class="top-aligned-row context-row">
+          <td class="context-item-name">NERR_AccountUndefined</td>
+          <td>=</td>
+          <td class="context-item-value">NERR_BASE + 138</td>
+        </tr>
+        <tr class="top-aligned-row context-row">
+          <td class="context-item-name">NERR_AccountExpired</td>
+          <td>=</td>
+          <td class="context-item-value">NERR_BASE + 139</td>
+        </tr>
+        <tr class="top-aligned-row context-row">
+          <td class="context-item-name">NERR_InvalidWorkstation</td>
+          <td>=</td>
+          <td class="context-item-value">NERR_BASE + 140</td>
+        </tr>
+        <tr class="top-aligned-row context-row">
+          <td class="context-item-name">NERR_InvalidLogonHours</td>
+          <td>=</td>
+          <td class="context-item-value">NERR_BASE + 141</td>
+        </tr>
+        <tr class="top-aligned-row context-row">
+          <td class="context-item-name">NERR_PasswordExpired</td>
+          <td>=</td>
+          <td class="context-item-value">NERR_BASE + 142</td>
+        </tr>
+        <tr class="top-aligned-row context-row">
+          <td class="context-item-name">NERR_PasswordCantChange</td>
+          <td>=</td>
+          <td class="context-item-value">NERR_BASE + 143</td>
+        </tr>
+        <tr class="top-aligned-row context-row">
+          <td class="context-item-name">NERR_PasswordHistConflict</td>
+          <td>=</td>
+          <td class="context-item-value">NERR_BASE + 144</td>
+        </tr>
+        <tr class="top-aligned-row context-row">
+          <td class="context-item-name">NERR_PasswordTooShort</td>
+          <td>=</td>
+          <td class="context-item-value">NERR_BASE + 145</td>
+        </tr>
+        <tr class="top-aligned-row context-row">
+          <td class="context-item-name">NERR_PasswordTooRecent</td>
+          <td>=</td>
+          <td class="context-item-value">NERR_BASE + 146</td>
+        </tr>
+        <tr class="top-aligned-row context-row">
+          <td class="context-item-name">NERR_InvalidDatabase</td>
+          <td>=</td>
+          <td class="context-item-value">NERR_BASE + 147</td>
+        </tr>
+        <tr class="top-aligned-row context-row">
+          <td class="context-item-name">NERR_DatabaseUpToDate</td>
+          <td>=</td>
+          <td class="context-item-value">NERR_BASE + 148</td>
+        </tr>
+        <tr class="top-aligned-row context-row">
+          <td class="context-item-name">NERR_SyncRequired</td>
+          <td>=</td>
+          <td class="context-item-value">NERR_BASE + 149</td>
+        </tr>
+        <tr class="top-aligned-row context-row">
+          <td class="context-item-name">NERR_UseNotFound</td>
+          <td>=</td>
+          <td class="context-item-value">NERR_BASE + 150</td>
+        </tr>
+        <tr class="top-aligned-row context-row">
+          <td class="context-item-name">NERR_BadAsgType</td>
+          <td>=</td>
+          <td class="context-item-value">NERR_BASE + 151</td>
+        </tr>
+        <tr class="top-aligned-row context-row">
+          <td class="context-item-name">NERR_DeviceIsShared</td>
+          <td>=</td>
+          <td class="context-item-value">NERR_BASE + 152</td>
+        </tr>
+        <tr class="top-aligned-row context-row">
+          <td class="context-item-name">MAX_PREFERRED_LENGTH</td>
+          <td>=</td>
+          <td class="context-item-value">0xFFFFFFFF</td>
+        </tr>
+        <tr class="top-aligned-row context-row">
+          <td class="context-item-name">SV_TYPE_WORKSTATION</td>
+          <td>=</td>
+          <td class="context-item-value">0x00000001</td>
+          <td width="3em">&nbsp;</td>
+          <td class="context-item-desc">
+Taken from LMServer.h
+
+</td>
+        </tr>
+        <tr class="top-aligned-row context-row">
+          <td class="context-item-name">SV_TYPE_SERVER</td>
+          <td>=</td>
+          <td class="context-item-value">0x00000002</td>
+        </tr>
+        <tr class="top-aligned-row context-row">
+          <td class="context-item-name">SV_TYPE_SQLSERVER</td>
+          <td>=</td>
+          <td class="context-item-value">0x00000004</td>
+        </tr>
+        <tr class="top-aligned-row context-row">
+          <td class="context-item-name">SV_TYPE_DOMAIN_CTRL</td>
+          <td>=</td>
+          <td class="context-item-value">0x00000008</td>
+        </tr>
+        <tr class="top-aligned-row context-row">
+          <td class="context-item-name">SV_TYPE_DOMAIN_BAKCTRL</td>
+          <td>=</td>
+          <td class="context-item-value">0x00000010</td>
+        </tr>
+        <tr class="top-aligned-row context-row">
+          <td class="context-item-name">SV_TYPE_TIME_SOURCE</td>
+          <td>=</td>
+          <td class="context-item-value">0x00000020</td>
+        </tr>
+        <tr class="top-aligned-row context-row">
+          <td class="context-item-name">SV_TYPE_AFP</td>
+          <td>=</td>
+          <td class="context-item-value">0x00000040</td>
+        </tr>
+        <tr class="top-aligned-row context-row">
+          <td class="context-item-name">SV_TYPE_NOVELL</td>
+          <td>=</td>
+          <td class="context-item-value">0x00000080</td>
+        </tr>
+        <tr class="top-aligned-row context-row">
+          <td class="context-item-name">SV_TYPE_DOMAIN_MEMBER</td>
+          <td>=</td>
+          <td class="context-item-value">0x00000100</td>
+        </tr>
+        <tr class="top-aligned-row context-row">
+          <td class="context-item-name">SV_TYPE_PRINTQ_SERVER</td>
+          <td>=</td>
+          <td class="context-item-value">0x00000200</td>
+        </tr>
+        <tr class="top-aligned-row context-row">
+          <td class="context-item-name">SV_TYPE_DIALIN_SERVER</td>
+          <td>=</td>
+          <td class="context-item-value">0x00000400</td>
+        </tr>
+        <tr class="top-aligned-row context-row">
+          <td class="context-item-name">SV_TYPE_XENIX_SERVER</td>
+          <td>=</td>
+          <td class="context-item-value">0x00000800</td>
+        </tr>
+        <tr class="top-aligned-row context-row">
+          <td class="context-item-name">SV_TYPE_SERVER_UNIX</td>
+          <td>=</td>
+          <td class="context-item-value">SV_TYPE_XENIX_SERVER</td>
+        </tr>
+        <tr class="top-aligned-row context-row">
+          <td class="context-item-name">SV_TYPE_NT</td>
+          <td>=</td>
+          <td class="context-item-value">0x00001000</td>
+        </tr>
+        <tr class="top-aligned-row context-row">
+          <td class="context-item-name">SV_TYPE_WFW</td>
+          <td>=</td>
+          <td class="context-item-value">0x00002000</td>
+        </tr>
+        <tr class="top-aligned-row context-row">
+          <td class="context-item-name">SV_TYPE_SERVER_MFPN</td>
+          <td>=</td>
+          <td class="context-item-value">0x00004000</td>
+        </tr>
+        <tr class="top-aligned-row context-row">
+          <td class="context-item-name">SV_TYPE_SERVER_NT</td>
+          <td>=</td>
+          <td class="context-item-value">0x00008000</td>
+        </tr>
+        <tr class="top-aligned-row context-row">
+          <td class="context-item-name">SV_TYPE_POTENTIAL_BROWSER</td>
+          <td>=</td>
+          <td class="context-item-value">0x00010000</td>
+        </tr>
+        <tr class="top-aligned-row context-row">
+          <td class="context-item-name">SV_TYPE_BACKUP_BROWSER</td>
+          <td>=</td>
+          <td class="context-item-value">0x00020000</td>
+        </tr>
+        <tr class="top-aligned-row context-row">
+          <td class="context-item-name">SV_TYPE_MASTER_BROWSER</td>
+          <td>=</td>
+          <td class="context-item-value">0x00040000</td>
+        </tr>
+        <tr class="top-aligned-row context-row">
+          <td class="context-item-name">SV_TYPE_DOMAIN_MASTER</td>
+          <td>=</td>
+          <td class="context-item-value">0x00080000</td>
+        </tr>
+        <tr class="top-aligned-row context-row">
+          <td class="context-item-name">SV_TYPE_SERVER_OSF</td>
+          <td>=</td>
+          <td class="context-item-value">0x00100000</td>
+        </tr>
+        <tr class="top-aligned-row context-row">
+          <td class="context-item-name">SV_TYPE_SERVER_VMS</td>
+          <td>=</td>
+          <td class="context-item-value">0x00200000</td>
+        </tr>
+        <tr class="top-aligned-row context-row">
+          <td class="context-item-name">SV_TYPE_WINDOWS</td>
+          <td>=</td>
+          <td class="context-item-value">0x00400000</td>
+        </tr>
+        <tr class="top-aligned-row context-row">
+          <td class="context-item-name">SV_TYPE_DFS</td>
+          <td>=</td>
+          <td class="context-item-value">0x00800000</td>
+        </tr>
+        <tr class="top-aligned-row context-row">
+          <td class="context-item-name">SV_TYPE_CLUSTER_NT</td>
+          <td>=</td>
+          <td class="context-item-value">0x01000000</td>
+        </tr>
+        <tr class="top-aligned-row context-row">
+          <td class="context-item-name">SV_TYPE_TERMINALSERVER</td>
+          <td>=</td>
+          <td class="context-item-value">0x02000000</td>
+        </tr>
+        <tr class="top-aligned-row context-row">
+          <td class="context-item-name">SV_TYPE_CLUSTER_VS_NT</td>
+          <td>=</td>
+          <td class="context-item-value">0x04000000</td>
+        </tr>
+        <tr class="top-aligned-row context-row">
+          <td class="context-item-name">SV_TYPE_DCE</td>
+          <td>=</td>
+          <td class="context-item-value">0x10000000</td>
+        </tr>
+        <tr class="top-aligned-row context-row">
+          <td class="context-item-name">SV_TYPE_ALTERNATE_XPORT</td>
+          <td>=</td>
+          <td class="context-item-value">0x20000000</td>
+        </tr>
+        <tr class="top-aligned-row context-row">
+          <td class="context-item-name">SV_TYPE_LOCAL_LIST_ONLY</td>
+          <td>=</td>
+          <td class="context-item-value">0x40000000</td>
+        </tr>
+        <tr class="top-aligned-row context-row">
+          <td class="context-item-name">SV_TYPE_DOMAIN_ENUM</td>
+          <td>=</td>
+          <td class="context-item-value">0x80000000</td>
+        </tr>
+        <tr class="top-aligned-row context-row">
+          <td class="context-item-name">SV_TYPE_ALL</td>
+          <td>=</td>
+          <td class="context-item-value">0xFFFFFFFF</td>
+        </tr>
+        </table>
+      </div>
+    </div>
+
+
+
+      
+
+
+    <!-- if method_list -->
+    <div id="methods">
+      <h3 class="section-bar">Public Instance methods</h3>
+
+      <div id="method-M000155" class="method-detail">
+        <a name="M000155"></a>
+
+        <div class="method-heading">
+          <a href="Management.src/M000155.html" target="Code" class="method-signature"
+            onclick="popupCode('Management.src/M000155.html');return false;">
+          <span class="method-name">GetNetScheduleAccountInformation</span><span class="method-args">(server, num_chars, chars)</span>
+          </a>
+        </div>
+      
+        <div class="method-description">
+        </div>
+      </div>
+
+      <div id="method-M000077" class="method-detail">
+        <a name="M000077"></a>
+
+        <div class="method-heading">
+          <a href="Management.src/M000077.html" target="Code" class="method-signature"
+            onclick="popupCode('Management.src/M000077.html');return false;">
+          <span class="method-name">NetAlertRaise</span><span class="method-args">(name, buf, bufsize)</span>
+          </a>
+        </div>
+      
+        <div class="method-description">
+        </div>
+      </div>
+
+      <div id="method-M000078" class="method-detail">
+        <a name="M000078"></a>
+
+        <div class="method-heading">
+          <a href="Management.src/M000078.html" target="Code" class="method-signature"
+            onclick="popupCode('Management.src/M000078.html');return false;">
+          <span class="method-name">NetAlertRaiseEx</span><span class="method-args">(name, data, size, service)</span>
+          </a>
+        </div>
+      
+        <div class="method-description">
+        </div>
+      </div>
+
+      <div id="method-M000079" class="method-detail">
+        <a name="M000079"></a>
+
+        <div class="method-heading">
+          <a href="Management.src/M000079.html" target="Code" class="method-signature"
+            onclick="popupCode('Management.src/M000079.html');return false;">
+          <span class="method-name">NetApiBufferAllocate</span><span class="method-args">(num_bytes, buf)</span>
+          </a>
+        </div>
+      
+        <div class="method-description">
+        </div>
+      </div>
+
+      <div id="method-M000080" class="method-detail">
+        <a name="M000080"></a>
+
+        <div class="method-heading">
+          <a href="Management.src/M000080.html" target="Code" class="method-signature"
+            onclick="popupCode('Management.src/M000080.html');return false;">
+          <span class="method-name">NetApiBufferFree</span><span class="method-args">(buf)</span>
+          </a>
+        </div>
+      
+        <div class="method-description">
+        </div>
+      </div>
+
+      <div id="method-M000081" class="method-detail">
+        <a name="M000081"></a>
+
+        <div class="method-heading">
+          <a href="Management.src/M000081.html" target="Code" class="method-signature"
+            onclick="popupCode('Management.src/M000081.html');return false;">
+          <span class="method-name">NetApiBufferReallocate</span><span class="method-args">(old_buf, count, new_buf)</span>
+          </a>
+        </div>
+      
+        <div class="method-description">
+        </div>
+      </div>
+
+      <div id="method-M000082" class="method-detail">
+        <a name="M000082"></a>
+
+        <div class="method-heading">
+          <a href="Management.src/M000082.html" target="Code" class="method-signature"
+            onclick="popupCode('Management.src/M000082.html');return false;">
+          <span class="method-name">NetApiBufferSize</span><span class="method-args">(buf, count)</span>
+          </a>
+        </div>
+      
+        <div class="method-description">
+        </div>
+      </div>
+
+      <div id="method-M000083" class="method-detail">
+        <a name="M000083"></a>
+
+        <div class="method-heading">
+          <a href="Management.src/M000083.html" target="Code" class="method-signature"
+            onclick="popupCode('Management.src/M000083.html');return false;">
+          <span class="method-name">NetGetAnyDCName</span><span class="method-args">(server, domain, buf)</span>
+          </a>
+        </div>
+      
+        <div class="method-description">
+        </div>
+      </div>
+
+      <div id="method-M000084" class="method-detail">
+        <a name="M000084"></a>
+
+        <div class="method-heading">
+          <a href="Management.src/M000084.html" target="Code" class="method-signature"
+            onclick="popupCode('Management.src/M000084.html');return false;">
+          <span class="method-name">NetGetDCName</span><span class="method-args">(server, domain, buf)</span>
+          </a>
+        </div>
+      
+        <div class="method-description">
+        </div>
+      </div>
+
+      <div id="method-M000085" class="method-detail">
+        <a name="M000085"></a>
+
+        <div class="method-heading">
+          <a href="Management.src/M000085.html" target="Code" class="method-signature"
+            onclick="popupCode('Management.src/M000085.html');return false;">
+          <span class="method-name">NetGetDisplayInformationIndex</span><span class="method-args">(server, level, prefix, index)</span>
+          </a>
+        </div>
+      
+        <div class="method-description">
+        </div>
+      </div>
+
+      <div id="method-M000087" class="method-detail">
+        <a name="M000087"></a>
+
+        <div class="method-heading">
+          <a href="Management.src/M000087.html" target="Code" class="method-signature"
+            onclick="popupCode('Management.src/M000087.html');return false;">
+          <span class="method-name">NetGetJoinInformation</span><span class="method-args">(server, buf, buf_type)</span>
+          </a>
+        </div>
+      
+        <div class="method-description">
+        </div>
+      </div>
+
+      <div id="method-M000086" class="method-detail">
+        <a name="M000086"></a>
+
+        <div class="method-heading">
+          <a href="Management.src/M000086.html" target="Code" class="method-signature"
+            onclick="popupCode('Management.src/M000086.html');return false;">
+          <span class="method-name">NetGetJoinableOUs</span><span class="method-args">(server, domain, account, password, count, ous)</span>
+          </a>
+        </div>
+      
+        <div class="method-description">
+        </div>
+      </div>
+
+      <div id="method-M000088" class="method-detail">
+        <a name="M000088"></a>
+
+        <div class="method-heading">
+          <a href="Management.src/M000088.html" target="Code" class="method-signature"
+            onclick="popupCode('Management.src/M000088.html');return false;">
+          <span class="method-name">NetGroupAdd</span><span class="method-args">(server, level, buf, err)</span>
+          </a>
+        </div>
+      
+        <div class="method-description">
+        </div>
+      </div>
+
+      <div id="method-M000089" class="method-detail">
+        <a name="M000089"></a>
+
+        <div class="method-heading">
+          <a href="Management.src/M000089.html" target="Code" class="method-signature"
+            onclick="popupCode('Management.src/M000089.html');return false;">
+          <span class="method-name">NetGroupAddUser</span><span class="method-args">(server, group, user)</span>
+          </a>
+        </div>
+      
+        <div class="method-description">
+        </div>
+      </div>
+
+      <div id="method-M000090" class="method-detail">
+        <a name="M000090"></a>
+
+        <div class="method-heading">
+          <a href="Management.src/M000090.html" target="Code" class="method-signature"
+            onclick="popupCode('Management.src/M000090.html');return false;">
+          <span class="method-name">NetGroupDel</span><span class="method-args">(server, group)</span>
+          </a>
+        </div>
+      
+        <div class="method-description">
+        </div>
+      </div>
+
+      <div id="method-M000091" class="method-detail">
+        <a name="M000091"></a>
+
+        <div class="method-heading">
+          <a href="Management.src/M000091.html" target="Code" class="method-signature"
+            onclick="popupCode('Management.src/M000091.html');return false;">
+          <span class="method-name">NetGroupDelUser</span><span class="method-args">(server, group, user)</span>
+          </a>
+        </div>
+      
+        <div class="method-description">
+        </div>
+      </div>
+
+      <div id="method-M000092" class="method-detail">
+        <a name="M000092"></a>
+
+        <div class="method-heading">
+          <a href="Management.src/M000092.html" target="Code" class="method-signature"
+            onclick="popupCode('Management.src/M000092.html');return false;">
+          <span class="method-name">NetGroupEnum</span><span class="method-args">(server, level, buf, max, entries, total_entries, resume)</span>
+          </a>
+        </div>
+      
+        <div class="method-description">
+        </div>
+      </div>
+
+      <div id="method-M000093" class="method-detail">
+        <a name="M000093"></a>
+
+        <div class="method-heading">
+          <a href="Management.src/M000093.html" target="Code" class="method-signature"
+            onclick="popupCode('Management.src/M000093.html');return false;">
+          <span class="method-name">NetGroupGetInfo</span><span class="method-args">(server, group, level, buf)</span>
+          </a>
+        </div>
+      
+        <div class="method-description">
+        </div>
+      </div>
+
+      <div id="method-M000094" class="method-detail">
+        <a name="M000094"></a>
+
+        <div class="method-heading">
+          <a href="Management.src/M000094.html" target="Code" class="method-signature"
+            onclick="popupCode('Management.src/M000094.html');return false;">
+          <span class="method-name">NetGroupGetUsers</span><span class="method-args">(server, group, level, buf, max, entries, total_entries, resume)</span>
+          </a>
+        </div>
+      
+        <div class="method-description">
+        </div>
+      </div>
+
+      <div id="method-M000095" class="method-detail">
+        <a name="M000095"></a>
+
+        <div class="method-heading">
+          <a href="Management.src/M000095.html" target="Code" class="method-signature"
+            onclick="popupCode('Management.src/M000095.html');return false;">
+          <span class="method-name">NetGroupSetInfo</span><span class="method-args">(server, group, level, buf, err)</span>
+          </a>
+        </div>
+      
+        <div class="method-description">
+        </div>
+      </div>
+
+      <div id="method-M000096" class="method-detail">
+        <a name="M000096"></a>
+
+        <div class="method-heading">
+          <a href="Management.src/M000096.html" target="Code" class="method-signature"
+            onclick="popupCode('Management.src/M000096.html');return false;">
+          <span class="method-name">NetGroupSetUsers</span><span class="method-args">(server, group, level, buf, total)</span>
+          </a>
+        </div>
+      
+        <div class="method-description">
+        </div>
+      </div>
+
+      <div id="method-M000097" class="method-detail">
+        <a name="M000097"></a>
+
+        <div class="method-heading">
+          <a href="Management.src/M000097.html" target="Code" class="method-signature"
+            onclick="popupCode('Management.src/M000097.html');return false;">
+          <span class="method-name">NetJoinDomain</span><span class="method-args">(server, domain, account_ou, account, password, opts)</span>
+          </a>
+        </div>
+      
+        <div class="method-description">
+        </div>
+      </div>
+
+      <div id="method-M000098" class="method-detail">
+        <a name="M000098"></a>
+
+        <div class="method-heading">
+          <a href="Management.src/M000098.html" target="Code" class="method-signature"
+            onclick="popupCode('Management.src/M000098.html');return false;">
+          <span class="method-name">NetLocalGroupAdd</span><span class="method-args">(server, level, buf, err)</span>
+          </a>
+        </div>
+      
+        <div class="method-description">
+        </div>
+      </div>
+
+      <div id="method-M000099" class="method-detail">
+        <a name="M000099"></a>
+
+        <div class="method-heading">
+          <a href="Management.src/M000099.html" target="Code" class="method-signature"
+            onclick="popupCode('Management.src/M000099.html');return false;">
+          <span class="method-name">NetLocalGroupAddMembers</span><span class="method-args">(server, group, level, buf, total)</span>
+          </a>
+        </div>
+      
+        <div class="method-description">
+        </div>
+      </div>
+
+      <div id="method-M000100" class="method-detail">
+        <a name="M000100"></a>
+
+        <div class="method-heading">
+          <a href="Management.src/M000100.html" target="Code" class="method-signature"
+            onclick="popupCode('Management.src/M000100.html');return false;">
+          <span class="method-name">NetLocalGroupDel</span><span class="method-args">(server, group)</span>
+          </a>
+        </div>
+      
+        <div class="method-description">
+        </div>
+      </div>
+
+      <div id="method-M000101" class="method-detail">
+        <a name="M000101"></a>
+
+        <div class="method-heading">
+          <a href="Management.src/M000101.html" target="Code" class="method-signature"
+            onclick="popupCode('Management.src/M000101.html');return false;">
+          <span class="method-name">NetLocalGroupDelMembers</span><span class="method-args">(server, group, level, buf, total)</span>
+          </a>
+        </div>
+      
+        <div class="method-description">
+        </div>
+      </div>
+
+      <div id="method-M000102" class="method-detail">
+        <a name="M000102"></a>
+
+        <div class="method-heading">
+          <a href="Management.src/M000102.html" target="Code" class="method-signature"
+            onclick="popupCode('Management.src/M000102.html');return false;">
+          <span class="method-name">NetLocalGroupEnum</span><span class="method-args">(server, level, buf, max, entries, total_entries, resume)</span>
+          </a>
+        </div>
+      
+        <div class="method-description">
+        </div>
+      </div>
+
+      <div id="method-M000103" class="method-detail">
+        <a name="M000103"></a>
+
+        <div class="method-heading">
+          <a href="Management.src/M000103.html" target="Code" class="method-signature"
+            onclick="popupCode('Management.src/M000103.html');return false;">
+          <span class="method-name">NetLocalGroupGetInfo</span><span class="method-args">(server, group, level, buf)</span>
+          </a>
+        </div>
+      
+        <div class="method-description">
+        </div>
+      </div>
+
+      <div id="method-M000104" class="method-detail">
+        <a name="M000104"></a>
+
+        <div class="method-heading">
+          <a href="Management.src/M000104.html" target="Code" class="method-signature"
+            onclick="popupCode('Management.src/M000104.html');return false;">
+          <span class="method-name">NetLocalGroupGetMembers</span><span class="method-args">(server, group, level, buf, max, entries, total_entries, resume)</span>
+          </a>
+        </div>
+      
+        <div class="method-description">
+        </div>
+      </div>
+
+      <div id="method-M000105" class="method-detail">
+        <a name="M000105"></a>
+
+        <div class="method-heading">
+          <a href="Management.src/M000105.html" target="Code" class="method-signature"
+            onclick="popupCode('Management.src/M000105.html');return false;">
+          <span class="method-name">NetLocalGroupSetInfo</span><span class="method-args">(server, group, level, buf, err)</span>
+          </a>
+        </div>
+      
+        <div class="method-description">
+        </div>
+      </div>
+
+      <div id="method-M000106" class="method-detail">
+        <a name="M000106"></a>
+
+        <div class="method-heading">
+          <a href="Management.src/M000106.html" target="Code" class="method-signature"
+            onclick="popupCode('Management.src/M000106.html');return false;">
+          <span class="method-name">NetLocalGroupSetMembers</span><span class="method-args">(server, group, level, buf, total)</span>
+          </a>
+        </div>
+      
+        <div class="method-description">
+        </div>
+      </div>
+
+      <div id="method-M000107" class="method-detail">
+        <a name="M000107"></a>
+
+        <div class="method-heading">
+          <a href="Management.src/M000107.html" target="Code" class="method-signature"
+            onclick="popupCode('Management.src/M000107.html');return false;">
+          <span class="method-name">NetMessageBufferSend</span><span class="method-args">(server, msg, from, buf, bufsize)</span>
+          </a>
+        </div>
+      
+        <div class="method-description">
+        </div>
+      </div>
+
+      <div id="method-M000108" class="method-detail">
+        <a name="M000108"></a>
+
+        <div class="method-heading">
+          <a href="Management.src/M000108.html" target="Code" class="method-signature"
+            onclick="popupCode('Management.src/M000108.html');return false;">
+          <span class="method-name">NetMessageNameAdd</span><span class="method-args">(server, msg)</span>
+          </a>
+        </div>
+      
+        <div class="method-description">
+        </div>
+      </div>
+
+      <div id="method-M000109" class="method-detail">
+        <a name="M000109"></a>
+
+        <div class="method-heading">
+          <a href="Management.src/M000109.html" target="Code" class="method-signature"
+            onclick="popupCode('Management.src/M000109.html');return false;">
+          <span class="method-name">NetMessageNameDel</span><span class="method-args">(server, msg)</span>
+          </a>
+        </div>
+      
+        <div class="method-description">
+        </div>
+      </div>
+
+      <div id="method-M000110" class="method-detail">
+        <a name="M000110"></a>
+
+        <div class="method-heading">
+          <a href="Management.src/M000110.html" target="Code" class="method-signature"
+            onclick="popupCode('Management.src/M000110.html');return false;">
+          <span class="method-name">NetMessageNameEnum</span><span class="method-args">(server, level, buf, max, entries, total_entries, resume)</span>
+          </a>
+        </div>
+      
+        <div class="method-description">
+        </div>
+      </div>
+
+      <div id="method-M000111" class="method-detail">
+        <a name="M000111"></a>
+
+        <div class="method-heading">
+          <a href="Management.src/M000111.html" target="Code" class="method-signature"
+            onclick="popupCode('Management.src/M000111.html');return false;">
+          <span class="method-name">NetMessageNameGetInfo</span><span class="method-args">(server, msg, level, buf)</span>
+          </a>
+        </div>
+      
+        <div class="method-description">
+        </div>
+      </div>
+
+      <div id="method-M000112" class="method-detail">
+        <a name="M000112"></a>
+
+        <div class="method-heading">
+          <a href="Management.src/M000112.html" target="Code" class="method-signature"
+            onclick="popupCode('Management.src/M000112.html');return false;">
+          <span class="method-name">NetQueryDisplayInformation</span><span class="method-args">(server, level, index, entries, max, count, buf)</span>
+          </a>
+        </div>
+      
+        <div class="method-description">
+        </div>
+      </div>
+
+      <div id="method-M000113" class="method-detail">
+        <a name="M000113"></a>
+
+        <div class="method-heading">
+          <a href="Management.src/M000113.html" target="Code" class="method-signature"
+            onclick="popupCode('Management.src/M000113.html');return false;">
+          <span class="method-name">NetRemoteComputerSupports</span><span class="method-args">(server, level, index, entries, max, count, buf)</span>
+          </a>
+        </div>
+      
+        <div class="method-description">
+        </div>
+      </div>
+
+      <div id="method-M000114" class="method-detail">
+        <a name="M000114"></a>
+
+        <div class="method-heading">
+          <a href="Management.src/M000114.html" target="Code" class="method-signature"
+            onclick="popupCode('Management.src/M000114.html');return false;">
+          <span class="method-name">NetRemoteTOD</span><span class="method-args">(server, buf)</span>
+          </a>
+        </div>
+      
+        <div class="method-description">
+        </div>
+      </div>
+
+      <div id="method-M000115" class="method-detail">
+        <a name="M000115"></a>
+
+        <div class="method-heading">
+          <a href="Management.src/M000115.html" target="Code" class="method-signature"
+            onclick="popupCode('Management.src/M000115.html');return false;">
+          <span class="method-name">NetRenameMachineInDomain</span><span class="method-args">(server, machine, account, password, options)</span>
+          </a>
+        </div>
+      
+        <div class="method-description">
+        </div>
+      </div>
+
+      <div id="method-M000116" class="method-detail">
+        <a name="M000116"></a>
+
+        <div class="method-heading">
+          <a href="Management.src/M000116.html" target="Code" class="method-signature"
+            onclick="popupCode('Management.src/M000116.html');return false;">
+          <span class="method-name">NetScheduleJobAdd</span><span class="method-args">(server, buf, job)</span>
+          </a>
+        </div>
+      
+        <div class="method-description">
+        </div>
+      </div>
+
+      <div id="method-M000117" class="method-detail">
+        <a name="M000117"></a>
+
+        <div class="method-heading">
+          <a href="Management.src/M000117.html" target="Code" class="method-signature"
+            onclick="popupCode('Management.src/M000117.html');return false;">
+          <span class="method-name">NetScheduleJobDel</span><span class="method-args">(server, min, max)</span>
+          </a>
+        </div>
+      
+        <div class="method-description">
+        </div>
+      </div>
+
+      <div id="method-M000118" class="method-detail">
+        <a name="M000118"></a>
+
+        <div class="method-heading">
+          <a href="Management.src/M000118.html" target="Code" class="method-signature"
+            onclick="popupCode('Management.src/M000118.html');return false;">
+          <span class="method-name">NetScheduleJobEnum</span><span class="method-args">(server, buf, max, entries, total_entries, resume)</span>
+          </a>
+        </div>
+      
+        <div class="method-description">
+        </div>
+      </div>
+
+      <div id="method-M000119" class="method-detail">
+        <a name="M000119"></a>
+
+        <div class="method-heading">
+          <a href="Management.src/M000119.html" target="Code" class="method-signature"
+            onclick="popupCode('Management.src/M000119.html');return false;">
+          <span class="method-name">NetScheduleJobGetInfo</span><span class="method-args">(server, job, buf)</span>
+          </a>
+        </div>
+      
+        <div class="method-description">
+        </div>
+      </div>
+
+      <div id="method-M000120" class="method-detail">
+        <a name="M000120"></a>
+
+        <div class="method-heading">
+          <a href="Management.src/M000120.html" target="Code" class="method-signature"
+            onclick="popupCode('Management.src/M000120.html');return false;">
+          <span class="method-name">NetServerComputerNameAdd</span><span class="method-args">(server, em_domain, em_server)</span>
+          </a>
+        </div>
+      
+        <div class="method-description">
+        </div>
+      </div>
+
+      <div id="method-M000121" class="method-detail">
+        <a name="M000121"></a>
+
+        <div class="method-heading">
+          <a href="Management.src/M000121.html" target="Code" class="method-signature"
+            onclick="popupCode('Management.src/M000121.html');return false;">
+          <span class="method-name">NetServerComputerNameDel</span><span class="method-args">(server, em_server)</span>
+          </a>
+        </div>
+      
+        <div class="method-description">
+        </div>
+      </div>
+
+      <div id="method-M000122" class="method-detail">
+        <a name="M000122"></a>
+
+        <div class="method-heading">
+          <a href="Management.src/M000122.html" target="Code" class="method-signature"
+            onclick="popupCode('Management.src/M000122.html');return false;">
+          <span class="method-name">NetServerDiskEnum</span><span class="method-args">(server, level, buf, maxlen, entries, total_entries, resume)</span>
+          </a>
+        </div>
+      
+        <div class="method-description">
+        </div>
+      </div>
+
+      <div id="method-M000123" class="method-detail">
+        <a name="M000123"></a>
+
+        <div class="method-heading">
+          <a href="Management.src/M000123.html" target="Code" class="method-signature"
+            onclick="popupCode('Management.src/M000123.html');return false;">
+          <span class="method-name">NetServerEnum</span><span class="method-args">(server, level, ptr, maxlen, num, total, stype, domain, handle)</span>
+          </a>
+        </div>
+      
+        <div class="method-description">
+        </div>
+      </div>
+
+      <div id="method-M000124" class="method-detail">
+        <a name="M000124"></a>
+
+        <div class="method-heading">
+          <a href="Management.src/M000124.html" target="Code" class="method-signature"
+            onclick="popupCode('Management.src/M000124.html');return false;">
+          <span class="method-name">NetServerGetInfo</span><span class="method-args">(server, level, buf)</span>
+          </a>
+        </div>
+      
+        <div class="method-description">
+        </div>
+      </div>
+
+      <div id="method-M000125" class="method-detail">
+        <a name="M000125"></a>
+
+        <div class="method-heading">
+          <a href="Management.src/M000125.html" target="Code" class="method-signature"
+            onclick="popupCode('Management.src/M000125.html');return false;">
+          <span class="method-name">NetServerSetInfo</span><span class="method-args">(server, level, buf, error)</span>
+          </a>
+        </div>
+      
+        <div class="method-description">
+        </div>
+      </div>
+
+      <div id="method-M000126" class="method-detail">
+        <a name="M000126"></a>
+
+        <div class="method-heading">
+          <a href="Management.src/M000126.html" target="Code" class="method-signature"
+            onclick="popupCode('Management.src/M000126.html');return false;">
+          <span class="method-name">NetServerTransportAdd</span><span class="method-args">(server, level, buf)</span>
+          </a>
+        </div>
+      
+        <div class="method-description">
+        </div>
+      </div>
+
+      <div id="method-M000127" class="method-detail">
+        <a name="M000127"></a>
+
+        <div class="method-heading">
+          <a href="Management.src/M000127.html" target="Code" class="method-signature"
+            onclick="popupCode('Management.src/M000127.html');return false;">
+          <span class="method-name">NetServerTransportAddEx</span><span class="method-args">(server, level, buf)</span>
+          </a>
+        </div>
+      
+        <div class="method-description">
+        </div>
+      </div>
+
+      <div id="method-M000128" class="method-detail">
+        <a name="M000128"></a>
+
+        <div class="method-heading">
+          <a href="Management.src/M000128.html" target="Code" class="method-signature"
+            onclick="popupCode('Management.src/M000128.html');return false;">
+          <span class="method-name">NetServerTransportDel</span><span class="method-args">(server, level, buf)</span>
+          </a>
+        </div>
+      
+        <div class="method-description">
+        </div>
+      </div>
+
+      <div id="method-M000129" class="method-detail">
+        <a name="M000129"></a>
+
+        <div class="method-heading">
+          <a href="Management.src/M000129.html" target="Code" class="method-signature"
+            onclick="popupCode('Management.src/M000129.html');return false;">
+          <span class="method-name">NetServerTransportEnum</span><span class="method-args">(server, level, buf, maxlen, entries, total_entries, resume)</span>
+          </a>
+        </div>
+      
+        <div class="method-description">
+        </div>
+      </div>
+
+      <div id="method-M000130" class="method-detail">
+        <a name="M000130"></a>
+
+        <div class="method-heading">
+          <a href="Management.src/M000130.html" target="Code" class="method-signature"
+            onclick="popupCode('Management.src/M000130.html');return false;">
+          <span class="method-name">NetUnjoinDomain</span><span class="method-args">(server, account, password, options)</span>
+          </a>
+        </div>
+      
+        <div class="method-description">
+        </div>
+      </div>
+
+      <div id="method-M000131" class="method-detail">
+        <a name="M000131"></a>
+
+        <div class="method-heading">
+          <a href="Management.src/M000131.html" target="Code" class="method-signature"
+            onclick="popupCode('Management.src/M000131.html');return false;">
+          <span class="method-name">NetUseAdd</span><span class="method-args">(server, level, buf, error)</span>
+          </a>
+        </div>
+      
+        <div class="method-description">
+        </div>
+      </div>
+
+      <div id="method-M000132" class="method-detail">
+        <a name="M000132"></a>
+
+        <div class="method-heading">
+          <a href="Management.src/M000132.html" target="Code" class="method-signature"
+            onclick="popupCode('Management.src/M000132.html');return false;">
+          <span class="method-name">NetUseDel</span><span class="method-args">(server, name, conn)</span>
+          </a>
+        </div>
+      
+        <div class="method-description">
+        </div>
+      </div>
+
+      <div id="method-M000133" class="method-detail">
+        <a name="M000133"></a>
+
+        <div class="method-heading">
+          <a href="Management.src/M000133.html" target="Code" class="method-signature"
+            onclick="popupCode('Management.src/M000133.html');return false;">
+          <span class="method-name">NetUseEnum</span><span class="method-args">(server, level, buf, max, entries, total_entries, resume)</span>
+          </a>
+        </div>
+      
+        <div class="method-description">
+        </div>
+      </div>
+
+      <div id="method-M000134" class="method-detail">
+        <a name="M000134"></a>
+
+        <div class="method-heading">
+          <a href="Management.src/M000134.html" target="Code" class="method-signature"
+            onclick="popupCode('Management.src/M000134.html');return false;">
+          <span class="method-name">NetUseGetInfo</span><span class="method-args">(server, name, level, buf)</span>
+          </a>
+        </div>
+      
+        <div class="method-description">
+        </div>
+      </div>
+
+      <div id="method-M000135" class="method-detail">
+        <a name="M000135"></a>
+
+        <div class="method-heading">
+          <a href="Management.src/M000135.html" target="Code" class="method-signature"
+            onclick="popupCode('Management.src/M000135.html');return false;">
+          <span class="method-name">NetUserAdd</span><span class="method-args">(server, level, buf, error)</span>
+          </a>
+        </div>
+      
+        <div class="method-description">
+        </div>
+      </div>
+
+      <div id="method-M000136" class="method-detail">
+        <a name="M000136"></a>
+
+        <div class="method-heading">
+          <a href="Management.src/M000136.html" target="Code" class="method-signature"
+            onclick="popupCode('Management.src/M000136.html');return false;">
+          <span class="method-name">NetUserChangePassword</span><span class="method-args">(domain, user, old, new)</span>
+          </a>
+        </div>
+      
+        <div class="method-description">
+        </div>
+      </div>
+
+      <div id="method-M000137" class="method-detail">
+        <a name="M000137"></a>
+
+        <div class="method-heading">
+          <a href="Management.src/M000137.html" target="Code" class="method-signature"
+            onclick="popupCode('Management.src/M000137.html');return false;">
+          <span class="method-name">NetUserDel</span><span class="method-args">(server, user)</span>
+          </a>
+        </div>
+      
+        <div class="method-description">
+        </div>
+      </div>
+
+      <div id="method-M000138" class="method-detail">
+        <a name="M000138"></a>
+
+        <div class="method-heading">
+          <a href="Management.src/M000138.html" target="Code" class="method-signature"
+            onclick="popupCode('Management.src/M000138.html');return false;">
+          <span class="method-name">NetUserEnum</span><span class="method-args">(server, level, filter, buf, max, entries, total_entries, resume)</span>
+          </a>
+        </div>
+      
+        <div class="method-description">
+        </div>
+      </div>
+
+      <div id="method-M000139" class="method-detail">
+        <a name="M000139"></a>
+
+        <div class="method-heading">
+          <a href="Management.src/M000139.html" target="Code" class="method-signature"
+            onclick="popupCode('Management.src/M000139.html');return false;">
+          <span class="method-name">NetUserGetGroups</span><span class="method-args">(server, user, level, buf, max, entries, total_entries)</span>
+          </a>
+        </div>
+      
+        <div class="method-description">
+        </div>
+      </div>
+
+      <div id="method-M000140" class="method-detail">
+        <a name="M000140"></a>
+
+        <div class="method-heading">
+          <a href="Management.src/M000140.html" target="Code" class="method-signature"
+            onclick="popupCode('Management.src/M000140.html');return false;">
+          <span class="method-name">NetUserGetInfo</span><span class="method-args">(server, user, level, buf)</span>
+          </a>
+        </div>
+      
+        <div class="method-description">
+        </div>
+      </div>
+
+      <div id="method-M000141" class="method-detail">
+        <a name="M000141"></a>
+
+        <div class="method-heading">
+          <a href="Management.src/M000141.html" target="Code" class="method-signature"
+            onclick="popupCode('Management.src/M000141.html');return false;">
+          <span class="method-name">NetUserGetLocalGroups</span><span class="method-args">(server, user, level, flags, buf, max, entries, total_entries)</span>
+          </a>
+        </div>
+      
+        <div class="method-description">
+        </div>
+      </div>
+
+      <div id="method-M000142" class="method-detail">
+        <a name="M000142"></a>
+
+        <div class="method-heading">
+          <a href="Management.src/M000142.html" target="Code" class="method-signature"
+            onclick="popupCode('Management.src/M000142.html');return false;">
+          <span class="method-name">NetUserModalsGet</span><span class="method-args">(server, level, buf)</span>
+          </a>
+        </div>
+      
+        <div class="method-description">
+        </div>
+      </div>
+
+      <div id="method-M000143" class="method-detail">
+        <a name="M000143"></a>
+
+        <div class="method-heading">
+          <a href="Management.src/M000143.html" target="Code" class="method-signature"
+            onclick="popupCode('Management.src/M000143.html');return false;">
+          <span class="method-name">NetUserModalsSet</span><span class="method-args">(server, level, buf, error)</span>
+          </a>
+        </div>
+      
+        <div class="method-description">
+        </div>
+      </div>
+
+      <div id="method-M000144" class="method-detail">
+        <a name="M000144"></a>
+
+        <div class="method-heading">
+          <a href="Management.src/M000144.html" target="Code" class="method-signature"
+            onclick="popupCode('Management.src/M000144.html');return false;">
+          <span class="method-name">NetUserSetGroups</span><span class="method-args">(server, user, level, buf, num)</span>
+          </a>
+        </div>
+      
+        <div class="method-description">
+        </div>
+      </div>
+
+      <div id="method-M000145" class="method-detail">
+        <a name="M000145"></a>
+
+        <div class="method-heading">
+          <a href="Management.src/M000145.html" target="Code" class="method-signature"
+            onclick="popupCode('Management.src/M000145.html');return false;">
+          <span class="method-name">NetUserSetInfo</span><span class="method-args">(server, user, level, buf, error)</span>
+          </a>
+        </div>
+      
+        <div class="method-description">
+        </div>
+      </div>
+
+      <div id="method-M000146" class="method-detail">
+        <a name="M000146"></a>
+
+        <div class="method-heading">
+          <a href="Management.src/M000146.html" target="Code" class="method-signature"
+            onclick="popupCode('Management.src/M000146.html');return false;">
+          <span class="method-name">NetValidateName</span><span class="method-args">(server, name, account, password, name_type)</span>
+          </a>
+        </div>
+      
+        <div class="method-description">
+        </div>
+      </div>
+
+      <div id="method-M000147" class="method-detail">
+        <a name="M000147"></a>
+
+        <div class="method-heading">
+          <a href="Management.src/M000147.html" target="Code" class="method-signature"
+            onclick="popupCode('Management.src/M000147.html');return false;">
+          <span class="method-name">NetWkstaGetInfo</span><span class="method-args">(server, level, buf)</span>
+          </a>
+        </div>
+      
+        <div class="method-description">
+        </div>
+      </div>
+
+      <div id="method-M000148" class="method-detail">
+        <a name="M000148"></a>
+
+        <div class="method-heading">
+          <a href="Management.src/M000148.html" target="Code" class="method-signature"
+            onclick="popupCode('Management.src/M000148.html');return false;">
+          <span class="method-name">NetWkstaSetInfo</span><span class="method-args">(server, level, buf, error)</span>
+          </a>
+        </div>
+      
+        <div class="method-description">
+        </div>
+      </div>
+
+      <div id="method-M000149" class="method-detail">
+        <a name="M000149"></a>
+
+        <div class="method-heading">
+          <a href="Management.src/M000149.html" target="Code" class="method-signature"
+            onclick="popupCode('Management.src/M000149.html');return false;">
+          <span class="method-name">NetWkstaTransportAdd</span><span class="method-args">(server, level, buf, error)</span>
+          </a>
+        </div>
+      
+        <div class="method-description">
+        </div>
+      </div>
+
+      <div id="method-M000150" class="method-detail">
+        <a name="M000150"></a>
+
+        <div class="method-heading">
+          <a href="Management.src/M000150.html" target="Code" class="method-signature"
+            onclick="popupCode('Management.src/M000150.html');return false;">
+          <span class="method-name">NetWkstaTransportDel</span><span class="method-args">(server, name, cond)</span>
+          </a>
+        </div>
+      
+        <div class="method-description">
+        </div>
+      </div>
+
+      <div id="method-M000151" class="method-detail">
+        <a name="M000151"></a>
+
+        <div class="method-heading">
+          <a href="Management.src/M000151.html" target="Code" class="method-signature"
+            onclick="popupCode('Management.src/M000151.html');return false;">
+          <span class="method-name">NetWkstaTransportEnum</span><span class="method-args">(server, level, buf, maxlen, entries, total_entries, resume)</span>
+          </a>
+        </div>
+      
+        <div class="method-description">
+        </div>
+      </div>
+
+      <div id="method-M000152" class="method-detail">
+        <a name="M000152"></a>
+
+        <div class="method-heading">
+          <a href="Management.src/M000152.html" target="Code" class="method-signature"
+            onclick="popupCode('Management.src/M000152.html');return false;">
+          <span class="method-name">NetWkstaUserEnum</span><span class="method-args">(server, level, buf, maxlen, entries, total_entries, resume)</span>
+          </a>
+        </div>
+      
+        <div class="method-description">
+        </div>
+      </div>
+
+      <div id="method-M000153" class="method-detail">
+        <a name="M000153"></a>
+
+        <div class="method-heading">
+          <a href="Management.src/M000153.html" target="Code" class="method-signature"
+            onclick="popupCode('Management.src/M000153.html');return false;">
+          <span class="method-name">NetWkstaUserGetInfo</span><span class="method-args">(res, level, buf)</span>
+          </a>
+        </div>
+      
+        <div class="method-description">
+        </div>
+      </div>
+
+      <div id="method-M000154" class="method-detail">
+        <a name="M000154"></a>
+
+        <div class="method-heading">
+          <a href="Management.src/M000154.html" target="Code" class="method-signature"
+            onclick="popupCode('Management.src/M000154.html');return false;">
+          <span class="method-name">NetWkstaUserSetInfo</span><span class="method-args">(res, level, buf, error)</span>
+          </a>
+        </div>
+      
+        <div class="method-description">
+        </div>
+      </div>
+
+      <div id="method-M000156" class="method-detail">
+        <a name="M000156"></a>
+
+        <div class="method-heading">
+          <a href="Management.src/M000156.html" target="Code" class="method-signature"
+            onclick="popupCode('Management.src/M000156.html');return false;">
+          <span class="method-name">SetNetScheduleAccountInformation</span><span class="method-args">(server, account, password)</span>
+          </a>
+        </div>
+      
+        <div class="method-description">
+        </div>
+      </div>
+
+
+    </div>
+
+
+  </div>
+
+
+<div id="validator-badges">
+  <p><small><a href="http://validator.w3.org/check/referer">[Validate]</a></small></p>
+</div>
+
+</body>
+</html>

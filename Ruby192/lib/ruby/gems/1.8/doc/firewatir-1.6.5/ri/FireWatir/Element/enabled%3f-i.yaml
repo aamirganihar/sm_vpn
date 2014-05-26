@@ -1,0 +1,18 @@
+--- !ruby/object:RI::MethodDescription 
+aliases: []
+
+block_params: 
+comment: 
+- !ruby/struct:SM::Flow::P 
+  body: "Description:"
+- !ruby/struct:SM::Flow::VERB 
+  body: "  First checks if element exists or not. Then checks if element is enabled or not.\n"
+- !ruby/struct:SM::Flow::P 
+  body: "Output:"
+- !ruby/struct:SM::Flow::VERB 
+  body: "  Returns true if element exists and is enabled, else returns false.\n"
+full_name: FireWatir::Element#enabled?
+is_singleton: false
+name: enabled?
+params: ()
+visibility: public

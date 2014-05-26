@@ -1,0 +1,10 @@
+--- !ruby/object:RI::MethodDescription 
+aliases: []
+
+block_params: 
+comment: 
+full_name: Selenium::RSpec::Reporting::HtmlReport::new
+is_singleton: true
+name: new
+params: (file_path_strategy)
+visibility: public

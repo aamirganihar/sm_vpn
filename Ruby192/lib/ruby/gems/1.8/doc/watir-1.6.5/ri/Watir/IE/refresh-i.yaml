@@ -1,0 +1,12 @@
+--- !ruby/object:RI::MethodDescription 
+aliases: []
+
+block_params: 
+comment: 
+- !ruby/struct:SM::Flow::P 
+  body: Refresh the current page - the same as clicking the browsers refresh button an WIN32OLERuntimeError exception is raised if the browser cant refresh
+full_name: Watir::IE#refresh
+is_singleton: false
+name: refresh
+params: ()
+visibility: public

@@ -1,0 +1,42 @@
+--- !ruby/object:RI::ClassDescription 
+attributes: []
+
+class_methods: 
+- !ruby/object:RI::MethodSummary 
+  name: new
+comment: 
+- !ruby/struct:SM::Flow::P 
+  body: HoeLike is intended to be used with the Hoe gem. It adds some Rake tasks.
+- !ruby/object:SM::Flow::LIST 
+  contents: 
+  - !ruby/struct:SM::Flow::LI 
+    label: "*"
+    body: "slow: Runs tests whose filenames are '*-slowtests.rb'"
+  - !ruby/struct:SM::Flow::LI 
+    label: "*"
+    body: "fast: Runs all tests, skipping slow tests."
+  - !ruby/struct:SM::Flow::LI 
+    label: "*"
+    body: "upload_pages: copy website pages up to Rubyforge"
+  - !ruby/struct:SM::Flow::LI 
+    label: "*"
+    body: "export_and_upload_pages: upload_pages without any garbage or .svn files lying around."
+  - !ruby/struct:SM::Flow::LI 
+    label: "*"
+    body: "tag_release: Make a Subversion tag called rel-X.Y.Z. Release number is gotten from lib/name/version.rb."
+  - !ruby/struct:SM::Flow::LI 
+    label: "*"
+    body: "export: export entire project to pristine temp directory."
+  - !ruby/struct:SM::Flow::LI 
+    label: "*"
+    body: "release_everything: Release code, rdoc, and website to rubyforge."
+  type: :BULLET
+constants: []
+
+full_name: HoeLike
+includes: []
+
+instance_methods: []
+
+name: HoeLike
+superclass: Object

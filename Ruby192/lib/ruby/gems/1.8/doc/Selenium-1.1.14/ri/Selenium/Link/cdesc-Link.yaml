@@ -1,0 +1,25 @@
+--- !ruby/object:RI::ClassDescription 
+attributes: []
+
+class_methods: 
+- !ruby/object:RI::MethodSummary 
+  name: by_id
+- !ruby/object:RI::MethodSummary 
+  name: by_text
+- !ruby/object:RI::MethodSummary 
+  name: new
+comment: 
+- !ruby/struct:SM::Flow::P 
+  body: Link class that models the behavior of a link
+constants: []
+
+full_name: Selenium::Link
+includes: []
+
+instance_methods: 
+- !ruby/object:RI::MethodSummary 
+  name: go
+- !ruby/object:RI::MethodSummary 
+  name: with_target
+name: Link
+superclass: HtmlElement

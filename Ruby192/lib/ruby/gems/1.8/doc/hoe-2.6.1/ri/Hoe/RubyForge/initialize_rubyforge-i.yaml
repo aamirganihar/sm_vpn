@@ -1,0 +1,10 @@
+--- !ruby/object:RI::MethodDescription 
+aliases: []
+
+block_params: 
+comment: 
+full_name: Hoe::RubyForge#initialize_rubyforge
+is_singleton: false
+name: initialize_rubyforge
+params: ()
+visibility: public

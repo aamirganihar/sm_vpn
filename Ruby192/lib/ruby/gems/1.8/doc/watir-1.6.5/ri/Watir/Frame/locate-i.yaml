@@ -1,0 +1,12 @@
+--- !ruby/object:RI::MethodDescription 
+aliases: []
+
+block_params: 
+comment: 
+- !ruby/struct:SM::Flow::P 
+  body: Find the frame denoted by how and what in the container and return its ole_object
+full_name: Watir::Frame#locate
+is_singleton: false
+name: locate
+params: ()
+visibility: public

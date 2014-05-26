@@ -1,0 +1,64 @@
+--- !ruby/object:RI::ClassDescription 
+attributes: 
+- !ruby/object:RI::Attribute 
+  comment: 
+  - !ruby/struct:SM::Flow::P 
+    body: Gets max length of the text field element.
+  name: maxlength
+  rw: R
+- !ruby/object:RI::Attribute 
+  comment: 
+  - !ruby/struct:SM::Flow::P 
+    body: Gets max length of the text field element.
+  name: maxlength_string
+  rw: R
+- !ruby/object:RI::Attribute 
+  comment: 
+  - !ruby/struct:SM::Flow::P 
+    body: Returns true if the text field is read only, false otherwise.
+  name: readOnly
+  rw: R
+- !ruby/object:RI::Attribute 
+  comment: 
+  - !ruby/struct:SM::Flow::P 
+    body: Returns true if the text field is read only, false otherwise.
+  name: readonly?
+  rw: R
+- !ruby/object:RI::Attribute 
+  comment: 
+  - !ruby/struct:SM::Flow::P 
+    body: Gets the size of the text field element.
+  name: size
+  rw: R
+class_methods: []
+
+comment: 
+- !ruby/struct:SM::Flow::P 
+  body: "Description: Class for Text Field element."
+constants: 
+- !ruby/object:RI::Constant 
+  comment: 
+  name: INPUT_TYPES
+  value: "[\"text\", \"password\", \"textarea\"]"
+full_name: FireWatir::TextField
+includes: []
+
+instance_methods: 
+- !ruby/object:RI::MethodSummary 
+  name: append
+- !ruby/object:RI::MethodSummary 
+  name: assert_not_readonly
+- !ruby/object:RI::MethodSummary 
+  name: clear
+- !ruby/object:RI::MethodSummary 
+  name: maxLength
+- !ruby/object:RI::MethodSummary 
+  name: maxlength
+- !ruby/object:RI::MethodSummary 
+  name: set
+- !ruby/object:RI::MethodSummary 
+  name: to_s
+- !ruby/object:RI::MethodSummary 
+  name: verify_contains
+name: TextField
+superclass: InputElement

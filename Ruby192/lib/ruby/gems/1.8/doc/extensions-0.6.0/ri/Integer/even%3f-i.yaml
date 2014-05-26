@@ -1,0 +1,14 @@
+--- !ruby/object:RI::MethodDescription 
+aliases: []
+
+block_params: 
+comment: 
+- !ruby/struct:SM::Flow::P 
+  body: Returns true if this integer is even, false otherwise.
+- !ruby/struct:SM::Flow::VERB 
+  body: "  14.even?          # -&gt; true\n  15.even?          # -&gt; false\n"
+full_name: Integer#even?
+is_singleton: false
+name: even?
+params: ()
+visibility: public

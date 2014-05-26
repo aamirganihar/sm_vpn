@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+<!DOCTYPE html 
+     PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+     "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html>
+<head>
+  <title>find (Mail::IMAP)</title>
+  <meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" />
+  <link rel="stylesheet" href="../../.././rdoc-style.css" type="text/css" media="screen" />
+</head>
+<body class="standalone-code">
+  <pre><span class="ruby-comment cmt"># File lib/mail/network/retriever_methods/imap.rb, line 70</span>
+    <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">find</span>(<span class="ruby-identifier">options</span>={}, <span class="ruby-operator">&amp;</span><span class="ruby-identifier">block</span>)
+      <span class="ruby-identifier">options</span> = <span class="ruby-identifier">validate_options</span>(<span class="ruby-identifier">options</span>)
+
+      <span class="ruby-identifier">start</span> <span class="ruby-keyword kw">do</span> <span class="ruby-operator">|</span><span class="ruby-identifier">imap</span><span class="ruby-operator">|</span>
+        <span class="ruby-identifier">options</span>[<span class="ruby-identifier">:read_only</span>] <span class="ruby-operator">?</span> <span class="ruby-identifier">imap</span>.<span class="ruby-identifier">examine</span>(<span class="ruby-identifier">options</span>[<span class="ruby-identifier">:mailbox</span>]) <span class="ruby-operator">:</span> <span class="ruby-identifier">imap</span>.<span class="ruby-identifier">select</span>(<span class="ruby-identifier">options</span>[<span class="ruby-identifier">:mailbox</span>])
+
+        <span class="ruby-identifier">message_ids</span> = <span class="ruby-identifier">imap</span>.<span class="ruby-identifier">uid_search</span>(<span class="ruby-identifier">options</span>[<span class="ruby-identifier">:keys</span>])
+        <span class="ruby-identifier">message_ids</span>.<span class="ruby-identifier">reverse!</span> <span class="ruby-keyword kw">if</span> <span class="ruby-identifier">options</span>[<span class="ruby-identifier">:what</span>].<span class="ruby-identifier">to_sym</span> <span class="ruby-operator">==</span> <span class="ruby-identifier">:last</span>
+        <span class="ruby-identifier">message_ids</span> = <span class="ruby-identifier">message_ids</span>.<span class="ruby-identifier">first</span>(<span class="ruby-identifier">options</span>[<span class="ruby-identifier">:count</span>]) <span class="ruby-keyword kw">if</span> <span class="ruby-identifier">options</span>[<span class="ruby-identifier">:count</span>].<span class="ruby-identifier">is_a?</span>(<span class="ruby-constant">Integer</span>)
+        <span class="ruby-identifier">message_ids</span>.<span class="ruby-identifier">reverse!</span> <span class="ruby-keyword kw">if</span> (<span class="ruby-identifier">options</span>[<span class="ruby-identifier">:what</span>].<span class="ruby-identifier">to_sym</span> <span class="ruby-operator">==</span> <span class="ruby-identifier">:last</span> <span class="ruby-operator">&amp;&amp;</span> <span class="ruby-identifier">options</span>[<span class="ruby-identifier">:order</span>].<span class="ruby-identifier">to_sym</span> <span class="ruby-operator">==</span> <span class="ruby-identifier">:asc</span>) <span class="ruby-operator">||</span>
+                                (<span class="ruby-identifier">options</span>[<span class="ruby-identifier">:what</span>].<span class="ruby-identifier">to_sym</span> <span class="ruby-operator">!=</span> <span class="ruby-identifier">:last</span> <span class="ruby-operator">&amp;&amp;</span> <span class="ruby-identifier">options</span>[<span class="ruby-identifier">:order</span>].<span class="ruby-identifier">to_sym</span> <span class="ruby-operator">==</span> <span class="ruby-identifier">:desc</span>)
+
+        <span class="ruby-keyword kw">if</span> <span class="ruby-identifier">block_given?</span>
+          <span class="ruby-identifier">message_ids</span>.<span class="ruby-identifier">each</span> <span class="ruby-keyword kw">do</span> <span class="ruby-operator">|</span><span class="ruby-identifier">message_id</span><span class="ruby-operator">|</span>
+            <span class="ruby-identifier">fetchdata</span> = <span class="ruby-identifier">imap</span>.<span class="ruby-identifier">uid_fetch</span>(<span class="ruby-identifier">message_id</span>, [<span class="ruby-value str">'RFC822'</span>])[<span class="ruby-value">0</span>]
+            <span class="ruby-identifier">new_message</span> = <span class="ruby-constant">Mail</span>.<span class="ruby-identifier">new</span>(<span class="ruby-identifier">fetchdata</span>.<span class="ruby-identifier">attr</span>[<span class="ruby-value str">'RFC822'</span>])
+            <span class="ruby-identifier">new_message</span>.<span class="ruby-identifier">mark_for_delete</span> = <span class="ruby-keyword kw">true</span> <span class="ruby-keyword kw">if</span> <span class="ruby-identifier">options</span>[<span class="ruby-identifier">:delete_after_find</span>]
+            <span class="ruby-keyword kw">if</span> <span class="ruby-identifier">block</span>.<span class="ruby-identifier">arity</span> <span class="ruby-operator">==</span> <span class="ruby-value">3</span>
+              <span class="ruby-keyword kw">yield</span> <span class="ruby-identifier">new_message</span>, <span class="ruby-identifier">imap</span>, <span class="ruby-identifier">message_id</span>
+            <span class="ruby-keyword kw">else</span>
+              <span class="ruby-keyword kw">yield</span> <span class="ruby-identifier">new_message</span>
+            <span class="ruby-keyword kw">end</span>
+            <span class="ruby-identifier">imap</span>.<span class="ruby-identifier">uid_store</span>(<span class="ruby-identifier">message_id</span>, <span class="ruby-value str">&quot;+FLAGS&quot;</span>, [<span class="ruby-constant">Net</span><span class="ruby-operator">::</span><span class="ruby-constant">IMAP</span><span class="ruby-operator">::</span><span class="ruby-constant">DELETED</span>]) <span class="ruby-keyword kw">if</span> <span class="ruby-identifier">options</span>[<span class="ruby-identifier">:delete_after_find</span>] <span class="ruby-operator">&amp;&amp;</span> <span class="ruby-identifier">new_message</span>.<span class="ruby-identifier">is_marked_for_delete?</span>
+          <span class="ruby-keyword kw">end</span>
+          <span class="ruby-identifier">imap</span>.<span class="ruby-identifier">expunge</span> <span class="ruby-keyword kw">if</span> <span class="ruby-identifier">options</span>[<span class="ruby-identifier">:delete_after_find</span>]
+        <span class="ruby-keyword kw">else</span>
+          <span class="ruby-identifier">emails</span> = []
+          <span class="ruby-identifier">message_ids</span>.<span class="ruby-identifier">each</span> <span class="ruby-keyword kw">do</span> <span class="ruby-operator">|</span><span class="ruby-identifier">message_id</span><span class="ruby-operator">|</span>
+            <span class="ruby-identifier">fetchdata</span> = <span class="ruby-identifier">imap</span>.<span class="ruby-identifier">uid_fetch</span>(<span class="ruby-identifier">message_id</span>, [<span class="ruby-value str">'RFC822'</span>])[<span class="ruby-value">0</span>]
+            <span class="ruby-identifier">emails</span> <span class="ruby-operator">&lt;&lt;</span> <span class="ruby-constant">Mail</span>.<span class="ruby-identifier">new</span>(<span class="ruby-identifier">fetchdata</span>.<span class="ruby-identifier">attr</span>[<span class="ruby-value str">'RFC822'</span>])
+            <span class="ruby-identifier">imap</span>.<span class="ruby-identifier">uid_store</span>(<span class="ruby-identifier">message_id</span>, <span class="ruby-value str">&quot;+FLAGS&quot;</span>, [<span class="ruby-constant">Net</span><span class="ruby-operator">::</span><span class="ruby-constant">IMAP</span><span class="ruby-operator">::</span><span class="ruby-constant">DELETED</span>]) <span class="ruby-keyword kw">if</span> <span class="ruby-identifier">options</span>[<span class="ruby-identifier">:delete_after_find</span>]
+          <span class="ruby-keyword kw">end</span>
+          <span class="ruby-identifier">imap</span>.<span class="ruby-identifier">expunge</span> <span class="ruby-keyword kw">if</span> <span class="ruby-identifier">options</span>[<span class="ruby-identifier">:delete_after_find</span>]
+          <span class="ruby-identifier">emails</span>.<span class="ruby-identifier">size</span> <span class="ruby-operator">==</span> <span class="ruby-value">1</span> <span class="ruby-operator">&amp;&amp;</span> <span class="ruby-identifier">options</span>[<span class="ruby-identifier">:count</span>] <span class="ruby-operator">==</span> <span class="ruby-value">1</span> <span class="ruby-operator">?</span> <span class="ruby-identifier">emails</span>.<span class="ruby-identifier">first</span> <span class="ruby-operator">:</span> <span class="ruby-identifier">emails</span>
+        <span class="ruby-keyword kw">end</span>
+      <span class="ruby-keyword kw">end</span>
+    <span class="ruby-keyword kw">end</span></pre>
+</body>
+</html>

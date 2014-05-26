@@ -1,0 +1,27 @@
+--- !ruby/object:RI::MethodDescription 
+aliases: []
+
+block_params: 
+comment: 
+- !ruby/object:SM::Flow::LIST 
+  contents: 
+  - !ruby/struct:SM::Flow::LI 
+    label: "*"
+    body: how - symbol - the way we look for the object. Supported values are
+  - !ruby/struct:SM::Flow::VERB 
+    body: "             - :name\n             - :id\n             - :index\n"
+  - !ruby/struct:SM::Flow::LI 
+    label: "*"
+    body: what - string - What field, id or name to examine.
+  - !ruby/struct:SM::Flow::LI 
+    label: "*"
+    body: text - string/Array of Strings - The string or array of strings to search for.
+  - !ruby/struct:SM::Flow::LI 
+    label: "*"
+    body: mesg - Optional! string - Set this if you want to supply your own error message
+  type: :BULLET
+full_name: Watir::Simple#assert_text_in_combobox_wrapper
+is_singleton: false
+name: assert_text_in_combobox_wrapper
+params: (how, what, text, mesg=nil)
+visibility: public

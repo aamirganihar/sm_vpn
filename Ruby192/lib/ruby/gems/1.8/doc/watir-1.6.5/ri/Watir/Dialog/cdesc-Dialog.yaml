@@ -1,0 +1,23 @@
+--- !ruby/object:RI::ClassDescription 
+attributes: []
+
+class_methods: []
+
+comment: 
+constants: 
+- !ruby/object:RI::Constant 
+  comment: 
+  name: WindowName
+  value: "'Windows Internet Explorer'"
+full_name: Watir::Dialog
+includes: []
+
+instance_methods: 
+- !ruby/object:RI::MethodSummary 
+  name: button
+- !ruby/object:RI::MethodSummary 
+  name: close
+- !ruby/object:RI::MethodSummary 
+  name: exists?
+name: Dialog
+superclass: Object

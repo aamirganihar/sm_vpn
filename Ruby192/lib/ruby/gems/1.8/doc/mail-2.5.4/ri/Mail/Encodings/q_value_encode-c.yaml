@@ -1,0 +1,16 @@
+--- !ruby/object:RI::MethodDescription 
+aliases: []
+
+block_params: 
+comment: 
+- !ruby/struct:SM::Flow::P 
+  body: Encode a string with Quoted-Printable Encoding and returns it ready to be inserted as a value for a field, that is, in the =?&lt;charset&gt;?Q?&lt;string&gt;?= format
+- !ruby/struct:SM::Flow::P 
+  body: "Example:"
+- !ruby/struct:SM::Flow::VERB 
+  body: " Encodings.q_value_encode('This is \xE3\x81\x82 string', 'UTF-8')\n #=&gt; &quot;=?UTF-8?Q?This_is_=E3=81=82_string?=&quot;\n"
+full_name: Mail::Encodings::q_value_encode
+is_singleton: true
+name: q_value_encode
+params: (encoded_str, encoding = nil)
+visibility: public

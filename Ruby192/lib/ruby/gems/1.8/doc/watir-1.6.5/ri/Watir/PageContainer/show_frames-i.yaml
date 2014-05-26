@@ -1,0 +1,12 @@
+--- !ruby/object:RI::MethodDescription 
+aliases: []
+
+block_params: 
+comment: 
+- !ruby/struct:SM::Flow::P 
+  body: This method is used to display the available html frames that Internet Explorer currently has loaded. This method is usually only used for debugging test scripts.
+full_name: Watir::PageContainer#show_frames
+is_singleton: false
+name: show_frames
+params: ()
+visibility: public

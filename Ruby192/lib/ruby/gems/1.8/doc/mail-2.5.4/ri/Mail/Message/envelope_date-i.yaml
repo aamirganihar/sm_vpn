@@ -1,0 +1,10 @@
+--- !ruby/object:RI::MethodDescription 
+aliases: []
+
+block_params: 
+comment: 
+full_name: Mail::Message#envelope_date
+is_singleton: false
+name: envelope_date
+params: ()
+visibility: public

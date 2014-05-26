@@ -1,0 +1,10 @@
+--- !ruby/object:RI::MethodDescription 
+aliases: []
+
+block_params: 
+comment: 
+full_name: Mail::RFC2822::Address0#dig_comments
+is_singleton: false
+name: dig_comments
+params: (comments, elements)
+visibility: public

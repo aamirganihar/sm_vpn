@@ -1,0 +1,12 @@
+--- !ruby/object:RI::MethodDescription 
+aliases: []
+
+block_params: 
+comment: 
+- !ruby/struct:SM::Flow::P 
+  body: "HACK: only works when one header is there."
+full_name: Packet_List#update_header_width
+is_singleton: false
+name: update_header_width
+params: ()
+visibility: public

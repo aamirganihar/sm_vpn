@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+<!DOCTYPE html 
+     PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+     "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html>
+<head>
+  <title>relative_dir (Selenium::RSpec::Reporting::FilePathStrategy)</title>
+  <meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" />
+  <link rel="stylesheet" href="../../../../.././rdoc-style.css" type="text/css" media="screen" />
+</head>
+<body class="standalone-code">
+  <pre>    <span class="ruby-comment cmt"># File lib/selenium/rspec/reporting/file_path_strategy.rb, line 19</span>
+19:         <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">relative_dir</span>
+20:           <span class="ruby-keyword kw">return</span> <span class="ruby-ivar">@relative_dir</span> <span class="ruby-keyword kw">if</span> <span class="ruby-ivar">@relative_dir</span>
+21:           
+22:           <span class="ruby-identifier">file_name_without_extension</span> = <span class="ruby-constant">File</span>.<span class="ruby-identifier">basename</span>(<span class="ruby-ivar">@final_report_file_path</span>).<span class="ruby-identifier">sub</span>(<span class="ruby-regexp re">/\.[^\.]*$/</span>, <span class="ruby-value str">&quot;&quot;</span>)
+23:           <span class="ruby-ivar">@relative_dir</span> <span class="ruby-operator">||=</span>  <span class="ruby-value str">&quot;resources/&quot;</span> <span class="ruby-operator">+</span> <span class="ruby-identifier">file_name_without_extension</span>
+24:         <span class="ruby-keyword kw">end</span></pre>
+</body>
+</html>

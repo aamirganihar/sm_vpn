@@ -1,0 +1,23 @@
+--- !ruby/object:RI::ClassDescription 
+attributes: []
+
+class_methods: 
+- !ruby/object:RI::MethodSummary 
+  name: new
+comment: 
+constants: 
+- !ruby/object:RI::Constant 
+  comment: 
+  name: FIELD_NAME
+  value: "'content-description'"
+- !ruby/object:RI::Constant 
+  comment: 
+  name: CAPITALIZED_FIELD
+  value: "'Content-Description'"
+full_name: Mail::ContentDescriptionField
+includes: []
+
+instance_methods: []
+
+name: ContentDescriptionField
+superclass: UnstructuredField

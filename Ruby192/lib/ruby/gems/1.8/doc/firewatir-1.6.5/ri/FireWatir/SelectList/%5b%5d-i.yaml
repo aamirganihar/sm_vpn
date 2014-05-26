@@ -1,0 +1,22 @@
+--- !ruby/object:RI::MethodDescription 
+aliases: []
+
+block_params: 
+comment: 
+- !ruby/struct:SM::Flow::P 
+  body: "Description:"
+- !ruby/struct:SM::Flow::VERB 
+  body: "  Get option element at specified index in select list.\n"
+- !ruby/struct:SM::Flow::P 
+  body: "Input:"
+- !ruby/struct:SM::Flow::VERB 
+  body: "  key - option index\n"
+- !ruby/struct:SM::Flow::P 
+  body: "Output:"
+- !ruby/struct:SM::Flow::VERB 
+  body: "  Option element at specified index\n"
+full_name: FireWatir::SelectList#[]
+is_singleton: false
+name: "[]"
+params: (key)
+visibility: public

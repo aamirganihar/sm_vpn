@@ -1,0 +1,26 @@
+--- !ruby/object:RI::MethodDescription 
+aliases: []
+
+block_params: 
+comment: 
+- !ruby/struct:SM::Flow::P 
+  body: "Description:"
+- !ruby/struct:SM::Flow::VERB 
+  body: "  Used to access a definition description element - a &lt;dd&gt; HTML tag.\n"
+- !ruby/struct:SM::Flow::P 
+  body: "Input:"
+- !ruby/struct:SM::Flow::VERB 
+  body: "  - how  - Attribute used to identify the image element.\n  - what - Value of that attribute.\n"
+- !ruby/struct:SM::Flow::P 
+  body: "Typical Usage:"
+- !ruby/struct:SM::Flow::VERB 
+  body: "   ff.dd(:id, 'user_name')                    # access the dd element with an ID of user_name\n   ff.dd(:title, 'address')                   # access the dd element with a title of address\n"
+- !ruby/struct:SM::Flow::P 
+  body: "Returns:"
+- !ruby/struct:SM::Flow::VERB 
+  body: "  Dd object.\n"
+full_name: FireWatir::Container#dd
+is_singleton: false
+name: dd
+params: (how, what = nil)
+visibility: public

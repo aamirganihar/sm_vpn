@@ -1,0 +1,50 @@
+--- !ruby/object:RI::ClassDescription 
+attributes: 
+- !ruby/object:RI::Attribute 
+  comment: 
+  name: additional_args
+  rw: RW
+- !ruby/object:RI::Attribute 
+  comment: 
+  name: firefox_profile
+  rw: R
+- !ruby/object:RI::Attribute 
+  comment: 
+  name: host
+  rw: R
+- !ruby/object:RI::Attribute 
+  comment: 
+  name: jar_file
+  rw: RW
+- !ruby/object:RI::Attribute 
+  comment: 
+  name: log_to
+  rw: RW
+- !ruby/object:RI::Attribute 
+  comment: 
+  name: port
+  rw: R
+- !ruby/object:RI::Attribute 
+  comment: 
+  name: shutdown_command
+  rw: R
+- !ruby/object:RI::Attribute 
+  comment: 
+  name: timeout_in_seconds
+  rw: R
+class_methods: 
+- !ruby/object:RI::MethodSummary 
+  name: new
+comment: 
+constants: []
+
+full_name: Selenium::RemoteControl::RemoteControl
+includes: []
+
+instance_methods: 
+- !ruby/object:RI::MethodSummary 
+  name: start
+- !ruby/object:RI::MethodSummary 
+  name: stop
+name: RemoteControl
+superclass: Object

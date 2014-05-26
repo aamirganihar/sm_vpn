@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+<!DOCTYPE html 
+     PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+     "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html>
+<head>
+  <title>send_key (X11::Window)</title>
+  <meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" />
+  <link rel="stylesheet" href="../../.././rdoc-style.css" type="text/css" media="screen" />
+</head>
+<body class="standalone-code">
+  <pre><span class="ruby-comment cmt"># File lib/firewatir/x11.rb, line 125</span>
+                <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">send_key</span>(<span class="ruby-identifier">key</span>=<span class="ruby-identifier">:enter</span>,<span class="ruby-identifier">sleep</span>=<span class="ruby-keyword kw">nil</span>)
+                        <span class="ruby-comment cmt"># TODO expand this list out, add support for shift, etc.</span>
+                        <span class="ruby-ivar">@@keys</span> = {<span class="ruby-identifier">:enter</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-value">36</span>, <span class="ruby-identifier">:tab</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-value">23</span>} <span class="ruby-keyword kw">unless</span> <span class="ruby-keyword kw">defined?</span><span class="ruby-ivar">@@keys</span>
+                        <span class="ruby-identifier">keycode</span> = <span class="ruby-ivar">@@keys</span>[<span class="ruby-identifier">key</span>]
+                        <span class="ruby-constant">X11</span>.<span class="ruby-identifier">xSetInputFocus</span>(<span class="ruby-ivar">@xdisplay</span>, <span class="ruby-ivar">@xid</span>, <span class="ruby-value">1</span>, <span class="ruby-value">0</span>)
+                        <span class="ruby-identifier">sleep</span>(<span class="ruby-identifier">sleep</span>) <span class="ruby-keyword kw">if</span> <span class="ruby-identifier">sleep</span>
+                        <span class="ruby-identifier">e</span> = <span class="ruby-identifier">create_key_event</span>
+                        <span class="ruby-identifier">e</span>.<span class="ruby-identifier">keycode</span> = <span class="ruby-identifier">keycode</span>
+                        <span class="ruby-identifier">e</span>.<span class="ruby-identifier">type</span> = <span class="ruby-value">2</span> <span class="ruby-comment cmt"># press</span>
+                        <span class="ruby-constant">X11</span>.<span class="ruby-identifier">xSendEvent</span>(<span class="ruby-ivar">@xdisplay</span>,<span class="ruby-ivar">@xid</span>,<span class="ruby-value">1</span>,<span class="ruby-value">1</span>,<span class="ruby-identifier">e</span>)
+                        <span class="ruby-identifier">e</span>.<span class="ruby-identifier">type</span> = <span class="ruby-value">3</span> <span class="ruby-comment cmt"># release</span>
+                        <span class="ruby-constant">X11</span>.<span class="ruby-identifier">xSendEvent</span>(<span class="ruby-ivar">@xdisplay</span>,<span class="ruby-ivar">@xid</span>,<span class="ruby-value">1</span>,<span class="ruby-value">2</span>,<span class="ruby-identifier">e</span>)
+                        <span class="ruby-constant">X11</span>.<span class="ruby-identifier">xFlush</span>(<span class="ruby-ivar">@xdisplay</span>)
+                <span class="ruby-keyword kw">end</span></pre>
+</body>
+</html>

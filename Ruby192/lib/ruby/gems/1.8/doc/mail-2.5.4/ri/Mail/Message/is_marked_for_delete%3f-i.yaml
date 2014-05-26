@@ -1,0 +1,14 @@
+--- !ruby/object:RI::MethodDescription 
+aliases: []
+
+block_params: 
+comment: 
+- !ruby/struct:SM::Flow::P 
+  body: "Returns whether message will be marked for deletion. If so, the message will be deleted at session close (i.e. after #find exits), but only if also using the #find_and_delete method, or by calling #find with :delete_after_find set to true."
+- !ruby/struct:SM::Flow::P 
+  body: "Side-note: Just to be clear, this method will return true even if the message hasn't yet been marked for delete on the mail server. However, if this method returns true, it *will be* marked on the server after each block yields back to #find or #find_and_delete."
+full_name: Mail::Message#is_marked_for_delete?
+is_singleton: false
+name: is_marked_for_delete?
+params: ()
+visibility: public

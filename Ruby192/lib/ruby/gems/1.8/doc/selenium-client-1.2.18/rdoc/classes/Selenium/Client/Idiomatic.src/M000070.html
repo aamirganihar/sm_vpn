@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+<!DOCTYPE html 
+     PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+     "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html>
+<head>
+  <title>wait_for (Selenium::Client::Idiomatic)</title>
+  <meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" />
+  <link rel="stylesheet" href="../../../.././rdoc-style.css" type="text/css" media="screen" />
+</head>
+<body class="standalone-code">
+  <pre>     <span class="ruby-comment cmt"># File lib/selenium/client/idiomatic.rb, line 83</span>
+ 83:       <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">wait_for</span>(<span class="ruby-identifier">options</span>)
+ 84:         <span class="ruby-keyword kw">if</span> <span class="ruby-identifier">options</span>[<span class="ruby-identifier">:wait_for</span>] <span class="ruby-operator">==</span> <span class="ruby-identifier">:page</span>
+ 85:           <span class="ruby-identifier">wait_for_page</span> <span class="ruby-identifier">options</span>[<span class="ruby-identifier">:timeout_in_seconds</span>]
+ 86:               <span class="ruby-keyword kw">elsif</span> <span class="ruby-identifier">options</span>[<span class="ruby-identifier">:wait_for</span>] <span class="ruby-operator">==</span> <span class="ruby-identifier">:ajax</span>
+ 87:                   <span class="ruby-identifier">wait_for_ajax</span> <span class="ruby-identifier">options</span>
+ 88:               <span class="ruby-keyword kw">elsif</span> <span class="ruby-identifier">options</span>[<span class="ruby-identifier">:wait_for</span>] <span class="ruby-operator">==</span> <span class="ruby-identifier">:element</span>
+ 89:                   <span class="ruby-identifier">wait_for_element</span> <span class="ruby-identifier">options</span>[<span class="ruby-identifier">:element</span>], <span class="ruby-identifier">options</span>
+ 90:               <span class="ruby-keyword kw">elsif</span> <span class="ruby-identifier">options</span>[<span class="ruby-identifier">:wait_for</span>] <span class="ruby-operator">==</span> <span class="ruby-identifier">:no_element</span>
+ 91:                   <span class="ruby-identifier">wait_for_no_element</span> <span class="ruby-identifier">options</span>[<span class="ruby-identifier">:element</span>], <span class="ruby-identifier">options</span>
+ 92:               <span class="ruby-keyword kw">elsif</span> <span class="ruby-identifier">options</span>[<span class="ruby-identifier">:wait_for</span>] <span class="ruby-operator">==</span> <span class="ruby-identifier">:text</span>
+ 93:                   <span class="ruby-identifier">wait_for_text</span> <span class="ruby-identifier">options</span>[<span class="ruby-identifier">:text</span>], <span class="ruby-identifier">options</span>
+ 94:               <span class="ruby-keyword kw">elsif</span> <span class="ruby-identifier">options</span>[<span class="ruby-identifier">:wait_for</span>] <span class="ruby-operator">==</span> <span class="ruby-identifier">:no_text</span>
+ 95:           <span class="ruby-identifier">wait_for_no_text</span> <span class="ruby-identifier">options</span>[<span class="ruby-identifier">:text</span>], <span class="ruby-identifier">options</span>
+ 96:               <span class="ruby-keyword kw">elsif</span> <span class="ruby-identifier">options</span>[<span class="ruby-identifier">:wait_for</span>] <span class="ruby-operator">==</span> <span class="ruby-identifier">:effects</span>
+ 97:                   <span class="ruby-identifier">wait_for_effects</span> <span class="ruby-identifier">options</span>
+ 98:         <span class="ruby-keyword kw">elsif</span> <span class="ruby-identifier">options</span>[<span class="ruby-identifier">:wait_for</span>] <span class="ruby-operator">==</span> <span class="ruby-identifier">:popup</span>
+ 99:             <span class="ruby-identifier">wait_for_popup</span> <span class="ruby-identifier">options</span>[<span class="ruby-identifier">:window</span>], <span class="ruby-identifier">options</span>[<span class="ruby-identifier">:timeout_in_seconds</span>]
+100:             <span class="ruby-identifier">select_window</span> <span class="ruby-identifier">options</span>[<span class="ruby-identifier">:window</span>] <span class="ruby-keyword kw">if</span> <span class="ruby-identifier">options</span>[<span class="ruby-identifier">:select</span>]
+101:         <span class="ruby-keyword kw">elsif</span> <span class="ruby-identifier">options</span>[<span class="ruby-identifier">:wait_for</span>] <span class="ruby-operator">==</span> <span class="ruby-identifier">:value</span>
+102:             <span class="ruby-identifier">wait_for_field_value</span> <span class="ruby-identifier">options</span>[<span class="ruby-identifier">:element</span>], <span class="ruby-identifier">options</span>[<span class="ruby-identifier">:value</span>], <span class="ruby-identifier">options</span>
+103:         <span class="ruby-keyword kw">elsif</span> <span class="ruby-identifier">options</span>[<span class="ruby-identifier">:wait_for</span>] <span class="ruby-operator">==</span> <span class="ruby-identifier">:no_value</span>
+104:             <span class="ruby-identifier">wait_for_no_field_value</span> <span class="ruby-identifier">options</span>[<span class="ruby-identifier">:element</span>], <span class="ruby-identifier">options</span>[<span class="ruby-identifier">:value</span>], <span class="ruby-identifier">options</span>
+105:         <span class="ruby-keyword kw">elsif</span> <span class="ruby-identifier">options</span>[<span class="ruby-identifier">:wait_for</span>] <span class="ruby-operator">==</span> <span class="ruby-identifier">:visible</span>
+106:             <span class="ruby-identifier">wait_for_visible</span> <span class="ruby-identifier">options</span>[<span class="ruby-identifier">:element</span>], <span class="ruby-identifier">options</span>
+107:         <span class="ruby-keyword kw">elsif</span> <span class="ruby-identifier">options</span>[<span class="ruby-identifier">:wait_for</span>] <span class="ruby-operator">==</span> <span class="ruby-identifier">:not_visible</span>
+108:             <span class="ruby-identifier">wait_for_not_visible</span> <span class="ruby-identifier">options</span>[<span class="ruby-identifier">:element</span>], <span class="ruby-identifier">options</span>
+109:               <span class="ruby-keyword kw">elsif</span> <span class="ruby-identifier">options</span>[<span class="ruby-identifier">:wait_for</span>] <span class="ruby-operator">==</span> <span class="ruby-identifier">:condition</span>
+110:                   <span class="ruby-identifier">wait_for_condition</span> <span class="ruby-identifier">options</span>[<span class="ruby-identifier">:javascript</span>], <span class="ruby-identifier">options</span>[<span class="ruby-identifier">:timeout_in_seconds</span>]
+111:         <span class="ruby-keyword kw">end</span>
+112:       <span class="ruby-keyword kw">end</span></pre>
+</body>
+</html>

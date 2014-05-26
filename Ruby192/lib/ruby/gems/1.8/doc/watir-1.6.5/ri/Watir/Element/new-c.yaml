@@ -1,0 +1,12 @@
+--- !ruby/object:RI::MethodDescription 
+aliases: []
+
+block_params: 
+comment: 
+- !ruby/struct:SM::Flow::P 
+  body: ole_object - the ole object for the element being wrapped
+full_name: Watir::Element::new
+is_singleton: true
+name: new
+params: (ole_object)
+visibility: public

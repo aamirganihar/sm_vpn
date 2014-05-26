@@ -1,0 +1,19 @@
+--- !ruby/object:RI::MethodDescription 
+aliases: []
+
+block_params: 
+comment: 
+- !ruby/object:SM::Flow::LIST 
+  contents: 
+  - !ruby/struct:SM::Flow::LI 
+    label: "-"
+    body: how - Attribute to identify the element.
+  - !ruby/struct:SM::Flow::LI 
+    label: "-"
+    body: what - Value of that attribute.
+  type: :BULLET
+full_name: FireWatir::NonControlElement::new
+is_singleton: true
+name: new
+params: (container, how, what)
+visibility: public

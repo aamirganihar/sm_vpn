@@ -1,0 +1,14 @@
+--- !ruby/object:RI::MethodDescription 
+aliases: []
+
+block_params: 
+comment: 
+- !ruby/struct:SM::Flow::P 
+  body: defaults all missing methods to the array of elements, to be able to use the row as an array
+- !ruby/struct:SM::Flow::VERB 
+  body: "       def method_missing(aSymbol, *args)\n           return @o.send(aSymbol, *args)\n       end\n"
+full_name: Watir::TableRow#column_count
+is_singleton: false
+name: column_count
+params: ()
+visibility: public

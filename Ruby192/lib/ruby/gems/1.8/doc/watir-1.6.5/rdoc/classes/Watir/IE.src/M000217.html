@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+<!DOCTYPE html 
+     PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+     "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html>
+<head>
+  <title>_new_window_init (Watir::IE)</title>
+  <meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" />
+  <link rel="stylesheet" href="../../.././rdoc-style.css" type="text/css" media="screen" />
+</head>
+<body class="standalone-code">
+  <pre><span class="ruby-comment cmt"># File lib/watir/ie-class.rb, line 87</span>
+    <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">_new_window_init</span>
+      <span class="ruby-identifier">create_browser_window</span>
+      <span class="ruby-identifier">initialize_options</span>
+      <span class="ruby-identifier">goto</span> <span class="ruby-value str">'about:blank'</span> <span class="ruby-comment cmt"># this avoids numerous problems caused by lack of a document</span>
+    <span class="ruby-keyword kw">end</span></pre>
+</body>
+</html>

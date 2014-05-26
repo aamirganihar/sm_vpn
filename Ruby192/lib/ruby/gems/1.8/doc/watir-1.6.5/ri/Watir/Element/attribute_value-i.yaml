@@ -1,0 +1,12 @@
+--- !ruby/object:RI::MethodDescription 
+aliases: []
+
+block_params: 
+comment: 
+- !ruby/struct:SM::Flow::P 
+  body: Get attribute value for any attribute of the element. Returns null if attribute doesn't exist.
+full_name: Watir::Element#attribute_value
+is_singleton: false
+name: attribute_value
+params: (attribute_name)
+visibility: public

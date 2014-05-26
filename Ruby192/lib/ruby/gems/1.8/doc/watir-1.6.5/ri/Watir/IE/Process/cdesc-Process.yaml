@@ -1,0 +1,24 @@
+--- !ruby/object:RI::ClassDescription 
+attributes: 
+- !ruby/object:RI::Attribute 
+  comment: 
+  name: process_id
+  rw: R
+class_methods: 
+- !ruby/object:RI::MethodSummary 
+  name: new
+- !ruby/object:RI::MethodSummary 
+  name: process_id_from_hwnd
+- !ruby/object:RI::MethodSummary 
+  name: start
+comment: 
+constants: []
+
+full_name: Watir::IE::Process
+includes: []
+
+instance_methods: 
+- !ruby/object:RI::MethodSummary 
+  name: window
+name: Process
+superclass: Object

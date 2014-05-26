@@ -1,0 +1,12 @@
+--- !ruby/object:RI::MethodDescription 
+aliases: []
+
+block_params: 
+comment: 
+- !ruby/struct:SM::Flow::P 
+  body: Converts a string into a match_data representation.
+full_name: Search_Engine#str_to_match_data
+is_singleton: false
+name: str_to_match_data
+params: (str, index=0)
+visibility: public

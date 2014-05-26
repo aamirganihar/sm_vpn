@@ -1,0 +1,18 @@
+--- !ruby/object:RI::ClassDescription 
+attributes: []
+
+class_methods: 
+- !ruby/object:RI::MethodSummary 
+  name: new
+comment: 
+- !ruby/struct:SM::Flow::P 
+  body: The SpFileStream automation object enables data streams to be read and written as files.
+constants: []
+
+full_name: Win32::SpFileStream
+includes: []
+
+instance_methods: []
+
+name: SpFileStream
+superclass: SAPI5

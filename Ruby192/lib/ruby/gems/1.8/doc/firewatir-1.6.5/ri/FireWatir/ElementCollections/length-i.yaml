@@ -1,0 +1,19 @@
+--- !ruby/object:RI::MethodDescription 
+aliases: 
+- !ruby/object:RI::AliasName 
+  name: size
+block_params: 
+comment: 
+- !ruby/struct:SM::Flow::P 
+  body: "Description:"
+- !ruby/struct:SM::Flow::VERB 
+  body: "  Gets the length of elements of same tag and type found on the page.\n"
+- !ruby/struct:SM::Flow::P 
+  body: "Ouput:"
+- !ruby/struct:SM::Flow::VERB 
+  body: "  Count of elements found on the page.\n"
+full_name: FireWatir::ElementCollections#length
+is_singleton: false
+name: length
+params: ()
+visibility: public

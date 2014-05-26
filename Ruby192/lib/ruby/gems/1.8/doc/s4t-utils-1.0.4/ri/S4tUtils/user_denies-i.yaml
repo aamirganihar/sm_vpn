@@ -1,0 +1,12 @@
+--- !ruby/object:RI::MethodDescription 
+aliases: []
+
+block_params: 
+comment: 
+- !ruby/struct:SM::Flow::P 
+  body: "Alias for #user_disputes"
+full_name: S4tUtils#user_denies
+is_singleton: false
+name: user_denies
+params: (fact, &block)
+visibility: public

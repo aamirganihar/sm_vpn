@@ -1,0 +1,13 @@
+--- !ruby/object:RI::MethodDescription 
+aliases: 
+- !ruby/object:RI::AliasName 
+  name: get_ctrl_txt
+block_params: 
+comment: 
+- !ruby/struct:SM::Flow::P 
+  body: Get the text in the handle for the given control
+full_name: WinClicker#getControlText
+is_singleton: false
+name: getControlText
+params: (hWnd)
+visibility: public

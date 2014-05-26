@@ -1,0 +1,17 @@
+--- !ruby/object:RI::ClassDescription 
+attributes: []
+
+class_methods: []
+
+comment: 
+- !ruby/struct:SM::Flow::P 
+  body: The Win32::Sound::Error class is typically raised if any of the Win32::Sound methods fail.
+constants: []
+
+full_name: Win32::Sound::Error
+includes: []
+
+instance_methods: []
+
+name: Error
+superclass: StandardError

@@ -1,0 +1,19 @@
+--- !ruby/object:RI::ClassDescription 
+attributes: []
+
+class_methods: []
+
+comment: 
+- !ruby/struct:SM::Flow::P 
+  body: Extension for String class. This feature is included in Ruby 1.9 or later but not occur TypeError.
+- !ruby/struct:SM::Flow::P 
+  body: String#% method which accept &quot;named argument&quot;. The translator can know the meaning of the msgids using &quot;named argument&quot; instead of %s/%d style.
+constants: []
+
+full_name: String
+includes: []
+
+instance_methods: []
+
+name: String
+superclass: Object

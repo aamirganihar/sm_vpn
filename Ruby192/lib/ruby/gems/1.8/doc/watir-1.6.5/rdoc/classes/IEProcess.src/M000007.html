@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+<!DOCTYPE html 
+     PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+     "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html>
+<head>
+  <title>stop (IEProcess)</title>
+  <meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" />
+  <link rel="stylesheet" href="../.././rdoc-style.css" type="text/css" media="screen" />
+</head>
+<body class="standalone-code">
+  <pre><span class="ruby-comment cmt"># File lib/watir/contrib/ie-new-process.rb, line 7</span>
+  <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">stop</span>
+    <span class="ruby-identifier">right_to_terminate_process</span> = <span class="ruby-value">1</span>
+    <span class="ruby-identifier">handle</span> = <span class="ruby-constant">Win32API</span>.<span class="ruby-identifier">new</span>(<span class="ruby-value str">'kernel32.dll'</span>, <span class="ruby-value str">'OpenProcess'</span>, <span class="ruby-value str">'lil'</span>, <span class="ruby-value str">'l'</span>).
+    <span class="ruby-identifier">call</span>(<span class="ruby-identifier">right_to_terminate_process</span>, <span class="ruby-value">0</span>, <span class="ruby-ivar">@process_id</span>)
+    <span class="ruby-constant">Win32API</span>.<span class="ruby-identifier">new</span>(<span class="ruby-value str">'kernel32.dll'</span>, <span class="ruby-value str">'TerminateProcess'</span>, <span class="ruby-value str">'ll'</span>, <span class="ruby-value str">'l'</span>).<span class="ruby-identifier">call</span>(<span class="ruby-identifier">handle</span>, <span class="ruby-value">0</span>)
+  <span class="ruby-keyword kw">end</span></pre>
+</body>
+</html>

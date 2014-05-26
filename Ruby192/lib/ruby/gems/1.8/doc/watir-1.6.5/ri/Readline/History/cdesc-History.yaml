@@ -1,0 +1,20 @@
+--- !ruby/object:RI::ClassDescription 
+attributes: []
+
+class_methods: 
+- !ruby/object:RI::MethodSummary 
+  name: log=
+- !ruby/object:RI::MethodSummary 
+  name: start_session_log
+- !ruby/object:RI::MethodSummary 
+  name: write_log
+comment: 
+constants: []
+
+full_name: Readline::History
+includes: []
+
+instance_methods: []
+
+name: History
+superclass: 

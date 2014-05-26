@@ -1,0 +1,22 @@
+--- !ruby/object:RI::MethodDescription 
+aliases: []
+
+block_params: 
+comment: 
+- !ruby/struct:SM::Flow::P 
+  body: "Description:"
+- !ruby/struct:SM::Flow::VERB 
+  body: "  This method shows the available objects on the current page.\n  This is usually only used for debugging or writing new test scripts.\n  This is a nice feature to help find out what HTML objects are on a page\n  when developing a test case using FireWatir.\n"
+- !ruby/struct:SM::Flow::P 
+  body: "Typical Usage:"
+- !ruby/struct:SM::Flow::VERB 
+  body: "  ff.show_all_objects\n"
+- !ruby/struct:SM::Flow::P 
+  body: "Output:"
+- !ruby/struct:SM::Flow::VERB 
+  body: "  Prints all the available elements on the page.\n"
+full_name: FireWatir::Container#show_all_objects
+is_singleton: false
+name: show_all_objects
+params: ()
+visibility: public

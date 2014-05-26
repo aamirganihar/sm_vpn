@@ -1,0 +1,10 @@
+--- !ruby/object:RI::MethodDescription 
+aliases: []
+
+block_params: 
+comment: 
+full_name: Mail::Ruby19::q_value_encode
+is_singleton: true
+name: q_value_encode
+params: (str, encoding = nil)
+visibility: public

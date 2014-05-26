@@ -1,0 +1,12 @@
+--- !ruby/object:RI::MethodDescription 
+aliases: []
+
+block_params: 
+comment: 
+- !ruby/struct:SM::Flow::P 
+  body: Retrieve the data from a particular time zone
+full_name: Timezone::Zone::get_zone_data
+is_singleton: true
+name: get_zone_data
+params: (zone)
+visibility: public

@@ -1,0 +1,12 @@
+--- !ruby/object:RI::MethodDescription 
+aliases: []
+
+block_params: 
+comment: 
+- !ruby/struct:SM::Flow::P 
+  body: A StandardError is thrown if the <em>fact</em> the user claims is true is actually false. The <em>block</em> is called to provide the exception message.
+full_name: S4tUtils#user_claims
+is_singleton: false
+name: user_claims
+params: (fact, &block)
+visibility: public

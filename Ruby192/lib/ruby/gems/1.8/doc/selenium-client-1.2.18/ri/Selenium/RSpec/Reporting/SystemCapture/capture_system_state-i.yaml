@@ -1,0 +1,10 @@
+--- !ruby/object:RI::MethodDescription 
+aliases: []
+
+block_params: 
+comment: 
+full_name: Selenium::RSpec::Reporting::SystemCapture#capture_system_state
+is_singleton: false
+name: capture_system_state
+params: ()
+visibility: public

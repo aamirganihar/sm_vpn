@@ -1,0 +1,12 @@
+--- !ruby/object:RI::MethodDescription 
+aliases: []
+
+block_params: 
+comment: 
+- !ruby/struct:SM::Flow::P 
+  body: The length of the wide string in chars.
+full_name: WideString#length
+is_singleton: false
+name: length
+params: ()
+visibility: public

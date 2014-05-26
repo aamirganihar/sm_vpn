@@ -1,0 +1,12 @@
+--- !ruby/object:RI::MethodDescription 
+aliases: []
+
+block_params: 
+comment: 
+- !ruby/struct:SM::Flow::P 
+  body: Same as the standard MRI Dir[] method except that it handles backslashes in path names.
+full_name: Dir::[]
+is_singleton: true
+name: "[]"
+params: (glob_pattern)
+visibility: public

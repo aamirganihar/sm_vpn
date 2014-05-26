@@ -1,0 +1,63 @@
+--- !ruby/object:RI::ClassDescription 
+attributes: []
+
+class_methods: []
+
+comment: 
+constants: []
+
+full_name: Mail::Utilities
+includes: 
+- !ruby/object:RI::IncludedModule 
+  name: Patterns
+instance_methods: 
+- !ruby/object:RI::MethodSummary 
+  name: atom_safe?
+- !ruby/object:RI::MethodSummary 
+  name: bracket
+- !ruby/object:RI::MethodSummary 
+  name: capitalize_field
+- !ruby/object:RI::MethodSummary 
+  name: constantize
+- !ruby/object:RI::MethodSummary 
+  name: dasherize
+- !ruby/object:RI::MethodSummary 
+  name: dquote
+- !ruby/object:RI::MethodSummary 
+  name: escape_paren
+- !ruby/object:RI::MethodSummary 
+  name: map_lines
+- !ruby/object:RI::MethodSummary 
+  name: map_lines
+- !ruby/object:RI::MethodSummary 
+  name: map_with_index
+- !ruby/object:RI::MethodSummary 
+  name: map_with_index
+- !ruby/object:RI::MethodSummary 
+  name: match_to_s
+- !ruby/object:RI::MethodSummary 
+  name: paren
+- !ruby/object:RI::MethodSummary 
+  name: quote_atom
+- !ruby/object:RI::MethodSummary 
+  name: quote_phrase
+- !ruby/object:RI::MethodSummary 
+  name: quote_token
+- !ruby/object:RI::MethodSummary 
+  name: token_safe?
+- !ruby/object:RI::MethodSummary 
+  name: unbracket
+- !ruby/object:RI::MethodSummary 
+  name: underscoreize
+- !ruby/object:RI::MethodSummary 
+  name: unparen
+- !ruby/object:RI::MethodSummary 
+  name: unquote
+- !ruby/object:RI::MethodSummary 
+  name: uri_escape
+- !ruby/object:RI::MethodSummary 
+  name: uri_parser
+- !ruby/object:RI::MethodSummary 
+  name: uri_unescape
+name: Utilities
+superclass: 

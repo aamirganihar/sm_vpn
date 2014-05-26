@@ -1,0 +1,19 @@
+--- !ruby/object:RI::ClassDescription 
+attributes: []
+
+class_methods: 
+- !ruby/object:RI::MethodSummary 
+  name: parse
+comment: 
+constants: 
+- !ruby/object:RI::Constant 
+  comment: 
+  name: FORMATS
+  value: "[       '%Y %b', # 1900 Oct       '%Y %b %e', # 1948 May 15     ]"
+full_name: Timezone::Parser::Zone::Until
+includes: []
+
+instance_methods: []
+
+name: Until
+superclass: 

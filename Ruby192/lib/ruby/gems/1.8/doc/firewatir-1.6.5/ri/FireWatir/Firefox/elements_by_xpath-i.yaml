@@ -1,0 +1,22 @@
+--- !ruby/object:RI::MethodDescription 
+aliases: []
+
+block_params: 
+comment: 
+- !ruby/struct:SM::Flow::P 
+  body: "Description:"
+- !ruby/struct:SM::Flow::VERB 
+  body: "  Returns the array of elements that matches the xpath query.\n"
+- !ruby/struct:SM::Flow::P 
+  body: "Input:"
+- !ruby/struct:SM::Flow::VERB 
+  body: "  Xpath expression or query.\n"
+- !ruby/struct:SM::Flow::P 
+  body: "Output:"
+- !ruby/struct:SM::Flow::VERB 
+  body: "  Array of elements matching xpath query.\n"
+full_name: FireWatir::Firefox#elements_by_xpath
+is_singleton: false
+name: elements_by_xpath
+params: (xpath)
+visibility: public

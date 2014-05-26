@@ -1,0 +1,24 @@
+--- !ruby/object:RI::MethodDescription 
+aliases: []
+
+block_params: 
+comment: 
+- !ruby/struct:SM::Flow::P 
+  body: "A switch is an option that doesn't take a value. A switch described as <tt>&quot;--switch&quot;</tt> has these effects:"
+- !ruby/object:SM::Flow::LIST 
+  contents: 
+  - !ruby/struct:SM::Flow::LI 
+    label: "*"
+    body: If it is not given, the <em>choice</em> is the default value or is not present in the hash that holds all the choices.
+  - !ruby/struct:SM::Flow::LI 
+    label: "*"
+    body: If it is given as <tt>--switch</tt>, the <em>choice</em> has the value <tt>&quot;true&quot;</tt>. (If the <em>choice</em> was described in ChoicesBuilder#add_choice as having a <tt>:type =&gt; :boolean</tt>, that value is converted from a string to <tt>true</tt>.)
+  - !ruby/struct:SM::Flow::LI 
+    label: "*"
+    body: If it is given as <tt>--no-switch</tt>, the <em>choice</em> has the value <tt>&quot;false&quot;</tt>.
+  type: :BULLET
+full_name: UserChoices::CommandLineSource#uses_switch
+is_singleton: false
+name: uses_switch
+params: (choice, *args)
+visibility: public

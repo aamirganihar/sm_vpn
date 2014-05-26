@@ -1,0 +1,22 @@
+--- !ruby/object:RI::MethodDescription 
+aliases: []
+
+block_params: 
+comment: 
+- !ruby/struct:SM::Flow::P 
+  body: This is the main method for accessing a hidden field. Usually an &lt;input type = hidden&gt; HTML tag
+- !ruby/struct:SM::Flow::VERB 
+  body: " *  how   - symbol - how we access the hidden field, :index, :id, :name etc\n *  what  - string, integer or regular expression - what we are looking for,\n"
+- !ruby/struct:SM::Flow::P 
+  body: Valid values for 'how' are listed in the Watir Wiki - http://wiki.openqa.org/display/WTR/Methods+supported+by+Element
+- !ruby/struct:SM::Flow::P 
+  body: returns a Hidden object
+- !ruby/struct:SM::Flow::P 
+  body: Typical usage
+- !ruby/struct:SM::Flow::VERB 
+  body: "   ie.hidden(:id, 'session_id')                 # access the hidden field with an ID of session_id\n   ie.hidden(:name, 'temp_value')               # access the hidden field with a name of temp_value\n   ie.hidden(:index, 2)                         # access the second hidden field on the page (1 based, so the first field is accessed with :index,1)\n   ie.hidden(:xpath, &quot;//input[@type='hidden' and @id='session_value']/&quot;)    # access the hidden field with an ID of session_id\n"
+full_name: Watir::Container#hidden
+is_singleton: false
+name: hidden
+params: (how, what=nil)
+visibility: public

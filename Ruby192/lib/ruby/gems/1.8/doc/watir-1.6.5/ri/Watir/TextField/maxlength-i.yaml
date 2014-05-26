@@ -1,0 +1,10 @@
+--- !ruby/object:RI::MethodDescription 
+aliases: []
+
+block_params: 
+comment: 
+full_name: Watir::TextField#maxlength
+is_singleton: false
+name: maxlength
+params: ()
+visibility: public

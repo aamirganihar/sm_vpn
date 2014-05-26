@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+<!DOCTYPE html 
+     PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+     "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html>
+<head>
+  <title>new (FireWatir::Firefox)</title>
+  <meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" />
+  <link rel="stylesheet" href="../../.././rdoc-style.css" type="text/css" media="screen" />
+</head>
+<body class="standalone-code">
+  <pre><span class="ruby-comment cmt"># File lib/firewatir/firefox.rb, line 109</span>
+    <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">initialize</span>(<span class="ruby-identifier">options</span> = {})
+      <span class="ruby-keyword kw">if</span>(<span class="ruby-identifier">options</span>.<span class="ruby-identifier">kind_of?</span>(<span class="ruby-constant">Integer</span>))
+        <span class="ruby-identifier">options</span> = {<span class="ruby-identifier">:waitTime</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-identifier">options</span>}
+      <span class="ruby-keyword kw">end</span>
+
+      <span class="ruby-comment cmt"># check for jssh not running, firefox may be open but not with -jssh</span>
+      <span class="ruby-comment cmt"># if its not open at all, regardless of the :suppress_launch_process option start it</span>
+      <span class="ruby-comment cmt"># error if running without jssh, we don't want to kill their current window (mac only)</span>
+      <span class="ruby-identifier">jssh_down</span> = <span class="ruby-keyword kw">false</span>
+      <span class="ruby-keyword kw">begin</span>
+        <span class="ruby-identifier">set_defaults</span>()
+      <span class="ruby-keyword kw">rescue</span> <span class="ruby-constant">Watir</span><span class="ruby-operator">::</span><span class="ruby-constant">Exception</span><span class="ruby-operator">::</span><span class="ruby-constant">UnableToStartJSShException</span>
+        <span class="ruby-identifier">jssh_down</span> = <span class="ruby-keyword kw">true</span>
+      <span class="ruby-keyword kw">end</span>
+
+      <span class="ruby-keyword kw">if</span> <span class="ruby-identifier">current_os</span> <span class="ruby-operator">==</span> <span class="ruby-identifier">:macosx</span> <span class="ruby-operator">&amp;&amp;</span> <span class="ruby-operator">!</span><span class="ruby-value">%x{ps x | grep firefox-bin | grep -v grep}</span>.<span class="ruby-identifier">empty?</span>
+        <span class="ruby-identifier">raise</span> <span class="ruby-value str">&quot;Firefox is running without -jssh&quot;</span> <span class="ruby-keyword kw">if</span> <span class="ruby-identifier">jssh_down</span>
+        <span class="ruby-identifier">open_window</span> <span class="ruby-keyword kw">unless</span> <span class="ruby-identifier">options</span>[<span class="ruby-identifier">:suppress_launch_process</span>]
+      <span class="ruby-keyword kw">elsif</span> <span class="ruby-keyword kw">not</span> <span class="ruby-identifier">options</span>[<span class="ruby-identifier">:suppress_launch_process</span>]
+        <span class="ruby-identifier">launch_browser</span>(<span class="ruby-identifier">options</span>)
+      <span class="ruby-keyword kw">end</span>
+
+      <span class="ruby-identifier">set_defaults</span>()
+      <span class="ruby-identifier">get_window_number</span>()
+      <span class="ruby-identifier">set_browser_document</span>()
+    <span class="ruby-keyword kw">end</span></pre>
+</body>
+</html>

@@ -1,0 +1,10 @@
+--- !ruby/object:RI::MethodDescription 
+aliases: []
+
+block_params: 
+comment: 
+full_name: Watir::Element#assert_enabled
+is_singleton: false
+name: assert_enabled
+params: ()
+visibility: public

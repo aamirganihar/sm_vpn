@@ -1,0 +1,294 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+<!DOCTYPE html 
+     PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+     "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+  <title>File: README.txt</title>
+  <meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" />
+  <meta http-equiv="Content-Script-Type" content="text/javascript" />
+  <link rel="stylesheet" href="../../.././rdoc-style.css" type="text/css" media="screen" />
+  <script type="text/javascript">
+  // <![CDATA[
+
+  function popupCode( url ) {
+    window.open(url, "Code", "resizable=yes,scrollbars=yes,toolbar=no,status=no,height=150,width=400")
+  }
+
+  function toggleCode( id ) {
+    if ( document.getElementById )
+      elem = document.getElementById( id );
+    else if ( document.all )
+      elem = eval( "document.all." + id );
+    else
+      return false;
+
+    elemStyle = elem.style;
+    
+    if ( elemStyle.display != "block" ) {
+      elemStyle.display = "block"
+    } else {
+      elemStyle.display = "none"
+    }
+
+    return true;
+  }
+  
+  // Make codeblocks hidden by default
+  document.writeln( "<style type=\"text/css\">div.method-source-code { display: none }</style>" )
+  
+  // ]]>
+  </script>
+
+</head>
+<body>
+
+
+
+  <div id="fileHeader">
+    <h1>README.txt</h1>
+    <table class="header-table">
+    <tr class="top-aligned-row">
+      <td><strong>Path:</strong></td>
+      <td>examples/older/README.txt
+      </td>
+    </tr>
+    <tr class="top-aligned-row">
+      <td><strong>Last Update:</strong></td>
+      <td>Thu Aug 12 10:39:46 +0530 2010</td>
+    </tr>
+    </table>
+  </div>
+  <!-- banner header -->
+
+  <div id="bodyContent">
+
+
+
+  <div id="contextContent">
+
+    <div id="description">
+      <p>
+Here are brief instructions for using the different scripts in this
+directory. The tutorial files aren&#8216;t described here; instead, the
+tutorial (on the website) describes them.
+</p>
+<pre>
+                      == Command-line arguments ==
+</pre>
+<p>
++ Help is generated for you:
+</p>
+<p>
+prompt&gt; ruby command-line.rb &#8212;help
+</p>
+<p>
++ Options are placed into a hash, as is the argument list
+</p>
+<p>
+prompt&gt; ruby command-line.rb &#8212;choice cho sophie paul dawn me
+</p>
+<p>
++ The usual variant ways of specifying options
+</p>
+<p>
+prompt&gt; ruby command-line.rb -c choice prompt&gt; ruby command-line.rb
+-cchoice prompt&gt; ruby command-line.rb &#8212;choi choice prompt&gt; ruby
+command-line.rb &#8212;choi choice &#8212; -name1- -name2-
+</p>
+<p>
++ There are error messages for extra and malformed options
+</p>
+<p>
+prompt&gt; ruby command-line.rb &#8212;choice prompt&gt; ruby
+command-line.rb &#8212;other 3 &#8212; choice
+</p>
+<pre>
+                         == Default values ==
+</pre>
+<p>
++ You can specify default values when you define choices.
+</p>
+<p>
+prompt&gt; ruby default-values.rb &#8212;choice specific prompt&gt; ruby
+default-values.rb
+</p>
+<p>
++ Note: defaulting behavior applies to other sources of choices, not
+</p>
+<pre>
+   just command lines.
+
+                       == Optional arguments ==
+</pre>
+<p>
++ When single optional arguments are required, the result is not a
+</p>
+<pre>
+  list - it's either the value or nothing.
+</pre>
+<p>
+prompt&gt; ruby default-values.rb only-arg
+</p>
+<h2>Type checks and conversions</h2>
+<p>
++ There are ways to describe what kind of thing an argument
+</p>
+<pre>
+   is. (Currently limited.)
+</pre>
+<p>
+prompt&gt; ruby types.rb &#8212;a-or-b not-a argument prompt&gt; ruby
+types.rb &#8212;must-be-integer 1d argument prompt&gt; ruby types.rb
+&#8212;option-list first,second argument
+</p>
+<p>
++ Integer-valued options are converted into integers, not left as
+</p>
+<pre>
+   strings:
+</pre>
+<p>
+prompt&gt; ruby types.rb &#8212;must-be-integer 3 argument
+</p>
+<p>
++ Type-checking and type conversions apply to all sources, not just
+</p>
+<pre>
+   command lines.
+
+                       == Required Arguments ==
+</pre>
+<p>
++ You can require exactly one argument:
+</p>
+<p>
+prompt&gt; ruby types.rb prompt&gt; ruby types.rb argument extra-argument
+</p>
+<pre>
+              == Switches (values without arguments) ==
+</pre>
+<p>
++ Switches can also be specified. Typically, their values are either
+</p>
+<pre>
+   true or false (rather than strings or numbers).
+</pre>
+<p>
++ How they are given on the command line may be unfamiliar to you:
+</p>
+<p>
+prompt&gt; ruby switches.rb &#8212;help
+</p>
+<p>
++ Examples of use:
+</p>
+<p>
+prompt&gt; ruby switches.rb 1 2 prompt&gt; ruby switches.rb &#8212;switch 1
+2 prompt&gt; ruby switches.rb -s 2 1 prompt&gt; ruby switches.rb
+&#8212;no-switch 1 2
+</p>
+<h2>A range of arguments ==</h2>
+<p>
++ You can require that the number of arguments be in a range. In this
+</p>
+<pre>
+   case, it's 2-4:
+</pre>
+<p>
+prompt&gt; ruby switches.rb 1 prompt&gt; ruby switches.rb 1 2 prompt&gt;
+ruby switches.rb 1 2 3 4 prompt&gt; ruby switches.rb 1 2 3 4 5
+</p>
+<p>
++ You can also require any particular exact number of arguments:
+</p>
+<p>
+prompt&gt; ruby two-args.rb 1 prompt&gt; ruby two-args.rb 1 2 prompt&gt;
+ruby two-args.rb 1 2 3
+</p>
+<pre>
+                         == Postprocessing ==
+</pre>
+<p>
++ You can also postprocess choices into a form more convenient for the
+</p>
+<pre>
+  rest of the program.
+</pre>
+<p>
+prompt&gt; ruby postprocess.rb 1 2
+</p>
+<pre>
+                        == Multiple Sources ==
+</pre>
+<p>
++ First see what happens when no arguments are given.
+</p>
+<p>
+prompt&gt; ruby command-line.rb
+</p>
+<p>
++ Create a file named ms-config.xml in your home / login folder, and
+</p>
+<pre>
+  put the following in it. (Note the underscore in &quot;ordinary_choice&quot; -
+  this is the name of the choice, not the representation of that choice
+  on the command line.)
+
+       &lt;config&gt;
+         &lt;ordinary_choice&gt;greetings&lt;/ordinary_choice&gt;
+       &lt;/config&gt;
+</pre>
+<p>
+prompt&gt; ruby multiple-sources.rb
+</p>
+<p>
+Set an environment variable ms_ordinary_choice with value &#8216;hi&#8217;.
+</p>
+<p>
+prompt&gt; ruby multiple-sources.rb
+</p>
+<p>
+Which takes precedence, the environment or the configuration file? (This is
+configurable.)
+</p>
+<p>
+The command line arguments have highest precedence of all:
+</p>
+<p>
+prompt&gt; ruby multiple-sources.rb &#8212;ordinary-choice hello
+</p>
+
+    </div>
+
+
+   </div>
+
+
+  </div>
+
+
+    <!-- if includes -->
+
+    <div id="section">
+
+
+
+
+
+      
+
+
+    <!-- if method_list -->
+
+
+  </div>
+
+
+<div id="validator-badges">
+  <p><small><a href="http://validator.w3.org/check/referer">[Validate]</a></small></p>
+</div>
+
+</body>
+</html>

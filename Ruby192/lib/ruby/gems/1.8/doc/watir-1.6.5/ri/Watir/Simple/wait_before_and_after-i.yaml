@@ -1,0 +1,12 @@
+--- !ruby/object:RI::MethodDescription 
+aliases: []
+
+block_params: ""
+comment: 
+- !ruby/struct:SM::Flow::P 
+  body: A convenience method to wait at both ends of an operation for the browser to catch up.
+full_name: Watir::Simple#wait_before_and_after
+is_singleton: false
+name: wait_before_and_after
+params: () {|| ...}
+visibility: public

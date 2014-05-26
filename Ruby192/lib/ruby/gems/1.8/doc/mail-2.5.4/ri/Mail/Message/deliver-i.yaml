@@ -1,0 +1,16 @@
+--- !ruby/object:RI::MethodDescription 
+aliases: []
+
+block_params: 
+comment: 
+- !ruby/struct:SM::Flow::P 
+  body: Delivers an mail object.
+- !ruby/struct:SM::Flow::P 
+  body: "Examples:"
+- !ruby/struct:SM::Flow::VERB 
+  body: " mail = Mail.read('file.eml')\n mail.deliver\n"
+full_name: Mail::Message#deliver
+is_singleton: false
+name: deliver
+params: ()
+visibility: public

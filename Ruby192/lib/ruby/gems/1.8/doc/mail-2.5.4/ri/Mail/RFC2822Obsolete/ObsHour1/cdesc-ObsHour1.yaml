@@ -1,0 +1,15 @@
+--- !ruby/object:RI::ClassDescription 
+attributes: []
+
+class_methods: []
+
+comment: 
+constants: []
+
+full_name: Mail::RFC2822Obsolete::ObsHour1
+includes: []
+
+instance_methods: []
+
+name: ObsHour1
+superclass: 

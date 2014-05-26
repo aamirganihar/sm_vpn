@@ -1,0 +1,934 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+<!DOCTYPE html 
+     PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+     "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+  <title>Module: FireWatir::Container</title>
+  <meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" />
+  <meta http-equiv="Content-Script-Type" content="text/javascript" />
+  <link rel="stylesheet" href="../.././rdoc-style.css" type="text/css" media="screen" />
+  <script type="text/javascript">
+  // <![CDATA[
+
+  function popupCode( url ) {
+    window.open(url, "Code", "resizable=yes,scrollbars=yes,toolbar=no,status=no,height=150,width=400")
+  }
+
+  function toggleCode( id ) {
+    if ( document.getElementById )
+      elem = document.getElementById( id );
+    else if ( document.all )
+      elem = eval( "document.all." + id );
+    else
+      return false;
+
+    elemStyle = elem.style;
+    
+    if ( elemStyle.display != "block" ) {
+      elemStyle.display = "block"
+    } else {
+      elemStyle.display = "none"
+    }
+
+    return true;
+  }
+  
+  // Make codeblocks hidden by default
+  document.writeln( "<style type=\"text/css\">div.method-source-code { display: none }</style>" )
+  
+  // ]]>
+  </script>
+
+</head>
+<body>
+
+
+
+    <div id="classHeader">
+        <table class="header-table">
+        <tr class="top-aligned-row">
+          <td><strong>Module</strong></td>
+          <td class="class-name-in-header">FireWatir::Container</td>
+        </tr>
+        <tr class="top-aligned-row">
+            <td><strong>In:</strong></td>
+            <td>
+                <a href="../../files/lib/firewatir/container_rb.html">
+                lib/firewatir/container.rb
+                </a>
+        <br />
+                <a href="../../files/lib/firewatir/element_collections_rb.html">
+                lib/firewatir/element_collections.rb
+                </a>
+        <br />
+            </td>
+        </tr>
+
+        </table>
+    </div>
+  <!-- banner header -->
+
+  <div id="bodyContent">
+
+
+
+  <div id="contextContent">
+
+
+
+   </div>
+
+    <div id="method-list">
+      <h3 class="section-bar">Methods</h3>
+
+      <div class="name-list">
+      <a href="#M000010">button</a>&nbsp;&nbsp;
+      <a href="#M000008">cell</a>&nbsp;&nbsp;
+      <a href="#M000015">checkbox</a>&nbsp;&nbsp;
+      <a href="#M000021">dd</a>&nbsp;&nbsp;
+      <a href="#M000019">dl</a>&nbsp;&nbsp;
+      <a href="#M000020">dt</a>&nbsp;&nbsp;
+      <a href="#M000011">file_field</a>&nbsp;&nbsp;
+      <a href="#M000006">form</a>&nbsp;&nbsp;
+      <a href="#M000005">frame</a>&nbsp;&nbsp;
+      <a href="#M000013">hidden</a>&nbsp;&nbsp;
+      <a href="#M000018">image</a>&nbsp;&nbsp;
+      <a href="#M000017">link</a>&nbsp;&nbsp;
+      <a href="#M000016">radio</a>&nbsp;&nbsp;
+      <a href="#M000009">row</a>&nbsp;&nbsp;
+      <a href="#M000014">select_list</a>&nbsp;&nbsp;
+      <a href="#M000022">show_all_objects</a>&nbsp;&nbsp;
+      <a href="#M000007">table</a>&nbsp;&nbsp;
+      <a href="#M000012">text_field</a>&nbsp;&nbsp;
+      </div>
+    </div>
+
+  </div>
+
+
+    <!-- if includes -->
+    <div id="includes">
+      <h3 class="section-bar">Included Modules</h3>
+
+      <div id="includes-list">
+        <span class="include-name"><a href="../FireWatir.html">FireWatir</a></span>
+        <span class="include-name"><a href="../Watir/Exception.html">Watir::Exception</a></span>
+        <span class="include-name"><a href="../JsshSocket.html">JsshSocket</a></span>
+      </div>
+    </div>
+
+    <div id="section">
+
+
+    <div id="constants-list">
+      <h3 class="section-bar">Constants</h3>
+
+      <div class="name-list">
+        <table summary="Constants">
+        <tr class="top-aligned-row context-row">
+          <td class="context-item-name">MACHINE_IP</td>
+          <td>=</td>
+          <td class="context-item-value">&quot;127.0.0.1&quot;</td>
+          <td width="3em">&nbsp;</td>
+          <td class="context-item-desc">
+IP Address of the machine where the script is to be executed. Default to
+localhost.
+
+</td>
+        </tr>
+        <tr class="top-aligned-row context-row">
+          <td class="context-item-name">DEFAULT_HIGHLIGHT_COLOR</td>
+          <td>=</td>
+          <td class="context-item-value">&quot;yellow&quot;</td>
+          <td width="3em">&nbsp;</td>
+          <td class="context-item-desc">
+The default color for highlighting objects as they are accessed.
+
+</td>
+        </tr>
+        </table>
+      </div>
+    </div>
+
+    <div id="aliases-list">
+      <h3 class="section-bar">External Aliases</h3>
+
+      <div class="name-list">
+                        <table summary="aliases">
+        <tr class="top-aligned-row context-row">
+          <td class="context-item-name">check_boxes</td>
+          <td>-&gt;</td>
+          <td class="context-item-value">checkboxes</td>
+        </tr>
+                        </table>
+      </div>
+    </div>
+
+
+      
+
+
+    <!-- if method_list -->
+    <div id="methods">
+      <h3 class="section-bar">Public Instance methods</h3>
+
+      <div id="method-M000010" class="method-detail">
+        <a name="M000010"></a>
+
+        <div class="method-heading">
+          <a href="Container.src/M000010.html" target="Code" class="method-signature"
+            onclick="popupCode('Container.src/M000010.html');return false;">
+          <span class="method-name">button</span><span class="method-args">(how, what=nil)</span>
+          </a>
+        </div>
+      
+        <div class="method-description">
+          <p>
+Description:
+</p>
+<pre>
+  Used to access a button element. Usually an &lt;input type = &quot;button&quot;&gt; HTML tag.
+</pre>
+<p>
+Input:
+</p>
+<pre>
+  - how - The attribute used to identify the row.
+  - what - The value of that attribute.
+</pre>
+<p>
+Typical Usage:
+</p>
+<pre>
+   ff.button(:id,    'b_1')                       # access the button with an ID of b_1
+   ff.button(:name,  'verify_data')               # access the button with a name of verify_data
+
+   if only a single parameter is supplied,  then :value is used as 'how' and parameter supplied is used as what.
+
+   ff.button('Click Me')                          # access the button with a value of Click Me
+</pre>
+<p>
+Output:
+</p>
+<pre>
+  Button element.
+</pre>
+        </div>
+      </div>
+
+      <div id="method-M000008" class="method-detail">
+        <a name="M000008"></a>
+
+        <div class="method-heading">
+          <a href="Container.src/M000008.html" target="Code" class="method-signature"
+            onclick="popupCode('Container.src/M000008.html');return false;">
+          <span class="method-name">cell</span><span class="method-args">(how, what=nil)</span>
+          </a>
+        </div>
+      
+        <div class="method-description">
+          <p>
+Description:
+</p>
+<pre>
+  Used to access a table cell. Usually an &lt;td&gt; HTML tag.
+</pre>
+<p>
+Input:
+</p>
+<pre>
+  - how - The attribute used to identify the cell.
+  - what - The value of that attribute.
+</pre>
+<p>
+Typical Usage:
+</p>
+<pre>
+  ff.cell(:id, 'tb_cell')
+  ff.cell(:index, 1)
+</pre>
+<p>
+Output:
+</p>
+<pre>
+   TableCell Object
+</pre>
+        </div>
+      </div>
+
+      <div id="method-M000015" class="method-detail">
+        <a name="M000015"></a>
+
+        <div class="method-heading">
+          <a href="Container.src/M000015.html" target="Code" class="method-signature"
+            onclick="popupCode('Container.src/M000015.html');return false;">
+          <span class="method-name">checkbox</span><span class="method-args">(how, what=nil, value = nil)</span>
+          </a>
+        </div>
+      
+        <div class="method-description">
+          <p>
+Description:
+</p>
+<pre>
+  Used to access checkbox element. Usually an &lt;input type = checkbox&gt; HTML tag.
+</pre>
+<p>
+Input:
+</p>
+<pre>
+  - how - Attribute used to identify the check box element.
+  - what - Value of that attribute.
+</pre>
+<p>
+Typical Usage:
+</p>
+<pre>
+  ff.checkbox(:id,   'user_name')                 # access the checkbox element with an ID of user_name
+  ff.checkbox(:name, 'address')                   # access the checkbox element with a name of address
+  In many instances, checkboxes on an html page have the same name, but are identified by different values. An example is shown next.
+
+  &lt;input type = checkbox name = email_frequency value = 'daily' &gt; Daily Email
+  &lt;input type = checkbox name = email_frequency value = 'Weekly'&gt; Weekly Email
+  &lt;input type = checkbox name = email_frequency value = 'monthly'&gt;Monthly Email
+
+  FireWatir can access these using the following:
+
+  ff.checkbox(:id, 'day_to_send' , 'monday' )         # access the check box with an id of day_to_send and a value of monday
+  ff.checkbox(:name ,'email_frequency', 'weekly')     # access the check box with a name of email_frequency and a value of 'weekly'
+</pre>
+<p>
+Output:
+</p>
+<pre>
+  Checkbox object.
+</pre>
+        </div>
+      </div>
+
+      <div id="method-M000021" class="method-detail">
+        <a name="M000021"></a>
+
+        <div class="method-heading">
+          <a href="Container.src/M000021.html" target="Code" class="method-signature"
+            onclick="popupCode('Container.src/M000021.html');return false;">
+          <span class="method-name">dd</span><span class="method-args">(how, what = nil)</span>
+          </a>
+        </div>
+      
+        <div class="method-description">
+          <p>
+Description:
+</p>
+<pre>
+  Used to access a definition description element - a &lt;dd&gt; HTML tag.
+</pre>
+<p>
+Input:
+</p>
+<pre>
+  - how  - Attribute used to identify the image element.
+  - what - Value of that attribute.
+</pre>
+<p>
+Typical Usage:
+</p>
+<pre>
+   ff.dd(:id, 'user_name')                    # access the dd element with an ID of user_name
+   ff.dd(:title, 'address')                   # access the dd element with a title of address
+</pre>
+<p>
+Returns:
+</p>
+<pre>
+  Dd object.
+</pre>
+        </div>
+      </div>
+
+      <div id="method-M000019" class="method-detail">
+        <a name="M000019"></a>
+
+        <div class="method-heading">
+          <a href="Container.src/M000019.html" target="Code" class="method-signature"
+            onclick="popupCode('Container.src/M000019.html');return false;">
+          <span class="method-name">dl</span><span class="method-args">(how, what = nil)</span>
+          </a>
+        </div>
+      
+        <div class="method-description">
+          <p>
+Description:
+</p>
+<pre>
+  Used to access a definition list element - a &lt;dl&gt; HTML tag.
+</pre>
+<p>
+Input:
+</p>
+<pre>
+  - how - Attribute used to identify the definition list element.
+  - what - Value of that attribute.
+</pre>
+<p>
+Typical Usage:
+</p>
+<pre>
+   ff.dl(:id, 'user_name')                    # access the dl element with an ID of user_name
+   ff.dl(:title, 'address')                   # access the dl element with a title of address
+</pre>
+<p>
+Returns:
+</p>
+<pre>
+  Dl object.
+</pre>
+        </div>
+      </div>
+
+      <div id="method-M000020" class="method-detail">
+        <a name="M000020"></a>
+
+        <div class="method-heading">
+          <a href="Container.src/M000020.html" target="Code" class="method-signature"
+            onclick="popupCode('Container.src/M000020.html');return false;">
+          <span class="method-name">dt</span><span class="method-args">(how, what = nil)</span>
+          </a>
+        </div>
+      
+        <div class="method-description">
+          <p>
+Description:
+</p>
+<pre>
+  Used to access a definition term element - a &lt;dt&gt; HTML tag.
+</pre>
+<p>
+Input:
+</p>
+<pre>
+  - how  - Attribute used to identify the image element.
+  - what - Value of that attribute.
+</pre>
+<p>
+Typical Usage:
+</p>
+<pre>
+   ff.dt(:id, 'user_name')                    # access the dt element with an ID of user_name
+   ff.dt(:title, 'address')                   # access the dt element with a title of address
+</pre>
+<p>
+Returns:
+</p>
+<pre>
+  Dt object.
+</pre>
+        </div>
+      </div>
+
+      <div id="method-M000011" class="method-detail">
+        <a name="M000011"></a>
+
+        <div class="method-heading">
+          <a href="Container.src/M000011.html" target="Code" class="method-signature"
+            onclick="popupCode('Container.src/M000011.html');return false;">
+          <span class="method-name">file_field</span><span class="method-args">(how, what = nil)</span>
+          </a>
+        </div>
+      
+        <div class="method-description">
+          <p>
+Description:
+</p>
+<pre>
+  Used for accessing a file field. Usually an &lt;input type = file&gt; HTML tag.
+</pre>
+<p>
+Input:
+</p>
+<pre>
+  - how - Attribute used to identify the file field element
+  - what - Value of that attribute.
+</pre>
+<p>
+Typical Usage:
+</p>
+<pre>
+   ff.file_field(:id,   'up_1')                     # access the file upload fff.d with an ID of up_1
+   ff.file_field(:name, 'upload')                   # access the file upload fff.d with a name of upload
+</pre>
+<p>
+Output:
+</p>
+<pre>
+  FileField object
+</pre>
+        </div>
+      </div>
+
+      <div id="method-M000006" class="method-detail">
+        <a name="M000006"></a>
+
+        <div class="method-heading">
+          <a href="Container.src/M000006.html" target="Code" class="method-signature"
+            onclick="popupCode('Container.src/M000006.html');return false;">
+          <span class="method-name">form</span><span class="method-args">(how, what=nil)</span>
+          </a>
+        </div>
+      
+        <div class="method-description">
+          <p>
+Description:
+</p>
+<pre>
+  Used to access a form element. Usually an &lt;form&gt; HTML tag.
+</pre>
+<p>
+Input:
+</p>
+<pre>
+  - how - The attribute used to identify the form.
+  - what - The value of that attribute.
+  If only one parameter is supplied, &quot;how&quot; is by default taken as name and the
+  parameter supplied becomes the value of the name attribute.
+</pre>
+<p>
+Typical usage:
+</p>
+<pre>
+  ff.form(:index, 1)
+  ff.form(:name , 'main_form')
+  ff.form('main_form')        # in this case, just a name is supplied.
+</pre>
+<p>
+Output:
+</p>
+<pre>
+  Form object.
+</pre>
+        </div>
+      </div>
+
+      <div id="method-M000005" class="method-detail">
+        <a name="M000005"></a>
+
+        <div class="method-heading">
+          <a href="Container.src/M000005.html" target="Code" class="method-signature"
+            onclick="popupCode('Container.src/M000005.html');return false;">
+          <span class="method-name">frame</span><span class="method-args">(how, what = nil)</span>
+          </a>
+        </div>
+      
+        <div class="method-description">
+          <p>
+Description:
+</p>
+<pre>
+   Used to access a frame element. Usually an &lt;frame&gt; or &lt;iframe&gt; HTML tag.
+</pre>
+<p>
+Input:
+</p>
+<pre>
+  - how - The attribute used to identify the framet.
+  - what - The value of that attribute.
+  If only one parameter is supplied, &quot;how&quot; is by default taken as name and the
+  parameter supplied becomes the value of the name attribute.
+</pre>
+<p>
+Typical usage:
+</p>
+<pre>
+  ff.frame(:index, 1)
+  ff.frame(:name , 'main_frame')
+  ff.frame('main_frame')        # in this case, just a name is supplied.
+</pre>
+<p>
+Output:
+</p>
+<pre>
+  Frame object.
+</pre>
+        </div>
+      </div>
+
+      <div id="method-M000013" class="method-detail">
+        <a name="M000013"></a>
+
+        <div class="method-heading">
+          <a href="Container.src/M000013.html" target="Code" class="method-signature"
+            onclick="popupCode('Container.src/M000013.html');return false;">
+          <span class="method-name">hidden</span><span class="method-args">(how, what=nil)</span>
+          </a>
+        </div>
+      
+        <div class="method-description">
+          <p>
+Description:
+</p>
+<pre>
+  Used to access hidden field element. Usually an &lt;input type = hidden&gt; HTML tag
+</pre>
+<p>
+Input:
+</p>
+<pre>
+  - how - Attribute used to identify the hidden element.
+  - what - Value of that attribute.
+</pre>
+<p>
+Typical Usage:
+</p>
+<pre>
+   ff.hidden(:id,   'user_name')                 # access the hidden element with an ID of user_name
+   ff.hidden(:name, 'address')                   # access the hidden element with a name of address
+</pre>
+<p>
+Output:
+</p>
+<pre>
+  Hidden object.
+</pre>
+        </div>
+      </div>
+
+      <div id="method-M000018" class="method-detail">
+        <a name="M000018"></a>
+
+        <div class="method-heading">
+          <a href="Container.src/M000018.html" target="Code" class="method-signature"
+            onclick="popupCode('Container.src/M000018.html');return false;">
+          <span class="method-name">image</span><span class="method-args">(how, what = nil)</span>
+          </a>
+        </div>
+      
+        <div class="method-description">
+          <p>
+Description:
+</p>
+<pre>
+  Used to access image element. Usually an &lt;img&gt; HTML tag.
+</pre>
+<p>
+Input:
+</p>
+<pre>
+  - how - Attribute used to identify the image element.
+  - what - Value of that attribute.
+</pre>
+<p>
+Typical Usage:
+</p>
+<pre>
+   ff.image(:id,   'user_name')                 # access the image element with an ID of user_name
+   ff.image(:name, 'address')                   # access the image element with a name of address
+</pre>
+<p>
+Output:
+</p>
+<pre>
+  Image object.
+</pre>
+        </div>
+      </div>
+
+      <div id="method-M000017" class="method-detail">
+        <a name="M000017"></a>
+
+        <div class="method-heading">
+          <a href="Container.src/M000017.html" target="Code" class="method-signature"
+            onclick="popupCode('Container.src/M000017.html');return false;">
+          <span class="method-name">link</span><span class="method-args">(how, what=nil)</span>
+          </a>
+        </div>
+      
+        <div class="method-description">
+          <p>
+Description:
+</p>
+<pre>
+  Used to access link element. Usually an &lt;a&gt; HTML tag.
+</pre>
+<p>
+Input:
+</p>
+<pre>
+  - how - Attribute used to identify the link element.
+  - what - Value of that attribute.
+</pre>
+<p>
+Typical Usage:
+</p>
+<pre>
+   ff.link(:id,   'user_name')                 # access the link element with an ID of user_name
+   ff.link(:name, 'address')                   # access the link element with a name of address
+</pre>
+<p>
+Output:
+</p>
+<pre>
+  Link object.
+</pre>
+        </div>
+      </div>
+
+      <div id="method-M000016" class="method-detail">
+        <a name="M000016"></a>
+
+        <div class="method-heading">
+          <a href="Container.src/M000016.html" target="Code" class="method-signature"
+            onclick="popupCode('Container.src/M000016.html');return false;">
+          <span class="method-name">radio</span><span class="method-args">(how, what=nil, value = nil)</span>
+          </a>
+        </div>
+      
+        <div class="method-description">
+          <p>
+Description:
+</p>
+<pre>
+  Used to access radio button element. Usually an &lt;input type = radio&gt; HTML tag.
+</pre>
+<p>
+Input:
+</p>
+<pre>
+  - how - Attribute used to identify the radio button element.
+  - what - Value of that attribute.
+</pre>
+<p>
+Typical Usage:
+</p>
+<pre>
+  ff.radio(:id,   'user_name')                 # access the radio button element with an ID of user_name
+  ff.radio(:name, 'address')                   # access the radio button element with a name of address
+  In many instances, radio buttons on an html page have the same name, but are identified by different values. An example is shown next.
+
+  &lt;input type = radio name = email_frequency value = 'daily' &gt; Daily Email
+  &lt;input type = radio name = email_frequency value = 'Weekly'&gt; Weekly Email
+  &lt;input type = radio name = email_frequency value = 'monthly'&gt;Monthly Email
+
+  FireWatir can access these using the following:
+
+  ff.radio(:id, 'day_to_send' , 'monday' )         # access the radio button with an id of day_to_send and a value of monday
+  ff.radio(:name ,'email_frequency', 'weekly')     # access the radio button with a name of email_frequency and a value of 'weekly'
+</pre>
+<p>
+Output:
+</p>
+<pre>
+  Radio button object.
+</pre>
+        </div>
+      </div>
+
+      <div id="method-M000009" class="method-detail">
+        <a name="M000009"></a>
+
+        <div class="method-heading">
+          <a href="Container.src/M000009.html" target="Code" class="method-signature"
+            onclick="popupCode('Container.src/M000009.html');return false;">
+          <span class="method-name">row</span><span class="method-args">(how, what=nil)</span>
+          </a>
+        </div>
+      
+        <div class="method-description">
+          <p>
+Description:
+</p>
+<pre>
+  Used to access a table row. Usually an &lt;tr&gt; HTML tag.
+</pre>
+<p>
+Input:
+</p>
+<pre>
+  - how - The attribute used to identify the row.
+  - what - The value of that attribute.
+</pre>
+<p>
+Typical Usage:
+</p>
+<pre>
+  ff.row(:id, 'tb_row')
+  ff.row(:index, 1)
+</pre>
+<p>
+Output:
+</p>
+<pre>
+  TableRow object
+</pre>
+        </div>
+      </div>
+
+      <div id="method-M000014" class="method-detail">
+        <a name="M000014"></a>
+
+        <div class="method-heading">
+          <a href="Container.src/M000014.html" target="Code" class="method-signature"
+            onclick="popupCode('Container.src/M000014.html');return false;">
+          <span class="method-name">select_list</span><span class="method-args">(how, what=nil)</span>
+          </a>
+        </div>
+      
+        <div class="method-description">
+          <p>
+Description:
+</p>
+<pre>
+  Used to access select list element. Usually an &lt;select&gt; HTML tag.
+</pre>
+<p>
+Input:
+</p>
+<pre>
+  - how - Attribute used to identify the select element.
+  - what - Value of that attribute.
+</pre>
+<p>
+Typical Usage:
+</p>
+<pre>
+   ff.select_list(:id,   'user_name')                 # access the select list with an ID of user_name
+   ff.select_list(:name, 'address')                   # access the select list with a name of address
+</pre>
+<p>
+Output:
+</p>
+<pre>
+  Select List object.
+</pre>
+        </div>
+      </div>
+
+      <div id="method-M000022" class="method-detail">
+        <a name="M000022"></a>
+
+        <div class="method-heading">
+          <a href="Container.src/M000022.html" target="Code" class="method-signature"
+            onclick="popupCode('Container.src/M000022.html');return false;">
+          <span class="method-name">show_all_objects</span><span class="method-args">()</span>
+          </a>
+        </div>
+      
+        <div class="method-description">
+          <p>
+Description:
+</p>
+<pre>
+  This method shows the available objects on the current page.
+  This is usually only used for debugging or writing new test scripts.
+  This is a nice feature to help find out what HTML objects are on a page
+  when developing a test case using FireWatir.
+</pre>
+<p>
+Typical Usage:
+</p>
+<pre>
+  ff.show_all_objects
+</pre>
+<p>
+Output:
+</p>
+<pre>
+  Prints all the available elements on the page.
+</pre>
+        </div>
+      </div>
+
+      <div id="method-M000007" class="method-detail">
+        <a name="M000007"></a>
+
+        <div class="method-heading">
+          <a href="Container.src/M000007.html" target="Code" class="method-signature"
+            onclick="popupCode('Container.src/M000007.html');return false;">
+          <span class="method-name">table</span><span class="method-args">(how, what=nil)</span>
+          </a>
+        </div>
+      
+        <div class="method-description">
+          <p>
+Description:
+</p>
+<pre>
+  Used to access a table. Usually an &lt;table&gt; HTML tag.
+</pre>
+<p>
+Input:
+</p>
+<pre>
+  - how - The attribute used to identify the table.
+  - what - The value of that attribute.
+</pre>
+<p>
+Typical usage:
+</p>
+<pre>
+  ff.table(:index, 1) #index starts from 1.
+  ff.table(:id, 'main_table')
+</pre>
+<p>
+Output:
+</p>
+<pre>
+  Table object.
+</pre>
+        </div>
+      </div>
+
+      <div id="method-M000012" class="method-detail">
+        <a name="M000012"></a>
+
+        <div class="method-heading">
+          <a href="Container.src/M000012.html" target="Code" class="method-signature"
+            onclick="popupCode('Container.src/M000012.html');return false;">
+          <span class="method-name">text_field</span><span class="method-args">(how, what = nil)</span>
+          </a>
+        </div>
+      
+        <div class="method-description">
+          <p>
+Description:
+</p>
+<pre>
+  Used for accessing a text field. Usually an &lt;input type = text&gt; HTML tag. or a text area - a  &lt;textarea&gt; tag
+</pre>
+<p>
+Input:
+</p>
+<pre>
+  - how - Attribute used to identify the text field element.
+  - what - Value of that attribute.
+</pre>
+<p>
+Typical Usage:
+</p>
+<pre>
+   ff.text_field(:id,   'user_name')                 # access the text field with an ID of user_name
+   ff.text_field(:name, 'address')                   # access the text field with a name of address
+</pre>
+<p>
+Output:
+</p>
+<pre>
+  TextField object.
+</pre>
+        </div>
+      </div>
+
+
+    </div>
+
+
+  </div>
+
+
+<div id="validator-badges">
+  <p><small><a href="http://validator.w3.org/check/referer">[Validate]</a></small></p>
+</div>
+
+</body>
+</html>

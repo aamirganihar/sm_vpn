@@ -1,0 +1,16 @@
+--- !ruby/object:RI::MethodDescription 
+aliases: []
+
+block_params: 
+comment: 
+- !ruby/struct:SM::Flow::P 
+  body: Returns the list of addresses this message should be sent to by collecting the addresses off the to, cc and bcc fields.
+- !ruby/struct:SM::Flow::P 
+  body: "Example:"
+- !ruby/struct:SM::Flow::VERB 
+  body: " mail.to = 'mikel@test.lindsaar.net'\n mail.cc = 'sam@test.lindsaar.net'\n mail.bcc = 'bob@test.lindsaar.net'\n mail.destinations.length #=&gt; 3\n mail.destinations.first #=&gt; 'mikel@test.lindsaar.net'\n"
+full_name: Mail::Message#destinations
+is_singleton: false
+name: destinations
+params: ()
+visibility: public

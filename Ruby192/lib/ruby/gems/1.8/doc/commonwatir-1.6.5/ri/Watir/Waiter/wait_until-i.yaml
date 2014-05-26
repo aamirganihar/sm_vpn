@@ -1,0 +1,16 @@
+--- !ruby/object:RI::MethodDescription 
+aliases: []
+
+block_params: 
+comment: 
+- !ruby/struct:SM::Flow::P 
+  body: Execute the provided block until either (1) it returns true, or (2) the timeout (in seconds) has been reached. If the timeout is reached, a TimeOutException will be raised. The block will always execute at least once.
+- !ruby/struct:SM::Flow::P 
+  body: waiter = Waiter.new(5) waiter.wait_until {puts 'hello'}
+- !ruby/struct:SM::Flow::P 
+  body: This code will print out &quot;hello&quot; for five seconds, and then raise a Watir::TimeOutException.
+full_name: Watir::Waiter#wait_until
+is_singleton: false
+name: wait_until
+params: (
+visibility: public

@@ -1,0 +1,48 @@
+--- !ruby/object:RI::ClassDescription 
+attributes: []
+
+class_methods: 
+- !ruby/object:RI::MethodSummary 
+  name: "[]"
+- !ruby/object:RI::MethodSummary 
+  name: create_junction
+- !ruby/object:RI::MethodSummary 
+  name: empty?
+- !ruby/object:RI::MethodSummary 
+  name: getwd
+- !ruby/object:RI::MethodSummary 
+  name: glob
+- !ruby/object:RI::MethodSummary 
+  name: junction?
+comment: 
+constants: 
+- !ruby/object:RI::Constant 
+  comment: 
+  - !ruby/struct:SM::Flow::P 
+    body: The version of the win32-dir library.
+  name: VERSION
+  value: "'0.3.7'"
+- !ruby/object:RI::Constant 
+  comment: 
+  - !ruby/struct:SM::Flow::P 
+    body: Same as Dir::PERSONAL
+  name: MYDOCUMENTS
+  value: PERSONAL
+full_name: Dir
+includes: 
+- !ruby/object:RI::IncludedModule 
+  name: Windows::Directory
+- !ruby/object:RI::IncludedModule 
+  name: Windows::Shell
+- !ruby/object:RI::IncludedModule 
+  name: Windows::Error
+- !ruby/object:RI::IncludedModule 
+  name: Windows::File
+- !ruby/object:RI::IncludedModule 
+  name: Windows::DeviceIO
+- !ruby/object:RI::IncludedModule 
+  name: Windows::Limits
+instance_methods: []
+
+name: Dir
+superclass: Object

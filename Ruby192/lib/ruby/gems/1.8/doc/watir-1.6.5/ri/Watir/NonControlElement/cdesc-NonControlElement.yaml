@@ -1,0 +1,26 @@
+--- !ruby/object:RI::ClassDescription 
+attributes: []
+
+class_methods: 
+- !ruby/object:RI::MethodSummary 
+  name: inherited
+- !ruby/object:RI::MethodSummary 
+  name: new
+comment: 
+- !ruby/struct:SM::Flow::P 
+  body: this class contains items that are common between the span, div, and pre objects it would not normally be used directly
+- !ruby/struct:SM::Flow::P 
+  body: many of the methods available to this object are inherited from the Element class
+constants: []
+
+full_name: Watir::NonControlElement
+includes: 
+- !ruby/object:RI::IncludedModule 
+  name: Watir::Exception
+instance_methods: 
+- !ruby/object:RI::MethodSummary 
+  name: locate
+- !ruby/object:RI::MethodSummary 
+  name: to_s
+name: NonControlElement
+superclass: Element

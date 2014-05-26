@@ -1,0 +1,14 @@
+--- !ruby/object:RI::MethodDescription 
+aliases: []
+
+block_params: arr_cells[i]
+comment: 
+- !ruby/struct:SM::Flow::P 
+  body: "Description:"
+- !ruby/struct:SM::Flow::VERB 
+  body: "  Iterate over each cell in a row.\n"
+full_name: FireWatir::TableRow#each
+is_singleton: false
+name: each
+params: () {|arr_cells[i]| ...}
+visibility: public

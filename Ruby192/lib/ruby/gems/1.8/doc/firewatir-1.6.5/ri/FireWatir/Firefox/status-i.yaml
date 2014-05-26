@@ -1,0 +1,16 @@
+--- !ruby/object:RI::MethodDescription 
+aliases: []
+
+block_params: 
+comment: 
+- !ruby/struct:SM::Flow::VERB 
+  body: "  Returns the Status of the page currently loaded in the browser from statusbar.\n"
+- !ruby/struct:SM::Flow::P 
+  body: "Output:"
+- !ruby/struct:SM::Flow::VERB 
+  body: "  Status of the page.\n"
+full_name: FireWatir::Firefox#status
+is_singleton: false
+name: status
+params: ()
+visibility: public

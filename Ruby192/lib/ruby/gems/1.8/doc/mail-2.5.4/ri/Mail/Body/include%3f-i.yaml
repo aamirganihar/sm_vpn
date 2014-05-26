@@ -1,0 +1,16 @@
+--- !ruby/object:RI::MethodDescription 
+aliases: []
+
+block_params: 
+comment: 
+- !ruby/struct:SM::Flow::P 
+  body: "Accepts anything that responds to #to_s and checks if it's a substring of the decoded text"
+- !ruby/struct:SM::Flow::P 
+  body: "Examples:"
+- !ruby/struct:SM::Flow::VERB 
+  body: "  body = Mail::Body.new('The body')\n  body.include?('The') #=&gt; true\n\n  body = Mail::Body.new(&quot;VGhlIGJvZHk=\\n&quot;)\n  body.encoding = 'base64'\n  body.include?('The') #=&gt; true\n"
+full_name: Mail::Body#include?
+is_singleton: false
+name: include?
+params: (other)
+visibility: public

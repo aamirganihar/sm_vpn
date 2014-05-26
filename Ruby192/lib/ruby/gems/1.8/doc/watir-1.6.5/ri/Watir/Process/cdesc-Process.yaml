@@ -1,0 +1,16 @@
+--- !ruby/object:RI::ClassDescription 
+attributes: []
+
+class_methods: 
+- !ruby/object:RI::MethodSummary 
+  name: count
+comment: 
+constants: []
+
+full_name: Watir::Process
+includes: []
+
+instance_methods: []
+
+name: Process
+superclass: 

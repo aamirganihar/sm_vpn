@@ -1,0 +1,12 @@
+--- !ruby/object:RI::MethodDescription 
+aliases: []
+
+block_params: 
+comment: 
+- !ruby/struct:SM::Flow::P 
+  body: this method returns the src of an image, if an image is used as part of the link
+full_name: Watir::Link#src
+is_singleton: false
+name: src
+params: (
+visibility: public

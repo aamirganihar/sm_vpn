@@ -1,0 +1,12 @@
+--- !ruby/object:RI::MethodDescription 
+aliases: []
+
+block_params: 
+comment: 
+- !ruby/struct:SM::Flow::P 
+  body: Return the Watir options, as a hash. If they haven't been parsed yet, they will be now.
+full_name: Watir::options
+is_singleton: true
+name: options
+params: ()
+visibility: public

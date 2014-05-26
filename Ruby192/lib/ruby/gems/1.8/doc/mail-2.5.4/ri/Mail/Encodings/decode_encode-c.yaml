@@ -1,0 +1,16 @@
+--- !ruby/object:RI::MethodDescription 
+aliases: []
+
+block_params: 
+comment: 
+- !ruby/struct:SM::Flow::P 
+  body: Decodes or encodes a string as needed for either Base64 or QP encoding types in the =?&lt;encoding&gt;?[QB]?&lt;string&gt;?=&quot; format.
+- !ruby/struct:SM::Flow::P 
+  body: The output type needs to be :decode to decode the input string or :encode to encode the input string. The character set used for encoding will either be the value of $KCODE for Ruby &lt; 1.9 or the encoding on the string passed in.
+- !ruby/struct:SM::Flow::P 
+  body: On encoding, will only send out Base64 encoded strings.
+full_name: Mail::Encodings::decode_encode
+is_singleton: true
+name: decode_encode
+params: (str, output_type)
+visibility: public

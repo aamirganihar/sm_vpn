@@ -1,0 +1,23 @@
+--- !ruby/object:RI::ClassDescription 
+attributes: []
+
+class_methods: 
+- !ruby/object:RI::MethodSummary 
+  name: new
+comment: 
+constants: 
+- !ruby/object:RI::Constant 
+  comment: 
+  name: FIELD_NAME
+  value: "'subject'"
+- !ruby/object:RI::Constant 
+  comment: 
+  name: CAPITALIZED_FIELD
+  value: "\"Subject\""
+full_name: Mail::SubjectField
+includes: []
+
+instance_methods: []
+
+name: SubjectField
+superclass: UnstructuredField

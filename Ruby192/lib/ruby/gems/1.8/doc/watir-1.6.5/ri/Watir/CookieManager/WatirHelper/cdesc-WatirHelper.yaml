@@ -1,0 +1,27 @@
+--- !ruby/object:RI::ClassDescription 
+attributes: []
+
+class_methods: 
+- !ruby/object:RI::MethodSummary 
+  name: deleteSpecialFolderContents
+- !ruby/object:RI::MethodSummary 
+  name: getSpecialFolderLocation
+comment: 
+constants: 
+- !ruby/object:RI::Constant 
+  comment: 
+  - !ruby/struct:SM::Flow::P 
+    body: taken from shlObj.h used in win32 SHGetSpecialFolderLocation define CSIDL_INTERNET_CACHE 0x0020 define CSIDL_COOKIES 0x0021 define CSIDL_HISTORY 0x0022
+  name: COOKIES
+  value: "0x0021"
+- !ruby/object:RI::Constant 
+  comment: 
+  name: INTERNET_CACHE
+  value: "0x0020"
+full_name: Watir::CookieManager::WatirHelper
+includes: []
+
+instance_methods: []
+
+name: WatirHelper
+superclass: Object

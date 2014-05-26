@@ -1,0 +1,10 @@
+--- !ruby/object:RI::MethodDescription 
+aliases: []
+
+block_params: 
+comment: 
+full_name: Treetop::Compiler::Metagrammar::UnlabeledSequencePrimary0#null_label
+is_singleton: false
+name: null_label
+params: ()
+visibility: public

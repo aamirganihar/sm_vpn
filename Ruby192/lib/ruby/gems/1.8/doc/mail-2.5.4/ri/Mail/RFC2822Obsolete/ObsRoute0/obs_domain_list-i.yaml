@@ -1,0 +1,10 @@
+--- !ruby/object:RI::MethodDescription 
+aliases: []
+
+block_params: 
+comment: 
+full_name: Mail::RFC2822Obsolete::ObsRoute0#obs_domain_list
+is_singleton: false
+name: obs_domain_list
+params: ()
+visibility: public

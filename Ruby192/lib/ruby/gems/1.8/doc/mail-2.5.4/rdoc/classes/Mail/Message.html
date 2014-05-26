@@ -1,0 +1,4140 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+<!DOCTYPE html 
+     PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+     "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+  <title>Class: Mail::Message</title>
+  <meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" />
+  <meta http-equiv="Content-Script-Type" content="text/javascript" />
+  <link rel="stylesheet" href="../.././rdoc-style.css" type="text/css" media="screen" />
+  <script type="text/javascript">
+  // <![CDATA[
+
+  function popupCode( url ) {
+    window.open(url, "Code", "resizable=yes,scrollbars=yes,toolbar=no,status=no,height=150,width=400")
+  }
+
+  function toggleCode( id ) {
+    if ( document.getElementById )
+      elem = document.getElementById( id );
+    else if ( document.all )
+      elem = eval( "document.all." + id );
+    else
+      return false;
+
+    elemStyle = elem.style;
+    
+    if ( elemStyle.display != "block" ) {
+      elemStyle.display = "block"
+    } else {
+      elemStyle.display = "none"
+    }
+
+    return true;
+  }
+  
+  // Make codeblocks hidden by default
+  document.writeln( "<style type=\"text/css\">div.method-source-code { display: none }</style>" )
+  
+  // ]]>
+  </script>
+
+</head>
+<body>
+
+
+
+    <div id="classHeader">
+        <table class="header-table">
+        <tr class="top-aligned-row">
+          <td><strong>Class</strong></td>
+          <td class="class-name-in-header">Mail::Message</td>
+        </tr>
+        <tr class="top-aligned-row">
+            <td><strong>In:</strong></td>
+            <td>
+                <a href="../../files/lib/mail/message_rb.html">
+                lib/mail/message.rb
+                </a>
+        <br />
+            </td>
+        </tr>
+
+        <tr class="top-aligned-row">
+            <td><strong>Parent:</strong></td>
+            <td>
+                <a href="../Object.html">
+                Object
+               </a>
+            </td>
+        </tr>
+        </table>
+    </div>
+  <!-- banner header -->
+
+  <div id="bodyContent">
+
+
+
+  <div id="contextContent">
+
+    <div id="description">
+      <p>
+The <a href="Message.html">Message</a> class provides a single point of
+access <a href="Message.html#M001240">to</a> all things <a
+href="Message.html#M001240">to</a> do with an email message.
+</p>
+<p>
+You create a <a href="Message.html#M001159">new</a> email message by
+calling the <a href="Message.html#M001159">Mail::Message.new</a> method, or
+just Mail.new
+</p>
+<p>
+A <a href="Message.html">Message</a> object by <a
+href="Message.html#M001242">default</a> has the following objects inside
+it:
+</p>
+<ul>
+<li>A <a href="Header.html">Header</a> object which contains all information
+and settings of the <a href="Message.html#M001175">header</a> of the email
+
+</li>
+<li><a href="Body.html">Body</a> object which contains all <a
+href="Message.html#M001288">parts</a> of the email that are not <a
+href="Message.html#M001296">part</a> of the <a
+href="Message.html#M001175">header</a>, this includes any <a
+href="Message.html#M001289">attachments</a>, <a
+href="Message.html#M001244">body</a> text, MIME <a
+href="Message.html#M001288">parts</a> etc.
+
+</li>
+</ul>
+<h2>Per <a href="RFC2822.html">RFC2822</a></h2>
+<pre>
+ 2.1. General Description
+
+  At the most basic level, a message is a series of characters.  A
+  message that is conformant with this standard is comprised of
+  characters with values in the range 1 through 127 and interpreted as
+  US-ASCII characters [ASCII].  For brevity, this document sometimes
+  refers to this range of characters as simply &quot;US-ASCII characters&quot;.
+
+  Note: This standard specifies that messages are made up of characters
+  in the US-ASCII range of 1 through 127.  There are other documents,
+  specifically the MIME document series [RFC2045, RFC2046, RFC2047,
+  RFC2048, RFC2049], that extend this standard to allow for values
+  outside of that range.  Discussion of those mechanisms is not within
+  the scope of this standard.
+
+  Messages are divided into lines of characters.  A line is a series of
+  characters that is delimited with the two characters carriage-return
+  and line-feed; that is, the carriage return (CR) character (ASCII
+  value 13) followed immediately by the line feed (LF) character (ASCII
+  value 10).  (The carriage-return/line-feed pair is usually written in
+  this document as &quot;CRLF&quot;.)
+
+  A message consists of header fields (collectively called &quot;the header
+  of the message&quot;) followed, optionally, by a body.  The header is a
+  sequence of lines of characters with special syntax as defined in
+  this standard. The body is simply a sequence of characters that
+  follows the header and is separated from the header by an empty line
+  (i.e., a line with nothing preceding the CRLF).
+</pre>
+
+    </div>
+
+
+   </div>
+
+    <div id="method-list">
+      <h3 class="section-bar">Methods</h3>
+
+      <div class="name-list">
+      <a href="#M001167">&lt;=&gt;</a>&nbsp;&nbsp;
+      <a href="#M001168">==</a>&nbsp;&nbsp;
+      <a href="#M001253">[]</a>&nbsp;&nbsp;
+      <a href="#M001252">[]=</a>&nbsp;&nbsp;
+      <a href="#M001281">action</a>&nbsp;&nbsp;
+      <a href="#M001266">add_charset</a>&nbsp;&nbsp;
+      <a href="#M001267">add_content_transfer_encoding</a>&nbsp;&nbsp;
+      <a href="#M001265">add_content_type</a>&nbsp;&nbsp;
+      <a href="#M001263">add_date</a>&nbsp;&nbsp;
+      <a href="#M001297">add_file</a>&nbsp;&nbsp;
+      <a href="#M001262">add_message_id</a>&nbsp;&nbsp;
+      <a href="#M001264">add_mime_version</a>&nbsp;&nbsp;
+      <a href="#M001295">add_part</a>&nbsp;&nbsp;
+      <a href="#M001314">all_parts</a>&nbsp;&nbsp;
+      <a href="#M001312">attachment</a>&nbsp;&nbsp;
+      <a href="#M001311">attachment?</a>&nbsp;&nbsp;
+      <a href="#M001289">attachments</a>&nbsp;&nbsp;
+      <a href="#M001178">bcc</a>&nbsp;&nbsp;
+      <a href="#M001179">bcc=</a>&nbsp;&nbsp;
+      <a href="#M001251">bcc_addrs</a>&nbsp;&nbsp;
+      <a href="#M001244">body</a>&nbsp;&nbsp;
+      <a href="#M001243">body=</a>&nbsp;&nbsp;
+      <a href="#M001245">body_encoding</a>&nbsp;&nbsp;
+      <a href="#M001246">body_encoding=</a>&nbsp;&nbsp;
+      <a href="#M001280">bounced?</a>&nbsp;&nbsp;
+      <a href="#M001287">boundary</a>&nbsp;&nbsp;
+      <a href="#M001180">cc</a>&nbsp;&nbsp;
+      <a href="#M001181">cc=</a>&nbsp;&nbsp;
+      <a href="#M001250">cc_addrs</a>&nbsp;&nbsp;
+      <a href="#M001270">charset</a>&nbsp;&nbsp;
+      <a href="#M001271">charset=</a>&nbsp;&nbsp;
+      <a href="#M001182">comments</a>&nbsp;&nbsp;
+      <a href="#M001183">comments=</a>&nbsp;&nbsp;
+      <a href="#M001184">content_description</a>&nbsp;&nbsp;
+      <a href="#M001185">content_description=</a>&nbsp;&nbsp;
+      <a href="#M001186">content_disposition</a>&nbsp;&nbsp;
+      <a href="#M001187">content_disposition=</a>&nbsp;&nbsp;
+      <a href="#M001188">content_id</a>&nbsp;&nbsp;
+      <a href="#M001189">content_id=</a>&nbsp;&nbsp;
+      <a href="#M001190">content_location</a>&nbsp;&nbsp;
+      <a href="#M001191">content_location=</a>&nbsp;&nbsp;
+      <a href="#M001192">content_transfer_encoding</a>&nbsp;&nbsp;
+      <a href="#M001193">content_transfer_encoding=</a>&nbsp;&nbsp;
+      <a href="#M001194">content_type</a>&nbsp;&nbsp;
+      <a href="#M001195">content_type=</a>&nbsp;&nbsp;
+      <a href="#M001275">content_type_parameters</a>&nbsp;&nbsp;
+      <a href="#M001298">convert_to_multipart</a>&nbsp;&nbsp;
+      <a href="#M001196">date</a>&nbsp;&nbsp;
+      <a href="#M001197">date=</a>&nbsp;&nbsp;
+      <a href="#M001310">decode_body</a>&nbsp;&nbsp;
+      <a href="#M001308">decoded</a>&nbsp;&nbsp;
+      <a href="#M001242">default</a>&nbsp;&nbsp;
+      <a href="#M001163">deliver</a>&nbsp;&nbsp;
+      <a href="#M001164">deliver!</a>&nbsp;&nbsp;
+      <a href="#M001165">delivery_method</a>&nbsp;&nbsp;
+      <a href="#M001279">delivery_status_part</a>&nbsp;&nbsp;
+      <a href="#M001278">delivery_status_report?</a>&nbsp;&nbsp;
+      <a href="#M001247">destinations</a>&nbsp;&nbsp;
+      <a href="#M001284">diagnostic_code</a>&nbsp;&nbsp;
+      <a href="#M001300">encode!</a>&nbsp;&nbsp;
+      <a href="#M001301">encoded</a>&nbsp;&nbsp;
+      <a href="#M001173">envelope_date</a>&nbsp;&nbsp;
+      <a href="#M001172">envelope_from</a>&nbsp;&nbsp;
+      <a href="#M001283">error_status</a>&nbsp;&nbsp;
+      <a href="#M001177">errors</a>&nbsp;&nbsp;
+      <a href="#M001313">filename</a>&nbsp;&nbsp;
+      <a href="#M001282">final_recipient</a>&nbsp;&nbsp;
+      <a href="#M001315">find_first_mime_type</a>&nbsp;&nbsp;
+      <a href="#M001200">from</a>&nbsp;&nbsp;
+      <a href="#M001201">from=</a>&nbsp;&nbsp;
+      <a href="#M001248">from_addrs</a>&nbsp;&nbsp;
+      <a href="#M001305">from_hash</a>&nbsp;&nbsp;
+      <a href="#M001304">from_yaml</a>&nbsp;&nbsp;
+      <a href="#M001290">has_attachments?</a>&nbsp;&nbsp;
+      <a href="#M001260">has_charset?</a>&nbsp;&nbsp;
+      <a href="#M001261">has_content_transfer_encoding?</a>&nbsp;&nbsp;
+      <a href="#M001259">has_content_type?</a>&nbsp;&nbsp;
+      <a href="#M001257">has_date?</a>&nbsp;&nbsp;
+      <a href="#M001256">has_message_id?</a>&nbsp;&nbsp;
+      <a href="#M001258">has_mime_version?</a>&nbsp;&nbsp;
+      <a href="#M001175">header</a>&nbsp;&nbsp;
+      <a href="#M001174">header=</a>&nbsp;&nbsp;
+      <a href="#M001255">header_fields</a>&nbsp;&nbsp;
+      <a href="#M001176">headers</a>&nbsp;&nbsp;
+      <a href="#M001291">html_part</a>&nbsp;&nbsp;
+      <a href="#M001293">html_part=</a>&nbsp;&nbsp;
+      <a href="#M001202">in_reply_to</a>&nbsp;&nbsp;
+      <a href="#M001203">in_reply_to=</a>&nbsp;&nbsp;
+      <a href="#M001162">inform_interceptors</a>&nbsp;&nbsp;
+      <a href="#M001161">inform_observers</a>&nbsp;&nbsp;
+      <a href="#M001307">inspect</a>&nbsp;&nbsp;
+      <a href="#M001318">is_marked_for_delete?</a>&nbsp;&nbsp;
+      <a href="#M001204">keywords</a>&nbsp;&nbsp;
+      <a href="#M001205">keywords=</a>&nbsp;&nbsp;
+      <a href="#M001272">main_type</a>&nbsp;&nbsp;
+      <a href="#M001317">mark_for_delete=</a>&nbsp;&nbsp;
+      <a href="#M001269">message_content_type</a>&nbsp;&nbsp;
+      <a href="#M001206">message_id</a>&nbsp;&nbsp;
+      <a href="#M001207">message_id=</a>&nbsp;&nbsp;
+      <a href="#M001254">method_missing</a>&nbsp;&nbsp;
+      <a href="#M001274">mime_parameters</a>&nbsp;&nbsp;
+      <a href="#M001268">mime_type</a>&nbsp;&nbsp;
+      <a href="#M001208">mime_version</a>&nbsp;&nbsp;
+      <a href="#M001209">mime_version=</a>&nbsp;&nbsp;
+      <a href="#M001276">multipart?</a>&nbsp;&nbsp;
+      <a href="#M001277">multipart_report?</a>&nbsp;&nbsp;
+      <a href="#M001159">new</a>&nbsp;&nbsp;
+      <a href="#M001296">part</a>&nbsp;&nbsp;
+      <a href="#M001288">parts</a>&nbsp;&nbsp;
+      <a href="#M001171">raw_envelope</a>&nbsp;&nbsp;
+      <a href="#M001169">raw_source</a>&nbsp;&nbsp;
+      <a href="#M001309">read</a>&nbsp;&nbsp;
+      <a href="#M001299">ready_to_send!</a>&nbsp;&nbsp;
+      <a href="#M001210">received</a>&nbsp;&nbsp;
+      <a href="#M001211">received=</a>&nbsp;&nbsp;
+      <a href="#M001212">references</a>&nbsp;&nbsp;
+      <a href="#M001213">references=</a>&nbsp;&nbsp;
+      <a href="#M001160">register_for_delivery_notification</a>&nbsp;&nbsp;
+      <a href="#M001285">remote_mta</a>&nbsp;&nbsp;
+      <a href="#M001166">reply</a>&nbsp;&nbsp;
+      <a href="#M001214">reply_to</a>&nbsp;&nbsp;
+      <a href="#M001215">reply_to=</a>&nbsp;&nbsp;
+      <a href="#M001216">resent_bcc</a>&nbsp;&nbsp;
+      <a href="#M001217">resent_bcc=</a>&nbsp;&nbsp;
+      <a href="#M001218">resent_cc</a>&nbsp;&nbsp;
+      <a href="#M001219">resent_cc=</a>&nbsp;&nbsp;
+      <a href="#M001220">resent_date</a>&nbsp;&nbsp;
+      <a href="#M001221">resent_date=</a>&nbsp;&nbsp;
+      <a href="#M001222">resent_from</a>&nbsp;&nbsp;
+      <a href="#M001223">resent_from=</a>&nbsp;&nbsp;
+      <a href="#M001224">resent_message_id</a>&nbsp;&nbsp;
+      <a href="#M001225">resent_message_id=</a>&nbsp;&nbsp;
+      <a href="#M001226">resent_sender</a>&nbsp;&nbsp;
+      <a href="#M001227">resent_sender=</a>&nbsp;&nbsp;
+      <a href="#M001228">resent_to</a>&nbsp;&nbsp;
+      <a href="#M001229">resent_to=</a>&nbsp;&nbsp;
+      <a href="#M001286">retryable?</a>&nbsp;&nbsp;
+      <a href="#M001230">return_path</a>&nbsp;&nbsp;
+      <a href="#M001231">return_path=</a>&nbsp;&nbsp;
+      <a href="#M001232">sender</a>&nbsp;&nbsp;
+      <a href="#M001233">sender=</a>&nbsp;&nbsp;
+      <a href="#M001170">set_envelope</a>&nbsp;&nbsp;
+      <a href="#M001316">skip_deletion</a>&nbsp;&nbsp;
+      <a href="#M001234">smtp_envelope_from</a>&nbsp;&nbsp;
+      <a href="#M001235">smtp_envelope_from=</a>&nbsp;&nbsp;
+      <a href="#M001236">smtp_envelope_to</a>&nbsp;&nbsp;
+      <a href="#M001237">smtp_envelope_to=</a>&nbsp;&nbsp;
+      <a href="#M001273">sub_type</a>&nbsp;&nbsp;
+      <a href="#M001238">subject</a>&nbsp;&nbsp;
+      <a href="#M001239">subject=</a>&nbsp;&nbsp;
+      <a href="#M001319">text?</a>&nbsp;&nbsp;
+      <a href="#M001292">text_part</a>&nbsp;&nbsp;
+      <a href="#M001294">text_part=</a>&nbsp;&nbsp;
+      <a href="#M001240">to</a>&nbsp;&nbsp;
+      <a href="#M001241">to=</a>&nbsp;&nbsp;
+      <a href="#M001249">to_addrs</a>&nbsp;&nbsp;
+      <a href="#M001306">to_s</a>&nbsp;&nbsp;
+      <a href="#M001303">to_yaml</a>&nbsp;&nbsp;
+      <a href="#M001198">transport_encoding</a>&nbsp;&nbsp;
+      <a href="#M001199">transport_encoding=</a>&nbsp;&nbsp;
+      <a href="#M001302">without_attachments!</a>&nbsp;&nbsp;
+      </div>
+    </div>
+
+  </div>
+
+
+    <!-- if includes -->
+    <div id="includes">
+      <h3 class="section-bar">Included Modules</h3>
+
+      <div id="includes-list">
+        <span class="include-name"><a href="Patterns.html">Patterns</a></span>
+        <span class="include-name"><a href="Utilities.html">Utilities</a></span>
+      </div>
+    </div>
+
+    <div id="section">
+
+
+
+
+
+    <div id="attribute-list">
+      <h3 class="section-bar">Attributes</h3>
+
+      <div class="name-list">
+        <table>
+        <tr class="top-aligned-row context-row">
+          <td class="context-item-name">delivery_handler</td>
+          <td class="context-item-value">&nbsp;[RW]&nbsp;</td>
+          <td class="context-item-desc">
+If you assign a delivery handler, mail will call :deliver_mail on the
+object you assign <a href="Message.html#M001240">to</a> delivery_handler,
+it will pass itself as the single argument.
+
+<p>
+If you define a delivery_handler, then you are responsible for the
+following actions in the delivery cycle:
+</p>
+<ul>
+<li>Appending the mail object <a href="Message.html#M001240">to</a>
+Mail.deliveries as you see fit.
+
+</li>
+<li>Checking the mail.perform_deliveries flag <a
+href="Message.html#M001240">to</a> decide if you should actually call :<a
+href="Message.html#M001164">deliver!</a> the mail object or not.
+
+</li>
+<li>Checking the mail.raise_delivery_errors flag <a
+href="Message.html#M001240">to</a> decide if you should raise delivery <a
+href="Message.html#M001177">errors</a> if they occur.
+
+</li>
+<li>Actually calling :<a href="Message.html#M001164">deliver!</a> (with the
+bang) on the mail object <a href="Message.html#M001240">to</a> get it <a
+href="Message.html#M001240">to</a> <a
+href="Message.html#M001163">deliver</a> itself.
+
+</li>
+</ul>
+<p>
+A simplest implementation of a delivery_handler would be
+</p>
+<pre>
+  class MyObject
+
+    def initialize
+      @mail = Mail.new('To: mikel@test.lindsaar.net')
+      @mail.delivery_handler = self
+    end
+
+    attr_accessor :mail
+
+    def deliver_mail(mail)
+      yield
+    end
+  end
+</pre>
+<p>
+Then doing:
+</p>
+<pre>
+  obj = MyObject.new
+  obj.mail.deliver
+</pre>
+<p>
+Would cause Mail <a href="Message.html#M001240">to</a> call
+obj.deliver_mail passing itself as a parameter, which then can just yield
+and let Mail do its own private do_delivery method.
+</p>
+</td>
+        </tr>
+        <tr class="top-aligned-row context-row">
+          <td class="context-item-name">perform_deliveries</td>
+          <td class="context-item-value">&nbsp;[RW]&nbsp;</td>
+          <td class="context-item-desc">
+If set <a href="Message.html#M001240">to</a> false, mail will go through
+the motions of doing a delivery, but not actually call the delivery method
+or append the mail object <a href="Message.html#M001240">to</a> the
+Mail.deliveries collection. Useful for testing.
+
+<pre>
+  Mail.deliveries.size #=&gt; 0
+  mail.delivery_method :smtp
+  mail.perform_deliveries = false
+  mail.deliver                        # Mail::SMTP not called here
+  Mail.deliveries.size #=&gt; 0
+</pre>
+<p>
+If you want <a href="Message.html#M001240">to</a> test and query the
+Mail.deliveries collection <a href="Message.html#M001240">to</a> see what
+mail you sent, you should set perform_deliveries <a
+href="Message.html#M001240">to</a> true and use the :test mail <a
+href="Message.html#M001165">delivery_method</a>:
+</p>
+<pre>
+  Mail.deliveries.size #=&gt; 0
+  mail.delivery_method :test
+  mail.perform_deliveries = true
+  mail.deliver
+  Mail.deliveries.size #=&gt; 1
+</pre>
+<p>
+This setting is ignored by mail (though still available as a flag) if you
+define a delivery_handler
+</p>
+</td>
+        </tr>
+        <tr class="top-aligned-row context-row">
+          <td class="context-item-name">raise_delivery_errors</td>
+          <td class="context-item-value">&nbsp;[RW]&nbsp;</td>
+          <td class="context-item-desc">
+If set <a href="Message.html#M001240">to</a> false, mail will silently
+catch and ignore any exceptions raised through attempting <a
+href="Message.html#M001240">to</a> <a
+href="Message.html#M001163">deliver</a> an email.
+
+<p>
+This setting is ignored by mail (though still available as a flag) if you
+define a delivery_handler
+</p>
+</td>
+        </tr>
+        </table>
+      </div>
+    </div>
+      
+
+
+    <!-- if method_list -->
+    <div id="methods">
+      <h3 class="section-bar">Public Class methods</h3>
+
+      <div id="method-M001305" class="method-detail">
+        <a name="M001305"></a>
+
+        <div class="method-heading">
+          <a href="Message.src/M001305.html" target="Code" class="method-signature"
+            onclick="popupCode('Message.src/M001305.html');return false;">
+          <span class="method-name">from_hash</span><span class="method-args">(hash)</span>
+          </a>
+        </div>
+      
+        <div class="method-description">
+        </div>
+      </div>
+
+      <div id="method-M001304" class="method-detail">
+        <a name="M001304"></a>
+
+        <div class="method-heading">
+          <a href="Message.src/M001304.html" target="Code" class="method-signature"
+            onclick="popupCode('Message.src/M001304.html');return false;">
+          <span class="method-name">from_yaml</span><span class="method-args">(str)</span>
+          </a>
+        </div>
+      
+        <div class="method-description">
+        </div>
+      </div>
+
+      <div id="method-M001159" class="method-detail">
+        <a name="M001159"></a>
+
+        <div class="method-heading">
+          <a href="Message.src/M001159.html" target="Code" class="method-signature"
+            onclick="popupCode('Message.src/M001159.html');return false;">
+          <span class="method-name">new</span><span class="method-args">(*args, &amp;block)</span>
+          </a>
+        </div>
+      
+        <div class="method-description">
+          <h2>Making an email</h2>
+<p>
+You can make an <a href="Message.html#M001159">new</a> mail object via a
+block, passing a string, file or direct assignment.
+</p>
+<h3>Making an email via a block</h3>
+<pre>
+ mail = Mail.new do
+      from 'mikel@test.lindsaar.net'
+        to 'you@test.lindsaar.net'
+   subject 'This is a test email'
+      body File.read('body.txt')
+ end
+
+ mail.to_s #=&gt; &quot;From: mikel@test.lindsaar.net\r\nTo: you@...
+</pre>
+<h3>Making an email via passing a string</h3>
+<pre>
+ mail = Mail.new(&quot;To: mikel@test.lindsaar.net\r\nSubject: Hello\r\n\r\nHi there!&quot;)
+ mail.body.to_s #=&gt; 'Hi there!'
+ mail.subject   #=&gt; 'Hello'
+ mail.to        #=&gt; 'mikel@test.lindsaar.net'
+</pre>
+<h3>Making an email <a href="Message.html#M001200">from</a> a file</h3>
+<pre>
+ mail = Mail.read('path/to/file.eml')
+ mail.body.to_s #=&gt; 'Hi there!'
+ mail.subject   #=&gt; 'Hello'
+ mail.to        #=&gt; 'mikel@test.lindsaar.net'
+</pre>
+<h3>Making an email via assignment</h3>
+<p>
+You can assign values <a href="Message.html#M001240">to</a> a mail object
+via four approaches:
+</p>
+<ul>
+<li>Message#field_name=(value)
+
+</li>
+<li>Message#field_name(value)
+
+</li>
+<li><a href="Message.html">Message</a>#[&#8216;field_name&#8217;]=(value)
+
+</li>
+<li><a href="Message.html">Message</a>#[:field_name]=(value)
+
+</li>
+</ul>
+<p>
+Examples:
+</p>
+<pre>
+ mail = Mail.new
+ mail['from'] = 'mikel@test.lindsaar.net'
+ mail[:to]    = 'you@test.lindsaar.net'
+ mail.subject 'This is a test email'
+ mail.body    = 'This is a body'
+
+ mail.to_s #=&gt; &quot;From: mikel@test.lindsaar.net\r\nTo: you@...
+</pre>
+        </div>
+      </div>
+
+      <h3 class="section-bar">Public Instance methods</h3>
+
+      <div id="method-M001167" class="method-detail">
+        <a name="M001167"></a>
+
+        <div class="method-heading">
+          <a href="Message.src/M001167.html" target="Code" class="method-signature"
+            onclick="popupCode('Message.src/M001167.html');return false;">
+          <span class="method-name">&lt;=&gt;</span><span class="method-args">(other)</span>
+          </a>
+        </div>
+      
+        <div class="method-description">
+          <p>
+Provides the operator needed for sort et al.
+</p>
+<p>
+Compares this mail object with another mail object, this is done by <a
+href="Message.html#M001196">date</a>, so an email that is older than
+another will appear first.
+</p>
+<p>
+Example:
+</p>
+<pre>
+ mail1 = Mail.new do
+   date(Time.now)
+ end
+ mail2 = Mail.new do
+   date(Time.now - 86400) # 1 day older
+ end
+ [mail2, mail1].sort #=&gt; [mail2, mail1]
+</pre>
+        </div>
+      </div>
+
+      <div id="method-M001168" class="method-detail">
+        <a name="M001168"></a>
+
+        <div class="method-heading">
+          <a href="Message.src/M001168.html" target="Code" class="method-signature"
+            onclick="popupCode('Message.src/M001168.html');return false;">
+          <span class="method-name">==</span><span class="method-args">(other)</span>
+          </a>
+        </div>
+      
+        <div class="method-description">
+          <p>
+Two emails are the same if they have the same fields and <a
+href="Message.html#M001244">body</a> contents. One gotcha here is that Mail
+will insert <a href="Message.html">Message</a>-IDs when calling <a
+href="Message.html#M001301">encoded</a>, so doing mail1.encoded ==
+mail2.encoded is most probably not going <a
+href="Message.html#M001240">to</a> return what you think as the assigned <a
+href="Message.html">Message</a>-IDs by Mail (if not already defined as the
+same) will ensure that the two objects are unique, and this comparison will
+ALWAYS return false.
+</p>
+<p>
+So the == operator has been defined like so: Two messages are the same if
+they have the same content, ignoring the <a
+href="Message.html">Message</a>-ID field, unless BOTH emails have a defined
+and different <a href="Message.html">Message</a>-ID value, then they are
+false.
+</p>
+<p>
+So, in practice the == operator works like this:
+</p>
+<pre>
+ m1 = Mail.new(&quot;Subject: Hello\r\n\r\nHello&quot;)
+ m2 = Mail.new(&quot;Subject: Hello\r\n\r\nHello&quot;)
+ m1 == m2 #=&gt; true
+
+ m1 = Mail.new(&quot;Subject: Hello\r\n\r\nHello&quot;)
+ m2 = Mail.new(&quot;Message-ID: &lt;1234@test&gt;\r\nSubject: Hello\r\n\r\nHello&quot;)
+ m1 == m2 #=&gt; true
+
+ m1 = Mail.new(&quot;Message-ID: &lt;1234@test&gt;\r\nSubject: Hello\r\n\r\nHello&quot;)
+ m2 = Mail.new(&quot;Subject: Hello\r\n\r\nHello&quot;)
+ m1 == m2 #=&gt; true
+
+ m1 = Mail.new(&quot;Message-ID: &lt;1234@test&gt;\r\nSubject: Hello\r\n\r\nHello&quot;)
+ m2 = Mail.new(&quot;Message-ID: &lt;1234@test&gt;\r\nSubject: Hello\r\n\r\nHello&quot;)
+ m1 == m2 #=&gt; true
+
+ m1 = Mail.new(&quot;Message-ID: &lt;1234@test&gt;\r\nSubject: Hello\r\n\r\nHello&quot;)
+ m2 = Mail.new(&quot;Message-ID: &lt;DIFFERENT@test&gt;\r\nSubject: Hello\r\n\r\nHello&quot;)
+ m1 == m2 #=&gt; false
+</pre>
+        </div>
+      </div>
+
+      <div id="method-M001253" class="method-detail">
+        <a name="M001253"></a>
+
+        <div class="method-heading">
+          <a href="Message.src/M001253.html" target="Code" class="method-signature"
+            onclick="popupCode('Message.src/M001253.html');return false;">
+          <span class="method-name">[]</span><span class="method-args">(name)</span>
+          </a>
+        </div>
+      
+        <div class="method-description">
+          <p>
+Allows you <a href="Message.html#M001240">to</a> <a
+href="Message.html#M001309">read</a> an arbitrary <a
+href="Message.html#M001175">header</a>
+</p>
+<p>
+Example:
+</p>
+<pre>
+ mail['foo'] = '1234'
+ mail['foo'].to_s #=&gt; '1234'
+</pre>
+        </div>
+      </div>
+
+      <div id="method-M001252" class="method-detail">
+        <a name="M001252"></a>
+
+        <div class="method-heading">
+          <a href="Message.src/M001252.html" target="Code" class="method-signature"
+            onclick="popupCode('Message.src/M001252.html');return false;">
+          <span class="method-name">[]=</span><span class="method-args">(name, value)</span>
+          </a>
+        </div>
+      
+        <div class="method-description">
+          <p>
+Allows you <a href="Message.html#M001240">to</a> add an arbitrary <a
+href="Message.html#M001175">header</a>
+</p>
+<p>
+Example:
+</p>
+<pre>
+ mail['foo'] = '1234'
+ mail['foo'].to_s #=&gt; '1234'
+</pre>
+        </div>
+      </div>
+
+      <div id="method-M001281" class="method-detail">
+        <a name="M001281"></a>
+
+        <div class="method-heading">
+          <a href="Message.src/M001281.html" target="Code" class="method-signature"
+            onclick="popupCode('Message.src/M001281.html');return false;">
+          <span class="method-name">action</span><span class="method-args">()</span>
+          </a>
+        </div>
+      
+        <div class="method-description">
+        </div>
+      </div>
+
+      <div id="method-M001266" class="method-detail">
+        <a name="M001266"></a>
+
+        <div class="method-heading">
+          <a href="Message.src/M001266.html" target="Code" class="method-signature"
+            onclick="popupCode('Message.src/M001266.html');return false;">
+          <span class="method-name">add_charset</span><span class="method-args">()</span>
+          </a>
+        </div>
+      
+        <div class="method-description">
+          <p>
+Adds a content type and <a href="Message.html#M001270">charset</a> if the
+<a href="Message.html#M001244">body</a> is US-ASCII
+</p>
+<p>
+Otherwise raises a warning
+</p>
+        </div>
+      </div>
+
+      <div id="method-M001267" class="method-detail">
+        <a name="M001267"></a>
+
+        <div class="method-heading">
+          <a href="Message.src/M001267.html" target="Code" class="method-signature"
+            onclick="popupCode('Message.src/M001267.html');return false;">
+          <span class="method-name">add_content_transfer_encoding</span><span class="method-args">()</span>
+          </a>
+        </div>
+      
+        <div class="method-description">
+          <p>
+Adds a content transfer encoding
+</p>
+<p>
+Otherwise raises a warning
+</p>
+        </div>
+      </div>
+
+      <div id="method-M001265" class="method-detail">
+        <a name="M001265"></a>
+
+        <div class="method-heading">
+          <a href="Message.src/M001265.html" target="Code" class="method-signature"
+            onclick="popupCode('Message.src/M001265.html');return false;">
+          <span class="method-name">add_content_type</span><span class="method-args">()</span>
+          </a>
+        </div>
+      
+        <div class="method-description">
+          <p>
+Adds a content type and <a href="Message.html#M001270">charset</a> if the
+<a href="Message.html#M001244">body</a> is US-ASCII
+</p>
+<p>
+Otherwise raises a warning
+</p>
+        </div>
+      </div>
+
+      <div id="method-M001263" class="method-detail">
+        <a name="M001263"></a>
+
+        <div class="method-heading">
+          <a href="Message.src/M001263.html" target="Code" class="method-signature"
+            onclick="popupCode('Message.src/M001263.html');return false;">
+          <span class="method-name">add_date</span><span class="method-args">(date_val = '')</span>
+          </a>
+        </div>
+      
+        <div class="method-description">
+          <p>
+Creates a <a href="Message.html#M001159">new</a> empty Date field and
+inserts it in the correct order into the <a href="Header.html">Header</a>.
+The <a href="DateField.html">DateField</a> object will automatically
+generate DateTime.now&#8216;s <a href="Message.html#M001196">date</a> if
+you try and encode it or output it <a href="Message.html#M001306">to_s</a>
+without specifying a <a href="Message.html#M001196">date</a> yourself.
+</p>
+<p>
+It will preserve any <a href="Message.html#M001196">date</a> you specify if
+you do.
+</p>
+        </div>
+      </div>
+
+      <div id="method-M001297" class="method-detail">
+        <a name="M001297"></a>
+
+        <div class="method-heading">
+          <a href="Message.src/M001297.html" target="Code" class="method-signature"
+            onclick="popupCode('Message.src/M001297.html');return false;">
+          <span class="method-name">add_file</span><span class="method-args">(values)</span>
+          </a>
+        </div>
+      
+        <div class="method-description">
+          <p>
+Adds a file <a href="Message.html#M001240">to</a> the message. You have two
+options with this method, you can just pass in the absolute path <a
+href="Message.html#M001240">to</a> the file you want and Mail will <a
+href="Message.html#M001309">read</a> the file, get the <a
+href="Message.html#M001313">filename</a> <a
+href="Message.html#M001200">from</a> the path you pass in and guess the
+MIME media type, or you can pass in the <a
+href="Message.html#M001313">filename</a> as a string, and pass in the file
+content as a blob.
+</p>
+<p>
+Example:
+</p>
+<pre>
+ m = Mail.new
+ m.add_file('/path/to/filename.png')
+
+ m = Mail.new
+ m.add_file(:filename =&gt; 'filename.png', :content =&gt; File.read('/path/to/file.jpg'))
+</pre>
+<p>
+Note also that if you add a file <a href="Message.html#M001240">to</a> an
+existing message, Mail will convert that message <a
+href="Message.html#M001240">to</a> a MIME multipart email, moving whatever
+plain text <a href="Message.html#M001244">body</a> you had into its own
+text plain <a href="Message.html#M001296">part</a>.
+</p>
+<p>
+Example:
+</p>
+<pre>
+ m = Mail.new do
+   body 'this is some text'
+ end
+ m.multipart? #=&gt; false
+ m.add_file('/path/to/filename.png')
+ m.multipart? #=&gt; true
+ m.parts.first.content_type.content_type #=&gt; 'text/plain'
+ m.parts.last.content_type.content_type #=&gt; 'image/png'
+</pre>
+<p>
+See also <a href="Message.html#M001289">attachments</a>
+</p>
+        </div>
+      </div>
+
+      <div id="method-M001262" class="method-detail">
+        <a name="M001262"></a>
+
+        <div class="method-heading">
+          <a href="Message.src/M001262.html" target="Code" class="method-signature"
+            onclick="popupCode('Message.src/M001262.html');return false;">
+          <span class="method-name">add_message_id</span><span class="method-args">(msg_id_val = '')</span>
+          </a>
+        </div>
+      
+        <div class="method-description">
+          <p>
+Creates a <a href="Message.html#M001159">new</a> empty <a
+href="Message.html">Message</a>-ID field and inserts it in the correct
+order into the <a href="Header.html">Header</a>. The <a
+href="MessageIdField.html">MessageIdField</a> object will automatically
+generate a unique message ID if you try and encode it or output it <a
+href="Message.html#M001306">to_s</a> without specifying a message id.
+</p>
+<p>
+It will preserve the message ID you specify if you do.
+</p>
+        </div>
+      </div>
+
+      <div id="method-M001264" class="method-detail">
+        <a name="M001264"></a>
+
+        <div class="method-heading">
+          <a href="Message.src/M001264.html" target="Code" class="method-signature"
+            onclick="popupCode('Message.src/M001264.html');return false;">
+          <span class="method-name">add_mime_version</span><span class="method-args">(ver_val = '')</span>
+          </a>
+        </div>
+      
+        <div class="method-description">
+          <p>
+Creates a <a href="Message.html#M001159">new</a> empty Mime Version field
+and inserts it in the correct order into the <a
+href="Header.html">Header</a>. The <a
+href="MimeVersion.html">MimeVersion</a> object will automatically generate
+set itself <a href="Message.html#M001240">to</a> &#8216;1.0&#8217; if you
+try and encode it or output it <a href="Message.html#M001306">to_s</a>
+without specifying a version yourself.
+</p>
+<p>
+It will preserve any <a href="Message.html#M001196">date</a> you specify if
+you do.
+</p>
+        </div>
+      </div>
+
+      <div id="method-M001295" class="method-detail">
+        <a name="M001295"></a>
+
+        <div class="method-heading">
+          <a href="Message.src/M001295.html" target="Code" class="method-signature"
+            onclick="popupCode('Message.src/M001295.html');return false;">
+          <span class="method-name">add_part</span><span class="method-args">(part)</span>
+          </a>
+        </div>
+      
+        <div class="method-description">
+          <p>
+Adds a <a href="Message.html#M001296">part</a> <a
+href="Message.html#M001240">to</a> the <a
+href="Message.html#M001288">parts</a> list or creates the <a
+href="Message.html#M001296">part</a> list
+</p>
+        </div>
+      </div>
+
+      <div id="method-M001314" class="method-detail">
+        <a name="M001314"></a>
+
+        <div class="method-heading">
+          <a href="Message.src/M001314.html" target="Code" class="method-signature"
+            onclick="popupCode('Message.src/M001314.html');return false;">
+          <span class="method-name">all_parts</span><span class="method-args">()</span>
+          </a>
+        </div>
+      
+        <div class="method-description">
+        </div>
+      </div>
+
+      <div id="method-M001312" class="method-detail">
+        <a name="M001312"></a>
+
+        <div class="method-heading">
+          <a href="Message.src/M001312.html" target="Code" class="method-signature"
+            onclick="popupCode('Message.src/M001312.html');return false;">
+          <span class="method-name">attachment</span><span class="method-args">()</span>
+          </a>
+        </div>
+      
+        <div class="method-description">
+          <p>
+Returns the <a href="Message.html#M001312">attachment</a> data if there is
+any
+</p>
+        </div>
+      </div>
+
+      <div id="method-M001311" class="method-detail">
+        <a name="M001311"></a>
+
+        <div class="method-heading">
+          <a href="Message.src/M001311.html" target="Code" class="method-signature"
+            onclick="popupCode('Message.src/M001311.html');return false;">
+          <span class="method-name">attachment?</span><span class="method-args">()</span>
+          </a>
+        </div>
+      
+        <div class="method-description">
+          <p>
+Returns true if this <a href="Message.html#M001296">part</a> is an <a
+href="Message.html#M001312">attachment</a>, false otherwise.
+</p>
+        </div>
+      </div>
+
+      <div id="method-M001289" class="method-detail">
+        <a name="M001289"></a>
+
+        <div class="method-heading">
+          <a href="Message.src/M001289.html" target="Code" class="method-signature"
+            onclick="popupCode('Message.src/M001289.html');return false;">
+          <span class="method-name">attachments</span><span class="method-args">()</span>
+          </a>
+        </div>
+      
+        <div class="method-description">
+          <p>
+Returns an <a href="AttachmentsList.html">AttachmentsList</a> object, which
+holds all of the <a href="Message.html#M001289">attachments</a> in the
+receiver object (either the entier email or a <a
+href="Message.html#M001296">part</a> within) and all of its descendants.
+</p>
+<p>
+It also allows you <a href="Message.html#M001240">to</a> add <a
+href="Message.html#M001289">attachments</a> <a
+href="Message.html#M001240">to</a> the mail object directly, like so:
+</p>
+<pre>
+ mail.attachments['filename.jpg'] = File.read('/path/to/filename.jpg')
+</pre>
+<p>
+If you do this, then Mail will take the file name and work out the MIME
+media type set the Content-Type, Content-Disposition,
+Content-Transfer-Encoding and base64 encode the contents of the <a
+href="Message.html#M001312">attachment</a> all for you.
+</p>
+<p>
+You can also specify overrides if you want by passing a hash instead of a
+string:
+</p>
+<pre>
+ mail.attachments['filename.jpg'] = {:mime_type =&gt; 'application/x-gzip',
+                                     :content =&gt; File.read('/path/to/filename.jpg')}
+</pre>
+<p>
+If you want <a href="Message.html#M001240">to</a> use a different encoding
+than Base64, you can pass an encoding in, but then it is up <a
+href="Message.html#M001240">to</a> you <a
+href="Message.html#M001240">to</a> pass in the content pre-<a
+href="Message.html#M001301">encoded</a>, and don&#8216;t expect Mail <a
+href="Message.html#M001240">to</a> know how <a
+href="Message.html#M001240">to</a> decode this data:
+</p>
+<pre>
+ file_content = SpecialEncode(File.read('/path/to/filename.jpg'))
+ mail.attachments['filename.jpg'] = {:mime_type =&gt; 'application/x-gzip',
+                                     :encoding =&gt; 'SpecialEncoding',
+                                     :content =&gt; file_content }
+</pre>
+<p>
+You can also search for specific <a
+href="Message.html#M001289">attachments</a>:
+</p>
+<pre>
+ # By Filename
+ mail.attachments['filename.jpg']   #=&gt; Mail::Part object or nil
+
+ # or by index
+ mail.attachments[0]                #=&gt; Mail::Part (first attachment)
+</pre>
+        </div>
+      </div>
+
+      <div id="method-M001178" class="method-detail">
+        <a name="M001178"></a>
+
+        <div class="method-heading">
+          <a href="Message.src/M001178.html" target="Code" class="method-signature"
+            onclick="popupCode('Message.src/M001178.html');return false;">
+          <span class="method-name">bcc</span><span class="method-args">( val = nil )</span>
+          </a>
+        </div>
+      
+        <div class="method-description">
+          <p>
+Returns the Bcc value of the mail object as an array of strings of address
+specs.
+</p>
+<p>
+Example:
+</p>
+<pre>
+ mail.bcc = 'Mikel &lt;mikel@test.lindsaar.net&gt;'
+ mail.bcc #=&gt; ['mikel@test.lindsaar.net']
+ mail.bcc = 'Mikel &lt;mikel@test.lindsaar.net&gt;, ada@test.lindsaar.net'
+ mail.bcc #=&gt; ['mikel@test.lindsaar.net', 'ada@test.lindsaar.net']
+</pre>
+<p>
+Also allows you <a href="Message.html#M001240">to</a> set the value by
+passing a value as a parameter
+</p>
+<p>
+Example:
+</p>
+<pre>
+ mail.bcc 'Mikel &lt;mikel@test.lindsaar.net&gt;'
+ mail.bcc #=&gt; ['mikel@test.lindsaar.net']
+</pre>
+<p>
+Additionally, you can append <a href="Message.html#M001159">new</a>
+addresses <a href="Message.html#M001240">to</a> the returned Array like
+object.
+</p>
+<p>
+Example:
+</p>
+<pre>
+ mail.bcc 'Mikel &lt;mikel@test.lindsaar.net&gt;'
+ mail.bcc &lt;&lt; 'ada@test.lindsaar.net'
+ mail.bcc #=&gt; ['mikel@test.lindsaar.net', 'ada@test.lindsaar.net']
+</pre>
+        </div>
+      </div>
+
+      <div id="method-M001179" class="method-detail">
+        <a name="M001179"></a>
+
+        <div class="method-heading">
+          <a href="Message.src/M001179.html" target="Code" class="method-signature"
+            onclick="popupCode('Message.src/M001179.html');return false;">
+          <span class="method-name">bcc=</span><span class="method-args">( val )</span>
+          </a>
+        </div>
+      
+        <div class="method-description">
+          <p>
+Sets the Bcc value of the mail object, pass in a string of the field
+</p>
+<p>
+Example:
+</p>
+<pre>
+ mail.bcc = 'Mikel &lt;mikel@test.lindsaar.net&gt;'
+ mail.bcc #=&gt; ['mikel@test.lindsaar.net']
+ mail.bcc = 'Mikel &lt;mikel@test.lindsaar.net&gt;, ada@test.lindsaar.net'
+ mail.bcc #=&gt; ['mikel@test.lindsaar.net', 'ada@test.lindsaar.net']
+</pre>
+        </div>
+      </div>
+
+      <div id="method-M001251" class="method-detail">
+        <a name="M001251"></a>
+
+        <div class="method-heading">
+          <a href="Message.src/M001251.html" target="Code" class="method-signature"
+            onclick="popupCode('Message.src/M001251.html');return false;">
+          <span class="method-name">bcc_addrs</span><span class="method-args">()</span>
+          </a>
+        </div>
+      
+        <div class="method-description">
+          <p>
+Returns an array of addresses (the <a
+href="Message.html#M001301">encoded</a> value) in the Bcc field, if no Bcc
+field, returns an empty array
+</p>
+        </div>
+      </div>
+
+      <div id="method-M001244" class="method-detail">
+        <a name="M001244"></a>
+
+        <div class="method-heading">
+          <a href="Message.src/M001244.html" target="Code" class="method-signature"
+            onclick="popupCode('Message.src/M001244.html');return false;">
+          <span class="method-name">body</span><span class="method-args">(value = nil)</span>
+          </a>
+        </div>
+      
+        <div class="method-description">
+          <p>
+Returns the <a href="Message.html#M001244">body</a> of the message object.
+Or, if passed a parameter sets the value.
+</p>
+<p>
+Example:
+</p>
+<pre>
+ mail = Mail::Message.new('To: mikel\r\n\r\nThis is the body')
+ mail.body #=&gt; #&lt;Mail::Body:0x13919c @raw_source=&quot;This is the bo...
+
+ mail.body 'This is another body'
+ mail.body #=&gt; #&lt;Mail::Body:0x13919c @raw_source=&quot;This is anothe...
+</pre>
+        </div>
+      </div>
+
+      <div id="method-M001243" class="method-detail">
+        <a name="M001243"></a>
+
+        <div class="method-heading">
+          <a href="Message.src/M001243.html" target="Code" class="method-signature"
+            onclick="popupCode('Message.src/M001243.html');return false;">
+          <span class="method-name">body=</span><span class="method-args">(value)</span>
+          </a>
+        </div>
+      
+        <div class="method-description">
+          <p>
+Sets the <a href="Message.html#M001244">body</a> object of the message
+object.
+</p>
+<p>
+Example:
+</p>
+<pre>
+ mail.body = 'This is the body'
+ mail.body #=&gt; #&lt;Mail::Body:0x13919c @raw_source=&quot;This is the bo...
+</pre>
+<p>
+You can also reset the <a href="Message.html#M001244">body</a> of an <a
+href="Message.html">Message</a> object by setting <a
+href="Message.html#M001244">body</a> <a href="Message.html#M001240">to</a>
+nil
+</p>
+<p>
+Example:
+</p>
+<pre>
+ mail.body = 'this is the body'
+ mail.body.encoded #=&gt; 'this is the body'
+ mail.body = nil
+ mail.body.encoded #=&gt; ''
+</pre>
+<p>
+If you try and set the <a href="Message.html#M001244">body</a> of an email
+that is a multipart email, then instead of deleting all the <a
+href="Message.html#M001288">parts</a> of your email, mail will add a
+text/plain <a href="Message.html#M001296">part</a> <a
+href="Message.html#M001240">to</a> your email:
+</p>
+<pre>
+ mail.add_file 'somefilename.png'
+ mail.parts.length #=&gt; 1
+ mail.body = &quot;This is a body&quot;
+ mail.parts.length #=&gt; 2
+ mail.parts.last.content_type.content_type #=&gt; 'This is a body'
+</pre>
+        </div>
+      </div>
+
+      <div id="method-M001245" class="method-detail">
+        <a name="M001245"></a>
+
+        <div class="method-heading">
+          <a href="Message.src/M001245.html" target="Code" class="method-signature"
+            onclick="popupCode('Message.src/M001245.html');return false;">
+          <span class="method-name">body_encoding</span><span class="method-args">(value)</span>
+          </a>
+        </div>
+      
+        <div class="method-description">
+        </div>
+      </div>
+
+      <div id="method-M001246" class="method-detail">
+        <a name="M001246"></a>
+
+        <div class="method-heading">
+          <a href="Message.src/M001246.html" target="Code" class="method-signature"
+            onclick="popupCode('Message.src/M001246.html');return false;">
+          <span class="method-name">body_encoding=</span><span class="method-args">(value)</span>
+          </a>
+        </div>
+      
+        <div class="method-description">
+        </div>
+      </div>
+
+      <div id="method-M001280" class="method-detail">
+        <a name="M001280"></a>
+
+        <div class="method-heading">
+          <a href="Message.src/M001280.html" target="Code" class="method-signature"
+            onclick="popupCode('Message.src/M001280.html');return false;">
+          <span class="method-name">bounced?</span><span class="method-args">()</span>
+          </a>
+        </div>
+      
+        <div class="method-description">
+        </div>
+      </div>
+
+      <div id="method-M001287" class="method-detail">
+        <a name="M001287"></a>
+
+        <div class="method-heading">
+          <a href="Message.src/M001287.html" target="Code" class="method-signature"
+            onclick="popupCode('Message.src/M001287.html');return false;">
+          <span class="method-name">boundary</span><span class="method-args">()</span>
+          </a>
+        </div>
+      
+        <div class="method-description">
+          <p>
+Returns the current <a href="Message.html#M001287">boundary</a> for this
+message <a href="Message.html#M001296">part</a>
+</p>
+        </div>
+      </div>
+
+      <div id="method-M001180" class="method-detail">
+        <a name="M001180"></a>
+
+        <div class="method-heading">
+          <a href="Message.src/M001180.html" target="Code" class="method-signature"
+            onclick="popupCode('Message.src/M001180.html');return false;">
+          <span class="method-name">cc</span><span class="method-args">( val = nil )</span>
+          </a>
+        </div>
+      
+        <div class="method-description">
+          <p>
+Returns the Cc value of the mail object as an array of strings of address
+specs.
+</p>
+<p>
+Example:
+</p>
+<pre>
+ mail.cc = 'Mikel &lt;mikel@test.lindsaar.net&gt;'
+ mail.cc #=&gt; ['mikel@test.lindsaar.net']
+ mail.cc = 'Mikel &lt;mikel@test.lindsaar.net&gt;, ada@test.lindsaar.net'
+ mail.cc #=&gt; ['mikel@test.lindsaar.net', 'ada@test.lindsaar.net']
+</pre>
+<p>
+Also allows you <a href="Message.html#M001240">to</a> set the value by
+passing a value as a parameter
+</p>
+<p>
+Example:
+</p>
+<pre>
+ mail.cc 'Mikel &lt;mikel@test.lindsaar.net&gt;'
+ mail.cc #=&gt; ['mikel@test.lindsaar.net']
+</pre>
+<p>
+Additionally, you can append <a href="Message.html#M001159">new</a>
+addresses <a href="Message.html#M001240">to</a> the returned Array like
+object.
+</p>
+<p>
+Example:
+</p>
+<pre>
+ mail.cc 'Mikel &lt;mikel@test.lindsaar.net&gt;'
+ mail.cc &lt;&lt; 'ada@test.lindsaar.net'
+ mail.cc #=&gt; ['mikel@test.lindsaar.net', 'ada@test.lindsaar.net']
+</pre>
+        </div>
+      </div>
+
+      <div id="method-M001181" class="method-detail">
+        <a name="M001181"></a>
+
+        <div class="method-heading">
+          <a href="Message.src/M001181.html" target="Code" class="method-signature"
+            onclick="popupCode('Message.src/M001181.html');return false;">
+          <span class="method-name">cc=</span><span class="method-args">( val )</span>
+          </a>
+        </div>
+      
+        <div class="method-description">
+          <p>
+Sets the Cc value of the mail object, pass in a string of the field
+</p>
+<p>
+Example:
+</p>
+<pre>
+ mail.cc = 'Mikel &lt;mikel@test.lindsaar.net&gt;'
+ mail.cc #=&gt; ['mikel@test.lindsaar.net']
+ mail.cc = 'Mikel &lt;mikel@test.lindsaar.net&gt;, ada@test.lindsaar.net'
+ mail.cc #=&gt; ['mikel@test.lindsaar.net', 'ada@test.lindsaar.net']
+</pre>
+        </div>
+      </div>
+
+      <div id="method-M001250" class="method-detail">
+        <a name="M001250"></a>
+
+        <div class="method-heading">
+          <a href="Message.src/M001250.html" target="Code" class="method-signature"
+            onclick="popupCode('Message.src/M001250.html');return false;">
+          <span class="method-name">cc_addrs</span><span class="method-args">()</span>
+          </a>
+        </div>
+      
+        <div class="method-description">
+          <p>
+Returns an array of addresses (the <a
+href="Message.html#M001301">encoded</a> value) in the Cc field, if no Cc
+field, returns an empty array
+</p>
+        </div>
+      </div>
+
+      <div id="method-M001270" class="method-detail">
+        <a name="M001270"></a>
+
+        <div class="method-heading">
+          <a href="Message.src/M001270.html" target="Code" class="method-signature"
+            onclick="popupCode('Message.src/M001270.html');return false;">
+          <span class="method-name">charset</span><span class="method-args">()</span>
+          </a>
+        </div>
+      
+        <div class="method-description">
+          <p>
+Returns the character set defined in the content type field
+</p>
+        </div>
+      </div>
+
+      <div id="method-M001271" class="method-detail">
+        <a name="M001271"></a>
+
+        <div class="method-heading">
+          <a href="Message.src/M001271.html" target="Code" class="method-signature"
+            onclick="popupCode('Message.src/M001271.html');return false;">
+          <span class="method-name">charset=</span><span class="method-args">(value)</span>
+          </a>
+        </div>
+      
+        <div class="method-description">
+          <p>
+Sets the <a href="Message.html#M001270">charset</a> <a
+href="Message.html#M001240">to</a> the supplied value.
+</p>
+        </div>
+      </div>
+
+      <div id="method-M001182" class="method-detail">
+        <a name="M001182"></a>
+
+        <div class="method-heading">
+          <a href="Message.src/M001182.html" target="Code" class="method-signature"
+            onclick="popupCode('Message.src/M001182.html');return false;">
+          <span class="method-name">comments</span><span class="method-args">( val = nil )</span>
+          </a>
+        </div>
+      
+        <div class="method-description">
+        </div>
+      </div>
+
+      <div id="method-M001183" class="method-detail">
+        <a name="M001183"></a>
+
+        <div class="method-heading">
+          <a href="Message.src/M001183.html" target="Code" class="method-signature"
+            onclick="popupCode('Message.src/M001183.html');return false;">
+          <span class="method-name">comments=</span><span class="method-args">( val )</span>
+          </a>
+        </div>
+      
+        <div class="method-description">
+        </div>
+      </div>
+
+      <div id="method-M001184" class="method-detail">
+        <a name="M001184"></a>
+
+        <div class="method-heading">
+          <a href="Message.src/M001184.html" target="Code" class="method-signature"
+            onclick="popupCode('Message.src/M001184.html');return false;">
+          <span class="method-name">content_description</span><span class="method-args">( val = nil )</span>
+          </a>
+        </div>
+      
+        <div class="method-description">
+        </div>
+      </div>
+
+      <div id="method-M001185" class="method-detail">
+        <a name="M001185"></a>
+
+        <div class="method-heading">
+          <a href="Message.src/M001185.html" target="Code" class="method-signature"
+            onclick="popupCode('Message.src/M001185.html');return false;">
+          <span class="method-name">content_description=</span><span class="method-args">( val )</span>
+          </a>
+        </div>
+      
+        <div class="method-description">
+        </div>
+      </div>
+
+      <div id="method-M001186" class="method-detail">
+        <a name="M001186"></a>
+
+        <div class="method-heading">
+          <a href="Message.src/M001186.html" target="Code" class="method-signature"
+            onclick="popupCode('Message.src/M001186.html');return false;">
+          <span class="method-name">content_disposition</span><span class="method-args">( val = nil )</span>
+          </a>
+        </div>
+      
+        <div class="method-description">
+        </div>
+      </div>
+
+      <div id="method-M001187" class="method-detail">
+        <a name="M001187"></a>
+
+        <div class="method-heading">
+          <a href="Message.src/M001187.html" target="Code" class="method-signature"
+            onclick="popupCode('Message.src/M001187.html');return false;">
+          <span class="method-name">content_disposition=</span><span class="method-args">( val )</span>
+          </a>
+        </div>
+      
+        <div class="method-description">
+        </div>
+      </div>
+
+      <div id="method-M001188" class="method-detail">
+        <a name="M001188"></a>
+
+        <div class="method-heading">
+          <a href="Message.src/M001188.html" target="Code" class="method-signature"
+            onclick="popupCode('Message.src/M001188.html');return false;">
+          <span class="method-name">content_id</span><span class="method-args">( val = nil )</span>
+          </a>
+        </div>
+      
+        <div class="method-description">
+        </div>
+      </div>
+
+      <div id="method-M001189" class="method-detail">
+        <a name="M001189"></a>
+
+        <div class="method-heading">
+          <a href="Message.src/M001189.html" target="Code" class="method-signature"
+            onclick="popupCode('Message.src/M001189.html');return false;">
+          <span class="method-name">content_id=</span><span class="method-args">( val )</span>
+          </a>
+        </div>
+      
+        <div class="method-description">
+        </div>
+      </div>
+
+      <div id="method-M001190" class="method-detail">
+        <a name="M001190"></a>
+
+        <div class="method-heading">
+          <a href="Message.src/M001190.html" target="Code" class="method-signature"
+            onclick="popupCode('Message.src/M001190.html');return false;">
+          <span class="method-name">content_location</span><span class="method-args">( val = nil )</span>
+          </a>
+        </div>
+      
+        <div class="method-description">
+        </div>
+      </div>
+
+      <div id="method-M001191" class="method-detail">
+        <a name="M001191"></a>
+
+        <div class="method-heading">
+          <a href="Message.src/M001191.html" target="Code" class="method-signature"
+            onclick="popupCode('Message.src/M001191.html');return false;">
+          <span class="method-name">content_location=</span><span class="method-args">( val )</span>
+          </a>
+        </div>
+      
+        <div class="method-description">
+        </div>
+      </div>
+
+      <div id="method-M001192" class="method-detail">
+        <a name="M001192"></a>
+
+        <div class="method-heading">
+          <a href="Message.src/M001192.html" target="Code" class="method-signature"
+            onclick="popupCode('Message.src/M001192.html');return false;">
+          <span class="method-name">content_transfer_encoding</span><span class="method-args">( val = nil )</span>
+          </a>
+        </div>
+      
+        <div class="method-description">
+        </div>
+      </div>
+
+      <div id="method-M001193" class="method-detail">
+        <a name="M001193"></a>
+
+        <div class="method-heading">
+          <a href="Message.src/M001193.html" target="Code" class="method-signature"
+            onclick="popupCode('Message.src/M001193.html');return false;">
+          <span class="method-name">content_transfer_encoding=</span><span class="method-args">( val )</span>
+          </a>
+        </div>
+      
+        <div class="method-description">
+        </div>
+      </div>
+
+      <div id="method-M001194" class="method-detail">
+        <a name="M001194"></a>
+
+        <div class="method-heading">
+          <a href="Message.src/M001194.html" target="Code" class="method-signature"
+            onclick="popupCode('Message.src/M001194.html');return false;">
+          <span class="method-name">content_type</span><span class="method-args">( val = nil )</span>
+          </a>
+        </div>
+      
+        <div class="method-description">
+        </div>
+      </div>
+
+      <div id="method-M001195" class="method-detail">
+        <a name="M001195"></a>
+
+        <div class="method-heading">
+          <a href="Message.src/M001195.html" target="Code" class="method-signature"
+            onclick="popupCode('Message.src/M001195.html');return false;">
+          <span class="method-name">content_type=</span><span class="method-args">( val )</span>
+          </a>
+        </div>
+      
+        <div class="method-description">
+        </div>
+      </div>
+
+      <div id="method-M001275" class="method-detail">
+        <a name="M001275"></a>
+
+        <div class="method-heading">
+          <a href="Message.src/M001275.html" target="Code" class="method-signature"
+            onclick="popupCode('Message.src/M001275.html');return false;">
+          <span class="method-name">content_type_parameters</span><span class="method-args">()</span>
+          </a>
+        </div>
+      
+        <div class="method-description">
+          <p>
+Returns the content type parameters
+</p>
+        </div>
+      </div>
+
+      <div id="method-M001298" class="method-detail">
+        <a name="M001298"></a>
+
+        <div class="method-heading">
+          <a href="Message.src/M001298.html" target="Code" class="method-signature"
+            onclick="popupCode('Message.src/M001298.html');return false;">
+          <span class="method-name">convert_to_multipart</span><span class="method-args">()</span>
+          </a>
+        </div>
+      
+        <div class="method-description">
+        </div>
+      </div>
+
+      <div id="method-M001196" class="method-detail">
+        <a name="M001196"></a>
+
+        <div class="method-heading">
+          <a href="Message.src/M001196.html" target="Code" class="method-signature"
+            onclick="popupCode('Message.src/M001196.html');return false;">
+          <span class="method-name">date</span><span class="method-args">( val = nil )</span>
+          </a>
+        </div>
+      
+        <div class="method-description">
+        </div>
+      </div>
+
+      <div id="method-M001197" class="method-detail">
+        <a name="M001197"></a>
+
+        <div class="method-heading">
+          <a href="Message.src/M001197.html" target="Code" class="method-signature"
+            onclick="popupCode('Message.src/M001197.html');return false;">
+          <span class="method-name">date=</span><span class="method-args">( val )</span>
+          </a>
+        </div>
+      
+        <div class="method-description">
+        </div>
+      </div>
+
+      <div id="method-M001310" class="method-detail">
+        <a name="M001310"></a>
+
+        <div class="method-heading">
+          <a href="Message.src/M001310.html" target="Code" class="method-signature"
+            onclick="popupCode('Message.src/M001310.html');return false;">
+          <span class="method-name">decode_body</span><span class="method-args">()</span>
+          </a>
+        </div>
+      
+        <div class="method-description">
+        </div>
+      </div>
+
+      <div id="method-M001308" class="method-detail">
+        <a name="M001308"></a>
+
+        <div class="method-heading">
+          <a href="Message.src/M001308.html" target="Code" class="method-signature"
+            onclick="popupCode('Message.src/M001308.html');return false;">
+          <span class="method-name">decoded</span><span class="method-args">()</span>
+          </a>
+        </div>
+      
+        <div class="method-description">
+        </div>
+      </div>
+
+      <div id="method-M001242" class="method-detail">
+        <a name="M001242"></a>
+
+        <div class="method-heading">
+          <a href="Message.src/M001242.html" target="Code" class="method-signature"
+            onclick="popupCode('Message.src/M001242.html');return false;">
+          <span class="method-name">default</span><span class="method-args">( sym, val = nil )</span>
+          </a>
+        </div>
+      
+        <div class="method-description">
+          <p>
+Returns the <a href="Message.html#M001242">default</a> value of the field
+requested as a symbol.
+</p>
+<p>
+Each <a href="Message.html#M001175">header</a> field has a :<a
+href="Message.html#M001242">default</a> method which returns the most
+common use case for that field, for example, the <a
+href="Message.html#M001196">date</a> field types will return a <a
+href="DateTime.html">DateTime</a> object when sent :<a
+href="Message.html#M001242">default</a>, the <a
+href="Message.html#M001238">subject</a>, or unstructured fields will return
+a <a href="Message.html#M001308">decoded</a> string of their value, the
+address field types will return a single addr_spec or an array of
+addr_specs if there is more than one.
+</p>
+        </div>
+      </div>
+
+      <div id="method-M001163" class="method-detail">
+        <a name="M001163"></a>
+
+        <div class="method-heading">
+          <a href="Message.src/M001163.html" target="Code" class="method-signature"
+            onclick="popupCode('Message.src/M001163.html');return false;">
+          <span class="method-name">deliver</span><span class="method-args">()</span>
+          </a>
+        </div>
+      
+        <div class="method-description">
+          <p>
+Delivers an mail object.
+</p>
+<p>
+Examples:
+</p>
+<pre>
+ mail = Mail.read('file.eml')
+ mail.deliver
+</pre>
+        </div>
+      </div>
+
+      <div id="method-M001164" class="method-detail">
+        <a name="M001164"></a>
+
+        <div class="method-heading">
+          <a href="Message.src/M001164.html" target="Code" class="method-signature"
+            onclick="popupCode('Message.src/M001164.html');return false;">
+          <span class="method-name">deliver!</span><span class="method-args">()</span>
+          </a>
+        </div>
+      
+        <div class="method-description">
+          <p>
+This method bypasses checking perform_deliveries and raise_delivery_errors,
+so use with caution.
+</p>
+<p>
+It still however fires off the intercepters and calls the observers
+callbacks if they are defined.
+</p>
+<p>
+Returns self
+</p>
+        </div>
+      </div>
+
+      <div id="method-M001165" class="method-detail">
+        <a name="M001165"></a>
+
+        <div class="method-heading">
+          <a href="Message.src/M001165.html" target="Code" class="method-signature"
+            onclick="popupCode('Message.src/M001165.html');return false;">
+          <span class="method-name">delivery_method</span><span class="method-args">(method = nil, settings = {})</span>
+          </a>
+        </div>
+      
+        <div class="method-description">
+        </div>
+      </div>
+
+      <div id="method-M001279" class="method-detail">
+        <a name="M001279"></a>
+
+        <div class="method-heading">
+          <a href="Message.src/M001279.html" target="Code" class="method-signature"
+            onclick="popupCode('Message.src/M001279.html');return false;">
+          <span class="method-name">delivery_status_part</span><span class="method-args">()</span>
+          </a>
+        </div>
+      
+        <div class="method-description">
+          <p>
+returns the <a href="Message.html#M001296">part</a> in a multipart/report
+email that has the content-type delivery-status
+</p>
+        </div>
+      </div>
+
+      <div id="method-M001278" class="method-detail">
+        <a name="M001278"></a>
+
+        <div class="method-heading">
+          <a href="Message.src/M001278.html" target="Code" class="method-signature"
+            onclick="popupCode('Message.src/M001278.html');return false;">
+          <span class="method-name">delivery_status_report?</span><span class="method-args">()</span>
+          </a>
+        </div>
+      
+        <div class="method-description">
+          <p>
+Returns true if the message is a multipart/report;
+report-type=delivery-status;
+</p>
+        </div>
+      </div>
+
+      <div id="method-M001247" class="method-detail">
+        <a name="M001247"></a>
+
+        <div class="method-heading">
+          <a href="Message.src/M001247.html" target="Code" class="method-signature"
+            onclick="popupCode('Message.src/M001247.html');return false;">
+          <span class="method-name">destinations</span><span class="method-args">()</span>
+          </a>
+        </div>
+      
+        <div class="method-description">
+          <p>
+Returns the list of addresses this message should be sent <a
+href="Message.html#M001240">to</a> by collecting the addresses off the <a
+href="Message.html#M001240">to</a>, <a href="Message.html#M001180">cc</a>
+and <a href="Message.html#M001178">bcc</a> fields.
+</p>
+<p>
+Example:
+</p>
+<pre>
+ mail.to = 'mikel@test.lindsaar.net'
+ mail.cc = 'sam@test.lindsaar.net'
+ mail.bcc = 'bob@test.lindsaar.net'
+ mail.destinations.length #=&gt; 3
+ mail.destinations.first #=&gt; 'mikel@test.lindsaar.net'
+</pre>
+        </div>
+      </div>
+
+      <div id="method-M001284" class="method-detail">
+        <a name="M001284"></a>
+
+        <div class="method-heading">
+          <a href="Message.src/M001284.html" target="Code" class="method-signature"
+            onclick="popupCode('Message.src/M001284.html');return false;">
+          <span class="method-name">diagnostic_code</span><span class="method-args">()</span>
+          </a>
+        </div>
+      
+        <div class="method-description">
+        </div>
+      </div>
+
+      <div id="method-M001300" class="method-detail">
+        <a name="M001300"></a>
+
+        <div class="method-heading">
+          <a href="Message.src/M001300.html" target="Code" class="method-signature"
+            onclick="popupCode('Message.src/M001300.html');return false;">
+          <span class="method-name">encode!</span><span class="method-args">()</span>
+          </a>
+        </div>
+      
+        <div class="method-description">
+        </div>
+      </div>
+
+      <div id="method-M001301" class="method-detail">
+        <a name="M001301"></a>
+
+        <div class="method-heading">
+          <a href="Message.src/M001301.html" target="Code" class="method-signature"
+            onclick="popupCode('Message.src/M001301.html');return false;">
+          <span class="method-name">encoded</span><span class="method-args">()</span>
+          </a>
+        </div>
+      
+        <div class="method-description">
+          <p>
+Outputs an <a href="Message.html#M001301">encoded</a> string representation
+of the mail message including all <a
+href="Message.html#M001176">headers</a>, <a
+href="Message.html#M001289">attachments</a>, etc. This is an <a
+href="Message.html#M001301">encoded</a> email in US-ASCII, so it is able <a
+href="Message.html#M001240">to</a> be directly sent <a
+href="Message.html#M001240">to</a> an email server.
+</p>
+        </div>
+      </div>
+
+      <div id="method-M001173" class="method-detail">
+        <a name="M001173"></a>
+
+        <div class="method-heading">
+          <a href="Message.src/M001173.html" target="Code" class="method-signature"
+            onclick="popupCode('Message.src/M001173.html');return false;">
+          <span class="method-name">envelope_date</span><span class="method-args">()</span>
+          </a>
+        </div>
+      
+        <div class="method-description">
+        </div>
+      </div>
+
+      <div id="method-M001172" class="method-detail">
+        <a name="M001172"></a>
+
+        <div class="method-heading">
+          <a href="Message.src/M001172.html" target="Code" class="method-signature"
+            onclick="popupCode('Message.src/M001172.html');return false;">
+          <span class="method-name">envelope_from</span><span class="method-args">()</span>
+          </a>
+        </div>
+      
+        <div class="method-description">
+        </div>
+      </div>
+
+      <div id="method-M001283" class="method-detail">
+        <a name="M001283"></a>
+
+        <div class="method-heading">
+          <a href="Message.src/M001283.html" target="Code" class="method-signature"
+            onclick="popupCode('Message.src/M001283.html');return false;">
+          <span class="method-name">error_status</span><span class="method-args">()</span>
+          </a>
+        </div>
+      
+        <div class="method-description">
+        </div>
+      </div>
+
+      <div id="method-M001177" class="method-detail">
+        <a name="M001177"></a>
+
+        <div class="method-heading">
+          <a href="Message.src/M001177.html" target="Code" class="method-signature"
+            onclick="popupCode('Message.src/M001177.html');return false;">
+          <span class="method-name">errors</span><span class="method-args">()</span>
+          </a>
+        </div>
+      
+        <div class="method-description">
+          <p>
+Returns a list of parser <a href="Message.html#M001177">errors</a> on the
+<a href="Message.html#M001175">header</a>, each field that had an error
+will be reparsed as an unstructured field <a
+href="Message.html#M001240">to</a> preserve the data inside, but will not
+be used for further processing.
+</p>
+<p>
+It returns a nested array of [field_name, value, original_error_message]
+per error found.
+</p>
+<p>
+Example:
+</p>
+<pre>
+ message = Mail.new(&quot;Content-Transfer-Encoding: weirdo\r\n&quot;)
+ message.errors.size #=&gt; 1
+ message.errors.first[0] #=&gt; &quot;Content-Transfer-Encoding&quot;
+ message.errors.first[1] #=&gt; &quot;weirdo&quot;
+ message.errors.first[3] #=&gt; &lt;The original error message exception&gt;
+</pre>
+<p>
+This is a good first defence on detecting spam by the way. Some spammers
+send invalid emails <a href="Message.html#M001240">to</a> try and get email
+parsers <a href="Message.html#M001240">to</a> give up parsing them.
+</p>
+        </div>
+      </div>
+
+      <div id="method-M001313" class="method-detail">
+        <a name="M001313"></a>
+
+        <div class="method-heading">
+          <a href="Message.src/M001313.html" target="Code" class="method-signature"
+            onclick="popupCode('Message.src/M001313.html');return false;">
+          <span class="method-name">filename</span><span class="method-args">()</span>
+          </a>
+        </div>
+      
+        <div class="method-description">
+          <p>
+Returns the <a href="Message.html#M001313">filename</a> of the <a
+href="Message.html#M001312">attachment</a>
+</p>
+        </div>
+      </div>
+
+      <div id="method-M001282" class="method-detail">
+        <a name="M001282"></a>
+
+        <div class="method-heading">
+          <a href="Message.src/M001282.html" target="Code" class="method-signature"
+            onclick="popupCode('Message.src/M001282.html');return false;">
+          <span class="method-name">final_recipient</span><span class="method-args">()</span>
+          </a>
+        </div>
+      
+        <div class="method-description">
+        </div>
+      </div>
+
+      <div id="method-M001315" class="method-detail">
+        <a name="M001315"></a>
+
+        <div class="method-heading">
+          <a href="Message.src/M001315.html" target="Code" class="method-signature"
+            onclick="popupCode('Message.src/M001315.html');return false;">
+          <span class="method-name">find_first_mime_type</span><span class="method-args">(mt)</span>
+          </a>
+        </div>
+      
+        <div class="method-description">
+        </div>
+      </div>
+
+      <div id="method-M001200" class="method-detail">
+        <a name="M001200"></a>
+
+        <div class="method-heading">
+          <a href="Message.src/M001200.html" target="Code" class="method-signature"
+            onclick="popupCode('Message.src/M001200.html');return false;">
+          <span class="method-name">from</span><span class="method-args">( val = nil )</span>
+          </a>
+        </div>
+      
+        <div class="method-description">
+          <p>
+Returns the From value of the mail object as an array of strings of address
+specs.
+</p>
+<p>
+Example:
+</p>
+<pre>
+ mail.from = 'Mikel &lt;mikel@test.lindsaar.net&gt;'
+ mail.from #=&gt; ['mikel@test.lindsaar.net']
+ mail.from = 'Mikel &lt;mikel@test.lindsaar.net&gt;, ada@test.lindsaar.net'
+ mail.from #=&gt; ['mikel@test.lindsaar.net', 'ada@test.lindsaar.net']
+</pre>
+<p>
+Also allows you <a href="Message.html#M001240">to</a> set the value by
+passing a value as a parameter
+</p>
+<p>
+Example:
+</p>
+<pre>
+ mail.from 'Mikel &lt;mikel@test.lindsaar.net&gt;'
+ mail.from #=&gt; ['mikel@test.lindsaar.net']
+</pre>
+<p>
+Additionally, you can append <a href="Message.html#M001159">new</a>
+addresses <a href="Message.html#M001240">to</a> the returned Array like
+object.
+</p>
+<p>
+Example:
+</p>
+<pre>
+ mail.from 'Mikel &lt;mikel@test.lindsaar.net&gt;'
+ mail.from &lt;&lt; 'ada@test.lindsaar.net'
+ mail.from #=&gt; ['mikel@test.lindsaar.net', 'ada@test.lindsaar.net']
+</pre>
+        </div>
+      </div>
+
+      <div id="method-M001201" class="method-detail">
+        <a name="M001201"></a>
+
+        <div class="method-heading">
+          <a href="Message.src/M001201.html" target="Code" class="method-signature"
+            onclick="popupCode('Message.src/M001201.html');return false;">
+          <span class="method-name">from=</span><span class="method-args">( val )</span>
+          </a>
+        </div>
+      
+        <div class="method-description">
+          <p>
+Sets the From value of the mail object, pass in a string of the field
+</p>
+<p>
+Example:
+</p>
+<pre>
+ mail.from = 'Mikel &lt;mikel@test.lindsaar.net&gt;'
+ mail.from #=&gt; ['mikel@test.lindsaar.net']
+ mail.from = 'Mikel &lt;mikel@test.lindsaar.net&gt;, ada@test.lindsaar.net'
+ mail.from #=&gt; ['mikel@test.lindsaar.net', 'ada@test.lindsaar.net']
+</pre>
+        </div>
+      </div>
+
+      <div id="method-M001248" class="method-detail">
+        <a name="M001248"></a>
+
+        <div class="method-heading">
+          <a href="Message.src/M001248.html" target="Code" class="method-signature"
+            onclick="popupCode('Message.src/M001248.html');return false;">
+          <span class="method-name">from_addrs</span><span class="method-args">()</span>
+          </a>
+        </div>
+      
+        <div class="method-description">
+          <p>
+Returns an array of addresses (the <a
+href="Message.html#M001301">encoded</a> value) in the From field, if no
+From field, returns an empty array
+</p>
+        </div>
+      </div>
+
+      <div id="method-M001290" class="method-detail">
+        <a name="M001290"></a>
+
+        <div class="method-heading">
+          <a href="Message.src/M001290.html" target="Code" class="method-signature"
+            onclick="popupCode('Message.src/M001290.html');return false;">
+          <span class="method-name">has_attachments?</span><span class="method-args">()</span>
+          </a>
+        </div>
+      
+        <div class="method-description">
+        </div>
+      </div>
+
+      <div id="method-M001260" class="method-detail">
+        <a name="M001260"></a>
+
+        <div class="method-heading">
+          <a href="Message.src/M001260.html" target="Code" class="method-signature"
+            onclick="popupCode('Message.src/M001260.html');return false;">
+          <span class="method-name">has_charset?</span><span class="method-args">()</span>
+          </a>
+        </div>
+      
+        <div class="method-description">
+        </div>
+      </div>
+
+      <div id="method-M001261" class="method-detail">
+        <a name="M001261"></a>
+
+        <div class="method-heading">
+          <a href="Message.src/M001261.html" target="Code" class="method-signature"
+            onclick="popupCode('Message.src/M001261.html');return false;">
+          <span class="method-name">has_content_transfer_encoding?</span><span class="method-args">()</span>
+          </a>
+        </div>
+      
+        <div class="method-description">
+        </div>
+      </div>
+
+      <div id="method-M001259" class="method-detail">
+        <a name="M001259"></a>
+
+        <div class="method-heading">
+          <a href="Message.src/M001259.html" target="Code" class="method-signature"
+            onclick="popupCode('Message.src/M001259.html');return false;">
+          <span class="method-name">has_content_type?</span><span class="method-args">()</span>
+          </a>
+        </div>
+      
+        <div class="method-description">
+        </div>
+      </div>
+
+      <div id="method-M001257" class="method-detail">
+        <a name="M001257"></a>
+
+        <div class="method-heading">
+          <a href="Message.src/M001257.html" target="Code" class="method-signature"
+            onclick="popupCode('Message.src/M001257.html');return false;">
+          <span class="method-name">has_date?</span><span class="method-args">()</span>
+          </a>
+        </div>
+      
+        <div class="method-description">
+          <p>
+Returns true if the message has a Date field, the field may or may not have
+a value, but the field exists or not.
+</p>
+        </div>
+      </div>
+
+      <div id="method-M001256" class="method-detail">
+        <a name="M001256"></a>
+
+        <div class="method-heading">
+          <a href="Message.src/M001256.html" target="Code" class="method-signature"
+            onclick="popupCode('Message.src/M001256.html');return false;">
+          <span class="method-name">has_message_id?</span><span class="method-args">()</span>
+          </a>
+        </div>
+      
+        <div class="method-description">
+          <p>
+Returns true if the message has a message ID field, the field may or may
+not have a value, but the field exists or not.
+</p>
+        </div>
+      </div>
+
+      <div id="method-M001258" class="method-detail">
+        <a name="M001258"></a>
+
+        <div class="method-heading">
+          <a href="Message.src/M001258.html" target="Code" class="method-signature"
+            onclick="popupCode('Message.src/M001258.html');return false;">
+          <span class="method-name">has_mime_version?</span><span class="method-args">()</span>
+          </a>
+        </div>
+      
+        <div class="method-description">
+          <p>
+Returns true if the message has a Date field, the field may or may not have
+a value, but the field exists or not.
+</p>
+        </div>
+      </div>
+
+      <div id="method-M001175" class="method-detail">
+        <a name="M001175"></a>
+
+        <div class="method-heading">
+          <a href="Message.src/M001175.html" target="Code" class="method-signature"
+            onclick="popupCode('Message.src/M001175.html');return false;">
+          <span class="method-name">header</span><span class="method-args">(value = nil)</span>
+          </a>
+        </div>
+      
+        <div class="method-description">
+          <p>
+Returns the <a href="Message.html#M001175">header</a> object of the message
+object. Or, if passed a parameter sets the value.
+</p>
+<p>
+Example:
+</p>
+<pre>
+ mail = Mail::Message.new('To: mikel\r\nFrom: you')
+ mail.header #=&gt; #&lt;Mail::Header:0x13ce14 @raw_source=&quot;To: mikel\r\nFr...
+
+ mail.header #=&gt; nil
+ mail.header 'To: mikel\r\nFrom: you'
+ mail.header #=&gt; #&lt;Mail::Header:0x13ce14 @raw_source=&quot;To: mikel\r\nFr...
+</pre>
+        </div>
+      </div>
+
+      <div id="method-M001174" class="method-detail">
+        <a name="M001174"></a>
+
+        <div class="method-heading">
+          <a href="Message.src/M001174.html" target="Code" class="method-signature"
+            onclick="popupCode('Message.src/M001174.html');return false;">
+          <span class="method-name">header=</span><span class="method-args">(value)</span>
+          </a>
+        </div>
+      
+        <div class="method-description">
+          <p>
+Sets the <a href="Message.html#M001175">header</a> of the message object.
+</p>
+<p>
+Example:
+</p>
+<pre>
+ mail.header = 'To: mikel@test.lindsaar.net\r\nFrom: Bob@bob.com'
+ mail.header #=&gt; &lt;#Mail::Header
+</pre>
+        </div>
+      </div>
+
+      <div id="method-M001255" class="method-detail">
+        <a name="M001255"></a>
+
+        <div class="method-heading">
+          <a href="Message.src/M001255.html" target="Code" class="method-signature"
+            onclick="popupCode('Message.src/M001255.html');return false;">
+          <span class="method-name">header_fields</span><span class="method-args">()</span>
+          </a>
+        </div>
+      
+        <div class="method-description">
+          <p>
+Returns an <a href="FieldList.html">FieldList</a> of all the fields in the
+<a href="Message.html#M001175">header</a> in the order that they appear in
+the <a href="Message.html#M001175">header</a>
+</p>
+        </div>
+      </div>
+
+      <div id="method-M001176" class="method-detail">
+        <a name="M001176"></a>
+
+        <div class="method-heading">
+          <a href="Message.src/M001176.html" target="Code" class="method-signature"
+            onclick="popupCode('Message.src/M001176.html');return false;">
+          <span class="method-name">headers</span><span class="method-args">(hash = {})</span>
+          </a>
+        </div>
+      
+        <div class="method-description">
+          <p>
+Provides a way <a href="Message.html#M001240">to</a> set custom <a
+href="Message.html#M001176">headers</a>, by passing in a hash
+</p>
+        </div>
+      </div>
+
+      <div id="method-M001291" class="method-detail">
+        <a name="M001291"></a>
+
+        <div class="method-heading">
+          <a href="Message.src/M001291.html" target="Code" class="method-signature"
+            onclick="popupCode('Message.src/M001291.html');return false;">
+          <span class="method-name">html_part</span><span class="method-args">(&amp;block)</span>
+          </a>
+        </div>
+      
+        <div class="method-description">
+          <p>
+Accessor for <a href="Message.html#M001291">html_part</a>
+</p>
+        </div>
+      </div>
+
+      <div id="method-M001293" class="method-detail">
+        <a name="M001293"></a>
+
+        <div class="method-heading">
+          <a href="Message.src/M001293.html" target="Code" class="method-signature"
+            onclick="popupCode('Message.src/M001293.html');return false;">
+          <span class="method-name">html_part=</span><span class="method-args">(msg)</span>
+          </a>
+        </div>
+      
+        <div class="method-description">
+          <p>
+Helper <a href="Message.html#M001240">to</a> add a html <a
+href="Message.html#M001296">part</a> <a href="Message.html#M001240">to</a>
+a multipart/alternative email. If this and <a
+href="Message.html#M001292">text_part</a> are both defined in a message,
+then it will be a multipart/alternative message and set itself that way.
+</p>
+        </div>
+      </div>
+
+      <div id="method-M001202" class="method-detail">
+        <a name="M001202"></a>
+
+        <div class="method-heading">
+          <a href="Message.src/M001202.html" target="Code" class="method-signature"
+            onclick="popupCode('Message.src/M001202.html');return false;">
+          <span class="method-name">in_reply_to</span><span class="method-args">( val = nil )</span>
+          </a>
+        </div>
+      
+        <div class="method-description">
+        </div>
+      </div>
+
+      <div id="method-M001203" class="method-detail">
+        <a name="M001203"></a>
+
+        <div class="method-heading">
+          <a href="Message.src/M001203.html" target="Code" class="method-signature"
+            onclick="popupCode('Message.src/M001203.html');return false;">
+          <span class="method-name">in_reply_to=</span><span class="method-args">( val )</span>
+          </a>
+        </div>
+      
+        <div class="method-description">
+        </div>
+      </div>
+
+      <div id="method-M001162" class="method-detail">
+        <a name="M001162"></a>
+
+        <div class="method-heading">
+          <a href="Message.src/M001162.html" target="Code" class="method-signature"
+            onclick="popupCode('Message.src/M001162.html');return false;">
+          <span class="method-name">inform_interceptors</span><span class="method-args">()</span>
+          </a>
+        </div>
+      
+        <div class="method-description">
+        </div>
+      </div>
+
+      <div id="method-M001161" class="method-detail">
+        <a name="M001161"></a>
+
+        <div class="method-heading">
+          <a href="Message.src/M001161.html" target="Code" class="method-signature"
+            onclick="popupCode('Message.src/M001161.html');return false;">
+          <span class="method-name">inform_observers</span><span class="method-args">()</span>
+          </a>
+        </div>
+      
+        <div class="method-description">
+        </div>
+      </div>
+
+      <div id="method-M001307" class="method-detail">
+        <a name="M001307"></a>
+
+        <div class="method-heading">
+          <a href="Message.src/M001307.html" target="Code" class="method-signature"
+            onclick="popupCode('Message.src/M001307.html');return false;">
+          <span class="method-name">inspect</span><span class="method-args">()</span>
+          </a>
+        </div>
+      
+        <div class="method-description">
+        </div>
+      </div>
+
+      <div id="method-M001318" class="method-detail">
+        <a name="M001318"></a>
+
+        <div class="method-heading">
+          <a href="Message.src/M001318.html" target="Code" class="method-signature"
+            onclick="popupCode('Message.src/M001318.html');return false;">
+          <span class="method-name">is_marked_for_delete?</span><span class="method-args">()</span>
+          </a>
+        </div>
+      
+        <div class="method-description">
+          <p>
+Returns whether message will be marked for deletion. If so, the message
+will be deleted at session close (i.e. after find exits), but only if also
+using the find_and_delete method, or by calling find with
+:delete_after_find set <a href="Message.html#M001240">to</a> true.
+</p>
+<p>
+Side-note: Just <a href="Message.html#M001240">to</a> be clear, this method
+will return true even if the message hasn&#8216;t yet been marked for
+delete on the mail server. However, if this method returns true, it *will
+be* marked on the server after each block yields back <a
+href="Message.html#M001240">to</a> find or find_and_delete.
+</p>
+        </div>
+      </div>
+
+      <div id="method-M001204" class="method-detail">
+        <a name="M001204"></a>
+
+        <div class="method-heading">
+          <a href="Message.src/M001204.html" target="Code" class="method-signature"
+            onclick="popupCode('Message.src/M001204.html');return false;">
+          <span class="method-name">keywords</span><span class="method-args">( val = nil )</span>
+          </a>
+        </div>
+      
+        <div class="method-description">
+        </div>
+      </div>
+
+      <div id="method-M001205" class="method-detail">
+        <a name="M001205"></a>
+
+        <div class="method-heading">
+          <a href="Message.src/M001205.html" target="Code" class="method-signature"
+            onclick="popupCode('Message.src/M001205.html');return false;">
+          <span class="method-name">keywords=</span><span class="method-args">( val )</span>
+          </a>
+        </div>
+      
+        <div class="method-description">
+        </div>
+      </div>
+
+      <div id="method-M001272" class="method-detail">
+        <a name="M001272"></a>
+
+        <div class="method-heading">
+          <a href="Message.src/M001272.html" target="Code" class="method-signature"
+            onclick="popupCode('Message.src/M001272.html');return false;">
+          <span class="method-name">main_type</span><span class="method-args">()</span>
+          </a>
+        </div>
+      
+        <div class="method-description">
+          <p>
+Returns the main content type
+</p>
+        </div>
+      </div>
+
+      <div id="method-M001317" class="method-detail">
+        <a name="M001317"></a>
+
+        <div class="method-heading">
+          <a href="Message.src/M001317.html" target="Code" class="method-signature"
+            onclick="popupCode('Message.src/M001317.html');return false;">
+          <span class="method-name">mark_for_delete=</span><span class="method-args">(value = true)</span>
+          </a>
+        </div>
+      
+        <div class="method-description">
+          <p>
+Sets whether this message should be deleted at session close (i.e. after
+find). <a href="Message.html">Message</a> will only be deleted if messages
+are retrieved using the find_and_delete method, or by calling find with
+:delete_after_find set <a href="Message.html#M001240">to</a> true.
+</p>
+        </div>
+      </div>
+
+      <div id="method-M001269" class="method-detail">
+        <a name="M001269"></a>
+
+        <div class="method-heading">
+          <a href="Message.src/M001269.html" target="Code" class="method-signature"
+            onclick="popupCode('Message.src/M001269.html');return false;">
+          <span class="method-name">message_content_type</span><span class="method-args">()</span>
+          </a>
+        </div>
+      
+        <div class="method-description">
+        </div>
+      </div>
+
+      <div id="method-M001206" class="method-detail">
+        <a name="M001206"></a>
+
+        <div class="method-heading">
+          <a href="Message.src/M001206.html" target="Code" class="method-signature"
+            onclick="popupCode('Message.src/M001206.html');return false;">
+          <span class="method-name">message_id</span><span class="method-args">( val = nil )</span>
+          </a>
+        </div>
+      
+        <div class="method-description">
+          <p>
+Returns the <a href="Message.html">Message</a>-ID of the mail object. Note,
+per RFC 2822 the <a href="Message.html">Message</a> ID consists of what is
+INSIDE the &lt; &gt; usually seen in the mail <a
+href="Message.html#M001175">header</a>, so this method will return only
+what is inside.
+</p>
+<p>
+Example:
+</p>
+<pre>
+ mail.message_id = '&lt;1234@message.id&gt;'
+ mail.message_id #=&gt; '1234@message.id'
+</pre>
+<p>
+Also allows you <a href="Message.html#M001240">to</a> set the <a
+href="Message.html">Message</a>-ID by passing a string as a parameter
+</p>
+<pre>
+ mail.message_id '&lt;1234@message.id&gt;'
+ mail.message_id #=&gt; '1234@message.id'
+</pre>
+        </div>
+      </div>
+
+      <div id="method-M001207" class="method-detail">
+        <a name="M001207"></a>
+
+        <div class="method-heading">
+          <a href="Message.src/M001207.html" target="Code" class="method-signature"
+            onclick="popupCode('Message.src/M001207.html');return false;">
+          <span class="method-name">message_id=</span><span class="method-args">( val )</span>
+          </a>
+        </div>
+      
+        <div class="method-description">
+          <p>
+Sets the <a href="Message.html">Message</a>-ID. Note, per RFC 2822 the <a
+href="Message.html">Message</a> ID consists of what is INSIDE the &lt; &gt;
+usually seen in the mail <a href="Message.html#M001175">header</a>, so this
+method will return only what is inside.
+</p>
+<pre>
+ mail.message_id = '&lt;1234@message.id&gt;'
+ mail.message_id #=&gt; '1234@message.id'
+</pre>
+        </div>
+      </div>
+
+      <div id="method-M001254" class="method-detail">
+        <a name="M001254"></a>
+
+        <div class="method-heading">
+          <a href="Message.src/M001254.html" target="Code" class="method-signature"
+            onclick="popupCode('Message.src/M001254.html');return false;">
+          <span class="method-name">method_missing</span><span class="method-args">(name, *args, &amp;block)</span>
+          </a>
+        </div>
+      
+        <div class="method-description">
+          <p>
+Method Missing in this implementation allows you <a
+href="Message.html#M001240">to</a> set any of the standard fields directly
+as you would the &quot;<a href="Message.html#M001240">to</a>&quot;,
+&quot;<a href="Message.html#M001238">subject</a>&quot; etc.
+</p>
+<p>
+Those fields used most often (<a href="Message.html#M001240">to</a>, <a
+href="Message.html#M001238">subject</a> et al) are given their own method
+for ease of documentation and also <a href="Message.html#M001240">to</a>
+avoid the hook call <a href="Message.html#M001240">to</a> method missing.
+</p>
+<p>
+This will only catch the known fields listed in:
+</p>
+<pre>
+ Mail::Field::KNOWN_FIELDS
+</pre>
+<p>
+as per RFC 2822, any ruby string or method name could pretty much be a
+field name, so we don&#8216;t want <a href="Message.html#M001240">to</a>
+just catch ANYTHING sent <a href="Message.html#M001240">to</a> a message
+object and interpret it as a <a href="Message.html#M001175">header</a>.
+</p>
+<p>
+This method provides all three types of <a
+href="Message.html#M001175">header</a> call <a
+href="Message.html#M001240">to</a> set, <a
+href="Message.html#M001309">read</a> and explicitly set with the = operator
+</p>
+<p>
+Examples:
+</p>
+<pre>
+ mail.comments = 'These are some comments'
+ mail.comments #=&gt; 'These are some comments'
+
+ mail.comments 'These are other comments'
+ mail.comments #=&gt; 'These are other comments'
+
+ mail.date = 'Tue, 1 Jul 2003 10:52:37 +0200'
+ mail.date.to_s #=&gt; 'Tue, 1 Jul 2003 10:52:37 +0200'
+
+ mail.date 'Tue, 1 Jul 2003 10:52:37 +0200'
+ mail.date.to_s #=&gt; 'Tue, 1 Jul 2003 10:52:37 +0200'
+
+ mail.resent_msg_id = '&lt;1234@resent_msg_id.lindsaar.net&gt;'
+ mail.resent_msg_id #=&gt; '&lt;1234@resent_msg_id.lindsaar.net&gt;'
+
+ mail.resent_msg_id '&lt;4567@resent_msg_id.lindsaar.net&gt;'
+ mail.resent_msg_id #=&gt; '&lt;4567@resent_msg_id.lindsaar.net&gt;'
+</pre>
+        </div>
+      </div>
+
+      <div id="method-M001274" class="method-detail">
+        <a name="M001274"></a>
+
+        <div class="method-heading">
+          <a href="Message.src/M001274.html" target="Code" class="method-signature"
+            onclick="popupCode('Message.src/M001274.html');return false;">
+          <span class="method-name">mime_parameters</span><span class="method-args">()</span>
+          </a>
+        </div>
+      
+        <div class="method-description">
+          <p>
+Returns the content type parameters
+</p>
+        </div>
+      </div>
+
+      <div id="method-M001268" class="method-detail">
+        <a name="M001268"></a>
+
+        <div class="method-heading">
+          <a href="Message.src/M001268.html" target="Code" class="method-signature"
+            onclick="popupCode('Message.src/M001268.html');return false;">
+          <span class="method-name">mime_type</span><span class="method-args">()</span>
+          </a>
+        </div>
+      
+        <div class="method-description">
+          <p>
+Returns the MIME media type of <a href="Message.html#M001296">part</a> we
+are on, this is taken <a href="Message.html#M001200">from</a> the
+content-type <a href="Message.html#M001175">header</a>
+</p>
+        </div>
+      </div>
+
+      <div id="method-M001208" class="method-detail">
+        <a name="M001208"></a>
+
+        <div class="method-heading">
+          <a href="Message.src/M001208.html" target="Code" class="method-signature"
+            onclick="popupCode('Message.src/M001208.html');return false;">
+          <span class="method-name">mime_version</span><span class="method-args">( val = nil )</span>
+          </a>
+        </div>
+      
+        <div class="method-description">
+          <p>
+Returns the MIME version of the email as a string
+</p>
+<p>
+Example:
+</p>
+<pre>
+ mail.mime_version = '1.0'
+ mail.mime_version #=&gt; '1.0'
+</pre>
+<p>
+Also allows you <a href="Message.html#M001240">to</a> set the MIME version
+by passing a string as a parameter.
+</p>
+<p>
+Example:
+</p>
+<pre>
+ mail.mime_version '1.0'
+ mail.mime_version #=&gt; '1.0'
+</pre>
+        </div>
+      </div>
+
+      <div id="method-M001209" class="method-detail">
+        <a name="M001209"></a>
+
+        <div class="method-heading">
+          <a href="Message.src/M001209.html" target="Code" class="method-signature"
+            onclick="popupCode('Message.src/M001209.html');return false;">
+          <span class="method-name">mime_version=</span><span class="method-args">( val )</span>
+          </a>
+        </div>
+      
+        <div class="method-description">
+          <p>
+Sets the MIME version of the email by accepting a string
+</p>
+<p>
+Example:
+</p>
+<pre>
+ mail.mime_version = '1.0'
+ mail.mime_version #=&gt; '1.0'
+</pre>
+        </div>
+      </div>
+
+      <div id="method-M001276" class="method-detail">
+        <a name="M001276"></a>
+
+        <div class="method-heading">
+          <a href="Message.src/M001276.html" target="Code" class="method-signature"
+            onclick="popupCode('Message.src/M001276.html');return false;">
+          <span class="method-name">multipart?</span><span class="method-args">()</span>
+          </a>
+        </div>
+      
+        <div class="method-description">
+          <p>
+Returns true if the message is multipart
+</p>
+        </div>
+      </div>
+
+      <div id="method-M001277" class="method-detail">
+        <a name="M001277"></a>
+
+        <div class="method-heading">
+          <a href="Message.src/M001277.html" target="Code" class="method-signature"
+            onclick="popupCode('Message.src/M001277.html');return false;">
+          <span class="method-name">multipart_report?</span><span class="method-args">()</span>
+          </a>
+        </div>
+      
+        <div class="method-description">
+          <p>
+Returns true if the message is a multipart/report
+</p>
+        </div>
+      </div>
+
+      <div id="method-M001296" class="method-detail">
+        <a name="M001296"></a>
+
+        <div class="method-heading">
+          <a href="Message.src/M001296.html" target="Code" class="method-signature"
+            onclick="popupCode('Message.src/M001296.html');return false;">
+          <span class="method-name">part</span><span class="method-args">(params = {}) {|new_part if block_given?| ...}</span>
+          </a>
+        </div>
+      
+        <div class="method-description">
+          <p>
+Allows you <a href="Message.html#M001240">to</a> add a <a
+href="Message.html#M001296">part</a> in block form <a
+href="Message.html#M001240">to</a> an existing mail message object
+</p>
+<p>
+Example:
+</p>
+<pre>
+ mail = Mail.new do
+   part :content_type =&gt; &quot;multipart/alternative&quot;, :content_disposition =&gt; &quot;inline&quot; do |p|
+     p.part :content_type =&gt; &quot;text/plain&quot;, :body =&gt; &quot;test text\nline #2&quot;
+     p.part :content_type =&gt; &quot;text/html&quot;, :body =&gt; &quot;&lt;b&gt;test&lt;/b&gt; HTML&lt;br/&gt;\nline #2&quot;
+   end
+ end
+</pre>
+        </div>
+      </div>
+
+      <div id="method-M001288" class="method-detail">
+        <a name="M001288"></a>
+
+        <div class="method-heading">
+          <a href="Message.src/M001288.html" target="Code" class="method-signature"
+            onclick="popupCode('Message.src/M001288.html');return false;">
+          <span class="method-name">parts</span><span class="method-args">()</span>
+          </a>
+        </div>
+      
+        <div class="method-description">
+          <p>
+Returns a <a href="Message.html#M001288">parts</a> list object of all the
+<a href="Message.html#M001288">parts</a> in the message
+</p>
+        </div>
+      </div>
+
+      <div id="method-M001171" class="method-detail">
+        <a name="M001171"></a>
+
+        <div class="method-heading">
+          <a href="Message.src/M001171.html" target="Code" class="method-signature"
+            onclick="popupCode('Message.src/M001171.html');return false;">
+          <span class="method-name">raw_envelope</span><span class="method-args">()</span>
+          </a>
+        </div>
+      
+        <div class="method-description">
+          <p>
+The <a href="Message.html#M001171">raw_envelope</a> is the From
+mikel@test.lindsaar.net Mon May 2 16:07:05 2009 type field that you can see
+at the top of any email that has come <a
+href="Message.html#M001200">from</a> a mailbox
+</p>
+        </div>
+      </div>
+
+      <div id="method-M001169" class="method-detail">
+        <a name="M001169"></a>
+
+        <div class="method-heading">
+          <a href="Message.src/M001169.html" target="Code" class="method-signature"
+            onclick="popupCode('Message.src/M001169.html');return false;">
+          <span class="method-name">raw_source</span><span class="method-args">()</span>
+          </a>
+        </div>
+      
+        <div class="method-description">
+          <p>
+Provides access <a href="Message.html#M001240">to</a> the raw source of the
+message as it was when it was instantiated. This is set at initialization
+and so is untouched by the parsers or decoder / encoders
+</p>
+<p>
+Example:
+</p>
+<pre>
+ mail = Mail.new('This is an invalid email message')
+ mail.raw_source #=&gt; &quot;This is an invalid email message&quot;
+</pre>
+        </div>
+      </div>
+
+      <div id="method-M001309" class="method-detail">
+        <a name="M001309"></a>
+
+        <div class="method-heading">
+          <a href="Message.src/M001309.html" target="Code" class="method-signature"
+            onclick="popupCode('Message.src/M001309.html');return false;">
+          <span class="method-name">read</span><span class="method-args">()</span>
+          </a>
+        </div>
+      
+        <div class="method-description">
+        </div>
+      </div>
+
+      <div id="method-M001299" class="method-detail">
+        <a name="M001299"></a>
+
+        <div class="method-heading">
+          <a href="Message.src/M001299.html" target="Code" class="method-signature"
+            onclick="popupCode('Message.src/M001299.html');return false;">
+          <span class="method-name">ready_to_send!</span><span class="method-args">()</span>
+          </a>
+        </div>
+      
+        <div class="method-description">
+          <p>
+Encodes the message, calls encode on all its <a
+href="Message.html#M001288">parts</a>, gets an email message ready <a
+href="Message.html#M001240">to</a> send
+</p>
+        </div>
+      </div>
+
+      <div id="method-M001210" class="method-detail">
+        <a name="M001210"></a>
+
+        <div class="method-heading">
+          <a href="Message.src/M001210.html" target="Code" class="method-signature"
+            onclick="popupCode('Message.src/M001210.html');return false;">
+          <span class="method-name">received</span><span class="method-args">( val = nil )</span>
+          </a>
+        </div>
+      
+        <div class="method-description">
+        </div>
+      </div>
+
+      <div id="method-M001211" class="method-detail">
+        <a name="M001211"></a>
+
+        <div class="method-heading">
+          <a href="Message.src/M001211.html" target="Code" class="method-signature"
+            onclick="popupCode('Message.src/M001211.html');return false;">
+          <span class="method-name">received=</span><span class="method-args">( val )</span>
+          </a>
+        </div>
+      
+        <div class="method-description">
+        </div>
+      </div>
+
+      <div id="method-M001212" class="method-detail">
+        <a name="M001212"></a>
+
+        <div class="method-heading">
+          <a href="Message.src/M001212.html" target="Code" class="method-signature"
+            onclick="popupCode('Message.src/M001212.html');return false;">
+          <span class="method-name">references</span><span class="method-args">( val = nil )</span>
+          </a>
+        </div>
+      
+        <div class="method-description">
+        </div>
+      </div>
+
+      <div id="method-M001213" class="method-detail">
+        <a name="M001213"></a>
+
+        <div class="method-heading">
+          <a href="Message.src/M001213.html" target="Code" class="method-signature"
+            onclick="popupCode('Message.src/M001213.html');return false;">
+          <span class="method-name">references=</span><span class="method-args">( val )</span>
+          </a>
+        </div>
+      
+        <div class="method-description">
+        </div>
+      </div>
+
+      <div id="method-M001160" class="method-detail">
+        <a name="M001160"></a>
+
+        <div class="method-heading">
+          <a href="Message.src/M001160.html" target="Code" class="method-signature"
+            onclick="popupCode('Message.src/M001160.html');return false;">
+          <span class="method-name">register_for_delivery_notification</span><span class="method-args">(observer)</span>
+          </a>
+        </div>
+      
+        <div class="method-description">
+        </div>
+      </div>
+
+      <div id="method-M001285" class="method-detail">
+        <a name="M001285"></a>
+
+        <div class="method-heading">
+          <a href="Message.src/M001285.html" target="Code" class="method-signature"
+            onclick="popupCode('Message.src/M001285.html');return false;">
+          <span class="method-name">remote_mta</span><span class="method-args">()</span>
+          </a>
+        </div>
+      
+        <div class="method-description">
+        </div>
+      </div>
+
+      <div id="method-M001166" class="method-detail">
+        <a name="M001166"></a>
+
+        <div class="method-heading">
+          <a href="Message.src/M001166.html" target="Code" class="method-signature"
+            onclick="popupCode('Message.src/M001166.html');return false;">
+          <span class="method-name">reply</span><span class="method-args">(*args, &amp;block)</span>
+          </a>
+        </div>
+      
+        <div class="method-description">
+        </div>
+      </div>
+
+      <div id="method-M001214" class="method-detail">
+        <a name="M001214"></a>
+
+        <div class="method-heading">
+          <a href="Message.src/M001214.html" target="Code" class="method-signature"
+            onclick="popupCode('Message.src/M001214.html');return false;">
+          <span class="method-name">reply_to</span><span class="method-args">( val = nil )</span>
+          </a>
+        </div>
+      
+        <div class="method-description">
+          <p>
+Returns the Reply-To value of the mail object as an array of strings of
+address specs.
+</p>
+<p>
+Example:
+</p>
+<pre>
+ mail.reply_to = 'Mikel &lt;mikel@test.lindsaar.net&gt;'
+ mail.reply_to #=&gt; ['mikel@test.lindsaar.net']
+ mail.reply_to = 'Mikel &lt;mikel@test.lindsaar.net&gt;, ada@test.lindsaar.net'
+ mail.reply_to #=&gt; ['mikel@test.lindsaar.net', 'ada@test.lindsaar.net']
+</pre>
+<p>
+Also allows you <a href="Message.html#M001240">to</a> set the value by
+passing a value as a parameter
+</p>
+<p>
+Example:
+</p>
+<pre>
+ mail.reply_to 'Mikel &lt;mikel@test.lindsaar.net&gt;'
+ mail.reply_to #=&gt; ['mikel@test.lindsaar.net']
+</pre>
+<p>
+Additionally, you can append <a href="Message.html#M001159">new</a>
+addresses <a href="Message.html#M001240">to</a> the returned Array like
+object.
+</p>
+<p>
+Example:
+</p>
+<pre>
+ mail.reply_to 'Mikel &lt;mikel@test.lindsaar.net&gt;'
+ mail.reply_to &lt;&lt; 'ada@test.lindsaar.net'
+ mail.reply_to #=&gt; ['mikel@test.lindsaar.net', 'ada@test.lindsaar.net']
+</pre>
+        </div>
+      </div>
+
+      <div id="method-M001215" class="method-detail">
+        <a name="M001215"></a>
+
+        <div class="method-heading">
+          <a href="Message.src/M001215.html" target="Code" class="method-signature"
+            onclick="popupCode('Message.src/M001215.html');return false;">
+          <span class="method-name">reply_to=</span><span class="method-args">( val )</span>
+          </a>
+        </div>
+      
+        <div class="method-description">
+          <p>
+Sets the Reply-To value of the mail object, pass in a string of the field
+</p>
+<p>
+Example:
+</p>
+<pre>
+ mail.reply_to = 'Mikel &lt;mikel@test.lindsaar.net&gt;'
+ mail.reply_to #=&gt; ['mikel@test.lindsaar.net']
+ mail.reply_to = 'Mikel &lt;mikel@test.lindsaar.net&gt;, ada@test.lindsaar.net'
+ mail.reply_to #=&gt; ['mikel@test.lindsaar.net', 'ada@test.lindsaar.net']
+</pre>
+        </div>
+      </div>
+
+      <div id="method-M001216" class="method-detail">
+        <a name="M001216"></a>
+
+        <div class="method-heading">
+          <a href="Message.src/M001216.html" target="Code" class="method-signature"
+            onclick="popupCode('Message.src/M001216.html');return false;">
+          <span class="method-name">resent_bcc</span><span class="method-args">( val = nil )</span>
+          </a>
+        </div>
+      
+        <div class="method-description">
+          <p>
+Returns the Resent-Bcc value of the mail object as an array of strings of
+address specs.
+</p>
+<p>
+Example:
+</p>
+<pre>
+ mail.resent_bcc = 'Mikel &lt;mikel@test.lindsaar.net&gt;'
+ mail.resent_bcc #=&gt; ['mikel@test.lindsaar.net']
+ mail.resent_bcc = 'Mikel &lt;mikel@test.lindsaar.net&gt;, ada@test.lindsaar.net'
+ mail.resent_bcc #=&gt; ['mikel@test.lindsaar.net', 'ada@test.lindsaar.net']
+</pre>
+<p>
+Also allows you <a href="Message.html#M001240">to</a> set the value by
+passing a value as a parameter
+</p>
+<p>
+Example:
+</p>
+<pre>
+ mail.resent_bcc 'Mikel &lt;mikel@test.lindsaar.net&gt;'
+ mail.resent_bcc #=&gt; ['mikel@test.lindsaar.net']
+</pre>
+<p>
+Additionally, you can append <a href="Message.html#M001159">new</a>
+addresses <a href="Message.html#M001240">to</a> the returned Array like
+object.
+</p>
+<p>
+Example:
+</p>
+<pre>
+ mail.resent_bcc 'Mikel &lt;mikel@test.lindsaar.net&gt;'
+ mail.resent_bcc &lt;&lt; 'ada@test.lindsaar.net'
+ mail.resent_bcc #=&gt; ['mikel@test.lindsaar.net', 'ada@test.lindsaar.net']
+</pre>
+        </div>
+      </div>
+
+      <div id="method-M001217" class="method-detail">
+        <a name="M001217"></a>
+
+        <div class="method-heading">
+          <a href="Message.src/M001217.html" target="Code" class="method-signature"
+            onclick="popupCode('Message.src/M001217.html');return false;">
+          <span class="method-name">resent_bcc=</span><span class="method-args">( val )</span>
+          </a>
+        </div>
+      
+        <div class="method-description">
+          <p>
+Sets the Resent-Bcc value of the mail object, pass in a string of the field
+</p>
+<p>
+Example:
+</p>
+<pre>
+ mail.resent_bcc = 'Mikel &lt;mikel@test.lindsaar.net&gt;'
+ mail.resent_bcc #=&gt; ['mikel@test.lindsaar.net']
+ mail.resent_bcc = 'Mikel &lt;mikel@test.lindsaar.net&gt;, ada@test.lindsaar.net'
+ mail.resent_bcc #=&gt; ['mikel@test.lindsaar.net', 'ada@test.lindsaar.net']
+</pre>
+        </div>
+      </div>
+
+      <div id="method-M001218" class="method-detail">
+        <a name="M001218"></a>
+
+        <div class="method-heading">
+          <a href="Message.src/M001218.html" target="Code" class="method-signature"
+            onclick="popupCode('Message.src/M001218.html');return false;">
+          <span class="method-name">resent_cc</span><span class="method-args">( val = nil )</span>
+          </a>
+        </div>
+      
+        <div class="method-description">
+          <p>
+Returns the Resent-Cc value of the mail object as an array of strings of
+address specs.
+</p>
+<p>
+Example:
+</p>
+<pre>
+ mail.resent_cc = 'Mikel &lt;mikel@test.lindsaar.net&gt;'
+ mail.resent_cc #=&gt; ['mikel@test.lindsaar.net']
+ mail.resent_cc = 'Mikel &lt;mikel@test.lindsaar.net&gt;, ada@test.lindsaar.net'
+ mail.resent_cc #=&gt; ['mikel@test.lindsaar.net', 'ada@test.lindsaar.net']
+</pre>
+<p>
+Also allows you <a href="Message.html#M001240">to</a> set the value by
+passing a value as a parameter
+</p>
+<p>
+Example:
+</p>
+<pre>
+ mail.resent_cc 'Mikel &lt;mikel@test.lindsaar.net&gt;'
+ mail.resent_cc #=&gt; ['mikel@test.lindsaar.net']
+</pre>
+<p>
+Additionally, you can append <a href="Message.html#M001159">new</a>
+addresses <a href="Message.html#M001240">to</a> the returned Array like
+object.
+</p>
+<p>
+Example:
+</p>
+<pre>
+ mail.resent_cc 'Mikel &lt;mikel@test.lindsaar.net&gt;'
+ mail.resent_cc &lt;&lt; 'ada@test.lindsaar.net'
+ mail.resent_cc #=&gt; ['mikel@test.lindsaar.net', 'ada@test.lindsaar.net']
+</pre>
+        </div>
+      </div>
+
+      <div id="method-M001219" class="method-detail">
+        <a name="M001219"></a>
+
+        <div class="method-heading">
+          <a href="Message.src/M001219.html" target="Code" class="method-signature"
+            onclick="popupCode('Message.src/M001219.html');return false;">
+          <span class="method-name">resent_cc=</span><span class="method-args">( val )</span>
+          </a>
+        </div>
+      
+        <div class="method-description">
+          <p>
+Sets the Resent-Cc value of the mail object, pass in a string of the field
+</p>
+<p>
+Example:
+</p>
+<pre>
+ mail.resent_cc = 'Mikel &lt;mikel@test.lindsaar.net&gt;'
+ mail.resent_cc #=&gt; ['mikel@test.lindsaar.net']
+ mail.resent_cc = 'Mikel &lt;mikel@test.lindsaar.net&gt;, ada@test.lindsaar.net'
+ mail.resent_cc #=&gt; ['mikel@test.lindsaar.net', 'ada@test.lindsaar.net']
+</pre>
+        </div>
+      </div>
+
+      <div id="method-M001220" class="method-detail">
+        <a name="M001220"></a>
+
+        <div class="method-heading">
+          <a href="Message.src/M001220.html" target="Code" class="method-signature"
+            onclick="popupCode('Message.src/M001220.html');return false;">
+          <span class="method-name">resent_date</span><span class="method-args">( val = nil )</span>
+          </a>
+        </div>
+      
+        <div class="method-description">
+        </div>
+      </div>
+
+      <div id="method-M001221" class="method-detail">
+        <a name="M001221"></a>
+
+        <div class="method-heading">
+          <a href="Message.src/M001221.html" target="Code" class="method-signature"
+            onclick="popupCode('Message.src/M001221.html');return false;">
+          <span class="method-name">resent_date=</span><span class="method-args">( val )</span>
+          </a>
+        </div>
+      
+        <div class="method-description">
+        </div>
+      </div>
+
+      <div id="method-M001222" class="method-detail">
+        <a name="M001222"></a>
+
+        <div class="method-heading">
+          <a href="Message.src/M001222.html" target="Code" class="method-signature"
+            onclick="popupCode('Message.src/M001222.html');return false;">
+          <span class="method-name">resent_from</span><span class="method-args">( val = nil )</span>
+          </a>
+        </div>
+      
+        <div class="method-description">
+          <p>
+Returns the Resent-From value of the mail object as an array of strings of
+address specs.
+</p>
+<p>
+Example:
+</p>
+<pre>
+ mail.resent_from = 'Mikel &lt;mikel@test.lindsaar.net&gt;'
+ mail.resent_from #=&gt; ['mikel@test.lindsaar.net']
+ mail.resent_from = 'Mikel &lt;mikel@test.lindsaar.net&gt;, ada@test.lindsaar.net'
+ mail.resent_from #=&gt; ['mikel@test.lindsaar.net', 'ada@test.lindsaar.net']
+</pre>
+<p>
+Also allows you <a href="Message.html#M001240">to</a> set the value by
+passing a value as a parameter
+</p>
+<p>
+Example:
+</p>
+<pre>
+ mail.resent_from ['Mikel &lt;mikel@test.lindsaar.net&gt;']
+ mail.resent_from #=&gt; 'mikel@test.lindsaar.net'
+</pre>
+<p>
+Additionally, you can append <a href="Message.html#M001159">new</a>
+addresses <a href="Message.html#M001240">to</a> the returned Array like
+object.
+</p>
+<p>
+Example:
+</p>
+<pre>
+ mail.resent_from 'Mikel &lt;mikel@test.lindsaar.net&gt;'
+ mail.resent_from &lt;&lt; 'ada@test.lindsaar.net'
+ mail.resent_from #=&gt; ['mikel@test.lindsaar.net', 'ada@test.lindsaar.net']
+</pre>
+        </div>
+      </div>
+
+      <div id="method-M001223" class="method-detail">
+        <a name="M001223"></a>
+
+        <div class="method-heading">
+          <a href="Message.src/M001223.html" target="Code" class="method-signature"
+            onclick="popupCode('Message.src/M001223.html');return false;">
+          <span class="method-name">resent_from=</span><span class="method-args">( val )</span>
+          </a>
+        </div>
+      
+        <div class="method-description">
+          <p>
+Sets the Resent-From value of the mail object, pass in a string of the
+field
+</p>
+<p>
+Example:
+</p>
+<pre>
+ mail.resent_from = 'Mikel &lt;mikel@test.lindsaar.net&gt;'
+ mail.resent_from #=&gt; ['mikel@test.lindsaar.net']
+ mail.resent_from = 'Mikel &lt;mikel@test.lindsaar.net&gt;, ada@test.lindsaar.net'
+ mail.resent_from #=&gt; ['mikel@test.lindsaar.net', 'ada@test.lindsaar.net']
+</pre>
+        </div>
+      </div>
+
+      <div id="method-M001224" class="method-detail">
+        <a name="M001224"></a>
+
+        <div class="method-heading">
+          <a href="Message.src/M001224.html" target="Code" class="method-signature"
+            onclick="popupCode('Message.src/M001224.html');return false;">
+          <span class="method-name">resent_message_id</span><span class="method-args">( val = nil )</span>
+          </a>
+        </div>
+      
+        <div class="method-description">
+        </div>
+      </div>
+
+      <div id="method-M001225" class="method-detail">
+        <a name="M001225"></a>
+
+        <div class="method-heading">
+          <a href="Message.src/M001225.html" target="Code" class="method-signature"
+            onclick="popupCode('Message.src/M001225.html');return false;">
+          <span class="method-name">resent_message_id=</span><span class="method-args">( val )</span>
+          </a>
+        </div>
+      
+        <div class="method-description">
+        </div>
+      </div>
+
+      <div id="method-M001226" class="method-detail">
+        <a name="M001226"></a>
+
+        <div class="method-heading">
+          <a href="Message.src/M001226.html" target="Code" class="method-signature"
+            onclick="popupCode('Message.src/M001226.html');return false;">
+          <span class="method-name">resent_sender</span><span class="method-args">( val = nil )</span>
+          </a>
+        </div>
+      
+        <div class="method-description">
+          <p>
+Returns the Resent-Sender value of the mail object, as a single string of
+an address spec. A <a href="Message.html#M001232">sender</a> per RFC 2822
+must be a single address, so you can not append <a
+href="Message.html#M001240">to</a> this address.
+</p>
+<p>
+Example:
+</p>
+<pre>
+ mail.resent_sender = 'Mikel &lt;mikel@test.lindsaar.net&gt;'
+ mail.resent_sender #=&gt; 'mikel@test.lindsaar.net'
+</pre>
+<p>
+Also allows you <a href="Message.html#M001240">to</a> set the value by
+passing a value as a parameter
+</p>
+<p>
+Example:
+</p>
+<pre>
+ mail.resent_sender 'Mikel &lt;mikel@test.lindsaar.net&gt;'
+ mail.resent_sender #=&gt; 'mikel@test.lindsaar.net'
+</pre>
+        </div>
+      </div>
+
+      <div id="method-M001227" class="method-detail">
+        <a name="M001227"></a>
+
+        <div class="method-heading">
+          <a href="Message.src/M001227.html" target="Code" class="method-signature"
+            onclick="popupCode('Message.src/M001227.html');return false;">
+          <span class="method-name">resent_sender=</span><span class="method-args">( val )</span>
+          </a>
+        </div>
+      
+        <div class="method-description">
+          <p>
+Sets the Resent-Sender value of the mail object, pass in a string of the
+field
+</p>
+<p>
+Example:
+</p>
+<pre>
+ mail.resent_sender = 'Mikel &lt;mikel@test.lindsaar.net&gt;'
+ mail.resent_sender #=&gt; 'mikel@test.lindsaar.net'
+</pre>
+        </div>
+      </div>
+
+      <div id="method-M001228" class="method-detail">
+        <a name="M001228"></a>
+
+        <div class="method-heading">
+          <a href="Message.src/M001228.html" target="Code" class="method-signature"
+            onclick="popupCode('Message.src/M001228.html');return false;">
+          <span class="method-name">resent_to</span><span class="method-args">( val = nil )</span>
+          </a>
+        </div>
+      
+        <div class="method-description">
+          <p>
+Returns the Resent-To value of the mail object as an array of strings of
+address specs.
+</p>
+<p>
+Example:
+</p>
+<pre>
+ mail.resent_to = 'Mikel &lt;mikel@test.lindsaar.net&gt;'
+ mail.resent_to #=&gt; ['mikel@test.lindsaar.net']
+ mail.resent_to = 'Mikel &lt;mikel@test.lindsaar.net&gt;, ada@test.lindsaar.net'
+ mail.resent_to #=&gt; ['mikel@test.lindsaar.net', 'ada@test.lindsaar.net']
+</pre>
+<p>
+Also allows you <a href="Message.html#M001240">to</a> set the value by
+passing a value as a parameter
+</p>
+<p>
+Example:
+</p>
+<pre>
+ mail.resent_to 'Mikel &lt;mikel@test.lindsaar.net&gt;'
+ mail.resent_to #=&gt; ['mikel@test.lindsaar.net']
+</pre>
+<p>
+Additionally, you can append <a href="Message.html#M001159">new</a>
+addresses <a href="Message.html#M001240">to</a> the returned Array like
+object.
+</p>
+<p>
+Example:
+</p>
+<pre>
+ mail.resent_to 'Mikel &lt;mikel@test.lindsaar.net&gt;'
+ mail.resent_to &lt;&lt; 'ada@test.lindsaar.net'
+ mail.resent_to #=&gt; ['mikel@test.lindsaar.net', 'ada@test.lindsaar.net']
+</pre>
+        </div>
+      </div>
+
+      <div id="method-M001229" class="method-detail">
+        <a name="M001229"></a>
+
+        <div class="method-heading">
+          <a href="Message.src/M001229.html" target="Code" class="method-signature"
+            onclick="popupCode('Message.src/M001229.html');return false;">
+          <span class="method-name">resent_to=</span><span class="method-args">( val )</span>
+          </a>
+        </div>
+      
+        <div class="method-description">
+          <p>
+Sets the Resent-To value of the mail object, pass in a string of the field
+</p>
+<p>
+Example:
+</p>
+<pre>
+ mail.resent_to = 'Mikel &lt;mikel@test.lindsaar.net&gt;'
+ mail.resent_to #=&gt; ['mikel@test.lindsaar.net']
+ mail.resent_to = 'Mikel &lt;mikel@test.lindsaar.net&gt;, ada@test.lindsaar.net'
+ mail.resent_to #=&gt; ['mikel@test.lindsaar.net', 'ada@test.lindsaar.net']
+</pre>
+        </div>
+      </div>
+
+      <div id="method-M001286" class="method-detail">
+        <a name="M001286"></a>
+
+        <div class="method-heading">
+          <a href="Message.src/M001286.html" target="Code" class="method-signature"
+            onclick="popupCode('Message.src/M001286.html');return false;">
+          <span class="method-name">retryable?</span><span class="method-args">()</span>
+          </a>
+        </div>
+      
+        <div class="method-description">
+        </div>
+      </div>
+
+      <div id="method-M001230" class="method-detail">
+        <a name="M001230"></a>
+
+        <div class="method-heading">
+          <a href="Message.src/M001230.html" target="Code" class="method-signature"
+            onclick="popupCode('Message.src/M001230.html');return false;">
+          <span class="method-name">return_path</span><span class="method-args">( val = nil )</span>
+          </a>
+        </div>
+      
+        <div class="method-description">
+          <p>
+Returns the return path of the mail object, or sets it if you pass a string
+</p>
+        </div>
+      </div>
+
+      <div id="method-M001231" class="method-detail">
+        <a name="M001231"></a>
+
+        <div class="method-heading">
+          <a href="Message.src/M001231.html" target="Code" class="method-signature"
+            onclick="popupCode('Message.src/M001231.html');return false;">
+          <span class="method-name">return_path=</span><span class="method-args">( val )</span>
+          </a>
+        </div>
+      
+        <div class="method-description">
+          <p>
+Sets the return path of the object
+</p>
+        </div>
+      </div>
+
+      <div id="method-M001232" class="method-detail">
+        <a name="M001232"></a>
+
+        <div class="method-heading">
+          <a href="Message.src/M001232.html" target="Code" class="method-signature"
+            onclick="popupCode('Message.src/M001232.html');return false;">
+          <span class="method-name">sender</span><span class="method-args">( val = nil )</span>
+          </a>
+        </div>
+      
+        <div class="method-description">
+          <p>
+Returns the Sender value of the mail object, as a single string of an
+address spec. A <a href="Message.html#M001232">sender</a> per RFC 2822 must
+be a single address.
+</p>
+<p>
+Example:
+</p>
+<pre>
+ mail.sender = 'Mikel &lt;mikel@test.lindsaar.net&gt;'
+ mail.sender #=&gt; 'mikel@test.lindsaar.net'
+</pre>
+<p>
+Also allows you <a href="Message.html#M001240">to</a> set the value by
+passing a value as a parameter
+</p>
+<p>
+Example:
+</p>
+<pre>
+ mail.sender 'Mikel &lt;mikel@test.lindsaar.net&gt;'
+ mail.sender #=&gt; 'mikel@test.lindsaar.net'
+</pre>
+        </div>
+      </div>
+
+      <div id="method-M001233" class="method-detail">
+        <a name="M001233"></a>
+
+        <div class="method-heading">
+          <a href="Message.src/M001233.html" target="Code" class="method-signature"
+            onclick="popupCode('Message.src/M001233.html');return false;">
+          <span class="method-name">sender=</span><span class="method-args">( val )</span>
+          </a>
+        </div>
+      
+        <div class="method-description">
+          <p>
+Sets the Sender value of the mail object, pass in a string of the field
+</p>
+<p>
+Example:
+</p>
+<pre>
+ mail.sender = 'Mikel &lt;mikel@test.lindsaar.net&gt;'
+ mail.sender #=&gt; 'mikel@test.lindsaar.net'
+</pre>
+        </div>
+      </div>
+
+      <div id="method-M001170" class="method-detail">
+        <a name="M001170"></a>
+
+        <div class="method-heading">
+          <a href="Message.src/M001170.html" target="Code" class="method-signature"
+            onclick="popupCode('Message.src/M001170.html');return false;">
+          <span class="method-name">set_envelope</span><span class="method-args">( val )</span>
+          </a>
+        </div>
+      
+        <div class="method-description">
+          <p>
+Sets the envelope <a href="Message.html#M001200">from</a> for the email
+</p>
+        </div>
+      </div>
+
+      <div id="method-M001316" class="method-detail">
+        <a name="M001316"></a>
+
+        <div class="method-heading">
+          <a href="Message.src/M001316.html" target="Code" class="method-signature"
+            onclick="popupCode('Message.src/M001316.html');return false;">
+          <span class="method-name">skip_deletion</span><span class="method-args">()</span>
+          </a>
+        </div>
+      
+        <div class="method-description">
+          <p>
+Skips the deletion of this message. All other messages flagged for delete
+still will be deleted at session close (i.e. when find exits). Only has an
+effect if you&#8216;re using find_and_delete or find with
+:delete_after_find set <a href="Message.html#M001240">to</a> true.
+</p>
+        </div>
+      </div>
+
+      <div id="method-M001234" class="method-detail">
+        <a name="M001234"></a>
+
+        <div class="method-heading">
+          <a href="Message.src/M001234.html" target="Code" class="method-signature"
+            onclick="popupCode('Message.src/M001234.html');return false;">
+          <span class="method-name">smtp_envelope_from</span><span class="method-args">( val = nil )</span>
+          </a>
+        </div>
+      
+        <div class="method-description">
+          <p>
+Returns the <a href="SMTP.html">SMTP</a> <a
+href="Envelope.html">Envelope</a> From value of the mail object, as a
+single string of an address spec.
+</p>
+<p>
+Defaults <a href="Message.html#M001240">to</a> Return-Path, Sender, or the
+first From address.
+</p>
+<p>
+Example:
+</p>
+<pre>
+ mail.smtp_envelope_from = 'Mikel &lt;mikel@test.lindsaar.net&gt;'
+ mail.smtp_envelope_from #=&gt; 'mikel@test.lindsaar.net'
+</pre>
+<p>
+Also allows you <a href="Message.html#M001240">to</a> set the value by
+passing a value as a parameter
+</p>
+<p>
+Example:
+</p>
+<pre>
+ mail.smtp_envelope_from 'Mikel &lt;mikel@test.lindsaar.net&gt;'
+ mail.smtp_envelope_from #=&gt; 'mikel@test.lindsaar.net'
+</pre>
+        </div>
+      </div>
+
+      <div id="method-M001235" class="method-detail">
+        <a name="M001235"></a>
+
+        <div class="method-heading">
+          <a href="Message.src/M001235.html" target="Code" class="method-signature"
+            onclick="popupCode('Message.src/M001235.html');return false;">
+          <span class="method-name">smtp_envelope_from=</span><span class="method-args">( val )</span>
+          </a>
+        </div>
+      
+        <div class="method-description">
+          <p>
+Sets the From address on the <a href="SMTP.html">SMTP</a> <a
+href="Envelope.html">Envelope</a>.
+</p>
+<p>
+Example:
+</p>
+<pre>
+ mail.smtp_envelope_from = 'Mikel &lt;mikel@test.lindsaar.net&gt;'
+ mail.smtp_envelope_from #=&gt; 'mikel@test.lindsaar.net'
+</pre>
+        </div>
+      </div>
+
+      <div id="method-M001236" class="method-detail">
+        <a name="M001236"></a>
+
+        <div class="method-heading">
+          <a href="Message.src/M001236.html" target="Code" class="method-signature"
+            onclick="popupCode('Message.src/M001236.html');return false;">
+          <span class="method-name">smtp_envelope_to</span><span class="method-args">( val = nil )</span>
+          </a>
+        </div>
+      
+        <div class="method-description">
+          <p>
+Returns the <a href="SMTP.html">SMTP</a> <a
+href="Envelope.html">Envelope</a> To value of the mail object.
+</p>
+<p>
+Defaults <a href="Message.html#M001240">to</a> <a
+href="Message.html#M001247">destinations</a>: To, Cc, and Bcc addresses.
+</p>
+<p>
+Example:
+</p>
+<pre>
+ mail.smtp_envelope_to = 'Mikel &lt;mikel@test.lindsaar.net&gt;'
+ mail.smtp_envelope_to #=&gt; 'mikel@test.lindsaar.net'
+</pre>
+<p>
+Also allows you <a href="Message.html#M001240">to</a> set the value by
+passing a value as a parameter
+</p>
+<p>
+Example:
+</p>
+<pre>
+ mail.smtp_envelope_to ['Mikel &lt;mikel@test.lindsaar.net&gt;', 'Lindsaar &lt;lindsaar@test.lindsaar.net&gt;']
+ mail.smtp_envelope_to #=&gt; ['mikel@test.lindsaar.net', 'lindsaar@test.lindsaar.net']
+</pre>
+        </div>
+      </div>
+
+      <div id="method-M001237" class="method-detail">
+        <a name="M001237"></a>
+
+        <div class="method-heading">
+          <a href="Message.src/M001237.html" target="Code" class="method-signature"
+            onclick="popupCode('Message.src/M001237.html');return false;">
+          <span class="method-name">smtp_envelope_to=</span><span class="method-args">( val )</span>
+          </a>
+        </div>
+      
+        <div class="method-description">
+          <p>
+Sets the To addresses on the <a href="SMTP.html">SMTP</a> <a
+href="Envelope.html">Envelope</a>.
+</p>
+<p>
+Example:
+</p>
+<pre>
+ mail.smtp_envelope_to = 'Mikel &lt;mikel@test.lindsaar.net&gt;'
+ mail.smtp_envelope_to #=&gt; 'mikel@test.lindsaar.net'
+
+ mail.smtp_envelope_to = ['Mikel &lt;mikel@test.lindsaar.net&gt;', 'Lindsaar &lt;lindsaar@test.lindsaar.net&gt;']
+ mail.smtp_envelope_to #=&gt; ['mikel@test.lindsaar.net', 'lindsaar@test.lindsaar.net']
+</pre>
+        </div>
+      </div>
+
+      <div id="method-M001273" class="method-detail">
+        <a name="M001273"></a>
+
+        <div class="method-heading">
+          <a href="Message.src/M001273.html" target="Code" class="method-signature"
+            onclick="popupCode('Message.src/M001273.html');return false;">
+          <span class="method-name">sub_type</span><span class="method-args">()</span>
+          </a>
+        </div>
+      
+        <div class="method-description">
+          <p>
+Returns the sub content type
+</p>
+        </div>
+      </div>
+
+      <div id="method-M001238" class="method-detail">
+        <a name="M001238"></a>
+
+        <div class="method-heading">
+          <a href="Message.src/M001238.html" target="Code" class="method-signature"
+            onclick="popupCode('Message.src/M001238.html');return false;">
+          <span class="method-name">subject</span><span class="method-args">( val = nil )</span>
+          </a>
+        </div>
+      
+        <div class="method-description">
+          <p>
+Returns the <a href="Message.html#M001308">decoded</a> value of the <a
+href="Message.html#M001238">subject</a> field, as a single string.
+</p>
+<p>
+Example:
+</p>
+<pre>
+ mail.subject = &quot;G'Day mate&quot;
+ mail.subject #=&gt; &quot;G'Day mate&quot;
+ mail.subject = '=?UTF-8?Q?This_is_=E3=81=82_string?='
+ mail.subject #=&gt; &quot;This is あ string&quot;
+</pre>
+<p>
+Also allows you <a href="Message.html#M001240">to</a> set the value by
+passing a value as a parameter
+</p>
+<p>
+Example:
+</p>
+<pre>
+ mail.subject &quot;G'Day mate&quot;
+ mail.subject #=&gt; &quot;G'Day mate&quot;
+</pre>
+        </div>
+      </div>
+
+      <div id="method-M001239" class="method-detail">
+        <a name="M001239"></a>
+
+        <div class="method-heading">
+          <a href="Message.src/M001239.html" target="Code" class="method-signature"
+            onclick="popupCode('Message.src/M001239.html');return false;">
+          <span class="method-name">subject=</span><span class="method-args">( val )</span>
+          </a>
+        </div>
+      
+        <div class="method-description">
+          <p>
+Sets the Subject value of the mail object, pass in a string of the field
+</p>
+<p>
+Example:
+</p>
+<pre>
+ mail.subject = '=?UTF-8?Q?This_is_=E3=81=82_string?='
+ mail.subject #=&gt; &quot;This is あ string&quot;
+</pre>
+        </div>
+      </div>
+
+      <div id="method-M001319" class="method-detail">
+        <a name="M001319"></a>
+
+        <div class="method-heading">
+          <a href="Message.src/M001319.html" target="Code" class="method-signature"
+            onclick="popupCode('Message.src/M001319.html');return false;">
+          <span class="method-name">text?</span><span class="method-args">()</span>
+          </a>
+        </div>
+      
+        <div class="method-description">
+        </div>
+      </div>
+
+      <div id="method-M001292" class="method-detail">
+        <a name="M001292"></a>
+
+        <div class="method-heading">
+          <a href="Message.src/M001292.html" target="Code" class="method-signature"
+            onclick="popupCode('Message.src/M001292.html');return false;">
+          <span class="method-name">text_part</span><span class="method-args">(&amp;block)</span>
+          </a>
+        </div>
+      
+        <div class="method-description">
+          <p>
+Accessor for <a href="Message.html#M001292">text_part</a>
+</p>
+        </div>
+      </div>
+
+      <div id="method-M001294" class="method-detail">
+        <a name="M001294"></a>
+
+        <div class="method-heading">
+          <a href="Message.src/M001294.html" target="Code" class="method-signature"
+            onclick="popupCode('Message.src/M001294.html');return false;">
+          <span class="method-name">text_part=</span><span class="method-args">(msg)</span>
+          </a>
+        </div>
+      
+        <div class="method-description">
+          <p>
+Helper <a href="Message.html#M001240">to</a> add a text <a
+href="Message.html#M001296">part</a> <a href="Message.html#M001240">to</a>
+a multipart/alternative email. If this and <a
+href="Message.html#M001291">html_part</a> are both defined in a message,
+then it will be a multipart/alternative message and set itself that way.
+</p>
+        </div>
+      </div>
+
+      <div id="method-M001240" class="method-detail">
+        <a name="M001240"></a>
+
+        <div class="method-heading">
+          <a href="Message.src/M001240.html" target="Code" class="method-signature"
+            onclick="popupCode('Message.src/M001240.html');return false;">
+          <span class="method-name">to</span><span class="method-args">( val = nil )</span>
+          </a>
+        </div>
+      
+        <div class="method-description">
+          <p>
+Returns the To value of the mail object as an array of strings of address
+specs.
+</p>
+<p>
+Example:
+</p>
+<pre>
+ mail.to = 'Mikel &lt;mikel@test.lindsaar.net&gt;'
+ mail.to #=&gt; ['mikel@test.lindsaar.net']
+ mail.to = 'Mikel &lt;mikel@test.lindsaar.net&gt;, ada@test.lindsaar.net'
+ mail.to #=&gt; ['mikel@test.lindsaar.net', 'ada@test.lindsaar.net']
+</pre>
+<p>
+Also allows you <a href="Message.html#M001240">to</a> set the value by
+passing a value as a parameter
+</p>
+<p>
+Example:
+</p>
+<pre>
+ mail.to 'Mikel &lt;mikel@test.lindsaar.net&gt;'
+ mail.to #=&gt; ['mikel@test.lindsaar.net']
+</pre>
+<p>
+Additionally, you can append <a href="Message.html#M001159">new</a>
+addresses <a href="Message.html#M001240">to</a> the returned Array like
+object.
+</p>
+<p>
+Example:
+</p>
+<pre>
+ mail.to 'Mikel &lt;mikel@test.lindsaar.net&gt;'
+ mail.to &lt;&lt; 'ada@test.lindsaar.net'
+ mail.to #=&gt; ['mikel@test.lindsaar.net', 'ada@test.lindsaar.net']
+</pre>
+        </div>
+      </div>
+
+      <div id="method-M001241" class="method-detail">
+        <a name="M001241"></a>
+
+        <div class="method-heading">
+          <a href="Message.src/M001241.html" target="Code" class="method-signature"
+            onclick="popupCode('Message.src/M001241.html');return false;">
+          <span class="method-name">to=</span><span class="method-args">( val )</span>
+          </a>
+        </div>
+      
+        <div class="method-description">
+          <p>
+Sets the To value of the mail object, pass in a string of the field
+</p>
+<p>
+Example:
+</p>
+<pre>
+ mail.to = 'Mikel &lt;mikel@test.lindsaar.net&gt;'
+ mail.to #=&gt; ['mikel@test.lindsaar.net']
+ mail.to = 'Mikel &lt;mikel@test.lindsaar.net&gt;, ada@test.lindsaar.net'
+ mail.to #=&gt; ['mikel@test.lindsaar.net', 'ada@test.lindsaar.net']
+</pre>
+        </div>
+      </div>
+
+      <div id="method-M001249" class="method-detail">
+        <a name="M001249"></a>
+
+        <div class="method-heading">
+          <a href="Message.src/M001249.html" target="Code" class="method-signature"
+            onclick="popupCode('Message.src/M001249.html');return false;">
+          <span class="method-name">to_addrs</span><span class="method-args">()</span>
+          </a>
+        </div>
+      
+        <div class="method-description">
+          <p>
+Returns an array of addresses (the <a
+href="Message.html#M001301">encoded</a> value) in the To field, if no To
+field, returns an empty array
+</p>
+        </div>
+      </div>
+
+      <div id="method-M001306" class="method-detail">
+        <a name="M001306"></a>
+
+        <div class="method-heading">
+          <a href="Message.src/M001306.html" target="Code" class="method-signature"
+            onclick="popupCode('Message.src/M001306.html');return false;">
+          <span class="method-name">to_s</span><span class="method-args">()</span>
+          </a>
+        </div>
+      
+        <div class="method-description">
+        </div>
+      </div>
+
+      <div id="method-M001303" class="method-detail">
+        <a name="M001303"></a>
+
+        <div class="method-heading">
+          <a href="Message.src/M001303.html" target="Code" class="method-signature"
+            onclick="popupCode('Message.src/M001303.html');return false;">
+          <span class="method-name">to_yaml</span><span class="method-args">(opts = {})</span>
+          </a>
+        </div>
+      
+        <div class="method-description">
+        </div>
+      </div>
+
+      <div id="method-M001198" class="method-detail">
+        <a name="M001198"></a>
+
+        <div class="method-heading">
+          <a href="Message.src/M001198.html" target="Code" class="method-signature"
+            onclick="popupCode('Message.src/M001198.html');return false;">
+          <span class="method-name">transport_encoding</span><span class="method-args">( val = nil)</span>
+          </a>
+        </div>
+      
+        <div class="method-description">
+        </div>
+      </div>
+
+      <div id="method-M001199" class="method-detail">
+        <a name="M001199"></a>
+
+        <div class="method-heading">
+          <a href="Message.src/M001199.html" target="Code" class="method-signature"
+            onclick="popupCode('Message.src/M001199.html');return false;">
+          <span class="method-name">transport_encoding=</span><span class="method-args">( val )</span>
+          </a>
+        </div>
+      
+        <div class="method-description">
+        </div>
+      </div>
+
+      <div id="method-M001302" class="method-detail">
+        <a name="M001302"></a>
+
+        <div class="method-heading">
+          <a href="Message.src/M001302.html" target="Code" class="method-signature"
+            onclick="popupCode('Message.src/M001302.html');return false;">
+          <span class="method-name">without_attachments!</span><span class="method-args">()</span>
+          </a>
+        </div>
+      
+        <div class="method-description">
+        </div>
+      </div>
+
+
+    </div>
+
+
+  </div>
+
+
+<div id="validator-badges">
+  <p><small><a href="http://validator.w3.org/check/referer">[Validate]</a></small></p>
+</div>
+
+</body>
+</html>

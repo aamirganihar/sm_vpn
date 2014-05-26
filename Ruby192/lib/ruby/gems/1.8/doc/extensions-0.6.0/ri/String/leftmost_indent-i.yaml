@@ -1,0 +1,12 @@
+--- !ruby/object:RI::MethodDescription 
+aliases: []
+
+block_params: 
+comment: 
+- !ruby/struct:SM::Flow::P 
+  body: "Returns the size of the smallest indent of any line in the string. Emits a warning if tabs are found, and if <tt>$VERBOSE</tt> is on. You can use #expand_tabs to avoid this. This method is primarily intended for use by #tabto and is not likely to be all that useful in its own right."
+full_name: String#leftmost_indent
+is_singleton: false
+name: leftmost_indent
+params: ()
+visibility: protected

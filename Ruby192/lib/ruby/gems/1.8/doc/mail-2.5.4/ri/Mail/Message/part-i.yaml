@@ -1,0 +1,16 @@
+--- !ruby/object:RI::MethodDescription 
+aliases: []
+
+block_params: new_part if block_given?
+comment: 
+- !ruby/struct:SM::Flow::P 
+  body: Allows you to add a part in block form to an existing mail message object
+- !ruby/struct:SM::Flow::P 
+  body: "Example:"
+- !ruby/struct:SM::Flow::VERB 
+  body: " mail = Mail.new do\n   part :content_type =&gt; &quot;multipart/alternative&quot;, :content_disposition =&gt; &quot;inline&quot; do |p|\n     p.part :content_type =&gt; &quot;text/plain&quot;, :body =&gt; &quot;test text\\nline #2&quot;\n     p.part :content_type =&gt; &quot;text/html&quot;, :body =&gt; &quot;<b>test</b> HTML&lt;br/&gt;\\nline #2&quot;\n   end\n end\n"
+full_name: Mail::Message#part
+is_singleton: false
+name: part
+params: (params = {}) {|new_part if block_given?| ...}
+visibility: public

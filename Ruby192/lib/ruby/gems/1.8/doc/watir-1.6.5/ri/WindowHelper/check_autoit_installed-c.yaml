@@ -1,0 +1,10 @@
+--- !ruby/object:RI::MethodDescription 
+aliases: []
+
+block_params: 
+comment: 
+full_name: WindowHelper::check_autoit_installed
+is_singleton: true
+name: check_autoit_installed
+params: ()
+visibility: public

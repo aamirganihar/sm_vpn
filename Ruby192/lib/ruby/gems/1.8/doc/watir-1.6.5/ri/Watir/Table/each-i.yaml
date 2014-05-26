@@ -1,0 +1,12 @@
+--- !ruby/object:RI::MethodDescription 
+aliases: []
+
+block_params: TableRow.new(@container, :ole_object, _row(i))
+comment: 
+- !ruby/struct:SM::Flow::P 
+  body: iterates through the rows in the table. Yields a TableRow object
+full_name: Watir::Table#each
+is_singleton: false
+name: each
+params: () {|TableRow.new(@container, :ole_object, _row(i))| ...}
+visibility: public

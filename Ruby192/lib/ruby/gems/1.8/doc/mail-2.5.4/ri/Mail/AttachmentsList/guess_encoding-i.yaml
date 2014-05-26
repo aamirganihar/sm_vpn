@@ -1,0 +1,12 @@
+--- !ruby/object:RI::MethodDescription 
+aliases: []
+
+block_params: 
+comment: 
+- !ruby/struct:SM::Flow::P 
+  body: Uses the mime type to try and guess the encoding, if it is a binary type, or unknown, then we set it to binary, otherwise as set to plain text
+full_name: Mail::AttachmentsList#guess_encoding
+is_singleton: false
+name: guess_encoding
+params: ()
+visibility: public

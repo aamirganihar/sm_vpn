@@ -1,0 +1,12 @@
+--- !ruby/object:RI::MethodDescription 
+aliases: []
+
+block_params: 
+comment: 
+- !ruby/struct:SM::Flow::P 
+  body: Go to the next page - the same as clicking the browsers forward button an WIN32OLERuntimeError exception is raised if the browser cant go forward
+full_name: Watir::IE#forward
+is_singleton: false
+name: forward
+params: ()
+visibility: public

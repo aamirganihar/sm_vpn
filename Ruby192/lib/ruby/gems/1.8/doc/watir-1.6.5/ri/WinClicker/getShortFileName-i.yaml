@@ -1,0 +1,12 @@
+--- !ruby/object:RI::MethodDescription 
+aliases: []
+
+block_params: 
+comment: 
+- !ruby/struct:SM::Flow::P 
+  body: returns the short path version of a long path 8.3 style
+full_name: WinClicker#getShortFileName
+is_singleton: false
+name: getShortFileName
+params: (longName)
+visibility: public

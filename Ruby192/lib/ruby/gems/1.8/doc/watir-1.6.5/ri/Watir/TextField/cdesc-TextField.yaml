@@ -1,0 +1,60 @@
+--- !ruby/object:RI::ClassDescription 
+attributes: 
+- !ruby/object:RI::Attribute 
+  comment: 
+  - !ruby/struct:SM::Flow::P 
+    body: Returns true or false if the text field is read only.
+  - !ruby/struct:SM::Flow::VERB 
+    body: "  Raises UnknownObjectException if the object can't be found.\n"
+  name: readOnly
+  rw: R
+- !ruby/object:RI::Attribute 
+  comment: 
+  - !ruby/struct:SM::Flow::P 
+    body: Returns true or false if the text field is read only.
+  - !ruby/struct:SM::Flow::VERB 
+    body: "  Raises UnknownObjectException if the object can't be found.\n"
+  name: readonly?
+  rw: R
+- !ruby/object:RI::Attribute 
+  comment: 
+  name: size
+  rw: R
+class_methods: []
+
+comment: 
+- !ruby/struct:SM::Flow::P 
+  body: This class is the main class for Text Fields Normally a user would not need to create this object as it is returned by the Watir::Container#text_field method
+constants: 
+- !ruby/object:RI::Constant 
+  comment: 
+  name: INPUT_TYPES
+  value: "[\"text\", \"password\", \"textarea\"]"
+full_name: Watir::TextField
+includes: []
+
+instance_methods: 
+- !ruby/object:RI::MethodSummary 
+  name: abhors_typing
+- !ruby/object:RI::MethodSummary 
+  name: append
+- !ruby/object:RI::MethodSummary 
+  name: assert_not_readonly
+- !ruby/object:RI::MethodSummary 
+  name: clear
+- !ruby/object:RI::MethodSummary 
+  name: drag_contents_to
+- !ruby/object:RI::MethodSummary 
+  name: maxlength
+- !ruby/object:RI::MethodSummary 
+  name: requires_typing
+- !ruby/object:RI::MethodSummary 
+  name: set
+- !ruby/object:RI::MethodSummary 
+  name: to_s
+- !ruby/object:RI::MethodSummary 
+  name: value=
+- !ruby/object:RI::MethodSummary 
+  name: verify_contains
+name: TextField
+superclass: InputElement

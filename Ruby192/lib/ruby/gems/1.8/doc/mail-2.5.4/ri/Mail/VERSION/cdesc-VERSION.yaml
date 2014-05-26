@@ -1,0 +1,35 @@
+--- !ruby/object:RI::ClassDescription 
+attributes: []
+
+class_methods: 
+- !ruby/object:RI::MethodSummary 
+  name: version
+comment: 
+constants: 
+- !ruby/object:RI::Constant 
+  comment: 
+  name: MAJOR
+  value: version['major']
+- !ruby/object:RI::Constant 
+  comment: 
+  name: MINOR
+  value: version['minor']
+- !ruby/object:RI::Constant 
+  comment: 
+  name: PATCH
+  value: version['patch']
+- !ruby/object:RI::Constant 
+  comment: 
+  name: BUILD
+  value: version['build']
+- !ruby/object:RI::Constant 
+  comment: 
+  name: STRING
+  value: "[MAJOR, MINOR, PATCH, BUILD].compact.join('.')"
+full_name: Mail::VERSION
+includes: []
+
+instance_methods: []
+
+name: VERSION
+superclass: 

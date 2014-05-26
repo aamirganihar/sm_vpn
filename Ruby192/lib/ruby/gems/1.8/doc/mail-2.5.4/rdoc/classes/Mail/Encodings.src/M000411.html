@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+<!DOCTYPE html 
+     PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+     "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html>
+<head>
+  <title>value_decode (Mail::Encodings)</title>
+  <meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" />
+  <link rel="stylesheet" href="../../.././rdoc-style.css" type="text/css" media="screen" />
+</head>
+<body class="standalone-code">
+  <pre><span class="ruby-comment cmt"># File lib/mail/encodings.rb, line 115</span>
+    <span class="ruby-keyword kw">def</span> <span class="ruby-constant">Encodings</span>.<span class="ruby-identifier">value_decode</span>(<span class="ruby-identifier">str</span>)
+      <span class="ruby-comment cmt"># Optimization: If there's no encoded-words in the string, just return it</span>
+      <span class="ruby-keyword kw">return</span> <span class="ruby-identifier">str</span> <span class="ruby-keyword kw">unless</span> <span class="ruby-identifier">str</span> <span class="ruby-operator">=~</span> <span class="ruby-regexp re">/\=\?[^?]+\?[QB]\?[^?]+?\?\=/</span><span class="ruby-identifier">xmi</span>
+
+      <span class="ruby-identifier">lines</span> = <span class="ruby-identifier">collapse_adjacent_encodings</span>(<span class="ruby-identifier">str</span>)
+
+      <span class="ruby-comment cmt"># Split on white-space boundaries with capture, so we capture the white-space as well</span>
+      <span class="ruby-identifier">lines</span>.<span class="ruby-identifier">map</span> <span class="ruby-keyword kw">do</span> <span class="ruby-operator">|</span><span class="ruby-identifier">line</span><span class="ruby-operator">|</span>
+        <span class="ruby-identifier">line</span>.<span class="ruby-identifier">split</span>(<span class="ruby-regexp re">/([ \t])/</span>).<span class="ruby-identifier">map</span> <span class="ruby-keyword kw">do</span> <span class="ruby-operator">|</span><span class="ruby-identifier">text</span><span class="ruby-operator">|</span>
+          <span class="ruby-keyword kw">if</span> <span class="ruby-identifier">text</span>.<span class="ruby-identifier">index</span>(<span class="ruby-value str">'=?'</span>).<span class="ruby-identifier">nil?</span>
+            <span class="ruby-identifier">text</span>
+          <span class="ruby-keyword kw">else</span>
+            <span class="ruby-comment cmt"># Search for occurences of quoted strings or plain strings</span>
+            <span class="ruby-identifier">text</span>.<span class="ruby-identifier">scan</span>(<span class="ruby-regexp re">/(                                 # Group around entire regex to include it in matches
+                        \=\?[^?]+\?([QB])\?[^?]+?\?\=    # Quoted String with subgroup for encoding method
+                        |                                # or
+                        .+?(?=\=\?|$)                    # Plain String
+                      )/</span><span class="ruby-identifier">xmi</span>).<span class="ruby-identifier">map</span> <span class="ruby-keyword kw">do</span> <span class="ruby-operator">|</span><span class="ruby-identifier">matches</span><span class="ruby-operator">|</span>
+              <span class="ruby-identifier">string</span>, <span class="ruby-identifier">method</span> = <span class="ruby-operator">*</span><span class="ruby-identifier">matches</span>
+              <span class="ruby-keyword kw">if</span>    <span class="ruby-identifier">method</span> <span class="ruby-operator">==</span> <span class="ruby-value str">'b'</span> <span class="ruby-operator">||</span> <span class="ruby-identifier">method</span> <span class="ruby-operator">==</span> <span class="ruby-value str">'B'</span>
+                <span class="ruby-identifier">b_value_decode</span>(<span class="ruby-identifier">string</span>)
+              <span class="ruby-keyword kw">elsif</span> <span class="ruby-identifier">method</span> <span class="ruby-operator">==</span> <span class="ruby-value str">'q'</span> <span class="ruby-operator">||</span> <span class="ruby-identifier">method</span> <span class="ruby-operator">==</span> <span class="ruby-value str">'Q'</span>
+                <span class="ruby-identifier">q_value_decode</span>(<span class="ruby-identifier">string</span>)
+              <span class="ruby-keyword kw">else</span>
+                <span class="ruby-identifier">string</span>
+              <span class="ruby-keyword kw">end</span>
+            <span class="ruby-keyword kw">end</span>
+          <span class="ruby-keyword kw">end</span>
+        <span class="ruby-keyword kw">end</span>
+      <span class="ruby-keyword kw">end</span>.<span class="ruby-identifier">flatten</span>.<span class="ruby-identifier">join</span>(<span class="ruby-value str">&quot;&quot;</span>)
+    <span class="ruby-keyword kw">end</span></pre>
+</body>
+</html>

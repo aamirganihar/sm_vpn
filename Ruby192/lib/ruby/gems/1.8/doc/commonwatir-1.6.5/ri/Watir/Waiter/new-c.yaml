@@ -1,0 +1,10 @@
+--- !ruby/object:RI::MethodDescription 
+aliases: []
+
+block_params: 
+comment: 
+full_name: Watir::Waiter::new
+is_singleton: true
+name: new
+params: (timeout=@@default_timeout, polling_interval=@@default_polling_interval)
+visibility: public

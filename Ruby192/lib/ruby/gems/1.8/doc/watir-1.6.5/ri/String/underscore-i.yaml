@@ -1,0 +1,12 @@
+--- !ruby/object:RI::MethodDescription 
+aliases: []
+
+block_params: 
+comment: 
+- !ruby/struct:SM::Flow::P 
+  body: "&quot;FooBar&quot; =&gt; &quot;foo_bar&quot;"
+full_name: String#underscore
+is_singleton: false
+name: underscore
+params: ()
+visibility: public

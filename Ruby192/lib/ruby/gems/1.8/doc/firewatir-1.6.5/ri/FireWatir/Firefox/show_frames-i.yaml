@@ -1,0 +1,19 @@
+--- !ruby/object:RI::MethodDescription 
+aliases: 
+- !ruby/object:RI::AliasName 
+  name: showFrames
+block_params: 
+comment: 
+- !ruby/struct:SM::Flow::P 
+  body: "Description:"
+- !ruby/struct:SM::Flow::VERB 
+  body: "  Show all the frames available on the page. Doesn't show nested frames.\n"
+- !ruby/struct:SM::Flow::P 
+  body: "Output:"
+- !ruby/struct:SM::Flow::VERB 
+  body: "  Name, and index of all the frames available on the page.\n"
+full_name: FireWatir::Firefox#show_frames
+is_singleton: false
+name: show_frames
+params: ()
+visibility: public

@@ -1,0 +1,193 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+<!DOCTYPE html 
+     PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+     "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+  <title>File: README.md</title>
+  <meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" />
+  <meta http-equiv="Content-Script-Type" content="text/javascript" />
+  <link rel="stylesheet" href=".././rdoc-style.css" type="text/css" media="screen" />
+  <script type="text/javascript">
+  // <![CDATA[
+
+  function popupCode( url ) {
+    window.open(url, "Code", "resizable=yes,scrollbars=yes,toolbar=no,status=no,height=150,width=400")
+  }
+
+  function toggleCode( id ) {
+    if ( document.getElementById )
+      elem = document.getElementById( id );
+    else if ( document.all )
+      elem = eval( "document.all." + id );
+    else
+      return false;
+
+    elemStyle = elem.style;
+    
+    if ( elemStyle.display != "block" ) {
+      elemStyle.display = "block"
+    } else {
+      elemStyle.display = "none"
+    }
+
+    return true;
+  }
+  
+  // Make codeblocks hidden by default
+  document.writeln( "<style type=\"text/css\">div.method-source-code { display: none }</style>" )
+  
+  // ]]>
+  </script>
+
+</head>
+<body>
+
+
+
+  <div id="fileHeader">
+    <h1>README.md</h1>
+    <table class="header-table">
+    <tr class="top-aligned-row">
+      <td><strong>Path:</strong></td>
+      <td>README.md
+      </td>
+    </tr>
+    <tr class="top-aligned-row">
+      <td><strong>Last Update:</strong></td>
+      <td>Fri Dec 06 09:20:06 +0530 2013</td>
+    </tr>
+    </table>
+  </div>
+  <!-- banner header -->
+
+  <div id="bodyContent">
+
+
+
+  <div id="contextContent">
+
+    <div id="description">
+      <p>
+Support
+</p>
+<h6>=</h6>
+<p>
+Support for Treetop is provided through the mailing list you can join or
+browse here: <a
+href="http://groups.google.com/group/treetop-dev">groups.google.com/group/treetop-dev</a>
+</p>
+<p>
+Tutorial
+</p>
+<h6>==</h6>
+<p>
+Languages can be split into two components, their <b>syntax</b> and their
+<b>semantics</b>. It&#8216;s your understanding of English syntax that
+tells you the stream of words &quot;Sleep furiously green ideas
+colorless&quot; is not a valid sentence. Semantics is deeper. Even if we
+rearrange the above sentence to be &quot;Colorless green ideas sleep
+furiously&quot;, which is syntactically correct, it remains nonsensical on
+a semantic level. With Treetop, you&#8216;ll be dealing with languages that
+are much simpler than English, but these basic concepts apply. Your
+programs will need to address both the syntax and the semantics of the
+languages they interpret.
+</p>
+<p>
+Treetop equips you with powerful tools for each of these two aspects of
+interpreter writing. You&#8216;ll describe the syntax of your language with
+a *parsing expression grammar*. From this description, Treetop will
+generate a Ruby parser that transforms streams of characters written into
+your language into *abstract syntax trees* representing their structure.
+You&#8216;ll then describe the semantics of your language in Ruby by
+defining methods on the syntax trees the parser generates.
+</p>
+<p>
+Parsing Expression Grammars, The Basics
+</p>
+<h6>=================================</h6>
+<p>
+The first step in using Treetop is defining a grammar in a file with the
+`.treetop` extension. Here&#8216;s a grammar that&#8216;s useless because
+it&#8216;s empty:
+</p>
+<pre>
+    # my_grammar.treetop
+    grammar MyGrammar
+    end
+</pre>
+<p>
+Next, you start filling your grammar with rules. Each rule associates a
+name with a parsing expression, like the following:
+</p>
+<pre>
+    # my_grammar.treetop
+    # You can use a .tt extension instead if you wish
+    grammar MyGrammar
+      rule hello
+        'hello chomsky'
+      end
+    end
+</pre>
+<p>
+The first rule becomes the <b>root</b> of the grammar, causing its
+expression to be matched when a parser for the grammar is fed a string. The
+above grammar can now be used in a Ruby program. Notice how a string
+matching the first rule parses successfully, but a second nonmatching
+string does not.
+</p>
+<p>
+```ruby # use_grammar.rb require &#8216;rubygems&#8217; require
+&#8216;treetop&#8217; Treetop.load &#8216;my_grammar&#8217; # or just: #
+require &#8216;my_grammar&#8217; # This works because Polyglot hooks
+&quot;require&quot; to find and load Treetop files
+</p>
+<p>
+parser = MyGrammarParser.new puts parser.parse(&#8216;hello chomsky&#8217;)
+# =&gt; <a
+href="../classes/Treetop/Runtime/SyntaxNode.html">Treetop::Runtime::SyntaxNode</a>
+puts parser.parse(&#8216;silly generativists!&#8217;) # =&gt; nil ``` Users
+of *regular expressions* will find parsing expressions familiar. They share
+the same basic purpose, matching strings against patterns. However, parsing
+expressions can recognize a broader category of languages than their less
+expressive brethren. Before we get into demonstrating that, lets cover some
+basics. At first parsing expressions won&#8216;t seem much different. Trust
+that they are.
+</p>
+<p>
+Terminal Symbols
+</p>
+
+    </div>
+
+
+   </div>
+
+
+  </div>
+
+
+    <!-- if includes -->
+
+    <div id="section">
+
+
+
+
+
+      
+
+
+    <!-- if method_list -->
+
+
+  </div>
+
+
+<div id="validator-badges">
+  <p><small><a href="http://validator.w3.org/check/referer">[Validate]</a></small></p>
+</div>
+
+</body>
+</html>

@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html 
+     PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+     "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html>
+<head>
+  <title>new (Timezone::Parser::Data)</title>
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+  <link rel="stylesheet" href="../../../.././rdoc-style.css" type="text/css" media="screen" />
+</head>
+<body class="standalone-code">
+  <pre><span class="ruby-comment cmt"># File lib/timezone/parser/data.rb, line 33</span>
+      <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">initialize</span>(<span class="ruby-identifier">start_date</span>, <span class="ruby-identifier">end_date</span>, <span class="ruby-identifier">zone</span>, <span class="ruby-identifier">rule</span> = <span class="ruby-constant">NilRule</span>.<span class="ruby-identifier">new</span>)
+        <span class="ruby-ivar">@dst</span> = <span class="ruby-identifier">rule</span>.<span class="ruby-identifier">dst?</span>
+        <span class="ruby-ivar">@offset</span> = <span class="ruby-identifier">parse_offset</span>(<span class="ruby-identifier">zone</span>, <span class="ruby-identifier">rule</span>)
+        <span class="ruby-ivar">@name</span> = <span class="ruby-identifier">parse_name</span>(<span class="ruby-identifier">zone</span>.<span class="ruby-identifier">format</span>, <span class="ruby-identifier">rule</span>.<span class="ruby-identifier">letter</span>)
+        <span class="ruby-ivar">@utime</span> = <span class="ruby-identifier">rule</span>.<span class="ruby-identifier">utime?</span>
+        <span class="ruby-ivar">@start_date</span> = <span class="ruby-identifier">parse_start_date</span>(<span class="ruby-identifier">start_date</span>)
+        <span class="ruby-keyword kw">self</span>.<span class="ruby-identifier">end_date</span> = <span class="ruby-identifier">end_date</span>
+      <span class="ruby-keyword kw">end</span></pre>
+</body>
+</html>

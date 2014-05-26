@@ -1,0 +1,227 @@
+--- !ruby/object:RI::ClassDescription 
+attributes: []
+
+class_methods: []
+
+comment: 
+constants: 
+- !ruby/object:RI::Constant 
+  comment: 
+  - !ruby/struct:SM::Flow::P 
+    body: Obsolete processor info constants
+  name: PROCESSOR_INTEL_386
+  value: "386"
+- !ruby/object:RI::Constant 
+  comment: 
+  name: PROCESSOR_INTEL_486
+  value: "486"
+- !ruby/object:RI::Constant 
+  comment: 
+  name: PROCESSOR_INTEL_PENTIUM
+  value: "586"
+- !ruby/object:RI::Constant 
+  comment: 
+  name: PROCESSOR_INTEL_IA64
+  value: "2200"
+- !ruby/object:RI::Constant 
+  comment: 
+  name: PROCESSOR_AMD_X8664
+  value: "8664"
+- !ruby/object:RI::Constant 
+  comment: 
+  - !ruby/struct:SM::Flow::P 
+    body: Suite mask constants
+  name: VER_SERVER_NT
+  value: "0x80000000"
+- !ruby/object:RI::Constant 
+  comment: 
+  name: VER_WORKSTATION_NT
+  value: "0x40000000"
+- !ruby/object:RI::Constant 
+  comment: 
+  name: VER_SUITE_SMALLBUSINESS
+  value: "0x00000001"
+- !ruby/object:RI::Constant 
+  comment: 
+  name: VER_SUITE_ENTERPRISE
+  value: "0x00000002"
+- !ruby/object:RI::Constant 
+  comment: 
+  name: VER_SUITE_BACKOFFICE
+  value: "0x00000004"
+- !ruby/object:RI::Constant 
+  comment: 
+  name: VER_SUITE_COMMUNICATIONS
+  value: "0x00000008"
+- !ruby/object:RI::Constant 
+  comment: 
+  name: VER_SUITE_TERMINAL
+  value: "0x00000010"
+- !ruby/object:RI::Constant 
+  comment: 
+  name: VER_SUITE_SMALLBUSINESS_RESTRICTED
+  value: "0x00000020"
+- !ruby/object:RI::Constant 
+  comment: 
+  name: VER_SUITE_EMBEDDEDNT
+  value: "0x00000040"
+- !ruby/object:RI::Constant 
+  comment: 
+  name: VER_SUITE_DATACENTER
+  value: "0x00000080"
+- !ruby/object:RI::Constant 
+  comment: 
+  name: VER_SUITE_SINGLEUSERTS
+  value: "0x00000100"
+- !ruby/object:RI::Constant 
+  comment: 
+  name: VER_SUITE_PERSONAL
+  value: "0x00000200"
+- !ruby/object:RI::Constant 
+  comment: 
+  name: VER_SUITE_BLADE
+  value: "0x00000400"
+- !ruby/object:RI::Constant 
+  comment: 
+  name: VER_SUITE_EMBEDDED_RESTRICTED
+  value: "0x00000800"
+- !ruby/object:RI::Constant 
+  comment: 
+  name: VER_SUITE_SECURITY_APPLIANCE
+  value: "0x00001000"
+- !ruby/object:RI::Constant 
+  comment: 
+  name: VER_SUITE_STORAGE_SERVER
+  value: "0x00002000"
+- !ruby/object:RI::Constant 
+  comment: 
+  name: VER_SUITE_COMPUTE_SERVER
+  value: "0x00004000"
+- !ruby/object:RI::Constant 
+  comment: 
+  - !ruby/struct:SM::Flow::P 
+    body: Product mask constants
+  name: VER_NT_WORKSTATION
+  value: "0x0000001"
+- !ruby/object:RI::Constant 
+  comment: 
+  name: VER_NT_DOMAIN_CONTROLLER
+  value: "0x0000002"
+- !ruby/object:RI::Constant 
+  comment: 
+  name: VER_NT_SERVER
+  value: "0x0000003"
+- !ruby/object:RI::Constant 
+  comment: 
+  - !ruby/struct:SM::Flow::P 
+    body: Platform definitions
+  name: VER_PLATFORM_WIN32s
+  value: "0"
+- !ruby/object:RI::Constant 
+  comment: 
+  name: VER_PLATFORM_WIN32_WINDOWS
+  value: "1"
+- !ruby/object:RI::Constant 
+  comment: 
+  name: VER_PLATFORM_WIN32_NT
+  value: "2"
+- !ruby/object:RI::Constant 
+  comment: 
+  - !ruby/struct:SM::Flow::P 
+    body: Version info type constants
+  name: VER_MINORVERSION
+  value: "0x0000001"
+- !ruby/object:RI::Constant 
+  comment: 
+  name: VER_MAJORVERSION
+  value: "0x0000002"
+- !ruby/object:RI::Constant 
+  comment: 
+  name: VER_BUILDNUMBER
+  value: "0x0000004"
+- !ruby/object:RI::Constant 
+  comment: 
+  name: VER_PLATFORMID
+  value: "0x0000008"
+- !ruby/object:RI::Constant 
+  comment: 
+  name: VER_SERVICEPACKMINOR
+  value: "0x0000010"
+- !ruby/object:RI::Constant 
+  comment: 
+  name: VER_SERVICEPACKMAJOR
+  value: "0x0000020"
+- !ruby/object:RI::Constant 
+  comment: 
+  name: VER_SUITENAME
+  value: "0x0000040"
+- !ruby/object:RI::Constant 
+  comment: 
+  name: VER_PRODUCT_TYPE
+  value: "0x0000080"
+- !ruby/object:RI::Constant 
+  comment: 
+  - !ruby/struct:SM::Flow::P 
+    body: Enum COMPUTER_NAME_FORMAT
+  name: ComputerNameNetBIOS
+  value: "0"
+- !ruby/object:RI::Constant 
+  comment: 
+  name: ComputerNameDnsHostname
+  value: "1"
+- !ruby/object:RI::Constant 
+  comment: 
+  name: ComputerNameDnsDomain
+  value: "2"
+- !ruby/object:RI::Constant 
+  comment: 
+  name: ComputerNameDnsFullyQualified
+  value: "3"
+- !ruby/object:RI::Constant 
+  comment: 
+  name: ComputerNamePhysicalNetBIOS
+  value: "4"
+- !ruby/object:RI::Constant 
+  comment: 
+  name: ComputerNamePhysicalDnsHostname
+  value: "5"
+- !ruby/object:RI::Constant 
+  comment: 
+  name: ComputerNamePhysicalDnsDomain
+  value: "6"
+- !ruby/object:RI::Constant 
+  comment: 
+  name: ComputerNamePhysicalDnsFullyQualified
+  value: "7"
+- !ruby/object:RI::Constant 
+  comment: 
+  name: ComputerNameMax
+  value: "8"
+full_name: Windows::SystemInfo
+includes: []
+
+instance_methods: 
+- !ruby/object:RI::MethodSummary 
+  name: HIBYTE
+- !ruby/object:RI::MethodSummary 
+  name: HIWORD
+- !ruby/object:RI::MethodSummary 
+  name: LOBYTE
+- !ruby/object:RI::MethodSummary 
+  name: LOWORD
+- !ruby/object:RI::MethodSummary 
+  name: MAKELONG
+- !ruby/object:RI::MethodSummary 
+  name: MAKEWORD
+- !ruby/object:RI::MethodSummary 
+  name: windows_2000?
+- !ruby/object:RI::MethodSummary 
+  name: windows_2003?
+- !ruby/object:RI::MethodSummary 
+  name: windows_version
+- !ruby/object:RI::MethodSummary 
+  name: windows_vista?
+- !ruby/object:RI::MethodSummary 
+  name: windows_xp?
+name: SystemInfo
+superclass: 

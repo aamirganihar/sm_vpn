@@ -1,0 +1,10 @@
+--- !ruby/object:RI::MethodDescription 
+aliases: []
+
+block_params: 
+comment: 
+full_name: UserChoices::YamlConfigFileSource#ensure_element_is_string
+is_singleton: false
+name: ensure_element_is_string
+params: (collection, key)
+visibility: public

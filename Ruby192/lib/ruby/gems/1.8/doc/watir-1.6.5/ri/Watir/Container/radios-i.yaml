@@ -1,0 +1,16 @@
+--- !ruby/object:RI::MethodDescription 
+aliases: []
+
+block_params: 
+comment: 
+- !ruby/struct:SM::Flow::P 
+  body: This is the method for accessing the radio buttons iterator. Returns a Radios object
+- !ruby/struct:SM::Flow::P 
+  body: "Typical usage:"
+- !ruby/struct:SM::Flow::VERB 
+  body: "  ie.radios.each { |r| puts r.to_s }            # iterate through all the radio buttons on the page\n  ie.radios[1].to_s                             # goto the first radio button on the page\n  ie.radios.length                              # show how many radio buttons are on the page.\n"
+full_name: Watir::Container#radios
+is_singleton: false
+name: radios
+params: ()
+visibility: public

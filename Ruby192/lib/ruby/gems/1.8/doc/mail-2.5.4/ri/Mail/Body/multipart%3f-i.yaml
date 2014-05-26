@@ -1,0 +1,12 @@
+--- !ruby/object:RI::MethodDescription 
+aliases: []
+
+block_params: 
+comment: 
+- !ruby/struct:SM::Flow::P 
+  body: Returns true if there are parts defined in the body
+full_name: Mail::Body#multipart?
+is_singleton: false
+name: multipart?
+params: ()
+visibility: public

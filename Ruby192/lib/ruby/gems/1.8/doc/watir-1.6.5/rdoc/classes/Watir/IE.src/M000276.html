@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+<!DOCTYPE html 
+     PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+     "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html>
+<head>
+  <title>elements_by_xpath (Watir::IE)</title>
+  <meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" />
+  <link rel="stylesheet" href="../../.././rdoc-style.css" type="text/css" media="screen" />
+</head>
+<body class="standalone-code">
+  <pre><span class="ruby-comment cmt"># File lib/watir/ie-class.rb, line 902</span>
+    <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">elements_by_xpath</span>(<span class="ruby-identifier">xpath</span>)
+      <span class="ruby-identifier">doc</span> = <span class="ruby-identifier">xmlparser_document_object</span> 
+      <span class="ruby-identifier">modifiedXpath</span> = <span class="ruby-value str">&quot;&quot;</span>
+      <span class="ruby-identifier">selectedElements</span> = <span class="ruby-constant">Array</span>.<span class="ruby-identifier">new</span>
+      
+      <span class="ruby-comment cmt"># strip any trailing slash from the xpath expression (as used in watir unit tests)</span>
+      <span class="ruby-identifier">xpath</span>.<span class="ruby-identifier">chop!</span> <span class="ruby-keyword kw">unless</span> (<span class="ruby-regexp re">/\/$/</span> <span class="ruby-operator">=~</span> <span class="ruby-identifier">xpath</span>).<span class="ruby-identifier">nil?</span>
+      
+      <span class="ruby-identifier">doc</span>.<span class="ruby-identifier">search</span>(<span class="ruby-identifier">xpath</span>).<span class="ruby-identifier">each</span> <span class="ruby-keyword kw">do</span> <span class="ruby-operator">|</span><span class="ruby-identifier">element</span><span class="ruby-operator">|</span>
+        <span class="ruby-identifier">modifiedXpath</span> = <span class="ruby-identifier">element</span>.<span class="ruby-identifier">path</span>
+        <span class="ruby-identifier">temp</span> = <span class="ruby-identifier">element_by_absolute_xpath</span>(<span class="ruby-identifier">modifiedXpath</span>) <span class="ruby-comment cmt"># temp = a DOM/COM element</span>
+        <span class="ruby-identifier">selectedElements</span> <span class="ruby-operator">&lt;&lt;</span> <span class="ruby-identifier">temp</span> <span class="ruby-keyword kw">if</span> <span class="ruby-identifier">temp</span> <span class="ruby-operator">!=</span> <span class="ruby-keyword kw">nil</span>
+      <span class="ruby-keyword kw">end</span>
+      <span class="ruby-comment cmt">#puts selectedElements.length</span>
+      <span class="ruby-keyword kw">if</span> <span class="ruby-identifier">selectedElements</span>.<span class="ruby-identifier">length</span> <span class="ruby-operator">==</span> <span class="ruby-value">0</span>
+        <span class="ruby-keyword kw">return</span> <span class="ruby-keyword kw">nil</span>
+      <span class="ruby-keyword kw">else</span>
+        <span class="ruby-keyword kw">return</span> <span class="ruby-identifier">selectedElements</span>
+      <span class="ruby-keyword kw">end</span>
+    <span class="ruby-keyword kw">end</span></pre>
+</body>
+</html>

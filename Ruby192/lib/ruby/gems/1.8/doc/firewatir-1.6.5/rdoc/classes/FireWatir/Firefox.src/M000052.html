@@ -1,0 +1,87 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+<!DOCTYPE html 
+     PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+     "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html>
+<head>
+  <title>wait (FireWatir::Firefox)</title>
+  <meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" />
+  <link rel="stylesheet" href="../../.././rdoc-style.css" type="text/css" media="screen" />
+</head>
+<body class="standalone-code">
+  <pre><span class="ruby-comment cmt"># File lib/firewatir/firefox.rb, line 486</span>
+    <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">wait</span>(<span class="ruby-identifier">last_url</span> = <span class="ruby-keyword kw">nil</span>)
+      <span class="ruby-comment cmt">#puts &quot;In wait function &quot;</span>
+      <span class="ruby-identifier">isLoadingDocument</span> = <span class="ruby-value str">&quot;&quot;</span>
+      <span class="ruby-identifier">start</span> = <span class="ruby-constant">Time</span>.<span class="ruby-identifier">now</span>
+
+      <span class="ruby-keyword kw">while</span> <span class="ruby-identifier">isLoadingDocument</span> <span class="ruby-operator">!=</span> <span class="ruby-value str">&quot;false&quot;</span>
+        <span class="ruby-identifier">isLoadingDocument</span> = <span class="ruby-identifier">js_eval</span>(<span class="ruby-node">&quot;#{browser_var}=#{window_var}.getBrowser(); #{browser_var}.webProgress.isLoadingDocument;&quot;</span>)
+        <span class="ruby-comment cmt">#puts &quot;Is browser still loading page: #{isLoadingDocument}&quot;</span>
+
+        <span class="ruby-comment cmt"># Raise an exception if the page fails to load</span>
+        <span class="ruby-keyword kw">if</span> (<span class="ruby-constant">Time</span>.<span class="ruby-identifier">now</span> <span class="ruby-operator">-</span> <span class="ruby-identifier">start</span>) <span class="ruby-operator">&gt;</span> <span class="ruby-value">300</span>
+          <span class="ruby-identifier">raise</span> <span class="ruby-value str">&quot;Page Load Timeout&quot;</span>
+        <span class="ruby-keyword kw">end</span>
+      <span class="ruby-keyword kw">end</span>
+      <span class="ruby-comment cmt"># If the redirect is to a download attachment that does not reload this page, this</span>
+      <span class="ruby-comment cmt"># method will loop forever. Therefore, we need to ensure that if this method is called</span>
+      <span class="ruby-comment cmt"># twice with the same URL, we simply accept that we're done.</span>
+      <span class="ruby-identifier">url</span> = <span class="ruby-identifier">js_eval</span>(<span class="ruby-node">&quot;#{browser_var}.contentDocument.URL&quot;</span>)
+
+      <span class="ruby-keyword kw">if</span>(<span class="ruby-identifier">url</span> <span class="ruby-operator">!=</span> <span class="ruby-identifier">last_url</span>)
+        <span class="ruby-comment cmt"># Check for Javascript redirect. As we are connected to Firefox via JSSh. JSSh</span>
+        <span class="ruby-comment cmt"># doesn't detect any javascript redirects so check it here.</span>
+        <span class="ruby-comment cmt"># If page redirects to itself that this code will enter in infinite loop.</span>
+        <span class="ruby-comment cmt"># So we currently don't wait for such a page.</span>
+        <span class="ruby-comment cmt"># wait variable in JSSh tells if we should wait more for the page to get loaded</span>
+        <span class="ruby-comment cmt"># or continue. -1 means page is not redirected. Anyother positive values means wait.</span>
+        <span class="ruby-identifier">jssh_command</span> = <span class="ruby-node">&quot;var wait = -1; var meta = null; meta = #{browser_var}.contentDocument.getElementsByTagName('meta');
+                                if(meta != null)
+                                {
+                                    var doc_url = #{browser_var}.contentDocument.URL;
+                                    for(var i=0; i&lt; meta.length;++i)
+                                    {
+                                                                          var content = meta[i].content;
+                                                                         var regex = new RegExp(\&quot;^refresh$\&quot;, \&quot;i\&quot;);
+                                                                        if(regex.test(meta[i].httpEquiv))
+                                                                            {
+                                                                                    var arrContent = content.split(';');
+                                                                                var redirect_url = null;
+                                                                               if(arrContent.length &gt; 0)
+                                                                              {
+                                                                                     if(arrContent.length &gt; 1)
+                                                                                                    redirect_url = arrContent[1];
+
+                                                                                         if(redirect_url != null)
+                                                                                          {
+                                                                                                regex = new RegExp(\&quot;^.*\&quot; + redirect_url + \&quot;$\&quot;);
+                                                                                               if(!regex.test(doc_url))
+                                                                                              {
+                                                                                                     wait = arrContent[0];
+                                                                                                    }
+                                                                                            }
+                                                                                            break;
+                                                                                    }
+                                                                            }
+                                                                    }
+                                }
+                                wait;&quot;</span>
+        <span class="ruby-identifier">wait_time</span> = <span class="ruby-identifier">js_eval</span>(<span class="ruby-identifier">jssh_command</span>).<span class="ruby-identifier">to_i</span>
+        <span class="ruby-keyword kw">begin</span>
+          <span class="ruby-keyword kw">if</span>(<span class="ruby-identifier">wait_time</span> <span class="ruby-operator">!=</span> <span class="ruby-value">-1</span>)
+            <span class="ruby-identifier">sleep</span>(<span class="ruby-identifier">wait_time</span>)
+            <span class="ruby-comment cmt"># Call wait again. In case there are multiple redirects.</span>
+            <span class="ruby-identifier">js_eval</span> <span class="ruby-node">&quot;#{browser_var} = #{window_var}.getBrowser()&quot;</span>
+            <span class="ruby-identifier">wait</span>(<span class="ruby-identifier">url</span>)
+          <span class="ruby-keyword kw">end</span>
+        <span class="ruby-keyword kw">rescue</span>
+        <span class="ruby-keyword kw">end</span>
+      <span class="ruby-keyword kw">end</span>
+      <span class="ruby-identifier">set_browser_document</span>()
+      <span class="ruby-identifier">run_error_checks</span>()
+      <span class="ruby-keyword kw">return</span> <span class="ruby-keyword kw">self</span>
+    <span class="ruby-keyword kw">end</span></pre>
+</body>
+</html>

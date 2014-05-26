@@ -1,0 +1,34 @@
+--- !ruby/object:RI::MethodDescription 
+aliases: []
+
+block_params: 
+comment: 
+- !ruby/struct:SM::Flow::P 
+  body: "Add the choice named <em>choice</em>, a symbol. <em>args</em> is a keyword argument:"
+- !ruby/object:SM::Flow::LIST 
+  contents: 
+  - !ruby/struct:SM::Flow::LI 
+    label: "*"
+    body: <tt>:default</tt> takes a value that is the default value of the <em>choice</em>.
+  - !ruby/struct:SM::Flow::LI 
+    label: "*"
+    body: <tt>:type</tt> can be given an array of valid string values. These are checked.
+  - !ruby/struct:SM::Flow::LI 
+    label: "*"
+    body: <tt>:type</tt> can also be given <tt>:integer</tt>. The value is cast into an integer. If that's impossible, an exception is raised.
+  - !ruby/struct:SM::Flow::LI 
+    label: "*"
+    body: <tt>:type</tt> can also be given <tt>:boolean</tt>. The value is converted into <tt>true</tt> or <tt>false</tt> (or an exception is raised).
+  - !ruby/struct:SM::Flow::LI 
+    label: "*"
+    body: <tt>:type</tt> can also be given <tt>[:string]</tt>. The value will be an array of strings. For example, &quot;--value a,b,c&quot; will produce ['a', 'b', 'c'].
+  type: :BULLET
+- !ruby/struct:SM::Flow::P 
+  body: You might also give <tt>:length =&gt; 5</tt> or <tt>:length =&gt; 3..4</tt>. (In this case, a <tt>:type</tt> of <tt>[:string]</tt> is assumed.)
+- !ruby/struct:SM::Flow::P 
+  body: The <em>block</em> is passed a CommandLineSource object. It's used to describe the command line.
+full_name: UserChoices::ChoicesBuilder#add_choice
+is_singleton: false
+name: add_choice
+params: (choice, args={}, &block)
+visibility: public

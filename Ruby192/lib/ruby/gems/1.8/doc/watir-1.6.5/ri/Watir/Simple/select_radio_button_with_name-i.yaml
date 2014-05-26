@@ -1,0 +1,12 @@
+--- !ruby/object:RI::MethodDescription 
+aliases: []
+
+block_params: 
+comment: 
+- !ruby/struct:SM::Flow::P 
+  body: Select an item (<tt>value</tt>) from the <tt>index</tt>'th radio button collection.
+full_name: Watir::Simple#select_radio_button_with_name
+is_singleton: false
+name: select_radio_button_with_name
+params: (index, value)
+visibility: public

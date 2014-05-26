@@ -1,0 +1,17 @@
+--- !ruby/object:RI::ClassDescription 
+attributes: []
+
+class_methods: []
+
+comment: 
+- !ruby/struct:SM::Flow::P 
+  body: General handling for cases where the Arglist isn't treated as a list, but rather as a single (possibly optional) element. Subclasses handle the optional/non-optional case.
+constants: []
+
+full_name: UserChoices::NonListStrategy
+includes: []
+
+instance_methods: []
+
+name: NonListStrategy
+superclass: AbstractArglistStrategy

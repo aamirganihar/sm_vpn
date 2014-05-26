@@ -1,0 +1,14 @@
+--- !ruby/object:RI::MethodDescription 
+aliases: []
+
+block_params: 
+comment: 
+- !ruby/struct:SM::Flow::P 
+  body: Creates a new empty Mime Version field and inserts it in the correct order into the Header. The MimeVersion object will automatically generate set itself to '1.0' if you try and encode it or output it to_s without specifying a version yourself.
+- !ruby/struct:SM::Flow::P 
+  body: It will preserve any date you specify if you do.
+full_name: Mail::Message#add_mime_version
+is_singleton: false
+name: add_mime_version
+params: (ver_val = '')
+visibility: public

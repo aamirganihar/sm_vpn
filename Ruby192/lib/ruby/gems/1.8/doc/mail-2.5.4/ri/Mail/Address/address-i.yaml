@@ -1,0 +1,14 @@
+--- !ruby/object:RI::MethodDescription 
+aliases: []
+
+block_params: 
+comment: 
+- !ruby/struct:SM::Flow::P 
+  body: Returns the address that is in the address itself. That is, the local@domain string, without any angle brackets or the like.
+- !ruby/struct:SM::Flow::VERB 
+  body: " a = Address.new('Mikel Lindsaar (My email address) &lt;mikel@test.lindsaar.net&gt;')\n a.address #=&gt; 'mikel@test.lindsaar.net'\n"
+full_name: Mail::Address#address
+is_singleton: false
+name: address
+params: ()
+visibility: public

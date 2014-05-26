@@ -1,0 +1,12 @@
+--- !ruby/object:RI::MethodDescription 
+aliases: []
+
+block_params: 
+comment: 
+- !ruby/struct:SM::Flow::P 
+  body: clear the list of urls that we have visited
+full_name: Watir::IE#clear_url_list
+is_singleton: false
+name: clear_url_list
+params: ()
+visibility: public

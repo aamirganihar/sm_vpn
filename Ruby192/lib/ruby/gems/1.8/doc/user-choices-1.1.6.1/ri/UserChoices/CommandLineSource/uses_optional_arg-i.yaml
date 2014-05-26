@@ -1,0 +1,12 @@
+--- !ruby/object:RI::MethodDescription 
+aliases: []
+
+block_params: 
+comment: 
+- !ruby/struct:SM::Flow::P 
+  body: If a single argument is present, it (as a string) is the value of <em>choice</em>. If no argument is present, <em>choice</em> has no value. Any other case is an error.
+full_name: UserChoices::CommandLineSource#uses_optional_arg
+is_singleton: false
+name: uses_optional_arg
+params: (choice)
+visibility: public

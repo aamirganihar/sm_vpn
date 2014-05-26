@@ -1,0 +1,23 @@
+--- !ruby/object:RI::ClassDescription 
+attributes: []
+
+class_methods: 
+- !ruby/object:RI::MethodSummary 
+  name: new
+comment: 
+constants: []
+
+full_name: Watir::TaggedElementLocator
+includes: []
+
+instance_methods: 
+- !ruby/object:RI::MethodSummary 
+  name: each_element
+- !ruby/object:RI::MethodSummary 
+  name: locate
+- !ruby/object:RI::MethodSummary 
+  name: match?
+- !ruby/object:RI::MethodSummary 
+  name: set_specifier
+name: TaggedElementLocator
+superclass: Locator

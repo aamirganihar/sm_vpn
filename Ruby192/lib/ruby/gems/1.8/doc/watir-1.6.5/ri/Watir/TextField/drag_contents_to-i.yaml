@@ -1,0 +1,14 @@
+--- !ruby/object:RI::MethodDescription 
+aliases: []
+
+block_params: 
+comment: 
+- !ruby/struct:SM::Flow::P 
+  body: Drag the entire contents of the text field to another text field
+- !ruby/struct:SM::Flow::VERB 
+  body: " 19 Jan 2005 - It is added as prototype functionality, and may change\n  * destination_how   - symbol, :id, :name how we identify the drop target\n  * destination_what  - string or regular expression, the name, id, etc of the text field that will be the drop target\n"
+full_name: Watir::TextField#drag_contents_to
+is_singleton: false
+name: drag_contents_to
+params: (destination_how, destination_what)
+visibility: public

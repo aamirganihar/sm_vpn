@@ -1,0 +1,35 @@
+--- !ruby/object:RI::ClassDescription 
+attributes: []
+
+class_methods: 
+- !ruby/object:RI::MethodSummary 
+  name: of_caller
+comment: 
+- !ruby/struct:SM::Flow::P 
+  body: "Ruby's built-in Binding class doesn't contain any methods. It is merely a &quot;context&quot; object that can be used in calls to <tt>Kernel.eval</tt>, like this:"
+- !ruby/struct:SM::Flow::VERB 
+  body: "  def example(_binding)\n    return eval(&quot;x&quot;, _binding)\n  end\n\n  x = 55\n  current_binding = Kernel.binding\n  example(current_binding)                # -&gt; 55\n"
+- !ruby/struct:SM::Flow::P 
+  body: "The most useful method introduced to Binding by the <em>extensions</em> package is Binding.of_caller. It allows you to access the binding of the calling method, thus enabling you to access local variables in that scope. The other methods are a convenient object-oriented facade for operations that you can already do with #eval as demonstrated above. Here is an example that showcases all of the Binding methods included in <em>extensions</em>."
+- !ruby/struct:SM::Flow::VERB 
+  body: "  def example\n    Binding.of_caller do |b|\n      puts &quot;x + y = #{b.eval('x + y')}&quot;\n      puts &quot;x = #{b[:x]}&quot;\n      puts &quot;Local variables: &quot; + b.local_variables.join(', ')\n      b[:y] += 1\n      puts &quot;Changed value of y in calling context to #{b[:y]}&quot;\n      puts &quot;Is 'z' defined in calling context?  &quot; + (b.defined?(:z) ? 'Yes' : 'No')\n    end\n  end\n\n  x = 5\n  y = 17\n  example\n  y              # -&gt; 18\n"
+- !ruby/struct:SM::Flow::P 
+  body: Binding.of_caller was written by Florian Gross. The other methods were written by Tom Sawyer.
+constants: []
+
+full_name: Binding
+includes: []
+
+instance_methods: 
+- !ruby/object:RI::MethodSummary 
+  name: "[]"
+- !ruby/object:RI::MethodSummary 
+  name: "[]="
+- !ruby/object:RI::MethodSummary 
+  name: defined?
+- !ruby/object:RI::MethodSummary 
+  name: eval
+- !ruby/object:RI::MethodSummary 
+  name: local_variables
+name: Binding
+superclass: Object

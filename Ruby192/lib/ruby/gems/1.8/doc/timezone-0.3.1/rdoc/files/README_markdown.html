@@ -1,0 +1,268 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html 
+     PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+     "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+  <title>File: README.markdown</title>
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+  <meta http-equiv="Content-Script-Type" content="text/javascript" />
+  <link rel="stylesheet" href=".././rdoc-style.css" type="text/css" media="screen" />
+  <script type="text/javascript">
+  // <![CDATA[
+
+  function popupCode( url ) {
+    window.open(url, "Code", "resizable=yes,scrollbars=yes,toolbar=no,status=no,height=150,width=400")
+  }
+
+  function toggleCode( id ) {
+    if ( document.getElementById )
+      elem = document.getElementById( id );
+    else if ( document.all )
+      elem = eval( "document.all." + id );
+    else
+      return false;
+
+    elemStyle = elem.style;
+    
+    if ( elemStyle.display != "block" ) {
+      elemStyle.display = "block"
+    } else {
+      elemStyle.display = "none"
+    }
+
+    return true;
+  }
+  
+  // Make codeblocks hidden by default
+  document.writeln( "<style type=\"text/css\">div.method-source-code { display: none }</style>" )
+  
+  // ]]>
+  </script>
+
+</head>
+<body>
+
+
+
+  <div id="fileHeader">
+    <h1>README.markdown</h1>
+    <table class="header-table">
+    <tr class="top-aligned-row">
+      <td><strong>Path:</strong></td>
+      <td>README.markdown
+      </td>
+    </tr>
+    <tr class="top-aligned-row">
+      <td><strong>Last Update:</strong></td>
+      <td>Tue Dec 10 12:28:55 +0530 2013</td>
+    </tr>
+    </table>
+  </div>
+  <!-- banner header -->
+
+  <div id="bodyContent">
+
+
+
+  <div id="contextContent">
+
+    <div id="description">
+      <p>
+# <a href="../classes/Timezone.html">Timezone</a>
+</p>
+<p>
+A simple way to get accurate current and historical timezone information
+based on zone or latitude and longitude coordinates. This gem uses the [tz
+database](<a
+href="http://www.twinsun.com/tz/tz-link.htm">www.twinsun.com/tz/tz-link.htm</a>)
+for historical timezone information. It also uses the [geonames API](<a
+href="http://www.geonames.org/export/web-services.html">www.geonames.org/export/web-services.html</a>)
+for timezone latitude and longitude lookup.
+</p>
+<p>
+## Installation
+</p>
+<p>
+Add the following to your Gemfile:
+</p>
+<pre>
+    gem 'timezone'
+</pre>
+<p>
+Then install your bundle.
+</p>
+<pre>
+    bundle install
+</pre>
+<p>
+## Getting Started
+</p>
+<p>
+Getting the current time or any historical time in any timezone, with
+daylight savings time taken into consideration, is easy:
+</p>
+<pre>
+    timezone = Timezone::Zone.new :zone =&gt; 'America/Los_Angeles'
+    timezone.time Time.now
+    =&gt; 2011-02-11 17:29:05 UTC
+    timezone.time Time.utc(2010, 1, 1, 0, 0, 0)
+    =&gt; 2009-12-31 16:00:00 UTC
+</pre>
+<p>
+Time is always returned in the UTC timezone, but it accurately reflects the
+actual time in the specified timezone. The reason for this is that this
+function also takes into account daylight savings time, which can alter the
+timezone offset and hence put Ruby in the wrong timezone.
+</p>
+<p>
+You can also query a `<a
+href="../classes/Timezone/Zone.html">Timezone::Zone</a>` object to
+determine if it was in Daylight Savings Time:
+</p>
+<pre>
+    timezone = Timezone::Zone.new :zone =&gt; 'America/Los_Angeles'
+    timezone.dst?(Time.now)
+    =&gt; true
+    timezone.dst?(Time.utc(2010, 1, 1, 0, 0, 0))
+    =&gt; false
+</pre>
+<p>
+## Getting the timezone for a specific latitude and longitude
+</p>
+<p>
+First, make sure you have a geonames username. It&#8216;s free and easy to
+setup, you can do so [here](<a
+href="http://www.geonames.org/login">www.geonames.org/login</a>).
+</p>
+<p>
+Second, add the following to your application.rb file, or before you
+perform a coordinate lookup.
+</p>
+<pre>
+    Timezone::Configure.begin do |c|
+      c.username = 'your_geonames_username_goes_here'
+    end
+</pre>
+<p>
+Finally, pass the coordinates to your timezone initialization function.
+</p>
+<pre>
+    timezone = Timezone::Zone.new :latlon =&gt; [-34.92771808058, 138.477041423321]
+    timezone.zone
+    =&gt; &quot;Australia/Adelaide&quot;
+    timezone.time Time.now
+    =&gt; 2011-02-12 12:02:13 UTC
+</pre>
+<p>
+## Displaying a timezone&#8216;s name in a Rails/ActiveSupport compatible
+format
+</p>
+<pre>
+    timezone = Timezone::Zone.new :latlon =&gt; [-34.92771808058, 138.477041423321]
+    timezone.active_support_time_zone
+    =&gt; &quot;Eastern Time (US &amp; Canada)&quot;
+</pre>
+<p>
+## Getting the complete list of timezones.
+</p>
+<p>
+Retrieving the complete list of timezones is quite simple:
+</p>
+<pre>
+    timezones = Timezone::Zone.names
+    =&gt; [&quot;Africa/Abidjan&quot;, &quot;Africa/Accra&quot;, &quot;Africa/Addis_Ababa&quot;, &quot;Africa/Algiers&quot;, ...]
+</pre>
+<p>
+## Listing current information from specific timezones
+</p>
+<p>
+If you need information from a specific set of timezones rather than a
+complete list or one at a time, this can be accomplished with the
+following:
+</p>
+<pre>
+    zone_list = Timezone::Zone.list &quot;America/Chicago&quot;, &quot;America/New_York&quot;, &quot;America/Boise&quot;
+    # This will return an array of information hashes in the following format:
+    # {
+    #   :zone =&gt; &quot;America/Chicago&quot;,
+    #   :title =&gt; &quot;America/Chicago&quot;, # this can be customized to your needs
+    #   :offset =&gt; -18000, # UTC offset in seconds
+    #   :utc_offset =&gt; -5, # UTC offset in hours
+    #   :dst =&gt; false
+    # }
+</pre>
+<p>
+You can customize what is placed in the `:title` key in the configuration
+block. This would be useful in the case of an HTML select list that you
+would like to display different values than the default name. For example,
+the following configuration will set the `:title` key in the list hash to
+&quot;Chicago&quot; rather than &quot;America/Chicago&quot;.
+</p>
+<pre>
+    Timezone::Configure.build do |c|
+      c.replace &quot;America/Chicago&quot;, with: &quot;Chicago&quot;
+    end
+</pre>
+<p>
+Also, if you make numerous calls to the **Zone#list** method in your
+software, but you would like to avoid duplicating which timezones to
+retrieve, you can set a default in the configuration:
+</p>
+<pre>
+    Timezone::Configure.begin do |c|
+      c.default_for_list = &quot;America/Chicago&quot;, &quot;America/New_York&quot;, &quot;Australia/Sydney&quot;
+    end
+</pre>
+<p>
+Finally, by default the **Zone#list** method will order the results by the
+timezone&#8216;s UTC offset. You can customize this behavior this way:
+</p>
+<pre>
+    Timezone::Configure.begin do |c|
+      # this can equal any hash key returned by the Zone#list method
+      c.order_list_by = :title
+    end
+</pre>
+<p>
+## Build Status [![Build Status](<a
+href="https://secure.travis-ci.org/panthomakos/timezone.png?branch=master)](http://travis-ci.org/panthomakos/timezone">secure.travis-ci.org/panthomakos/timezone.png?branch=master)](http://travis-ci.org/panthomakos/timezone</a>)
+</p>
+<p>
+## Code Quality [![Code Climate](<a
+href="https://codeclimate.com/badge.png)](https://codeclimate.com/github/panthomakos/timezone">codeclimate.com/badge.png)](https://codeclimate.com/github/panthomakos/timezone</a>)
+</p>
+
+    </div>
+
+
+   </div>
+
+
+  </div>
+
+
+    <!-- if includes -->
+
+    <div id="section">
+
+
+
+
+
+      
+
+
+    <!-- if method_list -->
+
+
+  </div>
+
+
+<div id="validator-badges">
+  <p><small><a href="http://validator.w3.org/check/referer">[Validate]</a></small></p>
+</div>
+
+</body>
+</html>

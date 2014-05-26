@@ -1,0 +1,14 @@
+--- !ruby/object:RI::MethodDescription 
+aliases: []
+
+block_params: 
+comment: 
+- !ruby/struct:SM::Flow::P 
+  body: "Description:"
+- !ruby/struct:SM::Flow::VERB 
+  body: "  Document var.  Unfinished.\n"
+full_name: FireWatir::Element#document_var
+is_singleton: false
+name: document_var
+params: ()
+visibility: public

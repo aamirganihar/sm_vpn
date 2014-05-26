@@ -1,0 +1,12 @@
+--- !ruby/object:RI::MethodDescription 
+aliases: []
+
+block_params: 
+comment: 
+- !ruby/struct:SM::Flow::P 
+  body: fire off setting the file name for the Choose file dialog in a new process
+full_name: WinClicker#setFileRequesterFileName_newProcess
+is_singleton: false
+name: setFileRequesterFileName_newProcess
+params: ( textToSet )
+visibility: public

@@ -1,0 +1,24 @@
+--- !ruby/object:RI::ClassDescription 
+attributes: []
+
+class_methods: 
+- !ruby/object:RI::MethodSummary 
+  name: new
+comment: 
+constants: []
+
+full_name: Watir::Frame
+includes: 
+- !ruby/object:RI::IncludedModule 
+  name: Container
+- !ruby/object:RI::IncludedModule 
+  name: PageContainer
+instance_methods: 
+- !ruby/object:RI::MethodSummary 
+  name: attach_command
+- !ruby/object:RI::MethodSummary 
+  name: document
+- !ruby/object:RI::MethodSummary 
+  name: locate
+name: Frame
+superclass: Object

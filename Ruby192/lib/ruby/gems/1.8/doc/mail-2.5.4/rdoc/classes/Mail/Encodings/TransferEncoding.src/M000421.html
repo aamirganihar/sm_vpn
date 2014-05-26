@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+<!DOCTYPE html 
+     PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+     "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html>
+<head>
+  <title>get_best_compatible (Mail::Encodings::TransferEncoding)</title>
+  <meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" />
+  <link rel="stylesheet" href="../../../.././rdoc-style.css" type="text/css" media="screen" />
+</head>
+<body class="standalone-code">
+  <pre><span class="ruby-comment cmt"># File lib/mail/encodings/transfer_encoding.rb, line 30</span>
+      <span class="ruby-keyword kw">def</span> <span class="ruby-keyword kw">self</span>.<span class="ruby-identifier">get_best_compatible</span>(<span class="ruby-identifier">source_encoding</span>, <span class="ruby-identifier">str</span>)
+        <span class="ruby-keyword kw">if</span> <span class="ruby-keyword kw">self</span>.<span class="ruby-identifier">can_transport?</span> <span class="ruby-identifier">source_encoding</span> <span class="ruby-keyword kw">then</span>
+            <span class="ruby-identifier">source_encoding</span> 
+        <span class="ruby-keyword kw">else</span>
+            <span class="ruby-identifier">choices</span> = []
+            <span class="ruby-constant">Encodings</span>.<span class="ruby-identifier">get_all</span>.<span class="ruby-identifier">each</span> <span class="ruby-keyword kw">do</span> <span class="ruby-operator">|</span><span class="ruby-identifier">enc</span><span class="ruby-operator">|</span>
+                <span class="ruby-identifier">choices</span> <span class="ruby-operator">&lt;&lt;</span> <span class="ruby-identifier">enc</span> <span class="ruby-keyword kw">if</span> <span class="ruby-keyword kw">self</span>.<span class="ruby-identifier">can_transport?</span> <span class="ruby-identifier">enc</span> <span class="ruby-keyword kw">and</span> <span class="ruby-identifier">enc</span>.<span class="ruby-identifier">can_encode?</span> <span class="ruby-identifier">source_encoding</span>
+            <span class="ruby-keyword kw">end</span>
+            <span class="ruby-identifier">best</span> = <span class="ruby-keyword kw">nil</span> 
+            <span class="ruby-identifier">best_cost</span> = <span class="ruby-value">100</span>
+            <span class="ruby-identifier">choices</span>.<span class="ruby-identifier">each</span> <span class="ruby-keyword kw">do</span> <span class="ruby-operator">|</span><span class="ruby-identifier">enc</span><span class="ruby-operator">|</span>
+                <span class="ruby-identifier">this_cost</span> = <span class="ruby-identifier">enc</span>.<span class="ruby-identifier">cost</span> <span class="ruby-identifier">str</span>
+                <span class="ruby-keyword kw">if</span> <span class="ruby-identifier">this_cost</span> <span class="ruby-operator">&lt;</span> <span class="ruby-identifier">best_cost</span> <span class="ruby-keyword kw">then</span>
+                    <span class="ruby-identifier">best_cost</span> = <span class="ruby-identifier">this_cost</span>
+                    <span class="ruby-identifier">best</span> = <span class="ruby-identifier">enc</span>
+                <span class="ruby-keyword kw">elsif</span> <span class="ruby-identifier">this_cost</span> <span class="ruby-operator">==</span> <span class="ruby-identifier">best_cost</span> <span class="ruby-keyword kw">then</span> 
+                    <span class="ruby-identifier">best</span> = <span class="ruby-identifier">enc</span> <span class="ruby-keyword kw">if</span> <span class="ruby-identifier">enc</span><span class="ruby-operator">::</span><span class="ruby-constant">PRIORITY</span> <span class="ruby-operator">&lt;</span> <span class="ruby-identifier">best</span><span class="ruby-operator">::</span><span class="ruby-constant">PRIORITY</span>
+                <span class="ruby-keyword kw">end</span>
+            <span class="ruby-keyword kw">end</span>
+            <span class="ruby-identifier">best</span>
+        <span class="ruby-keyword kw">end</span>
+      <span class="ruby-keyword kw">end</span></pre>
+</body>
+</html>

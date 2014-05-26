@@ -1,0 +1,46 @@
+--- !ruby/object:RI::MethodDescription 
+aliases: []
+
+block_params: 
+comment: 
+- !ruby/struct:SM::Flow::P 
+  body: Format a number as a string, using US or European conventions, and allowing for the accounting format of representing negative numbers. Optionally, currency formatting options can be provided.
+- !ruby/struct:SM::Flow::P 
+  body: "For example:"
+- !ruby/struct:SM::Flow::VERB 
+  body: "  x = -10259.8937\n  x.format_s                         # =&gt; &quot;-10,259.8937&quot;\n  x.format_s(:us)                    # =&gt; &quot;-10,259.8937&quot;\n  x.format_s(:usd)                   # =&gt; &quot;$-10,259.8937&quot;\n  x.format_s(:eu)                    # =&gt; &quot;-10 259,8937&quot;\n  x.format_s(:euro)                  # =&gt; &quot;\x80-10 259,8937&quot;\n  x.format_s(:us, :acct =&gt; true)     # =&gt; &quot;(10,259.8937)&quot;\n  x.format_s(:eu, :acct =&gt; true)     # =&gt; &quot;(10 259,8937)&quot;\n  x.format_s(:usd, :acct =&gt; true)    # =&gt; &quot;$(10,259.8937)&quot;\n  x.format_s(:euro, :acct =&gt; true)   # =&gt; &quot;\x80(10 259,8937)&quot;\n  x.format_s(:percent)               # =&gt; &quot;-10,259.8937%&quot;\n"
+- !ruby/struct:SM::Flow::P 
+  body: "You may configure several aspects of the formatting by providing keyword arguments after the country and accounting arguments. One example of that is the :acct keyword. A more insane example is:"
+- !ruby/struct:SM::Flow::VERB 
+  body: "  x = -10259.8937\n  x.format_s(:us,\n             :sep =&gt; ' ', :dec =&gt; ',',\n             :neg =&gt; '&lt;%s&gt;', :size =&gt; 2,\n             :fd =&gt; true)                    # -&gt; &quot;&lt;1 02 59,89 37&gt;&quot;\n"
+- !ruby/struct:SM::Flow::P 
+  body: "The keyword parameters are as follows:"
+- !ruby/object:SM::Flow::LIST 
+  contents: 
+  - !ruby/struct:SM::Flow::LI 
+    label: "<tt>:acct</tt>:"
+    body: If <tt>true</tt>, then use accounting style for negative numbers. This overrides any value for <tt>:neg</tt>.
+  - !ruby/struct:SM::Flow::LI 
+    label: "<tt>:sep</tt>:"
+    body: Default &quot;,&quot; for US, &quot; &quot; for Euro. Separate the number groups from each other with this string.
+  - !ruby/struct:SM::Flow::LI 
+    label: "<tt>:dec</tt>:"
+    body: Default &quot;.&quot; for US, &quot;,&quot; for Euro. Separate the number's integer part from the fractional part with this string.
+  - !ruby/struct:SM::Flow::LI 
+    label: "<tt>:neg</tt>:"
+    body: Default <tt>&quot;-%s&quot;</tt>. The format string used to represent negative numbers. If <tt>:acct</tt> is <tt>true</tt>, this is set to <tt>&quot;(%s)&quot;</tt>.
+  - !ruby/struct:SM::Flow::LI 
+    label: "<tt>:size</tt>:"
+    body: The number of digits per group. Defaults to thousands (3).
+  - !ruby/struct:SM::Flow::LI 
+    label: "<tt>:fd</tt>:"
+    body: Indicates whether the decimal portion of the number should be formatted the same way as the integer portion of the number. (&quot;fd&quot; == &quot;format decimal&quot;.) Defaults to <tt>false</tt>.
+  - !ruby/struct:SM::Flow::LI 
+    label: "<tt>:currency</tt>:"
+    body: "This is an optional hash with two keys, <tt>:id</tt> and <tt>:pos</tt>. <tt>:id</tt> is the string value of the currency (e.g., <tt>&quot;$&quot;</tt>, <tt>&quot;\x80&quot;</tt>, <tt>&quot;USD&amp;nbsp;&quot;</tt>); <tt>:pos</tt> is either <tt>:before</tt> or <tt>:after</tt>, referring to the position of the currency indicator. The default <tt>:pos</tt> is <tt>:before</tt>."
+  type: :NOTE
+full_name: Numeric#format_s
+is_singleton: false
+name: format_s
+params: (style = :us, configs={})
+visibility: public

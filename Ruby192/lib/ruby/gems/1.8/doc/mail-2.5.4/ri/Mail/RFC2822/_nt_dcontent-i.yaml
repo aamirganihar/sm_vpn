@@ -1,0 +1,10 @@
+--- !ruby/object:RI::MethodDescription 
+aliases: []
+
+block_params: 
+comment: 
+full_name: Mail::RFC2822#_nt_dcontent
+is_singleton: false
+name: _nt_dcontent
+params: ()
+visibility: public

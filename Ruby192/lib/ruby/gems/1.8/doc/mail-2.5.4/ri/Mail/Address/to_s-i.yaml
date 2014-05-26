@@ -1,0 +1,14 @@
+--- !ruby/object:RI::MethodDescription 
+aliases: []
+
+block_params: 
+comment: 
+- !ruby/struct:SM::Flow::P 
+  body: Returns the format of the address, or returns nothing
+- !ruby/struct:SM::Flow::VERB 
+  body: " a = Address.new('Mikel Lindsaar (My email address) &lt;mikel@test.lindsaar.net&gt;')\n a.format #=&gt; 'Mikel Lindsaar &lt;mikel@test.lindsaar.net&gt; (My email address)'\n"
+full_name: Mail::Address#to_s
+is_singleton: false
+name: to_s
+params: ()
+visibility: public

@@ -1,0 +1,12 @@
+--- !ruby/object:RI::MethodDescription 
+aliases: []
+
+block_params: 
+comment: 
+- !ruby/struct:SM::Flow::P 
+  body: Shows item on parent without updating the search index. This can be used if an item is removed and added to the same list.
+full_name: Packet_Item#show
+is_singleton: false
+name: show
+params: ()
+visibility: public

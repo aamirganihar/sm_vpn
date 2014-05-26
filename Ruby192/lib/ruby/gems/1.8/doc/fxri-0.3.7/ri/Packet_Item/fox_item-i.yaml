@@ -1,0 +1,12 @@
+--- !ruby/object:RI::MethodDescription 
+aliases: []
+
+block_params: 
+comment: 
+- !ruby/struct:SM::Flow::P 
+  body: Get the wrapper item.
+full_name: Packet_Item#fox_item
+is_singleton: false
+name: fox_item
+params: ()
+visibility: public

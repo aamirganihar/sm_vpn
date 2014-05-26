@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+<!DOCTYPE html 
+     PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+     "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html>
+<head>
+  <title>selected? (Watir::SelectList)</title>
+  <meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" />
+  <link rel="stylesheet" href="../../.././rdoc-style.css" type="text/css" media="screen" />
+</head>
+<body class="standalone-code">
+  <pre><span class="ruby-comment cmt"># File lib/watir/input_elements.rb, line 122</span>
+    <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">selected?</span> <span class="ruby-identifier">text_or_regexp</span>
+      <span class="ruby-keyword kw">unless</span> <span class="ruby-identifier">includes?</span> <span class="ruby-identifier">text_or_regexp</span>
+        <span class="ruby-identifier">raise</span> <span class="ruby-constant">UnknownObjectException</span>, <span class="ruby-node">&quot;Option #{text_or_regexp.inspect} not found.&quot;</span>
+      <span class="ruby-keyword kw">end</span>
+
+      <span class="ruby-identifier">getSelectedItems</span>.<span class="ruby-identifier">grep</span>(<span class="ruby-identifier">text_or_regexp</span>).<span class="ruby-identifier">size</span> <span class="ruby-operator">&gt;</span> <span class="ruby-value">0</span>
+    <span class="ruby-keyword kw">end</span></pre>
+</body>
+</html>

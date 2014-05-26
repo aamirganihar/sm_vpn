@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+<!DOCTYPE html 
+     PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+     "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html>
+<head>
+  <title>compile (Treetop::Compiler::PredicateBlock)</title>
+  <meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" />
+  <link rel="stylesheet" href="../../../.././rdoc-style.css" type="text/css" media="screen" />
+</head>
+<body class="standalone-code">
+  <pre><span class="ruby-comment cmt"># File lib/treetop/compiler/node_classes/predicate_block.rb, line 4</span>
+      <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">compile</span>(<span class="ruby-identifier">index</span>, <span class="ruby-identifier">builder</span>, <span class="ruby-identifier">parent_expression</span> = <span class="ruby-keyword kw">nil</span>)
+        <span class="ruby-keyword kw">super</span>
+        <span class="ruby-comment cmt"># REVISIT: This is distinctly dodgey, but since we can only be called from</span>
+        <span class="ruby-comment cmt"># two contexts, and it works in both those, I'm going with it for now, as</span>
+        <span class="ruby-comment cmt"># opposed to doing the major refactor of providing a proper way of accessing</span>
+        <span class="ruby-comment cmt"># the parent's accumulator variable.</span>
+        <span class="ruby-identifier">p</span> = <span class="ruby-identifier">parent</span>
+        <span class="ruby-identifier">p</span> = <span class="ruby-identifier">p</span>.<span class="ruby-identifier">parent</span> <span class="ruby-keyword kw">while</span> <span class="ruby-identifier">p</span> <span class="ruby-operator">&amp;&amp;</span> <span class="ruby-operator">!</span><span class="ruby-identifier">p</span>.<span class="ruby-identifier">respond_to?</span>(<span class="ruby-identifier">:accumulator_var</span>)
+        <span class="ruby-identifier">assign_result</span> <span class="ruby-node">&quot;lambda #{text_value}.call(#{p ? p.accumulator_var : &quot;&quot;})&quot;</span>
+      <span class="ruby-keyword kw">end</span></pre>
+</body>
+</html>

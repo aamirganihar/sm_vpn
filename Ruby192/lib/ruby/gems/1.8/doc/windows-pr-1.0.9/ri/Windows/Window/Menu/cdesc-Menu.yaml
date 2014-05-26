@@ -1,0 +1,186 @@
+--- !ruby/object:RI::ClassDescription 
+attributes: []
+
+class_methods: []
+
+comment: 
+constants: 
+- !ruby/object:RI::Constant 
+  comment: 
+  - !ruby/struct:SM::Flow::P 
+    body: Menu Flags
+  name: MF_INSERT
+  value: "0x00000000"
+- !ruby/object:RI::Constant 
+  comment: 
+  name: MF_CHANGE
+  value: "0x00000080"
+- !ruby/object:RI::Constant 
+  comment: 
+  name: MF_APPEND
+  value: "0x00000100"
+- !ruby/object:RI::Constant 
+  comment: 
+  name: MF_DELETE
+  value: "0x00000200"
+- !ruby/object:RI::Constant 
+  comment: 
+  name: MF_REMOVE
+  value: "0x00001000"
+- !ruby/object:RI::Constant 
+  comment: 
+  name: MF_BYCOMMAND
+  value: "0x00000000"
+- !ruby/object:RI::Constant 
+  comment: 
+  name: MF_BYPOSITION
+  value: "0x00000400"
+- !ruby/object:RI::Constant 
+  comment: 
+  name: MF_SEPARATOR
+  value: "0x00000800"
+- !ruby/object:RI::Constant 
+  comment: 
+  name: MF_ENABLED
+  value: "0x00000000"
+- !ruby/object:RI::Constant 
+  comment: 
+  name: MF_GRAYED
+  value: "0x00000001"
+- !ruby/object:RI::Constant 
+  comment: 
+  name: MF_DISABLED
+  value: "0x00000002"
+- !ruby/object:RI::Constant 
+  comment: 
+  name: MF_UNCHECKED
+  value: "0x00000000"
+- !ruby/object:RI::Constant 
+  comment: 
+  name: MF_CHECKED
+  value: "0x00000008"
+- !ruby/object:RI::Constant 
+  comment: 
+  name: MF_USECHECKBITMAPS
+  value: "0x00000200"
+- !ruby/object:RI::Constant 
+  comment: 
+  name: MF_STRING
+  value: "0x00000000"
+- !ruby/object:RI::Constant 
+  comment: 
+  name: MF_BITMAP
+  value: "0x00000004"
+- !ruby/object:RI::Constant 
+  comment: 
+  name: MF_OWNERDRAW
+  value: "0x00000100"
+- !ruby/object:RI::Constant 
+  comment: 
+  name: MF_POPUP
+  value: "0x00000010"
+- !ruby/object:RI::Constant 
+  comment: 
+  name: MF_MENUBARBREAK
+  value: "0x00000020"
+- !ruby/object:RI::Constant 
+  comment: 
+  name: MF_MENUBREAK
+  value: "0x00000040"
+- !ruby/object:RI::Constant 
+  comment: 
+  name: MF_UNHILITE
+  value: "0x00000000"
+- !ruby/object:RI::Constant 
+  comment: 
+  name: MF_HILITE
+  value: "0x00000080"
+- !ruby/object:RI::Constant 
+  comment: 
+  name: MF_DEFAULT
+  value: "0x00001000"
+- !ruby/object:RI::Constant 
+  comment: 
+  name: MF_SYSMENU
+  value: "0x00002000"
+- !ruby/object:RI::Constant 
+  comment: 
+  name: MF_HELP
+  value: "0x00004000"
+- !ruby/object:RI::Constant 
+  comment: 
+  name: MF_RIGHTJUSTIFY
+  value: "0x00004000"
+- !ruby/object:RI::Constant 
+  comment: 
+  name: MF_MOUSESELECT
+  value: "0x00008000"
+- !ruby/object:RI::Constant 
+  comment: 
+  name: MF_END
+  value: "0x00000080"
+- !ruby/object:RI::Constant 
+  comment: 
+  - !ruby/struct:SM::Flow::P 
+    body: System Objects
+  name: OBJID_WINDOW
+  value: "0x00000000"
+- !ruby/object:RI::Constant 
+  comment: 
+  name: OBJID_SYSMENU
+  value: "0xFFFFFFFF"
+- !ruby/object:RI::Constant 
+  comment: 
+  name: OBJID_TITLEBAR
+  value: "0xFFFFFFFE"
+- !ruby/object:RI::Constant 
+  comment: 
+  name: OBJID_MENU
+  value: "0xFFFFFFFD"
+- !ruby/object:RI::Constant 
+  comment: 
+  name: OBJID_CLIENT
+  value: "0xFFFFFFFC"
+- !ruby/object:RI::Constant 
+  comment: 
+  name: OBJID_VSCROLL
+  value: "0xFFFFFFFB"
+- !ruby/object:RI::Constant 
+  comment: 
+  name: OBJID_HSCROLL
+  value: "0xFFFFFFFA"
+- !ruby/object:RI::Constant 
+  comment: 
+  name: OBJID_SIZEGRIP
+  value: "0xFFFFFFF9"
+- !ruby/object:RI::Constant 
+  comment: 
+  name: OBJID_CARET
+  value: "0xFFFFFFF8"
+- !ruby/object:RI::Constant 
+  comment: 
+  name: OBJID_CURSOR
+  value: "0xFFFFFFF7"
+- !ruby/object:RI::Constant 
+  comment: 
+  name: OBJID_ALERT
+  value: "0xFFFFFFF6"
+- !ruby/object:RI::Constant 
+  comment: 
+  name: OBJID_SOUND
+  value: "0xFFFFFFF5"
+- !ruby/object:RI::Constant 
+  comment: 
+  name: OBJID_QUERYCLASSNAMEIDX
+  value: "0xFFFFFFF4"
+- !ruby/object:RI::Constant 
+  comment: 
+  name: OBJID_NATIVEOM
+  value: "0xFFFFFFF0"
+full_name: Windows::Window::Menu
+includes: []
+
+instance_methods: []
+
+name: Menu
+superclass: 

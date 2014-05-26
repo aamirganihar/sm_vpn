@@ -1,0 +1,11 @@
+--- !ruby/object:RI::MethodDescription 
+aliases: 
+- !ruby/object:RI::AliasName 
+  name: map
+block_params: (o)
+comment: 
+full_name: Mail::PartsList#collect
+is_singleton: false
+name: collect
+params: () {|o| ...}
+visibility: public

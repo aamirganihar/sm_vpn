@@ -1,0 +1,16 @@
+--- !ruby/object:RI::MethodDescription 
+aliases: []
+
+block_params: 
+comment: 
+- !ruby/struct:SM::Flow::P 
+  body: Provides access to the raw source of the message as it was when it was instantiated. This is set at initialization and so is untouched by the parsers or decoder / encoders
+- !ruby/struct:SM::Flow::P 
+  body: "Example:"
+- !ruby/struct:SM::Flow::VERB 
+  body: " mail = Mail.new('This is an invalid email message')\n mail.raw_source #=&gt; &quot;This is an invalid email message&quot;\n"
+full_name: Mail::Message#raw_source
+is_singleton: false
+name: raw_source
+params: ()
+visibility: public

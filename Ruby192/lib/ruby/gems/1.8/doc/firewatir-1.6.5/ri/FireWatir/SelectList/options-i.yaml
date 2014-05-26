@@ -1,0 +1,19 @@
+--- !ruby/object:RI::MethodDescription 
+aliases: 
+- !ruby/object:RI::AliasName 
+  name: getAllContents
+block_params: 
+comment: 
+- !ruby/struct:SM::Flow::P 
+  body: "Description:"
+- !ruby/struct:SM::Flow::VERB 
+  body: "  Gets all the items in the select list as an array.\n  An empty array is returned if the select box has no contents.\n"
+- !ruby/struct:SM::Flow::P 
+  body: "Output:"
+- !ruby/struct:SM::Flow::VERB 
+  body: "  Array containing the items of the select list.\n"
+full_name: FireWatir::SelectList#options
+is_singleton: false
+name: options
+params: ()
+visibility: public

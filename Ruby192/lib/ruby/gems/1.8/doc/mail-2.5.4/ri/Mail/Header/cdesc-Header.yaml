@@ -1,0 +1,66 @@
+--- !ruby/object:RI::ClassDescription 
+attributes: []
+
+class_methods: 
+- !ruby/object:RI::MethodSummary 
+  name: maximum_amount
+- !ruby/object:RI::MethodSummary 
+  name: maximum_amount=
+- !ruby/object:RI::MethodSummary 
+  name: new
+comment: 
+- !ruby/struct:SM::Flow::P 
+  body: Provides access to a header object.
+- !ruby/struct:SM::Flow::H 
+  level: 3
+  text: Per RFC2822
+- !ruby/struct:SM::Flow::VERB 
+  body: " 2.2. Header Fields\n\n  Header fields are lines composed of a field name, followed by a colon\n  (&quot;:&quot;), followed by a field body, and terminated by CRLF.  A field\n  name MUST be composed of printable US-ASCII characters (i.e.,\n  characters that have values between 33 and 126, inclusive), except\n  colon.  A field body may be composed of any US-ASCII characters,\n  except for CR and LF.  However, a field body may contain CRLF when\n  used in header &quot;folding&quot; and  &quot;unfolding&quot; as described in section\n  2.2.3.  All field bodies MUST conform to the syntax described in\n  sections 3 and 4 of this standard.\n"
+constants: 
+- !ruby/object:RI::Constant 
+  comment: 
+  name: LIMITED_FIELDS
+  value: "%w[ date from sender reply-to to cc bcc                             message-id in-reply-to references subject                            return-path content-type mime-version                            content-transfer-encoding content-description                             content-id content-disposition content-location]"
+full_name: Mail::Header
+includes: 
+- !ruby/object:RI::IncludedModule 
+  name: Patterns
+- !ruby/object:RI::IncludedModule 
+  name: Utilities
+- !ruby/object:RI::IncludedModule 
+  name: Enumerable
+instance_methods: 
+- !ruby/object:RI::MethodSummary 
+  name: "[]"
+- !ruby/object:RI::MethodSummary 
+  name: "[]="
+- !ruby/object:RI::MethodSummary 
+  name: charset
+- !ruby/object:RI::MethodSummary 
+  name: charset=
+- !ruby/object:RI::MethodSummary 
+  name: decoded
+- !ruby/object:RI::MethodSummary 
+  name: encoded
+- !ruby/object:RI::MethodSummary 
+  name: errors
+- !ruby/object:RI::MethodSummary 
+  name: field_summary
+- !ruby/object:RI::MethodSummary 
+  name: fields
+- !ruby/object:RI::MethodSummary 
+  name: fields=
+- !ruby/object:RI::MethodSummary 
+  name: has_content_id?
+- !ruby/object:RI::MethodSummary 
+  name: has_date?
+- !ruby/object:RI::MethodSummary 
+  name: has_message_id?
+- !ruby/object:RI::MethodSummary 
+  name: has_mime_version?
+- !ruby/object:RI::MethodSummary 
+  name: raw_source
+- !ruby/object:RI::MethodSummary 
+  name: to_s
+name: Header
+superclass: Object

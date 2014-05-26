@@ -1,0 +1,19 @@
+--- !ruby/object:RI::ClassDescription 
+attributes: []
+
+class_methods: 
+- !ruby/object:RI::MethodSummary 
+  name: by_name
+comment: 
+constants: []
+
+full_name: Module
+includes: []
+
+instance_methods: 
+- !ruby/object:RI::MethodSummary 
+  name: basename
+- !ruby/object:RI::MethodSummary 
+  name: deep_const_get
+name: Module
+superclass: Object

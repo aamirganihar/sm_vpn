@@ -1,0 +1,16 @@
+--- !ruby/object:RI::MethodDescription 
+aliases: []
+
+block_params: 
+comment: 
+- !ruby/struct:SM::Flow::P 
+  body: this is the main method for accessing the dds iterator. Returns a Dds collection
+- !ruby/struct:SM::Flow::P 
+  body: "Typical usage:"
+- !ruby/struct:SM::Flow::VERB 
+  body: "  ie.dds.each { |d| puts d.to_s }            # iterate through all the dds on the page\n  ie.dds[1].to_s                             # goto the first dd on the page\n  ie.dds.length                              # show how many dds are on the page.\n"
+full_name: Watir::Container#dds
+is_singleton: false
+name: dds
+params: ()
+visibility: public

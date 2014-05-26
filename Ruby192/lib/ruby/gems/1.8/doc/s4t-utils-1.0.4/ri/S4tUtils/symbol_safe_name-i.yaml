@@ -1,0 +1,12 @@
+--- !ruby/object:RI::MethodDescription 
+aliases: []
+
+block_params: 
+comment: 
+- !ruby/struct:SM::Flow::P 
+  body: "Produces a version of a string that can be typed after a : (Can also be safely given at a command-line prompt.)"
+full_name: S4tUtils#symbol_safe_name
+is_singleton: false
+name: symbol_safe_name
+params: (name)
+visibility: public

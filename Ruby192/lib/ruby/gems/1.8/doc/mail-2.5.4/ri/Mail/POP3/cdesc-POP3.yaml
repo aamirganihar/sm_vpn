@@ -1,0 +1,37 @@
+--- !ruby/object:RI::ClassDescription 
+attributes: 
+- !ruby/object:RI::Attribute 
+  comment: 
+  name: settings
+  rw: RW
+class_methods: 
+- !ruby/object:RI::MethodSummary 
+  name: new
+comment: 
+- !ruby/struct:SM::Flow::P 
+  body: The Pop3 retriever allows to get the last, first or all emails from a POP3 server. Each email retrieved (RFC2822) is given as an instance of <tt>Message</tt>.
+- !ruby/struct:SM::Flow::P 
+  body: While being retrieved, emails can be yielded if a block is given.
+- !ruby/struct:SM::Flow::H 
+  level: 3
+  text: "Example of retrieving Emails from GMail:"
+- !ruby/struct:SM::Flow::VERB 
+  body: "  Mail.defaults do\n    retriever_method :pop3, { :address             =&gt; &quot;pop.gmail.com&quot;,\n                              :port                =&gt; 995,\n                              :user_name           =&gt; '&lt;username&gt;',\n                              :password            =&gt; '&lt;password&gt;',\n                              :enable_ssl          =&gt; true }\n  end\n\n  Mail.all    #=&gt; Returns an array of all emails\n  Mail.first  #=&gt; Returns the first unread email\n  Mail.last   #=&gt; Returns the last unread email\n"
+- !ruby/struct:SM::Flow::P 
+  body: "You can also pass options into Mail.find to locate an email in your pop mailbox with the following options:"
+- !ruby/struct:SM::Flow::VERB 
+  body: "  what:  last or first emails. The default is :first.\n  order: order of emails returned. Possible values are :asc or :desc. Default value is :asc.\n  count: number of emails to retrieve. The default value is 10. A value of 1 returns an\n         instance of Message, not an array of Message instances.\n\n  Mail.find(:what =&gt; :first, :count =&gt; 10, :order =&gt; :asc)\n  #=&gt; Returns the first 10 emails in ascending order\n"
+constants: []
+
+full_name: Mail::POP3
+includes: []
+
+instance_methods: 
+- !ruby/object:RI::MethodSummary 
+  name: connection
+- !ruby/object:RI::MethodSummary 
+  name: delete_all
+- !ruby/object:RI::MethodSummary 
+  name: find
+name: POP3
+superclass: Retriever

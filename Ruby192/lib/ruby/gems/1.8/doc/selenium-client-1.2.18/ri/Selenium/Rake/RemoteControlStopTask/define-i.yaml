@@ -1,0 +1,10 @@
+--- !ruby/object:RI::MethodDescription 
+aliases: []
+
+block_params: 
+comment: 
+full_name: Selenium::Rake::RemoteControlStopTask#define
+is_singleton: false
+name: define
+params: ()
+visibility: public

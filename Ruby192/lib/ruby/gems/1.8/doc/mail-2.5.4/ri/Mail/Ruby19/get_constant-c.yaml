@@ -1,0 +1,10 @@
+--- !ruby/object:RI::MethodDescription 
+aliases: []
+
+block_params: 
+comment: 
+full_name: Mail::Ruby19::get_constant
+is_singleton: true
+name: get_constant
+params: (klass, string)
+visibility: public

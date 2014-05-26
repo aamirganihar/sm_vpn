@@ -1,0 +1,12 @@
+--- !ruby/object:RI::MethodDescription 
+aliases: []
+
+block_params: ""
+comment: 
+- !ruby/struct:SM::Flow::P 
+  body: Run the block, replacing the values of environment variables with the values given in the hash <em>settings</em>. The environment variables are restored when the method returns.
+full_name: S4tUtils#with_environment_vars
+is_singleton: false
+name: with_environment_vars
+params: (settings) {|| ...}
+visibility: public

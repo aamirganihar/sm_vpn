@@ -1,0 +1,18 @@
+--- !ruby/object:RI::MethodDescription 
+aliases: []
+
+block_params: 
+comment: 
+- !ruby/struct:SM::Flow::P 
+  body: Returns the data currently in the clipboard. If <tt>format</tt> is specified, it will attempt to retrieve the data in that format. The default is Clipboard::TEXT.
+- !ruby/struct:SM::Flow::P 
+  body: If there is no data in the clipboard, or data is available but the format doesn't match the data, then an empty string is returned.
+- !ruby/struct:SM::Flow::P 
+  body: "Examples:"
+- !ruby/struct:SM::Flow::VERB 
+  body: "   # Get some plain text\n   Win32::Clipboard.data # =&gt; e.g. 'hello'\n\n   # Get a list of files copied from the Windows Explorer window\n   Win32::Clipboard.data(Clipboard::HDROP) # =&gt; ['foo.rb', 'bar.rb']\n\n   # Get a bitmap and write it to another file\n   File.open('bitmap_copy', 'wb'){ |fh|\n      fh.write Win32::Clipboard.data(Clipboard::DIB)\n   }\n"
+full_name: Win32::Clipboard::data
+is_singleton: true
+name: data
+params: (format = TEXT)
+visibility: public

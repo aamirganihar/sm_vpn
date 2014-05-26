@@ -1,0 +1,208 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+<!DOCTYPE html 
+     PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+     "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+  <title>File: CHANGES</title>
+  <meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" />
+  <meta http-equiv="Content-Script-Type" content="text/javascript" />
+  <link rel="stylesheet" href=".././rdoc-style.css" type="text/css" media="screen" />
+  <script type="text/javascript">
+  // <![CDATA[
+
+  function popupCode( url ) {
+    window.open(url, "Code", "resizable=yes,scrollbars=yes,toolbar=no,status=no,height=150,width=400")
+  }
+
+  function toggleCode( id ) {
+    if ( document.getElementById )
+      elem = document.getElementById( id );
+    else if ( document.all )
+      elem = eval( "document.all." + id );
+    else
+      return false;
+
+    elemStyle = elem.style;
+    
+    if ( elemStyle.display != "block" ) {
+      elemStyle.display = "block"
+    } else {
+      elemStyle.display = "none"
+    }
+
+    return true;
+  }
+  
+  // Make codeblocks hidden by default
+  document.writeln( "<style type=\"text/css\">div.method-source-code { display: none }</style>" )
+  
+  // ]]>
+  </script>
+
+</head>
+<body>
+
+
+
+  <div id="fileHeader">
+    <h1>CHANGES</h1>
+    <table class="header-table">
+    <tr class="top-aligned-row">
+      <td><strong>Path:</strong></td>
+      <td>CHANGES
+      </td>
+    </tr>
+    <tr class="top-aligned-row">
+      <td><strong>Last Update:</strong></td>
+      <td>Thu Aug 12 10:39:29 +0530 2010</td>
+    </tr>
+    </table>
+  </div>
+  <!-- banner header -->
+
+  <div id="bodyContent">
+
+
+
+  <div id="contextContent">
+
+    <div id="description">
+      <h2>0.4.0 - 18-Oct-2009</h2>
+<ul>
+<li>Methods that begin with an underscore, such as _umask(), are now preserved.
+A method alias is also created without an underscore, e.g. umask().
+
+</li>
+<li>Added the gem task to the Rakefile.
+
+</li>
+<li>Minor updates to the gemspec.
+
+</li>
+</ul>
+<h2>0.3.1 - 18-Aug-2009</h2>
+<ul>
+<li>Changed license to Artistic 2.0.
+
+</li>
+<li>Some gemspec updates, including the addition of a license, an updated
+description and a dependency update.
+
+</li>
+<li>One test update for VC++ 9.
+
+</li>
+</ul>
+<h2>0.3.0 - 1-Feb-2009</h2>
+<ul>
+<li>No longer explicitly checks for an error in the constructor. It lets the
+underlying Win32::API library deal with it.
+
+</li>
+<li>More dynamic handling and setting of the MSVCRT_DLL variable.
+
+</li>
+<li>Added a <a href="../classes/WideString.html">WideString</a> implementation.
+Internal use only.
+
+</li>
+</ul>
+<h2>0.2.4 - 18-Jul-2008</h2>
+<ul>
+<li>Eliminated unnecessary LoadLibrary() attempts for functions that explicitly
+end with an &#8216;A&#8217; or &#8216;W&#8217;, and all MSVCRT functions,
+since they have no &#8216;A&#8217; or &#8216;W&#8217; equivalent.
+
+</li>
+<li>Replaced all of the attr_reader&#8216;s with a delegation scheme using
+Forwardable. All Win32::API functions now delegate to the internally stored
+Win32::API object instead of reimplementing them. This change also fixed a
+bug where the effective_function_name method did not work properly.
+
+</li>
+<li>Added more tests, and fixed one assertion that was wrong (the prototype).
+
+</li>
+<li>Some documentation additions.
+
+</li>
+</ul>
+<h2>0.2.3 - 26-Apr-2008</h2>
+<ul>
+<li>Improved API.auto_constant and API.auto_method handling for functions that
+start with a lower case character or an underscore.
+
+</li>
+</ul>
+<h2>0.2.2 - 17-Apr-2008</h2>
+<ul>
+<li>Added the Windows::MSVCRT_DLL constant so that users can specify MSVCRT_DLL
+for the DLL name and it will do the right thing, instead of having to worry
+about specifying a DLL or associated DLL.
+
+</li>
+</ul>
+<h2>0.2.1 - 10-Feb-2008</h2>
+<ul>
+<li>Added support for long data type names, e.g. &#8216;DWORD&#8217; instead of
+&#8216;L&#8217;, for both the prototype and return type.
+
+</li>
+</ul>
+<h2>0.2.0 - 20-Sep-2007</h2>
+<ul>
+<li>Now requires the win32-api library.
+
+</li>
+<li>Replaced class variables with class instance variables to prevent
+conflicts.
+
+</li>
+</ul>
+<h2>0.1.1 - 25-May-2007</h2>
+<ul>
+<li>Fixed a void parameter bug.
+
+</li>
+</ul>
+<h2>0.1.0 - 24-May-2007</h2>
+<ul>
+<li>Initial release
+
+</li>
+</ul>
+
+    </div>
+
+
+   </div>
+
+
+  </div>
+
+
+    <!-- if includes -->
+
+    <div id="section">
+
+
+
+
+
+      
+
+
+    <!-- if method_list -->
+
+
+  </div>
+
+
+<div id="validator-badges">
+  <p><small><a href="http://validator.w3.org/check/referer">[Validate]</a></small></p>
+</div>
+
+</body>
+</html>

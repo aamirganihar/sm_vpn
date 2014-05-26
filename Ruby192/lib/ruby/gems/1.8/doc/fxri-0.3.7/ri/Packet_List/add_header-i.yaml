@@ -1,0 +1,12 @@
+--- !ruby/object:RI::MethodDescription 
+aliases: []
+
+block_params: item_column_text
+comment: 
+- !ruby/struct:SM::Flow::P 
+  body: Add a new header. The block that you need to specify is used to convert a string of this column into something that can be used for sorting. The yielded parameter item_colum_text is the text of one item of this column.
+full_name: Packet_List#add_header
+is_singleton: false
+name: add_header
+params: (text, width) {|item_column_text| ...}
+visibility: public

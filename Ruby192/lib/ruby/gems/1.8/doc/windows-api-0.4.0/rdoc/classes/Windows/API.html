@@ -1,0 +1,517 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+<!DOCTYPE html 
+     PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+     "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+  <title>Class: Windows::API</title>
+  <meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" />
+  <meta http-equiv="Content-Script-Type" content="text/javascript" />
+  <link rel="stylesheet" href="../.././rdoc-style.css" type="text/css" media="screen" />
+  <script type="text/javascript">
+  // <![CDATA[
+
+  function popupCode( url ) {
+    window.open(url, "Code", "resizable=yes,scrollbars=yes,toolbar=no,status=no,height=150,width=400")
+  }
+
+  function toggleCode( id ) {
+    if ( document.getElementById )
+      elem = document.getElementById( id );
+    else if ( document.all )
+      elem = eval( "document.all." + id );
+    else
+      return false;
+
+    elemStyle = elem.style;
+    
+    if ( elemStyle.display != "block" ) {
+      elemStyle.display = "block"
+    } else {
+      elemStyle.display = "none"
+    }
+
+    return true;
+  }
+  
+  // Make codeblocks hidden by default
+  document.writeln( "<style type=\"text/css\">div.method-source-code { display: none }</style>" )
+  
+  // ]]>
+  </script>
+
+</head>
+<body>
+
+
+
+    <div id="classHeader">
+        <table class="header-table">
+        <tr class="top-aligned-row">
+          <td><strong>Class</strong></td>
+          <td class="class-name-in-header">Windows::API</td>
+        </tr>
+        <tr class="top-aligned-row">
+            <td><strong>In:</strong></td>
+            <td>
+                <a href="../../files/lib/windows/api_rb.html">
+                lib/windows/api.rb
+                </a>
+        <br />
+            </td>
+        </tr>
+
+        <tr class="top-aligned-row">
+            <td><strong>Parent:</strong></td>
+            <td>
+                Object
+            </td>
+        </tr>
+        </table>
+    </div>
+  <!-- banner header -->
+
+  <div id="bodyContent">
+
+
+
+  <div id="contextContent">
+
+    <div id="description">
+      <p>
+Wrapper around the Win32::API class
+</p>
+
+    </div>
+
+
+   </div>
+
+    <div id="method-list">
+      <h3 class="section-bar">Methods</h3>
+
+      <div class="name-list">
+      <a href="#M000014">auto_constant</a>&nbsp;&nbsp;
+      <a href="#M000015">auto_constant=</a>&nbsp;&nbsp;
+      <a href="#M000018">auto_method</a>&nbsp;&nbsp;
+      <a href="#M000019">auto_method=</a>&nbsp;&nbsp;
+      <a href="#M000016">auto_namespace</a>&nbsp;&nbsp;
+      <a href="#M000017">auto_namespace=</a>&nbsp;&nbsp;
+      <a href="#M000020">auto_unicode</a>&nbsp;&nbsp;
+      <a href="#M000021">auto_unicode=</a>&nbsp;&nbsp;
+      <a href="#M000023">call</a>&nbsp;&nbsp;
+      <a href="#M000022">new</a>&nbsp;&nbsp;
+      </div>
+    </div>
+
+  </div>
+
+
+    <!-- if includes -->
+
+    <div id="section">
+
+
+    <div id="constants-list">
+      <h3 class="section-bar">Constants</h3>
+
+      <div class="name-list">
+        <table summary="Constants">
+        <tr class="top-aligned-row context-row">
+          <td class="context-item-name">VERSION</td>
+          <td>=</td>
+          <td class="context-item-value">'0.4.0'</td>
+          <td width="3em">&nbsp;</td>
+          <td class="context-item-desc">
+The version of the windows-api library
+
+</td>
+        </tr>
+        <tr class="top-aligned-row context-row">
+          <td class="context-item-name">DATA_TYPES</td>
+          <td>=</td>
+          <td class="context-item-value">{          'ATOM'         =&gt; 'I',          'BOOL'         =&gt; 'B',          'BOOLEAN'      =&gt; 'B',          'BYTE'         =&gt; 'I',          'CALLBACK'     =&gt; 'K',          'CHAR'         =&gt; 'I',          'COLORREF'     =&gt; 'L',          'DWORD'        =&gt; 'L',          'DWORDLONG'    =&gt; 'L',          'DWORD_PTR'    =&gt; 'P',          'DWORD32'      =&gt; 'I',          'DWORD64'      =&gt; 'L',          'HACCEL'       =&gt; 'L',          'HANDLE'       =&gt; 'L',          'HBITMAP'      =&gt; 'L',          'HBRUSH'       =&gt; 'L',          'HCOLORSPACE'  =&gt; 'L',          'HCONV'        =&gt; 'L',          'HDC'          =&gt; 'L',          'HFILE'        =&gt; 'I',          'HKEY'         =&gt; 'L',          'HFONT'        =&gt; 'L',          'HINSTANCE'    =&gt; 'L',          'HKEY'         =&gt; 'L',          'HLOCAL'       =&gt; 'L',          'HMENU'        =&gt; 'L',          'HMODULE'      =&gt; 'L',          'HRESULT'      =&gt; 'L',          'HWND'         =&gt; 'L',          'INT'          =&gt; 'I',          'INT_PTR'      =&gt; 'P',          'INT32'        =&gt; 'I',          'INT64'        =&gt; 'L',          'LANGID'       =&gt; 'I',          'LCID'         =&gt; 'L',          'LCTYPE'       =&gt; 'L',          'LONG'         =&gt; 'L',          'LONGLONG'     =&gt; 'L',          'LONG_PTR'     =&gt; 'P',          'LONG32'       =&gt; 'L',          'LONG64'       =&gt; 'L',          'LPARAM'       =&gt; 'P',          'LPBOOL'       =&gt; 'P',          'LPBYTE'       =&gt; 'P',          'LPCOLORREF'   =&gt; 'P',          'LPCSTR'       =&gt; 'P',          'LPCTSTR'      =&gt; 'P',          'LPCVOID'      =&gt; 'L',          'LPCWSTR'      =&gt; 'P',          'LPDWORD'      =&gt; 'P',          'LPHANDLE'     =&gt; 'P',          'LPINT'        =&gt; 'P',          'LPLONG'       =&gt; 'P',          'LPSTR'        =&gt; 'P',          'LPTSTR'       =&gt; 'P',          'LPVOID'       =&gt; 'L',          'LPWORD'       =&gt; 'P',          'LPWSTR'       =&gt; 'P',          'LRESULT'      =&gt; 'P',          'PBOOL'        =&gt; 'P',          'PBOOLEAN'     =&gt; 'P',          'PBYTE'        =&gt; 'P',          'PHKEY'        =&gt; 'P',          'SC_HANDLE'    =&gt; 'L',          'SC_LOCK'      =&gt; 'L',          'SERVICE_STATUS_HANDLE' =&gt; 'L',          'SHORT'        =&gt; 'I',          'SIZE_T'       =&gt; 'P',          'TCHAR'        =&gt; 'L',          'UINT'         =&gt; 'I',          'UINT_PTR'     =&gt; 'P',          'UINT32'       =&gt; 'I',          'UINT64'       =&gt; 'L',          'ULONG'        =&gt; 'L',          'ULONGLONG'    =&gt; 'L',          'ULONG_PTR'    =&gt; 'P',          'ULONG32'      =&gt; 'L',          'ULONG64'      =&gt; 'L',          'USHORT'       =&gt; 'I',          'USN'          =&gt; 'L',          'WINAPI'       =&gt; 'L',                                     'WORD'         =&gt; 'I'</td>
+          <td width="3em">&nbsp;</td>
+          <td class="context-item-desc">
+Verbose data types that can be used instead of single letters
+
+</td>
+        </tr>
+        </table>
+      </div>
+    </div>
+
+
+
+      
+
+
+    <!-- if method_list -->
+    <div id="methods">
+      <h3 class="section-bar">Public Class methods</h3>
+
+      <div id="method-M000014" class="method-detail">
+        <a name="M000014"></a>
+
+        <div class="method-heading">
+          <a href="API.src/M000014.html" target="Code" class="method-signature"
+            onclick="popupCode('API.src/M000014.html');return false;">
+          <span class="method-name">auto_constant</span><span class="method-args">()</span>
+          </a>
+        </div>
+      
+        <div class="method-description">
+          <p>
+Returns the value of the @<a href="API.html#M000014">auto_constant</a>
+class instance variable. The default is nil, i.e. none. See the <a
+href="API.html#M000014">Windows::API.auto_constant</a>= documentation for
+more information.
+</p>
+        </div>
+      </div>
+
+      <div id="method-M000015" class="method-detail">
+        <a name="M000015"></a>
+
+        <div class="method-heading">
+          <a href="API.src/M000015.html" target="Code" class="method-signature"
+            onclick="popupCode('API.src/M000015.html');return false;">
+          <span class="method-name">auto_constant=</span><span class="method-args">(bool)</span>
+          </a>
+        </div>
+      
+        <div class="method-description">
+          <p>
+Automatically sets a constant to match the function name.
+</p>
+<p>
+The standard practice for defining <a href="API.html">Windows::API</a>
+objects is to use a constant that matches the function name. For example,
+this is a typical idiom:
+</p>
+<pre>
+   module Windows
+      module File
+         GetFileAttributes = API.new('GetFileAttributes', 'P','L')
+      end
+   end
+</pre>
+<p>
+With the <a href="API.html#M000014">API.auto_constant</a> value set to true
+you can avoid the assignment step and the matching constant name will be
+automatically set for you in the namespace defined in <a
+href="API.html#M000016">API.auto_namespace</a>. In other words, this
+example is identical to the one above:
+</p>
+<pre>
+   module Windows
+      module File
+         API.auto_constant  = true
+         API.auto_namespace = 'Windows::File'
+         API.new('GetFileAttributes', 'P', 'L')
+      end
+   end
+</pre>
+<p>
+If the <a href="API.html#M000014">auto_constant</a> class variable is set
+to true, but no <a href="API.html#M000016">auto_namespace</a> is set, an
+error will be raised. Note that the namespace must refer to an existing
+module (not a class).
+</p>
+        </div>
+      </div>
+
+      <div id="method-M000018" class="method-detail">
+        <a name="M000018"></a>
+
+        <div class="method-heading">
+          <a href="API.src/M000018.html" target="Code" class="method-signature"
+            onclick="popupCode('API.src/M000018.html');return false;">
+          <span class="method-name">auto_method</span><span class="method-args">()</span>
+          </a>
+        </div>
+      
+        <div class="method-description">
+          <p>
+Returns the value of the <a href="API.html#M000018">auto_method</a> class
+instance variable. Used in conjunction with <a
+href="API.html#M000020">auto_unicode</a>. See <a
+href="API.html#M000018">API.auto_method</a>= for more information.
+</p>
+        </div>
+      </div>
+
+      <div id="method-M000019" class="method-detail">
+        <a name="M000019"></a>
+
+        <div class="method-heading">
+          <a href="API.src/M000019.html" target="Code" class="method-signature"
+            onclick="popupCode('API.src/M000019.html');return false;">
+          <span class="method-name">auto_method=</span><span class="method-args">(bool)</span>
+          </a>
+        </div>
+      
+        <div class="method-description">
+          <p>
+If this option is set to true then a corresponding method is automatically
+generated when you create a <a href="API.html#M000022">new</a> <a
+href="API.html">Windows::API</a> object.
+</p>
+<p>
+For example, instead of doing this:
+</p>
+<pre>
+   module Windows
+      module File
+         GetFileAttributes = API.new('GetFileAttributes', 'P', 'L')
+
+         def GetFileAttributes(x)
+            GetFileAttributes.call(x)
+         end
+      end
+   end
+</pre>
+<p>
+You can do this, and have the method autogenerated for you.
+</p>
+<pre>
+   module Windows
+      module File
+         API.auto_namespace = 'Windows::File'
+         API.auto_constant  = true
+         API.auto_method    = true
+         API.new('GetFileAttributes', 'P', 'L')
+      end
+   end
+
+   include Windows::File
+   GetFileAttributes('C:/test.txt') # vs. GetFileAttributes.call
+</pre>
+<p>
+If the <a href="API.html">Windows::API</a> object is declared to be a
+boolean in the constructor, then the method definition automatically
+includes a &#8217;!= 0&#8217; clause at the end of the <a
+href="API.html#M000023">call</a>. That way, you can do &#8216;if
+SomeMethod(x)&#8217; instead of having to do &#8216;if SomeMethod(x) !=
+0&#8217;, and it will do the right thing.
+</p>
+<p>
+If the <a href="API.html#M000020">API.auto_unicode</a> option is also set
+to true, then you will get three method definitions. The standard function
+name, the explicit ANSI (&#8216;A&#8217;) version and the explicit
+Unicode/wide version (&#8216;W&#8217;). The exception to this rule is that
+the explicit ANSI and Unicode methods will NOT be generated if the function
+passed to the constructor already ends with &#8216;A&#8217; or
+&#8216;W&#8217;.
+</p>
+        </div>
+      </div>
+
+      <div id="method-M000016" class="method-detail">
+        <a name="M000016"></a>
+
+        <div class="method-heading">
+          <a href="API.src/M000016.html" target="Code" class="method-signature"
+            onclick="popupCode('API.src/M000016.html');return false;">
+          <span class="method-name">auto_namespace</span><span class="method-args">()</span>
+          </a>
+        </div>
+      
+        <div class="method-description">
+          <p>
+Returns the value of the <a href="API.html#M000016">auto_namespace</a>
+class instance variable. Used in conjunction with <a
+href="API.html#M000014">API.auto_constant</a> and/or <a
+href="API.html#M000018">API.auto_method</a>.
+</p>
+        </div>
+      </div>
+
+      <div id="method-M000017" class="method-detail">
+        <a name="M000017"></a>
+
+        <div class="method-heading">
+          <a href="API.src/M000017.html" target="Code" class="method-signature"
+            onclick="popupCode('API.src/M000017.html');return false;">
+          <span class="method-name">auto_namespace=</span><span class="method-args">(namespace)</span>
+          </a>
+        </div>
+      
+        <div class="method-description">
+          <p>
+Sets the value of the <a href="API.html#M000016">auto_namespace</a> class
+nstance variable. The default is nil, i.e. none. Use in conjunction with
+the <a href="API.html#M000014">auto_constant</a> and/or <a
+href="API.html#M000018">auto_method</a> class variables, this method will
+automatically set a constant and/or method in <tt>namespace</tt> equal to
+the function name set in the constructor.
+</p>
+<p>
+The <tt>namespace</tt> must refer to an existing module, not a class.
+</p>
+        </div>
+      </div>
+
+      <div id="method-M000020" class="method-detail">
+        <a name="M000020"></a>
+
+        <div class="method-heading">
+          <a href="API.src/M000020.html" target="Code" class="method-signature"
+            onclick="popupCode('API.src/M000020.html');return false;">
+          <span class="method-name">auto_unicode</span><span class="method-args">()</span>
+          </a>
+        </div>
+      
+        <div class="method-description">
+          <p>
+Returns the value of the <a href="API.html#M000020">auto_unicode</a> class
+instance variable. This is used in conjunction with the <a
+href="API.html#M000018">auto_method</a> and/or <a
+href="API.html#M000014">auto_constant</a> class variables. Not significant
+if neither of those variables are set.
+</p>
+        </div>
+      </div>
+
+      <div id="method-M000021" class="method-detail">
+        <a name="M000021"></a>
+
+        <div class="method-heading">
+          <a href="API.src/M000021.html" target="Code" class="method-signature"
+            onclick="popupCode('API.src/M000021.html');return false;">
+          <span class="method-name">auto_unicode=</span><span class="method-args">(bool)</span>
+          </a>
+        </div>
+      
+        <div class="method-description">
+          <p>
+If set to true, and the <a href="API.html#M000014">auto_constant</a>
+variable is set, then the automatic constant generation will generate the
+explicit ANSI (&#8216;A&#8217;) and Unicode/wide (&#8216;W&#8217;) versions
+of the function passed to the constructor, if such versions exist.
+Likewise, if the the <a href="API.html#M000018">auto_method</a> variable is
+set, then explicit ANSI and Unicode methods are generated.
+</p>
+<p>
+Here&#8216;s a typical idiom:
+</p>
+<p>
+module <a href="../Windows.html">Windows</a>
+</p>
+<pre>
+   module Path
+      API.auto_namespace = Windows::Path
+      API.auto_constant = true
+      API.new('shlwapi', 'PathAddBackslash', 'P', 'P')
+      API.new('shlwapi', 'PathAddBackslashA', 'P', 'P')
+      API.new('shlwapi', 'PathAddBackslashW', 'P', 'P')
+   end
+</pre>
+<p>
+end
+</p>
+<p>
+That can be reduced to this:
+</p>
+<p>
+module <a href="../Windows.html">Windows</a>
+</p>
+<pre>
+   module Path
+      API.auto_namespace = Windows::Path
+      API.auto_constant = true
+      API.auto_unicode  = true
+      API.new('shlwapi', 'PathAddBackslash', 'P', 'P')
+   end
+</pre>
+<p>
+end
+</p>
+<p>
+This value is ignored if the function passed to the constructor already
+ends with an &#8216;A&#8217; or &#8216;W&#8217;.
+</p>
+        </div>
+      </div>
+
+      <div id="method-M000022" class="method-detail">
+        <a name="M000022"></a>
+
+        <div class="method-heading">
+          <a href="API.src/M000022.html" target="Code" class="method-signature"
+            onclick="popupCode('API.src/M000022.html');return false;">
+          <span class="method-name">API.new(func, proto='V', rtype='L', dll='kernel32')<br />
+</span>
+          </a>
+        </div>
+      
+        <div class="method-description">
+          <p>
+Creates and returns a <a href="API.html#M000022">new</a> <a
+href="API.html">Windows::API</a> object. The <tt>func</tt> is the name of
+the <a href="../Windows.html">Windows</a> function.
+</p>
+<p>
+The <tt>proto</tt> is the function prototype for <tt>func</tt>. This can be
+a string or an array of characters. The possible valid characters are
+&#8216;I&#8217; (integer), &#8216;B&#8217; (BOOL), &#8216;L&#8217; (long),
+&#8216;V&#8217; (void), or &#8216;P&#8217; (pointer). The default is void
+(&#8216;V&#8217;).
+</p>
+<p>
+The <tt>rtype</tt> argument is the return type for the function. The valid
+characters are the same as for the <tt>proto</tt>. The default is long
+(&#8216;L&#8217;).
+</p>
+<p>
+The &#8216;B&#8217; (BOOL) return type is the same as &#8216;I&#8217;
+(Integer). This is significant only if the <a
+href="API.html#M000018">API.auto_method</a> option is set to true, in which
+case it alters the generated method definition slightly. See the <a
+href="API.html#M000018">API.auto_method</a>= class method for more
+information.
+</p>
+<p>
+The <tt>dll</tt> is the name of the DLL file that the function is exported
+from. The default is &#8216;kernel32&#8217;.
+</p>
+<p>
+If the function cannot be found then an API::Error is raised (a subclass of
+RuntimeError).
+</p>
+        </div>
+      </div>
+
+      <h3 class="section-bar">Public Instance methods</h3>
+
+      <div id="method-M000023" class="method-detail">
+        <a name="M000023"></a>
+
+        <div class="method-heading">
+          <a href="API.src/M000023.html" target="Code" class="method-signature"
+            onclick="popupCode('API.src/M000023.html');return false;">
+          <span class="method-name">call</span><span class="method-args">(*args)</span>
+          </a>
+        </div>
+      
+        <div class="method-description">
+          <p>
+Calls the function name set in the constructor.
+</p>
+        </div>
+      </div>
+
+
+    </div>
+
+
+  </div>
+
+
+<div id="validator-badges">
+  <p><small><a href="http://validator.w3.org/check/referer">[Validate]</a></small></p>
+</div>
+
+</body>
+</html>

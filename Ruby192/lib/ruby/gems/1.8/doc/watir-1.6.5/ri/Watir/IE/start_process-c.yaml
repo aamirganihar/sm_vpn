@@ -1,0 +1,12 @@
+--- !ruby/object:RI::MethodDescription 
+aliases: []
+
+block_params: 
+comment: 
+- !ruby/struct:SM::Flow::P 
+  body: Create a new IE window in a new process, starting at the specified URL. Same as IE.start.
+full_name: Watir::IE::start_process
+is_singleton: true
+name: start_process
+params: (url=nil)
+visibility: public

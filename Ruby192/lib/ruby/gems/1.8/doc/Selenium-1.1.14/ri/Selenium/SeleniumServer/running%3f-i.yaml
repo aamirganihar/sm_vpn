@@ -1,0 +1,12 @@
+--- !ruby/object:RI::MethodDescription 
+aliases: []
+
+block_params: 
+comment: 
+- !ruby/struct:SM::Flow::P 
+  body: Check if the Selenium is running by sending a test_complete command with invalid session ID
+full_name: Selenium::SeleniumServer#running?
+is_singleton: false
+name: running?
+params: ()
+visibility: public

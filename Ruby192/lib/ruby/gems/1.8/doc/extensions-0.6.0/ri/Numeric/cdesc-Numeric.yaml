@@ -1,0 +1,32 @@
+--- !ruby/object:RI::ClassDescription 
+attributes: []
+
+class_methods: []
+
+comment: ""
+constants: 
+- !ruby/object:RI::Constant 
+  comment: 
+  - !ruby/struct:SM::Flow::P 
+    body: "Provides the base formatting styles for #format_s. See #format_s for more details. Two keys provided that are not supported in the #format_s arguments are:"
+  - !ruby/object:SM::Flow::LIST 
+    contents: 
+    - !ruby/struct:SM::Flow::LI 
+      label: "<tt>:style</tt>:"
+      body: Allows a style to inherit from other styles. Styles will be applied in oldest-first order in the event of multiple inheritance layers.
+    - !ruby/struct:SM::Flow::LI 
+      label: "<tt>:id</tt>:"
+      body: This must be provided on any default style created or provided so as to provide a stop marker so that recursive styles do not result in an infinite loop.
+    type: :NOTE
+  - !ruby/struct:SM::Flow::P 
+    body: This is an implementation detail, not important for users of the class.
+  name: FORMAT_STYLES
+  value: "{       :us       => { :sep => ',', :dec => '.', :id => :us },       :usd      => { :style => :us, :currency => { :id => \"$\", :pos => :before }, :id => :usd },       :eu       => { :sep => ' ', :dec => ',', :id => :us },       :euro     => { :style => :eu, :currency => { :id => \"\x80\", :pos => :before }, :id => :euro },       :percent  => { :style => :us, :currency => { :id => \"%%\", :pos => :after }, :id => :percent }"
+full_name: Numeric
+includes: []
+
+instance_methods: 
+- !ruby/object:RI::MethodSummary 
+  name: format_s
+name: Numeric
+superclass: Object

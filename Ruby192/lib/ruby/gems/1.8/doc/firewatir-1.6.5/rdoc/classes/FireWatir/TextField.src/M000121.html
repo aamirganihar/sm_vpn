@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+<!DOCTYPE html 
+     PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+     "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html>
+<head>
+  <title>set (FireWatir::TextField)</title>
+  <meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" />
+  <link rel="stylesheet" href="../../.././rdoc-style.css" type="text/css" media="screen" />
+</head>
+<body class="standalone-code">
+  <pre><span class="ruby-comment cmt"># File lib/firewatir/elements/text_field.rb, line 148</span>
+    <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">set</span>( <span class="ruby-identifier">setThis</span> )
+      <span class="ruby-identifier">assert_exists</span>
+      <span class="ruby-identifier">assert_enabled</span>
+      <span class="ruby-identifier">assert_not_readonly</span>
+
+      <span class="ruby-identifier">highlight</span>(<span class="ruby-identifier">:set</span>)
+      <span class="ruby-ivar">@o</span>.<span class="ruby-identifier">scrollIntoView</span>
+      <span class="ruby-ivar">@o</span>.<span class="ruby-identifier">focus</span>
+      <span class="ruby-ivar">@o</span>.<span class="ruby-identifier">select</span>()
+      <span class="ruby-ivar">@o</span>.<span class="ruby-identifier">fireEvent</span>(<span class="ruby-value str">&quot;onSelect&quot;</span>)
+      <span class="ruby-ivar">@o</span>.<span class="ruby-identifier">value</span> = <span class="ruby-value str">&quot;&quot;</span>
+      <span class="ruby-ivar">@o</span>.<span class="ruby-identifier">fireEvent</span>(<span class="ruby-value str">&quot;onKeyPress&quot;</span>)
+      <span class="ruby-identifier">doKeyPress</span>( <span class="ruby-identifier">setThis</span> )
+      <span class="ruby-identifier">highlight</span>(<span class="ruby-identifier">:clear</span>)
+      <span class="ruby-ivar">@o</span>.<span class="ruby-identifier">fireEvent</span>(<span class="ruby-value str">&quot;onChange&quot;</span>)
+      <span class="ruby-ivar">@o</span>.<span class="ruby-identifier">fireEvent</span>(<span class="ruby-value str">&quot;onBlur&quot;</span>)
+    <span class="ruby-keyword kw">end</span></pre>
+</body>
+</html>

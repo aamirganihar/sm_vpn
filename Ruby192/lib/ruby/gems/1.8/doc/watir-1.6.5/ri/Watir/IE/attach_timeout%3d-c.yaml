@@ -1,0 +1,10 @@
+--- !ruby/object:RI::MethodDescription 
+aliases: []
+
+block_params: 
+comment: 
+full_name: Watir::IE::attach_timeout=
+is_singleton: true
+name: attach_timeout=
+params: (timeout)
+visibility: public

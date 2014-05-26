@@ -1,0 +1,12 @@
+--- !ruby/object:RI::MethodDescription 
+aliases: []
+
+block_params: 
+comment: 
+- !ruby/struct:SM::Flow::P 
+  body: Returns the raw imput of the passed in string, this is before it is passed by the parser.
+full_name: Mail::Address#raw
+is_singleton: false
+name: raw
+params: ()
+visibility: public

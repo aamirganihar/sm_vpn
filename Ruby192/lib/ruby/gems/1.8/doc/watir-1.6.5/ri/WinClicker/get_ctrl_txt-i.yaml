@@ -1,0 +1,12 @@
+--- !ruby/object:RI::MethodDescription 
+aliases: []
+
+block_params: 
+comment: 
+- !ruby/struct:SM::Flow::P 
+  body: "Alias for #getControlText"
+full_name: WinClicker#get_ctrl_txt
+is_singleton: false
+name: get_ctrl_txt
+params: (hWnd)
+visibility: public

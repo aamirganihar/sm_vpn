@@ -1,0 +1,16 @@
+--- !ruby/object:RI::MethodDescription 
+aliases: []
+
+block_params: 
+comment: 
+- !ruby/struct:SM::Flow::P 
+  body: Sets the Cc value of the mail object, pass in a string of the field
+- !ruby/struct:SM::Flow::P 
+  body: "Example:"
+- !ruby/struct:SM::Flow::VERB 
+  body: " mail.cc = 'Mikel &lt;mikel@test.lindsaar.net&gt;'\n mail.cc #=&gt; ['mikel@test.lindsaar.net']\n mail.cc = 'Mikel &lt;mikel@test.lindsaar.net&gt;, ada@test.lindsaar.net'\n mail.cc #=&gt; ['mikel@test.lindsaar.net', 'ada@test.lindsaar.net']\n"
+full_name: Mail::Message#cc=
+is_singleton: false
+name: cc=
+params: ( val )
+visibility: public

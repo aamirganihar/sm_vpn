@@ -1,0 +1,14 @@
+--- !ruby/object:RI::MethodDescription 
+aliases: []
+
+block_params: 
+comment: 
+- !ruby/struct:SM::Flow::P 
+  body: "Description:"
+- !ruby/struct:SM::Flow::VERB 
+  body: "  Checks if object is read-only or not.\n"
+full_name: FireWatir::TextField#assert_not_readonly
+is_singleton: false
+name: assert_not_readonly
+params: ()
+visibility: public

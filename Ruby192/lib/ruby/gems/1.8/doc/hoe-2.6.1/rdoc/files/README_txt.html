@@ -1,0 +1,535 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+<!DOCTYPE html 
+     PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+     "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+  <title>File: README.txt</title>
+  <meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" />
+  <meta http-equiv="Content-Script-Type" content="text/javascript" />
+  <link rel="stylesheet" href=".././rdoc-style.css" type="text/css" media="screen" />
+  <script type="text/javascript">
+  // <![CDATA[
+
+  function popupCode( url ) {
+    window.open(url, "Code", "resizable=yes,scrollbars=yes,toolbar=no,status=no,height=150,width=400")
+  }
+
+  function toggleCode( id ) {
+    if ( document.getElementById )
+      elem = document.getElementById( id );
+    else if ( document.all )
+      elem = eval( "document.all." + id );
+    else
+      return false;
+
+    elemStyle = elem.style;
+    
+    if ( elemStyle.display != "block" ) {
+      elemStyle.display = "block"
+    } else {
+      elemStyle.display = "none"
+    }
+
+    return true;
+  }
+  
+  // Make codeblocks hidden by default
+  document.writeln( "<style type=\"text/css\">div.method-source-code { display: none }</style>" )
+  
+  // ]]>
+  </script>
+
+</head>
+<body>
+
+
+
+  <div id="fileHeader">
+    <h1>README.txt</h1>
+    <table class="header-table">
+    <tr class="top-aligned-row">
+      <td><strong>Path:</strong></td>
+      <td>README.txt
+      </td>
+    </tr>
+    <tr class="top-aligned-row">
+      <td><strong>Last Update:</strong></td>
+      <td>Thu Aug 12 10:39:43 +0530 2010</td>
+    </tr>
+    </table>
+  </div>
+  <!-- banner header -->
+
+  <div id="bodyContent">
+
+
+
+  <div id="contextContent">
+
+    <div id="description">
+      <h1><a href="../classes/Hoe.html">Hoe</a></h1>
+<ul>
+<li><a
+href="http://rubyforge.org/projects/seattlerb">rubyforge.org/projects/seattlerb</a>/
+
+</li>
+<li><a
+href="http://seattlerb.rubyforge.org/hoe">seattlerb.rubyforge.org/hoe</a>/
+
+</li>
+<li><a
+href="http://seattlerb.rubyforge.org/hoe/Hoe.pdf">seattlerb.rubyforge.org/hoe/Hoe.pdf</a>
+
+</li>
+<li><a
+href="http://github.com/jbarnette/hoe-plugin-examples">github.com/jbarnette/hoe-plugin-examples</a>
+
+</li>
+</ul>
+<h2>DESCRIPTION:</h2>
+<p>
+<a href="../classes/Hoe.html">Hoe</a> is a rake/rubygems helper for project
+Rakefiles. It helps you manage and maintain, and release your project and
+includes a dynamic plug-in system allowing for easy extensibility. <a
+href="../classes/Hoe.html">Hoe</a> ships with plug-ins for all your usual
+project tasks including rdoc generation, testing, packaging, and
+deployment.
+</p>
+<p>
+See class rdoc for help. Hint: `ri <a href="../classes/Hoe.html">Hoe</a>`
+or any of the plugins listed below.
+</p>
+<p>
+For extra goodness, see: <a
+href="http://seattlerb.rubyforge.org/hoe/Hoe.pdf">seattlerb.rubyforge.org/hoe/Hoe.pdf</a>
+</p>
+<h2>FEATURES/PROBLEMS:</h2>
+<ul>
+<li>Includes a dynamic plug-in system allowing for easy extensibility.
+
+</li>
+<li>Auto-intuits changes, description, summary, and version.
+
+</li>
+<li>Uses a manifest for safe and secure deployment.
+
+</li>
+<li>Provides &#8216;sow&#8217; for quick project directory creation.
+
+</li>
+<li>Sow uses a simple ERB templating system allowing you to capture your
+project patterns.
+
+</li>
+</ul>
+<h2>SYNOPSIS:</h2>
+<pre>
+  % sow [group] project
+</pre>
+<p>
+(you can edit a project template in ~/.hoe_template after running sow for
+the first time)
+</p>
+<p>
+or:
+</p>
+<pre>
+  require 'hoe'
+
+  Hoe.spec projectname do
+    # ... project specific data ...
+  end
+
+  # ... project specific tasks ...
+</pre>
+<h2>Deployment, the DRY way</h2>
+<p>
+<a href="../classes/Hoe.html">Hoe</a> focuses on keeping everything in its
+place in a useful form and intelligently extracting what it needs. As a
+result, there are no extra YAML files, config directories, ruby files, or
+any other artifacts in your release that you wouldn&#8216;t already have.
+</p>
+<h3>Structure Overview</h3>
+<pre>
+  project_dir/
+    History.txt
+    Manifest.txt
+    README.txt
+    Rakefile
+    bin/...
+    lib/...
+    test/...
+</pre>
+<h3>README.txt</h3>
+<p>
+Most projects have a readme file of some kind that describes the project.
+<a href="../classes/Hoe.html">Hoe</a> projects are no different, but we
+take them one step further. The readme file points the reader towards all
+the information they need to know to get started including a description,
+relevant urls, code synopsis, license, etc. <a
+href="../classes/Hoe.html">Hoe</a> knows how to read a basic rdoc formatted
+file to pull out the description (and summary by extension), urls, and
+extra paragraphs of info you may want to provide in news/blog posts.
+</p>
+<h3>History.txt</h3>
+<p>
+Every project should have a document describing changes over time. <a
+href="../classes/Hoe.html">Hoe</a> can read this file (also in rdoc) and
+include the latest changes in your announcements.
+</p>
+<h3>Manifest.txt</h3>
+<p>
+<em>&lt;strong&gt;manifest [noun]&lt;/strong&gt; a document giving
+comprehensive details of a ship and its cargo and other contents,
+passengers, and crew for the use of customs officers.</em>
+</p>
+<p>
+Every project should know what it is shipping. This is done via an explicit
+list of everything that goes out in a release. <a
+href="../classes/Hoe.html">Hoe</a> uses this during packaging so that
+nothing embarrassing is picked up.
+</p>
+<p>
+Imagine, you&#8216;re a customs inspector at the Los Angeles Port, the
+world&#8216;s largest import/export port. A large ship filled to the brim
+pulls up to the pier ready for inspection. You walk up to the captain and
+his crew and ask &quot;what is the contents of this fine ship today&quot;
+and the captain answers &quot;oh&#8230; whatever is inside&quot;. The mind
+boggles. There is no way in the world that a professionally run ship would
+ever run this way and there is no way that you should either.
+</p>
+<p>
+Professional software releases know <em>exactly</em> what is in them,
+amateur releases _do not_. &quot;Write better globs&quot; is the response I
+often hear. I consider myself and the people I work with to be rather smart
+people and if we get them wrong, chances are you will too. How many times
+have you peered under the covers and seen .DS_Store, emacs backup~ files,
+vim vm files and other files completely unrelated to the package? I have
+far more times than I&#8216;d like.
+</p>
+<h3>VERSION</h3>
+<p>
+Releases have versions and I&#8216;ve found it best for the version to be
+part of the code. You can use this during runtime in a multitude of ways.
+<a href="../classes/Hoe.html">Hoe</a> finds your version and uses it
+automatically during packaging.
+</p>
+<h3>Releasing in 1 easy step</h3>
+<pre>
+  % rake release VERSION=x.y.z
+</pre>
+<p>
+That really is all there is to it. Behind the scenes it:
+</p>
+<ul>
+<li>Branches the release in our perforce server. (via hoe-seattlerb plugin)
+
+</li>
+<li>Performs sanity checks to ensure the release has integrity. (hoe-seattlerb)
+
+</li>
+<li>Packages into gem and tarballs.
+
+</li>
+<li>Uploads the packages to rubyforge.
+
+</li>
+<li>Posts news of the release to rubyforge and my blog.
+
+</li>
+<li>Sends an announcement email. (hoe-seattlerb)
+
+</li>
+</ul>
+<p>
+That `VERSION=x.y.z` is there as a last-chance sanity check that you know
+what you&#8216;re releasing. You&#8216;d be surprised how blurry
+eyed/brained you get at 3AM. This check helps a lot more than it should.
+</p>
+<h2>Plugins:</h2>
+<p>
+<a href="../classes/Hoe.html">Hoe</a> has a flexible plugin system that
+allows you to activate and deactivate what tasks are available on a given
+project. <a href="../classes/Hoe.html">Hoe</a> has been broken up into
+plugins partially to make maintenance easier but also to make it easier to
+turn off or replace code you don&#8216;t want.
+</p>
+<ul>
+<li>To activate a plugin, add the following to your Rakefile above your <a
+href="../classes/Hoe.html">Hoe</a> spec:
+
+<pre>
+  Hoe.plugin :plugin_name
+</pre>
+</li>
+<li>To deactivate a plugin, remove its name from the plugins array:
+
+<pre>
+  Hoe.plugins.delete :plugin_name
+</pre>
+</li>
+</ul>
+<p>
+Again, this must be done before the <a href="../classes/Hoe.html">Hoe</a>
+spec, or it won&#8216;t be useful.
+</p>
+<h3>Plug-ins Provided:</h3>
+<ul>
+<li>Hoe::Clean
+
+</li>
+<li>Hoe::Debug
+
+</li>
+<li>Hoe::Deps
+
+</li>
+<li>Hoe::Flay
+
+</li>
+<li>Hoe::Flog
+
+</li>
+<li>Hoe::Gemcutter
+
+</li>
+<li>Hoe::Inline
+
+</li>
+<li>Hoe::Newb
+
+</li>
+<li>Hoe::Package
+
+</li>
+<li>Hoe::Publish
+
+</li>
+<li>Hoe::RCov
+
+</li>
+<li>Hoe::RubyForge
+
+</li>
+<li>Hoe::Signing
+
+</li>
+<li>Hoe::Test
+
+</li>
+</ul>
+<h3>Known 3rd-Party Plugins:</h3>
+<ul>
+<li>Hoe::Seattlerb - minitest support, email announcements &amp; perforce
+branching/validation on release.
+
+</li>
+<li>Hoe::Git - git tagging on release, changelogs, and manifest creation.
+
+</li>
+<li>Hoe::Doofus - release checklist.
+
+</li>
+<li>Hoe::Debugging - for extensions, run your tests with GDB and Valgrind
+
+</li>
+</ul>
+<h3>Writing Plugins:</h3>
+<p>
+A plugin can be as simple as:
+</p>
+<pre>
+    module Hoe::Thingy
+      attr_accessor :thingy
+
+      def initialize_thingy # optional
+        self.thingy = 42
+      end
+
+      def define_thingy_tasks
+        task :thingy do
+          puts thingy
+        end
+      end
+    end
+</pre>
+<p>
+Not terribly useful, but you get the idea. This example exercises both
+plugin methods (initialize_#{plugin} and define_#{plugin}_tasks and adds an
+accessor method to the <a href="../classes/Hoe.html">Hoe</a> instance.
+</p>
+<h3>How Plugins Work</h3>
+<p>
+<a href="../classes/Hoe.html">Hoe</a> plugins are made to be as simple as
+possible, but no simpler. They are modules defined in the `<a
+href="../classes/Hoe.html">Hoe</a>` namespace and have only one required
+method (`define_#{plugin}_tasks`) and one optional method
+(`initialize_#{plugin}`). Plugins can also define their own methods and
+they&#8216;ll be available as instance methods to your hoe-spec. Plugins
+have 4 simple phases:
+</p>
+<h4>Loading</h4>
+<p>
+When <a href="../classes/Hoe.html">Hoe</a> is loaded the last thing it does
+is to ask rubygems for all of its plugins. Plugins are found by finding all
+files matching &quot;hoe/*.rb&quot; via installed gems or `$LOAD_PATH`. All
+found files are then loaded.
+</p>
+<h4>Activation</h4>
+<p>
+All of the plugins that ship with hoe are activated by default. This is
+because they&#8216;re providing the same functionality that the previous <a
+href="../classes/Hoe.html">Hoe</a> was and without them, it&#8216;d be
+rather useless. Other plugins should be &quot;opt-in&quot; and are
+activated by:
+</p>
+<pre>
+    Hoe::plugin :thingy
+</pre>
+<p>
+Put this <em>above</em> your hoe-spec. All it does is add `:thingy` to `<a
+href="../classes/Hoe.html#M000668">Hoe.plugins</a>`. You could also
+deactivate a plugin by removing it from `<a
+href="../classes/Hoe.html#M000668">Hoe.plugins</a>` although that
+shouldn&#8216;t be necessary for the most part.
+</p>
+<p>
+Please note that it is *<b>not</b>* a good idea to have a plugin
+you&#8216;re writing activate itself. Let developers opt-in, not opt-out.
+Just because someone needs the `:thingy` plugin on one project
+doesn&#8216;t mean they need them on <em>all</em> their projects.
+</p>
+<h4>Initialization</h4>
+<p>
+When your hoe-spec is instantiated, it extends itself all known plugin
+modules. This adds the method bodies to the hoe-spec and allows for the
+plugin to work as part of the spec itself. Once that is over, activated
+plugins have their *<b>optional</b>* define `initialize_#{plugin}` methods
+called. This lets them set needed instance variables to default values.
+Finally, the hoe-spec block is evaluated so that project specific values
+can override the defaults.
+</p>
+<h4>Task Definition</h4>
+<p>
+Finally, once the user&#8216;s hoe-spec has been evaluated, all activated
+plugins have their `define_#{plugin}_tasks` method called. This method must
+be defined and it is here that you&#8216;ll define all your tasks.
+</p>
+<h2>HOW TO CONTRIBUTE OR GET SUPPORT:</h2>
+<h3>Mailing List</h3>
+<p>
+A mailing list for hoe is hosted at: <a
+href="http://rubyforge.org/projects/seattlerb">rubyforge.org/projects/seattlerb</a>
+</p>
+<h3>Bugs &amp; Feature Requests:</h3>
+<p>
+We use the bug trackers hosted at: <a
+href="http://rubyforge.org/projects/seattlerb">rubyforge.org/projects/seattlerb</a>
+</p>
+<h3>Patches:</h3>
+<ul>
+<li>If you have a bug fix or enhancement to hoe that you&#8216;d like to
+contribute, please provide a unified diff and file it in a ticket in the
+bug tracker listed above.
+
+</li>
+<li>You can check out hoe:
+
+<ul>
+<li>With git via github: <a
+href="http://github.com/seattlerb/hoe">github.com/seattlerb/hoe</a>
+
+</li>
+<li>With svn via rubyforge: <a
+href="http://rubyforge.org/projects/seattlerb">rubyforge.org/projects/seattlerb</a>
+
+</li>
+<li>Or via perforce if you&#8216;d like to directly contribute: <a
+href="http://www.zenspider.com/ZSS/Process/Perforce.html">www.zenspider.com/ZSS/Process/Perforce.html</a>
+
+</li>
+</ul>
+</li>
+</ul>
+<h2>REQUIREMENTS:</h2>
+<ul>
+<li>rake
+
+</li>
+<li>rubyforge
+
+</li>
+<li>rubygems
+
+</li>
+</ul>
+<h2>INSTALL:</h2>
+<ul>
+<li>sudo gem install hoe
+
+</li>
+</ul>
+<h2>LICENSE:</h2>
+<p>
+(The MIT License)
+</p>
+<p>
+Copyright (c) Ryan Davis, Seattle.rb
+</p>
+<p>
+Permission is hereby granted, free of charge, to any person obtaining a
+copy of this software and associated documentation files (the
+&quot;Software&quot;), to deal in the Software without restriction,
+including without limitation the rights to use, copy, modify, merge,
+publish, distribute, sublicense, and/or sell copies of the Software, and to
+permit persons to whom the Software is furnished to do so, subject to the
+following conditions:
+</p>
+<p>
+The above copyright notice and this permission notice shall be included in
+all copies or substantial portions of the Software.
+</p>
+<p>
+THE SOFTWARE IS PROVIDED &quot;AS IS&quot;, WITHOUT WARRANTY OF ANY KIND,
+EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF
+MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN
+NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM,
+DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR
+OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE
+USE OR OTHER DEALINGS IN THE SOFTWARE.
+</p>
+
+    </div>
+
+
+   </div>
+
+
+  </div>
+
+
+    <!-- if includes -->
+
+    <div id="section">
+
+
+
+
+
+      
+
+
+    <!-- if method_list -->
+
+
+  </div>
+
+
+<div id="validator-badges">
+  <p><small><a href="http://validator.w3.org/check/referer">[Validate]</a></small></p>
+</div>
+
+</body>
+</html>

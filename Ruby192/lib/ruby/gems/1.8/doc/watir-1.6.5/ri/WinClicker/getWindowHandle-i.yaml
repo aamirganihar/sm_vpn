@@ -1,0 +1,13 @@
+--- !ruby/object:RI::MethodDescription 
+aliases: 
+- !ruby/object:RI::AliasName 
+  name: get_window_handle
+block_params: 
+comment: 
+- !ruby/struct:SM::Flow::P 
+  body: Enumerates open windows and returns a window handle from a given title and window class Window class and title are matched regexes
+full_name: WinClicker#getWindowHandle
+is_singleton: false
+name: getWindowHandle
+params: (title, winclass = "" )
+visibility: public

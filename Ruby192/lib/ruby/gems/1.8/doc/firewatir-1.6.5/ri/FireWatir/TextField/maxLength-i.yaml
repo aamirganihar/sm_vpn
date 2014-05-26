@@ -1,0 +1,11 @@
+--- !ruby/object:RI::MethodDescription 
+aliases: 
+- !ruby/object:RI::AliasName 
+  name: maxLength
+block_params: 
+comment: 
+full_name: FireWatir::TextField#maxlength
+is_singleton: false
+name: maxlength
+params: ()
+visibility: public

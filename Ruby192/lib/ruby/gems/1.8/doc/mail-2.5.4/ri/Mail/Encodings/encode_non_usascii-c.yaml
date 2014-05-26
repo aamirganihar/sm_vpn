@@ -1,0 +1,10 @@
+--- !ruby/object:RI::MethodDescription 
+aliases: []
+
+block_params: 
+comment: 
+full_name: Mail::Encodings::encode_non_usascii
+is_singleton: true
+name: encode_non_usascii
+params: (address, charset)
+visibility: public

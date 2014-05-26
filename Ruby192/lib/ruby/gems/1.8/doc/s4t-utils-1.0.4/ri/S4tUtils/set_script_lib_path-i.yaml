@@ -1,0 +1,12 @@
+--- !ruby/object:RI::MethodDescription 
+aliases: []
+
+block_params: 
+comment: 
+- !ruby/struct:SM::Flow::P 
+  body: If the <em>given</em> file lives as a script inside a typical Ruby development structure, put ../lib at the front of the path. That includes files from there in preference to old gems lying around.
+full_name: S4tUtils#set_script_lib_path
+is_singleton: false
+name: set_script_lib_path
+params: (given)
+visibility: public

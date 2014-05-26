@@ -1,0 +1,12 @@
+--- !ruby/object:RI::MethodDescription 
+aliases: []
+
+block_params: 
+comment: 
+- !ruby/struct:SM::Flow::P 
+  body: Returns the MIME media type of part we are on, this is taken from the content-type header
+full_name: Mail::Message#mime_type
+is_singleton: false
+name: mime_type
+params: ()
+visibility: public

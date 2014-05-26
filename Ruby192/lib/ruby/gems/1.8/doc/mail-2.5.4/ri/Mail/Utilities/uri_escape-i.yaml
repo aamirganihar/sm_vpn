@@ -1,0 +1,10 @@
+--- !ruby/object:RI::MethodDescription 
+aliases: []
+
+block_params: 
+comment: 
+full_name: Mail::Utilities#uri_escape
+is_singleton: false
+name: uri_escape
+params: ( str )
+visibility: public

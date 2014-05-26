@@ -1,0 +1,17 @@
+--- !ruby/object:RI::ClassDescription 
+attributes: []
+
+class_methods: []
+
+comment: 
+- !ruby/struct:SM::Flow::P 
+  body: "Note: since some of the above classes are described_by? methods that respond_to :include, this class should be last, so that it's checked last."
+constants: []
+
+full_name: UserChoices::ChoiceCheckingConversion
+includes: []
+
+instance_methods: []
+
+name: ChoiceCheckingConversion
+superclass: Conversion

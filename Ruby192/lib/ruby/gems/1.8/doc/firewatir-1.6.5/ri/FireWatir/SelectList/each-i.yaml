@@ -1,0 +1,10 @@
+--- !ruby/object:RI::MethodDescription 
+aliases: []
+
+block_params: Option.new(self, :jssh_name, arr_options[i])
+comment: 
+full_name: FireWatir::SelectList#each
+is_singleton: false
+name: each
+params: () {|Option.new(self, :jssh_name, arr_options[i])| ...}
+visibility: public

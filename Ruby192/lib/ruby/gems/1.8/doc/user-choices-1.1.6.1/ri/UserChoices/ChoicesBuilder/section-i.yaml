@@ -1,0 +1,12 @@
+--- !ruby/object:RI::MethodDescription 
+aliases: []
+
+block_params: ""
+comment: 
+- !ruby/struct:SM::Flow::P 
+  body: Demarcate a section of help text. It begins with the <em>description</em>, ends with a dashed line.
+full_name: UserChoices::ChoicesBuilder#section
+is_singleton: false
+name: section
+params: (description) {|| ...}
+visibility: public

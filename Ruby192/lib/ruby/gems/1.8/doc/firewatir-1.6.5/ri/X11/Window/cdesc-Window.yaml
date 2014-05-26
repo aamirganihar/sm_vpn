@@ -1,0 +1,42 @@
+--- !ruby/object:RI::ClassDescription 
+attributes: 
+- !ruby/object:RI::Attribute 
+  comment: 
+  name: class
+  rw: R
+- !ruby/object:RI::Attribute 
+  comment: 
+  name: hint
+  rw: R
+- !ruby/object:RI::Attribute 
+  comment: 
+  name: name
+  rw: R
+- !ruby/object:RI::Attribute 
+  comment: 
+  name: parent
+  rw: R
+- !ruby/object:RI::Attribute 
+  comment: 
+  name: xid
+  rw: R
+class_methods: 
+- !ruby/object:RI::MethodSummary 
+  name: new
+comment: 
+- !ruby/struct:SM::Flow::P 
+  body: An X11 Window (toplevel window, widget, applet, etc.) Represented by its XID, an unsigned long.
+constants: []
+
+full_name: X11::Window
+includes: []
+
+instance_methods: 
+- !ruby/object:RI::MethodSummary 
+  name: children
+- !ruby/object:RI::MethodSummary 
+  name: parent_xid
+- !ruby/object:RI::MethodSummary 
+  name: send_key
+name: Window
+superclass: Object

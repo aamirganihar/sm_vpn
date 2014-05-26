@@ -1,0 +1,16 @@
+--- !ruby/object:RI::MethodDescription 
+aliases: []
+
+block_params: 
+comment: 
+- !ruby/struct:SM::Flow::P 
+  body: Allows a Symbol to be implicitly converted to a Proc.
+- !ruby/struct:SM::Flow::P 
+  body: "This allows such conveniences as:"
+- !ruby/struct:SM::Flow::VERB 
+  body: "  %{john terry fiona}.map(&amp;:capitalize)   # -&gt; %{John Terry Fiona}\n  sum = numbers.inject(&amp;:+)\n"
+full_name: Symbol#to_proc
+is_singleton: false
+name: to_proc
+params: ()
+visibility: public

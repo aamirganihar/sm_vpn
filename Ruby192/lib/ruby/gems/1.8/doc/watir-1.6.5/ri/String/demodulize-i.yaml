@@ -1,0 +1,12 @@
+--- !ruby/object:RI::MethodDescription 
+aliases: []
+
+block_params: 
+comment: 
+- !ruby/struct:SM::Flow::P 
+  body: "&quot;Watir::Span&quot; =&gt; &quot;Span&quot;"
+full_name: String#demodulize
+is_singleton: false
+name: demodulize
+params: ()
+visibility: public

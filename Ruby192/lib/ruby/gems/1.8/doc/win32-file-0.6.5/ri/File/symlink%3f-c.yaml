@@ -1,0 +1,14 @@
+--- !ruby/object:RI::MethodDescription 
+aliases: []
+
+block_params: 
+comment: 
+- !ruby/struct:SM::Flow::P 
+  body: Return true if the named file is a symbolic link, false otherwise.
+- !ruby/struct:SM::Flow::P 
+  body: This method requires Windows Vista or later to work. Otherwise, it always returns false as per MRI.
+full_name: File::symlink?
+is_singleton: true
+name: symlink?
+params: (file)
+visibility: public

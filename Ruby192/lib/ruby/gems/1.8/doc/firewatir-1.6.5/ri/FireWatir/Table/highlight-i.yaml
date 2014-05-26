@@ -1,0 +1,14 @@
+--- !ruby/object:RI::MethodDescription 
+aliases: []
+
+block_params: 
+comment: 
+- !ruby/struct:SM::Flow::P 
+  body: "Description:"
+- !ruby/struct:SM::Flow::VERB 
+  body: "  Override the highlight method, as if the tables rows are set to have a background color,\n  this will override the table background color,  and the normal flash method wont work\n"
+full_name: FireWatir::Table#highlight
+is_singleton: false
+name: highlight
+params: (set_or_clear )
+visibility: public

@@ -1,0 +1,10 @@
+--- !ruby/object:RI::MethodDescription 
+aliases: []
+
+block_params: 
+comment: 
+full_name: Windows::Error#FAILED
+is_singleton: false
+name: FAILED
+params: (status)
+visibility: public

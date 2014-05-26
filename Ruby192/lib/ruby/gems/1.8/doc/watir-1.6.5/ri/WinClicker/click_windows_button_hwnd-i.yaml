@@ -1,0 +1,12 @@
+--- !ruby/object:RI::MethodDescription 
+aliases: []
+
+block_params: 
+comment: 
+- !ruby/struct:SM::Flow::P 
+  body: "Alias for #clickWindowsButton_hwnd"
+full_name: WinClicker#click_windows_button_hwnd
+is_singleton: false
+name: click_windows_button_hwnd
+params: (hwnd , buttonCaption )
+visibility: public

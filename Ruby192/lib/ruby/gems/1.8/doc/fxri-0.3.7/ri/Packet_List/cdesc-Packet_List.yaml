@@ -1,0 +1,56 @@
+--- !ruby/object:RI::ClassDescription 
+attributes: []
+
+class_methods: 
+- !ruby/object:RI::MethodSummary 
+  name: new
+comment: 
+- !ruby/struct:SM::Flow::P 
+  body: Packet_List is a more convenient wrapper for FXIconList. This class has to be used in combination with Packet_Item.
+constants: []
+
+full_name: Packet_List
+includes: 
+- !ruby/object:RI::IncludedModule 
+  name: Responder
+instance_methods: 
+- !ruby/object:RI::MethodSummary 
+  name: add_header
+- !ruby/object:RI::MethodSummary 
+  name: add_item
+- !ruby/object:RI::MethodSummary 
+  name: appendItem
+- !ruby/object:RI::MethodSummary 
+  name: clear
+- !ruby/object:RI::MethodSummary 
+  name: clearItems
+- !ruby/object:RI::MethodSummary 
+  name: create
+- !ruby/object:RI::MethodSummary 
+  name: create_item
+- !ruby/object:RI::MethodSummary 
+  name: dirty_clear
+- !ruby/object:RI::MethodSummary 
+  name: getContentHeight
+- !ruby/object:RI::MethodSummary 
+  name: getContentWidth
+- !ruby/object:RI::MethodSummary 
+  name: getItem
+- !ruby/object:RI::MethodSummary 
+  name: on_cmd_header
+- !ruby/object:RI::MethodSummary 
+  name: removeItem
+- !ruby/object:RI::MethodSummary 
+  name: remove_item
+- !ruby/object:RI::MethodSummary 
+  name: reversed?
+- !ruby/object:RI::MethodSummary 
+  name: sortItems
+- !ruby/object:RI::MethodSummary 
+  name: sort_function
+- !ruby/object:RI::MethodSummary 
+  name: sort_index
+- !ruby/object:RI::MethodSummary 
+  name: update_header_width
+name: Packet_List
+superclass: FXIconList

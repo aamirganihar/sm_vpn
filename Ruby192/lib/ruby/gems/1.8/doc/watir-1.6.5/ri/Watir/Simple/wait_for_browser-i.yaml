@@ -1,0 +1,12 @@
+--- !ruby/object:RI::MethodDescription 
+aliases: []
+
+block_params: 
+comment: 
+- !ruby/struct:SM::Flow::P 
+  body: Some browsers (i.e. IE) need to be waited on before more actions can be performed. Most action methods in Watir::Simple already call this before and after.
+full_name: Watir::Simple#wait_for_browser
+is_singleton: false
+name: wait_for_browser
+params: ()
+visibility: public

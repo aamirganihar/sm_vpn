@@ -1,0 +1,23 @@
+--- !ruby/object:RI::MethodDescription 
+aliases: []
+
+block_params: 
+comment: 
+- !ruby/struct:SM::Flow::P 
+  body: "Environment variables beginning with <em>prefix</em> (a string) are considered to be user choices relevant to this script. Everything after the prefix names a choice (that is, a symbol). Dashes are converted to underscores. Examples:"
+- !ruby/object:SM::Flow::LIST 
+  contents: 
+  - !ruby/struct:SM::Flow::LI 
+    label: "*"
+    body: Environment variable <tt>prefix-my-choice</tt> with prefix <tt>&quot;prefix-&quot; is choice &lt;tt&gt;:my_choice</tt>.
+  - !ruby/struct:SM::Flow::LI 
+    label: "*"
+    body: Environment variable <tt>PREFIX_FOO</tt> with prefix <tt>&quot;PREFIX_&quot; is choice &lt;tt&gt;:FOO</tt>
+  type: :BULLET
+- !ruby/struct:SM::Flow::P 
+  body: "If you want an array of strings, separate the values by commas: ENV_VAR=a,b,c There's currently no way to escape a comma and no cleverness about quotes or whitespace."
+full_name: UserChoices::EnvironmentSource#with_prefix
+is_singleton: false
+name: with_prefix
+params: (prefix)
+visibility: public

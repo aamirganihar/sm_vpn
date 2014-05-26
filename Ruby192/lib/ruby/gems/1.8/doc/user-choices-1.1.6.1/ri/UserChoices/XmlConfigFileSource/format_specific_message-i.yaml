@@ -1,0 +1,10 @@
+--- !ruby/object:RI::MethodDescription 
+aliases: []
+
+block_params: 
+comment: 
+full_name: UserChoices::XmlConfigFileSource#format_specific_message
+is_singleton: false
+name: format_specific_message
+params: (ex)
+visibility: public

@@ -1,0 +1,13 @@
+--- !ruby/object:RI::MethodDescription 
+aliases: 
+- !ruby/object:RI::AliasName 
+  name: get_static_text
+block_params: 
+comment: 
+- !ruby/struct:SM::Flow::P 
+  body: Convenience method to return Static text for children of the window with the given caption
+full_name: WinClicker#getStaticText
+is_singleton: false
+name: getStaticText
+params: (caption)
+visibility: public

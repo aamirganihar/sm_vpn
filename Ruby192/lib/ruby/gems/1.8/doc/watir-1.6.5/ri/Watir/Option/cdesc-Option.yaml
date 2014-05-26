@@ -1,0 +1,22 @@
+--- !ruby/object:RI::ClassDescription 
+attributes: []
+
+class_methods: 
+- !ruby/object:RI::MethodSummary 
+  name: new
+comment: 
+- !ruby/struct:SM::Flow::P 
+  body: An item in a select list
+constants: []
+
+full_name: Watir::Option
+includes: 
+- !ruby/object:RI::IncludedModule 
+  name: OptionAccess
+- !ruby/object:RI::IncludedModule 
+  name: Watir::Exception
+instance_methods: 
+- !ruby/object:RI::MethodSummary 
+  name: select
+name: Option
+superclass: Object

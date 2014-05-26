@@ -1,0 +1,10 @@
+--- !ruby/object:RI::MethodDescription 
+aliases: []
+
+block_params: "@attr[i]"
+comment: 
+full_name: Watir::AttributeLengthPairs#each
+is_singleton: false
+name: each
+params: () {|@attr[i]| ...}
+visibility: public

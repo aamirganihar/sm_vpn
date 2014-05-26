@@ -1,0 +1,65 @@
+--- !ruby/object:RI::ClassDescription 
+attributes: 
+- !ruby/object:RI::Attribute 
+  comment: 
+  - !ruby/struct:SM::Flow::P 
+    body: The data version.
+  name: data_version
+  rw: R
+class_methods: 
+- !ruby/object:RI::MethodSummary 
+  name: new
+comment: 
+- !ruby/struct:SM::Flow::H 
+  level: 1
+  text: MIME::Types
+- !ruby/struct:SM::Flow::P 
+  body: MIME types are used in MIME-compliant communications, as in e-mail or HTTP traffic, to indicate the type of content which is transmitted. MIME::Types provides the ability for detailed information about MIME entities (provided as a set of MIME::Type objects) to be determined and used programmatically. There are many types defined by RFCs and vendors, so the list is long but not complete; don't hesitate to ask to add additional information. This library follows the IANA collection of MIME types (see below for reference).
+- !ruby/struct:SM::Flow::H 
+  level: 2
+  text: Description
+- !ruby/struct:SM::Flow::P 
+  body: MIME types are used in MIME entities, as in email or HTTP traffic. It is useful at times to have information available about MIME types (or, inversely, about files). A MIME::Type stores the known information about one MIME type.
+- !ruby/struct:SM::Flow::H 
+  level: 2
+  text: Usage
+- !ruby/struct:SM::Flow::VERB 
+  body: " require 'mime/types'\n\n plaintext = MIME::Types['text/plain']\n print plaintext.media_type           # =&gt; 'text'\n print plaintext.sub_type             # =&gt; 'plain'\n\n puts plaintext.extensions.join(&quot; &quot;)  # =&gt; 'asc txt c cc h hh cpp'\n\n puts plaintext.encoding              # =&gt; 8bit\n puts plaintext.binary?               # =&gt; false\n puts plaintext.ascii?                # =&gt; true\n puts plaintext.obsolete?             # =&gt; false\n puts plaintext.registered?           # =&gt; true\n puts plaintext == 'text/plain'       # =&gt; true\n puts MIME::Type.simplified('x-appl/x-zip') # =&gt; 'appl/zip'\n"
+- !ruby/struct:SM::Flow::P 
+  body: This module is built to conform to the MIME types of RFCs 2045 and 2231. It follows the official IANA registry at http://www.iana.org/assignments/media-types/ and ftp://ftp.iana.org/assignments/media-types with some unofficial types added from the the collection at http://www.ltsw.se/knbase/internet/mime.htp
+constants: 
+- !ruby/object:RI::Constant 
+  comment: 
+  - !ruby/struct:SM::Flow::P 
+    body: The released version of Ruby MIME::Types
+  name: VERSION
+  value: MIME::Type::VERSION
+- !ruby/object:RI::Constant 
+  comment: 
+  name: DATA_VERSION
+  value: (VERSION.to_f * 100).to_i
+- !ruby/object:RI::Constant 
+  comment: 
+  - !ruby/struct:SM::Flow::P 
+    body: The regular expression used to match a file-based MIME type definition.
+  name: TEXT_FORMAT_RE
+  value: "%r{         \\A         \\s*         ([*])?                                 # 0: Unregistered?         (!)?                                   # 1: Obsolete?         (?:(\\w+):)?                            # 2: Platform marker         #{MIME::Type::MEDIA_TYPE_RE}?          # 3,4: Media type         (?:\\s+@([^\\s]+))?                      # 5: Extensions         (?:\\s+:(#{MIME::Type::ENCODING_RE}))?  # 6: Encoding         (?:\\s+'(.+))?                          # 7: URL list         (?:\\s+=(.+))?                          # 8: Documentation         (?:\\s*([#].*)?)?         \\s*         \\z       }x"
+full_name: MIME::Types
+includes: 
+- !ruby/object:RI::IncludedModule 
+  name: Enumerable
+instance_methods: 
+- !ruby/object:RI::MethodSummary 
+  name: "[]"
+- !ruby/object:RI::MethodSummary 
+  name: add
+- !ruby/object:RI::MethodSummary 
+  name: count
+- !ruby/object:RI::MethodSummary 
+  name: each
+- !ruby/object:RI::MethodSummary 
+  name: of
+- !ruby/object:RI::MethodSummary 
+  name: type_for
+name: Types
+superclass: Object

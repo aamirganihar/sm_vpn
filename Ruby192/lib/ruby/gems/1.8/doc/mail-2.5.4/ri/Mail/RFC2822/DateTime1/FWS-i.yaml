@@ -1,0 +1,10 @@
+--- !ruby/object:RI::MethodDescription 
+aliases: []
+
+block_params: 
+comment: 
+full_name: Mail::RFC2822::DateTime1#FWS
+is_singleton: false
+name: FWS
+params: ()
+visibility: public

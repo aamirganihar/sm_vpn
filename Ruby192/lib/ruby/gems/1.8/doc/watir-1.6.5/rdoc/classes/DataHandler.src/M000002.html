@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+<!DOCTYPE html 
+     PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+     "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html>
+<head>
+  <title>new (DataHandler)</title>
+  <meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" />
+  <link rel="stylesheet" href="../.././rdoc-style.css" type="text/css" media="screen" />
+</head>
+<body class="standalone-code">
+  <pre><span class="ruby-comment cmt"># File lib/watir/datahandler.rb, line 29</span>
+        <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">initialize</span>(<span class="ruby-identifier">datafile</span>)
+                
+                <span class="ruby-comment cmt"># if the data files are in the same dir as the one you execute from this works</span>
+                <span class="ruby-identifier">directory</span> = <span class="ruby-value">`dir`</span>
+                <span class="ruby-identifier">directory</span>.<span class="ruby-identifier">match</span>(<span class="ruby-regexp re">/Directory of(.+)$/</span>)
+                <span class="ruby-identifier">working_directory</span> = <span class="ruby-identifier">$1</span>.<span class="ruby-identifier">to_s</span>.<span class="ruby-identifier">gsub</span>(<span class="ruby-regexp re">/\\/</span>,<span class="ruby-value str">&quot;/&quot;</span>).<span class="ruby-identifier">gsub</span>(<span class="ruby-regexp re">/^\s/</span>,<span class="ruby-value str">&quot;&quot;</span>)
+                <span class="ruby-identifier">file</span> = <span class="ruby-node">&quot;#{working_directory.chomp}\\#{datafile}&quot;</span>
+                
+                <span class="ruby-comment cmt"># otherwise it will take the location you specify</span>
+                <span class="ruby-keyword kw">if</span> <span class="ruby-constant">File</span>.<span class="ruby-identifier">exists?</span>(<span class="ruby-identifier">file</span>)
+                        <span class="ruby-ivar">@datafile</span> = <span class="ruby-identifier">file</span>
+                <span class="ruby-keyword kw">else</span>
+                        <span class="ruby-ivar">@datafile</span> = <span class="ruby-identifier">datafile</span>
+                <span class="ruby-keyword kw">end</span>
+                
+                <span class="ruby-ivar">@excel</span> = <span class="ruby-constant">WIN32OLE</span><span class="ruby-operator">::</span><span class="ruby-identifier">new</span>(<span class="ruby-value str">'excel.Application'</span>)
+                <span class="ruby-ivar">@workbook</span> = <span class="ruby-ivar">@excel</span>.<span class="ruby-constant">Workbooks</span>.<span class="ruby-constant">Open</span>(<span class="ruby-ivar">@datafile</span>)
+                <span class="ruby-ivar">@worksheet</span> = <span class="ruby-ivar">@workbook</span>.<span class="ruby-constant">Worksheets</span>(<span class="ruby-value">1</span>)
+                <span class="ruby-ivar">@excel</span>[<span class="ruby-value str">'Visible'</span>] = <span class="ruby-keyword kw">false</span>
+                
+        <span class="ruby-keyword kw">end</span></pre>
+</body>
+</html>

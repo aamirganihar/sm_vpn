@@ -1,0 +1,249 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+<!DOCTYPE html 
+     PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+     "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+  <title>File: Contributing.rdoc</title>
+  <meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" />
+  <meta http-equiv="Content-Script-Type" content="text/javascript" />
+  <link rel="stylesheet" href=".././rdoc-style.css" type="text/css" media="screen" />
+  <script type="text/javascript">
+  // <![CDATA[
+
+  function popupCode( url ) {
+    window.open(url, "Code", "resizable=yes,scrollbars=yes,toolbar=no,status=no,height=150,width=400")
+  }
+
+  function toggleCode( id ) {
+    if ( document.getElementById )
+      elem = document.getElementById( id );
+    else if ( document.all )
+      elem = eval( "document.all." + id );
+    else
+      return false;
+
+    elemStyle = elem.style;
+    
+    if ( elemStyle.display != "block" ) {
+      elemStyle.display = "block"
+    } else {
+      elemStyle.display = "none"
+    }
+
+    return true;
+  }
+  
+  // Make codeblocks hidden by default
+  document.writeln( "<style type=\"text/css\">div.method-source-code { display: none }</style>" )
+  
+  // ]]>
+  </script>
+
+</head>
+<body>
+
+
+
+  <div id="fileHeader">
+    <h1>Contributing.rdoc</h1>
+    <table class="header-table">
+    <tr class="top-aligned-row">
+      <td><strong>Path:</strong></td>
+      <td>Contributing.rdoc
+      </td>
+    </tr>
+    <tr class="top-aligned-row">
+      <td><strong>Last Update:</strong></td>
+      <td>Fri Dec 06 09:20:04 +0530 2013</td>
+    </tr>
+    </table>
+  </div>
+  <!-- banner header -->
+
+  <div id="bodyContent">
+
+
+
+  <div id="contextContent">
+
+    <div id="description">
+      <h2>Contributing</h2>
+<p>
+I value any contribution to <a
+href="../classes/MIME/Types.html">MIME::Types</a> you can provide: a bug
+report, a feature request, or code contributions.
+</p>
+<p>
+Code contributions to <a href="../classes/MIME/Types.html">MIME::Types</a>
+are especially &lt;del&gt;welcome&lt;/del&gt;encouraged. Because <a
+href="../classes/MIME/Types.html">MIME::Types</a> is a complex codebase,
+there are a few guidelines:
+</p>
+<ul>
+<li>Changes (aside from new <a href="../classes/MIME.html">MIME</a> types)
+&lt;strong&gt;will not&lt;/strong&gt; be accepted without tests. The test
+suite is written with MiniTest.
+
+</li>
+<li>Match my coding style.
+
+</li>
+<li>Use a thoughtfully-named topic branch that contains your change. Rebase
+your commits into logical chunks as necessary.
+
+</li>
+<li>Use <a
+href="http://tbaggery.com/2008/04/19/a-note-about-git-commit-messages.html">quality
+commit messages</a>.
+
+</li>
+<li>Do not change the version number; when your patch is accepted and a release
+is made, the version will be updated at that point.
+
+</li>
+<li>Submit a GitHub pull request with your changes.
+
+</li>
+<li>New features require new documentation.
+
+</li>
+</ul>
+<h3>Test Dependencies</h3>
+<p>
+To run the test suite, you will need to install the development
+dependencies for <a href="../classes/MIME/Types.html">MIME::Types</a>. If
+you have Bundler, you can accomplish this easily:
+</p>
+<pre>
+    $ bundle install
+</pre>
+<p>
+<a href="../classes/MIME/Types.html">MIME::Types</a> uses Ryan Davis’s
+excellent <a href="https://github.com/seattlerb/hoe">Hoe</a> to manage the
+release process, and it adds a number of rake tasks. You will mostly be
+interested in:
+</p>
+<pre>
+    $ rake
+</pre>
+<p>
+which runs the tests the same way that:
+</p>
+<pre>
+    $ rake test
+    $ rake travis
+</pre>
+<p>
+will do.
+</p>
+<h3>Workflow</h3>
+<p>
+Here&#8216;s the most direct way to get your work merged into the project:
+</p>
+<ul>
+<li>Fork the project.
+
+</li>
+<li>Clone down your fork (+git clone
+git://github.com/&lt;username&gt;/mime-types.git+).
+
+</li>
+<li>Create a topic branch to contain your change (+git checkout -b
+my_awesome_feature+).
+
+</li>
+<li>Hack away, add tests. Not necessarily in that order.
+
+</li>
+<li>Make sure everything still passes by running `rake`.
+
+</li>
+<li>If necessary, rebase your commits into logical chunks, without errors.
+
+</li>
+<li>Push the branch up (+git push origin my_awesome_feature+).
+
+</li>
+<li>Create a pull request against halostatue/mime-types and describe what your
+change does and the why you think it should be merged.
+
+</li>
+</ul>
+<h3>Contributors</h3>
+<ul>
+<li>Austin Ziegler created <a
+href="../classes/MIME/Types.html">MIME::Types</a>.
+
+</li>
+</ul>
+<p>
+Thanks to everyone else who has contributed to <a
+href="../classes/MIME/Types.html">MIME::Types</a>:
+</p>
+<ul>
+<li>Andre Pankratz
+
+</li>
+<li>Mauricio Linhares
+
+</li>
+<li>Richard Hirner
+
+</li>
+<li>Todd Carrico
+
+</li>
+<li>Garret Alfert
+
+</li>
+<li>Hans de Graaff
+
+</li>
+<li>Henrik Hodne
+
+</li>
+<li>Martin d&#8216;Allens
+
+</li>
+<li>cgat
+
+</li>
+<li>Greg Brockman
+
+</li>
+</ul>
+
+    </div>
+
+
+   </div>
+
+
+  </div>
+
+
+    <!-- if includes -->
+
+    <div id="section">
+
+
+
+
+
+      
+
+
+    <!-- if method_list -->
+
+
+  </div>
+
+
+<div id="validator-badges">
+  <p><small><a href="http://validator.w3.org/check/referer">[Validate]</a></small></p>
+</div>
+
+</body>
+</html>

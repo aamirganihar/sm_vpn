@@ -1,0 +1,12 @@
+--- !ruby/object:RI::MethodDescription 
+aliases: []
+
+block_params: 
+comment: 
+- !ruby/struct:SM::Flow::P 
+  body: Returns the return path of the mail object, or sets it if you pass a string
+full_name: Mail::Message#return_path
+is_singleton: false
+name: return_path
+params: ( val = nil )
+visibility: public

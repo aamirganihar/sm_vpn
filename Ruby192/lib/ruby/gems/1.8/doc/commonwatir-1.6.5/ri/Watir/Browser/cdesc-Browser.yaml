@@ -1,0 +1,58 @@
+--- !ruby/object:RI::ClassDescription 
+attributes: []
+
+class_methods: 
+- !ruby/object:RI::MethodSummary 
+  name: attach
+- !ruby/object:RI::MethodSummary 
+  name: browser_names
+- !ruby/object:RI::MethodSummary 
+  name: default
+- !ruby/object:RI::MethodSummary 
+  name: default=
+- !ruby/object:RI::MethodSummary 
+  name: new
+- !ruby/object:RI::MethodSummary 
+  name: options
+- !ruby/object:RI::MethodSummary 
+  name: set_options
+- !ruby/object:RI::MethodSummary 
+  name: start
+- !ruby/object:RI::MethodSummary 
+  name: support
+comment: 
+- !ruby/struct:SM::Flow::P 
+  body: Watir is a family of open-source drivers for automating web browsers. You can use it to write tests that are easy to read and maintain.
+- !ruby/struct:SM::Flow::P 
+  body: Watir drives browsers the same way people do. It clicks links, fills in forms, presses buttons. Watir also checks results, such as whether expected text appears on a page.
+- !ruby/struct:SM::Flow::P 
+  body: The Watir family currently includes support for Internet Explorer (on Windows), Firefox (on Windows, Mac and Linux) and Safari (on Mac).
+- !ruby/struct:SM::Flow::P 
+  body: "Project Homepage: http://wtr.rubyforge.org"
+- !ruby/struct:SM::Flow::P 
+  body: This Browser module provides a generic interface that tests can use to access any browser. The actual browser (and thus the actual Watir driver) is determined at runtime based on configuration settings.
+- !ruby/struct:SM::Flow::VERB 
+  body: "  require 'watir'\n  browser = Watir::Browser.new\n  browser.goto 'http://google.com'\n  browser.text_field(:name, 'q').set 'pickaxe'\n  browser.button(:name, 'btnG').click\n  if browser.text.include? 'Programming Ruby'\n    puts 'Text was found'\n  else\n    puts 'Text was not found'\n  end\n"
+- !ruby/struct:SM::Flow::P 
+  body: A comprehensive summary of the Watir API can be found here http://wiki.openqa.org/display/WTR/Methods+supported+by+Element
+- !ruby/struct:SM::Flow::P 
+  body: There are two ways to configure the browser that will be used by your tests.
+- !ruby/struct:SM::Flow::P 
+  body: One is to set the <tt>watir_browser</tt> environment variable to <tt>ie</tt> or <tt>firefox</tt>. (How you do this depends on your platform.)
+- !ruby/struct:SM::Flow::P 
+  body: The other is to create a file that looks like this.
+- !ruby/struct:SM::Flow::VERB 
+  body: "  browser: ie\n"
+- !ruby/struct:SM::Flow::P 
+  body: And then to add this line to your script, after the require statement and before you invoke Browser.new.
+- !ruby/struct:SM::Flow::VERB 
+  body: "  Watir.options_file = 'path/to/the/file/you/just/created'\n"
+constants: []
+
+full_name: Watir::Browser
+includes: []
+
+instance_methods: []
+
+name: Browser
+superclass: 

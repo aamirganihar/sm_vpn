@@ -1,0 +1,66 @@
+--- !ruby/object:RI::ClassDescription 
+attributes: []
+
+class_methods: []
+
+comment: 
+constants: 
+- !ruby/object:RI::Constant 
+  comment: 
+  name: POLICY_VIEW_LOCAL_INFORMATION
+  value: "0x00000001"
+- !ruby/object:RI::Constant 
+  comment: 
+  name: POLICY_VIEW_AUDIT_INFORMATION
+  value: "0x00000002"
+- !ruby/object:RI::Constant 
+  comment: 
+  name: POLICY_GET_PRIVATE_INFORMATION
+  value: "0x00000004"
+- !ruby/object:RI::Constant 
+  comment: 
+  name: POLICY_TRUST_ADMIN
+  value: "0x00000008"
+- !ruby/object:RI::Constant 
+  comment: 
+  name: POLICY_CREATE_ACCOUNT
+  value: "0x00000010"
+- !ruby/object:RI::Constant 
+  comment: 
+  name: POLICY_CREATE_SECRET
+  value: "0x00000020"
+- !ruby/object:RI::Constant 
+  comment: 
+  name: POLICY_CREATE_PRIVILEGE
+  value: "0x00000040"
+- !ruby/object:RI::Constant 
+  comment: 
+  name: POLICY_SET_DEFAULT_QUOTA_LIMITS
+  value: "0x00000080"
+- !ruby/object:RI::Constant 
+  comment: 
+  name: POLICY_SET_AUDIT_REQUIREMENTS
+  value: "0x00000100"
+- !ruby/object:RI::Constant 
+  comment: 
+  name: POLICY_AUDIT_LOG_ADMIN
+  value: "0x00000200"
+- !ruby/object:RI::Constant 
+  comment: 
+  name: POLICY_SERVER_ADMIN
+  value: "0x00000400"
+- !ruby/object:RI::Constant 
+  comment: 
+  name: POLICY_LOOKUP_NAMES
+  value: "0x00000800"
+- !ruby/object:RI::Constant 
+  comment: 
+  name: POLICY_NOTIFICATION
+  value: "0x00001000"
+full_name: Windows::Security::Authentication
+includes: []
+
+instance_methods: []
+
+name: Authentication
+superclass: 

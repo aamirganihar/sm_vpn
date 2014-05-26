@@ -1,0 +1,10 @@
+--- !ruby/object:RI::MethodDescription 
+aliases: []
+
+block_params: 
+comment: 
+full_name: Selenium::RSpec::Reporting::HtmlReport::inject_placeholder
+is_singleton: true
+name: inject_placeholder
+params: (content)
+visibility: public

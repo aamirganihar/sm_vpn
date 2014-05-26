@@ -1,0 +1,12 @@
+--- !ruby/object:RI::MethodDescription 
+aliases: []
+
+block_params: 
+comment: 
+- !ruby/struct:SM::Flow::P 
+  body: Sets the epilogue to a string (adds text after the last MIME boundary)
+full_name: Mail::Body#epilogue=
+is_singleton: false
+name: epilogue=
+params: ( val )
+visibility: public

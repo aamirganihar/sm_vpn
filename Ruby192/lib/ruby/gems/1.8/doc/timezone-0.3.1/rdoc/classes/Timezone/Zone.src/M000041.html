@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html 
+     PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+     "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html>
+<head>
+  <title>new (Timezone::Zone)</title>
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+  <link rel="stylesheet" href="../../.././rdoc-style.css" type="text/css" media="screen" />
+</head>
+<body class="standalone-code">
+  <pre><span class="ruby-comment cmt"># File lib/timezone/zone.rb, line 27</span>
+    <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">initialize</span> <span class="ruby-identifier">options</span>
+      <span class="ruby-keyword kw">if</span> <span class="ruby-identifier">options</span>.<span class="ruby-identifier">has_key?</span>(<span class="ruby-identifier">:lat</span>) <span class="ruby-operator">&amp;&amp;</span> <span class="ruby-identifier">options</span>.<span class="ruby-identifier">has_key?</span>(<span class="ruby-identifier">:lon</span>)
+        <span class="ruby-identifier">options</span>[<span class="ruby-identifier">:zone</span>] = <span class="ruby-identifier">timezone_id</span> <span class="ruby-identifier">options</span>[<span class="ruby-identifier">:lat</span>], <span class="ruby-identifier">options</span>[<span class="ruby-identifier">:lon</span>]
+      <span class="ruby-keyword kw">elsif</span> <span class="ruby-identifier">options</span>.<span class="ruby-identifier">has_key?</span>(<span class="ruby-identifier">:latlon</span>)
+        <span class="ruby-identifier">options</span>[<span class="ruby-identifier">:zone</span>] = <span class="ruby-identifier">timezone_id</span> <span class="ruby-operator">*</span><span class="ruby-identifier">options</span>[<span class="ruby-identifier">:latlon</span>]
+      <span class="ruby-keyword kw">end</span>
+
+      <span class="ruby-identifier">raise</span> <span class="ruby-constant">Timezone</span><span class="ruby-operator">::</span><span class="ruby-constant">Error</span><span class="ruby-operator">::</span><span class="ruby-constant">NilZone</span>, <span class="ruby-value str">'No zone was found. Please specify a zone.'</span> <span class="ruby-keyword kw">if</span> <span class="ruby-identifier">options</span>[<span class="ruby-identifier">:zone</span>].<span class="ruby-identifier">nil?</span>
+
+      <span class="ruby-identifier">data</span> = <span class="ruby-constant">Zone</span>.<span class="ruby-identifier">get_zone_data</span>(<span class="ruby-identifier">options</span>[<span class="ruby-identifier">:zone</span>])
+
+      <span class="ruby-ivar">@rules</span> = <span class="ruby-identifier">data</span>[<span class="ruby-value str">'zone'</span>]
+      <span class="ruby-ivar">@zone</span> = <span class="ruby-identifier">data</span>[<span class="ruby-value str">'_zone'</span>] <span class="ruby-operator">||</span> <span class="ruby-identifier">options</span>[<span class="ruby-identifier">:zone</span>]
+    <span class="ruby-keyword kw">end</span></pre>
+</body>
+</html>

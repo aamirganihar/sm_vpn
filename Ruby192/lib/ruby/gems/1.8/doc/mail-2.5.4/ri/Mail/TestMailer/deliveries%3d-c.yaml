@@ -1,0 +1,32 @@
+--- !ruby/object:RI::MethodDescription 
+aliases: []
+
+block_params: 
+comment: 
+- !ruby/struct:SM::Flow::P 
+  body: Allows you to over write the default deliveries store from an array to some other object. If you just want to clear the store, call TestMailer.deliveries.clear.
+- !ruby/struct:SM::Flow::P 
+  body: "If you place another object here, please make sure it responds to:"
+- !ruby/object:SM::Flow::LIST 
+  contents: 
+  - !ruby/struct:SM::Flow::LI 
+    label: "*"
+    body: "&lt;&lt; (message)"
+  - !ruby/struct:SM::Flow::LI 
+    label: "*"
+    body: clear
+  - !ruby/struct:SM::Flow::LI 
+    label: "*"
+    body: length
+  - !ruby/struct:SM::Flow::LI 
+    label: "*"
+    body: size
+  - !ruby/struct:SM::Flow::LI 
+    label: "*"
+    body: and other common Array methods
+  type: :BULLET
+full_name: Mail::TestMailer::deliveries=
+is_singleton: true
+name: deliveries=
+params: (val)
+visibility: public

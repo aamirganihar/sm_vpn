@@ -1,0 +1,10 @@
+--- !ruby/object:RI::MethodDescription 
+aliases: []
+
+block_params: 
+comment: 
+full_name: Mail::ContentDisposition::Parameter0#attr
+is_singleton: false
+name: attr
+params: ()
+visibility: public

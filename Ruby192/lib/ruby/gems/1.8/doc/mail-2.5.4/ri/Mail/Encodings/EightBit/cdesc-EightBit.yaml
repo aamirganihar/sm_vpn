@@ -1,0 +1,27 @@
+--- !ruby/object:RI::ClassDescription 
+attributes: []
+
+class_methods: 
+- !ruby/object:RI::MethodSummary 
+  name: cost
+- !ruby/object:RI::MethodSummary 
+  name: decode
+- !ruby/object:RI::MethodSummary 
+  name: encode
+comment: 
+constants: 
+- !ruby/object:RI::Constant 
+  comment: 
+  name: NAME
+  value: "'8bit'"
+- !ruby/object:RI::Constant 
+  comment: 
+  name: PRIORITY
+  value: "4"
+full_name: Mail::Encodings::EightBit
+includes: []
+
+instance_methods: []
+
+name: EightBit
+superclass: Binary

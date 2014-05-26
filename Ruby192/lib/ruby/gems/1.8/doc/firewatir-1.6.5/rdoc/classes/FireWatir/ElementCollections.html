@@ -1,0 +1,347 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+<!DOCTYPE html 
+     PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+     "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+  <title>Class: FireWatir::ElementCollections</title>
+  <meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" />
+  <meta http-equiv="Content-Script-Type" content="text/javascript" />
+  <link rel="stylesheet" href="../.././rdoc-style.css" type="text/css" media="screen" />
+  <script type="text/javascript">
+  // <![CDATA[
+
+  function popupCode( url ) {
+    window.open(url, "Code", "resizable=yes,scrollbars=yes,toolbar=no,status=no,height=150,width=400")
+  }
+
+  function toggleCode( id ) {
+    if ( document.getElementById )
+      elem = document.getElementById( id );
+    else if ( document.all )
+      elem = eval( "document.all." + id );
+    else
+      return false;
+
+    elemStyle = elem.style;
+    
+    if ( elemStyle.display != "block" ) {
+      elemStyle.display = "block"
+    } else {
+      elemStyle.display = "none"
+    }
+
+    return true;
+  }
+  
+  // Make codeblocks hidden by default
+  document.writeln( "<style type=\"text/css\">div.method-source-code { display: none }</style>" )
+  
+  // ]]>
+  </script>
+
+</head>
+<body>
+
+
+
+    <div id="classHeader">
+        <table class="header-table">
+        <tr class="top-aligned-row">
+          <td><strong>Class</strong></td>
+          <td class="class-name-in-header">FireWatir::ElementCollections</td>
+        </tr>
+        <tr class="top-aligned-row">
+            <td><strong>In:</strong></td>
+            <td>
+                <a href="../../files/lib/firewatir/element_collections_rb.html">
+                lib/firewatir/element_collections.rb
+                </a>
+        <br />
+            </td>
+        </tr>
+
+        <tr class="top-aligned-row">
+            <td><strong>Parent:</strong></td>
+            <td>
+                Object
+            </td>
+        </tr>
+        </table>
+    </div>
+  <!-- banner header -->
+
+  <div id="bodyContent">
+
+
+
+  <div id="contextContent">
+
+    <div id="description">
+      <p>
+Description:
+</p>
+<pre>
+  Class for iterating over elements of common type like links, images, divs etc.
+</pre>
+
+    </div>
+
+
+   </div>
+
+    <div id="method-list">
+      <h3 class="section-bar">Methods</h3>
+
+      <div class="name-list">
+      <a href="#M000205">[]</a>&nbsp;&nbsp;
+      <a href="#M000204">each</a>&nbsp;&nbsp;
+      <a href="#M000206">first</a>&nbsp;&nbsp;
+      <a href="#M000199">inherited</a>&nbsp;&nbsp;
+      <a href="#M000209">inspect</a>&nbsp;&nbsp;
+      <a href="#M000207">last</a>&nbsp;&nbsp;
+      <a href="#M000202">length</a>&nbsp;&nbsp;
+      <a href="#M000201">locate_elements</a>&nbsp;&nbsp;
+      <a href="#M000200">new</a>&nbsp;&nbsp;
+      <a href="#M000203">size</a>&nbsp;&nbsp;
+      <a href="#M000208">to_s</a>&nbsp;&nbsp;
+      </div>
+    </div>
+
+  </div>
+
+
+    <!-- if includes -->
+    <div id="includes">
+      <h3 class="section-bar">Included Modules</h3>
+
+      <div id="includes-list">
+        <span class="include-name">Enumerable</span>
+        <span class="include-name"><a href="../JsshSocket.html">JsshSocket</a></span>
+      </div>
+    </div>
+
+    <div id="section">
+
+
+
+
+
+      
+
+
+    <!-- if method_list -->
+    <div id="methods">
+      <h3 class="section-bar">Public Class methods</h3>
+
+      <div id="method-M000199" class="method-detail">
+        <a name="M000199"></a>
+
+        <div class="method-heading">
+          <a href="ElementCollections.src/M000199.html" target="Code" class="method-signature"
+            onclick="popupCode('ElementCollections.src/M000199.html');return false;">
+          <span class="method-name">inherited</span><span class="method-args">(subclass)</span>
+          </a>
+        </div>
+      
+        <div class="method-description">
+        </div>
+      </div>
+
+      <div id="method-M000200" class="method-detail">
+        <a name="M000200"></a>
+
+        <div class="method-heading">
+          <a href="ElementCollections.src/M000200.html" target="Code" class="method-signature"
+            onclick="popupCode('ElementCollections.src/M000200.html');return false;">
+          <span class="method-name">new</span><span class="method-args">(container)</span>
+          </a>
+        </div>
+      
+        <div class="method-description">
+        </div>
+      </div>
+
+      <h3 class="section-bar">Public Instance methods</h3>
+
+      <div id="method-M000205" class="method-detail">
+        <a name="M000205"></a>
+
+        <div class="method-heading">
+          <a href="ElementCollections.src/M000205.html" target="Code" class="method-signature"
+            onclick="popupCode('ElementCollections.src/M000205.html');return false;">
+          <span class="method-name">[]</span><span class="method-args">(n)</span>
+          </a>
+        </div>
+      
+        <div class="method-description">
+          <p>
+Description:
+</p>
+<pre>
+  Accesses nth element of same tag and type found on the page.
+</pre>
+<p>
+Input:
+</p>
+<pre>
+  n - index of element (1 based)
+</pre>
+        </div>
+      </div>
+
+      <div id="method-M000204" class="method-detail">
+        <a name="M000204"></a>
+
+        <div class="method-heading">
+          <a href="ElementCollections.src/M000204.html" target="Code" class="method-signature"
+            onclick="popupCode('ElementCollections.src/M000204.html');return false;">
+          <span class="method-name">each</span><span class="method-args">() {|@element_objects[i]| ...}</span>
+          </a>
+        </div>
+      
+        <div class="method-description">
+          <p>
+Description:
+</p>
+<pre>
+  Iterate over the elements of same tag and type found on the page.
+</pre>
+        </div>
+      </div>
+
+      <div id="method-M000206" class="method-detail">
+        <a name="M000206"></a>
+
+        <div class="method-heading">
+          <a href="ElementCollections.src/M000206.html" target="Code" class="method-signature"
+            onclick="popupCode('ElementCollections.src/M000206.html');return false;">
+          <span class="method-name">first</span><span class="method-args">()</span>
+          </a>
+        </div>
+      
+        <div class="method-description">
+          <p>
+Returns the <a href="ElementCollections.html#M000206">first</a> element in
+the collection.
+</p>
+        </div>
+      </div>
+
+      <div id="method-M000209" class="method-detail">
+        <a name="M000209"></a>
+
+        <div class="method-heading">
+          <a href="ElementCollections.src/M000209.html" target="Code" class="method-signature"
+            onclick="popupCode('ElementCollections.src/M000209.html');return false;">
+          <span class="method-name">inspect</span><span class="method-args">()</span>
+          </a>
+        </div>
+      
+        <div class="method-description">
+        </div>
+      </div>
+
+      <div id="method-M000207" class="method-detail">
+        <a name="M000207"></a>
+
+        <div class="method-heading">
+          <a href="ElementCollections.src/M000207.html" target="Code" class="method-signature"
+            onclick="popupCode('ElementCollections.src/M000207.html');return false;">
+          <span class="method-name">last</span><span class="method-args">()</span>
+          </a>
+        </div>
+      
+        <div class="method-description">
+          <p>
+Returns the <a href="ElementCollections.html#M000207">last</a> element in
+the collection.
+</p>
+        </div>
+      </div>
+
+      <div id="method-M000202" class="method-detail">
+        <a name="M000202"></a>
+
+        <div class="method-heading">
+          <a href="ElementCollections.src/M000202.html" target="Code" class="method-signature"
+            onclick="popupCode('ElementCollections.src/M000202.html');return false;">
+          <span class="method-name">length</span><span class="method-args">()</span>
+          </a>
+        </div>
+      
+        <div class="method-description">
+          <p>
+Description:
+</p>
+<pre>
+  Gets the length of elements of same tag and type found on the page.
+</pre>
+<p>
+Ouput:
+</p>
+<pre>
+  Count of elements found on the page.
+</pre>
+        </div>
+      </div>
+
+      <div id="method-M000201" class="method-detail">
+        <a name="M000201"></a>
+
+        <div class="method-heading">
+          <a href="ElementCollections.src/M000201.html" target="Code" class="method-signature"
+            onclick="popupCode('ElementCollections.src/M000201.html');return false;">
+          <span class="method-name">locate_elements</span><span class="method-args">()</span>
+          </a>
+        </div>
+      
+        <div class="method-description">
+          <p>
+default implementation. overridden by some subclasses.
+</p>
+        </div>
+      </div>
+
+      <div id="method-M000203" class="method-detail">
+        <a name="M000203"></a>
+
+        <div class="method-heading">
+          <span class="method-name">size</span><span class="method-args">()</span>
+        </div>
+      
+        <div class="method-description">
+          <p>
+Alias for <a href="ElementCollections.html#M000202">length</a>
+</p>
+        </div>
+      </div>
+
+      <div id="method-M000208" class="method-detail">
+        <a name="M000208"></a>
+
+        <div class="method-heading">
+          <a href="ElementCollections.src/M000208.html" target="Code" class="method-signature"
+            onclick="popupCode('ElementCollections.src/M000208.html');return false;">
+          <span class="method-name">to_s</span><span class="method-args">()</span>
+          </a>
+        </div>
+      
+        <div class="method-description">
+        </div>
+      </div>
+
+
+    </div>
+
+
+  </div>
+
+
+<div id="validator-badges">
+  <p><small><a href="http://validator.w3.org/check/referer">[Validate]</a></small></p>
+</div>
+
+</body>
+</html>

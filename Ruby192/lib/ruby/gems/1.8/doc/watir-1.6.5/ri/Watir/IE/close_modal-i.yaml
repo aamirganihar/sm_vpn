@@ -1,0 +1,12 @@
+--- !ruby/object:RI::MethodDescription 
+aliases: []
+
+block_params: 
+comment: 
+- !ruby/struct:SM::Flow::P 
+  body: close modal dialog. unlike IE#modal_dialog.close, does not wait for dialog to appear and does not raise exception if no window is found. returns true if modal was found and close, otherwise false
+full_name: Watir::IE#close_modal
+is_singleton: false
+name: close_modal
+params: ()
+visibility: public

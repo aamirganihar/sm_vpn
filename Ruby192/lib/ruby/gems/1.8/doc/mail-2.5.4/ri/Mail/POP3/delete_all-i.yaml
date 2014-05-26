@@ -1,0 +1,12 @@
+--- !ruby/object:RI::MethodDescription 
+aliases: []
+
+block_params: 
+comment: 
+- !ruby/struct:SM::Flow::P 
+  body: Delete all emails from a POP3 server
+full_name: Mail::POP3#delete_all
+is_singleton: false
+name: delete_all
+params: ()
+visibility: public

@@ -1,0 +1,26 @@
+--- !ruby/object:RI::ClassDescription 
+attributes: []
+
+class_methods: []
+
+comment: 
+constants: 
+- !ruby/object:RI::Constant 
+  comment: 
+  name: INVALID_HANDLE_VALUE
+  value: "0xFFFFFFFF"
+- !ruby/object:RI::Constant 
+  comment: 
+  name: HANDLE_FLAG_INHERIT
+  value: "0x00000001"
+- !ruby/object:RI::Constant 
+  comment: 
+  name: HANDLE_FLAG_PROTECT_FROM_CLOSE
+  value: "0x00000002"
+full_name: Windows::Handle
+includes: []
+
+instance_methods: []
+
+name: Handle
+superclass: 

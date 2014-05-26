@@ -1,0 +1,26 @@
+--- !ruby/object:RI::MethodDescription 
+aliases: []
+
+block_params: 
+comment: 
+- !ruby/struct:SM::Flow::P 
+  body: "Specifies the speed that commands will be executed at. Choices are:"
+- !ruby/object:SM::Flow::LIST 
+  contents: 
+  - !ruby/struct:SM::Flow::LI 
+    label: "*"
+    body: ":slow (default)"
+  - !ruby/struct:SM::Flow::LI 
+    label: "*"
+    body: ":fast"
+  - !ruby/struct:SM::Flow::LI 
+    label: "*"
+    body: ":zippy"
+  type: :BULLET
+- !ruby/struct:SM::Flow::P 
+  body: With IE#speed= :zippy, text fields will be entered at once, instead of character by character (default).
+full_name: Watir::IE#speed=
+is_singleton: false
+name: speed=
+params: (how_fast)
+visibility: public

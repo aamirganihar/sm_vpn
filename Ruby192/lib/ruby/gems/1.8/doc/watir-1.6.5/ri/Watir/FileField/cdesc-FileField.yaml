@@ -1,0 +1,25 @@
+--- !ruby/object:RI::ClassDescription 
+attributes: []
+
+class_methods: []
+
+comment: 
+- !ruby/struct:SM::Flow::P 
+  body: For fields that accept file uploads Windows dialog is opened and handled in this case by autoit launching into a new process.
+constants: 
+- !ruby/object:RI::Constant 
+  comment: 
+  name: INPUT_TYPES
+  value: "[\"file\"]"
+- !ruby/object:RI::Constant 
+  comment: 
+  name: POPUP_TITLES
+  value: "['Choose file', 'Choose File to Upload']"
+full_name: Watir::FileField
+includes: []
+
+instance_methods: 
+- !ruby/object:RI::MethodSummary 
+  name: set
+name: FileField
+superclass: InputElement

@@ -1,0 +1,17 @@
+--- !ruby/object:RI::ClassDescription 
+attributes: []
+
+class_methods: []
+
+comment: 
+- !ruby/struct:SM::Flow::P 
+  body: This exception is thrown if we are unable to connect to JSSh.
+constants: []
+
+full_name: Watir::Exception::UnableToStartJSShException
+includes: []
+
+instance_methods: []
+
+name: UnableToStartJSShException
+superclass: WatirException

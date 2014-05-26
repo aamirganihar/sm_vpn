@@ -1,0 +1,12 @@
+--- !ruby/object:RI::MethodDescription 
+aliases: []
+
+block_params: ie
+comment: 
+- !ruby/struct:SM::Flow::P 
+  body: Yields successively to each IE window on the current desktop. Takes a block. This method will not work when Watir/Ruby is run under a service (instead of a user). Yields to the window and its hwnd.
+full_name: Watir::IE::each
+is_singleton: true
+name: each
+params: () {|ie| ...}
+visibility: public

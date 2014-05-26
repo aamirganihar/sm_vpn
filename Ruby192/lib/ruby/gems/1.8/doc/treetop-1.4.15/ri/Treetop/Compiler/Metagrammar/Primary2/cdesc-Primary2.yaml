@@ -1,0 +1,18 @@
+--- !ruby/object:RI::ClassDescription 
+attributes: []
+
+class_methods: []
+
+comment: 
+constants: []
+
+full_name: Treetop::Compiler::Metagrammar::Primary2
+includes: []
+
+instance_methods: 
+- !ruby/object:RI::MethodSummary 
+  name: predicate_block
+- !ruby/object:RI::MethodSummary 
+  name: prefix
+name: Primary2
+superclass: 

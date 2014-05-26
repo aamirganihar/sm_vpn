@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+<!DOCTYPE html 
+     PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+     "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html>
+<head>
+  <title>window (Watir::IE::Process)</title>
+  <meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" />
+  <link rel="stylesheet" href="../../../.././rdoc-style.css" type="text/css" media="screen" />
+</head>
+<body class="standalone-code">
+  <pre><span class="ruby-comment cmt"># File lib/watir/ie-process.rb, line 19</span>
+      <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">window</span>
+        <span class="ruby-constant">Waiter</span>.<span class="ruby-identifier">wait_until</span> <span class="ruby-keyword kw">do</span>
+          <span class="ruby-constant">IE</span>.<span class="ruby-identifier">each</span> <span class="ruby-keyword kw">do</span> <span class="ruby-operator">|</span> <span class="ruby-identifier">ie</span> <span class="ruby-operator">|</span>
+            <span class="ruby-identifier">window</span> = <span class="ruby-identifier">ie</span>.<span class="ruby-identifier">ie</span>
+            <span class="ruby-identifier">hwnd</span> = <span class="ruby-identifier">ie</span>.<span class="ruby-identifier">hwnd</span>
+            <span class="ruby-identifier">process_id</span> = <span class="ruby-constant">Process</span>.<span class="ruby-identifier">process_id_from_hwnd</span> <span class="ruby-identifier">hwnd</span>        
+            <span class="ruby-keyword kw">return</span> <span class="ruby-identifier">window</span> <span class="ruby-keyword kw">if</span> <span class="ruby-identifier">process_id</span> <span class="ruby-operator">==</span> <span class="ruby-ivar">@process_id</span>
+          <span class="ruby-keyword kw">end</span>
+        <span class="ruby-keyword kw">end</span>
+      <span class="ruby-keyword kw">end</span></pre>
+</body>
+</html>

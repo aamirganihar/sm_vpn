@@ -1,0 +1,12 @@
+--- !ruby/object:RI::MethodDescription 
+aliases: []
+
+block_params: ""
+comment: 
+- !ruby/struct:SM::Flow::P 
+  body: Run the block. During the execution, the contents of <em>file</em> (named by a string) is replaced with <em>contents</em>.
+full_name: S4tUtils#with_local_config_file
+is_singleton: false
+name: with_local_config_file
+params: (file, contents) {|| ...}
+visibility: public

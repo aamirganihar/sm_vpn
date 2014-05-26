@@ -1,0 +1,10 @@
+--- !ruby/object:RI::MethodDescription 
+aliases: []
+
+block_params: 
+comment: 
+full_name: TestRecursiveOpenStruct#testKlammer
+is_singleton: false
+name: testKlammer
+params: ()
+visibility: public

@@ -1,0 +1,18 @@
+--- !ruby/object:RI::MethodDescription 
+aliases: []
+
+block_params: 
+comment: 
+- !ruby/struct:SM::Flow::P 
+  body: Get a list of specified timezones and the basic information accompanying that zone
+- !ruby/struct:SM::Flow::VERB 
+  body: "  zones = Timezone::Zone.list(*zones)\n"
+- !ruby/struct:SM::Flow::P 
+  body: zones - An array of timezone names. (i.e. Timezone::Zones.list(&quot;America/Chicago&quot;, &quot;Australia/Sydney&quot;))
+- !ruby/struct:SM::Flow::P 
+  body: The result is a Hash of timezones with their title, offset in seconds, UTC offset, and if it uses DST.
+full_name: Timezone::Zone::list
+is_singleton: true
+name: list
+params: (*args)
+visibility: public

@@ -1,0 +1,12 @@
+--- !ruby/object:RI::MethodDescription 
+aliases: []
+
+block_params: 
+comment: 
+- !ruby/struct:SM::Flow::P 
+  body: Select an item from a selectbox (a.k.a &quot;combo box&quot;, or &quot;pulldown&quot;) The selectbox is chose by matching its order of appearance in the document. The item is selected based on the text content of &lt;OPTION&gt; tags.
+full_name: Watir::Simple#select_from_combobox_with_index
+is_singleton: false
+name: select_from_combobox_with_index
+params: (index, text)
+visibility: public

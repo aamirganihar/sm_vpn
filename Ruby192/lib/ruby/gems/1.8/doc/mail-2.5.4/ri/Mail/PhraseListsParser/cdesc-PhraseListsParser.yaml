@@ -1,0 +1,16 @@
+--- !ruby/object:RI::ClassDescription 
+attributes: []
+
+class_methods: []
+
+comment: 
+constants: []
+
+full_name: Mail::PhraseListsParser
+includes: 
+- !ruby/object:RI::IncludedModule 
+  name: PhraseLists
+instance_methods: []
+
+name: PhraseListsParser
+superclass: Treetop::Runtime::CompiledParser

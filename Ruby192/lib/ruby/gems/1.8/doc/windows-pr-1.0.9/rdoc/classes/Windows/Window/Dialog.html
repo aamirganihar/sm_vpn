@@ -1,0 +1,372 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+<!DOCTYPE html 
+     PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+     "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+  <title>Module: Windows::Window::Dialog</title>
+  <meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" />
+  <meta http-equiv="Content-Script-Type" content="text/javascript" />
+  <link rel="stylesheet" href="../../.././rdoc-style.css" type="text/css" media="screen" />
+  <script type="text/javascript">
+  // <![CDATA[
+
+  function popupCode( url ) {
+    window.open(url, "Code", "resizable=yes,scrollbars=yes,toolbar=no,status=no,height=150,width=400")
+  }
+
+  function toggleCode( id ) {
+    if ( document.getElementById )
+      elem = document.getElementById( id );
+    else if ( document.all )
+      elem = eval( "document.all." + id );
+    else
+      return false;
+
+    elemStyle = elem.style;
+    
+    if ( elemStyle.display != "block" ) {
+      elemStyle.display = "block"
+    } else {
+      elemStyle.display = "none"
+    }
+
+    return true;
+  }
+  
+  // Make codeblocks hidden by default
+  document.writeln( "<style type=\"text/css\">div.method-source-code { display: none }</style>" )
+  
+  // ]]>
+  </script>
+
+</head>
+<body>
+
+
+
+    <div id="classHeader">
+        <table class="header-table">
+        <tr class="top-aligned-row">
+          <td><strong>Module</strong></td>
+          <td class="class-name-in-header">Windows::Window::Dialog</td>
+        </tr>
+        <tr class="top-aligned-row">
+            <td><strong>In:</strong></td>
+            <td>
+                <a href="../../../files/lib/windows/window/dialog_rb.html">
+                lib/windows/window/dialog.rb
+                </a>
+        <br />
+            </td>
+        </tr>
+
+        </table>
+    </div>
+  <!-- banner header -->
+
+  <div id="bodyContent">
+
+
+
+  <div id="contextContent">
+
+
+
+   </div>
+
+    <div id="method-list">
+      <h3 class="section-bar">Methods</h3>
+
+      <div class="name-list">
+      <a href="#M000175">CreateDialog</a>&nbsp;&nbsp;
+      <a href="#M000176">CreateDialogIndirect</a>&nbsp;&nbsp;
+      <a href="#M000177">DialogBox</a>&nbsp;&nbsp;
+      <a href="#M000178">DialogBoxIndirect</a>&nbsp;&nbsp;
+      </div>
+    </div>
+
+  </div>
+
+
+    <!-- if includes -->
+
+    <div id="section">
+
+
+    <div id="constants-list">
+      <h3 class="section-bar">Constants</h3>
+
+      <div class="name-list">
+        <table summary="Constants">
+        <tr class="top-aligned-row context-row">
+          <td class="context-item-name">MB_OK</td>
+          <td>=</td>
+          <td class="context-item-value">0x00000000</td>
+        </tr>
+        <tr class="top-aligned-row context-row">
+          <td class="context-item-name">MB_OKCANCEL</td>
+          <td>=</td>
+          <td class="context-item-value">0x00000001</td>
+        </tr>
+        <tr class="top-aligned-row context-row">
+          <td class="context-item-name">MB_ABORTRETRYIGNORE</td>
+          <td>=</td>
+          <td class="context-item-value">0x00000002</td>
+        </tr>
+        <tr class="top-aligned-row context-row">
+          <td class="context-item-name">MB_YESNOCANCEL</td>
+          <td>=</td>
+          <td class="context-item-value">0x00000003</td>
+        </tr>
+        <tr class="top-aligned-row context-row">
+          <td class="context-item-name">MB_YESNO</td>
+          <td>=</td>
+          <td class="context-item-value">0x00000004</td>
+        </tr>
+        <tr class="top-aligned-row context-row">
+          <td class="context-item-name">MB_RETRYCANCEL</td>
+          <td>=</td>
+          <td class="context-item-value">0x00000005</td>
+        </tr>
+        <tr class="top-aligned-row context-row">
+          <td class="context-item-name">MB_CANCELTRYCONTINUE</td>
+          <td>=</td>
+          <td class="context-item-value">0x00000006</td>
+        </tr>
+        <tr class="top-aligned-row context-row">
+          <td class="context-item-name">MB_ICONHAND</td>
+          <td>=</td>
+          <td class="context-item-value">0x00000010</td>
+        </tr>
+        <tr class="top-aligned-row context-row">
+          <td class="context-item-name">MB_ICONQUESTION</td>
+          <td>=</td>
+          <td class="context-item-value">0x00000020</td>
+        </tr>
+        <tr class="top-aligned-row context-row">
+          <td class="context-item-name">MB_ICONEXCLAMATION</td>
+          <td>=</td>
+          <td class="context-item-value">0x00000030</td>
+        </tr>
+        <tr class="top-aligned-row context-row">
+          <td class="context-item-name">MB_ICONASTERISK</td>
+          <td>=</td>
+          <td class="context-item-value">0x00000040</td>
+        </tr>
+        <tr class="top-aligned-row context-row">
+          <td class="context-item-name">MB_USERICON</td>
+          <td>=</td>
+          <td class="context-item-value">0x00000080</td>
+        </tr>
+        <tr class="top-aligned-row context-row">
+          <td class="context-item-name">MB_ICONWARNING</td>
+          <td>=</td>
+          <td class="context-item-value">MB_ICONEXCLAMATION</td>
+        </tr>
+        <tr class="top-aligned-row context-row">
+          <td class="context-item-name">MB_ICONERROR</td>
+          <td>=</td>
+          <td class="context-item-value">MB_ICONHAND</td>
+        </tr>
+        <tr class="top-aligned-row context-row">
+          <td class="context-item-name">MB_ICONINFORMATION</td>
+          <td>=</td>
+          <td class="context-item-value">MB_ICONASTERISK</td>
+        </tr>
+        <tr class="top-aligned-row context-row">
+          <td class="context-item-name">MB_ICONSTOP</td>
+          <td>=</td>
+          <td class="context-item-value">MB_ICONHAND</td>
+        </tr>
+        <tr class="top-aligned-row context-row">
+          <td class="context-item-name">MB_DEFBUTTON1</td>
+          <td>=</td>
+          <td class="context-item-value">0x00000000</td>
+        </tr>
+        <tr class="top-aligned-row context-row">
+          <td class="context-item-name">MB_DEFBUTTON2</td>
+          <td>=</td>
+          <td class="context-item-value">0x00000100</td>
+        </tr>
+        <tr class="top-aligned-row context-row">
+          <td class="context-item-name">MB_DEFBUTTON3</td>
+          <td>=</td>
+          <td class="context-item-value">0x00000200</td>
+        </tr>
+        <tr class="top-aligned-row context-row">
+          <td class="context-item-name">MB_DEFBUTTON4</td>
+          <td>=</td>
+          <td class="context-item-value">0x00000300</td>
+        </tr>
+        <tr class="top-aligned-row context-row">
+          <td class="context-item-name">MB_APPLMODAL</td>
+          <td>=</td>
+          <td class="context-item-value">0x00000000</td>
+        </tr>
+        <tr class="top-aligned-row context-row">
+          <td class="context-item-name">MB_SYSTEMMODAL</td>
+          <td>=</td>
+          <td class="context-item-value">0x00001000</td>
+        </tr>
+        <tr class="top-aligned-row context-row">
+          <td class="context-item-name">MB_TASKMODAL</td>
+          <td>=</td>
+          <td class="context-item-value">0x00002000</td>
+        </tr>
+        <tr class="top-aligned-row context-row">
+          <td class="context-item-name">MB_HELP</td>
+          <td>=</td>
+          <td class="context-item-value">0x00004000</td>
+        </tr>
+        <tr class="top-aligned-row context-row">
+          <td class="context-item-name">MB_NOFOCUS</td>
+          <td>=</td>
+          <td class="context-item-value">0x00008000</td>
+        </tr>
+        <tr class="top-aligned-row context-row">
+          <td class="context-item-name">MB_SETFOREGROUND</td>
+          <td>=</td>
+          <td class="context-item-value">0x00010000</td>
+        </tr>
+        <tr class="top-aligned-row context-row">
+          <td class="context-item-name">MB_DEFAULT_DESKTOP_ONLY</td>
+          <td>=</td>
+          <td class="context-item-value">0x00020000</td>
+        </tr>
+        <tr class="top-aligned-row context-row">
+          <td class="context-item-name">MB_TOPMOST</td>
+          <td>=</td>
+          <td class="context-item-value">0x00040000</td>
+        </tr>
+        <tr class="top-aligned-row context-row">
+          <td class="context-item-name">MB_RIGHT</td>
+          <td>=</td>
+          <td class="context-item-value">0x00080000</td>
+        </tr>
+        <tr class="top-aligned-row context-row">
+          <td class="context-item-name">MB_RTLREADING</td>
+          <td>=</td>
+          <td class="context-item-value">0x00100000</td>
+        </tr>
+        <tr class="top-aligned-row context-row">
+          <td class="context-item-name">MB_SERVICE_NOTIFICATION</td>
+          <td>=</td>
+          <td class="context-item-value">0x00200000</td>
+        </tr>
+        <tr class="top-aligned-row context-row">
+          <td class="context-item-name">MB_SERVICE_NOTIFICATION_NT3X</td>
+          <td>=</td>
+          <td class="context-item-value">0x00040000</td>
+        </tr>
+        <tr class="top-aligned-row context-row">
+          <td class="context-item-name">MB_TYPEMASK</td>
+          <td>=</td>
+          <td class="context-item-value">0x0000000F</td>
+        </tr>
+        <tr class="top-aligned-row context-row">
+          <td class="context-item-name">MB_ICONMASK</td>
+          <td>=</td>
+          <td class="context-item-value">0x000000F0</td>
+        </tr>
+        <tr class="top-aligned-row context-row">
+          <td class="context-item-name">MB_DEFMASK</td>
+          <td>=</td>
+          <td class="context-item-value">0x00000F00</td>
+        </tr>
+        <tr class="top-aligned-row context-row">
+          <td class="context-item-name">MB_MODEMASK</td>
+          <td>=</td>
+          <td class="context-item-value">0x00003000</td>
+        </tr>
+        <tr class="top-aligned-row context-row">
+          <td class="context-item-name">MB_MISCMASK</td>
+          <td>=</td>
+          <td class="context-item-value">0x0000C000</td>
+        </tr>
+        </table>
+      </div>
+    </div>
+
+
+
+      
+
+
+    <!-- if method_list -->
+    <div id="methods">
+      <h3 class="section-bar">Public Instance methods</h3>
+
+      <div id="method-M000175" class="method-detail">
+        <a name="M000175"></a>
+
+        <div class="method-heading">
+          <a href="Dialog.src/M000175.html" target="Code" class="method-signature"
+            onclick="popupCode('Dialog.src/M000175.html');return false;">
+          <span class="method-name">CreateDialog</span><span class="method-args">(hInstance, lpName, hParent, lpDialogFunc)</span>
+          </a>
+        </div>
+      
+        <div class="method-description">
+          <p>
+Macros from WinUser.h
+</p>
+        </div>
+      </div>
+
+      <div id="method-M000176" class="method-detail">
+        <a name="M000176"></a>
+
+        <div class="method-heading">
+          <a href="Dialog.src/M000176.html" target="Code" class="method-signature"
+            onclick="popupCode('Dialog.src/M000176.html');return false;">
+          <span class="method-name">CreateDialogIndirect</span><span class="method-args">(hInst, lpTemp, hPar, lpDialFunc)</span>
+          </a>
+        </div>
+      
+        <div class="method-description">
+        </div>
+      </div>
+
+      <div id="method-M000177" class="method-detail">
+        <a name="M000177"></a>
+
+        <div class="method-heading">
+          <a href="Dialog.src/M000177.html" target="Code" class="method-signature"
+            onclick="popupCode('Dialog.src/M000177.html');return false;">
+          <span class="method-name">DialogBox</span><span class="method-args">(hInstance, lpTemp, hParent, lpDialogFunc)</span>
+          </a>
+        </div>
+      
+        <div class="method-description">
+        </div>
+      </div>
+
+      <div id="method-M000178" class="method-detail">
+        <a name="M000178"></a>
+
+        <div class="method-heading">
+          <a href="Dialog.src/M000178.html" target="Code" class="method-signature"
+            onclick="popupCode('Dialog.src/M000178.html');return false;">
+          <span class="method-name">DialogBoxIndirect</span><span class="method-args">(hInst, lpTemp, hParent, lpDialogFunc)</span>
+          </a>
+        </div>
+      
+        <div class="method-description">
+        </div>
+      </div>
+
+
+    </div>
+
+
+  </div>
+
+
+<div id="validator-badges">
+  <p><small><a href="http://validator.w3.org/check/referer">[Validate]</a></small></p>
+</div>
+
+</body>
+</html>

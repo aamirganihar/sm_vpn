@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+<!DOCTYPE html 
+     PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+     "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html>
+<head>
+  <title>run (Selenium::SeleniumServer)</title>
+  <meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" />
+  <link rel="stylesheet" href="../../.././rdoc-style.css" type="text/css" media="screen" />
+</head>
+<body class="standalone-code">
+  <pre><span class="ruby-comment cmt"># File lib/selenium/selenium_server.rb, line 10</span>
+    <span class="ruby-keyword kw">def</span> <span class="ruby-constant">SeleniumServer</span><span class="ruby-operator">::</span><span class="ruby-identifier">run</span>(<span class="ruby-identifier">argv</span>, <span class="ruby-identifier">vmparameter</span>=<span class="ruby-value str">''</span>)
+      <span class="ruby-identifier">jar_file</span> = <span class="ruby-constant">SeleniumServer</span>.<span class="ruby-identifier">jar_file</span>
+      <span class="ruby-keyword kw">if</span> (<span class="ruby-identifier">argv</span>[<span class="ruby-value">0</span>] <span class="ruby-operator">==</span> <span class="ruby-value str">'-stop'</span>)
+        <span class="ruby-identifier">server</span> = <span class="ruby-constant">SeleniumServer</span>.<span class="ruby-identifier">new</span>(<span class="ruby-identifier">argv</span>[<span class="ruby-value">1</span>])
+        <span class="ruby-identifier">puts</span> <span class="ruby-node">&quot;stopping server on port #{server.port_number}&quot;</span>
+        <span class="ruby-identifier">server</span>.<span class="ruby-identifier">stop</span>
+      <span class="ruby-keyword kw">elsif</span> <span class="ruby-identifier">argv</span>[<span class="ruby-value">0</span>] <span class="ruby-operator">==</span> <span class="ruby-value str">'-check'</span>
+        <span class="ruby-identifier">server</span> = <span class="ruby-constant">SeleniumServer</span>.<span class="ruby-identifier">new</span>(<span class="ruby-identifier">argv</span>[<span class="ruby-value">1</span>])
+        <span class="ruby-keyword kw">if</span> (<span class="ruby-identifier">server</span>.<span class="ruby-identifier">running?</span>)
+          <span class="ruby-identifier">puts</span> <span class="ruby-node">&quot;server running on #{server.port_number}&quot;</span>
+        <span class="ruby-keyword kw">else</span>
+          <span class="ruby-identifier">puts</span> <span class="ruby-node">&quot;server not running on #{server.port_number}&quot;</span>
+        <span class="ruby-keyword kw">end</span>
+      <span class="ruby-keyword kw">else</span>
+        <span class="ruby-identifier">command</span> = <span class="ruby-node">&quot;java #{vmparameter} -jar #{jar_file} #{argv.join(' ')}&quot;</span>
+        <span class="ruby-identifier">puts</span> <span class="ruby-identifier">command</span>
+        <span class="ruby-identifier">system</span>(<span class="ruby-identifier">command</span>)
+      <span class="ruby-keyword kw">end</span>
+    <span class="ruby-keyword kw">end</span></pre>
+</body>
+</html>

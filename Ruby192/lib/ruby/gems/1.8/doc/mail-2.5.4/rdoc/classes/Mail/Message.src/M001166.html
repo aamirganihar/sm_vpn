@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+<!DOCTYPE html 
+     PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+     "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html>
+<head>
+  <title>reply (Mail::Message)</title>
+  <meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" />
+  <link rel="stylesheet" href="../../.././rdoc-style.css" type="text/css" media="screen" />
+</head>
+<body class="standalone-code">
+  <pre><span class="ruby-comment cmt"># File lib/mail/message.rb, line 261</span>
+    <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">reply</span>(<span class="ruby-operator">*</span><span class="ruby-identifier">args</span>, <span class="ruby-operator">&amp;</span><span class="ruby-identifier">block</span>)
+      <span class="ruby-keyword kw">self</span>.<span class="ruby-identifier">class</span>.<span class="ruby-identifier">new</span>.<span class="ruby-identifier">tap</span> <span class="ruby-keyword kw">do</span> <span class="ruby-operator">|</span><span class="ruby-identifier">reply</span><span class="ruby-operator">|</span>
+        <span class="ruby-keyword kw">if</span> <span class="ruby-identifier">message_id</span>
+          <span class="ruby-identifier">bracketed_message_id</span> = <span class="ruby-node">&quot;&lt;#{message_id}&gt;&quot;</span>
+          <span class="ruby-identifier">reply</span>.<span class="ruby-identifier">in_reply_to</span> = <span class="ruby-identifier">bracketed_message_id</span>
+          <span class="ruby-keyword kw">if</span> <span class="ruby-operator">!</span><span class="ruby-identifier">references</span>.<span class="ruby-identifier">nil?</span>
+            <span class="ruby-identifier">refs</span> = [<span class="ruby-identifier">references</span>].<span class="ruby-identifier">flatten</span>.<span class="ruby-identifier">map</span> { <span class="ruby-operator">|</span><span class="ruby-identifier">r</span><span class="ruby-operator">|</span> <span class="ruby-node">&quot;&lt;#{r}&gt;&quot;</span> }
+            <span class="ruby-identifier">refs</span> <span class="ruby-operator">&lt;&lt;</span> <span class="ruby-identifier">bracketed_message_id</span>
+            <span class="ruby-identifier">reply</span>.<span class="ruby-identifier">references</span> = <span class="ruby-identifier">refs</span>.<span class="ruby-identifier">join</span>(<span class="ruby-value str">' '</span>)
+          <span class="ruby-keyword kw">elsif</span> <span class="ruby-operator">!</span><span class="ruby-identifier">in_reply_to</span>.<span class="ruby-identifier">nil?</span> <span class="ruby-operator">&amp;&amp;</span> <span class="ruby-operator">!</span><span class="ruby-identifier">in_reply_to</span>.<span class="ruby-identifier">kind_of?</span>(<span class="ruby-constant">Array</span>)
+            <span class="ruby-identifier">reply</span>.<span class="ruby-identifier">references</span> = <span class="ruby-node">&quot;&lt;#{in_reply_to}&gt; #{bracketed_message_id}&quot;</span>
+          <span class="ruby-keyword kw">end</span>
+          <span class="ruby-identifier">reply</span>.<span class="ruby-identifier">references</span> <span class="ruby-operator">||=</span> <span class="ruby-identifier">bracketed_message_id</span>
+        <span class="ruby-keyword kw">end</span>
+        <span class="ruby-keyword kw">if</span> <span class="ruby-identifier">subject</span>
+          <span class="ruby-identifier">reply</span>.<span class="ruby-identifier">subject</span> = <span class="ruby-identifier">subject</span> <span class="ruby-operator">=~</span> <span class="ruby-regexp re">/^Re:/i</span> <span class="ruby-operator">?</span> <span class="ruby-identifier">subject</span> <span class="ruby-operator">:</span> <span class="ruby-node">&quot;RE: #{subject}&quot;</span>
+        <span class="ruby-keyword kw">end</span>
+        <span class="ruby-keyword kw">if</span> <span class="ruby-identifier">reply_to</span> <span class="ruby-operator">||</span> <span class="ruby-identifier">from</span>
+          <span class="ruby-identifier">reply</span>.<span class="ruby-identifier">to</span> = <span class="ruby-keyword kw">self</span>[<span class="ruby-identifier">reply_to</span> <span class="ruby-value">? </span><span class="ruby-operator">:</span><span class="ruby-identifier">reply_to</span> <span class="ruby-operator">:</span> <span class="ruby-identifier">:from</span>].<span class="ruby-identifier">to_s</span>
+        <span class="ruby-keyword kw">end</span>
+        <span class="ruby-keyword kw">if</span> <span class="ruby-identifier">to</span>
+          <span class="ruby-identifier">reply</span>.<span class="ruby-identifier">from</span> = <span class="ruby-keyword kw">self</span>[<span class="ruby-identifier">:to</span>].<span class="ruby-identifier">formatted</span>.<span class="ruby-identifier">first</span>.<span class="ruby-identifier">to_s</span>
+        <span class="ruby-keyword kw">end</span>
+
+        <span class="ruby-keyword kw">unless</span> <span class="ruby-identifier">args</span>.<span class="ruby-identifier">empty?</span>
+          <span class="ruby-keyword kw">if</span> <span class="ruby-identifier">args</span>.<span class="ruby-identifier">flatten</span>.<span class="ruby-identifier">first</span>.<span class="ruby-identifier">respond_to?</span>(<span class="ruby-identifier">:each_pair</span>)
+            <span class="ruby-identifier">reply</span>.<span class="ruby-identifier">send</span>(<span class="ruby-identifier">:init_with_hash</span>, <span class="ruby-identifier">args</span>.<span class="ruby-identifier">flatten</span>.<span class="ruby-identifier">first</span>)
+          <span class="ruby-keyword kw">else</span>
+            <span class="ruby-identifier">reply</span>.<span class="ruby-identifier">send</span>(<span class="ruby-identifier">:init_with_string</span>, <span class="ruby-identifier">args</span>.<span class="ruby-identifier">flatten</span>[<span class="ruby-value">0</span>].<span class="ruby-identifier">to_s</span>.<span class="ruby-identifier">strip</span>)
+          <span class="ruby-keyword kw">end</span>
+        <span class="ruby-keyword kw">end</span>
+
+        <span class="ruby-keyword kw">if</span> <span class="ruby-identifier">block_given?</span>
+          <span class="ruby-identifier">reply</span>.<span class="ruby-identifier">instance_eval</span>(<span class="ruby-operator">&amp;</span><span class="ruby-identifier">block</span>)
+        <span class="ruby-keyword kw">end</span>
+      <span class="ruby-keyword kw">end</span>
+    <span class="ruby-keyword kw">end</span></pre>
+</body>
+</html>

@@ -1,0 +1,16 @@
+--- !ruby/object:RI::MethodDescription 
+aliases: []
+
+block_params: 
+comment: 
+- !ruby/struct:SM::Flow::P 
+  body: Sets the FIRST matching field in the header to passed value, or deletes the FIRST field matched from the header if passed nil
+- !ruby/struct:SM::Flow::P 
+  body: "Example:"
+- !ruby/struct:SM::Flow::VERB 
+  body: " h = Header.new\n h.fields = ['To: mikel@me.com', 'X-Mail-SPAM: 15', 'X-Mail-SPAM: 20']\n h['To'] = 'bob@you.com'\n h['To']    #=&gt; 'bob@you.com'\n h['X-Mail-SPAM'] = '10000'\n h['X-Mail-SPAM'] # =&gt; ['15', '20', '10000']\n h['X-Mail-SPAM'] = nil\n h['X-Mail-SPAM'] # =&gt; nil\n"
+full_name: Mail::Header#[]=
+is_singleton: false
+name: "[]="
+params: (name, value)
+visibility: public

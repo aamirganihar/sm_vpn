@@ -1,0 +1,29 @@
+--- !ruby/object:RI::ClassDescription 
+attributes: []
+
+class_methods: 
+- !ruby/object:RI::MethodSummary 
+  name: new
+comment: 
+constants: 
+- !ruby/object:RI::Constant 
+  comment: 
+  name: FIELD_NAME
+  value: "'resent-message-id'"
+- !ruby/object:RI::Constant 
+  comment: 
+  name: CAPITALIZED_FIELD
+  value: "'Resent-Message-ID'"
+full_name: Mail::ResentMessageIdField
+includes: 
+- !ruby/object:RI::IncludedModule 
+  name: CommonMessageId
+instance_methods: 
+- !ruby/object:RI::MethodSummary 
+  name: decoded
+- !ruby/object:RI::MethodSummary 
+  name: encoded
+- !ruby/object:RI::MethodSummary 
+  name: name
+name: ResentMessageIdField
+superclass: StructuredField

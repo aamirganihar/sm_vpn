@@ -1,0 +1,10 @@
+--- !ruby/object:RI::MethodDescription 
+aliases: []
+
+block_params: 
+comment: 
+full_name: Mail::Matchers::HasSentEmailMatcher#filter_matched_deliveries
+is_singleton: false
+name: filter_matched_deliveries
+params: (deliveries)
+visibility: protected

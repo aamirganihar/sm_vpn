@@ -1,0 +1,24 @@
+--- !ruby/object:RI::ClassDescription 
+attributes: []
+
+class_methods: []
+
+comment: 
+constants: []
+
+full_name: Mail::EnvelopeFrom::CtimeDate0
+includes: []
+
+instance_methods: 
+- !ruby/object:RI::MethodSummary 
+  name: day
+- !ruby/object:RI::MethodSummary 
+  name: day_name
+- !ruby/object:RI::MethodSummary 
+  name: month_name
+- !ruby/object:RI::MethodSummary 
+  name: time_of_day
+- !ruby/object:RI::MethodSummary 
+  name: year
+name: CtimeDate0
+superclass: 

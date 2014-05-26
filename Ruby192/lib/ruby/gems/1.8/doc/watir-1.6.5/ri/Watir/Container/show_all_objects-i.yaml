@@ -1,0 +1,12 @@
+--- !ruby/object:RI::MethodDescription 
+aliases: []
+
+block_params: 
+comment: 
+- !ruby/struct:SM::Flow::P 
+  body: This method shows the available objects on the current page. This is usually only used for debugging or writing new test scripts. This is a nice feature to help find out what HTML objects are on a page when developing a test case using Watir.
+full_name: Watir::Container#show_all_objects
+is_singleton: false
+name: show_all_objects
+params: ()
+visibility: public

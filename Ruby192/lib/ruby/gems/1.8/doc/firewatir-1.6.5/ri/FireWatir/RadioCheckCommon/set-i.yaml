@@ -1,0 +1,14 @@
+--- !ruby/object:RI::MethodDescription 
+aliases: []
+
+block_params: 
+comment: 
+- !ruby/struct:SM::Flow::P 
+  body: "Description:"
+- !ruby/struct:SM::Flow::VERB 
+  body: "  Checks the radio button or check box element.\n  Raises ObjectDisabledException exception if element is disabled.\n"
+full_name: FireWatir::RadioCheckCommon#set
+is_singleton: false
+name: set
+params: ()
+visibility: public

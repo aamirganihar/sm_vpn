@@ -1,0 +1,496 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+<!DOCTYPE html 
+     PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+     "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+  <title>Class: Mail::Address</title>
+  <meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" />
+  <meta http-equiv="Content-Script-Type" content="text/javascript" />
+  <link rel="stylesheet" href="../.././rdoc-style.css" type="text/css" media="screen" />
+  <script type="text/javascript">
+  // <![CDATA[
+
+  function popupCode( url ) {
+    window.open(url, "Code", "resizable=yes,scrollbars=yes,toolbar=no,status=no,height=150,width=400")
+  }
+
+  function toggleCode( id ) {
+    if ( document.getElementById )
+      elem = document.getElementById( id );
+    else if ( document.all )
+      elem = eval( "document.all." + id );
+    else
+      return false;
+
+    elemStyle = elem.style;
+    
+    if ( elemStyle.display != "block" ) {
+      elemStyle.display = "block"
+    } else {
+      elemStyle.display = "none"
+    }
+
+    return true;
+  }
+  
+  // Make codeblocks hidden by default
+  document.writeln( "<style type=\"text/css\">div.method-source-code { display: none }</style>" )
+  
+  // ]]>
+  </script>
+
+</head>
+<body>
+
+
+
+    <div id="classHeader">
+        <table class="header-table">
+        <tr class="top-aligned-row">
+          <td><strong>Class</strong></td>
+          <td class="class-name-in-header">Mail::Address</td>
+        </tr>
+        <tr class="top-aligned-row">
+            <td><strong>In:</strong></td>
+            <td>
+                <a href="../../files/lib/mail/elements/address_rb.html">
+                lib/mail/elements/address.rb
+                </a>
+        <br />
+            </td>
+        </tr>
+
+        <tr class="top-aligned-row">
+            <td><strong>Parent:</strong></td>
+            <td>
+                <a href="../Object.html">
+                Object
+               </a>
+            </td>
+        </tr>
+        </table>
+    </div>
+  <!-- banner header -->
+
+  <div id="bodyContent">
+
+
+
+  <div id="contextContent">
+
+
+
+   </div>
+
+    <div id="method-list">
+      <h3 class="section-bar">Methods</h3>
+
+      <div class="name-list">
+      <a href="#M001440">address</a>&nbsp;&nbsp;
+      <a href="#M001441">address=</a>&nbsp;&nbsp;
+      <a href="#M001446">comments</a>&nbsp;&nbsp;
+      <a href="#M001451">decoded</a>&nbsp;&nbsp;
+      <a href="#M001442">display_name</a>&nbsp;&nbsp;
+      <a href="#M001443">display_name=</a>&nbsp;&nbsp;
+      <a href="#M001445">domain</a>&nbsp;&nbsp;
+      <a href="#M001450">encoded</a>&nbsp;&nbsp;
+      <a href="#M001439">format</a>&nbsp;&nbsp;
+      <a href="#M001449">inspect</a>&nbsp;&nbsp;
+      <a href="#M001444">local</a>&nbsp;&nbsp;
+      <a href="#M001447">name</a>&nbsp;&nbsp;
+      <a href="#M001437">new</a>&nbsp;&nbsp;
+      <a href="#M001438">raw</a>&nbsp;&nbsp;
+      <a href="#M001448">to_s</a>&nbsp;&nbsp;
+      </div>
+    </div>
+
+  </div>
+
+
+    <!-- if includes -->
+    <div id="includes">
+      <h3 class="section-bar">Included Modules</h3>
+
+      <div id="includes-list">
+        <span class="include-name"><a href="Utilities.html">Mail::Utilities</a></span>
+      </div>
+    </div>
+
+    <div id="section">
+
+
+
+
+
+      
+
+
+    <!-- if method_list -->
+    <div id="methods">
+      <h3 class="section-bar">Public Class methods</h3>
+
+      <div id="method-M001437" class="method-detail">
+        <a name="M001437"></a>
+
+        <div class="method-heading">
+          <a href="Address.src/M001437.html" target="Code" class="method-signature"
+            onclick="popupCode('Address.src/M001437.html');return false;">
+          <span class="method-name">new</span><span class="method-args">(value = nil)</span>
+          </a>
+        </div>
+      
+        <div class="method-description">
+          <p>
+<a href="Address.html">Mail::Address</a> handles all email addresses in
+Mail. It takes an email <a href="Address.html#M001440">address</a> string
+and parses it, breaking it down into its component parts and allowing you
+to get the <a href="Address.html#M001440">address</a>, <a
+href="Address.html#M001446">comments</a>, display <a
+href="Address.html#M001447">name</a>, <a
+href="Address.html#M001447">name</a>, <a
+href="Address.html#M001444">local</a> part, <a
+href="Address.html#M001445">domain</a> part and fully formatted <a
+href="Address.html#M001440">address</a>.
+</p>
+<p>
+<a href="Address.html">Mail::Address</a> requires a correctly formatted
+email <a href="Address.html#M001440">address</a> per <a
+href="RFC2822.html">RFC2822</a> or RFC822. It handles all obsolete versions
+including obsolete <a href="Address.html#M001445">domain</a> routing on the
+<a href="Address.html#M001444">local</a> part.
+</p>
+<pre>
+ a = Address.new('Mikel Lindsaar (My email address) &lt;mikel@test.lindsaar.net&gt;')
+ a.format       #=&gt; 'Mikel Lindsaar &lt;mikel@test.lindsaar.net&gt; (My email address)'
+ a.address      #=&gt; 'mikel@test.lindsaar.net'
+ a.display_name #=&gt; 'Mikel Lindsaar'
+ a.local        #=&gt; 'mikel'
+ a.domain       #=&gt; 'test.lindsaar.net'
+ a.comments     #=&gt; ['My email address']
+ a.to_s         #=&gt; 'Mikel Lindsaar &lt;mikel@test.lindsaar.net&gt; (My email address)'
+</pre>
+        </div>
+      </div>
+
+      <h3 class="section-bar">Public Instance methods</h3>
+
+      <div id="method-M001440" class="method-detail">
+        <a name="M001440"></a>
+
+        <div class="method-heading">
+          <a href="Address.src/M001440.html" target="Code" class="method-signature"
+            onclick="popupCode('Address.src/M001440.html');return false;">
+          <span class="method-name">address</span><span class="method-args">()</span>
+          </a>
+        </div>
+      
+        <div class="method-description">
+          <p>
+Returns the <a href="Address.html#M001440">address</a> that is in the <a
+href="Address.html#M001440">address</a> itself. That is, the <a
+href="Address.html#M001444">local</a>@<a
+href="Address.html#M001445">domain</a> string, without any angle brackets
+or the like.
+</p>
+<pre>
+ a = Address.new('Mikel Lindsaar (My email address) &lt;mikel@test.lindsaar.net&gt;')
+ a.address #=&gt; 'mikel@test.lindsaar.net'
+</pre>
+        </div>
+      </div>
+
+      <div id="method-M001441" class="method-detail">
+        <a name="M001441"></a>
+
+        <div class="method-heading">
+          <a href="Address.src/M001441.html" target="Code" class="method-signature"
+            onclick="popupCode('Address.src/M001441.html');return false;">
+          <span class="method-name">address=</span><span class="method-args">(value)</span>
+          </a>
+        </div>
+      
+        <div class="method-description">
+          <p>
+Provides a way to assign an <a href="Address.html#M001440">address</a> to
+an already made <a href="Address.html">Mail::Address</a> object.
+</p>
+<pre>
+ a = Address.new
+ a.address = 'Mikel Lindsaar (My email address) &lt;mikel@test.lindsaar.net&gt;'
+ a.address #=&gt; 'mikel@test.lindsaar.net'
+</pre>
+        </div>
+      </div>
+
+      <div id="method-M001446" class="method-detail">
+        <a name="M001446"></a>
+
+        <div class="method-heading">
+          <a href="Address.src/M001446.html" target="Code" class="method-signature"
+            onclick="popupCode('Address.src/M001446.html');return false;">
+          <span class="method-name">comments</span><span class="method-args">()</span>
+          </a>
+        </div>
+      
+        <div class="method-description">
+          <p>
+Returns an array of <a href="Address.html#M001446">comments</a> that are in
+the email, or an empty array if there are no <a
+href="Address.html#M001446">comments</a>
+</p>
+<pre>
+ a = Address.new('Mikel Lindsaar (My email address) &lt;mikel@test.lindsaar.net&gt;')
+ a.comments #=&gt; ['My email address']
+</pre>
+        </div>
+      </div>
+
+      <div id="method-M001451" class="method-detail">
+        <a name="M001451"></a>
+
+        <div class="method-heading">
+          <a href="Address.src/M001451.html" target="Code" class="method-signature"
+            onclick="popupCode('Address.src/M001451.html');return false;">
+          <span class="method-name">decoded</span><span class="method-args">()</span>
+          </a>
+        </div>
+      
+        <div class="method-description">
+        </div>
+      </div>
+
+      <div id="method-M001442" class="method-detail">
+        <a name="M001442"></a>
+
+        <div class="method-heading">
+          <a href="Address.src/M001442.html" target="Code" class="method-signature"
+            onclick="popupCode('Address.src/M001442.html');return false;">
+          <span class="method-name">display_name</span><span class="method-args">()</span>
+          </a>
+        </div>
+      
+        <div class="method-description">
+          <p>
+Returns the display <a href="Address.html#M001447">name</a> of the email <a
+href="Address.html#M001440">address</a> passed in.
+</p>
+<pre>
+ a = Address.new('Mikel Lindsaar (My email address) &lt;mikel@test.lindsaar.net&gt;')
+ a.display_name #=&gt; 'Mikel Lindsaar'
+</pre>
+        </div>
+      </div>
+
+      <div id="method-M001443" class="method-detail">
+        <a name="M001443"></a>
+
+        <div class="method-heading">
+          <a href="Address.src/M001443.html" target="Code" class="method-signature"
+            onclick="popupCode('Address.src/M001443.html');return false;">
+          <span class="method-name">display_name=</span><span class="method-args">( str )</span>
+          </a>
+        </div>
+      
+        <div class="method-description">
+          <p>
+Provides a way to assign a display <a href="Address.html#M001447">name</a>
+to an already made <a href="Address.html">Mail::Address</a> object.
+</p>
+<pre>
+ a = Address.new
+ a.address = 'mikel@test.lindsaar.net'
+ a.display_name = 'Mikel Lindsaar'
+ a.format #=&gt; 'Mikel Lindsaar &lt;mikel@test.lindsaar.net&gt;'
+</pre>
+        </div>
+      </div>
+
+      <div id="method-M001445" class="method-detail">
+        <a name="M001445"></a>
+
+        <div class="method-heading">
+          <a href="Address.src/M001445.html" target="Code" class="method-signature"
+            onclick="popupCode('Address.src/M001445.html');return false;">
+          <span class="method-name">domain</span><span class="method-args">()</span>
+          </a>
+        </div>
+      
+        <div class="method-description">
+          <p>
+Returns the <a href="Address.html#M001445">domain</a> part (the right hand
+side of the @ sign in the email <a href="Address.html#M001440">address</a>)
+of the <a href="Address.html#M001440">address</a>
+</p>
+<pre>
+ a = Address.new('Mikel Lindsaar (My email address) &lt;mikel@test.lindsaar.net&gt;')
+ a.domain #=&gt; 'test.lindsaar.net'
+</pre>
+        </div>
+      </div>
+
+      <div id="method-M001450" class="method-detail">
+        <a name="M001450"></a>
+
+        <div class="method-heading">
+          <a href="Address.src/M001450.html" target="Code" class="method-signature"
+            onclick="popupCode('Address.src/M001450.html');return false;">
+          <span class="method-name">encoded</span><span class="method-args">()</span>
+          </a>
+        </div>
+      
+        <div class="method-description">
+        </div>
+      </div>
+
+      <div id="method-M001439" class="method-detail">
+        <a name="M001439"></a>
+
+        <div class="method-heading">
+          <a href="Address.src/M001439.html" target="Code" class="method-signature"
+            onclick="popupCode('Address.src/M001439.html');return false;">
+          <span class="method-name">format</span><span class="method-args">()</span>
+          </a>
+        </div>
+      
+        <div class="method-description">
+          <p>
+Returns a correctly formatted <a href="Address.html#M001440">address</a>
+for the email going out. If given an incorrectly formatted <a
+href="Address.html#M001440">address</a> as input, <a
+href="Address.html">Mail::Address</a> will do its best to <a
+href="Address.html#M001439">format</a> it correctly. This includes quoting
+display names as needed and putting the <a
+href="Address.html#M001440">address</a> in angle brackets etc.
+</p>
+<pre>
+ a = Address.new('Mikel Lindsaar (My email address) &lt;mikel@test.lindsaar.net&gt;')
+ a.format #=&gt; 'Mikel Lindsaar &lt;mikel@test.lindsaar.net&gt; (My email address)'
+</pre>
+        </div>
+      </div>
+
+      <div id="method-M001449" class="method-detail">
+        <a name="M001449"></a>
+
+        <div class="method-heading">
+          <a href="Address.src/M001449.html" target="Code" class="method-signature"
+            onclick="popupCode('Address.src/M001449.html');return false;">
+          <span class="method-name">inspect</span><span class="method-args">()</span>
+          </a>
+        </div>
+      
+        <div class="method-description">
+          <p>
+Shows the <a href="Address.html">Address</a> object basic details,
+including the <a href="Address.html">Address</a>
+</p>
+<pre>
+ a = Address.new('Mikel (My email) &lt;mikel@test.lindsaar.net&gt;')
+ a.inspect #=&gt; &quot;#&lt;Mail::Address:14184910 Address: |Mikel &lt;mikel@test.lindsaar.net&gt; (My email)| &gt;&quot;
+</pre>
+        </div>
+      </div>
+
+      <div id="method-M001444" class="method-detail">
+        <a name="M001444"></a>
+
+        <div class="method-heading">
+          <a href="Address.src/M001444.html" target="Code" class="method-signature"
+            onclick="popupCode('Address.src/M001444.html');return false;">
+          <span class="method-name">local</span><span class="method-args">()</span>
+          </a>
+        </div>
+      
+        <div class="method-description">
+          <p>
+Returns the <a href="Address.html#M001444">local</a> part (the left hand
+side of the @ sign in the email <a href="Address.html#M001440">address</a>)
+of the <a href="Address.html#M001440">address</a>
+</p>
+<pre>
+ a = Address.new('Mikel Lindsaar (My email address) &lt;mikel@test.lindsaar.net&gt;')
+ a.local #=&gt; 'mikel'
+</pre>
+        </div>
+      </div>
+
+      <div id="method-M001447" class="method-detail">
+        <a name="M001447"></a>
+
+        <div class="method-heading">
+          <a href="Address.src/M001447.html" target="Code" class="method-signature"
+            onclick="popupCode('Address.src/M001447.html');return false;">
+          <span class="method-name">name</span><span class="method-args">()</span>
+          </a>
+        </div>
+      
+        <div class="method-description">
+          <p>
+Sometimes an <a href="Address.html#M001440">address</a> will not have a
+display <a href="Address.html#M001447">name</a>, but might have the <a
+href="Address.html#M001447">name</a> as a comment field after the <a
+href="Address.html#M001440">address</a>. This returns that <a
+href="Address.html#M001447">name</a> if it exists.
+</p>
+<pre>
+ a = Address.new('mikel@test.lindsaar.net (Mikel Lindsaar)')
+ a.name #=&gt; 'Mikel Lindsaar'
+</pre>
+        </div>
+      </div>
+
+      <div id="method-M001438" class="method-detail">
+        <a name="M001438"></a>
+
+        <div class="method-heading">
+          <a href="Address.src/M001438.html" target="Code" class="method-signature"
+            onclick="popupCode('Address.src/M001438.html');return false;">
+          <span class="method-name">raw</span><span class="method-args">()</span>
+          </a>
+        </div>
+      
+        <div class="method-description">
+          <p>
+Returns the <a href="Address.html#M001438">raw</a> imput of the passed in
+string, this is before it is passed by the parser.
+</p>
+        </div>
+      </div>
+
+      <div id="method-M001448" class="method-detail">
+        <a name="M001448"></a>
+
+        <div class="method-heading">
+          <a href="Address.src/M001448.html" target="Code" class="method-signature"
+            onclick="popupCode('Address.src/M001448.html');return false;">
+          <span class="method-name">to_s</span><span class="method-args">()</span>
+          </a>
+        </div>
+      
+        <div class="method-description">
+          <p>
+Returns the <a href="Address.html#M001439">format</a> of the <a
+href="Address.html#M001440">address</a>, or returns nothing
+</p>
+<pre>
+ a = Address.new('Mikel Lindsaar (My email address) &lt;mikel@test.lindsaar.net&gt;')
+ a.format #=&gt; 'Mikel Lindsaar &lt;mikel@test.lindsaar.net&gt; (My email address)'
+</pre>
+        </div>
+      </div>
+
+
+    </div>
+
+
+  </div>
+
+
+<div id="validator-badges">
+  <p><small><a href="http://validator.w3.org/check/referer">[Validate]</a></small></p>
+</div>
+
+</body>
+</html>

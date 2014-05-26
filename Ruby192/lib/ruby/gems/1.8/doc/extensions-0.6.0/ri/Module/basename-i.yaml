@@ -1,0 +1,14 @@
+--- !ruby/object:RI::MethodDescription 
+aliases: []
+
+block_params: 
+comment: 
+- !ruby/struct:SM::Flow::P 
+  body: Returns the immediate name of the class/module, stripped of any containing classes or modules. Compare Ruby's builtin methods <tt>Module#name</tt> and <tt>File.basename</tt>.
+- !ruby/struct:SM::Flow::VERB 
+  body: "  Process::Sys.name           # -&gt; &quot;Process::Sys&quot;\n  Process::Sys.basename       # -&gt; &quot;Sys&quot;\n  String.basename             # -&gt; &quot;String&quot;\n"
+full_name: Module#basename
+is_singleton: false
+name: basename
+params: ()
+visibility: public

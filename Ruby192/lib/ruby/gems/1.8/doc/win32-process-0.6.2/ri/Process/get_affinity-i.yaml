@@ -1,0 +1,22 @@
+--- !ruby/object:RI::MethodDescription 
+aliases: []
+
+block_params: 
+comment: 
+- !ruby/struct:SM::Flow::P 
+  body: Returns the process and system affinity mask for the given <tt>pid</tt>, or the current process if no pid is provided. The return value is a two element array, with the first containing the process affinity mask, and the second containing the system affinity mask. Both are decimal values.
+- !ruby/struct:SM::Flow::P 
+  body: A process affinity mask is a bit vector indicating the processors that a process is allowed to run on. A system affinity mask is a bit vector in which each bit represents the processors that are configured into a system.
+- !ruby/struct:SM::Flow::P 
+  body: "Example:"
+- !ruby/struct:SM::Flow::VERB 
+  body: "   # System has 4 processors, current process is allowed to run on all\n   Process.get_affinity # =&gt; [[15], [15]]\n\n   # System has 4 processors, current process only allowed on 1 and 4 only\n   Process.get_affinity # =&gt; [[9], [15]]\n"
+- !ruby/struct:SM::Flow::P 
+  body: "If you want to convert a decimal bit vector into an array of 0's and 1's indicating the flag value of each processor, you can use something like this approach:"
+- !ruby/struct:SM::Flow::VERB 
+  body: "   mask = Process.get_affinity.first\n   (0..mask).to_a.map{ |n| mask[n] }\n"
+full_name: Process#get_affinity
+is_singleton: false
+name: get_affinity
+params: (int = Process.pid)
+visibility: public

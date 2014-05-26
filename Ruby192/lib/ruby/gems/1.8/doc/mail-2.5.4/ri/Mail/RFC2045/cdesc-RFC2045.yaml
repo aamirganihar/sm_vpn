@@ -1,0 +1,27 @@
+--- !ruby/object:RI::ClassDescription 
+attributes: []
+
+class_methods: []
+
+comment: 
+constants: []
+
+full_name: Mail::RFC2045
+includes: 
+- !ruby/object:RI::IncludedModule 
+  name: Treetop::Runtime
+instance_methods: 
+- !ruby/object:RI::MethodSummary 
+  name: _nt_custom_x_token
+- !ruby/object:RI::MethodSummary 
+  name: _nt_iana_token
+- !ruby/object:RI::MethodSummary 
+  name: _nt_ietf_token
+- !ruby/object:RI::MethodSummary 
+  name: _nt_token
+- !ruby/object:RI::MethodSummary 
+  name: _nt_tspecials
+- !ruby/object:RI::MethodSummary 
+  name: root
+name: RFC2045
+superclass: 

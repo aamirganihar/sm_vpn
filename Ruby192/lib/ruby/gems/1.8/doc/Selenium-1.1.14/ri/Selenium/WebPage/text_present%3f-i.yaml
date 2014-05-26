@@ -1,0 +1,10 @@
+--- !ruby/object:RI::MethodDescription 
+aliases: []
+
+block_params: 
+comment: 
+full_name: Selenium::WebPage#text_present?
+is_singleton: false
+name: text_present?
+params: (text)
+visibility: public

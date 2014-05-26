@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+<!DOCTYPE html 
+     PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+     "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html>
+<head>
+  <title>count (Watir::Process)</title>
+  <meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" />
+  <link rel="stylesheet" href="../../.././rdoc-style.css" type="text/css" media="screen" />
+</head>
+<body class="standalone-code">
+  <pre><span class="ruby-comment cmt"># File lib/watir/process.rb, line 5</span>
+    <span class="ruby-keyword kw">def</span> <span class="ruby-keyword kw">self</span>.<span class="ruby-identifier">count</span> <span class="ruby-identifier">name</span>
+      <span class="ruby-identifier">mgmt</span> = <span class="ruby-constant">WIN32OLE</span>.<span class="ruby-identifier">connect</span>(<span class="ruby-value str">'winmgmts:\\\\.'</span>)
+      <span class="ruby-identifier">processes</span> = <span class="ruby-identifier">mgmt</span>.<span class="ruby-constant">InstancesOf</span>(<span class="ruby-value str">'win32_process'</span>)
+      <span class="ruby-identifier">processes</span>.<span class="ruby-identifier">extend</span> <span class="ruby-constant">Enumerable</span>
+      <span class="ruby-identifier">processes</span>.<span class="ruby-identifier">select</span>{<span class="ruby-operator">|</span><span class="ruby-identifier">x</span><span class="ruby-operator">|</span> <span class="ruby-identifier">x</span>.<span class="ruby-identifier">name</span> <span class="ruby-operator">==</span> <span class="ruby-identifier">name</span>}.<span class="ruby-identifier">length</span>
+    <span class="ruby-keyword kw">end</span></pre>
+</body>
+</html>

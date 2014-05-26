@@ -1,0 +1,10 @@
+--- !ruby/object:RI::MethodDescription 
+aliases: []
+
+block_params: 
+comment: 
+full_name: Mail::Ruby19::param_decode
+is_singleton: true
+name: param_decode
+params: (str, encoding)
+visibility: public

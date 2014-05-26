@@ -1,0 +1,40 @@
+--- !ruby/object:RI::ClassDescription 
+attributes: []
+
+class_methods: []
+
+comment: 
+constants: 
+- !ruby/object:RI::Constant 
+  comment: 
+  name: GetUnknown
+  value: Win32API.new(@@iedialog_file, 'GetUnknown', ['l', 'p'], 'v')
+- !ruby/object:RI::Constant 
+  comment: 
+  name: User32
+  value: DL.dlopen('user32')
+- !ruby/object:RI::Constant 
+  comment: 
+  name: FindWindowEx
+  value: User32['FindWindowEx', 'LLLpp']
+- !ruby/object:RI::Constant 
+  comment: 
+  - !ruby/struct:SM::Flow::P 
+    body: method for this found in wet-winobj/wet/winobjects/WinUtils.rb
+  name: GetWindow
+  value: User32['GetWindow', 'ILL']
+- !ruby/object:RI::Constant 
+  comment: 
+  name: IsWindow
+  value: User32['IsWindow', 'II']
+- !ruby/object:RI::Constant 
+  comment: 
+  name: FindWindowEx
+  value: GetWindow = IsWindow = lambda do |*args|         raise NotImplementedError, "1.9's DL API not compatible with 1.8, see http://www.ruby-forum.com/topic/138277"
+full_name: Watir::Win32
+includes: []
+
+instance_methods: []
+
+name: Win32
+superclass: 

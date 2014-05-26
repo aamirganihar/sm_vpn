@@ -1,0 +1,42 @@
+--- !ruby/object:RI::ClassDescription 
+attributes: []
+
+class_methods: []
+
+comment: 
+constants: 
+- !ruby/object:RI::Constant 
+  comment: 
+  name: TH32CS_SNAPHEAPLIST
+  value: "0x00000001"
+- !ruby/object:RI::Constant 
+  comment: 
+  name: TH32CS_SNAPPROCESS
+  value: "0x00000002"
+- !ruby/object:RI::Constant 
+  comment: 
+  name: TH32CS_SNAPTHREAD
+  value: "0x00000004"
+- !ruby/object:RI::Constant 
+  comment: 
+  name: TH32CS_SNAPMODULE
+  value: "0x00000008"
+- !ruby/object:RI::Constant 
+  comment: 
+  name: TH32CS_SNAPMODULE32
+  value: "0x00000010"
+- !ruby/object:RI::Constant 
+  comment: 
+  name: TH32CS_INHERIT
+  value: "0x80000000"
+- !ruby/object:RI::Constant 
+  comment: 
+  name: TH32CS_SNAPALL
+  value: TH32CS_SNAPHEAPLIST | TH32CS_SNAPMODULE |          TH32CS_SNAPPROCESS | TH32CS_SNAPTHREAD
+full_name: Windows::ToolHelper
+includes: []
+
+instance_methods: []
+
+name: ToolHelper
+superclass: 

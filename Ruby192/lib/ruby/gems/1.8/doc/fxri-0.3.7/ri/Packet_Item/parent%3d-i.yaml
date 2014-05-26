@@ -1,0 +1,12 @@
+--- !ruby/object:RI::MethodDescription 
+aliases: []
+
+block_params: 
+comment: 
+- !ruby/struct:SM::Flow::P 
+  body: Set a new parent. This removes this item from the current list and adds itself to the new one.
+full_name: Packet_Item#parent=
+is_singleton: false
+name: parent=
+params: (newParent)
+visibility: public

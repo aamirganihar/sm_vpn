@@ -1,0 +1,10 @@
+--- !ruby/object:RI::MethodDescription 
+aliases: []
+
+block_params: 
+comment: 
+full_name: Mail::Matchers::HasSentEmailMatcher#matching_subject
+is_singleton: false
+name: matching_subject
+params: (subject_matcher)
+visibility: public

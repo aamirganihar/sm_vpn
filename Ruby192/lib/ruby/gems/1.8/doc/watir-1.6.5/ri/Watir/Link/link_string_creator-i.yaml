@@ -1,0 +1,10 @@
+--- !ruby/object:RI::MethodDescription 
+aliases: []
+
+block_params: 
+comment: 
+full_name: Watir::Link#link_string_creator
+is_singleton: false
+name: link_string_creator
+params: ()
+visibility: public

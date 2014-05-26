@@ -1,0 +1,12 @@
+--- !ruby/object:RI::MethodDescription 
+aliases: []
+
+block_params: 
+comment: 
+- !ruby/struct:SM::Flow::P 
+  body: Send the message via SMTP. The from and to attributes are optional. If not set, they are retrieve from the Message.
+full_name: Mail::SMTPConnection#deliver!
+is_singleton: false
+name: deliver!
+params: (mail)
+visibility: public

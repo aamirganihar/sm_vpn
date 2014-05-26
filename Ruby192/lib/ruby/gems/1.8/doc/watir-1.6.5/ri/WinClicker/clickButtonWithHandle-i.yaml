@@ -1,0 +1,13 @@
+--- !ruby/object:RI::MethodDescription 
+aliases: 
+- !ruby/object:RI::AliasName 
+  name: click_button_with_handle
+block_params: 
+comment: 
+- !ruby/struct:SM::Flow::P 
+  body: Posts a message to the handle passed in to click
+full_name: WinClicker#clickButtonWithHandle
+is_singleton: false
+name: clickButtonWithHandle
+params: (buttonhWnd)
+visibility: public

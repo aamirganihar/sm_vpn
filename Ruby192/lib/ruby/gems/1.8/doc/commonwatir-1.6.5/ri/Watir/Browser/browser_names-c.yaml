@@ -1,0 +1,12 @@
+--- !ruby/object:RI::MethodDescription 
+aliases: []
+
+block_params: 
+comment: 
+- !ruby/struct:SM::Flow::P 
+  body: Returns the names of the browsers that are supported by this module. These are the options for 'watir_browser' (env var) or 'browser:' (yaml).
+full_name: Watir::Browser::browser_names
+is_singleton: true
+name: browser_names
+params: ()
+visibility: public

@@ -1,0 +1,10 @@
+--- !ruby/object:RI::MethodDescription 
+aliases: []
+
+block_params: 
+comment: 
+full_name: Treetop::Compiler::ParsingExpression#assign_lazily_instantiated_node
+is_singleton: false
+name: assign_lazily_instantiated_node
+params: ()
+visibility: public

@@ -1,0 +1,12 @@
+--- !ruby/object:RI::MethodDescription 
+aliases: []
+
+block_params: ""
+comment: 
+- !ruby/struct:SM::Flow::P 
+  body: Typically used to wrap the execution of an entire script. If an exception is thrown, a terse message is printed (to $stderr) instead of a stack dump. The message printed is gotten from the exception.
+full_name: S4tUtils#with_pleasant_exceptions
+is_singleton: false
+name: with_pleasant_exceptions
+params: () {|| ...}
+visibility: public

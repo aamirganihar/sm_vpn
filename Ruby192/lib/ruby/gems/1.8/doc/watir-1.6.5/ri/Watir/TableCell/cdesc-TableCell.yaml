@@ -1,0 +1,26 @@
+--- !ruby/object:RI::ClassDescription 
+attributes: []
+
+class_methods: 
+- !ruby/object:RI::MethodSummary 
+  name: new
+comment: 
+- !ruby/struct:SM::Flow::P 
+  body: this class is a table cell - when called via the Table object
+constants: []
+
+full_name: Watir::TableCell
+includes: 
+- !ruby/object:RI::IncludedModule 
+  name: Watir::Exception
+- !ruby/object:RI::IncludedModule 
+  name: Container
+instance_methods: 
+- !ruby/object:RI::MethodSummary 
+  name: colspan
+- !ruby/object:RI::MethodSummary 
+  name: document
+- !ruby/object:RI::MethodSummary 
+  name: locate
+name: TableCell
+superclass: Element

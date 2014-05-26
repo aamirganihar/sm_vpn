@@ -1,0 +1,12 @@
+--- !ruby/object:RI::MethodDescription 
+aliases: []
+
+block_params: 
+comment: 
+- !ruby/struct:SM::Flow::P 
+  body: The system function passes command to the command interpreter, which executes the string as an operating-system command http://msdn.microsoft.com/library/default.asp?url=/library/en-us/vccore98/html/_crt_system.2c_._wsystem.asp using win32api
+full_name: WinClicker#winsystem
+is_singleton: false
+name: winsystem
+params: (command)
+visibility: public

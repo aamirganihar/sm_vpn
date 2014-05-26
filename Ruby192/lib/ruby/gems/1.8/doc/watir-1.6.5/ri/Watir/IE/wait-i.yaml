@@ -1,0 +1,17 @@
+--- !ruby/object:RI::MethodDescription 
+aliases: []
+
+block_params: 
+comment: 
+- !ruby/struct:SM::Flow::P 
+  body: Block execution until the page has loaded.
+- !ruby/struct:SM::Flow::H 
+  level: 1
+  text: nodoc
+- !ruby/struct:SM::Flow::P 
+  body: "Note: This code needs to be prepared for the ie object to be closed at any moment!"
+full_name: Watir::IE#wait
+is_singleton: false
+name: wait
+params: (no_sleep=false)
+visibility: public

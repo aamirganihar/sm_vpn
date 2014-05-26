@@ -1,0 +1,14 @@
+--- !ruby/object:RI::MethodDescription 
+aliases: []
+
+block_params: ""
+comment: 
+- !ruby/struct:SM::Flow::P 
+  body: Run the block, capturing output to $stdout in a string. That string is the method's return value.
+- !ruby/struct:SM::Flow::P 
+  body: "Note: this assigns to $stdout, which is deprecated in favor of $stdout.reopen. However, reopen can't take a StringIO as an argument."
+full_name: S4tUtils#capturing_stdout
+is_singleton: false
+name: capturing_stdout
+params: () {|| ...}
+visibility: public

@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html 
+     PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+     "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html>
+<head>
+  <title>get_zone_data (Timezone::Zone)</title>
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+  <link rel="stylesheet" href="../../.././rdoc-style.css" type="text/css" media="screen" />
+</head>
+<body class="standalone-code">
+  <pre><span class="ruby-comment cmt"># File lib/timezone/zone.rb, line 78</span>
+      <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">get_zone_data</span>(<span class="ruby-identifier">zone</span>)
+        <span class="ruby-identifier">file</span> = <span class="ruby-constant">File</span>.<span class="ruby-identifier">join</span>(<span class="ruby-constant">ZONE_FILE_PATH</span>, <span class="ruby-node">&quot;#{zone}.json&quot;</span>)
+        <span class="ruby-keyword kw">begin</span>
+          <span class="ruby-keyword kw">return</span> <span class="ruby-constant">JSON</span>.<span class="ruby-identifier">parse</span>(<span class="ruby-identifier">open</span>(<span class="ruby-identifier">file</span>).<span class="ruby-identifier">read</span>)
+        <span class="ruby-keyword kw">rescue</span>
+          <span class="ruby-identifier">raise</span> <span class="ruby-constant">Timezone</span><span class="ruby-operator">::</span><span class="ruby-constant">Error</span><span class="ruby-operator">::</span><span class="ruby-constant">InvalidZone</span>, <span class="ruby-node">&quot;'#{zone}' is not a valid zone.&quot;</span>
+        <span class="ruby-keyword kw">end</span>
+      <span class="ruby-keyword kw">end</span></pre>
+</body>
+</html>

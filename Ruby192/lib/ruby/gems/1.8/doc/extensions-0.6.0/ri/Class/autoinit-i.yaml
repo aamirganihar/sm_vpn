@@ -1,0 +1,16 @@
+--- !ruby/object:RI::MethodDescription 
+aliases: []
+
+block_params: ""
+comment: 
+- !ruby/struct:SM::Flow::P 
+  body: "A shorthand for the common chore of assigning initialize's parameters to instance variables. For example:"
+- !ruby/struct:SM::Flow::VERB 
+  body: "  class Circle\n\n    attr_reader :radius, :location, :area\n\n    autoinit(:radius, :location) do\n      @area = Math::PI * @radius ** 2\n    end\n\n  end\n"
+- !ruby/struct:SM::Flow::P 
+  body: A TypeError is raised unless all the arguments to <tt>autoinit</tt> are strings or symbols.
+full_name: Class#autoinit
+is_singleton: false
+name: autoinit
+params: (*args) {|| ...}
+visibility: public

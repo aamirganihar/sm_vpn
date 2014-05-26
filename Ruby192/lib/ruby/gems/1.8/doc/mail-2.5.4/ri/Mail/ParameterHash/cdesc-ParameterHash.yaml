@@ -1,0 +1,23 @@
+--- !ruby/object:RI::ClassDescription 
+attributes: []
+
+class_methods: []
+
+comment: 
+- !ruby/struct:SM::Flow::P 
+  body: ParameterHash is an intelligent Hash that allows you to add parameter values including the MIME extension paramaters that have the name*0=&quot;blah&quot;, name*1=&quot;bleh&quot; keys, and will just return a single key called name=&quot;blahbleh&quot; and do any required un-encoding to make that happen Parameters are defined in RFC2045, split keys are in RFC2231
+constants: []
+
+full_name: Mail::ParameterHash
+includes: 
+- !ruby/object:RI::IncludedModule 
+  name: Mail::Utilities
+instance_methods: 
+- !ruby/object:RI::MethodSummary 
+  name: "[]"
+- !ruby/object:RI::MethodSummary 
+  name: decoded
+- !ruby/object:RI::MethodSummary 
+  name: encoded
+name: ParameterHash
+superclass: IndifferentHash

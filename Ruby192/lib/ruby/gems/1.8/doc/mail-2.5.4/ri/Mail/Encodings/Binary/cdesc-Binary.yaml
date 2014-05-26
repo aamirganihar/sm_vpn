@@ -1,0 +1,27 @@
+--- !ruby/object:RI::ClassDescription 
+attributes: []
+
+class_methods: 
+- !ruby/object:RI::MethodSummary 
+  name: cost
+- !ruby/object:RI::MethodSummary 
+  name: decode
+- !ruby/object:RI::MethodSummary 
+  name: encode
+comment: 
+constants: 
+- !ruby/object:RI::Constant 
+  comment: 
+  name: NAME
+  value: "'binary'"
+- !ruby/object:RI::Constant 
+  comment: 
+  name: PRIORITY
+  value: "5"
+full_name: Mail::Encodings::Binary
+includes: []
+
+instance_methods: []
+
+name: Binary
+superclass: TransferEncoding

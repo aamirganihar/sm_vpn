@@ -1,0 +1,10 @@
+--- !ruby/object:RI::MethodDescription 
+aliases: []
+
+block_params: 
+comment: 
+full_name: Mail::ContentTypeField#attempt_to_clean
+is_singleton: false
+name: attempt_to_clean
+params: ()
+visibility: public

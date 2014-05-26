@@ -1,0 +1,10 @@
+--- !ruby/object:RI::MethodDescription 
+aliases: []
+
+block_params: 
+comment: 
+full_name: Watir::Lis#set_show_items
+is_singleton: false
+name: set_show_items
+params: ()
+visibility: public

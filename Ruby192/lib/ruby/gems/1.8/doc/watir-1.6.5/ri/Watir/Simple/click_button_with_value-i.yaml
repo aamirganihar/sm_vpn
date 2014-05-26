@@ -1,0 +1,12 @@
+--- !ruby/object:RI::MethodDescription 
+aliases: []
+
+block_params: 
+comment: 
+- !ruby/struct:SM::Flow::P 
+  body: Tell the browser to click on a form button with the specified value attribute.
+full_name: Watir::Simple#click_button_with_value
+is_singleton: false
+name: click_button_with_value
+params: (value)
+visibility: public

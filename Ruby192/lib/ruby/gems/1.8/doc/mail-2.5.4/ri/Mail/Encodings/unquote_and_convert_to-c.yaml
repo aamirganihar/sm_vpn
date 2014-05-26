@@ -1,0 +1,12 @@
+--- !ruby/object:RI::MethodDescription 
+aliases: []
+
+block_params: 
+comment: 
+- !ruby/struct:SM::Flow::P 
+  body: Takes an encoded string of the format =?&lt;encoding&gt;?[QB]?&lt;string&gt;?=
+full_name: Mail::Encodings::unquote_and_convert_to
+is_singleton: true
+name: unquote_and_convert_to
+params: (str, to_encoding)
+visibility: public

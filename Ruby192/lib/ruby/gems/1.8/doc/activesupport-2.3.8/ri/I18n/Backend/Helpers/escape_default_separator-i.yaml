@@ -1,0 +1,10 @@
+--- !ruby/object:RI::MethodDescription 
+aliases: []
+
+block_params: 
+comment: 
+full_name: I18n::Backend::Helpers#escape_default_separator
+is_singleton: false
+name: escape_default_separator
+params: (key, separator=nil)
+visibility: public

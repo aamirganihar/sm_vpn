@@ -1,0 +1,12 @@
+--- !ruby/object:RI::MethodDescription 
+aliases: []
+
+block_params: 
+comment: 
+- !ruby/struct:SM::Flow::P 
+  body: Create a new Packet_List. All parameters are passed to the parental constructor FXIconList.
+full_name: Packet_List::new
+is_singleton: true
+name: new
+params: (data, *args)
+visibility: public

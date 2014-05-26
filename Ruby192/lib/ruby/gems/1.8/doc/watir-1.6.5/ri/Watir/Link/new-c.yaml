@@ -1,0 +1,14 @@
+--- !ruby/object:RI::MethodDescription 
+aliases: []
+
+block_params: 
+comment: 
+- !ruby/struct:SM::Flow::P 
+  body: Returns an initialized instance of a link object
+- !ruby/struct:SM::Flow::VERB 
+  body: "  * container  - an instance of a container\n  * how         - symbol - how we access the link\n  * what         - what we use to access the link, text, url, index etc\n"
+full_name: Watir::Link::new
+is_singleton: true
+name: new
+params: (container, how, what)
+visibility: public

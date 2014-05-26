@@ -1,0 +1,54 @@
+--- !ruby/object:RI::ClassDescription 
+attributes: []
+
+class_methods: 
+- !ruby/object:RI::MethodSummary 
+  name: generate_boundary
+- !ruby/object:RI::MethodSummary 
+  name: new
+- !ruby/object:RI::MethodSummary 
+  name: with_boundary
+comment: 
+constants: 
+- !ruby/object:RI::Constant 
+  comment: 
+  name: FIELD_NAME
+  value: "'content-type'"
+- !ruby/object:RI::Constant 
+  comment: 
+  name: CAPITALIZED_FIELD
+  value: "'Content-Type'"
+full_name: Mail::ContentTypeField
+includes: []
+
+instance_methods: 
+- !ruby/object:RI::MethodSummary 
+  name: attempt_to_clean
+- !ruby/object:RI::MethodSummary 
+  name: content_type
+- !ruby/object:RI::MethodSummary 
+  name: decoded
+- !ruby/object:RI::MethodSummary 
+  name: default
+- !ruby/object:RI::MethodSummary 
+  name: element
+- !ruby/object:RI::MethodSummary 
+  name: encoded
+- !ruby/object:RI::MethodSummary 
+  name: filename
+- !ruby/object:RI::MethodSummary 
+  name: main_type
+- !ruby/object:RI::MethodSummary 
+  name: parameters
+- !ruby/object:RI::MethodSummary 
+  name: parse
+- !ruby/object:RI::MethodSummary 
+  name: string
+- !ruby/object:RI::MethodSummary 
+  name: stringify
+- !ruby/object:RI::MethodSummary 
+  name: sub_type
+- !ruby/object:RI::MethodSummary 
+  name: value
+name: ContentTypeField
+superclass: StructuredField

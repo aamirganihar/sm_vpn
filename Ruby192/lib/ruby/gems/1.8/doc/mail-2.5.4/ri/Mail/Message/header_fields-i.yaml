@@ -1,0 +1,12 @@
+--- !ruby/object:RI::MethodDescription 
+aliases: []
+
+block_params: 
+comment: 
+- !ruby/struct:SM::Flow::P 
+  body: Returns an FieldList of all the fields in the header in the order that they appear in the header
+full_name: Mail::Message#header_fields
+is_singleton: false
+name: header_fields
+params: ()
+visibility: public

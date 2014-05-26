@@ -1,0 +1,151 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+<!DOCTYPE html 
+     PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+     "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+  <title>File: mail.rb</title>
+  <meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" />
+  <meta http-equiv="Content-Script-Type" content="text/javascript" />
+  <link rel="stylesheet" href="../.././rdoc-style.css" type="text/css" media="screen" />
+  <script type="text/javascript">
+  // <![CDATA[
+
+  function popupCode( url ) {
+    window.open(url, "Code", "resizable=yes,scrollbars=yes,toolbar=no,status=no,height=150,width=400")
+  }
+
+  function toggleCode( id ) {
+    if ( document.getElementById )
+      elem = document.getElementById( id );
+    else if ( document.all )
+      elem = eval( "document.all." + id );
+    else
+      return false;
+
+    elemStyle = elem.style;
+    
+    if ( elemStyle.display != "block" ) {
+      elemStyle.display = "block"
+    } else {
+      elemStyle.display = "none"
+    }
+
+    return true;
+  }
+  
+  // Make codeblocks hidden by default
+  document.writeln( "<style type=\"text/css\">div.method-source-code { display: none }</style>" )
+  
+  // ]]>
+  </script>
+
+</head>
+<body>
+
+
+
+  <div id="fileHeader">
+    <h1>mail.rb</h1>
+    <table class="header-table">
+    <tr class="top-aligned-row">
+      <td><strong>Path:</strong></td>
+      <td>lib/mail.rb
+      </td>
+    </tr>
+    <tr class="top-aligned-row">
+      <td><strong>Last Update:</strong></td>
+      <td>Fri Dec 06 09:20:09 +0530 2013</td>
+    </tr>
+    </table>
+  </div>
+  <!-- banner header -->
+
+  <div id="bodyContent">
+
+
+
+  <div id="contextContent">
+
+    <div id="description">
+      <p>
+encoding: utf-8
+</p>
+
+    </div>
+
+    <div id="requires-list">
+      <h3 class="section-bar">Required files</h3>
+
+      <div class="name-list">
+      date&nbsp;&nbsp;
+      shellwords&nbsp;&nbsp;
+      uri&nbsp;&nbsp;
+      net/smtp&nbsp;&nbsp;
+      mime/types&nbsp;&nbsp;
+      tlsmail&nbsp;&nbsp;
+      mail/version_specific/ruby_1_9&nbsp;&nbsp;
+      mail/version_specific/ruby_1_8&nbsp;&nbsp;
+      mail/version&nbsp;&nbsp;
+      mail/core_extensions/nil&nbsp;&nbsp;
+      mail/core_extensions/object&nbsp;&nbsp;
+      mail/core_extensions/string&nbsp;&nbsp;
+      mail/core_extensions/smtp&nbsp;&nbsp;
+      mail/indifferent_hash&nbsp;&nbsp;
+      active_support/inflector&nbsp;&nbsp;
+      mail/core_extensions/string/access&nbsp;&nbsp;
+      mail/core_extensions/string/multibyte&nbsp;&nbsp;
+      mail/multibyte&nbsp;&nbsp;
+      mail/patterns&nbsp;&nbsp;
+      mail/utilities&nbsp;&nbsp;
+      mail/configuration&nbsp;&nbsp;
+      mail/network&nbsp;&nbsp;
+      mail/message&nbsp;&nbsp;
+      mail/part&nbsp;&nbsp;
+      mail/header&nbsp;&nbsp;
+      mail/parts_list&nbsp;&nbsp;
+      mail/attachments_list&nbsp;&nbsp;
+      mail/body&nbsp;&nbsp;
+      mail/field&nbsp;&nbsp;
+      mail/field_list&nbsp;&nbsp;
+      mail/envelope&nbsp;&nbsp;
+      load_parsers&nbsp;&nbsp;
+      mail/elements&nbsp;&nbsp;
+      mail/encodings&nbsp;&nbsp;
+      mail/encodings/base64&nbsp;&nbsp;
+      mail/encodings/quoted_printable&nbsp;&nbsp;
+      mail/matchers/has_sent_mail&nbsp;&nbsp;
+      mail/mail&nbsp;&nbsp;
+      </div>
+    </div>
+
+   </div>
+
+
+  </div>
+
+
+    <!-- if includes -->
+
+    <div id="section">
+
+
+
+
+
+      
+
+
+    <!-- if method_list -->
+
+
+  </div>
+
+
+<div id="validator-badges">
+  <p><small><a href="http://validator.w3.org/check/referer">[Validate]</a></small></p>
+</div>
+
+</body>
+</html>

@@ -1,0 +1,485 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+<!DOCTYPE html 
+     PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+     "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+  <title>Module: Mail::Encodings</title>
+  <meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" />
+  <meta http-equiv="Content-Script-Type" content="text/javascript" />
+  <link rel="stylesheet" href="../.././rdoc-style.css" type="text/css" media="screen" />
+  <script type="text/javascript">
+  // <![CDATA[
+
+  function popupCode( url ) {
+    window.open(url, "Code", "resizable=yes,scrollbars=yes,toolbar=no,status=no,height=150,width=400")
+  }
+
+  function toggleCode( id ) {
+    if ( document.getElementById )
+      elem = document.getElementById( id );
+    else if ( document.all )
+      elem = eval( "document.all." + id );
+    else
+      return false;
+
+    elemStyle = elem.style;
+    
+    if ( elemStyle.display != "block" ) {
+      elemStyle.display = "block"
+    } else {
+      elemStyle.display = "none"
+    }
+
+    return true;
+  }
+  
+  // Make codeblocks hidden by default
+  document.writeln( "<style type=\"text/css\">div.method-source-code { display: none }</style>" )
+  
+  // ]]>
+  </script>
+
+</head>
+<body>
+
+
+
+    <div id="classHeader">
+        <table class="header-table">
+        <tr class="top-aligned-row">
+          <td><strong>Module</strong></td>
+          <td class="class-name-in-header">Mail::Encodings</td>
+        </tr>
+        <tr class="top-aligned-row">
+            <td><strong>In:</strong></td>
+            <td>
+                <a href="../../files/lib/mail/encodings/7bit_rb.html">
+                lib/mail/encodings/7bit.rb
+                </a>
+        <br />
+                <a href="../../files/lib/mail/encodings/8bit_rb.html">
+                lib/mail/encodings/8bit.rb
+                </a>
+        <br />
+                <a href="../../files/lib/mail/encodings/base64_rb.html">
+                lib/mail/encodings/base64.rb
+                </a>
+        <br />
+                <a href="../../files/lib/mail/encodings/binary_rb.html">
+                lib/mail/encodings/binary.rb
+                </a>
+        <br />
+                <a href="../../files/lib/mail/encodings/quoted_printable_rb.html">
+                lib/mail/encodings/quoted_printable.rb
+                </a>
+        <br />
+                <a href="../../files/lib/mail/encodings/transfer_encoding_rb.html">
+                lib/mail/encodings/transfer_encoding.rb
+                </a>
+        <br />
+                <a href="../../files/lib/mail/encodings_rb.html">
+                lib/mail/encodings.rb
+                </a>
+        <br />
+            </td>
+        </tr>
+
+        </table>
+    </div>
+  <!-- banner header -->
+
+  <div id="bodyContent">
+
+
+
+  <div id="contextContent">
+
+
+
+   </div>
+
+    <div id="method-list">
+      <h3 class="section-bar">Methods</h3>
+
+      <div class="name-list">
+      <a href="#M000413">address_encode</a>&nbsp;&nbsp;
+      <a href="#M000415">b_value_encode</a>&nbsp;&nbsp;
+      <a href="#M000410">decode_encode</a>&nbsp;&nbsp;
+      <a href="#M000404">defined?</a>&nbsp;&nbsp;
+      <a href="#M000414">encode_non_usascii</a>&nbsp;&nbsp;
+      <a href="#M000406">get_all</a>&nbsp;&nbsp;
+      <a href="#M000405">get_encoding</a>&nbsp;&nbsp;
+      <a href="#M000407">get_name</a>&nbsp;&nbsp;
+      <a href="#M000409">param_decode</a>&nbsp;&nbsp;
+      <a href="#M000408">param_encode</a>&nbsp;&nbsp;
+      <a href="#M000416">q_value_encode</a>&nbsp;&nbsp;
+      <a href="#M000403">register</a>&nbsp;&nbsp;
+      <a href="#M000412">unquote_and_convert_to</a>&nbsp;&nbsp;
+      <a href="#M000411">value_decode</a>&nbsp;&nbsp;
+      </div>
+    </div>
+
+  </div>
+
+
+    <!-- if includes -->
+    <div id="includes">
+      <h3 class="section-bar">Included Modules</h3>
+
+      <div id="includes-list">
+        <span class="include-name"><a href="Patterns.html">Mail::Patterns</a></span>
+      </div>
+    </div>
+
+    <div id="section">
+
+    <div id="class-list">
+      <h3 class="section-bar">Classes and Modules</h3>
+
+      Class <a href="Encodings/Base64.html" class="link">Mail::Encodings::Base64</a><br />
+Class <a href="Encodings/Binary.html" class="link">Mail::Encodings::Binary</a><br />
+Class <a href="Encodings/EightBit.html" class="link">Mail::Encodings::EightBit</a><br />
+Class <a href="Encodings/QuotedPrintable.html" class="link">Mail::Encodings::QuotedPrintable</a><br />
+Class <a href="Encodings/SevenBit.html" class="link">Mail::Encodings::SevenBit</a><br />
+Class <a href="Encodings/TransferEncoding.html" class="link">Mail::Encodings::TransferEncoding</a><br />
+
+    </div>
+
+
+
+
+      
+
+
+    <!-- if method_list -->
+    <div id="methods">
+      <h3 class="section-bar">Public Class methods</h3>
+
+      <div id="method-M000413" class="method-detail">
+        <a name="M000413"></a>
+
+        <div class="method-heading">
+          <a href="Encodings.src/M000413.html" target="Code" class="method-signature"
+            onclick="popupCode('Encodings.src/M000413.html');return false;">
+          <span class="method-name">address_encode</span><span class="method-args">(address, charset = 'utf-8')</span>
+          </a>
+        </div>
+      
+        <div class="method-description">
+        </div>
+      </div>
+
+      <div id="method-M000415" class="method-detail">
+        <a name="M000415"></a>
+
+        <div class="method-heading">
+          <a href="Encodings.src/M000415.html" target="Code" class="method-signature"
+            onclick="popupCode('Encodings.src/M000415.html');return false;">
+          <span class="method-name">b_value_encode</span><span class="method-args">(encoded_str, encoding = nil)</span>
+          </a>
+        </div>
+      
+        <div class="method-description">
+          <p>
+Encode a string with <a href="Encodings/Base64.html">Base64</a> Encoding
+and returns it ready to be inserted as a value for a field, that is, in the
+=?&lt;charset&gt;?B?&lt;string&gt;?= format
+</p>
+<p>
+Example:
+</p>
+<pre>
+ Encodings.b_value_encode('This is あ string', 'UTF-8')
+ #=&gt; &quot;=?UTF-8?B?VGhpcyBpcyDjgYIgc3RyaW5n?=&quot;
+</pre>
+        </div>
+      </div>
+
+      <div id="method-M000410" class="method-detail">
+        <a name="M000410"></a>
+
+        <div class="method-heading">
+          <a href="Encodings.src/M000410.html" target="Code" class="method-signature"
+            onclick="popupCode('Encodings.src/M000410.html');return false;">
+          <span class="method-name">decode_encode</span><span class="method-args">(str, output_type)</span>
+          </a>
+        </div>
+      
+        <div class="method-description">
+          <p>
+Decodes or encodes a string as needed for either <a
+href="Encodings/Base64.html">Base64</a> or QP encoding types in the
+=?&lt;encoding&gt;?[QB]?&lt;string&gt;?=&quot; format.
+</p>
+<p>
+The output type needs to be :decode to decode the input string or :encode
+to encode the input string. The character set used for encoding will either
+be the value of $KCODE for Ruby &lt; 1.9 or the encoding on the string
+passed in.
+</p>
+<p>
+On encoding, will only send out <a href="Encodings/Base64.html">Base64</a>
+encoded strings.
+</p>
+        </div>
+      </div>
+
+      <div id="method-M000404" class="method-detail">
+        <a name="M000404"></a>
+
+        <div class="method-heading">
+          <a href="Encodings.src/M000404.html" target="Code" class="method-signature"
+            onclick="popupCode('Encodings.src/M000404.html');return false;">
+          <span class="method-name">defined?</span><span class="method-args">( str )</span>
+          </a>
+        </div>
+      
+        <div class="method-description">
+          <p>
+Is the encoding we want <a href="Encodings.html#M000404">defined?</a>
+</p>
+<p>
+Example:
+</p>
+<pre>
+ Encodings.defined?(:base64) #=&gt; true
+</pre>
+        </div>
+      </div>
+
+      <div id="method-M000414" class="method-detail">
+        <a name="M000414"></a>
+
+        <div class="method-heading">
+          <a href="Encodings.src/M000414.html" target="Code" class="method-signature"
+            onclick="popupCode('Encodings.src/M000414.html');return false;">
+          <span class="method-name">encode_non_usascii</span><span class="method-args">(address, charset)</span>
+          </a>
+        </div>
+      
+        <div class="method-description">
+        </div>
+      </div>
+
+      <div id="method-M000406" class="method-detail">
+        <a name="M000406"></a>
+
+        <div class="method-heading">
+          <a href="Encodings.src/M000406.html" target="Code" class="method-signature"
+            onclick="popupCode('Encodings.src/M000406.html');return false;">
+          <span class="method-name">get_all</span><span class="method-args">()</span>
+          </a>
+        </div>
+      
+        <div class="method-description">
+        </div>
+      </div>
+
+      <div id="method-M000405" class="method-detail">
+        <a name="M000405"></a>
+
+        <div class="method-heading">
+          <a href="Encodings.src/M000405.html" target="Code" class="method-signature"
+            onclick="popupCode('Encodings.src/M000405.html');return false;">
+          <span class="method-name">get_encoding</span><span class="method-args">( str )</span>
+          </a>
+        </div>
+      
+        <div class="method-description">
+          <p>
+Gets a defined encoding type, <a
+href="Encodings/QuotedPrintable.html">QuotedPrintable</a> or <a
+href="Encodings/Base64.html">Base64</a> for now.
+</p>
+<p>
+Each encoding needs to be defined as a Mail::Encodings::ClassName for this
+to work, allows us to add other encodings in the future.
+</p>
+<p>
+Example:
+</p>
+<pre>
+ Encodings.get_encoding(:base64) #=&gt; Mail::Encodings::Base64
+</pre>
+        </div>
+      </div>
+
+      <div id="method-M000407" class="method-detail">
+        <a name="M000407"></a>
+
+        <div class="method-heading">
+          <a href="Encodings.src/M000407.html" target="Code" class="method-signature"
+            onclick="popupCode('Encodings.src/M000407.html');return false;">
+          <span class="method-name">get_name</span><span class="method-args">(enc)</span>
+          </a>
+        </div>
+      
+        <div class="method-description">
+        </div>
+      </div>
+
+      <div id="method-M000409" class="method-detail">
+        <a name="M000409"></a>
+
+        <div class="method-heading">
+          <a href="Encodings.src/M000409.html" target="Code" class="method-signature"
+            onclick="popupCode('Encodings.src/M000409.html');return false;">
+          <span class="method-name">param_decode</span><span class="method-args">(str, encoding)</span>
+          </a>
+        </div>
+      
+        <div class="method-description">
+          <p>
+Decodes a parameter value using URI Escaping.
+</p>
+<p>
+Example:
+</p>
+<pre>
+ Mail::Encodings.param_decode(&quot;This%20is%20fun&quot;, 'us-ascii') #=&gt; &quot;This is fun&quot;
+
+ str = Mail::Encodings.param_decode(&quot;This%20is%20fun&quot;, 'iso-8559-1')
+ str.encoding #=&gt; 'ISO-8859-1'      ## Only on Ruby 1.9
+ str #=&gt; &quot;This is fun&quot;
+</pre>
+        </div>
+      </div>
+
+      <div id="method-M000408" class="method-detail">
+        <a name="M000408"></a>
+
+        <div class="method-heading">
+          <a href="Encodings.src/M000408.html" target="Code" class="method-signature"
+            onclick="popupCode('Encodings.src/M000408.html');return false;">
+          <span class="method-name">param_encode</span><span class="method-args">(str)</span>
+          </a>
+        </div>
+      
+        <div class="method-description">
+          <p>
+Encodes a parameter value using URI Escaping, note the language field
+&#8216;en&#8217; can be set using <a
+href="Configuration.html">Mail::Configuration</a>, like so:
+</p>
+<pre>
+ Mail.defaults do
+   param_encode_language 'jp'
+ end
+</pre>
+<p>
+The character set used for encoding will either be the value of $KCODE for
+Ruby &lt; 1.9 or the encoding on the string passed in.
+</p>
+<p>
+Example:
+</p>
+<pre>
+ Mail::Encodings.param_encode(&quot;This is fun&quot;) #=&gt; &quot;us-ascii'en'This%20is%20fun&quot;
+</pre>
+        </div>
+      </div>
+
+      <div id="method-M000416" class="method-detail">
+        <a name="M000416"></a>
+
+        <div class="method-heading">
+          <a href="Encodings.src/M000416.html" target="Code" class="method-signature"
+            onclick="popupCode('Encodings.src/M000416.html');return false;">
+          <span class="method-name">q_value_encode</span><span class="method-args">(encoded_str, encoding = nil)</span>
+          </a>
+        </div>
+      
+        <div class="method-description">
+          <p>
+Encode a string with Quoted-Printable Encoding and returns it ready to be
+inserted as a value for a field, that is, in the
+=?&lt;charset&gt;?Q?&lt;string&gt;?= format
+</p>
+<p>
+Example:
+</p>
+<pre>
+ Encodings.q_value_encode('This is あ string', 'UTF-8')
+ #=&gt; &quot;=?UTF-8?Q?This_is_=E3=81=82_string?=&quot;
+</pre>
+        </div>
+      </div>
+
+      <div id="method-M000403" class="method-detail">
+        <a name="M000403"></a>
+
+        <div class="method-heading">
+          <a href="Encodings.src/M000403.html" target="Code" class="method-signature"
+            onclick="popupCode('Encodings.src/M000403.html');return false;">
+          <span class="method-name">register</span><span class="method-args">(name, cls)</span>
+          </a>
+        </div>
+      
+        <div class="method-description">
+          <p>
+Register transfer encoding
+</p>
+<p>
+Example
+</p>
+<p>
+<a href="Encodings.html#M000403">Encodings.register</a> &quot;base64&quot;,
+<a href="Encodings/Base64.html">Mail::Encodings::Base64</a>
+</p>
+        </div>
+      </div>
+
+      <div id="method-M000412" class="method-detail">
+        <a name="M000412"></a>
+
+        <div class="method-heading">
+          <a href="Encodings.src/M000412.html" target="Code" class="method-signature"
+            onclick="popupCode('Encodings.src/M000412.html');return false;">
+          <span class="method-name">unquote_and_convert_to</span><span class="method-args">(str, to_encoding)</span>
+          </a>
+        </div>
+      
+        <div class="method-description">
+          <p>
+Takes an encoded string of the format
+=?&lt;encoding&gt;?[QB]?&lt;string&gt;?=
+</p>
+        </div>
+      </div>
+
+      <div id="method-M000411" class="method-detail">
+        <a name="M000411"></a>
+
+        <div class="method-heading">
+          <a href="Encodings.src/M000411.html" target="Code" class="method-signature"
+            onclick="popupCode('Encodings.src/M000411.html');return false;">
+          <span class="method-name">value_decode</span><span class="method-args">(str)</span>
+          </a>
+        </div>
+      
+        <div class="method-description">
+          <p>
+Decodes a given string as <a href="Encodings/Base64.html">Base64</a> or
+Quoted Printable, depending on what type it is.
+</p>
+<p>
+String has to be of the format =?&lt;encoding&gt;?[QB]?&lt;string&gt;?=
+</p>
+        </div>
+      </div>
+
+
+    </div>
+
+
+  </div>
+
+
+<div id="validator-badges">
+  <p><small><a href="http://validator.w3.org/check/referer">[Validate]</a></small></p>
+</div>
+
+</body>
+</html>

@@ -1,0 +1,14 @@
+--- !ruby/object:RI::MethodDescription 
+aliases: []
+
+block_params: 
+comment: 
+- !ruby/struct:SM::Flow::P 
+  body: Returns the uid of the current process. Specifically, it returns the RID of the SID associated with the owner of the process.
+- !ruby/struct:SM::Flow::P 
+  body: If <tt>sid</tt> is set to true, then a binary sid is returned. Otherwise, a numeric id is returned (the default).
+full_name: Process#uid
+is_singleton: false
+name: uid
+params: (sid = false)
+visibility: public

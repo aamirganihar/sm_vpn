@@ -1,0 +1,272 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+<!DOCTYPE html 
+     PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+     "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+  <title>File: readme.rb</title>
+  <meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" />
+  <meta http-equiv="Content-Script-Type" content="text/javascript" />
+  <link rel="stylesheet" href="../.././rdoc-style.css" type="text/css" media="screen" />
+  <script type="text/javascript">
+  // <![CDATA[
+
+  function popupCode( url ) {
+    window.open(url, "Code", "resizable=yes,scrollbars=yes,toolbar=no,status=no,height=150,width=400")
+  }
+
+  function toggleCode( id ) {
+    if ( document.getElementById )
+      elem = document.getElementById( id );
+    else if ( document.all )
+      elem = eval( "document.all." + id );
+    else
+      return false;
+
+    elemStyle = elem.style;
+    
+    if ( elemStyle.display != "block" ) {
+      elemStyle.display = "block"
+    } else {
+      elemStyle.display = "none"
+    }
+
+    return true;
+  }
+  
+  // Make codeblocks hidden by default
+  document.writeln( "<style type=\"text/css\">div.method-source-code { display: none }</style>" )
+  
+  // ]]>
+  </script>
+
+</head>
+<body>
+
+
+
+  <div id="fileHeader">
+    <h1>readme.rb</h1>
+    <table class="header-table">
+    <tr class="top-aligned-row">
+      <td><strong>Path:</strong></td>
+      <td>lib/readme.rb
+      </td>
+    </tr>
+    <tr class="top-aligned-row">
+      <td><strong>Last Update:</strong></td>
+      <td>Thu Aug 12 13:23:01 +0530 2010</td>
+    </tr>
+    </table>
+  </div>
+  <!-- banner header -->
+
+  <div id="bodyContent">
+
+
+
+  <div id="contextContent">
+
+    <div id="description">
+      <p>
+This is <a href="../../classes/Watir.html">Watir</a> - Web Application
+Testing In Ruby <a href="http://wtr.rubyforge.org">wtr.rubyforge.org</a>
+</p>
+<p>
+Install Ruby <a href="http://ruby-lang.org">ruby-lang.org</a>
+</p>
+<pre>
+   First you need to install Ruby using the one-click installer for Windows. We
+   recommend Ruby 1.8.6. (Even if you are using modal dialogs.)
+</pre>
+<p>
+Install <a href="../../classes/Watir.html">Watir</a>
+</p>
+<pre>
+   Watir is packaged as a gem, a Ruby library that can be installed over the
+   internet.
+
+   Watir 1.5 was released in September 2007. To install it, type this at a
+   command prompt:
+      gem install watir
+
+   Watir 1.4 was released in August 2005. If you are upgrading from it, see
+   these notes: http://wiki.openqa.org/display/WTR/Development+Builds
+</pre>
+<p>
+How To Use:
+</p>
+<pre>
+   This only works on Windows.
+   Requires Internet Explorer 5.5 or newer.
+   Check out the mail lists and the documentation for the workarounds.
+</pre>
+<p>
+User Guide: <a
+href="http://wiki.openqa.org/display/WTR/User+Guide">wiki.openqa.org/display/WTR/User+Guide</a>
+</p>
+<p>
+Unit Tests:
+</p>
+<pre>
+   Run the unittests in a cmd shell. Go to the dir where you installed it and then type 'ruby unittests/core_tests.rb'.
+   See the user guide if you are having problems with security blocking.
+</pre>
+<p>
+Typical Usage
+</p>
+<pre>
+   # include the controller
+   require 'watir'
+   # create an instance of the controller
+   ie = Watir::IE.new
+   # go to the page you want to test
+   ie.goto('http://myserver/mypage')
+   # to enter text into a text field - assuming the field is named 'username'
+   ie.text_field(:name, 'username').set('Paul')
+   # if there was a text field that had an id of 'company_ID', you could set it to 'Ruby Co':
+   ie.text_field(:id ,'company_ID').set('Ruby Co')
+   # to click a button that has a caption of 'Cancel'
+   ie.button(:value, 'Cancel').click
+
+  Identifying something using two or more identifying characteristics
+   # Html objects can also be identified via a combination of two of the above methods,
+   # for example to click a span with a class name of 'Label', and whose text is 'Add new', one could say
+   ie.span(:class =&gt;'Label', :text =&gt; 'Add new').click
+   # Or to find one object within another (for example the first text_field within a div of class
+   # 'PasswordInput', where your password equals 'MyPassword'), one could say
+   ie.div(:class, 'PasswordInput').text_field(:index, 1).set('MyPassword')
+
+  The ways that are available to identify an html object depend upon the object type, but include
+   :id           used for an object that has an ID attribute.*
+   :name         used for an object that has a name attribute.*
+   :value        value of text fields, captions of buttons.
+   :index        finds the nth object of the specified type - eg button(:index , 2) finds the second button. This is 1 based. &lt;br&gt;
+   :class        used for an object that has a class attribute.
+   :text         used for links and other objects that contain text.
+   :xpath        finds the item using xpath query
+
+   * :id and :name are the quickest of these to process, and so should be used when possible to speed up scripts.
+
+ These 2 web sites provide info on Internet Explorer and on the DOM as implemented by Internet Explorer
+ http://msdn.microsoft.com/library/default.asp?url=/workshop/browser/webbrowser/webbrowser.asp
+ http://msdn.microsoft.com/library/default.asp?url=/workshop/browser/overview/overview.asp
+
+ Command line options:
+
+  -b  (background)   Run Internet Explorer invisible
+  -f  (fast)         Run tests very fast
+
+ Note that if you also use test/unit, you will need to require 'watir' first to avoid conflicts
+ with its command line switches.
+</pre>
+<p>
+Javascript Pop Up Support
+</p>
+<pre>
+   Watir now optionally installs AutoIt - http://www.autoitscript.com/
+   This is the prefered method for dealing wth pop ups, file requesters etc. Support for Winclickers will be removed.
+</pre>
+<p>
+Contacts:
+</p>
+<pre>
+   Bret Pettichord (bret@pettichord.com)
+   Charley Baker (charley.baker@gmail.com)
+   Paul Rogers (paul.rogers@shaw.ca)
+   The mailing list: http://groups.google.com/group/watir-general
+</pre>
+<p>
+Contributors:
+</p>
+<pre>
+   Bret Pettichord
+   Paul Rogers
+   Jonathan Kohl
+   Chris Morris
+   Karlin Fox
+   Lorenzo Jorquera
+   Atilla Ozgur
+   Justin McCarthy
+   Chris McMahon
+   Elisabeth Hendrickson
+   Michael Kelly
+   Peter Chau
+   Danny Faught
+   Andy Sipe
+   John Lloyd-Jones
+   Chris Hedges
+   Park Heesob
+   Shashank Date
+   Jared Luxenberg
+   Alexey Verkhovsky
+   Tuyet Cong-Ton-Nu
+   Jeff Wood
+   Angrez Singh
+   Abhishek Goliya
+   Yaxin Wang
+   Michael Bolton
+   Paul Carvalho
+   Konstantin Sobolev
+   David Schmidt
+   Dara Lillis
+   Charley Baker
+   Prema Arya
+   Xavier Noria
+   Jeff Fry
+   Zeljko Filipin
+   Paul Taylor - Bug fix 194
+   Vincent Xu - Chinese input support
+   Tomislav Car - Filefield fix (210)
+   Michael Hwee &amp; Aidy Lewis - Multiple attribute support for FireWatir (233)
+   Alan Baird - Fix for visible? method (253)
+   Jari Bakken - Regexp support for includes? and selected? methods for select lists (261)
+</pre>
+<p>
+Acknowledgements:
+</p>
+<pre>
+   Chris Morris
+   Brian Marick
+   Jonathan Kohl
+   Penny Tonita
+   Janet Gregory
+   Andy Tinkham
+   Jacinda Scott (logo creator)
+
+   Thanks for your ideas and support!
+</pre>
+
+    </div>
+
+
+   </div>
+
+
+  </div>
+
+
+    <!-- if includes -->
+
+    <div id="section">
+
+
+
+
+
+      
+
+
+    <!-- if method_list -->
+
+
+  </div>
+
+
+<div id="validator-badges">
+  <p><small><a href="http://validator.w3.org/check/referer">[Validate]</a></small></p>
+</div>
+
+</body>
+</html>

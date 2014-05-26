@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+<!DOCTYPE html 
+     PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+     "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html>
+<head>
+  <title>define (Selenium::Rake::RemoteControlStartTask)</title>
+  <meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" />
+  <link rel="stylesheet" href="../../../.././rdoc-style.css" type="text/css" media="screen" />
+</head>
+<body class="standalone-code">
+  <pre>    <span class="ruby-comment cmt"># File lib/selenium/rake/remote_control_start_task.rb, line 51</span>
+51:       <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">define</span>
+52:         <span class="ruby-identifier">desc</span> <span class="ruby-value str">&quot;Launch Selenium Remote Control&quot;</span>
+53:         <span class="ruby-identifier">task</span> <span class="ruby-ivar">@name</span> <span class="ruby-keyword kw">do</span>
+54:           <span class="ruby-identifier">puts</span> <span class="ruby-node">&quot;Starting Selenium Remote Control at 0.0.0.0:#{@port}...&quot;</span>
+55:           <span class="ruby-identifier">raise</span> <span class="ruby-node">&quot;Could not find jar file '#{@jar_file}'. Expected it under #{JAR_FILE_PATTERN}&quot;</span> <span class="ruby-keyword kw">unless</span> <span class="ruby-ivar">@jar_file</span> <span class="ruby-operator">&amp;&amp;</span> <span class="ruby-constant">File</span>.<span class="ruby-identifier">exists?</span>(<span class="ruby-ivar">@jar_file</span>)
+56:           <span class="ruby-identifier">remote_control</span> = <span class="ruby-constant">Selenium</span><span class="ruby-operator">::</span><span class="ruby-constant">RemoteControl</span><span class="ruby-operator">::</span><span class="ruby-constant">RemoteControl</span>.<span class="ruby-identifier">new</span>(<span class="ruby-value str">&quot;0.0.0.0&quot;</span>, <span class="ruby-ivar">@port</span>, <span class="ruby-identifier">:timeout</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-ivar">@timeout_in_seconds</span>)
+57:           <span class="ruby-identifier">remote_control</span>.<span class="ruby-identifier">jar_file</span> = <span class="ruby-ivar">@jar_file</span>
+58:           <span class="ruby-identifier">remote_control</span>.<span class="ruby-identifier">additional_args</span> = <span class="ruby-ivar">@additional_args</span>
+59:           <span class="ruby-identifier">remote_control</span>.<span class="ruby-identifier">log_to</span> = <span class="ruby-ivar">@log_to</span>
+60:           <span class="ruby-identifier">remote_control</span>.<span class="ruby-identifier">start</span> <span class="ruby-identifier">:background</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-ivar">@background</span>
+61:           <span class="ruby-keyword kw">if</span> <span class="ruby-ivar">@background</span> <span class="ruby-operator">&amp;&amp;</span> <span class="ruby-ivar">@wait_until_up_and_running</span>
+62:             <span class="ruby-identifier">puts</span> <span class="ruby-value str">&quot;Waiting for Remote Control to be up and running...&quot;</span>
+63:             <span class="ruby-constant">TCPSocket</span>.<span class="ruby-identifier">wait_for_service</span> <span class="ruby-identifier">:host</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-ivar">@host</span>, <span class="ruby-identifier">:port</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-ivar">@port</span>
+64:           <span class="ruby-keyword kw">end</span>
+65:           <span class="ruby-identifier">puts</span> <span class="ruby-node">&quot;Selenium Remote Control at 0.0.0.0:#{@port} ready&quot;</span>
+66:         <span class="ruby-keyword kw">end</span>
+67:       <span class="ruby-keyword kw">end</span></pre>
+</body>
+</html>

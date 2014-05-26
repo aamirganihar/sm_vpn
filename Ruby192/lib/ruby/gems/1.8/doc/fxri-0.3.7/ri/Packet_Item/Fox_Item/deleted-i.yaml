@@ -1,0 +1,12 @@
+--- !ruby/object:RI::MethodDescription 
+aliases: []
+
+block_params: 
+comment: 
+- !ruby/struct:SM::Flow::P 
+  body: Mark item as deleted, to prevent execution of draw afterwards this is called from Packet_List which uses the same mutex as draw.
+full_name: Packet_Item::Fox_Item#deleted
+is_singleton: false
+name: deleted
+params: ()
+visibility: public

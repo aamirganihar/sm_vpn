@@ -1,0 +1,14 @@
+--- !ruby/object:RI::MethodDescription 
+aliases: []
+
+block_params: 
+comment: 
+- !ruby/struct:SM::Flow::P 
+  body: Allows you to sort the parts according to the default sort order, or the sort order you set with :set_sort_order.
+- !ruby/struct:SM::Flow::P 
+  body: sort_parts! is also called from :encode, so there is no need for you to call this explicitly
+full_name: Mail::Body#sort_parts!
+is_singleton: false
+name: sort_parts!
+params: ()
+visibility: public

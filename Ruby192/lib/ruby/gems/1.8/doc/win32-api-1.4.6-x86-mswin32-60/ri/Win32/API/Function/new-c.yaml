@@ -1,0 +1,22 @@
+--- !ruby/object:RI::MethodDescription 
+aliases: []
+
+block_params: 
+comment: 
+- !ruby/struct:SM::Flow::VERB 
+  body: "   API::Function.new(address, prototype = 'V', return_type = 'L')\n"
+- !ruby/struct:SM::Flow::P 
+  body: Creates and returns an API::Function object. This object is similar to an API object, except that instead of a character function name you pass a function pointer address as the first argument, and there's no associated DLL file.
+- !ruby/struct:SM::Flow::P 
+  body: Once you have your API::Function object you can then call it the same way you would an API object.
+- !ruby/struct:SM::Flow::P 
+  body: "Example:"
+- !ruby/struct:SM::Flow::VERB 
+  body: "   require 'win32/api'\n   include Win32\n\n   LoadLibrary = API.new('LoadLibrary', 'P', 'L')\n   GetProcAddress = API.new('GetProcAddress', 'LP', 'L')\n\n   # Play a system beep\n   hlib = LoadLibrary.call('user32')\n   addr = GetProcAddress.call(hlib, 'MessageBeep')\n   func = Win32::API::Function.new(addr, 'L', 'L')\n   func.call(0)\n"
+full_name: Win32::API::Function::new
+is_singleton: true
+name: new
+params: |
+  
+
+visibility: public

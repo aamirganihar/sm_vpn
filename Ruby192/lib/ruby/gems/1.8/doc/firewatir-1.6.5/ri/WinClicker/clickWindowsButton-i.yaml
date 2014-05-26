@@ -1,0 +1,10 @@
+--- !ruby/object:RI::MethodDescription 
+aliases: []
+
+block_params: 
+comment: 
+full_name: WinClicker#clickWindowsButton
+is_singleton: false
+name: clickWindowsButton
+params: (title, button, maxWaitTime=30)
+visibility: public

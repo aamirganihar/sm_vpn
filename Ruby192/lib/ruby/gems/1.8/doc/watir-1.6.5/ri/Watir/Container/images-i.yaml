@@ -1,0 +1,16 @@
+--- !ruby/object:RI::MethodDescription 
+aliases: []
+
+block_params: 
+comment: 
+- !ruby/struct:SM::Flow::P 
+  body: This is the main method for accessing the images collection. Returns an Images object
+- !ruby/struct:SM::Flow::P 
+  body: "Typical usage:"
+- !ruby/struct:SM::Flow::VERB 
+  body: "  ie.images.each { |i| puts i.to_s }            # iterate through all the images on the page\n  ie.images[1].to_s                             # goto the first image on the page\n  ie.images.length                              # show how many images are on the page.\n"
+full_name: Watir::Container#images
+is_singleton: false
+name: images
+params: ()
+visibility: public

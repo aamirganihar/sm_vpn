@@ -1,0 +1,16 @@
+--- !ruby/object:RI::MethodDescription 
+aliases: []
+
+block_params: 
+comment: 
+- !ruby/struct:SM::Flow::P 
+  body: Move the string to the <tt>n</tt>th column. Relative indentation is preserved. Column indices begin at 0, so the result is that the leftmost character of the string has <tt>n</tt> spaces before it.
+- !ruby/struct:SM::Flow::P 
+  body: "Examples:"
+- !ruby/struct:SM::Flow::VERB 
+  body: "  &quot;xyz&quot;.tabto(0)           # -&gt; &quot;xyz&quot;\n  &quot;xyz&quot;.tabto(1)           # -&gt; &quot; xyz&quot;\n  &quot;xyz&quot;.tabto(2)           # -&gt; &quot;  xyz&quot;\n  &quot;   xyz&quot;.tabto(1)        # -&gt; &quot; xyz&quot;\n\n  str = &lt;&lt;EOF\n      Hello, my name\n    is Gerald.\n  EOF\n  str.tabto(5) == &lt;&lt;EOF    # -&gt; true\n         Hello, my name\n       is Gerald.\n  EOF\n"
+full_name: String#tabto
+is_singleton: false
+name: tabto
+params: (n)
+visibility: public

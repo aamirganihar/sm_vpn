@@ -1,0 +1,12 @@
+--- !ruby/object:RI::MethodDescription 
+aliases: []
+
+block_params: 
+comment: 
+- !ruby/struct:SM::Flow::P 
+  body: Called from sortItems, uses packet_item's comparison.
+full_name: Packet_Item::Fox_Item#<=>
+is_singleton: false
+name: <=>
+params: (other)
+visibility: public

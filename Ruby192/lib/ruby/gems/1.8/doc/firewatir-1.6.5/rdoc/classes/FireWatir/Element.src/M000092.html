@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+<!DOCTYPE html 
+     PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+     "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html>
+<head>
+  <title>element_by_xpath (FireWatir::Element)</title>
+  <meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" />
+  <link rel="stylesheet" href="../../.././rdoc-style.css" type="text/css" media="screen" />
+</head>
+<body class="standalone-code">
+  <pre><span class="ruby-comment cmt"># File lib/firewatir/element.rb, line 755</span>
+    <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">element_by_xpath</span>(<span class="ruby-identifier">container</span>, <span class="ruby-identifier">xpath</span>)
+      <span class="ruby-comment cmt">#puts &quot;here locating element by xpath&quot;</span>
+      <span class="ruby-identifier">rand_no</span> = <span class="ruby-identifier">rand</span>(<span class="ruby-value">1000</span>)
+      <span class="ruby-identifier">xpath</span>.<span class="ruby-identifier">gsub!</span>(<span class="ruby-value str">&quot;\&quot;&quot;</span>, <span class="ruby-value str">&quot;\\\&quot;&quot;</span>)
+      <span class="ruby-identifier">jssh_command</span> = <span class="ruby-node">&quot;var element_xpath_#{rand_no} = null; element_xpath_#{rand_no} = #{@container.document_var}.evaluate(\&quot;#{xpath}\&quot;, #{container.document_var}, null, #{FIRST_ORDERED_NODE_TYPE}, null).singleNodeValue; element_xpath_#{rand_no};&quot;</span>
+
+      <span class="ruby-identifier">jssh_socket</span>.<span class="ruby-identifier">send</span>(<span class="ruby-node">&quot;#{jssh_command}\n&quot;</span>, <span class="ruby-value">0</span>)
+      <span class="ruby-identifier">result</span> = <span class="ruby-identifier">read_socket</span>()
+      <span class="ruby-comment cmt">#puts &quot;command send to jssh is : #{jssh_command}&quot;</span>
+      <span class="ruby-comment cmt">#puts &quot;result is : #{result}&quot;</span>
+      <span class="ruby-keyword kw">if</span>(<span class="ruby-identifier">result</span> <span class="ruby-operator">==</span> <span class="ruby-value str">&quot;null&quot;</span> <span class="ruby-operator">||</span> <span class="ruby-identifier">result</span> <span class="ruby-operator">==</span> <span class="ruby-value str">&quot;&quot;</span> <span class="ruby-operator">||</span> <span class="ruby-identifier">result</span>.<span class="ruby-identifier">include?</span>(<span class="ruby-value str">&quot;exception&quot;</span>))
+        <span class="ruby-ivar">@@current_level</span> = <span class="ruby-value">0</span>
+        <span class="ruby-keyword kw">return</span> <span class="ruby-keyword kw">nil</span>
+      <span class="ruby-keyword kw">else</span>
+        <span class="ruby-ivar">@@current_level</span> <span class="ruby-operator">+=</span> <span class="ruby-value">1</span>
+        <span class="ruby-keyword kw">return</span> <span class="ruby-node">&quot;element_xpath_#{rand_no}&quot;</span>
+      <span class="ruby-keyword kw">end</span>
+    <span class="ruby-keyword kw">end</span></pre>
+</body>
+</html>

@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+<!DOCTYPE html 
+     PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+     "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html>
+<head>
+  <title>readlink (File)</title>
+  <meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" />
+  <link rel="stylesheet" href="../.././rdoc-style.css" type="text/css" media="screen" />
+</head>
+<body class="standalone-code">
+  <pre><span class="ruby-comment cmt"># File lib/win32/file.rb, line 574</span>
+    <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">readlink</span>(<span class="ruby-identifier">file</span>)
+      <span class="ruby-keyword kw">if</span> <span class="ruby-keyword kw">defined?</span> <span class="ruby-constant">GetFinalPathNameByHandle</span>
+        <span class="ruby-identifier">file</span> = <span class="ruby-identifier">multi_to_wide</span>(<span class="ruby-identifier">file</span>)
+
+        <span class="ruby-keyword kw">begin</span>
+          <span class="ruby-identifier">handle</span> = <span class="ruby-constant">CreateFileW</span>(
+            <span class="ruby-identifier">file</span>,
+            <span class="ruby-constant">GENERIC_READ</span>,
+            <span class="ruby-constant">FILE_SHARE_READ</span>,
+            <span class="ruby-keyword kw">nil</span>,
+            <span class="ruby-constant">OPEN_EXISTING</span>,
+            <span class="ruby-constant">FILE_ATTRIBUTE_NORMAL</span>,
+            <span class="ruby-keyword kw">nil</span>
+          )
+
+          <span class="ruby-keyword kw">if</span> <span class="ruby-identifier">handle</span> <span class="ruby-operator">==</span> <span class="ruby-constant">INVALID_HANDLE_VALUE</span>
+            <span class="ruby-identifier">raise</span> <span class="ruby-constant">ArgumentError</span>, <span class="ruby-identifier">get_last_error</span>
+          <span class="ruby-keyword kw">end</span>
+
+          <span class="ruby-identifier">path</span> = <span class="ruby-value">0</span>.<span class="ruby-identifier">chr</span> <span class="ruby-operator">*</span> <span class="ruby-constant">MAXPATH</span>
+
+          <span class="ruby-constant">GetFinalPathNameByHandleW</span>(<span class="ruby-identifier">handle</span>, <span class="ruby-identifier">path</span>, <span class="ruby-identifier">path</span>.<span class="ruby-identifier">size</span>, <span class="ruby-value">0</span>)
+        <span class="ruby-keyword kw">ensure</span>
+          <span class="ruby-constant">CloseHandle</span>(<span class="ruby-identifier">handle</span>)
+        <span class="ruby-keyword kw">end</span>
+
+        <span class="ruby-identifier">wide_to_multi</span>(<span class="ruby-identifier">path</span>).<span class="ruby-identifier">strip</span>[<span class="ruby-value">4</span><span class="ruby-operator">..</span><span class="ruby-value">-1</span>] <span class="ruby-comment cmt"># get rid of prepending &quot;\\?\&quot;</span>
+      <span class="ruby-keyword kw">else</span>
+        <span class="ruby-identifier">msg</span> = <span class="ruby-value str">&quot;readlink() function is unimplemented on this machine&quot;</span>
+        <span class="ruby-identifier">raise</span> <span class="ruby-constant">NotImplementedError</span>, <span class="ruby-identifier">msg</span>
+      <span class="ruby-keyword kw">end</span>
+    <span class="ruby-keyword kw">end</span></pre>
+</body>
+</html>

@@ -1,0 +1,25 @@
+--- !ruby/object:RI::ClassDescription 
+attributes: []
+
+class_methods: 
+- !ruby/object:RI::MethodSummary 
+  name: new
+comment: 
+- !ruby/struct:SM::Flow::P 
+  body: this class is a collection of the table body objects that exist in the table it wouldnt normally be created by a user, but gets returned by the bodies method of the Table object many of the methods available to this object are inherited from the Element class
+constants: []
+
+full_name: Watir::TableBodies
+includes: []
+
+instance_methods: 
+- !ruby/object:RI::MethodSummary 
+  name: "[]"
+- !ruby/object:RI::MethodSummary 
+  name: each
+- !ruby/object:RI::MethodSummary 
+  name: length
+- !ruby/object:RI::MethodSummary 
+  name: ole_table_body_at_index
+name: TableBodies
+superclass: Element

@@ -1,0 +1,117 @@
+--- !ruby/object:RI::ClassDescription 
+attributes: []
+
+class_methods: []
+
+comment: 
+constants: []
+
+full_name: Mail::RFC2822Obsolete
+includes: 
+- !ruby/object:RI::IncludedModule 
+  name: Treetop::Runtime
+instance_methods: 
+- !ruby/object:RI::MethodSummary 
+  name: _nt_obs_FWS
+- !ruby/object:RI::MethodSummary 
+  name: _nt_obs_addr_list
+- !ruby/object:RI::MethodSummary 
+  name: _nt_obs_angle_addr
+- !ruby/object:RI::MethodSummary 
+  name: _nt_obs_bcc
+- !ruby/object:RI::MethodSummary 
+  name: _nt_obs_cc
+- !ruby/object:RI::MethodSummary 
+  name: _nt_obs_char
+- !ruby/object:RI::MethodSummary 
+  name: _nt_obs_comments
+- !ruby/object:RI::MethodSummary 
+  name: _nt_obs_day
+- !ruby/object:RI::MethodSummary 
+  name: _nt_obs_day_of_week
+- !ruby/object:RI::MethodSummary 
+  name: _nt_obs_domain
+- !ruby/object:RI::MethodSummary 
+  name: _nt_obs_domain_list
+- !ruby/object:RI::MethodSummary 
+  name: _nt_obs_fields
+- !ruby/object:RI::MethodSummary 
+  name: _nt_obs_from
+- !ruby/object:RI::MethodSummary 
+  name: _nt_obs_hour
+- !ruby/object:RI::MethodSummary 
+  name: _nt_obs_id_left
+- !ruby/object:RI::MethodSummary 
+  name: _nt_obs_id_right
+- !ruby/object:RI::MethodSummary 
+  name: _nt_obs_in_reply_to
+- !ruby/object:RI::MethodSummary 
+  name: _nt_obs_keywords
+- !ruby/object:RI::MethodSummary 
+  name: _nt_obs_local_part
+- !ruby/object:RI::MethodSummary 
+  name: _nt_obs_mbox_list
+- !ruby/object:RI::MethodSummary 
+  name: _nt_obs_message_id
+- !ruby/object:RI::MethodSummary 
+  name: _nt_obs_minute
+- !ruby/object:RI::MethodSummary 
+  name: _nt_obs_month
+- !ruby/object:RI::MethodSummary 
+  name: _nt_obs_optional
+- !ruby/object:RI::MethodSummary 
+  name: _nt_obs_orig_date
+- !ruby/object:RI::MethodSummary 
+  name: _nt_obs_path
+- !ruby/object:RI::MethodSummary 
+  name: _nt_obs_phrase
+- !ruby/object:RI::MethodSummary 
+  name: _nt_obs_phrase_list
+- !ruby/object:RI::MethodSummary 
+  name: _nt_obs_qp
+- !ruby/object:RI::MethodSummary 
+  name: _nt_obs_received
+- !ruby/object:RI::MethodSummary 
+  name: _nt_obs_references
+- !ruby/object:RI::MethodSummary 
+  name: _nt_obs_reply_to
+- !ruby/object:RI::MethodSummary 
+  name: _nt_obs_resent_bcc
+- !ruby/object:RI::MethodSummary 
+  name: _nt_obs_resent_cc
+- !ruby/object:RI::MethodSummary 
+  name: _nt_obs_resent_date
+- !ruby/object:RI::MethodSummary 
+  name: _nt_obs_resent_from
+- !ruby/object:RI::MethodSummary 
+  name: _nt_obs_resent_mid
+- !ruby/object:RI::MethodSummary 
+  name: _nt_obs_resent_rply
+- !ruby/object:RI::MethodSummary 
+  name: _nt_obs_resent_send
+- !ruby/object:RI::MethodSummary 
+  name: _nt_obs_resent_to
+- !ruby/object:RI::MethodSummary 
+  name: _nt_obs_return
+- !ruby/object:RI::MethodSummary 
+  name: _nt_obs_route
+- !ruby/object:RI::MethodSummary 
+  name: _nt_obs_second
+- !ruby/object:RI::MethodSummary 
+  name: _nt_obs_sender
+- !ruby/object:RI::MethodSummary 
+  name: _nt_obs_subject
+- !ruby/object:RI::MethodSummary 
+  name: _nt_obs_text
+- !ruby/object:RI::MethodSummary 
+  name: _nt_obs_to
+- !ruby/object:RI::MethodSummary 
+  name: _nt_obs_utext
+- !ruby/object:RI::MethodSummary 
+  name: _nt_obs_year
+- !ruby/object:RI::MethodSummary 
+  name: _nt_obs_zone
+- !ruby/object:RI::MethodSummary 
+  name: root
+name: RFC2822Obsolete
+superclass: 

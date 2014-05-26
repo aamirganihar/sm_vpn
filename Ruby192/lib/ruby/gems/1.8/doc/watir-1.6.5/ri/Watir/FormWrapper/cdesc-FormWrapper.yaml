@@ -1,0 +1,19 @@
+--- !ruby/object:RI::ClassDescription 
+attributes: []
+
+class_methods: 
+- !ruby/object:RI::MethodSummary 
+  name: new
+comment: 
+- !ruby/struct:SM::Flow::P 
+  body: wraps around a form OLE object
+constants: []
+
+full_name: Watir::FormWrapper
+includes: 
+- !ruby/object:RI::IncludedModule 
+  name: FormAccess
+instance_methods: []
+
+name: FormWrapper
+superclass: Object

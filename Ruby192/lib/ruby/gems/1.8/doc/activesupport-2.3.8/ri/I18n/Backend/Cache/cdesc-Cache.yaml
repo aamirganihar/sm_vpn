@@ -1,0 +1,20 @@
+--- !ruby/object:RI::ClassDescription 
+attributes: []
+
+class_methods: []
+
+comment: 
+constants: []
+
+full_name: I18n::Backend::Cache
+includes: []
+
+instance_methods: 
+- !ruby/object:RI::MethodSummary 
+  name: cache_key
+- !ruby/object:RI::MethodSummary 
+  name: fetch
+- !ruby/object:RI::MethodSummary 
+  name: translate
+name: Cache
+superclass: 

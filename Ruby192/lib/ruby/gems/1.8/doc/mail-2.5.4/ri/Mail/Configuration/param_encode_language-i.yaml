@@ -1,0 +1,10 @@
+--- !ruby/object:RI::MethodDescription 
+aliases: []
+
+block_params: 
+comment: 
+full_name: Mail::Configuration#param_encode_language
+is_singleton: false
+name: param_encode_language
+params: (value = nil)
+visibility: public

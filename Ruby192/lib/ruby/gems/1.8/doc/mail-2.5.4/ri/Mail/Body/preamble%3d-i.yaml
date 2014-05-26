@@ -1,0 +1,12 @@
+--- !ruby/object:RI::MethodDescription 
+aliases: []
+
+block_params: 
+comment: 
+- !ruby/struct:SM::Flow::P 
+  body: Sets the preamble to a string (adds text before the first MIME boundary)
+full_name: Mail::Body#preamble=
+is_singleton: false
+name: preamble=
+params: ( val )
+visibility: public

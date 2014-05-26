@@ -1,0 +1,350 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+<!DOCTYPE html 
+     PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+     "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+  <title>Module: Watir::Browser</title>
+  <meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" />
+  <meta http-equiv="Content-Script-Type" content="text/javascript" />
+  <link rel="stylesheet" href="../.././rdoc-style.css" type="text/css" media="screen" />
+  <script type="text/javascript">
+  // <![CDATA[
+
+  function popupCode( url ) {
+    window.open(url, "Code", "resizable=yes,scrollbars=yes,toolbar=no,status=no,height=150,width=400")
+  }
+
+  function toggleCode( id ) {
+    if ( document.getElementById )
+      elem = document.getElementById( id );
+    else if ( document.all )
+      elem = eval( "document.all." + id );
+    else
+      return false;
+
+    elemStyle = elem.style;
+    
+    if ( elemStyle.display != "block" ) {
+      elemStyle.display = "block"
+    } else {
+      elemStyle.display = "none"
+    }
+
+    return true;
+  }
+  
+  // Make codeblocks hidden by default
+  document.writeln( "<style type=\"text/css\">div.method-source-code { display: none }</style>" )
+  
+  // ]]>
+  </script>
+
+</head>
+<body>
+
+
+
+    <div id="classHeader">
+        <table class="header-table">
+        <tr class="top-aligned-row">
+          <td><strong>Module</strong></td>
+          <td class="class-name-in-header">Watir::Browser</td>
+        </tr>
+        <tr class="top-aligned-row">
+            <td><strong>In:</strong></td>
+            <td>
+                <a href="../../files/lib/watir/browser_rb.html">
+                lib/watir/browser.rb
+                </a>
+        <br />
+            </td>
+        </tr>
+
+        </table>
+    </div>
+  <!-- banner header -->
+
+  <div id="bodyContent">
+
+
+
+  <div id="contextContent">
+
+    <div id="description">
+      <p>
+<a href="../Watir.html">Watir</a> is a family of open-source drivers for
+automating web browsers. You can use it to write tests that are easy to
+read and maintain.
+</p>
+<p>
+<a href="../Watir.html">Watir</a> drives browsers the same way people do.
+It clicks links, fills in forms, presses buttons. <a
+href="../Watir.html">Watir</a> also checks results, such as whether
+expected text appears on a page.
+</p>
+<p>
+The <a href="../Watir.html">Watir</a> family currently includes <a
+href="Browser.html#M000823">support</a> for Internet Explorer (on Windows),
+Firefox (on Windows, Mac and Linux) and Safari (on Mac).
+</p>
+<p>
+Project Homepage: <a href="http://wtr.rubyforge.org">wtr.rubyforge.org</a>
+</p>
+<p>
+This <a href="Browser.html">Browser</a> module provides a generic interface
+that tests can use to access any browser. The actual browser (and thus the
+actual <a href="../Watir.html">Watir</a> driver) is determined at runtime
+based on configuration settings.
+</p>
+<pre>
+  require 'watir'
+  browser = Watir::Browser.new
+  browser.goto 'http://google.com'
+  browser.text_field(:name, 'q').set 'pickaxe'
+  browser.button(:name, 'btnG').click
+  if browser.text.include? 'Programming Ruby'
+    puts 'Text was found'
+  else
+    puts 'Text was not found'
+  end
+</pre>
+<p>
+A comprehensive summary of the <a href="../Watir.html">Watir</a> API can be
+found here <a
+href="http://wiki.openqa.org/display/WTR/Methods+supported+by+Element">wiki.openqa.org/display/WTR/Methods+supported+by+Element</a>
+</p>
+<p>
+There are two ways to configure the browser that will be used by your
+tests.
+</p>
+<p>
+One is to set the <tt>watir_browser</tt> environment variable to
+<tt>ie</tt> or <tt>firefox</tt>. (How you do this depends on your
+platform.)
+</p>
+<p>
+The other is to create a file that looks like this.
+</p>
+<pre>
+  browser: ie
+</pre>
+<p>
+And then to add this line to your script, after the require statement and
+before you invoke <a href="Browser.html#M000818">Browser.new</a>.
+</p>
+<pre>
+  Watir.options_file = 'path/to/the/file/you/just/created'
+</pre>
+
+    </div>
+
+
+   </div>
+
+    <div id="method-list">
+      <h3 class="section-bar">Methods</h3>
+
+      <div class="name-list">
+      <a href="#M000820">attach</a>&nbsp;&nbsp;
+      <a href="#M000826">browser_names</a>&nbsp;&nbsp;
+      <a href="#M000824">default</a>&nbsp;&nbsp;
+      <a href="#M000825">default=</a>&nbsp;&nbsp;
+      <a href="#M000818">new</a>&nbsp;&nbsp;
+      <a href="#M000822">options</a>&nbsp;&nbsp;
+      <a href="#M000821">set_options</a>&nbsp;&nbsp;
+      <a href="#M000819">start</a>&nbsp;&nbsp;
+      <a href="#M000823">support</a>&nbsp;&nbsp;
+      </div>
+    </div>
+
+  </div>
+
+
+    <!-- if includes -->
+
+    <div id="section">
+
+
+
+
+
+      
+
+
+    <!-- if method_list -->
+    <div id="methods">
+      <h3 class="section-bar">Public Class methods</h3>
+
+      <div id="method-M000820" class="method-detail">
+        <a name="M000820"></a>
+
+        <div class="method-heading">
+          <a href="Browser.src/M000820.html" target="Code" class="method-signature"
+            onclick="popupCode('Browser.src/M000820.html');return false;">
+          <span class="method-name">attach</span><span class="method-args">(how, what)</span>
+          </a>
+        </div>
+      
+        <div class="method-description">
+          <p>
+Attach to an existing browser.
+</p>
+        </div>
+      </div>
+
+      <div id="method-M000826" class="method-detail">
+        <a name="M000826"></a>
+
+        <div class="method-heading">
+          <a href="Browser.src/M000826.html" target="Code" class="method-signature"
+            onclick="popupCode('Browser.src/M000826.html');return false;">
+          <span class="method-name">browser_names</span><span class="method-args">()</span>
+          </a>
+        </div>
+      
+        <div class="method-description">
+          <p>
+Returns the names of the browsers that are supported by this module. These
+are the <a href="Browser.html#M000822">options</a> for
+&#8216;watir_browser&#8217; (env var) or &#8216;browser:&#8217; (yaml).
+</p>
+        </div>
+      </div>
+
+      <div id="method-M000824" class="method-detail">
+        <a name="M000824"></a>
+
+        <div class="method-heading">
+          <a href="Browser.src/M000824.html" target="Code" class="method-signature"
+            onclick="popupCode('Browser.src/M000824.html');return false;">
+          <span class="method-name">default</span><span class="method-args">()</span>
+          </a>
+        </div>
+      
+        <div class="method-description">
+        </div>
+      </div>
+
+      <div id="method-M000825" class="method-detail">
+        <a name="M000825"></a>
+
+        <div class="method-heading">
+          <a href="Browser.src/M000825.html" target="Code" class="method-signature"
+            onclick="popupCode('Browser.src/M000825.html');return false;">
+          <span class="method-name">default=</span><span class="method-args">(option)</span>
+          </a>
+        </div>
+      
+        <div class="method-description">
+          <p>
+Specifies a <a href="Browser.html#M000824">default</a> browser. Must be
+specified before <a href="Browser.html#M000822">options</a> are parsed.
+</p>
+        </div>
+      </div>
+
+      <div id="method-M000818" class="method-detail">
+        <a name="M000818"></a>
+
+        <div class="method-heading">
+          <a href="Browser.src/M000818.html" target="Code" class="method-signature"
+            onclick="popupCode('Browser.src/M000818.html');return false;">
+          <span class="method-name">new</span><span class="method-args">()</span>
+          </a>
+        </div>
+      
+        <div class="method-description">
+          <p>
+Create a <a href="Browser.html#M000818">new</a> instance of a browser
+driver, as determined by the configuration settings. (Don&#8216;t be
+fooled: this is not actually an instance of <a
+href="Browser.html">Browser</a> class.)
+</p>
+        </div>
+      </div>
+
+      <div id="method-M000822" class="method-detail">
+        <a name="M000822"></a>
+
+        <div class="method-heading">
+          <a href="Browser.src/M000822.html" target="Code" class="method-signature"
+            onclick="popupCode('Browser.src/M000822.html');return false;">
+          <span class="method-name">options</span><span class="method-args">()</span>
+          </a>
+        </div>
+      
+        <div class="method-description">
+        </div>
+      </div>
+
+      <div id="method-M000821" class="method-detail">
+        <a name="M000821"></a>
+
+        <div class="method-heading">
+          <a href="Browser.src/M000821.html" target="Code" class="method-signature"
+            onclick="popupCode('Browser.src/M000821.html');return false;">
+          <span class="method-name">set_options</span><span class="method-args">(options)</span>
+          </a>
+        </div>
+      
+        <div class="method-description">
+        </div>
+      </div>
+
+      <div id="method-M000819" class="method-detail">
+        <a name="M000819"></a>
+
+        <div class="method-heading">
+          <a href="Browser.src/M000819.html" target="Code" class="method-signature"
+            onclick="popupCode('Browser.src/M000819.html');return false;">
+          <span class="method-name">start</span><span class="method-args">(url)</span>
+          </a>
+        </div>
+      
+        <div class="method-description">
+          <p>
+Create a <a href="Browser.html#M000818">new</a> instance as with <a
+href="Browser.html#M000818">new</a> and <a
+href="Browser.html#M000819">start</a> the browser on the specified url.
+</p>
+        </div>
+      </div>
+
+      <div id="method-M000823" class="method-detail">
+        <a name="M000823"></a>
+
+        <div class="method-heading">
+          <a href="Browser.src/M000823.html" target="Code" class="method-signature"
+            onclick="popupCode('Browser.src/M000823.html');return false;">
+          <span class="method-name">support</span><span class="method-args">(hash_args)</span>
+          </a>
+        </div>
+      
+        <div class="method-description">
+          <p>
+Add <a href="Browser.html#M000823">support</a> for the browser option,
+using the specified class, provided as a string. Optionally, additional <a
+href="Browser.html#M000822">options</a> supported by the class can be
+specified as an array of symbols. <a href="Options.html">Options</a>
+specified by the user and included in this list will be passed (as a hash)
+to the <a href="Browser.html#M000821">set_options</a> class method (if
+defined) before creating an instance.
+</p>
+        </div>
+      </div>
+
+
+    </div>
+
+
+  </div>
+
+
+<div id="validator-badges">
+  <p><small><a href="http://validator.w3.org/check/referer">[Validate]</a></small></p>
+</div>
+
+</body>
+</html>

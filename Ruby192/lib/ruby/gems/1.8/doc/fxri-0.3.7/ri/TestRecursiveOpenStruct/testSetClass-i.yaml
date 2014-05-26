@@ -1,0 +1,10 @@
+--- !ruby/object:RI::MethodDescription 
+aliases: []
+
+block_params: 
+comment: 
+full_name: TestRecursiveOpenStruct#testSetClass
+is_singleton: false
+name: testSetClass
+params: ()
+visibility: public

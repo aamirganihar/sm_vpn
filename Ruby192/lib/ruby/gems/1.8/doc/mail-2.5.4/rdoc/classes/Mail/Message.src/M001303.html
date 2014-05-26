@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+<!DOCTYPE html 
+     PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+     "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html>
+<head>
+  <title>to_yaml (Mail::Message)</title>
+  <meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" />
+  <link rel="stylesheet" href="../../.././rdoc-style.css" type="text/css" media="screen" />
+</head>
+<body class="standalone-code">
+  <pre><span class="ruby-comment cmt"># File lib/mail/message.rb, line 1822</span>
+    <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">to_yaml</span>(<span class="ruby-identifier">opts</span> = {})
+      <span class="ruby-identifier">hash</span> = {}
+      <span class="ruby-identifier">hash</span>[<span class="ruby-value str">'headers'</span>] = {}
+      <span class="ruby-identifier">header</span>.<span class="ruby-identifier">fields</span>.<span class="ruby-identifier">each</span> <span class="ruby-keyword kw">do</span> <span class="ruby-operator">|</span><span class="ruby-identifier">field</span><span class="ruby-operator">|</span>
+        <span class="ruby-identifier">hash</span>[<span class="ruby-value str">'headers'</span>][<span class="ruby-identifier">field</span>.<span class="ruby-identifier">name</span>] = <span class="ruby-identifier">field</span>.<span class="ruby-identifier">value</span>
+      <span class="ruby-keyword kw">end</span>
+      <span class="ruby-identifier">hash</span>[<span class="ruby-value str">'delivery_handler'</span>] = <span class="ruby-identifier">delivery_handler</span>.<span class="ruby-identifier">to_s</span> <span class="ruby-keyword kw">if</span> <span class="ruby-identifier">delivery_handler</span>
+      <span class="ruby-identifier">hash</span>[<span class="ruby-value str">'transport_encoding'</span>] = <span class="ruby-identifier">transport_encoding</span>.<span class="ruby-identifier">to_s</span>
+      <span class="ruby-identifier">special_variables</span> = [<span class="ruby-identifier">:@header</span>, <span class="ruby-identifier">:@delivery_handler</span>, <span class="ruby-identifier">:@transport_encoding</span>]
+      <span class="ruby-keyword kw">if</span> <span class="ruby-identifier">multipart?</span>
+        <span class="ruby-identifier">hash</span>[<span class="ruby-value str">'multipart_body'</span>] = []
+        <span class="ruby-identifier">body</span>.<span class="ruby-identifier">parts</span>.<span class="ruby-identifier">map</span> { <span class="ruby-operator">|</span><span class="ruby-identifier">part</span><span class="ruby-operator">|</span> <span class="ruby-identifier">hash</span>[<span class="ruby-value str">'multipart_body'</span>] <span class="ruby-operator">&lt;&lt;</span> <span class="ruby-identifier">part</span>.<span class="ruby-identifier">to_yaml</span> }
+        <span class="ruby-identifier">special_variables</span>.<span class="ruby-identifier">push</span>(<span class="ruby-identifier">:@body</span>, <span class="ruby-identifier">:@text_part</span>, <span class="ruby-identifier">:@html_part</span>)
+      <span class="ruby-keyword kw">end</span>
+      (<span class="ruby-identifier">instance_variables</span>.<span class="ruby-identifier">map</span>(<span class="ruby-operator">&amp;</span><span class="ruby-identifier">:to_sym</span>) <span class="ruby-operator">-</span> <span class="ruby-identifier">special_variables</span>).<span class="ruby-identifier">each</span> <span class="ruby-keyword kw">do</span> <span class="ruby-operator">|</span><span class="ruby-identifier">var</span><span class="ruby-operator">|</span>
+        <span class="ruby-identifier">hash</span>[<span class="ruby-identifier">var</span>.<span class="ruby-identifier">to_s</span>] = <span class="ruby-identifier">instance_variable_get</span>(<span class="ruby-identifier">var</span>)
+      <span class="ruby-keyword kw">end</span>
+      <span class="ruby-identifier">hash</span>.<span class="ruby-identifier">to_yaml</span>(<span class="ruby-identifier">opts</span>)
+    <span class="ruby-keyword kw">end</span></pre>
+</body>
+</html>

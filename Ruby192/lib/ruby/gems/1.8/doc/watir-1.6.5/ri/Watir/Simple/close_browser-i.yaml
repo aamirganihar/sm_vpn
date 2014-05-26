@@ -1,0 +1,12 @@
+--- !ruby/object:RI::MethodDescription 
+aliases: []
+
+block_params: 
+comment: 
+- !ruby/struct:SM::Flow::P 
+  body: Close the browser window. Useful for automated test suites to reduce test interaction.
+full_name: Watir::Simple#close_browser
+is_singleton: false
+name: close_browser
+params: ()
+visibility: public

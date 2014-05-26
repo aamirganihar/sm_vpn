@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+<!DOCTYPE html 
+     PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+     "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html>
+<head>
+  <title>explain_expectations (Mail::Matchers::HasSentEmailMatcher)</title>
+  <meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" />
+  <link rel="stylesheet" href="../../../.././rdoc-style.css" type="text/css" media="screen" />
+</head>
+<body class="standalone-code">
+  <pre><span class="ruby-comment cmt"># File lib/mail/matchers/has_sent_mail.rb, line 108</span>
+      <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">explain_expectations</span>
+        <span class="ruby-identifier">result</span> = <span class="ruby-value str">''</span>
+        <span class="ruby-identifier">result</span> <span class="ruby-operator">+=</span> <span class="ruby-node">&quot;from #{@sender} &quot;</span> <span class="ruby-keyword kw">if</span> <span class="ruby-identifier">instance_variable_defined?</span>(<span class="ruby-value str">'@sender'</span>)
+        <span class="ruby-identifier">result</span> <span class="ruby-operator">+=</span> <span class="ruby-node">&quot;to #{@recipients.inspect} &quot;</span> <span class="ruby-keyword kw">if</span> <span class="ruby-identifier">instance_variable_defined?</span>(<span class="ruby-value str">'@recipients'</span>)
+        <span class="ruby-identifier">result</span> <span class="ruby-operator">+=</span> <span class="ruby-node">&quot;with subject \&quot;#{@subject}\&quot; &quot;</span> <span class="ruby-keyword kw">if</span> <span class="ruby-identifier">instance_variable_defined?</span>(<span class="ruby-value str">'@subject'</span>)
+        <span class="ruby-identifier">result</span> <span class="ruby-operator">+=</span> <span class="ruby-node">&quot;with subject matching \&quot;#{@subject_matcher}\&quot; &quot;</span> <span class="ruby-keyword kw">if</span> <span class="ruby-identifier">instance_variable_defined?</span>(<span class="ruby-value str">'@subject_matcher'</span>)
+        <span class="ruby-identifier">result</span> <span class="ruby-operator">+=</span> <span class="ruby-node">&quot;with body \&quot;#{@body}\&quot; &quot;</span> <span class="ruby-keyword kw">if</span> <span class="ruby-identifier">instance_variable_defined?</span>(<span class="ruby-value str">'@body'</span>)
+        <span class="ruby-identifier">result</span> <span class="ruby-operator">+=</span> <span class="ruby-node">&quot;with body matching \&quot;#{@body_matcher}\&quot; &quot;</span> <span class="ruby-keyword kw">if</span> <span class="ruby-identifier">instance_variable_defined?</span>(<span class="ruby-value str">'@body_matcher'</span>)
+        <span class="ruby-identifier">result</span>
+      <span class="ruby-keyword kw">end</span></pre>
+</body>
+</html>

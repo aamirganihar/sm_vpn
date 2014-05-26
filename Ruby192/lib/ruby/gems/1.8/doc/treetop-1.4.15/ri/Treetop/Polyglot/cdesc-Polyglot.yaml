@@ -1,0 +1,22 @@
+--- !ruby/object:RI::ClassDescription 
+attributes: []
+
+class_methods: []
+
+comment: 
+constants: 
+- !ruby/object:RI::Constant 
+  comment: 
+  name: VALID_GRAMMAR_EXT
+  value: "['treetop', 'tt']"
+- !ruby/object:RI::Constant 
+  comment: 
+  name: VALID_GRAMMAR_EXT_REGEXP
+  value: /\.(#{VALID_GRAMMAR_EXT.join('|')})\Z/o
+full_name: Treetop::Polyglot
+includes: []
+
+instance_methods: []
+
+name: Polyglot
+superclass: 

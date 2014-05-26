@@ -1,0 +1,29 @@
+--- !ruby/object:RI::ClassDescription 
+attributes: []
+
+class_methods: 
+- !ruby/object:RI::MethodSummary 
+  name: new
+comment: 
+- !ruby/struct:SM::Flow::P 
+  body: This class accepts a series of source and choice descriptions and then builds a hash-like object that describes all the choices a user has made before (or while) invoking a script.
+constants: []
+
+full_name: UserChoices::ChoicesBuilder
+includes: []
+
+instance_methods: 
+- !ruby/object:RI::MethodSummary 
+  name: add_choice
+- !ruby/object:RI::MethodSummary 
+  name: add_help_line
+- !ruby/object:RI::MethodSummary 
+  name: add_source
+- !ruby/object:RI::MethodSummary 
+  name: build
+- !ruby/object:RI::MethodSummary 
+  name: section
+- !ruby/object:RI::MethodSummary 
+  name: section_specific_to_script
+name: ChoicesBuilder
+superclass: Object

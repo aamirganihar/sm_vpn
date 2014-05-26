@@ -1,0 +1,26 @@
+--- !ruby/object:RI::MethodDescription 
+aliases: []
+
+block_params: 
+comment: 
+- !ruby/struct:SM::Flow::P 
+  body: Tell the browser to click on the first link with the specified URL. This takes the address of the link instead of the text displayed.
+- !ruby/object:SM::Flow::LIST 
+  contents: 
+  - !ruby/struct:SM::Flow::LI 
+    label: "*"
+    body: url - can be a string to match exactly, or a regular expression.
+  type: :BULLET
+- !ruby/struct:SM::Flow::P 
+  body: "Example:"
+- !ruby/struct:SM::Flow::VERB 
+  body: "  click_link_with_url &quot;http://google.com&quot;\n"
+- !ruby/struct:SM::Flow::P 
+  body: "or:"
+- !ruby/struct:SM::Flow::VERB 
+  body: "  click_link_with_url /goo*/\n"
+full_name: Watir::Simple#click_link_with_url
+is_singleton: false
+name: click_link_with_url
+params: (url)
+visibility: public

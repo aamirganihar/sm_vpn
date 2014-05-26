@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+<!DOCTYPE html 
+     PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+     "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html>
+<head>
+  <title>encode_non_usascii (Mail::Encodings)</title>
+  <meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" />
+  <link rel="stylesheet" href="../../.././rdoc-style.css" type="text/css" media="screen" />
+</head>
+<body class="standalone-code">
+  <pre><span class="ruby-comment cmt"># File lib/mail/encodings.rb, line 185</span>
+    <span class="ruby-keyword kw">def</span> <span class="ruby-constant">Encodings</span>.<span class="ruby-identifier">encode_non_usascii</span>(<span class="ruby-identifier">address</span>, <span class="ruby-identifier">charset</span>)
+      <span class="ruby-keyword kw">return</span> <span class="ruby-identifier">address</span> <span class="ruby-keyword kw">if</span> <span class="ruby-identifier">address</span>.<span class="ruby-identifier">ascii_only?</span> <span class="ruby-keyword kw">or</span> <span class="ruby-identifier">charset</span>.<span class="ruby-identifier">nil?</span>
+      <span class="ruby-identifier">us_ascii</span> = <span class="ruby-value str">%Q{\x00-\x7f}</span>
+      <span class="ruby-comment cmt"># Encode any non usascii strings embedded inside of quotes</span>
+      <span class="ruby-identifier">address</span> = <span class="ruby-identifier">address</span>.<span class="ruby-identifier">gsub</span>(<span class="ruby-node">/(&quot;.*?[^#{us_ascii}].*?&quot;)/</span>) { <span class="ruby-operator">|</span><span class="ruby-identifier">s</span><span class="ruby-operator">|</span> <span class="ruby-constant">Encodings</span>.<span class="ruby-identifier">b_value_encode</span>(<span class="ruby-identifier">unquote</span>(<span class="ruby-identifier">s</span>), <span class="ruby-identifier">charset</span>) }
+      <span class="ruby-comment cmt"># Then loop through all remaining items and encode as needed</span>
+      <span class="ruby-identifier">tokens</span> = <span class="ruby-identifier">address</span>.<span class="ruby-identifier">split</span>(<span class="ruby-regexp re">/\s/</span>)
+      <span class="ruby-identifier">map_with_index</span>(<span class="ruby-identifier">tokens</span>) <span class="ruby-keyword kw">do</span> <span class="ruby-operator">|</span><span class="ruby-identifier">word</span>, <span class="ruby-identifier">i</span><span class="ruby-operator">|</span>
+        <span class="ruby-keyword kw">if</span> <span class="ruby-identifier">word</span>.<span class="ruby-identifier">ascii_only?</span>
+          <span class="ruby-identifier">word</span>
+        <span class="ruby-keyword kw">else</span>
+          <span class="ruby-identifier">previous_non_ascii</span> = <span class="ruby-identifier">i</span><span class="ruby-operator">&gt;</span><span class="ruby-value">0</span> <span class="ruby-operator">&amp;&amp;</span> <span class="ruby-identifier">tokens</span>[<span class="ruby-identifier">i</span><span class="ruby-operator">-</span><span class="ruby-value">1</span>] <span class="ruby-operator">&amp;&amp;</span> <span class="ruby-operator">!</span><span class="ruby-identifier">tokens</span>[<span class="ruby-identifier">i</span><span class="ruby-operator">-</span><span class="ruby-value">1</span>].<span class="ruby-identifier">ascii_only?</span>
+          <span class="ruby-keyword kw">if</span> <span class="ruby-identifier">previous_non_ascii</span> <span class="ruby-comment cmt">#why are we adding an extra space here?</span>
+            <span class="ruby-identifier">word</span> = <span class="ruby-node">&quot; #{word}&quot;</span>
+          <span class="ruby-keyword kw">end</span>
+          <span class="ruby-constant">Encodings</span>.<span class="ruby-identifier">b_value_encode</span>(<span class="ruby-identifier">word</span>, <span class="ruby-identifier">charset</span>)
+        <span class="ruby-keyword kw">end</span>
+      <span class="ruby-keyword kw">end</span>.<span class="ruby-identifier">join</span>(<span class="ruby-value str">' '</span>)
+    <span class="ruby-keyword kw">end</span></pre>
+</body>
+</html>

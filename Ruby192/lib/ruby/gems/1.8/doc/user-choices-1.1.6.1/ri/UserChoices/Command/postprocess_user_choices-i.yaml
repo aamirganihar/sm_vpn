@@ -1,0 +1,12 @@
+--- !ruby/object:RI::MethodDescription 
+aliases: []
+
+block_params: 
+comment: 
+- !ruby/struct:SM::Flow::P 
+  body: After choices from all sources are collected into @user_choices, this method is called to do any postprocessing. Does nothing unless overridden.
+full_name: UserChoices::Command#postprocess_user_choices
+is_singleton: false
+name: postprocess_user_choices
+params: ()
+visibility: public

@@ -1,0 +1,64 @@
+--- !ruby/object:RI::ClassDescription 
+attributes: []
+
+class_methods: []
+
+comment: 
+- !ruby/struct:SM::Flow::P 
+  body: This is FireWatir, Web Application Testing In Ruby using Firefox browser
+- !ruby/struct:SM::Flow::P 
+  body: "Typical usage:"
+- !ruby/struct:SM::Flow::VERB 
+  body: " # include the controller\n require &quot;firewatir&quot;\n\n # go to the page you want to test\n ff = FireWatir::Firefox.start(&quot;http://myserver/mypage&quot;)\n\n # enter &quot;Angrez&quot; into an input field named &quot;username&quot;\n ff.text_field(:name, &quot;username&quot;).set(&quot;Angrez&quot;)\n\n # enter &quot;Ruby Co&quot; into input field with id &quot;company_ID&quot;\n ff.text_field(:id, &quot;company_ID&quot;).set(&quot;Ruby Co&quot;)\n\n # click on a link that has &quot;green&quot; somewhere in the text that is displayed\n # to the user, using a regular expression\n ff.link(:text, /green/)\n\n # click button that has a caption of &quot;Cancel&quot;\n ff.button(:value, &quot;Cancel&quot;).click\n"
+- !ruby/struct:SM::Flow::P 
+  body: "FireWatir allows your script to read and interact with HTML objects--HTML tags and their attributes and contents. Types of objects that FireWatir can identify include:"
+- !ruby/struct:SM::Flow::P 
+  body: Type Description
+- !ruby/struct:SM::Flow::H 
+  level: 6
+  text: ===== ===============================================================
+- !ruby/struct:SM::Flow::P 
+  body: button &lt;input&gt; tags, with the type=&quot;button&quot; attribute check_box &lt;input&gt; tags, with the type=&quot;checkbox&quot; attribute div &lt;div&gt; tags form frame hidden hidden &lt;input&gt; tags image &lt;img&gt; tags label link &lt;a&gt; (anchor) tags p &lt;p&gt; (paragraph) tags radio radio buttons; &lt;input&gt; tags, with the type=&quot;radio&quot; attribute select_list &lt;select&gt; tags, known informally as drop-down boxes span &lt;span&gt; tags table &lt;table&gt; tags text_field &lt;input&gt; tags with the type=&quot;text&quot; attribute (a single-line
+- !ruby/struct:SM::Flow::VERB 
+  body: "             text field), the type=&quot;text_area&quot; attribute (a multi-line\n             text field), and the type=&quot;password&quot; attribute (a\n             single-line field in which the input is replaced with asterisks)\n"
+- !ruby/struct:SM::Flow::P 
+  body: "In general, there are several ways to identify a specific object. FireWatir's syntax is in the form (how, what), where &quot;how&quot; is a means of identifying the object, and &quot;what&quot; is the specific string or regular expression that FireWatir will seek, as shown in the examples above. Available &quot;how&quot; options depend upon the type of object, but here are a few examples:"
+- !ruby/struct:SM::Flow::P 
+  body: How Description
+- !ruby/struct:SM::Flow::H 
+  level: 6
+  text: ====== ===============================================================
+- !ruby/struct:SM::Flow::P 
+  body: ":id Used to find an object that has an &quot;id=&quot; attribute. Since each"
+- !ruby/struct:SM::Flow::VERB 
+  body: "              id should be unique, according to the XHTML specification,\n              this is recommended as the most reliable method to find an\n              object.\n"
+- !ruby/struct:SM::Flow::P 
+  body: ":name Used to find an object that has a &quot;name=&quot; attribute. This is"
+- !ruby/struct:SM::Flow::VERB 
+  body: "              useful for older versions of HTML, but &quot;name&quot; is deprecated\n              in XHTML.\n"
+- !ruby/struct:SM::Flow::P 
+  body: ":value Used to find a text field with a given default value, or a"
+- !ruby/struct:SM::Flow::VERB 
+  body: "              button with a given caption\n"
+- !ruby/struct:SM::Flow::P 
+  body: ":index Used to find the nth object of the specified type on a page."
+- !ruby/struct:SM::Flow::VERB 
+  body: "              For example, button(:index, 2) finds the second button.\n              Current versions of FireWatir use 1-based indexing, but future\n              versions will use 0-based indexing.\n"
+- !ruby/struct:SM::Flow::P 
+  body: ":xpath The xpath expression for identifying the element."
+- !ruby/struct:SM::Flow::P 
+  body: Note that the XHTML specification requires that tags and their attributes be in lower case. FireWatir doesn't enforce this; FireWatir will find tags and attributes whether they're in upper, lower, or mixed case. This is either a bug or a feature.
+- !ruby/struct:SM::Flow::P 
+  body: "FireWatir uses JSSh for interacting with the browser. For further information on Firefox and DOM go to the following Web page:"
+- !ruby/struct:SM::Flow::P 
+  body: http://www.xulplanet.com/references/objref/
+constants: []
+
+full_name: FireWatir
+includes: 
+- !ruby/object:RI::IncludedModule 
+  name: Watir::Exception
+instance_methods: []
+
+name: FireWatir
+superclass: 

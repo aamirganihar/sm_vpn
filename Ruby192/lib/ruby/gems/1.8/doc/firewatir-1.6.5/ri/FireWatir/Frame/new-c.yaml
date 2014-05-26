@@ -1,0 +1,18 @@
+--- !ruby/object:RI::MethodDescription 
+aliases: []
+
+block_params: 
+comment: 
+- !ruby/struct:SM::Flow::P 
+  body: "Description:"
+- !ruby/struct:SM::Flow::VERB 
+  body: "  Initializes the instance of frame or iframe object.\n"
+- !ruby/struct:SM::Flow::P 
+  body: "Input:"
+- !ruby/struct:SM::Flow::VERB 
+  body: "  - how - Attribute to identify the frame element.\n  - what - Value of that attribute.\n"
+full_name: FireWatir::Frame::new
+is_singleton: true
+name: new
+params: (container, how, what)
+visibility: public

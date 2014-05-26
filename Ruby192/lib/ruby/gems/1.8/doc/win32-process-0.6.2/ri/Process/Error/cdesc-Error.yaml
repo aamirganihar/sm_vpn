@@ -1,0 +1,17 @@
+--- !ruby/object:RI::ClassDescription 
+attributes: []
+
+class_methods: []
+
+comment: 
+- !ruby/struct:SM::Flow::P 
+  body: The Process::Error class is typically raised if any of the custom Process methods fail.
+constants: []
+
+full_name: Process::Error
+includes: []
+
+instance_methods: []
+
+name: Error
+superclass: RuntimeError

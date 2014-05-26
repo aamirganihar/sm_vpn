@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+<!DOCTYPE html 
+     PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+     "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html>
+<head>
+  <title>[] (Mail::ParameterHash)</title>
+  <meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" />
+  <link rel="stylesheet" href="../../.././rdoc-style.css" type="text/css" media="screen" />
+</head>
+<body class="standalone-code">
+  <pre><span class="ruby-comment cmt"># File lib/mail/fields/common/parameter_hash.rb, line 15</span>
+    <span class="ruby-keyword kw">def</span> <span class="ruby-operator">[]</span>(<span class="ruby-identifier">key_name</span>)
+      <span class="ruby-identifier">key_pattern</span> = <span class="ruby-constant">Regexp</span>.<span class="ruby-identifier">escape</span>(<span class="ruby-identifier">key_name</span>.<span class="ruby-identifier">to_s</span>)
+      <span class="ruby-identifier">pairs</span> = []
+      <span class="ruby-identifier">exact</span> = <span class="ruby-keyword kw">nil</span>
+      <span class="ruby-identifier">each</span> <span class="ruby-keyword kw">do</span> <span class="ruby-operator">|</span><span class="ruby-identifier">k</span>,<span class="ruby-identifier">v</span><span class="ruby-operator">|</span>
+        <span class="ruby-keyword kw">if</span> <span class="ruby-identifier">k</span> <span class="ruby-operator">=~</span> <span class="ruby-node">/^#{key_pattern}(\*|$)/i</span>
+          <span class="ruby-keyword kw">if</span> <span class="ruby-identifier">$1</span> <span class="ruby-operator">==</span> <span class="ruby-value str">'*'</span>
+            <span class="ruby-identifier">pairs</span> <span class="ruby-operator">&lt;&lt;</span> [<span class="ruby-identifier">k</span>, <span class="ruby-identifier">v</span>]
+          <span class="ruby-keyword kw">else</span>
+            <span class="ruby-identifier">exact</span> = <span class="ruby-identifier">k</span>
+          <span class="ruby-keyword kw">end</span>
+        <span class="ruby-keyword kw">end</span>
+      <span class="ruby-keyword kw">end</span>
+      <span class="ruby-keyword kw">if</span> <span class="ruby-identifier">pairs</span>.<span class="ruby-identifier">empty?</span> <span class="ruby-comment cmt"># Just dealing with a single value pair</span>
+        <span class="ruby-keyword kw">super</span>(<span class="ruby-identifier">exact</span> <span class="ruby-operator">||</span> <span class="ruby-identifier">key_name</span>)
+      <span class="ruby-keyword kw">else</span> <span class="ruby-comment cmt"># Dealing with a multiple value pair or a single encoded value pair</span>
+        <span class="ruby-identifier">string</span> = <span class="ruby-identifier">pairs</span>.<span class="ruby-identifier">sort</span> { <span class="ruby-operator">|</span><span class="ruby-identifier">a</span>,<span class="ruby-identifier">b</span><span class="ruby-operator">|</span> <span class="ruby-identifier">a</span>.<span class="ruby-identifier">first</span>.<span class="ruby-identifier">to_s</span> <span class="ruby-operator">&lt;=&gt;</span> <span class="ruby-identifier">b</span>.<span class="ruby-identifier">first</span>.<span class="ruby-identifier">to_s</span> }.<span class="ruby-identifier">map</span> { <span class="ruby-operator">|</span><span class="ruby-identifier">v</span><span class="ruby-operator">|</span> <span class="ruby-identifier">v</span>.<span class="ruby-identifier">last</span> }.<span class="ruby-identifier">join</span>(<span class="ruby-value str">''</span>)
+        <span class="ruby-keyword kw">if</span> <span class="ruby-identifier">mt</span> = <span class="ruby-identifier">string</span>.<span class="ruby-identifier">match</span>(<span class="ruby-regexp re">/([\w\-]+)'(\w\w)'(.*)/</span>)
+          <span class="ruby-identifier">string</span> = <span class="ruby-identifier">mt</span>[<span class="ruby-value">3</span>]
+          <span class="ruby-identifier">encoding</span> = <span class="ruby-identifier">mt</span>[<span class="ruby-value">1</span>]
+        <span class="ruby-keyword kw">else</span>
+          <span class="ruby-identifier">encoding</span> = <span class="ruby-keyword kw">nil</span>
+        <span class="ruby-keyword kw">end</span>
+        <span class="ruby-constant">Mail</span><span class="ruby-operator">::</span><span class="ruby-constant">Encodings</span>.<span class="ruby-identifier">param_decode</span>(<span class="ruby-identifier">string</span>, <span class="ruby-identifier">encoding</span>)
+      <span class="ruby-keyword kw">end</span>
+    <span class="ruby-keyword kw">end</span></pre>
+</body>
+</html>

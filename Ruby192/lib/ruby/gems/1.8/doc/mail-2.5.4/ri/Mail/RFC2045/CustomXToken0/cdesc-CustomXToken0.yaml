@@ -1,0 +1,15 @@
+--- !ruby/object:RI::ClassDescription 
+attributes: []
+
+class_methods: []
+
+comment: 
+constants: []
+
+full_name: Mail::RFC2045::CustomXToken0
+includes: []
+
+instance_methods: []
+
+name: CustomXToken0
+superclass: 

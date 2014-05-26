@@ -1,0 +1,18 @@
+--- !ruby/object:RI::ClassDescription 
+attributes: []
+
+class_methods: 
+- !ruby/object:RI::MethodSummary 
+  name: new
+comment: 
+- !ruby/struct:SM::Flow::P 
+  body: The SpObjectToken automation object represents an available resource of a type used by SAPI.
+constants: []
+
+full_name: Win32::SpObjectToken
+includes: []
+
+instance_methods: []
+
+name: SpObjectToken
+superclass: SAPI5

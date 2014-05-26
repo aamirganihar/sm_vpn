@@ -1,0 +1,16 @@
+--- !ruby/object:RI::MethodDescription 
+aliases: []
+
+block_params: new_message
+comment: 
+- !ruby/struct:SM::Flow::P 
+  body: Find emails in a POP3 mailbox. Without any options, the 5 last received emails are returned.
+- !ruby/struct:SM::Flow::P 
+  body: "Possible options:"
+- !ruby/struct:SM::Flow::VERB 
+  body: "  what:  last or first emails. The default is :first.\n  order: order of emails returned. Possible values are :asc or :desc. Default value is :asc.\n  count: number of emails to retrieve. The default value is 10. A value of 1 returns an\n         instance of Message, not an array of Message instances.\n  delete_after_find: flag for whether to delete each retreived email after find. Default\n          is false. Use #find_and_delete if you would like this to default to true.\n"
+full_name: Mail::POP3#find
+is_singleton: false
+name: find
+params: (options = {}, &block) {|new_message| ...}
+visibility: public

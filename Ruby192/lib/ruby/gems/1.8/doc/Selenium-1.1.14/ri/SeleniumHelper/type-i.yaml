@@ -1,0 +1,12 @@
+--- !ruby/object:RI::MethodDescription 
+aliases: []
+
+block_params: 
+comment: 
+- !ruby/struct:SM::Flow::P 
+  body: Overrides standard &quot;type&quot; method with @selenium.type
+full_name: SeleniumHelper#type
+is_singleton: false
+name: type
+params: (inputLocator, value)
+visibility: public

@@ -1,0 +1,12 @@
+--- !ruby/object:RI::MethodDescription 
+aliases: []
+
+block_params: 
+comment: 
+- !ruby/struct:SM::Flow::P 
+  body: Log a failure if the boolean is true. The message is the failure message logged. Whether true or false, the assertion count is incremented.
+full_name: Watir::Assertions#verify
+is_singleton: false
+name: verify
+params: (boolean, message = 'verify failed.')
+visibility: public

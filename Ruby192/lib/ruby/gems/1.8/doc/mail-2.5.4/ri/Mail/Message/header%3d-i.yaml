@@ -1,0 +1,16 @@
+--- !ruby/object:RI::MethodDescription 
+aliases: []
+
+block_params: 
+comment: 
+- !ruby/struct:SM::Flow::P 
+  body: Sets the header of the message object.
+- !ruby/struct:SM::Flow::P 
+  body: "Example:"
+- !ruby/struct:SM::Flow::VERB 
+  body: " mail.header = 'To: mikel@test.lindsaar.net\\r\\nFrom: Bob@bob.com'\n mail.header #=&gt; &lt;#Mail::Header\n"
+full_name: Mail::Message#header=
+is_singleton: false
+name: header=
+params: (value)
+visibility: public

@@ -1,0 +1,12 @@
+--- !ruby/object:RI::MethodDescription 
+aliases: []
+
+block_params: 
+comment: 
+- !ruby/struct:SM::Flow::P 
+  body: Add a new Packet_Item to this list.Called from within Packet_Item during Packet_Item#parent=
+full_name: Packet_List#add_item
+is_singleton: false
+name: add_item
+params: (item)
+visibility: public

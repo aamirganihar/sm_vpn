@@ -1,0 +1,12 @@
+--- !ruby/object:RI::MethodDescription 
+aliases: []
+
+block_params: 
+comment: 
+- !ruby/struct:SM::Flow::P 
+  body: Show all forms displays all the forms that are on a web page.
+full_name: Watir::IE#show_forms
+is_singleton: false
+name: show_forms
+params: ()
+visibility: public

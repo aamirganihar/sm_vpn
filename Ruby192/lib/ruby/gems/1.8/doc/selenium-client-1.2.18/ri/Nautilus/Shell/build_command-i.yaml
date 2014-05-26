@@ -1,0 +1,10 @@
+--- !ruby/object:RI::MethodDescription 
+aliases: []
+
+block_params: 
+comment: 
+full_name: Nautilus::Shell#build_command
+is_singleton: false
+name: build_command
+params: (command, options = {})
+visibility: public

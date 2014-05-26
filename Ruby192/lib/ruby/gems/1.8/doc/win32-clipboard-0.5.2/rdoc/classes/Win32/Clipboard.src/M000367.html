@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+<!DOCTYPE html 
+     PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+     "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html>
+<head>
+  <title>notify_change (Win32::Clipboard)</title>
+  <meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" />
+  <link rel="stylesheet" href="../../.././rdoc-style.css" type="text/css" media="screen" />
+</head>
+<body class="standalone-code">
+  <pre><span class="ruby-comment cmt"># File lib/win32/clipboard.rb, line 268</span>
+      <span class="ruby-keyword kw">def</span> <span class="ruby-keyword kw">self</span>.<span class="ruby-identifier">notify_change</span>(<span class="ruby-operator">&amp;</span><span class="ruby-identifier">block</span>)
+         <span class="ruby-identifier">name</span>   = <span class="ruby-value str">'ruby-clipboard-'</span> <span class="ruby-operator">+</span> <span class="ruby-constant">Time</span>.<span class="ruby-identifier">now</span>.<span class="ruby-identifier">to_s</span>
+         <span class="ruby-identifier">handle</span> = <span class="ruby-constant">CreateWindow</span>(<span class="ruby-value str">'static'</span>, <span class="ruby-identifier">name</span>, <span class="ruby-value">0</span>, <span class="ruby-value">0</span>, <span class="ruby-value">0</span>, <span class="ruby-value">0</span>, <span class="ruby-value">0</span>, <span class="ruby-value">0</span>, <span class="ruby-value">0</span>, <span class="ruby-value">0</span>, <span class="ruby-value">0</span>)
+         
+         <span class="ruby-ivar">@first_notify</span> = <span class="ruby-keyword kw">true</span>
+
+         <span class="ruby-identifier">wnd_proc</span> = <span class="ruby-constant">Win32</span><span class="ruby-operator">::</span><span class="ruby-constant">API</span><span class="ruby-operator">::</span><span class="ruby-constant">Callback</span>.<span class="ruby-identifier">new</span>(<span class="ruby-value str">'LLLL'</span>, <span class="ruby-value str">'L'</span>) <span class="ruby-keyword kw">do</span> <span class="ruby-operator">|</span><span class="ruby-identifier">hwnd</span>, <span class="ruby-identifier">umsg</span>, <span class="ruby-identifier">wparam</span>, <span class="ruby-identifier">lparam</span><span class="ruby-operator">|</span>
+            <span class="ruby-keyword kw">case</span> <span class="ruby-identifier">umsg</span>
+               <span class="ruby-keyword kw">when</span> <span class="ruby-constant">WM_DRAWCLIPBOARD</span>
+                  <span class="ruby-keyword kw">yield</span> <span class="ruby-keyword kw">unless</span> <span class="ruby-ivar">@first_notify</span>
+                  <span class="ruby-identifier">next_viewer</span> = <span class="ruby-constant">GetWindowLongPtr</span>(<span class="ruby-identifier">hwnd</span>, <span class="ruby-constant">GWL_USERDATA</span>)
+                  <span class="ruby-keyword kw">if</span> <span class="ruby-identifier">next_viewer</span> <span class="ruby-operator">!=</span> <span class="ruby-value">0</span>
+                     <span class="ruby-constant">PostMessage</span>(<span class="ruby-identifier">next_viewer</span>, <span class="ruby-identifier">umsg</span>, <span class="ruby-identifier">wparam</span>, <span class="ruby-identifier">lparam</span>)
+                  <span class="ruby-keyword kw">end</span>
+                  <span class="ruby-identifier">rv</span> = <span class="ruby-value">0</span>
+               <span class="ruby-keyword kw">when</span> <span class="ruby-constant">WM_CHANGECBCHAIN</span>
+                  <span class="ruby-keyword kw">yield</span> <span class="ruby-keyword kw">unless</span> <span class="ruby-ivar">@first_notify</span>
+                  <span class="ruby-identifier">next_viewer</span> = <span class="ruby-identifier">lparam</span> <span class="ruby-keyword kw">if</span> <span class="ruby-identifier">next_viewer</span> <span class="ruby-operator">==</span> <span class="ruby-identifier">wparam</span>
+                  <span class="ruby-keyword kw">if</span> <span class="ruby-identifier">next_viewer</span> <span class="ruby-operator">!=</span> <span class="ruby-value">0</span>
+                     <span class="ruby-constant">PostMessage</span>(<span class="ruby-identifier">next_viewer</span>, <span class="ruby-identifier">umsg</span>, <span class="ruby-identifier">wparam</span>, <span class="ruby-identifier">lparam</span>)
+                  <span class="ruby-keyword kw">end</span>
+                  <span class="ruby-identifier">rv</span> = <span class="ruby-value">0</span>
+               <span class="ruby-keyword kw">else</span>
+                  <span class="ruby-identifier">rv</span> = <span class="ruby-constant">DefWindowProc</span>(<span class="ruby-identifier">hwnd</span>, <span class="ruby-identifier">umsg</span>, <span class="ruby-identifier">wparam</span>, <span class="ruby-identifier">lparam</span>)
+            <span class="ruby-keyword kw">end</span>
+            
+            <span class="ruby-ivar">@first_notify</span> = <span class="ruby-keyword kw">false</span>
+         
+            <span class="ruby-identifier">rv</span>
+         <span class="ruby-keyword kw">end</span>
+
+         <span class="ruby-identifier">old_wnd_proc</span> = <span class="ruby-constant">SetWindowLongPtr</span>(<span class="ruby-identifier">handle</span>, <span class="ruby-constant">GWL_WNDPROC</span>, <span class="ruby-identifier">wnd_proc</span>.<span class="ruby-identifier">address</span>)
+         <span class="ruby-identifier">next_viewer</span>  = <span class="ruby-constant">SetClipboardViewer</span>(<span class="ruby-identifier">handle</span>)
+
+         <span class="ruby-constant">SetWindowLongPtr</span>(<span class="ruby-identifier">handle</span>, <span class="ruby-constant">GWL_USERDATA</span>, <span class="ruby-identifier">next_viewer</span>)
+
+         <span class="ruby-identifier">msg</span> = <span class="ruby-value">0</span>.<span class="ruby-identifier">chr</span> <span class="ruby-operator">*</span> <span class="ruby-value">100</span>
+
+         <span class="ruby-keyword kw">while</span> <span class="ruby-keyword kw">true</span>
+            <span class="ruby-keyword kw">while</span> <span class="ruby-constant">PeekMessage</span>(<span class="ruby-identifier">msg</span>, <span class="ruby-identifier">handle</span>, <span class="ruby-value">0</span>, <span class="ruby-value">0</span>, <span class="ruby-value">1</span>)
+               <span class="ruby-constant">TranslateMessage</span>(<span class="ruby-identifier">msg</span>)
+               <span class="ruby-constant">DispatchMessage</span>(<span class="ruby-identifier">msg</span>)
+            <span class="ruby-keyword kw">end</span>
+            <span class="ruby-identifier">sleep</span> <span class="ruby-value">0</span><span class="ruby-value">.1</span>
+         <span class="ruby-keyword kw">end</span>
+      <span class="ruby-keyword kw">end</span></pre>
+</body>
+</html>

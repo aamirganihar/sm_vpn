@@ -1,0 +1,12 @@
+--- !ruby/object:RI::MethodDescription 
+aliases: []
+
+block_params: 
+comment: 
+- !ruby/struct:SM::Flow::P 
+  body: Base64 has a fixed cost, 4 bytes out per 3 bytes in
+full_name: Mail::Encodings::Base64::cost
+is_singleton: true
+name: cost
+params: (str)
+visibility: public

@@ -1,0 +1,40 @@
+--- !ruby/object:RI::ClassDescription 
+attributes: 
+- !ruby/object:RI::Attribute 
+  comment: 
+  name: rules
+  rw: R
+- !ruby/object:RI::Attribute 
+  comment: 
+  name: zone
+  rw: R
+class_methods: 
+- !ruby/object:RI::MethodSummary 
+  name: get_zone_data
+- !ruby/object:RI::MethodSummary 
+  name: list
+- !ruby/object:RI::MethodSummary 
+  name: names
+- !ruby/object:RI::MethodSummary 
+  name: new
+comment: 
+constants: 
+- !ruby/object:RI::Constant 
+  comment: 
+  name: ZONE_FILE_PATH
+  value: File.expand_path(File.dirname(__FILE__)+'/../../data')
+full_name: Timezone::Zone
+includes: 
+- !ruby/object:RI::IncludedModule 
+  name: Comparable
+instance_methods: 
+- !ruby/object:RI::MethodSummary 
+  name: active_support_time_zone
+- !ruby/object:RI::MethodSummary 
+  name: dst?
+- !ruby/object:RI::MethodSummary 
+  name: time
+- !ruby/object:RI::MethodSummary 
+  name: utc_offset
+name: Zone
+superclass: Object

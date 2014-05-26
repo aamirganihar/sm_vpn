@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+<!DOCTYPE html 
+     PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+     "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html>
+<head>
+  <title>file_path_strategy (Selenium::RSpec::SeleniumTestReportFormatter)</title>
+  <meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" />
+  <link rel="stylesheet" href="../../../.././rdoc-style.css" type="text/css" media="screen" />
+</head>
+<body class="standalone-code">
+  <pre>    <span class="ruby-comment cmt"># File lib/selenium/rspec/reporting/selenium_test_report_formatter.rb, line 77</span>
+77:       <span class="ruby-keyword kw">def</span> <span class="ruby-keyword kw">self</span>.<span class="ruby-identifier">file_path_strategy</span>
+78:               <span class="ruby-comment cmt">### HACK ####</span>
+79:               <span class="ruby-comment cmt"># When running with DeepTest the class instance variable could not have been set</span>
+80:               <span class="ruby-comment cmt"># For now you must set the env variable before launching the tests. We need to revisit the way DeepTest</span>
+81:               <span class="ruby-comment cmt"># and RSpec reporting work for a proper fix.</span>
+82:               <span class="ruby-ivar">@@file_path_strategy</span> <span class="ruby-operator">||=</span> <span class="ruby-constant">Selenium</span><span class="ruby-operator">::</span><span class="ruby-constant">RSpec</span><span class="ruby-operator">::</span><span class="ruby-constant">Reporting</span><span class="ruby-operator">::</span><span class="ruby-constant">FilePathStrategy</span>.<span class="ruby-identifier">new</span>(<span class="ruby-constant">ENV</span>[<span class="ruby-value str">&quot;SELENIUM_TEST_REPORT_FILE&quot;</span>])
+83:             <span class="ruby-keyword kw">end</span></pre>
+</body>
+</html>

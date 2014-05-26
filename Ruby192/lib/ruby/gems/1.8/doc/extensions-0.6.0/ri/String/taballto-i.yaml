@@ -1,0 +1,12 @@
+--- !ruby/object:RI::MethodDescription 
+aliases: []
+
+block_params: 
+comment: 
+- !ruby/struct:SM::Flow::P 
+  body: Tabs all lines in the string to column <tt>n</tt>. That is, relative indentation is <em>not</em> preserved.
+full_name: String#taballto
+is_singleton: false
+name: taballto
+params: (n)
+visibility: public

@@ -1,0 +1,20 @@
+--- !ruby/object:RI::MethodDescription 
+aliases: []
+
+block_params: 
+comment: 
+- !ruby/struct:SM::Flow::P 
+  body: "Encodes a parameter value using URI Escaping, note the language field 'en' can be set using Mail::Configuration, like so:"
+- !ruby/struct:SM::Flow::VERB 
+  body: " Mail.defaults do\n   param_encode_language 'jp'\n end\n"
+- !ruby/struct:SM::Flow::P 
+  body: The character set used for encoding will either be the value of $KCODE for Ruby &lt; 1.9 or the encoding on the string passed in.
+- !ruby/struct:SM::Flow::P 
+  body: "Example:"
+- !ruby/struct:SM::Flow::VERB 
+  body: " Mail::Encodings.param_encode(&quot;This is fun&quot;) #=&gt; &quot;us-ascii'en'This%20is%20fun&quot;\n"
+full_name: Mail::Encodings::param_encode
+is_singleton: true
+name: param_encode
+params: (str)
+visibility: public

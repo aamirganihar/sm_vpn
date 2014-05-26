@@ -1,0 +1,13 @@
+--- !ruby/object:RI::MethodDescription 
+aliases: 
+- !ruby/object:RI::AliasName 
+  name: get_chwnd
+block_params: 
+comment: 
+- !ruby/struct:SM::Flow::P 
+  body: Enumerate through children of the parent hwnd, pass back the handle for the control with the given caption the caption is compared as a regex
+full_name: WinClicker#getChildHandle
+is_singleton: false
+name: getChildHandle
+params: ( hWnd , childCaption )
+visibility: public

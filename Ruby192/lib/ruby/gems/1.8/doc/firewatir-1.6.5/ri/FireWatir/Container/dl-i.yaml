@@ -1,0 +1,26 @@
+--- !ruby/object:RI::MethodDescription 
+aliases: []
+
+block_params: 
+comment: 
+- !ruby/struct:SM::Flow::P 
+  body: "Description:"
+- !ruby/struct:SM::Flow::VERB 
+  body: "  Used to access a definition list element - a &lt;dl&gt; HTML tag.\n"
+- !ruby/struct:SM::Flow::P 
+  body: "Input:"
+- !ruby/struct:SM::Flow::VERB 
+  body: "  - how - Attribute used to identify the definition list element.\n  - what - Value of that attribute.\n"
+- !ruby/struct:SM::Flow::P 
+  body: "Typical Usage:"
+- !ruby/struct:SM::Flow::VERB 
+  body: "   ff.dl(:id, 'user_name')                    # access the dl element with an ID of user_name\n   ff.dl(:title, 'address')                   # access the dl element with a title of address\n"
+- !ruby/struct:SM::Flow::P 
+  body: "Returns:"
+- !ruby/struct:SM::Flow::VERB 
+  body: "  Dl object.\n"
+full_name: FireWatir::Container#dl
+is_singleton: false
+name: dl
+params: (how, what = nil)
+visibility: public

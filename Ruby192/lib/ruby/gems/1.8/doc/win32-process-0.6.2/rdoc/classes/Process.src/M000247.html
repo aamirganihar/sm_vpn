@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+<!DOCTYPE html 
+     PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+     "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html>
+<head>
+  <title>uid (Process)</title>
+  <meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" />
+  <link rel="stylesheet" href="../.././rdoc-style.css" type="text/css" media="screen" />
+</head>
+<body class="standalone-code">
+  <pre><span class="ruby-comment cmt"># File lib/win32/process.rb, line 292</span>
+  <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">uid</span>(<span class="ruby-identifier">sid</span> = <span class="ruby-keyword kw">false</span>)
+    <span class="ruby-identifier">token</span> = <span class="ruby-value">0</span>.<span class="ruby-identifier">chr</span> <span class="ruby-operator">*</span> <span class="ruby-value">4</span>
+
+    <span class="ruby-keyword kw">unless</span> <span class="ruby-constant">OpenProcessToken</span>(<span class="ruby-constant">GetCurrentProcess</span>(), <span class="ruby-constant">TOKEN_QUERY</span>, <span class="ruby-identifier">token</span>)
+      <span class="ruby-identifier">raise</span> <span class="ruby-constant">Error</span>, <span class="ruby-identifier">get_last_error</span>
+    <span class="ruby-keyword kw">end</span>
+
+    <span class="ruby-identifier">token</span>   = <span class="ruby-identifier">token</span>.<span class="ruby-identifier">unpack</span>(<span class="ruby-value str">'V'</span>)[<span class="ruby-value">0</span>]
+    <span class="ruby-identifier">rlength</span> = <span class="ruby-value">0</span>.<span class="ruby-identifier">chr</span> <span class="ruby-operator">*</span> <span class="ruby-value">4</span>
+    <span class="ruby-identifier">tuser</span>   = <span class="ruby-value">0</span>.<span class="ruby-identifier">chr</span> <span class="ruby-operator">*</span> <span class="ruby-value">512</span>
+
+    <span class="ruby-identifier">bool</span> = <span class="ruby-constant">GetTokenInformation</span>(
+      <span class="ruby-identifier">token</span>,
+      <span class="ruby-constant">TokenUser</span>,
+      <span class="ruby-identifier">tuser</span>,
+      <span class="ruby-identifier">tuser</span>.<span class="ruby-identifier">size</span>,
+      <span class="ruby-identifier">rlength</span>
+    )
+
+    <span class="ruby-keyword kw">unless</span> <span class="ruby-identifier">bool</span>
+      <span class="ruby-identifier">raise</span> <span class="ruby-constant">Error</span>, <span class="ruby-identifier">get_last_error</span>
+    <span class="ruby-keyword kw">end</span>
+
+    <span class="ruby-identifier">lsid</span> = <span class="ruby-identifier">tuser</span>[<span class="ruby-value">8</span>, (<span class="ruby-identifier">rlength</span>.<span class="ruby-identifier">unpack</span>(<span class="ruby-value str">'L'</span>).<span class="ruby-identifier">first</span> <span class="ruby-operator">-</span> <span class="ruby-value">8</span>)]
+
+    <span class="ruby-keyword kw">if</span> <span class="ruby-identifier">sid</span>
+      <span class="ruby-identifier">lsid</span>
+    <span class="ruby-keyword kw">else</span>
+      <span class="ruby-identifier">sid_addr</span> = [<span class="ruby-identifier">lsid</span>].<span class="ruby-identifier">pack</span>(<span class="ruby-value str">'p*'</span>).<span class="ruby-identifier">unpack</span>(<span class="ruby-value str">'L'</span>)[<span class="ruby-value">0</span>]
+      <span class="ruby-identifier">sid_buf</span>  = <span class="ruby-value">0</span>.<span class="ruby-identifier">chr</span> <span class="ruby-operator">*</span> <span class="ruby-value">80</span>
+      <span class="ruby-identifier">sid_ptr</span>  = <span class="ruby-value">0</span>.<span class="ruby-identifier">chr</span> <span class="ruby-operator">*</span> <span class="ruby-value">4</span>
+
+      <span class="ruby-keyword kw">unless</span> <span class="ruby-constant">ConvertSidToStringSid</span>(<span class="ruby-identifier">sid_addr</span>, <span class="ruby-identifier">sid_ptr</span>)
+        <span class="ruby-identifier">raise</span> <span class="ruby-constant">Error</span>, <span class="ruby-identifier">get_last_error</span>
+      <span class="ruby-keyword kw">end</span>
+
+      <span class="ruby-identifier">strcpy</span>(<span class="ruby-identifier">sid_buf</span>, <span class="ruby-identifier">sid_ptr</span>.<span class="ruby-identifier">unpack</span>(<span class="ruby-value str">'L'</span>)[<span class="ruby-value">0</span>])
+      <span class="ruby-identifier">sid_buf</span>.<span class="ruby-identifier">strip</span>.<span class="ruby-identifier">split</span>(<span class="ruby-value str">'-'</span>).<span class="ruby-identifier">last</span>.<span class="ruby-identifier">to_i</span>
+    <span class="ruby-keyword kw">end</span>
+  <span class="ruby-keyword kw">end</span></pre>
+</body>
+</html>

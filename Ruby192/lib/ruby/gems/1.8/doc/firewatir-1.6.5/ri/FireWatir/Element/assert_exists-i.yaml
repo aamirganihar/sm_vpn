@@ -1,0 +1,14 @@
+--- !ruby/object:RI::MethodDescription 
+aliases: []
+
+block_params: 
+comment: 
+- !ruby/struct:SM::Flow::P 
+  body: "Description:"
+- !ruby/struct:SM::Flow::VERB 
+  body: "  Checks if element exists or not. Raises UnknownObjectException if element doesn't exists.\n"
+full_name: FireWatir::Element#assert_exists
+is_singleton: false
+name: assert_exists
+params: ()
+visibility: public

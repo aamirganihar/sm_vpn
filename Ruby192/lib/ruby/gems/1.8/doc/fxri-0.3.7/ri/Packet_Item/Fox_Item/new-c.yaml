@@ -1,0 +1,12 @@
+--- !ruby/object:RI::MethodDescription 
+aliases: []
+
+block_params: 
+comment: 
+- !ruby/struct:SM::Flow::P 
+  body: Create a new item with packet_item as the parent. *args is passed to the FXIconItem.
+full_name: Packet_Item::Fox_Item::new
+is_singleton: true
+name: new
+params: (packet_item, *args)
+visibility: public

@@ -1,0 +1,12 @@
+--- !ruby/object:RI::MethodDescription 
+aliases: []
+
+block_params: 
+comment: 
+- !ruby/struct:SM::Flow::P 
+  body: Display method information
+full_name: FoxDisplayer#display_method_info
+is_singleton: false
+name: display_method_info
+params: (method)
+visibility: public

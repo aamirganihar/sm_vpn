@@ -1,0 +1,10 @@
+--- !ruby/object:RI::MethodDescription 
+aliases: []
+
+block_params: 
+comment: 
+full_name: RiManager#prepare_all_names
+is_singleton: false
+name: prepare_all_names
+params: ()
+visibility: public

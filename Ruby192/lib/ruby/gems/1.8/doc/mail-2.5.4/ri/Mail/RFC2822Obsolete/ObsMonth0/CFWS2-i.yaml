@@ -1,0 +1,10 @@
+--- !ruby/object:RI::MethodDescription 
+aliases: []
+
+block_params: 
+comment: 
+full_name: Mail::RFC2822Obsolete::ObsMonth0#CFWS2
+is_singleton: false
+name: CFWS2
+params: ()
+visibility: public

@@ -1,0 +1,26 @@
+--- !ruby/object:RI::MethodDescription 
+aliases: []
+
+block_params: 
+comment: 
+- !ruby/struct:SM::Flow::P 
+  body: "Description:"
+- !ruby/struct:SM::Flow::VERB 
+  body: "  Used to access link element. Usually an &lt;a&gt; HTML tag.\n"
+- !ruby/struct:SM::Flow::P 
+  body: "Input:"
+- !ruby/struct:SM::Flow::VERB 
+  body: "  - how - Attribute used to identify the link element.\n  - what - Value of that attribute.\n"
+- !ruby/struct:SM::Flow::P 
+  body: "Typical Usage:"
+- !ruby/struct:SM::Flow::VERB 
+  body: "   ff.link(:id,   'user_name')                 # access the link element with an ID of user_name\n   ff.link(:name, 'address')                   # access the link element with a name of address\n"
+- !ruby/struct:SM::Flow::P 
+  body: "Output:"
+- !ruby/struct:SM::Flow::VERB 
+  body: "  Link object.\n"
+full_name: FireWatir::Container#link
+is_singleton: false
+name: link
+params: (how, what=nil)
+visibility: public

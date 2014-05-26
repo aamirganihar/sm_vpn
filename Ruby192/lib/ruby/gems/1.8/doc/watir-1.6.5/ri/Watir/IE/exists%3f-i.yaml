@@ -1,0 +1,13 @@
+--- !ruby/object:RI::MethodDescription 
+aliases: 
+- !ruby/object:RI::AliasName 
+  name: exist?
+block_params: 
+comment: 
+- !ruby/struct:SM::Flow::P 
+  body: Are we attached to an open browser?
+full_name: Watir::IE#exists?
+is_singleton: false
+name: exists?
+params: ()
+visibility: public

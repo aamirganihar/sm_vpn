@@ -1,0 +1,12 @@
+--- !ruby/object:RI::MethodDescription 
+aliases: []
+
+block_params: 
+comment: 
+- !ruby/struct:SM::Flow::P 
+  body: Returns the character set defined in the content type field
+full_name: Mail::Message#charset
+is_singleton: false
+name: charset
+params: ()
+visibility: public

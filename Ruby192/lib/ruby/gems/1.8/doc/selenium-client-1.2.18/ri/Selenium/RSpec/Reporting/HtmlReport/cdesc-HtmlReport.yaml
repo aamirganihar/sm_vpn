@@ -1,0 +1,34 @@
+--- !ruby/object:RI::ClassDescription 
+attributes: []
+
+class_methods: 
+- !ruby/object:RI::MethodSummary 
+  name: append_css
+- !ruby/object:RI::MethodSummary 
+  name: append_javascript
+- !ruby/object:RI::MethodSummary 
+  name: inject_placeholder
+- !ruby/object:RI::MethodSummary 
+  name: new
+comment: 
+constants: 
+- !ruby/object:RI::Constant 
+  comment: 
+  name: PLACEHOLDER
+  value: "\"<<placeholder>>\""
+full_name: Selenium::RSpec::Reporting::HtmlReport
+includes: []
+
+instance_methods: 
+- !ruby/object:RI::MethodSummary 
+  name: logs_and_screenshot_sections
+- !ruby/object:RI::MethodSummary 
+  name: replace_placeholder_with_system_state_content
+- !ruby/object:RI::MethodSummary 
+  name: report_header
+- !ruby/object:RI::MethodSummary 
+  name: toggable_image_section
+- !ruby/object:RI::MethodSummary 
+  name: toggable_section
+name: HtmlReport
+superclass: Object

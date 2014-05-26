@@ -1,0 +1,10 @@
+--- !ruby/object:RI::MethodDescription 
+aliases: []
+
+block_params: 
+comment: 
+full_name: Mail::RFC2822::Time0#time_of_day
+is_singleton: false
+name: time_of_day
+params: ()
+visibility: public

@@ -1,0 +1,12 @@
+--- !ruby/object:RI::MethodDescription 
+aliases: []
+
+block_params: 
+comment: 
+- !ruby/struct:SM::Flow::P 
+  body: Returns an element from the row as a TableCell object
+full_name: Watir::TableRow#[]
+is_singleton: false
+name: "[]"
+params: (index)
+visibility: public

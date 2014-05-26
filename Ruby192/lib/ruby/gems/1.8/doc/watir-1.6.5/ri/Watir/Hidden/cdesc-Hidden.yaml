@@ -1,0 +1,29 @@
+--- !ruby/object:RI::ClassDescription 
+attributes: []
+
+class_methods: []
+
+comment: 
+- !ruby/struct:SM::Flow::P 
+  body: this class can be used to access hidden field objects Normally a user would not need to create this object as it is returned by the Watir::Container#hidden method
+constants: 
+- !ruby/object:RI::Constant 
+  comment: 
+  name: INPUT_TYPES
+  value: "[\"hidden\"]"
+full_name: Watir::Hidden
+includes: []
+
+instance_methods: 
+- !ruby/object:RI::MethodSummary 
+  name: append
+- !ruby/object:RI::MethodSummary 
+  name: clear
+- !ruby/object:RI::MethodSummary 
+  name: focus
+- !ruby/object:RI::MethodSummary 
+  name: set
+- !ruby/object:RI::MethodSummary 
+  name: visible?
+name: Hidden
+superclass: TextField

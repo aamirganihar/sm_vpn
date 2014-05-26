@@ -1,0 +1,10 @@
+--- !ruby/object:RI::MethodDescription 
+aliases: []
+
+block_params: 
+comment: 
+full_name: Watir::Options#add_sources
+is_singleton: false
+name: add_sources
+params: (builder)
+visibility: public

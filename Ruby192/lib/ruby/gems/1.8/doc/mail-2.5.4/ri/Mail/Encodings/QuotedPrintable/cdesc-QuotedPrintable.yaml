@@ -1,0 +1,29 @@
+--- !ruby/object:RI::ClassDescription 
+attributes: []
+
+class_methods: 
+- !ruby/object:RI::MethodSummary 
+  name: can_encode?
+- !ruby/object:RI::MethodSummary 
+  name: cost
+- !ruby/object:RI::MethodSummary 
+  name: decode
+- !ruby/object:RI::MethodSummary 
+  name: encode
+comment: 
+constants: 
+- !ruby/object:RI::Constant 
+  comment: 
+  name: NAME
+  value: "'quoted-printable'"
+- !ruby/object:RI::Constant 
+  comment: 
+  name: PRIORITY
+  value: "2"
+full_name: Mail::Encodings::QuotedPrintable
+includes: []
+
+instance_methods: []
+
+name: QuotedPrintable
+superclass: SevenBit

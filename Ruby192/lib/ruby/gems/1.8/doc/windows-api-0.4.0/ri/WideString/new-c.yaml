@@ -1,0 +1,12 @@
+--- !ruby/object:RI::MethodDescription 
+aliases: []
+
+block_params: 
+comment: 
+- !ruby/struct:SM::Flow::P 
+  body: Creates a new wide <tt>string</tt> with the given <tt>encoding</tt>, or UTF8 if no encoding is specified.
+full_name: WideString::new
+is_singleton: true
+name: new
+params: (string, encoding = UTF8)
+visibility: public

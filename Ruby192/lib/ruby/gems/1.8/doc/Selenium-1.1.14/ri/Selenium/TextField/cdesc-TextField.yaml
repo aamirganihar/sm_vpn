@@ -1,0 +1,19 @@
+--- !ruby/object:RI::ClassDescription 
+attributes: []
+
+class_methods: 
+- !ruby/object:RI::MethodSummary 
+  name: new
+comment: 
+constants: []
+
+full_name: Selenium::TextField
+includes: []
+
+instance_methods: 
+- !ruby/object:RI::MethodSummary 
+  name: enter
+- !ruby/object:RI::MethodSummary 
+  name: value
+name: TextField
+superclass: HtmlElement

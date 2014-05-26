@@ -1,0 +1,22 @@
+--- !ruby/object:RI::ClassDescription 
+attributes: []
+
+class_methods: []
+
+comment: 
+constants: []
+
+full_name: Nautilus::Shell
+includes: []
+
+instance_methods: 
+- !ruby/object:RI::MethodSummary 
+  name: build_command
+- !ruby/object:RI::MethodSummary 
+  name: run
+- !ruby/object:RI::MethodSummary 
+  name: sh
+- !ruby/object:RI::MethodSummary 
+  name: windows?
+name: Shell
+superclass: Object

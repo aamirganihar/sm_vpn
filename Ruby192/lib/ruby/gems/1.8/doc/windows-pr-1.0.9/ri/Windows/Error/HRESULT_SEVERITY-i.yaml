@@ -1,0 +1,10 @@
+--- !ruby/object:RI::MethodDescription 
+aliases: []
+
+block_params: 
+comment: 
+full_name: Windows::Error#HRESULT_SEVERITY
+is_singleton: false
+name: HRESULT_SEVERITY
+params: (hr)
+visibility: public

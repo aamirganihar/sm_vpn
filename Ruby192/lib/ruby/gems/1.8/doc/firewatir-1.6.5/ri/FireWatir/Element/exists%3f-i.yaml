@@ -1,0 +1,19 @@
+--- !ruby/object:RI::MethodDescription 
+aliases: 
+- !ruby/object:RI::AliasName 
+  name: exist?
+block_params: 
+comment: 
+- !ruby/struct:SM::Flow::P 
+  body: "Description:"
+- !ruby/struct:SM::Flow::VERB 
+  body: "  Checks if element exists or not. If element is not located yet then first locates the element.\n"
+- !ruby/struct:SM::Flow::P 
+  body: "Output:"
+- !ruby/struct:SM::Flow::VERB 
+  body: "  True if element exists, false otherwise.\n"
+full_name: FireWatir::Element#exists?
+is_singleton: false
+name: exists?
+params: ()
+visibility: public

@@ -1,0 +1,10 @@
+--- !ruby/object:RI::MethodDescription 
+aliases: []
+
+block_params: 
+comment: 
+full_name: Selenium::WebPage#context_menu
+is_singleton: false
+name: context_menu
+params: (locator)
+visibility: public

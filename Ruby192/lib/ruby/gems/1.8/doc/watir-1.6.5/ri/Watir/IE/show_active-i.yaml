@@ -1,0 +1,12 @@
+--- !ruby/object:RI::MethodDescription 
+aliases: []
+
+block_params: 
+comment: 
+- !ruby/struct:SM::Flow::P 
+  body: this method shows the name, id etc of the object that is currently active - ie the element that has focus its mostly used in irb when creating a script
+full_name: Watir::IE#show_active
+is_singleton: false
+name: show_active
+params: ()
+visibility: public

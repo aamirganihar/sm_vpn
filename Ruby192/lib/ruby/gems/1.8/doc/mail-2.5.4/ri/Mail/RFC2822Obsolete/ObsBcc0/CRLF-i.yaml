@@ -1,0 +1,10 @@
+--- !ruby/object:RI::MethodDescription 
+aliases: []
+
+block_params: 
+comment: 
+full_name: Mail::RFC2822Obsolete::ObsBcc0#CRLF
+is_singleton: false
+name: CRLF
+params: ()
+visibility: public

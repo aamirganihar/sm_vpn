@@ -1,0 +1,10 @@
+--- !ruby/object:RI::MethodDescription 
+aliases: []
+
+block_params: "@@autoit"
+comment: 
+full_name: Selenium::AutoIt#on_window_active
+is_singleton: false
+name: on_window_active
+params: (title, text = nil) {|@@autoit| ...}
+visibility: public

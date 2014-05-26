@@ -1,0 +1,29 @@
+--- !ruby/object:RI::ClassDescription 
+attributes: []
+
+class_methods: []
+
+comment: 
+- !ruby/struct:SM::Flow::P 
+  body: Arglists cause complications, mainly because a command's arglist is never optional. If you ever want it to be ignored, for example, you have to treat it specially. An AbstractArglistStrategy is a sequence of messages that can cope with those sort of complications. These messages are called at the appropriate time by a CommandLineSource.
+- !ruby/object:SM::Flow::LIST 
+  contents: 
+  - !ruby/struct:SM::Flow::LI 
+    label: "*"
+    body: <b>AbstractArglistStrategy#fill</b> takes the arglist and converts it to the value of some choice symbol. The name should remind you of AbstractSource#fill.
+  - !ruby/struct:SM::Flow::LI 
+    label: "*"
+    body: There may be conversions that make sense for values (for this choice symbol) when those values do <em>not</em> come from an arglist, but not when they do. <b>AbstractArglistStrategy#claim_conversions</b> squirrels them away to protect them from more generic processing. They are then specially processed by AbstractArglistStrategy#apply_claimed_conversions.
+  - !ruby/struct:SM::Flow::LI 
+    label: "*"
+    body: After conversions, there may still be work to do. There may be some special reconciling required to the entire collection of choices. (The final result may depend on what value the arglist provided and what value some other source provided.) <b>AbstractArglistStrategy#adjust</b> does that work.
+  type: :BULLET
+constants: []
+
+full_name: UserChoices::AbstractArglistStrategy
+includes: []
+
+instance_methods: []
+
+name: AbstractArglistStrategy
+superclass: Object

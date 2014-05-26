@@ -1,0 +1,24 @@
+--- !ruby/object:RI::MethodDescription 
+aliases: []
+
+block_params: 
+comment: 
+- !ruby/struct:SM::Flow::P 
+  body: This method returns true|false if the text is selected in the combobox with the supplied id.
+- !ruby/object:SM::Flow::LIST 
+  contents: 
+  - !ruby/struct:SM::Flow::LI 
+    label: "*"
+    body: id - string - Id of field to examine.
+  - !ruby/struct:SM::Flow::LI 
+    label: "*"
+    body: text - string/Array of Strings - The string or array of strings to search for.
+  - !ruby/struct:SM::Flow::LI 
+    label: "*"
+    body: mesg - Optional! string - Set this if you want to supply your own error message
+  type: :BULLET
+full_name: Watir::Simple#assert_text_in_combobox_by_id
+is_singleton: false
+name: assert_text_in_combobox_by_id
+params: (id, text, mesg=nil)
+visibility: public

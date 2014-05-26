@@ -1,0 +1,12 @@
+--- !ruby/object:RI::MethodDescription 
+aliases: []
+
+block_params: 
+comment: 
+- !ruby/struct:SM::Flow::P 
+  body: Instantly grab all possible time zone names.
+full_name: Timezone::Zone::names
+is_singleton: true
+name: names
+params: ()
+visibility: public

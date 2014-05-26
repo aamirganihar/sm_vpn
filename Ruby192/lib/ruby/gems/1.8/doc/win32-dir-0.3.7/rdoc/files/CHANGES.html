@@ -1,0 +1,227 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+<!DOCTYPE html 
+     PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+     "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+  <title>File: CHANGES</title>
+  <meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" />
+  <meta http-equiv="Content-Script-Type" content="text/javascript" />
+  <link rel="stylesheet" href=".././rdoc-style.css" type="text/css" media="screen" />
+  <script type="text/javascript">
+  // <![CDATA[
+
+  function popupCode( url ) {
+    window.open(url, "Code", "resizable=yes,scrollbars=yes,toolbar=no,status=no,height=150,width=400")
+  }
+
+  function toggleCode( id ) {
+    if ( document.getElementById )
+      elem = document.getElementById( id );
+    else if ( document.all )
+      elem = eval( "document.all." + id );
+    else
+      return false;
+
+    elemStyle = elem.style;
+    
+    if ( elemStyle.display != "block" ) {
+      elemStyle.display = "block"
+    } else {
+      elemStyle.display = "none"
+    }
+
+    return true;
+  }
+  
+  // Make codeblocks hidden by default
+  document.writeln( "<style type=\"text/css\">div.method-source-code { display: none }</style>" )
+  
+  // ]]>
+  </script>
+
+</head>
+<body>
+
+
+
+  <div id="fileHeader">
+    <h1>CHANGES</h1>
+    <table class="header-table">
+    <tr class="top-aligned-row">
+      <td><strong>Path:</strong></td>
+      <td>CHANGES
+      </td>
+    </tr>
+    <tr class="top-aligned-row">
+      <td><strong>Last Update:</strong></td>
+      <td>Thu Aug 12 13:10:34 +0530 2010</td>
+    </tr>
+    </table>
+  </div>
+  <!-- banner header -->
+
+  <div id="bodyContent">
+
+
+
+  <div id="contextContent">
+
+    <div id="description">
+      <h2>0.3.7 - 18-Jul-2010</h2>
+<ul>
+<li>Modified <a href="../classes/Dir.html#M000368">Dir.glob</a> and <a
+href="../classes/Dir.html">Dir</a>[] to handle backslashes in path names.
+
+</li>
+<li>Added tests for the modified <a
+href="../classes/Dir.html#M000368">Dir.glob</a> and <a
+href="../classes/Dir.html">Dir</a>[] behavior.
+
+</li>
+<li>Removed the old non-gem install Rake task.
+
+</li>
+</ul>
+<h2>0.3.6 - 6-Feb-2010</h2>
+<ul>
+<li>Bug fixes for Ruby 1.9.x. Thanks go to Kendall Gifford for the spot and the
+patch.
+
+</li>
+<li>Minor refactoring of the <a
+href="../classes/Dir.html#M000371">Dir.create_junction</a> method. This
+fixed a bug for Ruby 1.9.x, but was also a little cleaner in general.
+
+</li>
+<li>Some Rakefile task and gemspec updates.
+
+</li>
+</ul>
+<h2>0.3.5 - 6-Aug-2009</h2>
+<ul>
+<li>Changed the license to Artistic 2.0.
+
+</li>
+<li>Updated the gemspec, including the addition of a license attribute and
+test-unit as a development dependency.
+
+</li>
+</ul>
+<h2>0.3.4 - 5-May-2009</h2>
+<ul>
+<li>Redefined the <a href="../classes/Dir.html#M000370">Dir.getwd</a> (and the
+Dir.pwd alias) to always return a normalized path.
+
+</li>
+<li>Some gemspec updates.
+
+</li>
+</ul>
+<h2>0.3.3 - 30-Mar-2009</h2>
+<ul>
+<li>Virtual folders like Dir::CONTROL, which were previously almost always nil,
+are now set to their display name.
+
+</li>
+<li>Fixed a bug in the create_junction method.
+
+</li>
+<li>Added an &#8216;example&#8217; rake task to run the example code.
+
+</li>
+<li>Renamed the example program from dir_test.rb to dir_example.rb to prevent
+any potential confusion that it&#8216;s a genuine test file.
+
+</li>
+</ul>
+<h2>0.3.2 - 25-Jul-2007</h2>
+<ul>
+<li>Added a Rakefile with tasks for testing and installation.
+
+</li>
+<li>Removed the install.rb file (the Rakefile handles installation).
+
+</li>
+<li>Minor updates the README, MANIFEST, and test file.
+
+</li>
+</ul>
+<h2>0.3.1 - 16-Oct-2006</h2>
+<ul>
+<li>Added the Dir.empty? method.
+
+</li>
+<li>Changed the Dir.reparse_dir? method to Dir.junction? (but kept an alias for
+backwards compatibility).
+
+</li>
+<li>Added rdoc for Dir.junction? (oops).
+
+</li>
+<li>Some test tweaks and additions.
+
+</li>
+</ul>
+<h2>0.3.0 - 28-May-2006</h2>
+<ul>
+<li>Now pure Ruby.
+
+</li>
+<li>Now has a gem.
+
+</li>
+<li>Added a VERSION constant.
+
+</li>
+</ul>
+<h2>0.2.0 - 27-Jun-2005</h2>
+<ul>
+<li>Added the <a href="../classes/Dir.html#M000371">Dir.create_junction</a> and
+Dir.reparse_dir? methods.
+
+</li>
+<li>Added corresponding tests and documentation.
+
+</li>
+</ul>
+<h2>0.1.0 - 25-Feb-2005</h2>
+<ul>
+<li>Initial release
+
+</li>
+</ul>
+
+    </div>
+
+
+   </div>
+
+
+  </div>
+
+
+    <!-- if includes -->
+
+    <div id="section">
+
+
+
+
+
+      
+
+
+    <!-- if method_list -->
+
+
+  </div>
+
+
+<div id="validator-badges">
+  <p><small><a href="http://validator.w3.org/check/referer">[Validate]</a></small></p>
+</div>
+
+</body>
+</html>

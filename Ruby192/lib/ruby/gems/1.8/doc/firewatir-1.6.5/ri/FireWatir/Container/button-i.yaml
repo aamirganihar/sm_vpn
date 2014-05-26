@@ -1,0 +1,26 @@
+--- !ruby/object:RI::MethodDescription 
+aliases: []
+
+block_params: 
+comment: 
+- !ruby/struct:SM::Flow::P 
+  body: "Description:"
+- !ruby/struct:SM::Flow::VERB 
+  body: "  Used to access a button element. Usually an &lt;input type = &quot;button&quot;&gt; HTML tag.\n"
+- !ruby/struct:SM::Flow::P 
+  body: "Input:"
+- !ruby/struct:SM::Flow::VERB 
+  body: "  - how - The attribute used to identify the row.\n  - what - The value of that attribute.\n"
+- !ruby/struct:SM::Flow::P 
+  body: "Typical Usage:"
+- !ruby/struct:SM::Flow::VERB 
+  body: "   ff.button(:id,    'b_1')                       # access the button with an ID of b_1\n   ff.button(:name,  'verify_data')               # access the button with a name of verify_data\n\n   if only a single parameter is supplied,  then :value is used as 'how' and parameter supplied is used as what.\n\n   ff.button('Click Me')                          # access the button with a value of Click Me\n"
+- !ruby/struct:SM::Flow::P 
+  body: "Output:"
+- !ruby/struct:SM::Flow::VERB 
+  body: "  Button element.\n"
+full_name: FireWatir::Container#button
+is_singleton: false
+name: button
+params: (how, what=nil)
+visibility: public

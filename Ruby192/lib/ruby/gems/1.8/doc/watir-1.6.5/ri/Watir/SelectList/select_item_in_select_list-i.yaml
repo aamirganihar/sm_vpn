@@ -1,0 +1,14 @@
+--- !ruby/object:RI::MethodDescription 
+aliases: []
+
+block_params: 
+comment: 
+- !ruby/struct:SM::Flow::P 
+  body: "BUG: Should be private Selects something from the select box"
+- !ruby/struct:SM::Flow::VERB 
+  body: " * name  - symbol  :value or :text - how we find an item in the select box\n * item  - string or reg exp - what we are looking for\n"
+full_name: Watir::SelectList#select_item_in_select_list
+is_singleton: false
+name: select_item_in_select_list
+params: (attribute, value)
+visibility: public

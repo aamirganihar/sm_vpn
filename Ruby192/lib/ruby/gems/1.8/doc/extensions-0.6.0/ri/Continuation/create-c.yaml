@@ -1,0 +1,38 @@
+--- !ruby/object:RI::MethodDescription 
+aliases: []
+
+block_params: 
+comment: 
+- !ruby/struct:SM::Flow::P 
+  body: <tt>Continuation.create</tt> offers a nicer interface for creating continuations than <tt>Kernel.callcc</tt>.
+- !ruby/struct:SM::Flow::H 
+  level: 3
+  text: Example
+- !ruby/struct:SM::Flow::P 
+  body: Count down from 10 to 0 using a continuation.
+- !ruby/struct:SM::Flow::VERB 
+  body: "  continuation, counter = Continuation.create(10)\n  puts counter\n  continuation.call(counter - 1) if counter &gt; 0\n"
+- !ruby/struct:SM::Flow::P 
+  body: Implement a workalike of <tt>Array#inject</tt> using continuations. For simplicity's sake, this is not fully compatible with the real <tt>#inject</tt>.
+- !ruby/struct:SM::Flow::VERB 
+  body: "  class Array\n    def cc_inject( value=nil )\n      copy = self.clone\n      cc, result, item = Continuation.create( value, nil )\n      next_item = copy.shift\n      if result and item\n        cc.call( yield(result, item), next_item )\n      elsif next_item\n        cc.call( next_item, result )\n      end\n      result\n    end\n  end\n\n  [1,2,3,4,5].cc_inject { |acc, n| acc + n }       # -&gt; 15\n"
+- !ruby/struct:SM::Flow::H 
+  level: 3
+  text: Explanation
+- !ruby/struct:SM::Flow::P 
+  body: "I've got no idea how it works. TODO: work it out. In particular, what do the arguments do? And what the hell is going on in #cc_inject???!?"
+- !ruby/struct:SM::Flow::H 
+  level: 3
+  text: See Also
+- !ruby/struct:SM::Flow::P 
+  body: This method is included in the 'extensions' package primarily to support Binding.of_caller.
+- !ruby/struct:SM::Flow::H 
+  level: 3
+  text: Credits
+- !ruby/struct:SM::Flow::P 
+  body: <tt>Continuation.create</tt> was written and demonstrated by Florian Gross. See ruby-talk:94681.
+full_name: Continuation::create
+is_singleton: true
+name: create
+params: (*args, &block)
+visibility: public

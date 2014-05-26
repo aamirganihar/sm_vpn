@@ -1,0 +1,16 @@
+--- !ruby/object:RI::MethodDescription 
+aliases: []
+
+block_params: 
+comment: 
+- !ruby/struct:SM::Flow::P 
+  body: Matches two objects with their to_s values case insensitively
+- !ruby/struct:SM::Flow::P 
+  body: "Example:"
+- !ruby/struct:SM::Flow::VERB 
+  body: " obj2 = &quot;This_is_An_object&quot;\n obj1 = :this_IS_an_object\n match_to_s( obj1, obj2 ) #=&gt; true\n"
+full_name: Mail::Utilities#match_to_s
+is_singleton: false
+name: match_to_s
+params: ( obj1, obj2 )
+visibility: public

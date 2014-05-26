@@ -1,0 +1,15 @@
+--- !ruby/object:RI::MethodDescription 
+aliases: 
+- !ruby/object:RI::AliasName 
+  name: collect_with_index
+block_params: (elt, idx)
+comment: 
+- !ruby/struct:SM::Flow::P 
+  body: Same as Enumerable#map, but the index is yielded as well. See Enumerable#each_with_index.
+- !ruby/struct:SM::Flow::VERB 
+  body: "  puts files.map_with_index { |fn, idx| &quot;#{idx}. #{fn}&quot; }\n  print &quot;Please select a file (0-#{files.size}): &quot;\n"
+full_name: Enumerable#map_with_index
+is_singleton: false
+name: map_with_index
+params: () {|elt, idx| ...}
+visibility: public

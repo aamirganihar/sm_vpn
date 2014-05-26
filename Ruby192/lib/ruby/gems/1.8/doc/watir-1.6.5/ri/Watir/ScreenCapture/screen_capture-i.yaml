@@ -1,0 +1,14 @@
+--- !ruby/object:RI::MethodDescription 
+aliases: []
+
+block_params: 
+comment: 
+- !ruby/struct:SM::Flow::P 
+  body: this method saves the current window or whole screen as either a bitmap or a jpeg It uses paint to save the file, so will barf if a duplicate filename is selected, or the path doesnt exist etc
+- !ruby/struct:SM::Flow::VERB 
+  body: "   * filename        - string  -  the name of the file to save. If its not fully qualified the current directory is used\n   * active_window   - boolean - if true, the whole screen is captured, if false,  just the active window is captured\n   * save_as_bmp     - boolean - if true saves the file as a bitmap, saves it as a jpeg otherwise\n"
+full_name: Watir::ScreenCapture#screen_capture
+is_singleton: false
+name: screen_capture
+params: (filename , active_window_only=false, save_as_bmp=false)
+visibility: public

@@ -1,0 +1,22 @@
+--- !ruby/object:RI::ClassDescription 
+attributes: []
+
+class_methods: 
+- !ruby/object:RI::MethodSummary 
+  name: new
+comment: 
+constants: []
+
+full_name: Mail::ReceivedElement
+includes: 
+- !ruby/object:RI::IncludedModule 
+  name: Mail::Utilities
+instance_methods: 
+- !ruby/object:RI::MethodSummary 
+  name: date_time
+- !ruby/object:RI::MethodSummary 
+  name: info
+- !ruby/object:RI::MethodSummary 
+  name: to_s
+name: ReceivedElement
+superclass: Object

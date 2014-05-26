@@ -1,0 +1,16 @@
+--- !ruby/object:RI::MethodDescription 
+aliases: []
+
+block_params: 
+comment: 
+- !ruby/struct:SM::Flow::P 
+  body: Returns the present working directory. Unlike MRI, this method always normalizes the path.
+- !ruby/struct:SM::Flow::P 
+  body: "Examples:"
+- !ruby/struct:SM::Flow::VERB 
+  body: "   Dir.chdir(&quot;C:/Progra~1&quot;)\n   Dir.getwd # =&gt; C:\\Program Files\n\n   Dir.chdir(&quot;C:/PROGRAM FILES&quot;)\n   Dir.getwd # =&gt; C:\\Program Files\n"
+full_name: Dir::getwd
+is_singleton: true
+name: getwd
+params: ()
+visibility: public

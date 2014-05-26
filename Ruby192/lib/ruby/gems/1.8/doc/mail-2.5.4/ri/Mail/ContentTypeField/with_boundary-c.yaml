@@ -1,0 +1,10 @@
+--- !ruby/object:RI::MethodDescription 
+aliases: []
+
+block_params: 
+comment: 
+full_name: Mail::ContentTypeField::with_boundary
+is_singleton: true
+name: with_boundary
+params: (type)
+visibility: public

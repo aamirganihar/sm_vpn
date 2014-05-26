@@ -1,0 +1,10 @@
+--- !ruby/object:RI::MethodDescription 
+aliases: []
+
+block_params: 
+comment: 
+full_name: Mail::Message#inform_observers
+is_singleton: false
+name: inform_observers
+params: ()
+visibility: public

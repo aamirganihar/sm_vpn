@@ -1,0 +1,10 @@
+--- !ruby/object:RI::MethodDescription 
+aliases: []
+
+block_params: 
+comment: 
+full_name: Windows::Window::Dialog#DialogBox
+is_singleton: false
+name: DialogBox
+params: (hInstance, lpTemp, hParent, lpDialogFunc)
+visibility: public

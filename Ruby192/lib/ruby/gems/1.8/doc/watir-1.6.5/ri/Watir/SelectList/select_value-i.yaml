@@ -1,0 +1,14 @@
+--- !ruby/object:RI::MethodDescription 
+aliases: []
+
+block_params: 
+comment: 
+- !ruby/struct:SM::Flow::P 
+  body: Selects an item, or items in a select box, by value. Raises NoValueFoundException if the specified value is not found.
+- !ruby/struct:SM::Flow::VERB 
+  body: " * item   - the value of the thing to select, string, reg exp\n"
+full_name: Watir::SelectList#select_value
+is_singleton: false
+name: select_value
+params: (item)
+visibility: public

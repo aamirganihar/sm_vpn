@@ -1,0 +1,10 @@
+--- !ruby/object:RI::MethodDescription 
+aliases: []
+
+block_params: 
+comment: 
+full_name: Selenium::WebPage#file_upload
+is_singleton: false
+name: file_upload
+params: (how, what)
+visibility: public

@@ -1,0 +1,20 @@
+--- !ruby/object:RI::ClassDescription 
+attributes: []
+
+class_methods: 
+- !ruby/object:RI::MethodSummary 
+  name: data
+- !ruby/object:RI::MethodSummary 
+  name: generate
+comment: 
+- !ruby/struct:SM::Flow::P 
+  body: TODO [panthomakos] This needs refactoring.
+constants: []
+
+full_name: Timezone::Parser::Zone::DataGenerator
+includes: []
+
+instance_methods: []
+
+name: DataGenerator
+superclass: 

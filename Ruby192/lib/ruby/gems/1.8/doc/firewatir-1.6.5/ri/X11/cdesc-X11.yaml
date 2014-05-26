@@ -1,0 +1,45 @@
+--- !ruby/object:RI::ClassDescription 
+attributes: []
+
+class_methods: []
+
+comment: 
+constants: 
+- !ruby/object:RI::Constant 
+  comment: 
+  - !ruby/struct:SM::Flow::P 
+    body: Structs we will use in API calls. Pointer structs are necessary when the API uses a pointer parameter for a return value.
+  name: ULPPointer
+  value: struct [                 "long* value"
+- !ruby/object:RI::Constant 
+  comment: 
+  name: ULPointer
+  value: struct [                 "long value"
+- !ruby/object:RI::Constant 
+  comment: 
+  name: CPPointer
+  value: struct [                 "char* value"
+- !ruby/object:RI::Constant 
+  comment: 
+  name: UIPointer
+  value: struct [                 "int value"
+- !ruby/object:RI::Constant 
+  comment: 
+  - !ruby/struct:SM::Flow::P 
+    body: Info about window class
+  name: XClassHint
+  value: struct [                 "char* res_name",                 "char* res_class"
+- !ruby/object:RI::Constant 
+  comment: 
+  - !ruby/struct:SM::Flow::P 
+    body: Event struct for key presses
+  name: XKeyEvent
+  value: struct [                 "int type",                 "long serial",                 "int send_event",                 "long display",                 "long window",                 "long root",                 "long subwindow",                 "long time",                 "int x",                 "int y",                 "int x_root",                 "int y_root",                 "int state",                 "int keycode",                 "int same_screen"
+full_name: X11
+includes: 
+- !ruby/object:RI::IncludedModule 
+  name: X11
+instance_methods: []
+
+name: X11
+superclass: 

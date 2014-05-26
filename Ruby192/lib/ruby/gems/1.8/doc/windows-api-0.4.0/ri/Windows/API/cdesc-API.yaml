@@ -1,0 +1,46 @@
+--- !ruby/object:RI::ClassDescription 
+attributes: []
+
+class_methods: 
+- !ruby/object:RI::MethodSummary 
+  name: auto_constant
+- !ruby/object:RI::MethodSummary 
+  name: auto_constant=
+- !ruby/object:RI::MethodSummary 
+  name: auto_method
+- !ruby/object:RI::MethodSummary 
+  name: auto_method=
+- !ruby/object:RI::MethodSummary 
+  name: auto_namespace
+- !ruby/object:RI::MethodSummary 
+  name: auto_namespace=
+- !ruby/object:RI::MethodSummary 
+  name: auto_unicode
+- !ruby/object:RI::MethodSummary 
+  name: auto_unicode=
+- !ruby/object:RI::MethodSummary 
+  name: new
+comment: 
+- !ruby/struct:SM::Flow::P 
+  body: Wrapper around the Win32::API class
+constants: 
+- !ruby/object:RI::Constant 
+  comment: 
+  - !ruby/struct:SM::Flow::P 
+    body: The version of the windows-api library
+  name: VERSION
+  value: "'0.4.0'"
+- !ruby/object:RI::Constant 
+  comment: 
+  - !ruby/struct:SM::Flow::P 
+    body: Verbose data types that can be used instead of single letters
+  name: DATA_TYPES
+  value: "{          'ATOM'         => 'I',          'BOOL'         => 'B',          'BOOLEAN'      => 'B',          'BYTE'         => 'I',          'CALLBACK'     => 'K',          'CHAR'         => 'I',          'COLORREF'     => 'L',          'DWORD'        => 'L',          'DWORDLONG'    => 'L',          'DWORD_PTR'    => 'P',          'DWORD32'      => 'I',          'DWORD64'      => 'L',          'HACCEL'       => 'L',          'HANDLE'       => 'L',          'HBITMAP'      => 'L',          'HBRUSH'       => 'L',          'HCOLORSPACE'  => 'L',          'HCONV'        => 'L',          'HDC'          => 'L',          'HFILE'        => 'I',          'HKEY'         => 'L',          'HFONT'        => 'L',          'HINSTANCE'    => 'L',          'HKEY'         => 'L',          'HLOCAL'       => 'L',          'HMENU'        => 'L',          'HMODULE'      => 'L',          'HRESULT'      => 'L',          'HWND'         => 'L',          'INT'          => 'I',          'INT_PTR'      => 'P',          'INT32'        => 'I',          'INT64'        => 'L',          'LANGID'       => 'I',          'LCID'         => 'L',          'LCTYPE'       => 'L',          'LONG'         => 'L',          'LONGLONG'     => 'L',          'LONG_PTR'     => 'P',          'LONG32'       => 'L',          'LONG64'       => 'L',          'LPARAM'       => 'P',          'LPBOOL'       => 'P',          'LPBYTE'       => 'P',          'LPCOLORREF'   => 'P',          'LPCSTR'       => 'P',          'LPCTSTR'      => 'P',          'LPCVOID'      => 'L',          'LPCWSTR'      => 'P',          'LPDWORD'      => 'P',          'LPHANDLE'     => 'P',          'LPINT'        => 'P',          'LPLONG'       => 'P',          'LPSTR'        => 'P',          'LPTSTR'       => 'P',          'LPVOID'       => 'L',          'LPWORD'       => 'P',          'LPWSTR'       => 'P',          'LRESULT'      => 'P',          'PBOOL'        => 'P',          'PBOOLEAN'     => 'P',          'PBYTE'        => 'P',          'PHKEY'        => 'P',          'SC_HANDLE'    => 'L',          'SC_LOCK'      => 'L',          'SERVICE_STATUS_HANDLE' => 'L',          'SHORT'        => 'I',          'SIZE_T'       => 'P',          'TCHAR'        => 'L',          'UINT'         => 'I',          'UINT_PTR'     => 'P',          'UINT32'       => 'I',          'UINT64'       => 'L',          'ULONG'        => 'L',          'ULONGLONG'    => 'L',          'ULONG_PTR'    => 'P',          'ULONG32'      => 'L',          'ULONG64'      => 'L',          'USHORT'       => 'I',          'USN'          => 'L',          'WINAPI'       => 'L',                                     'WORD'         => 'I'"
+full_name: Windows::API
+includes: []
+
+instance_methods: 
+- !ruby/object:RI::MethodSummary 
+  name: call
+name: API
+superclass: Object

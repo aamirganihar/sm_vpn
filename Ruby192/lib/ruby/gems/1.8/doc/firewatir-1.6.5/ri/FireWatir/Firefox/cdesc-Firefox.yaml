@@ -1,0 +1,123 @@
+--- !ruby/object:RI::ClassDescription 
+attributes: []
+
+class_methods: 
+- !ruby/object:RI::MethodSummary 
+  name: attach
+- !ruby/object:RI::MethodSummary 
+  name: new
+- !ruby/object:RI::MethodSummary 
+  name: start
+comment: 
+constants: 
+- !ruby/object:RI::Constant 
+  comment: 
+  - !ruby/struct:SM::Flow::P 
+    body: "XPath Result type. Return only first node that matches the xpath expression. More details: &quot;http://developer.mozilla.org/en/docs/DOM:document.evaluate&quot;"
+  name: FIRST_ORDERED_NODE_TYPE
+  value: "9"
+- !ruby/object:RI::Constant 
+  comment: 
+  name: VERSION
+  value: "'1.6.5'"
+full_name: FireWatir::Firefox
+includes: 
+- !ruby/object:RI::IncludedModule 
+  name: FireWatir::Container
+instance_methods: 
+- !ruby/object:RI::MethodSummary 
+  name: add_checker
+- !ruby/object:RI::MethodSummary 
+  name: attach
+- !ruby/object:RI::MethodSummary 
+  name: back
+- !ruby/object:RI::MethodSummary 
+  name: body_var
+- !ruby/object:RI::MethodSummary 
+  name: browser_var
+- !ruby/object:RI::MethodSummary 
+  name: close
+- !ruby/object:RI::MethodSummary 
+  name: contains_text
+- !ruby/object:RI::MethodSummary 
+  name: disable_checker
+- !ruby/object:RI::MethodSummary 
+  name: document
+- !ruby/object:RI::MethodSummary 
+  name: document_var
+- !ruby/object:RI::MethodSummary 
+  name: element_by_xpath
+- !ruby/object:RI::MethodSummary 
+  name: elements_by_xpath
+- !ruby/object:RI::MethodSummary 
+  name: execute_script
+- !ruby/object:RI::MethodSummary 
+  name: forward
+- !ruby/object:RI::MethodSummary 
+  name: get_popup_text
+- !ruby/object:RI::MethodSummary 
+  name: goto
+- !ruby/object:RI::MethodSummary 
+  name: html
+- !ruby/object:RI::MethodSummary 
+  name: inspect
+- !ruby/object:RI::MethodSummary 
+  name: maximize
+- !ruby/object:RI::MethodSummary 
+  name: minimize
+- !ruby/object:RI::MethodSummary 
+  name: refresh
+- !ruby/object:RI::MethodSummary 
+  name: run_error_checks
+- !ruby/object:RI::MethodSummary 
+  name: showDivs
+- !ruby/object:RI::MethodSummary 
+  name: showForms
+- !ruby/object:RI::MethodSummary 
+  name: showFrames
+- !ruby/object:RI::MethodSummary 
+  name: showImages
+- !ruby/object:RI::MethodSummary 
+  name: showLabels
+- !ruby/object:RI::MethodSummary 
+  name: showLinks
+- !ruby/object:RI::MethodSummary 
+  name: showPres
+- !ruby/object:RI::MethodSummary 
+  name: showSpans
+- !ruby/object:RI::MethodSummary 
+  name: showTables
+- !ruby/object:RI::MethodSummary 
+  name: show_divs
+- !ruby/object:RI::MethodSummary 
+  name: show_forms
+- !ruby/object:RI::MethodSummary 
+  name: show_frames
+- !ruby/object:RI::MethodSummary 
+  name: show_images
+- !ruby/object:RI::MethodSummary 
+  name: show_labels
+- !ruby/object:RI::MethodSummary 
+  name: show_links
+- !ruby/object:RI::MethodSummary 
+  name: show_pres
+- !ruby/object:RI::MethodSummary 
+  name: show_spans
+- !ruby/object:RI::MethodSummary 
+  name: show_tables
+- !ruby/object:RI::MethodSummary 
+  name: startClicker
+- !ruby/object:RI::MethodSummary 
+  name: status
+- !ruby/object:RI::MethodSummary 
+  name: text
+- !ruby/object:RI::MethodSummary 
+  name: title
+- !ruby/object:RI::MethodSummary 
+  name: url
+- !ruby/object:RI::MethodSummary 
+  name: wait
+- !ruby/object:RI::MethodSummary 
+  name: window_var
+name: Firefox
+superclass: Object

@@ -1,0 +1,14 @@
+--- !ruby/object:RI::MethodDescription 
+aliases: []
+
+block_params: 
+comment: 
+- !ruby/struct:SM::Flow::P 
+  body: Returns true if the text field contents is matches the specified target, which can be either a string or a regular expression.
+- !ruby/struct:SM::Flow::VERB 
+  body: "  Raises UnknownObjectException if the object can't be found\n"
+full_name: Watir::TextField#verify_contains
+is_singleton: false
+name: verify_contains
+params: (target)
+visibility: public

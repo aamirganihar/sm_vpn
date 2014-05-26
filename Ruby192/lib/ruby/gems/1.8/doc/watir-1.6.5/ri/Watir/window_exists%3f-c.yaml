@@ -1,0 +1,12 @@
+--- !ruby/object:RI::MethodDescription 
+aliases: []
+
+block_params: 
+comment: 
+- !ruby/struct:SM::Flow::P 
+  body: Does the window with the specified window handle (hwnd) exist?
+full_name: Watir::window_exists?
+is_singleton: true
+name: window_exists?
+params: (hwnd)
+visibility: public

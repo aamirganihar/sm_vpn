@@ -1,0 +1,10 @@
+--- !ruby/object:RI::MethodDescription 
+aliases: []
+
+block_params: 
+comment: 
+full_name: Selenium::RSpec::Reporting::FilePathStrategy#relative_file_path_for_system_screenshot
+is_singleton: false
+name: relative_file_path_for_system_screenshot
+params: (example)
+visibility: public

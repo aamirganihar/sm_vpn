@@ -1,0 +1,12 @@
+--- !ruby/object:RI::MethodDescription 
+aliases: []
+
+block_params: ""
+comment: 
+- !ruby/struct:SM::Flow::P 
+  body: Run the block with the <em>HOME</em> environment variable set to the current working directory.
+full_name: S4tUtils#with_home_right_here
+is_singleton: false
+name: with_home_right_here
+params: () {|| ...}
+visibility: public

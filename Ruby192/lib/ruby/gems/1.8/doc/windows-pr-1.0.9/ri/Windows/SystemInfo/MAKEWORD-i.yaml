@@ -1,0 +1,12 @@
+--- !ruby/object:RI::MethodDescription 
+aliases: []
+
+block_params: 
+comment: 
+- !ruby/struct:SM::Flow::P 
+  body: These macros are from windef.h, but I've put them here for now since they can be used in conjunction with some of the functions declared in this module.
+full_name: Windows::SystemInfo#MAKEWORD
+is_singleton: false
+name: MAKEWORD
+params: (a, b)
+visibility: public

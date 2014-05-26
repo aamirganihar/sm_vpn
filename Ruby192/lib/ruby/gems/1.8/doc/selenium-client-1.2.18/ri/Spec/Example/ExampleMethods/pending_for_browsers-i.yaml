@@ -1,0 +1,10 @@
+--- !ruby/object:RI::MethodDescription 
+aliases: []
+
+block_params: ""
+comment: 
+full_name: Spec::Example::ExampleMethods#pending_for_browsers
+is_singleton: false
+name: pending_for_browsers
+params: (*browser_regexps, &block) {|| ...}
+visibility: public

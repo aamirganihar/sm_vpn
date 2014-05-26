@@ -1,0 +1,10 @@
+--- !ruby/object:RI::MethodDescription 
+aliases: []
+
+block_params: 
+comment: 
+full_name: Readline#readline
+is_singleton: false
+name: readline
+params: (*args)
+visibility: public

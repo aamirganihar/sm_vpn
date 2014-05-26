@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+<!DOCTYPE html 
+     PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+     "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html>
+<head>
+  <title>click (FireWatir::Element)</title>
+  <meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" />
+  <link rel="stylesheet" href="../../.././rdoc-style.css" type="text/css" media="screen" />
+</head>
+<body class="standalone-code">
+  <pre><span class="ruby-comment cmt"># File lib/firewatir/element.rb, line 1065</span>
+    <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">click</span>
+      <span class="ruby-identifier">assert_exists</span>
+      <span class="ruby-identifier">assert_enabled</span>
+
+      <span class="ruby-identifier">highlight</span>(<span class="ruby-identifier">:set</span>)
+      <span class="ruby-comment cmt">#puts &quot;#{element_object} and #{element_type}&quot;</span>
+      <span class="ruby-keyword kw">case</span> <span class="ruby-identifier">element_type</span>
+
+        <span class="ruby-keyword kw">when</span> <span class="ruby-value str">&quot;HTMLAnchorElement&quot;</span>, <span class="ruby-value str">&quot;HTMLImageElement&quot;</span>
+        <span class="ruby-comment cmt"># Special check for link or anchor tag. Because click() doesn't work on links.</span>
+        <span class="ruby-comment cmt"># More info: http://www.w3.org/TR/DOM-Level-2-HTML/html.html#ID-48250443</span>
+        <span class="ruby-comment cmt"># https://bugzilla.mozilla.org/show_bug.cgi?id=148585</span>
+
+        <span class="ruby-identifier">jssh_command</span> = <span class="ruby-node">&quot;var event = #{@container.document_var}.createEvent(\&quot;MouseEvents\&quot;);&quot;</span>
+
+        <span class="ruby-comment cmt"># Info about initMouseEvent at: http://www.xulplanet.com/references/objref/MouseEvent.html</span>
+        <span class="ruby-identifier">jssh_command</span> <span class="ruby-operator">&lt;&lt;</span> <span class="ruby-value str">&quot;event.initMouseEvent('click',true,true,null,1,0,0,0,0,false,false,false,false,0,null);&quot;</span>
+        <span class="ruby-identifier">jssh_command</span> <span class="ruby-operator">&lt;&lt;</span> <span class="ruby-node">&quot;#{element_object}.dispatchEvent(event);\n&quot;</span>
+
+        <span class="ruby-comment cmt">#puts &quot;jssh_command is: #{jssh_command}&quot;</span>
+        <span class="ruby-identifier">jssh_socket</span>.<span class="ruby-identifier">send</span>(<span class="ruby-node">&quot;#{jssh_command}&quot;</span>, <span class="ruby-value">0</span>)
+        <span class="ruby-identifier">read_socket</span>()
+      <span class="ruby-keyword kw">else</span>
+        <span class="ruby-identifier">jssh_socket</span>.<span class="ruby-identifier">send</span>(<span class="ruby-node">&quot;typeof(#{element_object}.click);\n&quot;</span>, <span class="ruby-value">0</span>)
+        <span class="ruby-identifier">isDefined</span> = <span class="ruby-identifier">read_socket</span>()
+        <span class="ruby-keyword kw">if</span>(<span class="ruby-identifier">isDefined</span> <span class="ruby-operator">==</span> <span class="ruby-value str">&quot;undefined&quot;</span>)
+          <span class="ruby-identifier">fire_event</span>(<span class="ruby-value str">&quot;onclick&quot;</span>)
+        <span class="ruby-keyword kw">else</span>
+          <span class="ruby-identifier">jssh_socket</span>.<span class="ruby-identifier">send</span>(<span class="ruby-node">&quot;#{element_object}.click();\n&quot;</span> , <span class="ruby-value">0</span>)
+          <span class="ruby-identifier">read_socket</span>()
+        <span class="ruby-keyword kw">end</span>
+      <span class="ruby-keyword kw">end</span>
+      <span class="ruby-identifier">highlight</span>(<span class="ruby-identifier">:clear</span>)
+      <span class="ruby-comment cmt"># Wait for firefox to reload.</span>
+      <span class="ruby-identifier">wait</span>()
+    <span class="ruby-keyword kw">end</span></pre>
+</body>
+</html>

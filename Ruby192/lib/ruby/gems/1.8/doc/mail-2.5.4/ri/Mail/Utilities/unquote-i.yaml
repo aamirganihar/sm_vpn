@@ -1,0 +1,16 @@
+--- !ruby/object:RI::MethodDescription 
+aliases: []
+
+block_params: 
+comment: 
+- !ruby/struct:SM::Flow::P 
+  body: Unwraps supplied string from inside double quotes and removes any \-escaping.
+- !ruby/struct:SM::Flow::P 
+  body: "Example:"
+- !ruby/struct:SM::Flow::VERB 
+  body: " string = '&quot;This is a string&quot;'\n unquote(string) #=&gt; 'This is a string'\n\n string = '&quot;This is \\&quot;a string\\&quot;&quot;'\n unqoute(string) #=&gt; 'This is &quot;a string&quot;'\n"
+full_name: Mail::Utilities#unquote
+is_singleton: false
+name: unquote
+params: ( str )
+visibility: public

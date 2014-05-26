@@ -1,0 +1,10 @@
+--- !ruby/object:RI::MethodDescription 
+aliases: []
+
+block_params: 
+comment: 
+full_name: Mail::Encodings::TransferEncoding::get_best_compatible
+is_singleton: true
+name: get_best_compatible
+params: (source_encoding, str)
+visibility: public

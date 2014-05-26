@@ -1,0 +1,16 @@
+--- !ruby/object:RI::MethodDescription 
+aliases: []
+
+block_params: 
+comment: 
+- !ruby/struct:SM::Flow::P 
+  body: this is the main method for accessing the ems iterator. Returns a Ems collection
+- !ruby/struct:SM::Flow::P 
+  body: "Typical usage:"
+- !ruby/struct:SM::Flow::VERB 
+  body: "  ie.ems.each { |d| puts d.to_s }            # iterate through all the ems on the page\n  ie.ems[1].to_s                             # goto the first em on the page\n  ie.ems.length                              # show how many ems are on the page.\n"
+full_name: Watir::Container#ems
+is_singleton: false
+name: ems
+params: ()
+visibility: public

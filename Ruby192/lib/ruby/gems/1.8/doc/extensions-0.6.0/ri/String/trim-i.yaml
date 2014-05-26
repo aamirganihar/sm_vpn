@@ -1,0 +1,32 @@
+--- !ruby/object:RI::MethodDescription 
+aliases: []
+
+block_params: 
+comment: 
+- !ruby/struct:SM::Flow::P 
+  body: "Trims a string:"
+- !ruby/object:SM::Flow::LIST 
+  contents: 
+  - !ruby/struct:SM::Flow::LI 
+    label: "-"
+    body: removes one initial blank line
+  - !ruby/struct:SM::Flow::LI 
+    label: "-"
+    body: removes trailing spaces on each line
+  - !ruby/struct:SM::Flow::LI 
+    label: "-"
+    body: if <tt>margin</tt> is given, removes initial spaces up to and including the margin on each line, plus one space
+  type: :BULLET
+- !ruby/struct:SM::Flow::P 
+  body: "This is designed specifically for working with inline documents. Here-documents are great, except they tend to go against the indentation of your code. This method allows a convenient way of using %{}-style documents. For instance:"
+- !ruby/struct:SM::Flow::VERB 
+  body: "  USAGE = %{\n    | usage: prog [-o dir] -h file...\n    |   where\n    |     -o dir         outputs to DIR\n    |     -h             prints this message\n  }.trim(&quot;|&quot;)\n\n  # USAGE == &quot;usage: prog [-o dir] -h file...\\n  where&quot;...\n  # (note single space to right of margin is deleted)\n"
+- !ruby/struct:SM::Flow::P 
+  body: Note carefully that if no margin string is given, then there is no clipping at the beginning of each line and your string will remain indented. You can use <tt>tabto(0)</tt> to align it with the left of screen (while preserving relative indentation).
+- !ruby/struct:SM::Flow::VERB 
+  body: "  USAGE = %{\n    usage: prog [-o dir] -h file...\n      where\n        -o dir         outputs to DIR\n        -h             prints this message\n  }.trim.tabto(0)\n\n  # USAGE == (same as last example)\n"
+full_name: String#trim
+is_singleton: false
+name: trim
+params: (margin=nil)
+visibility: public

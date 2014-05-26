@@ -1,0 +1,12 @@
+--- !ruby/object:RI::MethodDescription 
+aliases: []
+
+block_params: 
+comment: 
+- !ruby/struct:SM::Flow::P 
+  body: override the highlight method, as if the tables rows are set to have a background color, this will override the table background color, and the normal flash method won't work
+full_name: Watir::Table#highlight
+is_singleton: false
+name: highlight
+params: (set_or_clear)
+visibility: public

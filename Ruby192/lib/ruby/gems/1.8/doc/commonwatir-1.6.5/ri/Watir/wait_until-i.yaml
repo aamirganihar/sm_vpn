@@ -1,0 +1,10 @@
+--- !ruby/object:RI::MethodDescription 
+aliases: []
+
+block_params: ""
+comment: 
+full_name: Watir#wait_until
+is_singleton: false
+name: wait_until
+params: (*args) {|| ...}
+visibility: public

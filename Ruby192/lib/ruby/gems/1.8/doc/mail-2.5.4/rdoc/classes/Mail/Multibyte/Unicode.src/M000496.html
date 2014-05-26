@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+<!DOCTYPE html 
+     PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+     "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html>
+<head>
+  <title>tidy_bytes (Mail::Multibyte::Unicode)</title>
+  <meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" />
+  <link rel="stylesheet" href="../../../.././rdoc-style.css" type="text/css" media="screen" />
+</head>
+<body class="standalone-code">
+  <pre><span class="ruby-comment cmt"># File lib/mail/multibyte/unicode.rb, line 227</span>
+      <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">tidy_bytes</span>(<span class="ruby-identifier">string</span>, <span class="ruby-identifier">force</span> = <span class="ruby-keyword kw">false</span>)
+        <span class="ruby-keyword kw">if</span> <span class="ruby-identifier">force</span>
+          <span class="ruby-keyword kw">return</span> <span class="ruby-identifier">string</span>.<span class="ruby-identifier">unpack</span>(<span class="ruby-value str">&quot;C*&quot;</span>).<span class="ruby-identifier">map</span> <span class="ruby-keyword kw">do</span> <span class="ruby-operator">|</span><span class="ruby-identifier">b</span><span class="ruby-operator">|</span>
+            <span class="ruby-identifier">tidy_byte</span>(<span class="ruby-identifier">b</span>)
+          <span class="ruby-keyword kw">end</span>.<span class="ruby-identifier">flatten</span>.<span class="ruby-identifier">compact</span>.<span class="ruby-identifier">pack</span>(<span class="ruby-value str">&quot;C*&quot;</span>).<span class="ruby-identifier">unpack</span>(<span class="ruby-value str">&quot;U*&quot;</span>).<span class="ruby-identifier">pack</span>(<span class="ruby-value str">&quot;U*&quot;</span>)
+        <span class="ruby-keyword kw">end</span>
+
+        <span class="ruby-identifier">bytes</span> = <span class="ruby-identifier">string</span>.<span class="ruby-identifier">unpack</span>(<span class="ruby-value str">&quot;C*&quot;</span>)
+        <span class="ruby-identifier">conts_expected</span> = <span class="ruby-value">0</span>
+        <span class="ruby-identifier">last_lead</span> = <span class="ruby-value">0</span>
+
+        <span class="ruby-identifier">bytes</span>.<span class="ruby-identifier">each_index</span> <span class="ruby-keyword kw">do</span> <span class="ruby-operator">|</span><span class="ruby-identifier">i</span><span class="ruby-operator">|</span>
+
+          <span class="ruby-identifier">byte</span>          = <span class="ruby-identifier">bytes</span>[<span class="ruby-identifier">i</span>]
+          <span class="ruby-identifier">is_cont</span>       = <span class="ruby-identifier">byte</span> <span class="ruby-operator">&gt;</span> <span class="ruby-value">127</span> <span class="ruby-operator">&amp;&amp;</span> <span class="ruby-identifier">byte</span> <span class="ruby-operator">&lt;</span> <span class="ruby-value">192</span>
+          <span class="ruby-identifier">is_lead</span>       = <span class="ruby-identifier">byte</span> <span class="ruby-operator">&gt;</span> <span class="ruby-value">191</span> <span class="ruby-operator">&amp;&amp;</span> <span class="ruby-identifier">byte</span> <span class="ruby-operator">&lt;</span> <span class="ruby-value">245</span>
+          <span class="ruby-identifier">is_unused</span>     = <span class="ruby-identifier">byte</span> <span class="ruby-operator">&gt;</span> <span class="ruby-value">240</span>
+          <span class="ruby-identifier">is_restricted</span> = <span class="ruby-identifier">byte</span> <span class="ruby-operator">&gt;</span> <span class="ruby-value">244</span>
+
+          <span class="ruby-comment cmt"># Impossible or highly unlikely byte? Clean it.</span>
+          <span class="ruby-keyword kw">if</span> <span class="ruby-identifier">is_unused</span> <span class="ruby-operator">||</span> <span class="ruby-identifier">is_restricted</span>
+            <span class="ruby-identifier">bytes</span>[<span class="ruby-identifier">i</span>] = <span class="ruby-identifier">tidy_byte</span>(<span class="ruby-identifier">byte</span>)
+          <span class="ruby-keyword kw">elsif</span> <span class="ruby-identifier">is_cont</span>
+            <span class="ruby-comment cmt"># Not expecting contination byte? Clean up. Otherwise, now expect one less.</span>
+            <span class="ruby-identifier">conts_expected</span> <span class="ruby-operator">==</span> <span class="ruby-value">0</span> <span class="ruby-operator">?</span> <span class="ruby-identifier">bytes</span>[<span class="ruby-identifier">i</span>] = <span class="ruby-identifier">tidy_byte</span>(<span class="ruby-identifier">byte</span>) <span class="ruby-operator">:</span> <span class="ruby-identifier">conts_expected</span> <span class="ruby-operator">-=</span> <span class="ruby-value">1</span>
+          <span class="ruby-keyword kw">else</span>
+            <span class="ruby-keyword kw">if</span> <span class="ruby-identifier">conts_expected</span> <span class="ruby-operator">&gt;</span> <span class="ruby-value">0</span>
+              <span class="ruby-comment cmt"># Expected continuation, but got ASCII or leading? Clean backwards up to</span>
+              <span class="ruby-comment cmt"># the leading byte.</span>
+              (<span class="ruby-value">1</span><span class="ruby-operator">..</span>(<span class="ruby-identifier">i</span> <span class="ruby-operator">-</span> <span class="ruby-identifier">last_lead</span>)).<span class="ruby-identifier">each</span> {<span class="ruby-operator">|</span><span class="ruby-identifier">j</span><span class="ruby-operator">|</span> <span class="ruby-identifier">bytes</span>[<span class="ruby-identifier">i</span> <span class="ruby-operator">-</span> <span class="ruby-identifier">j</span>] = <span class="ruby-identifier">tidy_byte</span>(<span class="ruby-identifier">bytes</span>[<span class="ruby-identifier">i</span> <span class="ruby-operator">-</span> <span class="ruby-identifier">j</span>])}
+              <span class="ruby-identifier">conts_expected</span> = <span class="ruby-value">0</span>
+            <span class="ruby-keyword kw">end</span>
+            <span class="ruby-keyword kw">if</span> <span class="ruby-identifier">is_lead</span>
+              <span class="ruby-comment cmt"># Final byte is leading? Clean it.</span>
+              <span class="ruby-keyword kw">if</span> <span class="ruby-identifier">i</span> <span class="ruby-operator">==</span> <span class="ruby-identifier">bytes</span>.<span class="ruby-identifier">length</span> <span class="ruby-operator">-</span> <span class="ruby-value">1</span>
+                <span class="ruby-identifier">bytes</span>[<span class="ruby-identifier">i</span>] = <span class="ruby-identifier">tidy_byte</span>(<span class="ruby-identifier">bytes</span>.<span class="ruby-identifier">last</span>)
+              <span class="ruby-keyword kw">else</span>
+                <span class="ruby-comment cmt"># Valid leading byte? Expect continuations determined by position of</span>
+                <span class="ruby-comment cmt"># first zero bit, with max of 3.</span>
+                <span class="ruby-identifier">conts_expected</span> = <span class="ruby-identifier">byte</span> <span class="ruby-operator">&lt;</span> <span class="ruby-value">224</span> <span class="ruby-operator">?</span> <span class="ruby-value">1</span> <span class="ruby-operator">:</span> <span class="ruby-identifier">byte</span> <span class="ruby-operator">&lt;</span> <span class="ruby-value">240</span> <span class="ruby-operator">?</span> <span class="ruby-value">2</span> <span class="ruby-operator">:</span> <span class="ruby-value">3</span>
+                <span class="ruby-identifier">last_lead</span> = <span class="ruby-identifier">i</span>
+              <span class="ruby-keyword kw">end</span>
+            <span class="ruby-keyword kw">end</span>
+          <span class="ruby-keyword kw">end</span>
+        <span class="ruby-keyword kw">end</span>
+        <span class="ruby-identifier">bytes</span>.<span class="ruby-identifier">empty?</span> <span class="ruby-value">? </span><span class="ruby-value str">&quot;&quot;</span> <span class="ruby-operator">:</span> <span class="ruby-identifier">bytes</span>.<span class="ruby-identifier">flatten</span>.<span class="ruby-identifier">compact</span>.<span class="ruby-identifier">pack</span>(<span class="ruby-value str">&quot;C*&quot;</span>).<span class="ruby-identifier">unpack</span>(<span class="ruby-value str">&quot;U*&quot;</span>).<span class="ruby-identifier">pack</span>(<span class="ruby-value str">&quot;U*&quot;</span>)
+      <span class="ruby-keyword kw">end</span></pre>
+</body>
+</html>

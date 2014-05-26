@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+<!DOCTYPE html 
+     PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+     "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html>
+<head>
+  <title>encoded (Mail::Body)</title>
+  <meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" />
+  <link rel="stylesheet" href="../../.././rdoc-style.css" type="text/css" media="screen" />
+</head>
+<body class="standalone-code">
+  <pre><span class="ruby-comment cmt"># File lib/mail/body.rb, line 150</span>
+    <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">encoded</span>(<span class="ruby-identifier">transfer_encoding</span> = <span class="ruby-value str">'8bit'</span>)
+      <span class="ruby-keyword kw">if</span> <span class="ruby-identifier">multipart?</span>
+        <span class="ruby-keyword kw">self</span>.<span class="ruby-identifier">sort_parts!</span>
+        <span class="ruby-identifier">encoded_parts</span> = <span class="ruby-identifier">parts</span>.<span class="ruby-identifier">map</span> { <span class="ruby-operator">|</span><span class="ruby-identifier">p</span><span class="ruby-operator">|</span> <span class="ruby-identifier">p</span>.<span class="ruby-identifier">encoded</span> }
+        ([<span class="ruby-identifier">preamble</span>] <span class="ruby-operator">+</span> <span class="ruby-identifier">encoded_parts</span>).<span class="ruby-identifier">join</span>(<span class="ruby-identifier">crlf_boundary</span>) <span class="ruby-operator">+</span> <span class="ruby-identifier">end_boundary</span> <span class="ruby-operator">+</span> <span class="ruby-identifier">epilogue</span>.<span class="ruby-identifier">to_s</span>
+      <span class="ruby-keyword kw">else</span>
+        <span class="ruby-identifier">be</span> = <span class="ruby-identifier">get_best_encoding</span>(<span class="ruby-identifier">transfer_encoding</span>)
+        <span class="ruby-identifier">dec</span> = <span class="ruby-constant">Mail</span><span class="ruby-operator">::</span><span class="ruby-constant">Encodings</span><span class="ruby-operator">::</span><span class="ruby-identifier">get_encoding</span>(<span class="ruby-identifier">encoding</span>)
+        <span class="ruby-identifier">enc</span> = <span class="ruby-constant">Mail</span><span class="ruby-operator">::</span><span class="ruby-constant">Encodings</span><span class="ruby-operator">::</span><span class="ruby-identifier">get_encoding</span>(<span class="ruby-identifier">be</span>)
+        <span class="ruby-keyword kw">if</span> <span class="ruby-identifier">transfer_encoding</span> <span class="ruby-operator">==</span> <span class="ruby-identifier">encoding</span> <span class="ruby-keyword kw">and</span> <span class="ruby-identifier">dec</span>.<span class="ruby-identifier">nil?</span>
+            <span class="ruby-comment cmt"># Cannot decode, so skip normalization</span>
+            <span class="ruby-identifier">raw_source</span>
+        <span class="ruby-keyword kw">else</span>
+            <span class="ruby-comment cmt"># Decode then encode to normalize and allow transforming </span>
+            <span class="ruby-comment cmt"># from base64 to Q-P and vice versa</span>
+            <span class="ruby-identifier">decoded</span> = <span class="ruby-identifier">dec</span>.<span class="ruby-identifier">decode</span>(<span class="ruby-identifier">raw_source</span>)
+            <span class="ruby-keyword kw">if</span> <span class="ruby-keyword kw">defined?</span>(<span class="ruby-constant">Encoding</span>) <span class="ruby-operator">&amp;&amp;</span> <span class="ruby-identifier">charset</span> <span class="ruby-operator">&amp;&amp;</span> <span class="ruby-identifier">charset</span> <span class="ruby-operator">!=</span> <span class="ruby-value str">&quot;US-ASCII&quot;</span>
+              <span class="ruby-identifier">decoded</span>.<span class="ruby-identifier">encode!</span>(<span class="ruby-identifier">charset</span>)
+              <span class="ruby-identifier">decoded</span>.<span class="ruby-identifier">force_encoding</span>(<span class="ruby-value str">'BINARY'</span>) <span class="ruby-keyword kw">unless</span> <span class="ruby-constant">Encoding</span>.<span class="ruby-identifier">find</span>(<span class="ruby-identifier">charset</span>).<span class="ruby-identifier">ascii_compatible?</span>
+            <span class="ruby-keyword kw">end</span>
+            <span class="ruby-identifier">enc</span>.<span class="ruby-identifier">encode</span>(<span class="ruby-identifier">decoded</span>)
+        <span class="ruby-keyword kw">end</span>
+      <span class="ruby-keyword kw">end</span>
+    <span class="ruby-keyword kw">end</span></pre>
+</body>
+</html>

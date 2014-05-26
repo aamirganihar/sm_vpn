@@ -1,0 +1,17 @@
+--- !ruby/object:RI::ClassDescription 
+attributes: []
+
+class_methods: []
+
+comment: 
+- !ruby/struct:SM::Flow::P 
+  body: Defines a mixin module that you can use to write Selenium tests without typing &quot;@selenium.&quot; in front of every command. Every call to a missing method will be automatically sent to the @selenium object.
+constants: []
+
+full_name: Selenium
+includes: []
+
+instance_methods: []
+
+name: Selenium
+superclass: 

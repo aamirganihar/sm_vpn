@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html 
+     PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+     "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html>
+<head>
+  <title>generate (Timezone::Parser::Zone::DataGenerator)</title>
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+  <link rel="stylesheet" href="../../../../.././rdoc-style.css" type="text/css" media="screen" />
+</head>
+<body class="standalone-code">
+  <pre><span class="ruby-comment cmt"># File lib/timezone/parser/zone/data_generator.rb, line 16</span>
+      <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">generate</span>(<span class="ruby-identifier">zone</span>)
+        <span class="ruby-identifier">zones</span> = <span class="ruby-constant">Timezone</span><span class="ruby-operator">::</span><span class="ruby-constant">Parser</span>.<span class="ruby-identifier">zones</span>[<span class="ruby-identifier">zone</span>].<span class="ruby-identifier">to_a</span>
+
+        <span class="ruby-keyword kw">return</span> <span class="ruby-keyword kw">if</span> <span class="ruby-identifier">zones</span>.<span class="ruby-identifier">empty?</span>
+
+        <span class="ruby-ivar">@@data</span>[<span class="ruby-identifier">zone</span>] = <span class="ruby-identifier">zones</span>
+          .<span class="ruby-identifier">each_cons</span>(<span class="ruby-value">2</span>)
+          .<span class="ruby-identifier">inject</span>(<span class="ruby-identifier">update</span>(<span class="ruby-identifier">zones</span>.<span class="ruby-identifier">first</span>)) <span class="ruby-keyword kw">do</span> <span class="ruby-operator">|</span><span class="ruby-identifier">set</span>, (<span class="ruby-identifier">previous</span>, <span class="ruby-identifier">zone</span>)<span class="ruby-operator">|</span>
+            <span class="ruby-identifier">update</span>(<span class="ruby-identifier">zone</span>, <span class="ruby-identifier">set</span>, <span class="ruby-identifier">previous</span> <span class="ruby-operator">&amp;&amp;</span> <span class="ruby-identifier">previous</span>.<span class="ruby-identifier">end_date</span>)
+        <span class="ruby-keyword kw">end</span>
+      <span class="ruby-keyword kw">end</span></pre>
+</body>
+</html>

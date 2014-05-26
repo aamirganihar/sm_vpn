@@ -1,0 +1,12 @@
+--- !ruby/object:RI::MethodDescription 
+aliases: []
+
+block_params: 
+comment: 
+- !ruby/struct:SM::Flow::P 
+  body: Returns true if the message has a message ID field, the field may or may not have a value, but the field exists or not.
+full_name: Mail::Message#has_message_id?
+is_singleton: false
+name: has_message_id?
+params: ()
+visibility: public

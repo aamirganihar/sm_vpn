@@ -1,0 +1,209 @@
+--- !ruby/object:RI::ClassDescription 
+attributes: []
+
+class_methods: 
+- !ruby/object:RI::MethodSummary 
+  name: archive?
+- !ruby/object:RI::MethodSummary 
+  name: attributes
+- !ruby/object:RI::MethodSummary 
+  name: basename
+- !ruby/object:RI::MethodSummary 
+  name: blksize
+- !ruby/object:RI::MethodSummary 
+  name: blockdev?
+- !ruby/object:RI::MethodSummary 
+  name: chardev?
+- !ruby/object:RI::MethodSummary 
+  name: compressed?
+- !ruby/object:RI::MethodSummary 
+  name: decrypt
+- !ruby/object:RI::MethodSummary 
+  name: directory?
+- !ruby/object:RI::MethodSummary 
+  name: dirname
+- !ruby/object:RI::MethodSummary 
+  name: encrypt
+- !ruby/object:RI::MethodSummary 
+  name: encrypted?
+- !ruby/object:RI::MethodSummary 
+  name: get_permissions
+- !ruby/object:RI::MethodSummary 
+  name: hidden?
+- !ruby/object:RI::MethodSummary 
+  name: indexed?
+- !ruby/object:RI::MethodSummary 
+  name: join
+- !ruby/object:RI::MethodSummary 
+  name: long_path
+- !ruby/object:RI::MethodSummary 
+  name: lstat
+- !ruby/object:RI::MethodSummary 
+  name: normal?
+- !ruby/object:RI::MethodSummary 
+  name: offline?
+- !ruby/object:RI::MethodSummary 
+  name: readlink
+- !ruby/object:RI::MethodSummary 
+  name: readonly?
+- !ruby/object:RI::MethodSummary 
+  name: remove_attributes
+- !ruby/object:RI::MethodSummary 
+  name: reparse_point?
+- !ruby/object:RI::MethodSummary 
+  name: securities
+- !ruby/object:RI::MethodSummary 
+  name: set_attributes
+- !ruby/object:RI::MethodSummary 
+  name: set_permissions
+- !ruby/object:RI::MethodSummary 
+  name: short_path
+- !ruby/object:RI::MethodSummary 
+  name: size
+- !ruby/object:RI::MethodSummary 
+  name: sparse?
+- !ruby/object:RI::MethodSummary 
+  name: split
+- !ruby/object:RI::MethodSummary 
+  name: stat
+- !ruby/object:RI::MethodSummary 
+  name: symlink
+- !ruby/object:RI::MethodSummary 
+  name: symlink?
+- !ruby/object:RI::MethodSummary 
+  name: system?
+- !ruby/object:RI::MethodSummary 
+  name: temporary?
+comment: 
+constants: 
+- !ruby/object:RI::Constant 
+  comment: 
+  - !ruby/struct:SM::Flow::P 
+    body: The version of the win32-file library
+  name: WIN32_FILE_VERSION
+  value: "'0.6.5'"
+- !ruby/object:RI::Constant 
+  comment: 
+  - !ruby/struct:SM::Flow::P 
+    body: The file or directory is an archive. Typically used to mark files for backup or removal.
+  name: ARCHIVE
+  value: FILE_ATTRIBUTE_ARCHIVE
+- !ruby/object:RI::Constant 
+  comment: 
+  - !ruby/struct:SM::Flow::P 
+    body: "The file or directory is encrypted. For a file, this means that all data in the file is encrypted. For a directory, this means that encryption is # the default for newly created files and subdirectories."
+  name: COMPRESSED
+  value: FILE_ATTRIBUTE_COMPRESSED
+- !ruby/object:RI::Constant 
+  comment: 
+  - !ruby/struct:SM::Flow::P 
+    body: The file is hidden. Not included in an ordinary directory listing.
+  name: HIDDEN
+  value: FILE_ATTRIBUTE_HIDDEN
+- !ruby/object:RI::Constant 
+  comment: 
+  - !ruby/struct:SM::Flow::P 
+    body: A file that does not have any other attributes set.
+  name: NORMAL
+  value: FILE_ATTRIBUTE_NORMAL
+- !ruby/object:RI::Constant 
+  comment: 
+  - !ruby/struct:SM::Flow::P 
+    body: The data of a file is not immediately available. This attribute indicates that file data is physically moved to offline storage.
+  name: OFFLINE
+  value: FILE_ATTRIBUTE_OFFLINE
+- !ruby/object:RI::Constant 
+  comment: 
+  - !ruby/struct:SM::Flow::P 
+    body: The file is read only. Apps can read it, but not write to it or delete it.
+  name: READONLY
+  value: FILE_ATTRIBUTE_READONLY
+- !ruby/object:RI::Constant 
+  comment: 
+  - !ruby/struct:SM::Flow::P 
+    body: The file is part of or used exclusively by an operating system.
+  name: SYSTEM
+  value: FILE_ATTRIBUTE_SYSTEM
+- !ruby/object:RI::Constant 
+  comment: 
+  - !ruby/struct:SM::Flow::P 
+    body: The file is being used for temporary storage.
+  name: TEMPORARY
+  value: FILE_ATTRIBUTE_TEMPORARY
+- !ruby/object:RI::Constant 
+  comment: 
+  - !ruby/struct:SM::Flow::P 
+    body: The file or directory is to be indexed by the content indexing service. Note that we have inverted the traditional definition.
+  name: INDEXED
+  value: "0x0002000"
+- !ruby/object:RI::Constant 
+  comment: 
+  - !ruby/struct:SM::Flow::P 
+    body: Synonym for File::INDEXED.
+  name: CONTENT_INDEXED
+  value: INDEXED
+- !ruby/object:RI::Constant 
+  comment: 
+  - !ruby/struct:SM::Flow::P 
+    body: Full security rights - read, write, append, execute, and delete.
+  name: FULL
+  value: STANDARD_RIGHTS_ALL | FILE_READ_DATA | FILE_WRITE_DATA |     FILE_APPEND_DATA | FILE_READ_EA | FILE_WRITE_EA | FILE_EXECUTE |     FILE_DELETE_CHILD | FILE_READ_ATTRIBUTES | FILE_WRITE_ATTRIBUTES
+- !ruby/object:RI::Constant 
+  comment: 
+  - !ruby/struct:SM::Flow::P 
+    body: Generic write, generic read, execute and delete privileges
+  name: CHANGE
+  value: FILE_GENERIC_WRITE | FILE_GENERIC_READ | FILE_EXECUTE | DELETE
+- !ruby/object:RI::Constant 
+  comment: 
+  - !ruby/struct:SM::Flow::P 
+    body: Read and execute privileges
+  name: READ
+  value: FILE_GENERIC_READ | FILE_EXECUTE
+- !ruby/object:RI::Constant 
+  comment: 
+  - !ruby/struct:SM::Flow::P 
+    body: Add privileges
+  name: ADD
+  value: "0x001201bf"
+full_name: File
+includes: 
+- !ruby/object:RI::IncludedModule 
+  name: Windows::Error
+- !ruby/object:RI::IncludedModule 
+  name: Windows::File
+- !ruby/object:RI::IncludedModule 
+  name: Windows::Security
+- !ruby/object:RI::IncludedModule 
+  name: Windows::Limits
+- !ruby/object:RI::IncludedModule 
+  name: Windows::DeviceIO
+- !ruby/object:RI::IncludedModule 
+  name: Windows::Handle
+instance_methods: 
+- !ruby/object:RI::MethodSummary 
+  name: archive=
+- !ruby/object:RI::MethodSummary 
+  name: compressed=
+- !ruby/object:RI::MethodSummary 
+  name: content_indexed=
+- !ruby/object:RI::MethodSummary 
+  name: hidden=
+- !ruby/object:RI::MethodSummary 
+  name: indexed=
+- !ruby/object:RI::MethodSummary 
+  name: normal=
+- !ruby/object:RI::MethodSummary 
+  name: offline=
+- !ruby/object:RI::MethodSummary 
+  name: readonly=
+- !ruby/object:RI::MethodSummary 
+  name: sparse=
+- !ruby/object:RI::MethodSummary 
+  name: stat
+- !ruby/object:RI::MethodSummary 
+  name: system=
+- !ruby/object:RI::MethodSummary 
+  name: temporary=
+name: File
+superclass: Object

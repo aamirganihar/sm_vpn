@@ -1,0 +1,333 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+<!DOCTYPE html 
+     PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+     "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+  <title>Module: Windows::Window::Menu</title>
+  <meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" />
+  <meta http-equiv="Content-Script-Type" content="text/javascript" />
+  <link rel="stylesheet" href="../../.././rdoc-style.css" type="text/css" media="screen" />
+  <script type="text/javascript">
+  // <![CDATA[
+
+  function popupCode( url ) {
+    window.open(url, "Code", "resizable=yes,scrollbars=yes,toolbar=no,status=no,height=150,width=400")
+  }
+
+  function toggleCode( id ) {
+    if ( document.getElementById )
+      elem = document.getElementById( id );
+    else if ( document.all )
+      elem = eval( "document.all." + id );
+    else
+      return false;
+
+    elemStyle = elem.style;
+    
+    if ( elemStyle.display != "block" ) {
+      elemStyle.display = "block"
+    } else {
+      elemStyle.display = "none"
+    }
+
+    return true;
+  }
+  
+  // Make codeblocks hidden by default
+  document.writeln( "<style type=\"text/css\">div.method-source-code { display: none }</style>" )
+  
+  // ]]>
+  </script>
+
+</head>
+<body>
+
+
+
+    <div id="classHeader">
+        <table class="header-table">
+        <tr class="top-aligned-row">
+          <td><strong>Module</strong></td>
+          <td class="class-name-in-header">Windows::Window::Menu</td>
+        </tr>
+        <tr class="top-aligned-row">
+            <td><strong>In:</strong></td>
+            <td>
+                <a href="../../../files/lib/windows/window/menu_rb.html">
+                lib/windows/window/menu.rb
+                </a>
+        <br />
+            </td>
+        </tr>
+
+        </table>
+    </div>
+  <!-- banner header -->
+
+  <div id="bodyContent">
+
+
+
+  <div id="contextContent">
+
+
+
+   </div>
+
+
+  </div>
+
+
+    <!-- if includes -->
+
+    <div id="section">
+
+
+    <div id="constants-list">
+      <h3 class="section-bar">Constants</h3>
+
+      <div class="name-list">
+        <table summary="Constants">
+        <tr class="top-aligned-row context-row">
+          <td class="context-item-name">MF_INSERT</td>
+          <td>=</td>
+          <td class="context-item-value">0x00000000</td>
+          <td width="3em">&nbsp;</td>
+          <td class="context-item-desc">
+<a href="Menu.html">Menu</a> Flags
+
+</td>
+        </tr>
+        <tr class="top-aligned-row context-row">
+          <td class="context-item-name">MF_CHANGE</td>
+          <td>=</td>
+          <td class="context-item-value">0x00000080</td>
+        </tr>
+        <tr class="top-aligned-row context-row">
+          <td class="context-item-name">MF_APPEND</td>
+          <td>=</td>
+          <td class="context-item-value">0x00000100</td>
+        </tr>
+        <tr class="top-aligned-row context-row">
+          <td class="context-item-name">MF_DELETE</td>
+          <td>=</td>
+          <td class="context-item-value">0x00000200</td>
+        </tr>
+        <tr class="top-aligned-row context-row">
+          <td class="context-item-name">MF_REMOVE</td>
+          <td>=</td>
+          <td class="context-item-value">0x00001000</td>
+        </tr>
+        <tr class="top-aligned-row context-row">
+          <td class="context-item-name">MF_BYCOMMAND</td>
+          <td>=</td>
+          <td class="context-item-value">0x00000000</td>
+        </tr>
+        <tr class="top-aligned-row context-row">
+          <td class="context-item-name">MF_BYPOSITION</td>
+          <td>=</td>
+          <td class="context-item-value">0x00000400</td>
+        </tr>
+        <tr class="top-aligned-row context-row">
+          <td class="context-item-name">MF_SEPARATOR</td>
+          <td>=</td>
+          <td class="context-item-value">0x00000800</td>
+        </tr>
+        <tr class="top-aligned-row context-row">
+          <td class="context-item-name">MF_ENABLED</td>
+          <td>=</td>
+          <td class="context-item-value">0x00000000</td>
+        </tr>
+        <tr class="top-aligned-row context-row">
+          <td class="context-item-name">MF_GRAYED</td>
+          <td>=</td>
+          <td class="context-item-value">0x00000001</td>
+        </tr>
+        <tr class="top-aligned-row context-row">
+          <td class="context-item-name">MF_DISABLED</td>
+          <td>=</td>
+          <td class="context-item-value">0x00000002</td>
+        </tr>
+        <tr class="top-aligned-row context-row">
+          <td class="context-item-name">MF_UNCHECKED</td>
+          <td>=</td>
+          <td class="context-item-value">0x00000000</td>
+        </tr>
+        <tr class="top-aligned-row context-row">
+          <td class="context-item-name">MF_CHECKED</td>
+          <td>=</td>
+          <td class="context-item-value">0x00000008</td>
+        </tr>
+        <tr class="top-aligned-row context-row">
+          <td class="context-item-name">MF_USECHECKBITMAPS</td>
+          <td>=</td>
+          <td class="context-item-value">0x00000200</td>
+        </tr>
+        <tr class="top-aligned-row context-row">
+          <td class="context-item-name">MF_STRING</td>
+          <td>=</td>
+          <td class="context-item-value">0x00000000</td>
+        </tr>
+        <tr class="top-aligned-row context-row">
+          <td class="context-item-name">MF_BITMAP</td>
+          <td>=</td>
+          <td class="context-item-value">0x00000004</td>
+        </tr>
+        <tr class="top-aligned-row context-row">
+          <td class="context-item-name">MF_OWNERDRAW</td>
+          <td>=</td>
+          <td class="context-item-value">0x00000100</td>
+        </tr>
+        <tr class="top-aligned-row context-row">
+          <td class="context-item-name">MF_POPUP</td>
+          <td>=</td>
+          <td class="context-item-value">0x00000010</td>
+        </tr>
+        <tr class="top-aligned-row context-row">
+          <td class="context-item-name">MF_MENUBARBREAK</td>
+          <td>=</td>
+          <td class="context-item-value">0x00000020</td>
+        </tr>
+        <tr class="top-aligned-row context-row">
+          <td class="context-item-name">MF_MENUBREAK</td>
+          <td>=</td>
+          <td class="context-item-value">0x00000040</td>
+        </tr>
+        <tr class="top-aligned-row context-row">
+          <td class="context-item-name">MF_UNHILITE</td>
+          <td>=</td>
+          <td class="context-item-value">0x00000000</td>
+        </tr>
+        <tr class="top-aligned-row context-row">
+          <td class="context-item-name">MF_HILITE</td>
+          <td>=</td>
+          <td class="context-item-value">0x00000080</td>
+        </tr>
+        <tr class="top-aligned-row context-row">
+          <td class="context-item-name">MF_DEFAULT</td>
+          <td>=</td>
+          <td class="context-item-value">0x00001000</td>
+        </tr>
+        <tr class="top-aligned-row context-row">
+          <td class="context-item-name">MF_SYSMENU</td>
+          <td>=</td>
+          <td class="context-item-value">0x00002000</td>
+        </tr>
+        <tr class="top-aligned-row context-row">
+          <td class="context-item-name">MF_HELP</td>
+          <td>=</td>
+          <td class="context-item-value">0x00004000</td>
+        </tr>
+        <tr class="top-aligned-row context-row">
+          <td class="context-item-name">MF_RIGHTJUSTIFY</td>
+          <td>=</td>
+          <td class="context-item-value">0x00004000</td>
+        </tr>
+        <tr class="top-aligned-row context-row">
+          <td class="context-item-name">MF_MOUSESELECT</td>
+          <td>=</td>
+          <td class="context-item-value">0x00008000</td>
+        </tr>
+        <tr class="top-aligned-row context-row">
+          <td class="context-item-name">MF_END</td>
+          <td>=</td>
+          <td class="context-item-value">0x00000080</td>
+        </tr>
+        <tr class="top-aligned-row context-row">
+          <td class="context-item-name">OBJID_WINDOW</td>
+          <td>=</td>
+          <td class="context-item-value">0x00000000</td>
+          <td width="3em">&nbsp;</td>
+          <td class="context-item-desc">
+System Objects
+
+</td>
+        </tr>
+        <tr class="top-aligned-row context-row">
+          <td class="context-item-name">OBJID_SYSMENU</td>
+          <td>=</td>
+          <td class="context-item-value">0xFFFFFFFF</td>
+        </tr>
+        <tr class="top-aligned-row context-row">
+          <td class="context-item-name">OBJID_TITLEBAR</td>
+          <td>=</td>
+          <td class="context-item-value">0xFFFFFFFE</td>
+        </tr>
+        <tr class="top-aligned-row context-row">
+          <td class="context-item-name">OBJID_MENU</td>
+          <td>=</td>
+          <td class="context-item-value">0xFFFFFFFD</td>
+        </tr>
+        <tr class="top-aligned-row context-row">
+          <td class="context-item-name">OBJID_CLIENT</td>
+          <td>=</td>
+          <td class="context-item-value">0xFFFFFFFC</td>
+        </tr>
+        <tr class="top-aligned-row context-row">
+          <td class="context-item-name">OBJID_VSCROLL</td>
+          <td>=</td>
+          <td class="context-item-value">0xFFFFFFFB</td>
+        </tr>
+        <tr class="top-aligned-row context-row">
+          <td class="context-item-name">OBJID_HSCROLL</td>
+          <td>=</td>
+          <td class="context-item-value">0xFFFFFFFA</td>
+        </tr>
+        <tr class="top-aligned-row context-row">
+          <td class="context-item-name">OBJID_SIZEGRIP</td>
+          <td>=</td>
+          <td class="context-item-value">0xFFFFFFF9</td>
+        </tr>
+        <tr class="top-aligned-row context-row">
+          <td class="context-item-name">OBJID_CARET</td>
+          <td>=</td>
+          <td class="context-item-value">0xFFFFFFF8</td>
+        </tr>
+        <tr class="top-aligned-row context-row">
+          <td class="context-item-name">OBJID_CURSOR</td>
+          <td>=</td>
+          <td class="context-item-value">0xFFFFFFF7</td>
+        </tr>
+        <tr class="top-aligned-row context-row">
+          <td class="context-item-name">OBJID_ALERT</td>
+          <td>=</td>
+          <td class="context-item-value">0xFFFFFFF6</td>
+        </tr>
+        <tr class="top-aligned-row context-row">
+          <td class="context-item-name">OBJID_SOUND</td>
+          <td>=</td>
+          <td class="context-item-value">0xFFFFFFF5</td>
+        </tr>
+        <tr class="top-aligned-row context-row">
+          <td class="context-item-name">OBJID_QUERYCLASSNAMEIDX</td>
+          <td>=</td>
+          <td class="context-item-value">0xFFFFFFF4</td>
+        </tr>
+        <tr class="top-aligned-row context-row">
+          <td class="context-item-name">OBJID_NATIVEOM</td>
+          <td>=</td>
+          <td class="context-item-value">0xFFFFFFF0</td>
+        </tr>
+        </table>
+      </div>
+    </div>
+
+
+
+      
+
+
+    <!-- if method_list -->
+
+
+  </div>
+
+
+<div id="validator-badges">
+  <p><small><a href="http://validator.w3.org/check/referer">[Validate]</a></small></p>
+</div>
+
+</body>
+</html>

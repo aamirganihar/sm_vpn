@@ -1,0 +1,14 @@
+--- !ruby/object:RI::MethodDescription 
+aliases: []
+
+block_params: 
+comment: 
+- !ruby/struct:SM::Flow::P 
+  body: This method returns the number of columns in a row of the table. Raises an UnknownObjectException if the table doesn't exist.
+- !ruby/struct:SM::Flow::VERB 
+  body: "  * index         - the index of the row\n"
+full_name: Watir::Table#column_count
+is_singleton: false
+name: column_count
+params: (index=1)
+visibility: public

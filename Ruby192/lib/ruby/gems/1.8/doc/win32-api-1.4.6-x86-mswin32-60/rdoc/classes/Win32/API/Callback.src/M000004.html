@@ -1,0 +1,89 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+<!DOCTYPE html 
+     PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+     "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html>
+<head>
+  <title>new (Win32::API::Callback)</title>
+  <meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" />
+  <link rel="stylesheet" href="../../../.././rdoc-style.css" type="text/css" media="screen" />
+</head>
+<body class="standalone-code">
+  <pre>/*
+ * call-seq:
+ *    Win32::API::Callback.new(prototype, return='L'){ |proto| ... }
+ *
+ * Creates and returns a new Win32::API::Callback object. The prototype
+ * arguments are yielded back to the block in the same order they were
+ * declared.
+ *
+ * The +prototype+ is the function prototype for the callback function. This
+ * is a string. The possible valid characters are 'I' (integer), 'L' (long),
+ * 'V' (void), 'P' (pointer) or 'S' (string). Unlike API objects, API::Callback
+ * objects do not have a default prototype.
+ *
+ * The +return+ argument is the return type for the callback function. The
+ * valid characters are the same as for the +prototype+. The default is
+ * 'L' (long).
+ *
+ * Example:
+ *    require 'win32/api'
+ *    include Win32
+ *
+ *    EnumWindows = API.new('EnumWindows', 'KP', 'L', 'user32')
+ *    GetWindowText = API.new('GetWindowText', 'LPI', 'I', 'user32')
+ *
+ *    EnumWindowsProc = API::Callback.new('LP', 'I'){ |handle, param|
+ *       buf = &quot;\0&quot; * 200
+ *       GetWindowText.call(handle, buf, 200);
+ *       puts buf.strip unless buf.strip.empty?
+ *       buf.index(param).nil? ? true : false
+ *    }
+ *
+ *    EnumWindows.call(EnumWindowsProc, 'UEDIT32')
+ */
+static VALUE callback_init(int argc, VALUE* argv, VALUE self)
+{
+   void *find_callback(VALUE,int);
+   VALUE v_proto, v_return, v_proc;
+   int i;
+
+   rb_scan_args(argc, argv, &quot;11&amp;&quot;, &amp;v_proto, &amp;v_return, &amp;v_proc);
+
+   /* Validate prototype characters */
+   for(i = 0; i &lt; RSTRING_LEN(v_proto); i++){
+      switch(RSTRING_PTR(v_proto)[i]){
+         case 'I': case 'L': case 'P': case 'V': case 'S':
+            break;
+         default:
+            rb_raise(cAPIProtoError, &quot;Illegal prototype '%c'&quot;,
+               RSTRING_PTR(v_proto)[i]
+            );
+      }
+   }
+
+   if(NIL_P(v_return) || RARRAY_LEN(v_return) == 0){
+      v_return = rb_str_new2(&quot;L&quot;);
+   }
+   else{
+      switch(*(char*)RSTRING_PTR(v_return)){
+         case 'I': case 'L': case 'P': case 'V': case 'S':
+            break;
+         default:
+            rb_raise(cAPIProtoError, &quot;Illegal return type '%s'&quot;,
+               RSTRING_PTR(v_return)
+            );
+      }
+   }
+
+   rb_iv_set(self, &quot;@function&quot;, v_proc);
+   rb_iv_set(self, &quot;@prototype&quot;, v_proto);
+   rb_iv_set(self, &quot;@return_type&quot;, v_return);
+   rb_iv_set(self, &quot;@address&quot;, ULONG2NUM((LPARAM)find_callback(self,RSTRING_LEN(v_proto))));
+   ActiveCallback = self;
+
+   return self;
+}</pre>
+</body>
+</html>

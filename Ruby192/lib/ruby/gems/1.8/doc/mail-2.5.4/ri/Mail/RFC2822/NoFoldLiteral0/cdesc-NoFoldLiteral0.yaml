@@ -1,0 +1,15 @@
+--- !ruby/object:RI::ClassDescription 
+attributes: []
+
+class_methods: []
+
+comment: 
+constants: []
+
+full_name: Mail::RFC2822::NoFoldLiteral0
+includes: []
+
+instance_methods: []
+
+name: NoFoldLiteral0
+superclass: 

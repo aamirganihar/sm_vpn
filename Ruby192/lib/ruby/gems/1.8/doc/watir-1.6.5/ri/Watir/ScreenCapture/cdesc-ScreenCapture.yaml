@@ -1,0 +1,67 @@
+--- !ruby/object:RI::ClassDescription 
+attributes: []
+
+class_methods: []
+
+comment: 
+constants: 
+- !ruby/object:RI::Constant 
+  comment: 
+  name: KEYEVENTF_KEYUP
+  value: "0x2"
+- !ruby/object:RI::Constant 
+  comment: 
+  name: SW_HIDE
+  value: "0"
+- !ruby/object:RI::Constant 
+  comment: 
+  name: SW_SHOW
+  value: "5"
+- !ruby/object:RI::Constant 
+  comment: 
+  name: SW_SHOWNORMAL
+  value: "1"
+- !ruby/object:RI::Constant 
+  comment: 
+  name: VK_CONTROL
+  value: "0x11"
+- !ruby/object:RI::Constant 
+  comment: 
+  name: VK_F4
+  value: "0x73"
+- !ruby/object:RI::Constant 
+  comment: 
+  name: VK_MENU
+  value: "0x12"
+- !ruby/object:RI::Constant 
+  comment: 
+  name: VK_RETURN
+  value: "0x0D"
+- !ruby/object:RI::Constant 
+  comment: 
+  name: VK_SHIFT
+  value: "0x10"
+- !ruby/object:RI::Constant 
+  comment: 
+  name: VK_SNAPSHOT
+  value: "0x2C"
+- !ruby/object:RI::Constant 
+  comment: 
+  name: VK_TAB
+  value: "0x09"
+- !ruby/object:RI::Constant 
+  comment: 
+  name: GMEM_MOVEABLE
+  value: "0x0002"
+- !ruby/object:RI::Constant 
+  comment: 
+  name: CF_TEXT
+  value: "1"
+full_name: Watir::ScreenCapture
+includes: []
+
+instance_methods: 
+- !ruby/object:RI::MethodSummary 
+  name: screen_capture
+name: ScreenCapture
+superclass: 

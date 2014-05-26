@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+<!DOCTYPE html 
+     PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+     "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html>
+<head>
+  <title>set (Watir::FileField)</title>
+  <meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" />
+  <link rel="stylesheet" href="../../.././rdoc-style.css" type="text/css" media="screen" />
+</head>
+<body class="standalone-code">
+  <pre><span class="ruby-comment cmt"># File lib/watir/input_elements.rb, line 447</span>
+    <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">set</span>(<span class="ruby-identifier">path_to_file</span>)
+      <span class="ruby-identifier">assert_exists</span>
+      <span class="ruby-identifier">require</span> <span class="ruby-value str">'watir/windowhelper'</span>
+      <span class="ruby-constant">WindowHelper</span>.<span class="ruby-identifier">check_autoit_installed</span>
+      <span class="ruby-keyword kw">begin</span>
+        <span class="ruby-constant">Thread</span>.<span class="ruby-identifier">new</span> <span class="ruby-keyword kw">do</span>
+          <span class="ruby-identifier">sleep</span> <span class="ruby-value">1</span> <span class="ruby-comment cmt"># it takes some time for popup to appear</span>
+
+          <span class="ruby-identifier">system</span> <span class="ruby-node">%{ruby -e '
+              require &quot;win32ole&quot;
+
+              @autoit = WIN32OLE.new(&quot;AutoItX3.Control&quot;)
+              time    = Time.now
+
+              while (Time.now - time) &lt; 15 # the loop will wait up to 15 seconds for popup to appear
+                #{POPUP_TITLES.inspect}.each do |popup_title|
+                  next unless @autoit.WinWait(popup_title, &quot;&quot;, 1) == 1
+
+                  @autoit.ControlSetText(popup_title, &quot;&quot;, &quot;Edit1&quot;, #{path_to_file.inspect})
+                  @autoit.ControlSend(popup_title, &quot;&quot;, &quot;Button2&quot;, &quot;{ENTER}&quot;)
+                  exit
+                end # each
+              end # while
+          '}</span>
+        <span class="ruby-keyword kw">end</span>.<span class="ruby-identifier">join</span>(<span class="ruby-value">1</span>)
+      <span class="ruby-keyword kw">rescue</span>
+        <span class="ruby-identifier">raise</span> <span class="ruby-constant">Watir</span><span class="ruby-operator">::</span><span class="ruby-constant">Exception</span><span class="ruby-operator">::</span><span class="ruby-constant">WatirException</span>, <span class="ruby-value str">&quot;Problem accessing Choose file dialog&quot;</span>
+      <span class="ruby-keyword kw">end</span>
+      <span class="ruby-identifier">click</span>
+    <span class="ruby-keyword kw">end</span></pre>
+</body>
+</html>

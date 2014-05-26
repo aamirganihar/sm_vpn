@@ -1,0 +1,16 @@
+--- !ruby/object:RI::MethodDescription 
+aliases: []
+
+block_params: 
+comment: 
+- !ruby/struct:SM::Flow::P 
+  body: Sets the Sender value of the mail object, pass in a string of the field
+- !ruby/struct:SM::Flow::P 
+  body: "Example:"
+- !ruby/struct:SM::Flow::VERB 
+  body: " mail.sender = 'Mikel &lt;mikel@test.lindsaar.net&gt;'\n mail.sender #=&gt; 'mikel@test.lindsaar.net'\n"
+full_name: Mail::Message#sender=
+is_singleton: false
+name: sender=
+params: ( val )
+visibility: public

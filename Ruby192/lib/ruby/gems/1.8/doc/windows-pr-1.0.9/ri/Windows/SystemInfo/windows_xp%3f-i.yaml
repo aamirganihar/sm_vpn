@@ -1,0 +1,12 @@
+--- !ruby/object:RI::MethodDescription 
+aliases: []
+
+block_params: 
+comment: 
+- !ruby/struct:SM::Flow::P 
+  body: Returns true if the current platform is Windows XP or Windows XP Pro, i.e. major version 5, minor version 1 (or 2 in the case of a 64-bit Windows XP Pro).
+full_name: Windows::SystemInfo#windows_xp?
+is_singleton: false
+name: windows_xp?
+params: ()
+visibility: public

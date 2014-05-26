@@ -1,0 +1,14 @@
+--- !ruby/object:RI::MethodDescription 
+aliases: []
+
+block_params: 
+comment: 
+- !ruby/struct:SM::Flow::P 
+  body: Returns an initialized instance of a table object
+- !ruby/struct:SM::Flow::VERB 
+  body: "  * container      - the container\n  * how         - symbol - how we access the table\n  * what         - what we use to access the table - id, name index etc\n"
+full_name: Watir::Table::new
+is_singleton: true
+name: new
+params: (container, how, what)
+visibility: public

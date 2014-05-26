@@ -1,0 +1,10 @@
+--- !ruby/object:RI::MethodDescription 
+aliases: []
+
+block_params: 
+comment: 
+full_name: Selenium::WebPage#open_page
+is_singleton: false
+name: open_page
+params: (url)
+visibility: public

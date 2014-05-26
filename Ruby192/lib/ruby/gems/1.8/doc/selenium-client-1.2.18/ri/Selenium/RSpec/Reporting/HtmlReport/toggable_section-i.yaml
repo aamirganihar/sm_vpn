@@ -1,0 +1,10 @@
+--- !ruby/object:RI::MethodDescription 
+aliases: []
+
+block_params: 
+comment: 
+full_name: Selenium::RSpec::Reporting::HtmlReport#toggable_section
+is_singleton: false
+name: toggable_section
+params: (dom_id, options)
+visibility: public

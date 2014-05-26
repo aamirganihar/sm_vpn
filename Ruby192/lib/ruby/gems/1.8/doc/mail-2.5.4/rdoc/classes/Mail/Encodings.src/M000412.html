@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+<!DOCTYPE html 
+     PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+     "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html>
+<head>
+  <title>unquote_and_convert_to (Mail::Encodings)</title>
+  <meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" />
+  <link rel="stylesheet" href="../../.././rdoc-style.css" type="text/css" media="screen" />
+</head>
+<body class="standalone-code">
+  <pre><span class="ruby-comment cmt"># File lib/mail/encodings.rb, line 148</span>
+    <span class="ruby-keyword kw">def</span> <span class="ruby-constant">Encodings</span>.<span class="ruby-identifier">unquote_and_convert_to</span>(<span class="ruby-identifier">str</span>, <span class="ruby-identifier">to_encoding</span>)
+      <span class="ruby-identifier">output</span> = <span class="ruby-identifier">value_decode</span>( <span class="ruby-identifier">str</span> ).<span class="ruby-identifier">to_s</span> <span class="ruby-comment cmt"># output is already converted to UTF-8</span>
+
+      <span class="ruby-keyword kw">if</span> <span class="ruby-value str">'utf8'</span> <span class="ruby-operator">==</span> <span class="ruby-identifier">to_encoding</span>.<span class="ruby-identifier">to_s</span>.<span class="ruby-identifier">downcase</span>.<span class="ruby-identifier">gsub</span>(<span class="ruby-value str">&quot;-&quot;</span>, <span class="ruby-value str">&quot;&quot;</span>)
+        <span class="ruby-identifier">output</span>
+      <span class="ruby-keyword kw">elsif</span> <span class="ruby-identifier">to_encoding</span>
+        <span class="ruby-keyword kw">begin</span>
+          <span class="ruby-keyword kw">if</span> <span class="ruby-constant">RUBY_VERSION</span> <span class="ruby-operator">&gt;=</span> <span class="ruby-value str">'1.9'</span>
+            <span class="ruby-identifier">output</span>.<span class="ruby-identifier">encode</span>(<span class="ruby-identifier">to_encoding</span>)
+          <span class="ruby-keyword kw">else</span>
+            <span class="ruby-identifier">require</span> <span class="ruby-value str">'iconv'</span>
+            <span class="ruby-constant">Iconv</span>.<span class="ruby-identifier">iconv</span>(<span class="ruby-identifier">to_encoding</span>, <span class="ruby-value str">'UTF-8'</span>, <span class="ruby-identifier">output</span>).<span class="ruby-identifier">first</span>
+          <span class="ruby-keyword kw">end</span>
+        <span class="ruby-keyword kw">rescue</span> <span class="ruby-constant">Iconv</span><span class="ruby-operator">::</span><span class="ruby-constant">IllegalSequence</span>, <span class="ruby-constant">Iconv</span><span class="ruby-operator">::</span><span class="ruby-constant">InvalidEncoding</span>, <span class="ruby-constant">Errno</span><span class="ruby-operator">::</span><span class="ruby-constant">EINVAL</span>
+          <span class="ruby-comment cmt"># the 'from' parameter specifies a charset other than what the text</span>
+          <span class="ruby-comment cmt"># actually is...not much we can do in this case but just return the</span>
+          <span class="ruby-comment cmt"># unconverted text.</span>
+          <span class="ruby-comment cmt">#</span>
+          <span class="ruby-comment cmt"># Ditto if either parameter represents an unknown charset, like</span>
+          <span class="ruby-comment cmt"># X-UNKNOWN.</span>
+          <span class="ruby-identifier">output</span>
+        <span class="ruby-keyword kw">end</span>
+      <span class="ruby-keyword kw">else</span>
+        <span class="ruby-identifier">output</span>
+      <span class="ruby-keyword kw">end</span>
+    <span class="ruby-keyword kw">end</span></pre>
+</body>
+</html>

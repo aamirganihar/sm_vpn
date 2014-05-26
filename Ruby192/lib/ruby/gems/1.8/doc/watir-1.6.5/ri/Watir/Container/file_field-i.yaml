@@ -1,0 +1,20 @@
+--- !ruby/object:RI::MethodDescription 
+aliases: []
+
+block_params: 
+comment: 
+- !ruby/struct:SM::Flow::P 
+  body: This is the main method for accessing a file field. Usually an &lt;input type = file&gt; HTML tag.
+- !ruby/struct:SM::Flow::VERB 
+  body: " *  how   - symbol - how we access the field, valid values are\n   :index      - find the file field using index\n   :id         - find the file field using id attribute\n   :name       - find the file field using name attribute\n   :xpath      - find the file field using xpath query\n *  what  - string, integer, regular expression, or xpath query - what we are looking for,\n"
+- !ruby/struct:SM::Flow::P 
+  body: returns a FileField object
+- !ruby/struct:SM::Flow::P 
+  body: Typical Usage
+- !ruby/struct:SM::Flow::VERB 
+  body: "   ie.file_field(:id,   'up_1')                     # access the file upload field with an ID of up_1\n   ie.file_field(:name, 'upload')                   # access the file upload field with a name of upload\n   ie.file_field(:index, 2)                         # access the second file upload on the page (1 based, so the first field is accessed with :index,1)\n"
+full_name: Watir::Container#file_field
+is_singleton: false
+name: file_field
+params: (how, what=nil)
+visibility: public

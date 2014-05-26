@@ -1,0 +1,16 @@
+--- !ruby/object:RI::MethodDescription 
+aliases: []
+
+block_params: 
+comment: 
+- !ruby/struct:SM::Flow::P 
+  body: Returns the body of the message object. Or, if passed a parameter sets the value.
+- !ruby/struct:SM::Flow::P 
+  body: "Example:"
+- !ruby/struct:SM::Flow::VERB 
+  body: " mail = Mail::Message.new('To: mikel\\r\\n\\r\\nThis is the body')\n mail.body #=&gt; #&lt;Mail::Body:0x13919c @raw_source=&quot;This is the bo...\n\n mail.body 'This is another body'\n mail.body #=&gt; #&lt;Mail::Body:0x13919c @raw_source=&quot;This is anothe...\n"
+full_name: Mail::Message#body
+is_singleton: false
+name: body
+params: (value = nil)
+visibility: public

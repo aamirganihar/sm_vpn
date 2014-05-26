@@ -1,0 +1,10 @@
+--- !ruby/object:RI::MethodDescription 
+aliases: []
+
+block_params: 
+comment: 
+full_name: Mail::Ruby19::decode_base64
+is_singleton: true
+name: decode_base64
+params: (str)
+visibility: public

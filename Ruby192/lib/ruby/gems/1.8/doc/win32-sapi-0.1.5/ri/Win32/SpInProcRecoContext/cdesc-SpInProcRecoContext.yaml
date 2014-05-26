@@ -1,0 +1,18 @@
+--- !ruby/object:RI::ClassDescription 
+attributes: []
+
+class_methods: 
+- !ruby/object:RI::MethodSummary 
+  name: new
+comment: 
+- !ruby/struct:SM::Flow::P 
+  body: The SpInProcRecoContext automation object defines a recognition context. A recognition context is the primary means by which an application interacts with SAPI for speech recognition.
+constants: []
+
+full_name: Win32::SpInProcRecoContext
+includes: []
+
+instance_methods: []
+
+name: SpInProcRecoContext
+superclass: SAPI5

@@ -1,0 +1,10 @@
+--- !ruby/object:RI::MethodDescription 
+aliases: []
+
+block_params: 
+comment: 
+full_name: Selenium::Link::new
+is_singleton: true
+name: new
+params: (webpage, locator, target = nil)
+visibility: public

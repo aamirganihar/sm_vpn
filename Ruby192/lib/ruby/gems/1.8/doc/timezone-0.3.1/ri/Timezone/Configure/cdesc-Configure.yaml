@@ -1,0 +1,44 @@
+--- !ruby/object:RI::ClassDescription 
+attributes: []
+
+class_methods: 
+- !ruby/object:RI::MethodSummary 
+  name: begin
+- !ruby/object:RI::MethodSummary 
+  name: default_for_list
+- !ruby/object:RI::MethodSummary 
+  name: default_for_list=
+- !ruby/object:RI::MethodSummary 
+  name: order_list_by
+- !ruby/object:RI::MethodSummary 
+  name: order_list_by=
+- !ruby/object:RI::MethodSummary 
+  name: replace
+- !ruby/object:RI::MethodSummary 
+  name: replacements
+- !ruby/object:RI::MethodSummary 
+  name: url
+- !ruby/object:RI::MethodSummary 
+  name: url=
+- !ruby/object:RI::MethodSummary 
+  name: username
+- !ruby/object:RI::MethodSummary 
+  name: username=
+comment: 
+- !ruby/struct:SM::Flow::P 
+  body: Configuration class for the Timezone gem.
+- !ruby/struct:SM::Flow::VERB 
+  body: "  Timezone::Configure.begin do |c| ... end\n"
+- !ruby/struct:SM::Flow::P 
+  body: c.username = username - the geonames username you use to access the geonames timezone API.
+- !ruby/struct:SM::Flow::P 
+  body: Signup for a geonames username at http://www.geonames.org/login. Use that username to configure your application for latitude and longitude based timezone searches. If you aren't going to initialize timezone objects based on latitude and longitude then this configuration is not necessary.
+constants: []
+
+full_name: Timezone::Configure
+includes: []
+
+instance_methods: []
+
+name: Configure
+superclass: Object

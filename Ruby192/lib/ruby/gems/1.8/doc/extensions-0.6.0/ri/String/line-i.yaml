@@ -1,0 +1,14 @@
+--- !ruby/object:RI::MethodDescription 
+aliases: []
+
+block_params: 
+comment: 
+- !ruby/struct:SM::Flow::P 
+  body: Returns a line or lines from the string. <tt>args</tt> can be a single integer, two integers or a range, as per <tt>Array#slice</tt>. The return value is a single String (a single line), an array of Strings (multiple lines) or <tt>nil</tt> (out of bounds). Note that lines themselves do not contain a trailing newline character; that is metadata. Indexes out of bounds are ignored.
+- !ruby/struct:SM::Flow::VERB 
+  body: "  data = &quot; one \\n two \\n three \\n four \\n five \\n&quot;\n  data.line(1)              # -&gt; &quot; two &quot;\n  data.line(0,1)            # -&gt; [&quot; one &quot;]\n  data.line(3..9)           # -&gt; [&quot; four &quot;, &quot; five &quot;]\n  data.line(9)              # -&gt; nil\n"
+full_name: String#line
+is_singleton: false
+name: line
+params: (*args)
+visibility: public

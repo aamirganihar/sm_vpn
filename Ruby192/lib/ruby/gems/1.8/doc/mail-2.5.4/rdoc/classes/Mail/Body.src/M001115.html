@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+<!DOCTYPE html 
+     PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+     "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html>
+<head>
+  <title>new (Mail::Body)</title>
+  <meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" />
+  <link rel="stylesheet" href="../../.././rdoc-style.css" type="text/css" media="screen" />
+</head>
+<body class="standalone-code">
+  <pre><span class="ruby-comment cmt"># File lib/mail/body.rb, line 29</span>
+    <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">initialize</span>(<span class="ruby-identifier">string</span> = <span class="ruby-value str">''</span>)
+      <span class="ruby-ivar">@boundary</span> = <span class="ruby-keyword kw">nil</span>
+      <span class="ruby-ivar">@preamble</span> = <span class="ruby-keyword kw">nil</span>
+      <span class="ruby-ivar">@epilogue</span> = <span class="ruby-keyword kw">nil</span>
+      <span class="ruby-ivar">@charset</span>  = <span class="ruby-keyword kw">nil</span>
+      <span class="ruby-ivar">@part_sort_order</span> = [ <span class="ruby-value str">&quot;text/plain&quot;</span>, <span class="ruby-value str">&quot;text/enriched&quot;</span>, <span class="ruby-value str">&quot;text/html&quot;</span> ]
+      <span class="ruby-ivar">@parts</span> = <span class="ruby-constant">Mail</span><span class="ruby-operator">::</span><span class="ruby-constant">PartsList</span>.<span class="ruby-identifier">new</span>
+      <span class="ruby-keyword kw">if</span> <span class="ruby-identifier">string</span>.<span class="ruby-identifier">blank?</span>
+        <span class="ruby-ivar">@raw_source</span> = <span class="ruby-value str">''</span>
+      <span class="ruby-keyword kw">else</span>
+        <span class="ruby-comment cmt"># Do join first incase we have been given an Array in Ruby 1.9</span>
+        <span class="ruby-keyword kw">if</span> <span class="ruby-identifier">string</span>.<span class="ruby-identifier">respond_to?</span>(<span class="ruby-identifier">:join</span>)
+          <span class="ruby-ivar">@raw_source</span> = <span class="ruby-identifier">string</span>.<span class="ruby-identifier">join</span>(<span class="ruby-value str">''</span>)
+        <span class="ruby-keyword kw">elsif</span> <span class="ruby-identifier">string</span>.<span class="ruby-identifier">respond_to?</span>(<span class="ruby-identifier">:to_s</span>)
+          <span class="ruby-ivar">@raw_source</span> = <span class="ruby-identifier">string</span>.<span class="ruby-identifier">to_s</span>
+        <span class="ruby-keyword kw">else</span>
+          <span class="ruby-identifier">raise</span> <span class="ruby-value str">&quot;You can only assign a string or an object that responds_to? :join or :to_s to a body.&quot;</span>
+        <span class="ruby-keyword kw">end</span>
+      <span class="ruby-keyword kw">end</span>
+      <span class="ruby-ivar">@encoding</span> = (<span class="ruby-identifier">only_us_ascii?</span> <span class="ruby-value">? </span><span class="ruby-value str">'7bit'</span> <span class="ruby-operator">:</span> <span class="ruby-value str">'8bit'</span>)
+      <span class="ruby-identifier">set_charset</span>
+    <span class="ruby-keyword kw">end</span></pre>
+</body>
+</html>

@@ -1,0 +1,37 @@
+--- !ruby/object:RI::MethodDescription 
+aliases: []
+
+block_params: 
+comment: 
+- !ruby/struct:SM::Flow::P 
+  body: Sets the priority class for the specified process id <tt>int</tt>.
+- !ruby/struct:SM::Flow::P 
+  body: The <tt>kind</tt> parameter is ignored but present for API compatibility. You can only retrieve process information, not process group or user information, so it is effectively always Process::PRIO_PROCESS.
+- !ruby/struct:SM::Flow::P 
+  body: "Possible <tt>int_priority</tt> values are:"
+- !ruby/object:SM::Flow::LIST 
+  contents: 
+  - !ruby/struct:SM::Flow::LI 
+    label: "*"
+    body: Process::NORMAL_PRIORITY_CLASS
+  - !ruby/struct:SM::Flow::LI 
+    label: "*"
+    body: Process::IDLE_PRIORITY_CLASS
+  - !ruby/struct:SM::Flow::LI 
+    label: "*"
+    body: Process::HIGH_PRIORITY_CLASS
+  - !ruby/struct:SM::Flow::LI 
+    label: "*"
+    body: Process::REALTIME_PRIORITY_CLASS
+  - !ruby/struct:SM::Flow::LI 
+    label: "*"
+    body: Process::BELOW_NORMAL_PRIORITY_CLASS
+  - !ruby/struct:SM::Flow::LI 
+    label: "*"
+    body: Process::ABOVE_NORMAL_PRIORITY_CLASS
+  type: :BULLET
+full_name: Process#setpriority
+is_singleton: false
+name: setpriority
+params: (kind = nil, int = nil, int_priority = nil)
+visibility: public

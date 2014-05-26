@@ -1,0 +1,16 @@
+--- !ruby/object:RI::MethodDescription 
+aliases: []
+
+block_params: 
+comment: 
+- !ruby/struct:SM::Flow::P 
+  body: this method accesses a table row. how - symbol - how we access the row, valid values are
+- !ruby/struct:SM::Flow::VERB 
+  body: "   :id       - find the table row with given id.\n   :xpath    - find the table row using xpath query.\n"
+- !ruby/struct:SM::Flow::P 
+  body: returns a TableRow object
+full_name: Watir::Container#row
+is_singleton: false
+name: row
+params: (how, what=nil)
+visibility: public

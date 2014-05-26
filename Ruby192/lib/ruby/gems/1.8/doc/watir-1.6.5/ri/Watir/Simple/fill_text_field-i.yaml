@@ -1,0 +1,12 @@
+--- !ruby/object:RI::MethodDescription 
+aliases: []
+
+block_params: 
+comment: 
+- !ruby/struct:SM::Flow::P 
+  body: Fill a single textfield with a value
+full_name: Watir::Simple#fill_text_field
+is_singleton: false
+name: fill_text_field
+params: (field_name, text)
+visibility: public

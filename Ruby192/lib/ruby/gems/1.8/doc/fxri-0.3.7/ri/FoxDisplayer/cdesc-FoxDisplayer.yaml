@@ -1,0 +1,34 @@
+--- !ruby/object:RI::ClassDescription 
+attributes: 
+- !ruby/object:RI::Attribute 
+  comment: 
+  name: reader
+  rw: RW
+class_methods: 
+- !ruby/object:RI::MethodSummary 
+  name: new
+comment: 
+constants: []
+
+full_name: FoxDisplayer
+includes: []
+
+instance_methods: 
+- !ruby/object:RI::MethodSummary 
+  name: display_class_info
+- !ruby/object:RI::MethodSummary 
+  name: display_flow
+- !ruby/object:RI::MethodSummary 
+  name: display_information
+- !ruby/object:RI::MethodSummary 
+  name: display_method_info
+- !ruby/object:RI::MethodSummary 
+  name: init_text
+- !ruby/object:RI::MethodSummary 
+  name: no_info_available
+- !ruby/object:RI::MethodSummary 
+  name: set_text
+- !ruby/object:RI::MethodSummary 
+  name: width=
+name: FoxDisplayer
+superclass: Object

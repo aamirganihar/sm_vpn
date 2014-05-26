@@ -1,0 +1,26 @@
+--- !ruby/object:RI::ClassDescription 
+attributes: []
+
+class_methods: []
+
+comment: 
+- !ruby/struct:SM::Flow::P 
+  body: Linux/X11 implementation of WinClicker. Not all functionality is present because of the differences between X11
+- !ruby/struct:SM::Flow::VERB 
+  body: "  and Win32.\n"
+constants: []
+
+full_name: WinClicker
+includes: []
+
+instance_methods: 
+- !ruby/object:RI::MethodSummary 
+  name: clearSecurityAlertBox
+- !ruby/object:RI::MethodSummary 
+  name: clickJSDialog_Thread
+- !ruby/object:RI::MethodSummary 
+  name: clickJavaScriptDialog
+- !ruby/object:RI::MethodSummary 
+  name: clickWindowsButton
+name: WinClicker
+superclass: Object

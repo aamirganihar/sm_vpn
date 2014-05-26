@@ -1,0 +1,12 @@
+--- !ruby/object:RI::MethodDescription 
+aliases: []
+
+block_params: 
+comment: 
+- !ruby/struct:SM::Flow::P 
+  body: Given a line from the TZDATA file, generate an Entry object.
+full_name: Timezone::Parser::zone
+is_singleton: true
+name: zone
+params: (line)
+visibility: public

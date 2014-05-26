@@ -1,0 +1,801 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+<!DOCTYPE html 
+     PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+     "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+  <title>File: History.rdoc</title>
+  <meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" />
+  <meta http-equiv="Content-Script-Type" content="text/javascript" />
+  <link rel="stylesheet" href=".././rdoc-style.css" type="text/css" media="screen" />
+  <script type="text/javascript">
+  // <![CDATA[
+
+  function popupCode( url ) {
+    window.open(url, "Code", "resizable=yes,scrollbars=yes,toolbar=no,status=no,height=150,width=400")
+  }
+
+  function toggleCode( id ) {
+    if ( document.getElementById )
+      elem = document.getElementById( id );
+    else if ( document.all )
+      elem = eval( "document.all." + id );
+    else
+      return false;
+
+    elemStyle = elem.style;
+    
+    if ( elemStyle.display != "block" ) {
+      elemStyle.display = "block"
+    } else {
+      elemStyle.display = "none"
+    }
+
+    return true;
+  }
+  
+  // Make codeblocks hidden by default
+  document.writeln( "<style type=\"text/css\">div.method-source-code { display: none }</style>" )
+  
+  // ]]>
+  </script>
+
+</head>
+<body>
+
+
+
+  <div id="fileHeader">
+    <h1>History.rdoc</h1>
+    <table class="header-table">
+    <tr class="top-aligned-row">
+      <td><strong>Path:</strong></td>
+      <td>History.rdoc
+      </td>
+    </tr>
+    <tr class="top-aligned-row">
+      <td><strong>Last Update:</strong></td>
+      <td>Fri Dec 06 09:20:04 +0530 2013</td>
+    </tr>
+    </table>
+  </div>
+  <!-- banner header -->
+
+  <div id="bodyContent">
+
+
+
+  <div id="contextContent">
+
+    <div id="description">
+      <h2>1.25.1 / 201-11-24</h2>
+<ul>
+<li>Bugs:
+
+<ul>
+<li>Fix an issue with priority comparison in the 1.x release series. Found by
+sdbondi. This issue does not exist in the 2.x release series. <a
+href="https://github.com/halostatue/mime-types/issues/47">github.com/halostatue/mime-types/issues/47</a>
+
+</li>
+</ul>
+</li>
+</ul>
+<h2>1.25 / 2013-08-30</h2>
+<ul>
+<li>New Features:
+
+<ul>
+<li>Adding lazy loading and caching functionality to the default data based on
+work done by Greg Brockman (gdb).
+
+</li>
+</ul>
+</li>
+<li>Bugs:
+
+<ul>
+<li>Force the default internal application encoding to be used when reading the
+<a href="../classes/MIME.html">MIME</a> types database. Based on a change
+by briangamble, found in the rapid7 fork.
+
+</li>
+</ul>
+</li>
+<li>New extensions:
+
+<ul>
+<li>mjpeg (video/x-motion-jpeg) based on a change by punkrats, found in the
+vidibus fork.
+
+</li>
+</ul>
+</li>
+<li>Modernized MiniTest configuration.
+
+</li>
+</ul>
+<h2>1.24 / 2013-08-14</h2>
+<ul>
+<li>Code Climate:
+
+<ul>
+<li>Working on improving the quality of the mime-types codebase through the use
+of Code Climate. <a
+href="https://codeclimate.com/github/halostatue/mime-types">codeclimate.com/github/halostatue/mime-types</a>
+
+</li>
+<li>Simplified MIME::Type.from_array to make more assumptions about assignment.
+
+</li>
+</ul>
+</li>
+<li>Documentation:
+
+<ul>
+<li>LeoYoung &lt;mrleoyoung@gmail.com&gt; pointed out that the README.rdoc
+contained examples that could never possibly work because <a
+href="../classes/MIME/Types.html">MIME::Types</a>#[] returns (for all the
+versions I have handy) an array, not a single type. I have updated
+README.rdoc to reflect this.
+
+</li>
+</ul>
+</li>
+<li>Removed Nokogiri as a declared development dependency. It is still required
+if you&#8216;re going to use the IANA parser functionality, but it is not
+necessary for most development purposes. This has been removed to ensure
+that Travis CI passes on Ruby 1.8.7.
+
+</li>
+<li>New <a href="../classes/MIME.html">MIME</a> Types:
+
+<ul>
+<li>7zip (application/x-7z-compressed). Fixes a request by kodram. <a
+href="https://github.com/halostatue/mime-types/issues/32">github.com/halostatue/mime-types/issues/32</a>
+
+</li>
+<li>application/x-www-form-urlencoded. Fixes a request by alexkwolfe. <a
+href="https://github.com/halostatue/mime-types/issues/39">github.com/halostatue/mime-types/issues/39</a>
+
+</li>
+<li>Various new <a href="../classes/MIME.html">MIME</a> types from IANA:
+
+<ul>
+<li>application/mbms-schedule+xml from 3GPP and Turcotte.
+
+</li>
+<li>application/provenance+xml from W3C and Herman.
+
+</li>
+<li>application/session-info from 3GPP and Firmin.
+
+</li>
+<li>application/urc-grpsheet+xml, application/urc-targetdesc+xml,
+application/uisocketdesc+xml from Zimmermann.
+
+</li>
+<li>application/api+json from Klabnik.
+
+</li>
+<li>application/vnd.etsi.pstn+xml from Han and Belling.
+
+</li>
+<li>application/vnd.fujixerox.docuworks.container from Tashiro.
+
+</li>
+<li>application/vnd.windows.devicepairing from Dandawate.
+
+</li>
+<li>video/vnd.radgamettools.bink and video/vnd.radgamettools.smacker from
+Andersson.
+
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>Updated <a href="../classes/MIME.html">MIME</a> Types:
+
+<ul>
+<li>RFC 6960 was adopted (application/ocsp-request and
+application/ocsp-response).
+
+</li>
+</ul>
+</li>
+</ul>
+<h2>1.23 / 2013-04-20</h2>
+<ul>
+<li>New Feature:
+
+<ul>
+<li>Arnaud Meuret (ameuret) suggested that it could be useful if the <a
+href="../classes/MIME.html">MIME</a> type collection was enumerable, so he
+implemented it in 30. Thanks for the contribution! <a
+href="https://github.com/halostatue/mime-types/pull/30">github.com/halostatue/mime-types/pull/30</a>
+
+</li>
+</ul>
+</li>
+<li>Updated <a href="../classes/MIME.html">MIME</a> Types:
+
+<ul>
+<li>RFC6910 was adopted (application/call-completion).
+
+</li>
+<li>RFC6902 was adopted (application/json-patch+json).
+
+</li>
+<li>RFC6917 was adopted (application/mrb-consumer+xml,
+application/mrb-publish+xml).
+
+</li>
+<li>RFC6922 was adopted (application/sql).
+
+</li>
+<li>RFC2560 is being <a
+href="http://tools.ietf.org/html/draft-ietf-pkix-rfc2560bis">updated</a>.
+
+</li>
+</ul>
+</li>
+<li>Administrivia:
+
+<ul>
+<li>The gemspec now includes information about the licenses under which the
+mime-types gem is available.
+
+</li>
+<li>Using hoe-gemspec2 instead of hoe-gemspec.
+
+</li>
+</ul>
+</li>
+</ul>
+<h2>1.22 / 2013-03-30</h2>
+<ul>
+<li>New <a href="../classes/MIME.html">MIME</a> Types:
+
+<ul>
+<li>Added support for 3FR (Hasselblad raw images) files. <a
+href="../classes/MIME.html">MIME</a>-Type was obtained by looking at exif
+data with exiftool. Thanks to cgat for these changes. <a
+href="https://github.com/halostatue/mime-types/pull/27">github.com/halostatue/mime-types/pull/27</a>
+
+</li>
+</ul>
+</li>
+<li>Updated <a href="../classes/MIME.html">MIME</a> Types:
+
+<pre>
+  * Pulled the latest updates from the IANA MIME-Type registry.
+</pre>
+</li>
+<li>Added support for Ruby 2.0 with Travis CI.
+
+</li>
+</ul>
+<h2>1.21 / 2013-02-09</h2>
+<ul>
+<li>New <a href="../classes/MIME.html">MIME</a> Types:
+
+<ul>
+<li>Various new or updated <a href="../classes/MIME.html">MIME</a> types by
+Garret Alfert: application/vnd.ms-fontobject, .eot;
+application/x-chrome-extension, .crx; application/x-web-app-manifest+json,
+.webapp; application/x-xpinstall, .xpi; image/svg+xml, .svg, .svgz;
+image/webp, .webp; text/cache-manifest, .appcache, .manifest. <a
+href="https://github.com/halostatue/mime-types/pull/24">github.com/halostatue/mime-types/pull/24</a>
+
+</li>
+</ul>
+</li>
+<li>Fixed some Manifest.txt related madness on Travis.
+
+</li>
+</ul>
+<h2>1.20.1 / 2013-01-26</h2>
+<ul>
+<li>New <a href="../classes/MIME.html">MIME</a> Types:
+
+<ul>
+<li>Apple iWork document types added by Hans de Graaff
+(application/x-iwork-keynote-sffkey, .key;
+application/x-iwork-pages-sffpages, .pages;
+application/x-iwork-numbers-sffnumbers, .numbers). <a
+href="https://github.com/halostatue/mime-types/issue/20">github.com/halostatue/mime-types/issue/20</a>
+
+</li>
+<li>epub, ibooks, mobi, and DMG content types by Mauricio Linhares
+(mac:application/x-apple-diskimage, .dmg; application/epub+zip, .epub;
+application/x-ibooks+zip, .ibooks; application/x-mobipocket-ebook, .mobi).
+<a
+href="https://github.com/halostatue/mime-types/issue/22">github.com/halostatue/mime-types/issue/22</a>
+
+</li>
+<li>rss content type by Garret Alfert (application/rss+xml, .rss). <a
+href="https://github.com/halostatue/mime-types/issue/23">github.com/halostatue/mime-types/issue/23</a>
+
+</li>
+<li>Added or updated <a href="../classes/MIME.html">MIME</a> types from the
+latest IANA list.
+
+</li>
+</ul>
+</li>
+<li>Fixed <a href="../classes/MIME.html">MIME</a> Types:
+
+<ul>
+<li>Excel macro-enabled spreadsheets had an incorrect extension. Thanks to
+Rafael Belvederese for reporting this issue. <a
+href="https://github.com/halostatue/mime-types/issue/21">github.com/halostatue/mime-types/issue/21</a>
+
+</li>
+</ul>
+</li>
+<li>Enabled for use with travis.
+
+</li>
+<li>Enabled gem signing.
+
+</li>
+<li>Fixed an error related to <a href="../classes/MIME.html">MIME</a> type
+downloads.
+
+</li>
+<li>This was previously published as 1.20, but I had forgotten some
+attributions.
+
+</li>
+</ul>
+<h2>1.19 / 2012-06-20</h2>
+<ul>
+<li>New <a href="../classes/MIME.html">MIME</a> Types:
+
+<ul>
+<li>XCF Gnome Images (image/x-xcf, image/x-compressed-xcf; .xcf). <a
+href="https://github.com/halostatue/mime-types/issue/17">github.com/halostatue/mime-types/issue/17</a>
+
+</li>
+<li>Types reported in <a
+href="https://github.com/halostatue/mime-types/issues/12">github.com/halostatue/mime-types/issues/12</a>:
+
+<ul>
+<li>DV (video/x-dv; .dv)
+
+</li>
+<li>IVF (video/x-ivf; .ivf)
+
+</li>
+<li>Matroska (video/x-matroska; .mkv)
+
+</li>
+<li>Motion JPEG (video/x-motion-jpeg; .mjpg)
+
+</li>
+<li>RealMedia (official; application/vnd.rn-realmedia; .rm)
+
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>New extensions:
+
+<ul>
+<li>dcm (application/dicom); <a
+href="https://github.com/halostatue/mime-types/issue/16">github.com/halostatue/mime-types/issue/16</a>.
+
+</li>
+<li>Types reported in <a
+href="https://github.com/halostatue/mime-types/issues/12">github.com/halostatue/mime-types/issues/12</a>:
+
+<ul>
+<li>3g2, 3gpp2 (video/3gpp2)
+
+</li>
+<li>mpeg (video/mpeg)
+
+</li>
+<li>mxf (application/mxf)
+
+</li>
+<li>ts (video/MP2T)
+
+</li>
+<li>ogg (video/ogg)
+
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>Fixed <a href="../classes/MIME.html">MIME</a> Types:
+
+<ul>
+<li>Adobe AIR application installer packages was missing a hyphen. <a
+href="https://github.com/halostatue/mime-types/issue/13">github.com/halostatue/mime-types/issue/13</a>
+
+</li>
+<li>Types reported in <a
+href="https://github.com/halostatue/mime-types/issues/12">github.com/halostatue/mime-types/issues/12</a>:
+
+<ul>
+<li>audio/x-pn-realaudio extension is .ra, not .rm.
+
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>Resolved <a
+href="https://github.com/halostatue/mime-types/issues/8">github.com/halostatue/mime-types/issues/8</a>.
+Apparently some people run the tests on Linux. Imagine that.
+
+</li>
+</ul>
+<h2>1.18 / 2012-03-20</h2>
+<ul>
+<li>New <a href="../classes/MIME.html">MIME</a> Types:
+
+<ul>
+<li>Types reported in <a
+href="https://github.com/halostatue/mime-types/issues/6">github.com/halostatue/mime-types/issues/6</a>:
+
+<ul>
+<li>CoffeeScript (text/x-coffeescript; .coffee; 8bit).
+
+</li>
+<li>AIR (application/vnd.adobe.air-applicationinstaller-package+zip, .air;
+base64).
+
+</li>
+<li>WOFF (application/font-woff; .woff; base64).
+
+</li>
+<li>TrueType (application/x-font-truetype; .ttf; base64).
+
+</li>
+<li>OpenType (application/x-font-opentype; .otf; base64).
+
+</li>
+</ul>
+</li>
+<li>WebM (audio/webm, video/webm; .webm). <a
+href="https://github.com/halostatue/mime-types/issues/11">github.com/halostatue/mime-types/issues/11</a>.
+
+</li>
+</ul>
+</li>
+<li>New extensions:
+
+<ul>
+<li>f4v/f4p (video/mp4, used by Adobe); f4a/fb4 (audio/mp4, used by Adobe).
+
+</li>
+</ul>
+</li>
+<li>Bug Fixes:
+
+<ul>
+<li>It was pointed out that Licence.txt was incorrectly named. Fixed by
+renaming to Licence.rdoc (from Issue/Pull Request 8, <a
+href="https://github.com/halostatue/mime-types/issues/8">github.com/halostatue/mime-types/issues/8</a>).
+
+</li>
+<li>It was pointed out that a plan to have the test output generated
+automatically never went through. <a
+href="https://github.com/halostatue/mime-types/issues/10">github.com/halostatue/mime-types/issues/10</a>
+
+</li>
+</ul>
+</li>
+</ul>
+<h2>1.17.2 / 2011-10-25</h2>
+<ul>
+<li>Bug Fixes:
+
+<ul>
+<li>Fixed an issue with Ruby 1.9 and file encoding.
+
+</li>
+</ul>
+</li>
+</ul>
+<h2>1.17.1 / 2011-10-23</h2>
+<ul>
+<li>Minor Enhancements:
+
+<ul>
+<li>Implemented modern &#8216;hoe&#8217; semantics.
+
+</li>
+<li>Switched to minitest instead of test/unit.
+
+</li>
+<li>Converted documentation from .txt to .rdoc.
+
+</li>
+<li>Removed setup.rb. <a
+href="https://github.com/halostatue/mime-types/issues/3">github.com/halostatue/mime-types/issues/3</a>
+
+</li>
+<li>Should no longer complain about missing RubyGems keys <a
+href="https://github.com/halostatue/mime-types/issues/2">github.com/halostatue/mime-types/issues/2</a>
+
+</li>
+<li>Added .mp4 and .mpg4 as recognized extensions for
+{application,audio,video}/mp4 per RFC4337. <a
+href="https://github.com/halostatue/mime-types/issues/1">github.com/halostatue/mime-types/issues/1</a>
+
+</li>
+<li>Added audio/x-aac and .aac per RubyForge issue 28054 (<a
+href="http://rubyforge.org/tracker/index.php?func=detail&aid=28054&group_id=293&atid=1194">rubyforge.org/tracker/index.php?func=detail&aid=28054&group_id=293&atid=1194</a>).
+
+</li>
+<li>Made it much easier to update <a href="../classes/MIME.html">MIME</a> types
+from this point forward.
+
+</li>
+<li>Updated <a href="../classes/MIME.html">MIME</a> types from IANA.
+
+</li>
+</ul>
+</li>
+</ul>
+<h2>1.16</h2>
+<ul>
+<li>Made compatible with Ruby 1.8.6, 1.8.7, and 1.9.1.
+
+</li>
+<li>Switched to the &#8216;hoe&#8217; gem system and added a lot of build-time
+tools.
+
+</li>
+<li>Updated the <a href="../classes/MIME.html">MIME</a> types to the list based
+on the values in the Perl library version 1.27. Also updated based on
+external source information and bug reports.
+
+</li>
+<li>This is the last planned version of <a
+href="../classes/MIME/Types.html">MIME::Types</a> 1.x. Work will be
+starting soon on <a href="../classes/MIME/Types.html">MIME::Types</a> 2.x
+with richer data querying mechanisms and support for external data sources.
+
+</li>
+</ul>
+<h2>1.15</h2>
+<ul>
+<li>Removed lib/mime/type.rb to form a single <a
+href="../classes/MIME/Types.html">MIME::Types</a> database source. It is
+unlikely that one will ever need <a
+href="../classes/MIME/Type.html">MIME::Type</a> without <a
+href="../classes/MIME/Types.html">MIME::Types</a>.
+
+</li>
+<li>Re-synchronized the <a href="../classes/MIME.html">MIME</a> type list with
+the sources, focusing primarily on the IANA list.
+
+</li>
+<li>Added more detailed source information for <a
+href="../classes/MIME/Type.html">MIME::Type</a> objects.
+
+</li>
+<li>Changed <a href="../classes/MIME/Types.html">MIME::Types</a> from a module
+to a class with a default instance. There should be no difference in usage.
+
+</li>
+<li>Removed MIME::Types::DATA_VERSION; it is now an attribute on the <a
+href="../classes/MIME/Types.html">MIME::Types</a> instance.
+
+</li>
+<li>NOTE: Synchronization with the Perl version of <a
+href="../classes/MIME/Types.html">MIME::Types</a> is no longer a priority
+as of this release. The data format and information has changed.
+
+</li>
+<li>Removed MIME::Types.by_suffix and MIME::Types.by_mediatype.
+
+</li>
+</ul>
+<h2>1.13.1</h2>
+<ul>
+<li>Fixed a problem with the installer running tests. This now works.
+
+</li>
+<li>Improved the implementation of MIME::Type.signature?
+
+</li>
+<li>Moved code around to use the class &lt;&lt; self idiom instead of always
+prepending the module/class name.
+
+</li>
+<li>Added two new best-guess implementations of functions found in Perl&#8216;s
+<a href="../classes/MIME/Types.html">MIME::Types</a> implementation (1.13).
+Do not rely on these until the purpose and implementation is stabilised.
+
+</li>
+<li>Updated the <a href="../classes/MIME.html">MIME</a> list to reflect changes
+noted by Ville Skyttä &lt;ville.skytta@iki.fi&gt;.
+
+</li>
+<li>Added a new constant to <a
+href="../classes/MIME/Types.html">MIME::Types</a>, DATA_VERSION. This will
+allow the Ruby version number to be updated separately from the Perl
+version while keeping the <a href="../classes/MIME.html">MIME</a> Type list
+version in sync.
+
+</li>
+</ul>
+<h2>1.13</h2>
+<pre>
+  ! WARNING: This version changes the API of MIME::Types !
+  ! WARNING: This version is compatible with Ruby 1.8 and higher ONLY !
+</pre>
+<ul>
+<li>Removed dependency on InstallPackage; offering 1.13 as either .tar.gz or
+.gem.
+
+</li>
+<li>Split into two files, mime/type.rb and mime/types.rb. This will make
+maintaining the list of changes easier.
+
+</li>
+<li>Changed the <a href="../classes/MIME/Type.html">MIME::Type</a> construction
+API. Accepts only a single String argument (but does no named
+type-checking) and yields self.
+
+</li>
+<li>Removed private methods init_extensions, init_encoding, and init_system and
+replaced with extensions=, encoding=, and system=.
+
+</li>
+<li>Added default_encoding to return &#8216;quoted-printable&#8217; or
+&#8216;base64&#8217; depending on the media type of the <a
+href="../classes/MIME.html">MIME</a> type.
+
+</li>
+<li>Added raw_media_type and raw_sub_type to provide the non-simplified
+versions of the media type and subtype.
+
+</li>
+<li>Alternative constructors MIME::Type.from_array, MIME::Type.from_hash, and
+MIME::Type.from_mime_type added to compensate for the removal of named type
+checking in the original constructor.
+
+</li>
+<li>Added to_str, to_a, and to_hash methods. The latter two will provide output
+suitable for use in from_array and from_hash.
+
+</li>
+<li>Removed &quot;binary&quot; encoding and enforced the use of a valid
+encoding string.
+
+</li>
+<li>Added system? returning true if the <a
+href="../classes/MIME/Type.html">MIME::Type</a> is an OS-specific <a
+href="../classes/MIME/Type.html">MIME::Type</a>.
+
+</li>
+<li>Added platform? returning true if the <a
+href="../classes/MIME/Type.html">MIME::Type</a> is an OS-specific <a
+href="../classes/MIME/Type.html">MIME::Type</a> for the current
+RUBY_PLATFORM.
+
+</li>
+<li>Added like? returning true if the simplified type matches the other value
+provided.
+#&lt;&#8217;application/x-excel&#8217;&gt;.like?(&#8216;application/excel&#8217;)
+is true.
+
+</li>
+<li>Added complete? returning true if the <a
+href="../classes/MIME/Type.html">MIME::Type</a> specifies an extension
+list.
+
+</li>
+<li>Updated the <a href="../classes/MIME.html">MIME</a> type list to reflect
+additions by Mark Overmeer for Perl&#8216;s <a
+href="../classes/MIME/Types.html">MIME::Types</a> 1.12 and the official
+IANA list as of 2004.04.06. A number of formerly &quot;registered&quot; <a
+href="../classes/MIME.html">MIME</a> types are now no longer registered
+(e.g., application/excel is now application/x-excel). This ensures that the
+simplified type still works with applications, but does not report an
+unregistered type as registered.
+
+</li>
+<li>Restored <a href="../classes/MIME.html">MIME</a> type list to Mark
+Overmeer&#8216;s format to facilitate easy exchange between the two
+projects.
+
+</li>
+<li>Added additional unit tests from Mark Overmeer&#8216;s 1.12 version.
+
+</li>
+</ul>
+<h2>1.07</h2>
+<ul>
+<li>Changed version numbering to match Perl <a
+href="../classes/MIME/Types.html">MIME::Types</a> 1.07.
+
+</li>
+<li>Re-synchronized with Mark Overmeer&#8216;s list in Perl PMIME::Types 1.07.
+
+</li>
+<li>[NN Poster] updated the attributes for the PGP types.
+
+</li>
+</ul>
+<h2>1.005</h2>
+<ul>
+<li>Changed to Phil Thomson&#8216;s InstallPackage.
+
+</li>
+<li>Added several types from Perl <a
+href="../classes/MIME/Types.html">MIME::Types</a> 1.005.
+
+</li>
+<li>Cleaned up data format; some data formats will show up with proper data
+now.
+
+</li>
+</ul>
+<h2>1.004</h2>
+<ul>
+<li>Updated to match Perl <a href="../classes/MIME/Types.html">MIME::Types</a>
+1.004, links credited to Dan Puro. Adds new reference list to <a
+href="http://www.indiana.edu/cgi-bin-local/mimetypes">www.indiana.edu/cgi-bin-local/mimetypes</a>
+
+</li>
+<li>Removed InvalidType and replaced with TypeError.
+
+</li>
+<li>Changed instances of type to class.
+
+</li>
+<li>Cleaned up how simplified versions are created.
+
+</li>
+</ul>
+<h2>1.003</h2>
+<ul>
+<li>Initial release based on Perl <a
+href="../classes/MIME/Types.html">MIME::Types</a> 1.003.
+
+</li>
+</ul>
+
+    </div>
+
+
+   </div>
+
+
+  </div>
+
+
+    <!-- if includes -->
+
+    <div id="section">
+
+
+
+
+
+      
+
+
+    <!-- if method_list -->
+
+
+  </div>
+
+
+<div id="validator-badges">
+  <p><small><a href="http://validator.w3.org/check/referer">[Validate]</a></small></p>
+</div>
+
+</body>
+</html>

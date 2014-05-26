@@ -1,0 +1,12 @@
+--- !ruby/object:RI::MethodDescription 
+aliases: []
+
+block_params: ""
+comment: 
+- !ruby/struct:SM::Flow::P 
+  body: In groups of related commands, there are often choices that apply to all commands and choices that apply only to this particular command. Use this to define the latter.
+full_name: UserChoices::ChoicesBuilder#section_specific_to_script
+is_singleton: false
+name: section_specific_to_script
+params: () {|| ...}
+visibility: public

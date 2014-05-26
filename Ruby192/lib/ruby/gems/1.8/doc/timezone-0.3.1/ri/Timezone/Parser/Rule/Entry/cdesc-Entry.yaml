@@ -1,0 +1,47 @@
+--- !ruby/object:RI::ClassDescription 
+attributes: 
+- !ruby/object:RI::Attribute 
+  comment: 
+  name: letter
+  rw: R
+- !ruby/object:RI::Attribute 
+  comment: 
+  name: name
+  rw: RW
+- !ruby/object:RI::Attribute 
+  comment: 
+  name: offset
+  rw: RW
+- !ruby/object:RI::Attribute 
+  comment: 
+  name: start_date
+  rw: R
+class_methods: 
+- !ruby/object:RI::MethodSummary 
+  name: new
+comment: 
+constants: 
+- !ruby/object:RI::Constant 
+  comment: 
+  name: UTIME
+  value: /^.*u$/
+- !ruby/object:RI::Constant 
+  comment: 
+  name: STIME
+  value: /^.*s$/
+- !ruby/object:RI::Constant 
+  comment: 
+  name: START_DATE
+  value: "'%Y %b %d %H:%M %Z'"
+full_name: Timezone::Parser::Rule::Entry
+includes: []
+
+instance_methods: 
+- !ruby/object:RI::MethodSummary 
+  name: dst?
+- !ruby/object:RI::MethodSummary 
+  name: stime?
+- !ruby/object:RI::MethodSummary 
+  name: utime?
+name: Entry
+superclass: Object

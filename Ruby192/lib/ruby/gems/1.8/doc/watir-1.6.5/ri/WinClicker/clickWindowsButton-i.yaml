@@ -1,0 +1,13 @@
+--- !ruby/object:RI::MethodDescription 
+aliases: 
+- !ruby/object:RI::AliasName 
+  name: click_windows_button
+block_params: 
+comment: 
+- !ruby/struct:SM::Flow::P 
+  body: this clicks the button with the name in the window with the caption. It keeps looking for the button until until the timeout expires
+full_name: WinClicker#clickWindowsButton
+is_singleton: false
+name: clickWindowsButton
+params: (windowCaption , buttonCaption , maxWaitTime=30 )
+visibility: public

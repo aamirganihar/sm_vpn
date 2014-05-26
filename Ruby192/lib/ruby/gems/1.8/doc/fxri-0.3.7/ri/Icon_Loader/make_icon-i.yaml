@@ -1,0 +1,12 @@
+--- !ruby/object:RI::MethodDescription 
+aliases: []
+
+block_params: 
+comment: 
+- !ruby/struct:SM::Flow::P 
+  body: Constructs an icon from the given filename (from the icons directory).
+full_name: Icon_Loader#make_icon
+is_singleton: false
+name: make_icon
+params: (filename)
+visibility: public

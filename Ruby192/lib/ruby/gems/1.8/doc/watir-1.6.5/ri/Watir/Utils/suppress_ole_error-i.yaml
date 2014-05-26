@@ -1,0 +1,12 @@
+--- !ruby/object:RI::MethodDescription 
+aliases: []
+
+block_params: ""
+comment: 
+- !ruby/struct:SM::Flow::P 
+  body: Eval the provided block. If a WIN32OLERuntimeError is raised by the block, return false.
+full_name: Watir::Utils#suppress_ole_error
+is_singleton: false
+name: suppress_ole_error
+params: () {|| ...}
+visibility: public

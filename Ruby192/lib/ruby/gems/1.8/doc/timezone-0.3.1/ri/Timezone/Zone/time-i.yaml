@@ -1,0 +1,18 @@
+--- !ruby/object:RI::MethodDescription 
+aliases: []
+
+block_params: 
+comment: 
+- !ruby/struct:SM::Flow::P 
+  body: Determine the time in the timezone.
+- !ruby/struct:SM::Flow::VERB 
+  body: "  timezone.time(reference)\n"
+- !ruby/struct:SM::Flow::P 
+  body: reference - The Time you want to convert.
+- !ruby/struct:SM::Flow::P 
+  body: The reference is converted to a UTC equivalent. That UTC equivalent is then used to lookup the appropriate offset in the timezone rules. Once the offset has been found that offset is added to the reference UTC time to calculate the reference time in the timezone.
+full_name: Timezone::Zone#time
+is_singleton: false
+name: time
+params: (reference)
+visibility: public

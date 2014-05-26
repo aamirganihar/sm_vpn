@@ -1,0 +1,13 @@
+--- !ruby/object:RI::MethodDescription 
+aliases: 
+- !ruby/object:RI::AliasName 
+  name: get_handle_of_ctrl
+block_params: 
+comment: 
+- !ruby/struct:SM::Flow::P 
+  body: returns the handle (or -1 if its not found) of the nth control of this class in the parent window specified by the window handle
+full_name: WinClicker#getHandleOfControl
+is_singleton: false
+name: getHandleOfControl
+params: (hWnd , controlClass, position )
+visibility: public

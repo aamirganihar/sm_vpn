@@ -1,0 +1,10 @@
+"cl -nologo -Feconftest -I. -IC:/Ruby192/lib/ruby/1.8/i386-mswin32 -I. -IC:/Ruby192/lib/ruby/1.8/i386-mswin32  -MD -Zi -O2b2xg- -G6 conftest.c   msvcrt-ruby18-static.lib -MD -Zi -O2b2xg- -G6 oldnames.lib user32.lib advapi32.lib ws2_32.lib   -link    -libpath:"." -libpath:"C:/Ruby192/lib" -stack:0x2000000"
+checked program was:
+/* begin */
+1: int main() {
+2:   int i = 1;
+3:   __sync_bool_compare_and_swap(&i, 1, 4);
+4:   return (i != 4);
+5: }
+/* end */
+

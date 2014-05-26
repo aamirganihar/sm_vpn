@@ -1,0 +1,163 @@
+--- !ruby/object:RI::ClassDescription 
+attributes: []
+
+class_methods: []
+
+comment: 
+constants: 
+- !ruby/object:RI::Constant 
+  comment: 
+  - !ruby/struct:SM::Flow::P 
+    body: These constants are for use by the PathGetCharType() function.
+  name: GCT_INVALID
+  value: "0x0000"
+- !ruby/object:RI::Constant 
+  comment: 
+  name: GCT_LFNCHAR
+  value: "0x0001"
+- !ruby/object:RI::Constant 
+  comment: 
+  name: GCT_SHORTCHAR
+  value: "0x0002"
+- !ruby/object:RI::Constant 
+  comment: 
+  name: GCT_WILD
+  value: "0x0004"
+- !ruby/object:RI::Constant 
+  comment: 
+  name: GCT_SEPARATOR
+  value: "0x0008"
+- !ruby/object:RI::Constant 
+  comment: 
+  name: URL_UNESCAPE
+  value: "0x10000000"
+- !ruby/object:RI::Constant 
+  comment: 
+  name: URL_ESCAPE_UNSAFE
+  value: "0x20000000"
+- !ruby/object:RI::Constant 
+  comment: 
+  name: URL_PLUGGABLE_PROTOCOL
+  value: "0x40000000"
+- !ruby/object:RI::Constant 
+  comment: 
+  name: URL_WININET_COMPATIBILITY
+  value: "0x80000000"
+- !ruby/object:RI::Constant 
+  comment: 
+  name: URL_DONT_ESCAPE_EXTRA_INFO
+  value: "0x02000000"
+- !ruby/object:RI::Constant 
+  comment: 
+  name: URL_DONT_UNESCAPE_EXTRA_INFO
+  value: URL_DONT_ESCAPE_EXTRA_INFO
+- !ruby/object:RI::Constant 
+  comment: 
+  name: URL_BROWSER_MODE
+  value: URL_DONT_ESCAPE_EXTRA_INFO
+- !ruby/object:RI::Constant 
+  comment: 
+  name: URL_ESCAPE_SPACES_ONLY
+  value: "0x04000000"
+- !ruby/object:RI::Constant 
+  comment: 
+  name: URL_DONT_SIMPLIFY
+  value: "0x08000000"
+- !ruby/object:RI::Constant 
+  comment: 
+  name: URL_NO_META
+  value: URL_DONT_SIMPLIFY
+- !ruby/object:RI::Constant 
+  comment: 
+  name: URL_UNESCAPE_INPLACE
+  value: "0x00100000"
+- !ruby/object:RI::Constant 
+  comment: 
+  name: URL_CONVERT_IF_DOSPATH
+  value: "0x00200000"
+- !ruby/object:RI::Constant 
+  comment: 
+  name: URL_UNESCAPE_HIGH_ANSI_ONLY
+  value: "0x00400000"
+- !ruby/object:RI::Constant 
+  comment: 
+  name: URL_INTERNAL_PATH
+  value: "0x00800000"
+- !ruby/object:RI::Constant 
+  comment: 
+  name: URL_FILE_USE_PATHURL
+  value: "0x00010000"
+- !ruby/object:RI::Constant 
+  comment: 
+  name: URL_DONT_UNESCAPE
+  value: "0x00020000"
+- !ruby/object:RI::Constant 
+  comment: 
+  name: URL_ESCAPE_PERCENT
+  value: "0x00001000"
+- !ruby/object:RI::Constant 
+  comment: 
+  name: URL_ESCAPE_SEGMENT_ONLY
+  value: "0x00002000"
+- !ruby/object:RI::Constant 
+  comment: 
+  name: URL_PARTFLAG_KEEPSCHEME
+  value: "0x00000001"
+- !ruby/object:RI::Constant 
+  comment: 
+  name: URL_APPLY_DEFAULT
+  value: "0x00000001"
+- !ruby/object:RI::Constant 
+  comment: 
+  name: URL_APPLY_GUESSSCHEME
+  value: "0x00000002"
+- !ruby/object:RI::Constant 
+  comment: 
+  name: URL_APPLY_GUESSFILE
+  value: "0x00000004"
+- !ruby/object:RI::Constant 
+  comment: 
+  name: URL_APPLY_FORCEAPPLY
+  value: "0x00000008"
+- !ruby/object:RI::Constant 
+  comment: 
+  - !ruby/struct:SM::Flow::P 
+    body: URLIS enum
+  name: URLIS_URL
+  value: "1"
+- !ruby/object:RI::Constant 
+  comment: 
+  name: URLIS_OPAQUE
+  value: "2"
+- !ruby/object:RI::Constant 
+  comment: 
+  name: URLIS_NOHISTORY
+  value: "3"
+- !ruby/object:RI::Constant 
+  comment: 
+  name: URLIS_FILEURL
+  value: "4"
+- !ruby/object:RI::Constant 
+  comment: 
+  name: URLIS_APPLIABLE
+  value: "5"
+- !ruby/object:RI::Constant 
+  comment: 
+  name: URLIS_DIRECTORY
+  value: "6"
+- !ruby/object:RI::Constant 
+  comment: 
+  name: URLIS_HASQUERY
+  value: "7"
+full_name: Windows::Path
+includes: []
+
+instance_methods: 
+- !ruby/object:RI::MethodSummary 
+  name: UrlEscapeSpaces
+- !ruby/object:RI::MethodSummary 
+  name: UrlIsFileUrl
+- !ruby/object:RI::MethodSummary 
+  name: UrlUnescapeInPlace
+name: Path
+superclass: 

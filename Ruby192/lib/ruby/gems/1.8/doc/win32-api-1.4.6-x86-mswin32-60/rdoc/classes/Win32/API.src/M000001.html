@@ -1,0 +1,223 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+<!DOCTYPE html 
+     PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+     "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html>
+<head>
+  <title>new (Win32::API)</title>
+  <meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" />
+  <link rel="stylesheet" href="../../.././rdoc-style.css" type="text/css" media="screen" />
+</head>
+<body class="standalone-code">
+  <pre>/*
+ * call-seq:
+ *    Win32::API.new(function, prototype='V', return='L', dll='kernel32')
+ *
+ * Creates and returns a new Win32::API object. The +function+ is the name
+ * of the Windows function.
+ *
+ * The +prototype+ is the function prototype for +function+. This can be a
+ * string or an array of characters.  The possible valid characters are 'I'
+ * (integer), 'L' (long), 'V' (void), 'P' (pointer), 'K' (callback) or 'S'
+ * (string).
+ *
+ * The default is void ('V').
+ *
+ * Constant (const char*) strings should use 'S'. Pass by reference string
+ * buffers should use 'P'. The former is faster, but cannot be modified.
+ *
+ * The +return+ argument is the return type for the function.  The valid
+ * characters are the same as for the +prototype+.  The default is 'L' (long).
+ *
+ * The +dll+ is the name of the DLL file that the function is exported from.
+ * The default is 'kernel32'.
+ *
+ * If the function cannot be found then an API::Error is raised (a subclass
+ * of RuntimeError).
+ *
+ * Example:
+ *
+ *    require 'win32/api'
+ *    include Win32
+ *
+ *    buf = 0.chr * 260
+ *    len = [buf.length].pack('L')
+ *
+ *    GetUserName = API.new('GetUserName', 'PP', 'I', 'advapi32')
+ *    GetUserName.call(buf, len)
+ *
+ *    puts buf.strip
+ */
+static VALUE api_init(int argc, VALUE* argv, VALUE self)
+{
+   HMODULE hLibrary;
+   FARPROC fProc;
+   Win32API* ptr;
+   int i;
+   char* first  = &quot;A&quot;;
+   char* second = &quot;W&quot;;
+   VALUE v_proc, v_proto, v_return, v_dll;
+
+   rb_scan_args(argc, argv, &quot;13&quot;, &amp;v_proc, &amp;v_proto, &amp;v_return, &amp;v_dll);
+
+   Data_Get_Struct(self, Win32API, ptr);
+
+   // Convert a string prototype to an array of characters
+   if(rb_respond_to(v_proto, rb_intern(&quot;split&quot;)))
+      v_proto = rb_str_split(v_proto, &quot;&quot;);
+
+   // Convert a nil or empty prototype to 'V' (void) automatically
+   if(NIL_P(v_proto) || RARRAY_LEN(v_proto) == 0){
+      v_proto = rb_ary_new();
+      rb_ary_push(v_proto, rb_str_new2(&quot;V&quot;));
+   }
+
+   // Set an arbitrary limit of 20 parameters
+   if(20 &lt; RARRAY_LEN(v_proto))
+      rb_raise(rb_eArgError, &quot;too many parameters: %d\n&quot;, RARRAY_LEN(v_proto));
+
+   // Set the default dll to 'kernel32'
+   if(NIL_P(v_dll))
+      v_dll = rb_str_new2(&quot;kernel32&quot;);
+
+   // Set the default return type to 'L' (DWORD)
+   if(NIL_P(v_return))
+      v_return = rb_str_new2(&quot;L&quot;);
+
+   SafeStringValue(v_dll);
+   SafeStringValue(v_proc);
+
+   hLibrary = LoadLibrary(TEXT(RSTRING_PTR(v_dll)));
+
+   // The most likely cause of failure is a bad DLL load path
+   if(!hLibrary){
+      rb_raise(cAPILoadError, &quot;LoadLibrary() function failed for '%s': %s&quot;,
+         RSTRING_PTR(v_dll),
+         StringError(GetLastError())
+      );
+   }
+
+   ptr-&gt;library = hLibrary;
+
+   /* Attempt to get the function.  If it fails, try again with an 'A'
+    * appended.  If that fails, try again with a 'W' appended. If that
+    * still fails, raise an API::LoadLibraryError.
+    */
+
+   fProc = GetProcAddress(hLibrary, TEXT(RSTRING_PTR(v_proc)));
+
+   // Skip the ANSI and Wide function checks for MSVCRT functions.
+   if(!fProc){
+      if(strstr(RSTRING_PTR(v_dll), &quot;msvcr&quot;)){
+         rb_raise(
+            cAPILoadError,
+            &quot;Unable to load function '%s'&quot;,
+            RSTRING_PTR(v_proc)
+         );
+      }
+      else{
+         VALUE v_ascii = rb_str_new3(v_proc);
+         v_ascii = rb_str_cat(v_ascii, first, 1);
+         fProc = GetProcAddress(hLibrary, TEXT(RSTRING_PTR(v_ascii)));
+
+         if(!fProc){
+            VALUE v_unicode = rb_str_new3(v_proc);
+            v_unicode = rb_str_cat(v_unicode, second, 1);
+            fProc = GetProcAddress(hLibrary, TEXT(RSTRING_PTR(v_unicode)));
+
+            if(!fProc){
+               rb_raise(
+                  cAPILoadError,
+                  &quot;Unable to load function '%s', '%s', or '%s'&quot;,
+                  RSTRING_PTR(v_proc),
+                  RSTRING_PTR(v_ascii),
+                  RSTRING_PTR(v_unicode)
+               );
+            }
+            else{
+               rb_iv_set(self, &quot;@effective_function_name&quot;, v_unicode);
+            }
+         }
+         else{
+            rb_iv_set(self, &quot;@effective_function_name&quot;, v_ascii);
+         }
+      }
+   }
+   else{
+      rb_iv_set(self, &quot;@effective_function_name&quot;, v_proc);
+   }
+
+   ptr-&gt;function = fProc;
+
+   // Push the numeric prototypes onto our int array for later use.
+
+   for(i = 0; i &lt; RARRAY_LEN(v_proto); i++){
+      SafeStringValue(RARRAY_PTR(v_proto)[i]);
+      switch(*(char*)StringValuePtr(RARRAY_PTR(v_proto)[i])){
+         case 'L':
+            ptr-&gt;prototype[i] = _T_LONG;
+            break;
+         case 'P':
+            ptr-&gt;prototype[i] = _T_POINTER;
+            break;
+         case 'I': case 'B':
+            ptr-&gt;prototype[i] = _T_INTEGER;
+            break;
+         case 'V':
+            ptr-&gt;prototype[i] = _T_VOID;
+            break;
+         case 'K':
+            ptr-&gt;prototype[i] = _T_CALLBACK;
+            break;
+         case 'S':
+            ptr-&gt;prototype[i] = _T_STRING;
+            break;
+         default:
+            rb_raise(cAPIProtoError, &quot;Illegal prototype '%s'&quot;,
+               StringValuePtr(RARRAY_PTR(v_proto)[i])
+            );
+      }
+   }
+
+   // Store the return type for later use.
+
+   // Automatically convert empty strings or nil to type void.
+   if(NIL_P(v_return) || RSTRING_LEN(v_return) == 0){
+      v_return = rb_str_new2(&quot;V&quot;);
+      ptr-&gt;return_type = _T_VOID;
+   }
+   else{
+      SafeStringValue(v_return);
+      switch(*RSTRING_PTR(v_return)){
+         case 'L':
+            ptr-&gt;return_type = _T_LONG;
+            break;
+         case 'P':
+            ptr-&gt;return_type = _T_POINTER;
+            break;
+         case 'I': case 'B':
+            ptr-&gt;return_type = _T_INTEGER;
+            break;
+         case 'V':
+            ptr-&gt;return_type = _T_VOID;
+            break;
+         case 'S':
+            ptr-&gt;return_type = _T_STRING;
+            break;
+         default:
+            rb_raise(cAPIProtoError, &quot;Illegal return type '%s'&quot;,
+               RSTRING_PTR(v_return)
+            );
+      }
+   }
+
+   rb_iv_set(self, &quot;@dll_name&quot;, v_dll);
+   rb_iv_set(self, &quot;@function_name&quot;, v_proc);
+   rb_iv_set(self, &quot;@prototype&quot;, v_proto);
+   rb_iv_set(self, &quot;@return_type&quot;, v_return);
+
+   return self;
+}</pre>
+</body>
+</html>

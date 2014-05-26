@@ -1,0 +1,12 @@
+--- !ruby/object:RI::MethodDescription 
+aliases: []
+
+block_params: ""
+comment: 
+- !ruby/struct:SM::Flow::P 
+  body: Assert that the block tried to <tt>exit</tt>.
+full_name: Test::Unit::Assertions#assert_wants_to_exit
+is_singleton: false
+name: assert_wants_to_exit
+params: () {|| ...}
+visibility: public

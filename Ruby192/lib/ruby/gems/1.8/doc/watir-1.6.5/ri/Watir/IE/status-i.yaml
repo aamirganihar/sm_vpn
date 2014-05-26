@@ -1,0 +1,12 @@
+--- !ruby/object:RI::MethodDescription 
+aliases: []
+
+block_params: 
+comment: 
+- !ruby/struct:SM::Flow::P 
+  body: Return the status of the window, typically from the status bar at the bottom.
+full_name: Watir::IE#status
+is_singleton: false
+name: status
+params: ()
+visibility: public

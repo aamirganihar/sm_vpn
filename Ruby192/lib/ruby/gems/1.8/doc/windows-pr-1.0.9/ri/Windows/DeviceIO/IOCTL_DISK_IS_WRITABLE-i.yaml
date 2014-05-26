@@ -1,0 +1,10 @@
+--- !ruby/object:RI::MethodDescription 
+aliases: []
+
+block_params: 
+comment: 
+full_name: Windows::DeviceIO#IOCTL_DISK_IS_WRITABLE
+is_singleton: false
+name: IOCTL_DISK_IS_WRITABLE
+params: ()
+visibility: public

@@ -1,0 +1,14 @@
+--- !ruby/object:RI::MethodDescription 
+aliases: []
+
+block_params: 
+comment: 
+- !ruby/struct:SM::Flow::P 
+  body: Creates a symbolic link called <tt>new_name</tt> for the file or directory <tt>old_name</tt>.
+- !ruby/struct:SM::Flow::P 
+  body: This method requires Windows Vista or later to work. Otherwise, it returns nil as per MRI.
+full_name: File::symlink
+is_singleton: true
+name: symlink
+params: (old_name, new_name)
+visibility: public

@@ -1,0 +1,12 @@
+--- !ruby/object:RI::MethodDescription 
+aliases: []
+
+block_params: 
+comment: 
+- !ruby/struct:SM::Flow::P 
+  body: Bundle up all non-option and non-switch arguments into an array of strings indexed by <em>choice</em>.
+full_name: UserChoices::CommandLineSource#uses_arglist
+is_singleton: false
+name: uses_arglist
+params: (choice)
+visibility: public

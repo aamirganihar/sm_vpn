@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+<!DOCTYPE html 
+     PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+     "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html>
+<head>
+  <title>inherited (FireWatir::ElementCollections)</title>
+  <meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" />
+  <link rel="stylesheet" href="../../.././rdoc-style.css" type="text/css" media="screen" />
+</head>
+<body class="standalone-code">
+  <pre><span class="ruby-comment cmt"># File lib/firewatir/element_collections.rb, line 11</span>
+    <span class="ruby-keyword kw">def</span> <span class="ruby-keyword kw">self</span>.<span class="ruby-identifier">inherited</span> <span class="ruby-identifier">subclass</span>
+      <span class="ruby-identifier">class_name</span> = <span class="ruby-identifier">subclass</span>.<span class="ruby-identifier">to_s</span>.<span class="ruby-identifier">demodulize</span>
+      <span class="ruby-identifier">method_name</span> = <span class="ruby-identifier">class_name</span>.<span class="ruby-identifier">underscore</span>
+      <span class="ruby-identifier">element_class_name</span> = <span class="ruby-identifier">class_name</span>.<span class="ruby-identifier">singularize</span>
+
+      <span class="ruby-constant">FireWatir</span><span class="ruby-operator">::</span><span class="ruby-constant">Container</span>.<span class="ruby-identifier">module_eval</span> <span class="ruby-node">&quot;def #{method_name}
+      locate if respond_to?(:locate)
+      return #{class_name}.new(self); end&quot;</span>
+
+      <span class="ruby-identifier">subclass</span>.<span class="ruby-identifier">class_eval</span> <span class="ruby-node">&quot;def element_class; #{element_class_name}; end&quot;</span>
+    <span class="ruby-keyword kw">end</span></pre>
+</body>
+</html>

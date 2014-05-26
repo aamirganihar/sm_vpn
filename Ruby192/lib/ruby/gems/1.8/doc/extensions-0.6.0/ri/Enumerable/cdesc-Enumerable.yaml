@@ -1,0 +1,30 @@
+--- !ruby/object:RI::ClassDescription 
+attributes: []
+
+class_methods: []
+
+comment: 
+constants: []
+
+full_name: Enumerable
+includes: []
+
+instance_methods: 
+- !ruby/object:RI::MethodSummary 
+  name: build_hash
+- !ruby/object:RI::MethodSummary 
+  name: collect_with_index
+- !ruby/object:RI::MethodSummary 
+  name: collectf
+- !ruby/object:RI::MethodSummary 
+  name: map_with_index
+- !ruby/object:RI::MethodSummary 
+  name: mapf
+- !ruby/object:RI::MethodSummary 
+  name: none?
+- !ruby/object:RI::MethodSummary 
+  name: one?
+- !ruby/object:RI::MethodSummary 
+  name: partition_by
+name: Enumerable
+superclass: 

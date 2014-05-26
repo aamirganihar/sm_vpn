@@ -1,0 +1,12 @@
+--- !ruby/object:RI::MethodDescription 
+aliases: []
+
+block_params: 
+comment: 
+- !ruby/struct:SM::Flow::P 
+  body: This method attempts to find out if the image was actually loaded by the web browser. If the image was not loaded, the browser is unable to determine some of the properties. We look for these missing properties to see if the image is really there or not. If the Disk cache is full (tools menu -&gt; Internet options -&gt; Temporary Internet Files), it may produce incorrect responses.
+full_name: Watir::Image#loaded?
+is_singleton: false
+name: loaded?
+params: ()
+visibility: public

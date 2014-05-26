@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+<!DOCTYPE html 
+     PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+     "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html>
+<head>
+  <title>toggable_section (Selenium::RSpec::Reporting::HtmlReport)</title>
+  <meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" />
+  <link rel="stylesheet" href="../../../../.././rdoc-style.css" type="text/css" media="screen" />
+</head>
+<body class="standalone-code">
+  <pre>    <span class="ruby-comment cmt"># File lib/selenium/rspec/reporting/html_report.rb, line 86</span>
+86:         <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">toggable_section</span>(<span class="ruby-identifier">dom_id</span>, <span class="ruby-identifier">options</span>)
+87:           <span class="ruby-value str">&quot;\n&lt;div&gt;[\n&lt;a id=\&quot;\#{dom_id}_\#{options[:id]}_link\&quot;\nhref=\\\&quot;javascript:toggleVisilibility('\#{dom_id}_\#{options[:id]}', '\#{options[:name]}')\\\&quot;&gt;Show \#{options[:name]}&lt;/a&gt;\n]&lt;/div&gt;\n&lt;br/&gt;&lt;br/&gt;\n&lt;div id=\&quot;\#{dom_id}_\#{options[:id]}\&quot; class=\&quot;dyn-source\&quot;&gt;\n&lt;a href=\&quot;\#{options[:url]}\&quot;&gt;Full screen&lt;/a&gt;&lt;br/&gt;&lt;br/&gt;\n&lt;iframe src=\&quot;\#{options[:url]}\&quot; width=\&quot;100%\&quot; height=\&quot;600px\&quot; &gt;&lt;/iframe&gt;\n&lt;/div&gt;\n\n&quot;</span>
+88:         <span class="ruby-keyword kw">end</span></pre>
+</body>
+</html>

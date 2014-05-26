@@ -1,0 +1,12 @@
+--- !ruby/object:RI::MethodDescription 
+aliases: []
+
+block_params: 
+comment: 
+- !ruby/struct:SM::Flow::P 
+  body: Set new text for the textfield
+full_name: Empty_Text_Field_Handler#text=
+is_singleton: false
+name: text=
+params: (newText)
+visibility: public

@@ -1,0 +1,24 @@
+--- !ruby/object:RI::MethodDescription 
+aliases: []
+
+block_params: 
+comment: 
+- !ruby/struct:SM::Flow::P 
+  body: This method returns true|false if the text/reg exp supplied is in a the text field &quot;name&quot;.
+- !ruby/object:SM::Flow::LIST 
+  contents: 
+  - !ruby/struct:SM::Flow::LI 
+    label: "*"
+    body: name - <tt>String</tt> - Name of field to examine.
+  - !ruby/struct:SM::Flow::LI 
+    label: "*"
+    body: text - <tt>String</tt> or <tt>RegExp</tt> - The text or regular expression to search for.
+  - !ruby/struct:SM::Flow::LI 
+    label: "*"
+    body: mesg - <tt>String</tt> - An optional assertion-failed message.
+  type: :BULLET
+full_name: Watir::Simple#assert_text_in_field
+is_singleton: false
+name: assert_text_in_field
+params: (name, text, mesg=nil)
+visibility: public

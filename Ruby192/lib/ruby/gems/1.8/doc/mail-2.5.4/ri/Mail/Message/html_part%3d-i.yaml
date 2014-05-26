@@ -1,0 +1,12 @@
+--- !ruby/object:RI::MethodDescription 
+aliases: []
+
+block_params: 
+comment: 
+- !ruby/struct:SM::Flow::P 
+  body: Helper to add a html part to a multipart/alternative email. If this and text_part are both defined in a message, then it will be a multipart/alternative message and set itself that way.
+full_name: Mail::Message#html_part=
+is_singleton: false
+name: html_part=
+params: (msg)
+visibility: public

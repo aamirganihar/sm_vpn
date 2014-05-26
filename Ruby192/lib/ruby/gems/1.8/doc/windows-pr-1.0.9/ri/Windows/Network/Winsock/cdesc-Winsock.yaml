@@ -1,0 +1,94 @@
+--- !ruby/object:RI::ClassDescription 
+attributes: []
+
+class_methods: []
+
+comment: 
+constants: 
+- !ruby/object:RI::Constant 
+  comment: 
+  - !ruby/struct:SM::Flow::P 
+    body: Namespace constants
+  name: NS_DEFAULT
+  value: "0"
+- !ruby/object:RI::Constant 
+  comment: 
+  name: NS_SAP
+  value: "1"
+- !ruby/object:RI::Constant 
+  comment: 
+  name: NS_NDS
+  value: "2"
+- !ruby/object:RI::Constant 
+  comment: 
+  name: NS_PEER_BROWSE
+  value: "3"
+- !ruby/object:RI::Constant 
+  comment: 
+  name: NS_TCPIP_LOCAL
+  value: "10"
+- !ruby/object:RI::Constant 
+  comment: 
+  name: NS_TCPIP_HOSTS
+  value: "11"
+- !ruby/object:RI::Constant 
+  comment: 
+  name: NS_DNS
+  value: "12"
+- !ruby/object:RI::Constant 
+  comment: 
+  name: NS_NETBT
+  value: "13"
+- !ruby/object:RI::Constant 
+  comment: 
+  name: NS_WINS
+  value: "14"
+- !ruby/object:RI::Constant 
+  comment: 
+  name: NS_NBP
+  value: "20"
+- !ruby/object:RI::Constant 
+  comment: 
+  name: NS_MS
+  value: "30"
+- !ruby/object:RI::Constant 
+  comment: 
+  name: NS_STDA
+  value: "31"
+- !ruby/object:RI::Constant 
+  comment: 
+  name: NS_NTDS
+  value: "32"
+- !ruby/object:RI::Constant 
+  comment: 
+  name: NS_X500
+  value: "40"
+- !ruby/object:RI::Constant 
+  comment: 
+  name: NS_NIS
+  value: "41"
+- !ruby/object:RI::Constant 
+  comment: 
+  name: NS_VNS
+  value: "50"
+- !ruby/object:RI::Constant 
+  comment: 
+  - !ruby/struct:SM::Flow::P 
+    body: Resolution flags
+  name: RES_SOFT_SEARCH
+  value: "0x00000001"
+- !ruby/object:RI::Constant 
+  comment: 
+  name: RES_FIND_MULTIPLE
+  value: "0x00000002"
+- !ruby/object:RI::Constant 
+  comment: 
+  name: RES_SERVICE
+  value: "0x00000004"
+full_name: Windows::Network::Winsock
+includes: []
+
+instance_methods: []
+
+name: Winsock
+superclass: 

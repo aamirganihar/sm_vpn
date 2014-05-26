@@ -1,0 +1,36 @@
+--- !ruby/object:RI::ClassDescription 
+attributes: 
+- !ruby/object:RI::Attribute 
+  comment: 
+  name: locator
+  rw: R
+- !ruby/object:RI::Attribute 
+  comment: 
+  name: webpage
+  rw: R
+class_methods: 
+- !ruby/object:RI::MethodSummary 
+  name: new
+comment: 
+constants: []
+
+full_name: Selenium::HtmlElement
+includes: []
+
+instance_methods: 
+- !ruby/object:RI::MethodSummary 
+  name: browser
+- !ruby/object:RI::MethodSummary 
+  name: click
+- !ruby/object:RI::MethodSummary 
+  name: click_wait
+- !ruby/object:RI::MethodSummary 
+  name: double_click
+- !ruby/object:RI::MethodSummary 
+  name: key_press
+- !ruby/object:RI::MethodSummary 
+  name: present?
+- !ruby/object:RI::MethodSummary 
+  name: text
+name: HtmlElement
+superclass: Object

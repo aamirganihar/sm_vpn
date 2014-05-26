@@ -1,0 +1,74 @@
+--- !ruby/object:RI::ClassDescription 
+attributes: []
+
+class_methods: []
+
+comment: 
+constants: 
+- !ruby/object:RI::Constant 
+  comment: 
+  name: CRLF
+  value: /\r\n/
+- !ruby/object:RI::Constant 
+  comment: 
+  name: WSP
+  value: /[#{white_space}]/
+- !ruby/object:RI::Constant 
+  comment: 
+  name: FWS
+  value: /#{CRLF}#{WSP}*/
+- !ruby/object:RI::Constant 
+  comment: 
+  name: TEXT
+  value: /[#{text}]/
+- !ruby/object:RI::Constant 
+  comment: 
+  name: FIELD_NAME
+  value: /[#{field_name}]+/
+- !ruby/object:RI::Constant 
+  comment: 
+  name: FIELD_BODY
+  value: /.+/
+- !ruby/object:RI::Constant 
+  comment: 
+  name: FIELD_LINE
+  value: /^[#{field_name}]+:\s*.+$/
+- !ruby/object:RI::Constant 
+  comment: 
+  name: FIELD_SPLIT
+  value: /^(#{FIELD_NAME})\s*:\s*(#{FIELD_BODY})?$/
+- !ruby/object:RI::Constant 
+  comment: 
+  name: HEADER_LINE
+  value: /^([#{field_name}]+:\s*.+)$/
+- !ruby/object:RI::Constant 
+  comment: 
+  name: QP_UNSAFE
+  value: /[^#{qp_safe}]/
+- !ruby/object:RI::Constant 
+  comment: 
+  name: QP_SAFE
+  value: /[#{qp_safe}]/
+- !ruby/object:RI::Constant 
+  comment: 
+  name: CONTROL_CHAR
+  value: /[#{control}]/n
+- !ruby/object:RI::Constant 
+  comment: 
+  name: ATOM_UNSAFE
+  value: /[#{Regexp.quote aspecial}#{control}#{sp}]/n
+- !ruby/object:RI::Constant 
+  comment: 
+  name: PHRASE_UNSAFE
+  value: /[#{Regexp.quote aspecial}#{control}]/n
+- !ruby/object:RI::Constant 
+  comment: 
+  name: TOKEN_UNSAFE
+  value: /[#{Regexp.quote tspecial}#{control}#{sp}]/n
+full_name: Mail::Patterns
+includes: []
+
+instance_methods: []
+
+name: Patterns
+superclass: 

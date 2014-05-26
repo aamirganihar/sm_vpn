@@ -1,0 +1,136 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+<!DOCTYPE html 
+     PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+     "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+  <title>File: firewatir.rb</title>
+  <meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" />
+  <meta http-equiv="Content-Script-Type" content="text/javascript" />
+  <link rel="stylesheet" href="../.././rdoc-style.css" type="text/css" media="screen" />
+  <script type="text/javascript">
+  // <![CDATA[
+
+  function popupCode( url ) {
+    window.open(url, "Code", "resizable=yes,scrollbars=yes,toolbar=no,status=no,height=150,width=400")
+  }
+
+  function toggleCode( id ) {
+    if ( document.getElementById )
+      elem = document.getElementById( id );
+    else if ( document.all )
+      elem = eval( "document.all." + id );
+    else
+      return false;
+
+    elemStyle = elem.style;
+    
+    if ( elemStyle.display != "block" ) {
+      elemStyle.display = "block"
+    } else {
+      elemStyle.display = "none"
+    }
+
+    return true;
+  }
+  
+  // Make codeblocks hidden by default
+  document.writeln( "<style type=\"text/css\">div.method-source-code { display: none }</style>" )
+  
+  // ]]>
+  </script>
+
+</head>
+<body>
+
+
+
+  <div id="fileHeader">
+    <h1>firewatir.rb</h1>
+    <table class="header-table">
+    <tr class="top-aligned-row">
+      <td><strong>Path:</strong></td>
+      <td>lib/firewatir.rb
+      </td>
+    </tr>
+    <tr class="top-aligned-row">
+      <td><strong>Last Update:</strong></td>
+      <td>Thu Sep 30 10:50:37 +0530 2010</td>
+    </tr>
+    </table>
+  </div>
+  <!-- banner header -->
+
+  <div id="bodyContent">
+
+
+
+  <div id="contextContent">
+
+
+    <div id="requires-list">
+      <h3 class="section-bar">Required files</h3>
+
+      <div class="name-list">
+      socket&nbsp;&nbsp;
+      active_support&nbsp;&nbsp;
+      firewatir/exceptions&nbsp;&nbsp;
+      firewatir/jssh_socket&nbsp;&nbsp;
+      firewatir/container&nbsp;&nbsp;
+      firewatir/element&nbsp;&nbsp;
+      firewatir/document&nbsp;&nbsp;
+      firewatir/elements/form&nbsp;&nbsp;
+      firewatir/elements/frame&nbsp;&nbsp;
+      firewatir/elements/non_control_element&nbsp;&nbsp;
+      firewatir/elements/non_control_elements&nbsp;&nbsp;
+      firewatir/elements/table&nbsp;&nbsp;
+      firewatir/elements/table_row&nbsp;&nbsp;
+      firewatir/elements/table_cell&nbsp;&nbsp;
+      firewatir/elements/image&nbsp;&nbsp;
+      firewatir/elements/link&nbsp;&nbsp;
+      firewatir/elements/input_element&nbsp;&nbsp;
+      firewatir/elements/select_list&nbsp;&nbsp;
+      firewatir/elements/option&nbsp;&nbsp;
+      firewatir/elements/button&nbsp;&nbsp;
+      firewatir/elements/text_field&nbsp;&nbsp;
+      firewatir/elements/hidden&nbsp;&nbsp;
+      firewatir/elements/file_field&nbsp;&nbsp;
+      firewatir/elements/radio_check_common&nbsp;&nbsp;
+      firewatir/element_collections&nbsp;&nbsp;
+      watir/matches&nbsp;&nbsp;
+      firewatir/firefox&nbsp;&nbsp;
+      firewatir/version&nbsp;&nbsp;
+      watir&nbsp;&nbsp;
+      </div>
+    </div>
+
+   </div>
+
+
+  </div>
+
+
+    <!-- if includes -->
+
+    <div id="section">
+
+
+
+
+
+      
+
+
+    <!-- if method_list -->
+
+
+  </div>
+
+
+<div id="validator-badges">
+  <p><small><a href="http://validator.w3.org/check/referer">[Validate]</a></small></p>
+</div>
+
+</body>
+</html>

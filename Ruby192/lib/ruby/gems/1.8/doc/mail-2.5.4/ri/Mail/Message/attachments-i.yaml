@@ -1,0 +1,30 @@
+--- !ruby/object:RI::MethodDescription 
+aliases: []
+
+block_params: 
+comment: 
+- !ruby/struct:SM::Flow::P 
+  body: Returns an AttachmentsList object, which holds all of the attachments in the receiver object (either the entier email or a part within) and all of its descendants.
+- !ruby/struct:SM::Flow::P 
+  body: "It also allows you to add attachments to the mail object directly, like so:"
+- !ruby/struct:SM::Flow::VERB 
+  body: " mail.attachments['filename.jpg'] = File.read('/path/to/filename.jpg')\n"
+- !ruby/struct:SM::Flow::P 
+  body: If you do this, then Mail will take the file name and work out the MIME media type set the Content-Type, Content-Disposition, Content-Transfer-Encoding and base64 encode the contents of the attachment all for you.
+- !ruby/struct:SM::Flow::P 
+  body: "You can also specify overrides if you want by passing a hash instead of a string:"
+- !ruby/struct:SM::Flow::VERB 
+  body: " mail.attachments['filename.jpg'] = {:mime_type =&gt; 'application/x-gzip',\n                                     :content =&gt; File.read('/path/to/filename.jpg')}\n"
+- !ruby/struct:SM::Flow::P 
+  body: "If you want to use a different encoding than Base64, you can pass an encoding in, but then it is up to you to pass in the content pre-encoded, and don't expect Mail to know how to decode this data:"
+- !ruby/struct:SM::Flow::VERB 
+  body: " file_content = SpecialEncode(File.read('/path/to/filename.jpg'))\n mail.attachments['filename.jpg'] = {:mime_type =&gt; 'application/x-gzip',\n                                     :encoding =&gt; 'SpecialEncoding',\n                                     :content =&gt; file_content }\n"
+- !ruby/struct:SM::Flow::P 
+  body: "You can also search for specific attachments:"
+- !ruby/struct:SM::Flow::VERB 
+  body: " # By Filename\n mail.attachments['filename.jpg']   #=&gt; Mail::Part object or nil\n\n # or by index\n mail.attachments[0]                #=&gt; Mail::Part (first attachment)\n"
+full_name: Mail::Message#attachments
+is_singleton: false
+name: attachments
+params: ()
+visibility: public

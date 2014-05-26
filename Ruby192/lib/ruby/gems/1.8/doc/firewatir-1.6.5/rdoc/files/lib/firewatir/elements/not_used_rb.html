@@ -1,0 +1,204 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+<!DOCTYPE html 
+     PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+     "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+  <title>File: not_used.rb</title>
+  <meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" />
+  <meta http-equiv="Content-Script-Type" content="text/javascript" />
+  <link rel="stylesheet" href="../../../.././rdoc-style.css" type="text/css" media="screen" />
+  <script type="text/javascript">
+  // <![CDATA[
+
+  function popupCode( url ) {
+    window.open(url, "Code", "resizable=yes,scrollbars=yes,toolbar=no,status=no,height=150,width=400")
+  }
+
+  function toggleCode( id ) {
+    if ( document.getElementById )
+      elem = document.getElementById( id );
+    else if ( document.all )
+      elem = eval( "document.all." + id );
+    else
+      return false;
+
+    elemStyle = elem.style;
+    
+    if ( elemStyle.display != "block" ) {
+      elemStyle.display = "block"
+    } else {
+      elemStyle.display = "none"
+    }
+
+    return true;
+  }
+  
+  // Make codeblocks hidden by default
+  document.writeln( "<style type=\"text/css\">div.method-source-code { display: none }</style>" )
+  
+  // ]]>
+  </script>
+
+</head>
+<body>
+
+
+
+  <div id="fileHeader">
+    <h1>not_used.rb</h1>
+    <table class="header-table">
+    <tr class="top-aligned-row">
+      <td><strong>Path:</strong></td>
+      <td>lib/firewatir/elements/not_used.rb
+      </td>
+    </tr>
+    <tr class="top-aligned-row">
+      <td><strong>Last Update:</strong></td>
+      <td>Thu Sep 30 10:50:37 +0530 2010</td>
+    </tr>
+    </table>
+  </div>
+  <!-- banner header -->
+
+  <div id="bodyContent">
+
+
+
+  <div id="contextContent">
+
+    <div id="description">
+      <p>
+# this class is a collection of the table body objects that exist in the
+table # it wouldnt normally be created by a user, but gets returned by the
+bodies method of the Table object # many of the methods available to this
+object are inherited from the Element class # TODO: Implement TableBodies
+class. class TableBodies &lt; Element
+</p>
+<pre>
+  # Description:
+  #   Initializes the form element.
+  #
+  # Input:
+  #   - how - Attribute to identify the form element.
+  #   - what - Value of that attribute.
+  #
+  def initialize( parent_table)
+    element = container
+    @o = parent_table     # in this case, @o is the parent table
+  end
+
+  # returns the number of TableBodies that exist in the table
+  def length
+    assert_exists
+    return @o.tBodies.length
+  end
+
+  # returns the n'th Body as a FireWatir TableBody object
+  def []n
+    assert_exists
+    return TableBody.new(element, :direct, ole_table_body_at_index(n))
+  end
+
+  # returns an ole table body
+  def ole_table_body_at_index(n)
+    return @o.tBodies[(n-1).to_s]
+  end
+
+  # iterates through each of the TableBodies in the Table. Yields a TableBody object
+  def each
+    1.upto( @o.tBodies.length ) { |i| yield TableBody.new(element, :direct, ole_table_body_at_index(i)) }
+  end
+</pre>
+<p>
+end # TableBodies
+</p>
+<p>
+# this class is a table body # TODO: Implement TableBody class class
+TableBody &lt; Element
+</p>
+<pre>
+  def locate
+    @o = nil
+    if @how == :direct
+      @o = @what     # in this case, @o is the table body
+    elsif @how == :index
+      @o = @parent_table.bodies.ole_table_body_at_index(@what)
+    end
+    @rows = []
+    if @o
+      @o.rows.each do |oo|
+        @rows &lt;&lt; TableRow.new(element, :direct, oo)
+      end
+    end
+  end
+
+  # Description:
+  #   Initializes the form element.
+  #
+  # Input:
+  #   - how - Attribute to identify the form element.
+  #   - what - Value of that attribute.
+  #
+  def initialize( how, what, parent_table = nil)
+    element = container
+    @how = how
+    @what = what
+    @parent_table = parent_table
+    super nil
+  end
+
+  # returns the specified row as a TableRow object
+  def [](n)
+    assert_exists
+    return @rows[n - 1]
+  end
+
+  # iterates through all the rows in the table body
+  def each
+    locate
+    0.upto(@rows.length - 1) { |i| yield @rows[i] }
+  end
+
+  # returns the number of rows in this table body.
+  def length
+    return @rows.length
+  end
+</pre>
+<p>
+end # TableBody
+</p>
+
+    </div>
+
+
+   </div>
+
+
+  </div>
+
+
+    <!-- if includes -->
+
+    <div id="section">
+
+
+
+
+
+      
+
+
+    <!-- if method_list -->
+
+
+  </div>
+
+
+<div id="validator-badges">
+  <p><small><a href="http://validator.w3.org/check/referer">[Validate]</a></small></p>
+</div>
+
+</body>
+</html>

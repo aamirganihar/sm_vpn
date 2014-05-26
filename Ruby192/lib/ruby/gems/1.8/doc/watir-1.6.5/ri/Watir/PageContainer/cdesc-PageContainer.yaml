@@ -1,0 +1,37 @@
+--- !ruby/object:RI::ClassDescription 
+attributes: []
+
+class_methods: []
+
+comment: 
+- !ruby/struct:SM::Flow::P 
+  body: A PageContainer contains an HTML Document. In other words, it is a what JavaScript calls a Window.
+constants: []
+
+full_name: Watir::PageContainer
+includes: 
+- !ruby/object:RI::IncludedModule 
+  name: Win32
+- !ruby/object:RI::IncludedModule 
+  name: Watir::Exception
+instance_methods: 
+- !ruby/object:RI::MethodSummary 
+  name: check_for_http_error
+- !ruby/object:RI::MethodSummary 
+  name: contains_text
+- !ruby/object:RI::MethodSummary 
+  name: enabled_popup
+- !ruby/object:RI::MethodSummary 
+  name: eval_in_spawned_process
+- !ruby/object:RI::MethodSummary 
+  name: html
+- !ruby/object:RI::MethodSummary 
+  name: set_container
+- !ruby/object:RI::MethodSummary 
+  name: show_frames
+- !ruby/object:RI::MethodSummary 
+  name: text
+- !ruby/object:RI::MethodSummary 
+  name: url
+name: PageContainer
+superclass: 

@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+<!DOCTYPE html 
+     PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+     "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html>
+<head>
+  <title>add_choice (UserChoices::ChoicesBuilder)</title>
+  <meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" />
+  <link rel="stylesheet" href="../../.././rdoc-style.css" type="text/css" media="screen" />
+</head>
+<body class="standalone-code">
+  <pre><span class="ruby-comment cmt"># File lib/user-choices/builder.rb, line 39</span>
+    <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">add_choice</span>(<span class="ruby-identifier">choice</span>, <span class="ruby-identifier">args</span>={}, <span class="ruby-operator">&amp;</span><span class="ruby-identifier">block</span>)
+      <span class="ruby-comment cmt"># TODO: does the has_key? actually make a difference?</span>
+      <span class="ruby-ivar">@defaults</span>[<span class="ruby-identifier">choice</span>] = <span class="ruby-identifier">args</span>[<span class="ruby-identifier">:default</span>] <span class="ruby-keyword kw">if</span> <span class="ruby-identifier">args</span>.<span class="ruby-identifier">has_key?</span>(<span class="ruby-identifier">:default</span>)
+      <span class="ruby-ivar">@conversions</span>[<span class="ruby-identifier">choice</span>] = []
+      <span class="ruby-constant">Conversion</span>.<span class="ruby-identifier">record_for</span>(<span class="ruby-identifier">args</span>[<span class="ruby-identifier">:type</span>], <span class="ruby-ivar">@conversions</span>[<span class="ruby-identifier">choice</span>])
+      <span class="ruby-keyword kw">if</span> <span class="ruby-identifier">args</span>.<span class="ruby-identifier">has_key?</span>(<span class="ruby-identifier">:length</span>)
+        <span class="ruby-constant">Conversion</span>.<span class="ruby-identifier">record_for</span>({<span class="ruby-identifier">:length</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-identifier">args</span>[<span class="ruby-identifier">:length</span>]}, <span class="ruby-ivar">@conversions</span>[<span class="ruby-identifier">choice</span>])
+      <span class="ruby-keyword kw">end</span>
+      <span class="ruby-identifier">block</span>.<span class="ruby-identifier">call</span>(<span class="ruby-constant">ArgForwarder</span>.<span class="ruby-identifier">new</span>(<span class="ruby-ivar">@command_line_source</span>, <span class="ruby-identifier">choice</span>)) <span class="ruby-keyword kw">if</span> <span class="ruby-identifier">block</span>
+    <span class="ruby-keyword kw">end</span></pre>
+</body>
+</html>

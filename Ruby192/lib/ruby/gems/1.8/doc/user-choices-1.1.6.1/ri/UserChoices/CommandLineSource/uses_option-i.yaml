@@ -1,0 +1,14 @@
+--- !ruby/object:RI::MethodDescription 
+aliases: []
+
+block_params: 
+comment: 
+- !ruby/struct:SM::Flow::P 
+  body: Describes how a particular <em>choice</em> is represented on the command line. The <em>args</em> are passed to OptionParser. Each arg will either describe one variant of option (such as <tt>&quot;-s&quot;</tt> or <tt>&quot;--show VALUE&quot;</tt>) or is a line of help text about the option (multiple lines are allowed).
+- !ruby/struct:SM::Flow::P 
+  body: "If the option takes an array of values, separate the values by commas: --files a,b,c There's currently no way to escape a comma and no cleverness about quotes."
+full_name: UserChoices::CommandLineSource#uses_option
+is_singleton: false
+name: uses_option
+params: (choice, *args)
+visibility: public

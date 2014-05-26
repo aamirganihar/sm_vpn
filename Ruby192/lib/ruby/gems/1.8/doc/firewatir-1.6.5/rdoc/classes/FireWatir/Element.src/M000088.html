@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+<!DOCTYPE html 
+     PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+     "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html>
+<head>
+  <title>highlight (FireWatir::Element)</title>
+  <meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" />
+  <link rel="stylesheet" href="../../.././rdoc-style.css" type="text/css" media="screen" />
+</head>
+<body class="standalone-code">
+  <pre><span class="ruby-comment cmt"># File lib/firewatir/element.rb, line 159</span>
+    <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">highlight</span>(<span class="ruby-identifier">set_or_clear</span>)
+      <span class="ruby-keyword kw">if</span> <span class="ruby-identifier">set_or_clear</span> <span class="ruby-operator">==</span> <span class="ruby-identifier">:set</span>
+        <span class="ruby-comment cmt">#puts &quot;element_name is : #{element_object}&quot;</span>
+        <span class="ruby-identifier">jssh_command</span> = <span class="ruby-node">&quot; var original_color = #{element_object}.style.background;&quot;</span>
+        <span class="ruby-identifier">jssh_command</span> <span class="ruby-operator">&lt;&lt;</span> <span class="ruby-node">&quot; #{element_object}.style.background = \&quot;#{DEFAULT_HIGHLIGHT_COLOR}\&quot;; original_color;&quot;</span>
+
+        <span class="ruby-comment cmt"># TODO: Need to change this so that it would work if user sets any other color.</span>
+        <span class="ruby-comment cmt">#puts &quot;color is : #{DEFAULT_HIGHLIGHT_COLOR}&quot;</span>
+        <span class="ruby-identifier">jssh_socket</span>.<span class="ruby-identifier">send</span>(<span class="ruby-node">&quot;#{jssh_command}\n&quot;</span>, <span class="ruby-value">0</span>)
+        <span class="ruby-ivar">@original_color</span> = <span class="ruby-identifier">read_socket</span>()
+
+      <span class="ruby-keyword kw">else</span> <span class="ruby-comment cmt"># BUG: assumes is :clear, but could actually be anything</span>
+        <span class="ruby-keyword kw">begin</span>
+          <span class="ruby-identifier">jssh_socket</span>.<span class="ruby-identifier">send</span>(<span class="ruby-node">&quot;#{element_object}.style.background = \&quot;#{@original_color}\&quot;;\n&quot;</span>, <span class="ruby-value">0</span>)
+          <span class="ruby-identifier">read_socket</span>()
+        <span class="ruby-keyword kw">rescue</span>
+          <span class="ruby-comment cmt"># we could be here for a number of reasons...</span>
+          <span class="ruby-comment cmt"># e.g. page may have reloaded and the reference is no longer valid</span>
+        <span class="ruby-keyword kw">ensure</span>
+          <span class="ruby-ivar">@original_color</span> = <span class="ruby-keyword kw">nil</span>
+        <span class="ruby-keyword kw">end</span>
+      <span class="ruby-keyword kw">end</span>
+    <span class="ruby-keyword kw">end</span></pre>
+</body>
+</html>

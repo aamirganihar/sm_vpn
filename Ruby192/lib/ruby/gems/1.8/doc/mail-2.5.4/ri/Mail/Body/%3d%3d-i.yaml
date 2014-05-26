@@ -1,0 +1,16 @@
+--- !ruby/object:RI::MethodDescription 
+aliases: []
+
+block_params: 
+comment: 
+- !ruby/struct:SM::Flow::P 
+  body: Matches this body with another body. Also matches the decoded value of this body with a string.
+- !ruby/struct:SM::Flow::P 
+  body: "Examples:"
+- !ruby/struct:SM::Flow::VERB 
+  body: "  body = Mail::Body.new('The body')\n  body == body #=&gt; true\n\n  body = Mail::Body.new('The body')\n  body == 'The body' #=&gt; true\n\n  body = Mail::Body.new(&quot;VGhlIGJvZHk=\\n&quot;)\n  body.encoding = 'base64'\n  body == &quot;The body&quot; #=&gt; true\n"
+full_name: Mail::Body#==
+is_singleton: false
+name: ==
+params: (other)
+visibility: public

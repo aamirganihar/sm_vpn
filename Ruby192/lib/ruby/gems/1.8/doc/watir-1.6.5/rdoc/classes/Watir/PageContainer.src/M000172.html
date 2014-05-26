@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+<!DOCTYPE html 
+     PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+     "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html>
+<head>
+  <title>enabled_popup (Watir::PageContainer)</title>
+  <meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" />
+  <link rel="stylesheet" href="../../.././rdoc-style.css" type="text/css" media="screen" />
+</head>
+<body class="standalone-code">
+  <pre><span class="ruby-comment cmt"># File lib/watir/contrib/enabled_popup.rb, line 6</span>
+    <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">enabled_popup</span>(<span class="ruby-identifier">timeout</span>=<span class="ruby-value">4</span>)
+      <span class="ruby-comment cmt"># Use handle of our parent window to see if we have any currently</span>
+      <span class="ruby-comment cmt"># enabled popup.</span>
+      <span class="ruby-identifier">hwnd_modal</span> = <span class="ruby-value">0</span>
+      <span class="ruby-constant">Waiter</span>.<span class="ruby-identifier">wait_until</span>(<span class="ruby-identifier">timeout</span>) <span class="ruby-keyword kw">do</span>
+        <span class="ruby-identifier">hwnd_modal</span>, <span class="ruby-identifier">arr</span> = <span class="ruby-constant">GetWindow</span>.<span class="ruby-identifier">call</span>(<span class="ruby-identifier">hwnd</span>, <span class="ruby-constant">GW_ENABLEDPOPUP</span>)
+        <span class="ruby-identifier">hwnd_modal</span> <span class="ruby-operator">&gt;</span> <span class="ruby-value">0</span>
+      <span class="ruby-keyword kw">end</span>
+      <span class="ruby-comment cmt"># use hwnd() method to find the IE or Container hwnd (overriden by IE)</span>
+      <span class="ruby-keyword kw">if</span> <span class="ruby-identifier">hwnd_modal</span> <span class="ruby-operator">==</span> <span class="ruby-identifier">hwnd</span>() <span class="ruby-operator">||</span> <span class="ruby-value">0</span> <span class="ruby-operator">==</span> <span class="ruby-identifier">hwnd_modal</span>
+        <span class="ruby-identifier">hwnd_modal</span> = <span class="ruby-keyword kw">nil</span>
+      <span class="ruby-keyword kw">end</span>
+      <span class="ruby-identifier">hwnd_modal</span>
+    <span class="ruby-keyword kw">end</span></pre>
+</body>
+</html>

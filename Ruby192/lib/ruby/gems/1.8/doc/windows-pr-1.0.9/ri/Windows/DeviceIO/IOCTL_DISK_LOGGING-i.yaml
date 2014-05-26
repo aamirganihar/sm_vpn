@@ -1,0 +1,10 @@
+--- !ruby/object:RI::MethodDescription 
+aliases: []
+
+block_params: 
+comment: 
+full_name: Windows::DeviceIO#IOCTL_DISK_LOGGING
+is_singleton: false
+name: IOCTL_DISK_LOGGING
+params: ()
+visibility: public

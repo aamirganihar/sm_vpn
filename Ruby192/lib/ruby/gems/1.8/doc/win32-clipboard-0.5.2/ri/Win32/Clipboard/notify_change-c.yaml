@@ -1,0 +1,16 @@
+--- !ruby/object:RI::MethodDescription 
+aliases: []
+
+block_params: unless @first_notify
+comment: 
+- !ruby/struct:SM::Flow::P 
+  body: Sets up a notification loop that will call the provided block whenever there's a change to the clipboard.
+- !ruby/struct:SM::Flow::P 
+  body: "Example:"
+- !ruby/struct:SM::Flow::VERB 
+  body: "   Win32::Clipboard.notify_change{\n      puts &quot;There's been a change in the clipboard contents!&quot;\n   }\n"
+full_name: Win32::Clipboard::notify_change
+is_singleton: true
+name: notify_change
+params: (&block) {|unless @first_notify| ...}
+visibility: public

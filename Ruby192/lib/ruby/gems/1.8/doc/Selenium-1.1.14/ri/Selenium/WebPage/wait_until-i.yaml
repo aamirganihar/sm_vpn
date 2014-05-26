@@ -1,0 +1,10 @@
+--- !ruby/object:RI::MethodDescription 
+aliases: []
+
+block_params: 
+comment: 
+full_name: Selenium::WebPage#wait_until
+is_singleton: false
+name: wait_until
+params: (message, &block)
+visibility: public

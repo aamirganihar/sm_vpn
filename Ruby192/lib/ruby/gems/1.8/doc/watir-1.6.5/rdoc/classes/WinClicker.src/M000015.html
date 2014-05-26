@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+<!DOCTYPE html 
+     PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+     "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html>
+<head>
+  <title>clickJSDialog_NewProcess (WinClicker)</title>
+  <meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" />
+  <link rel="stylesheet" href="../.././rdoc-style.css" type="text/css" media="screen" />
+</head>
+<body class="standalone-code">
+  <pre><span class="ruby-comment cmt"># File lib/watir/winClicker.rb, line 156</span>
+  <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">clickJSDialog_NewProcess</span>(<span class="ruby-identifier">button</span> = <span class="ruby-value str">&quot;OK&quot;</span> )
+    <span class="ruby-identifier">myapp</span> = <span class="ruby-node">&quot;rubyw #{@path_to_clicker}/clickJSDialog.rb #{button}&quot;</span>
+    <span class="ruby-identifier">log</span> <span class="ruby-node">&quot;Starting win clicker in a new process. Looking for button #{button}&quot;</span>
+    <span class="ruby-identifier">log</span> <span class="ruby-node">&quot;Starting app: #{myapp}&quot;</span>
+    <span class="ruby-comment cmt"># first argument to system call is a window title, in this case blank &quot;&quot;</span>
+    <span class="ruby-identifier">winsystem</span>( <span class="ruby-node">&quot;start \&quot;\&quot; #{myapp}&quot;</span> )
+  <span class="ruby-keyword kw">end</span></pre>
+</body>
+</html>

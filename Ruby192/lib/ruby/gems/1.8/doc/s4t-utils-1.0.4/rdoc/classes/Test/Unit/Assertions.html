@@ -1,0 +1,212 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+<!DOCTYPE html 
+     PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+     "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+  <title>Module: Test::Unit::Assertions</title>
+  <meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" />
+  <meta http-equiv="Content-Script-Type" content="text/javascript" />
+  <link rel="stylesheet" href="../../.././rdoc-style.css" type="text/css" media="screen" />
+  <script type="text/javascript">
+  // <![CDATA[
+
+  function popupCode( url ) {
+    window.open(url, "Code", "resizable=yes,scrollbars=yes,toolbar=no,status=no,height=150,width=400")
+  }
+
+  function toggleCode( id ) {
+    if ( document.getElementById )
+      elem = document.getElementById( id );
+    else if ( document.all )
+      elem = eval( "document.all." + id );
+    else
+      return false;
+
+    elemStyle = elem.style;
+    
+    if ( elemStyle.display != "block" ) {
+      elemStyle.display = "block"
+    } else {
+      elemStyle.display = "none"
+    }
+
+    return true;
+  }
+  
+  // Make codeblocks hidden by default
+  document.writeln( "<style type=\"text/css\">div.method-source-code { display: none }</style>" )
+  
+  // ]]>
+  </script>
+
+</head>
+<body>
+
+
+
+    <div id="classHeader">
+        <table class="header-table">
+        <tr class="top-aligned-row">
+          <td><strong>Module</strong></td>
+          <td class="class-name-in-header">Test::Unit::Assertions</td>
+        </tr>
+        <tr class="top-aligned-row">
+            <td><strong>In:</strong></td>
+            <td>
+                <a href="../../../files/lib/s4t-utils/more-assertions_rb.html">
+                lib/s4t-utils/more-assertions.rb
+                </a>
+        <br />
+            </td>
+        </tr>
+
+        </table>
+    </div>
+  <!-- banner header -->
+
+  <div id="bodyContent">
+
+
+
+  <div id="contextContent">
+
+    <div id="description">
+      <p>
+Some additional <a href="../Unit.html">Test::Unit</a> assertions.
+</p>
+
+    </div>
+
+
+   </div>
+
+    <div id="method-list">
+      <h3 class="section-bar">Methods</h3>
+
+      <div class="name-list">
+      <a href="#M000724">assert_false</a>&nbsp;&nbsp;
+      <a href="#M000725">assert_raise_with_matching_message</a>&nbsp;&nbsp;
+      <a href="#M000726">assert_raises_with_matching_message</a>&nbsp;&nbsp;
+      <a href="#M000723">assert_true</a>&nbsp;&nbsp;
+      <a href="#M000727">assert_wants_to_exit</a>&nbsp;&nbsp;
+      </div>
+    </div>
+
+  </div>
+
+
+    <!-- if includes -->
+
+    <div id="section">
+
+
+
+
+
+      
+
+
+    <!-- if method_list -->
+    <div id="methods">
+      <h3 class="section-bar">Public Instance methods</h3>
+
+      <div id="method-M000724" class="method-detail">
+        <a name="M000724"></a>
+
+        <div class="method-heading">
+          <a href="Assertions.src/M000724.html" target="Code" class="method-signature"
+            onclick="popupCode('Assertions.src/M000724.html');return false;">
+          <span class="method-name">assert_false</span><span class="method-args">(boolean, message = nil)</span>
+          </a>
+        </div>
+      
+        <div class="method-description">
+          <p>
+Assert that the <em>boolean</em> is false.
+</p>
+        </div>
+      </div>
+
+      <div id="method-M000725" class="method-detail">
+        <a name="M000725"></a>
+
+        <div class="method-heading">
+          <a href="Assertions.src/M000725.html" target="Code" class="method-signature"
+            onclick="popupCode('Assertions.src/M000725.html');return false;">
+          <span class="method-name">assert_raise_with_matching_message</span><span class="method-args">(exception_class, message, &amp;block)</span>
+          </a>
+        </div>
+      
+        <div class="method-description">
+          <p>
+Like <tt>assert_raise</tt>, but the raised exception must contain a
+<tt>message</tt> matching (as in <tt>assert_match</tt>) the
+<em>message</em> argument.
+</p>
+        </div>
+      </div>
+
+      <div id="method-M000726" class="method-detail">
+        <a name="M000726"></a>
+
+        <div class="method-heading">
+          <span class="method-name">assert_raises_with_matching_message</span><span class="method-args">(exception_class, message, &amp;block)</span>
+        </div>
+      
+        <div class="method-description">
+          <p>
+Alias for <a
+href="Assertions.html#M000725">assert_raise_with_matching_message</a>
+</p>
+        </div>
+      </div>
+
+      <div id="method-M000723" class="method-detail">
+        <a name="M000723"></a>
+
+        <div class="method-heading">
+          <a href="Assertions.src/M000723.html" target="Code" class="method-signature"
+            onclick="popupCode('Assertions.src/M000723.html');return false;">
+          <span class="method-name">assert_true</span><span class="method-args">(boolean, message = nil)</span>
+          </a>
+        </div>
+      
+        <div class="method-description">
+          <p>
+Same as <tt>assert</tt>. I just like it better.
+</p>
+        </div>
+      </div>
+
+      <div id="method-M000727" class="method-detail">
+        <a name="M000727"></a>
+
+        <div class="method-heading">
+          <a href="Assertions.src/M000727.html" target="Code" class="method-signature"
+            onclick="popupCode('Assertions.src/M000727.html');return false;">
+          <span class="method-name">assert_wants_to_exit</span><span class="method-args">() {|| ...}</span>
+          </a>
+        </div>
+      
+        <div class="method-description">
+          <p>
+Assert that the block tried to <tt>exit</tt>.
+</p>
+        </div>
+      </div>
+
+
+    </div>
+
+
+  </div>
+
+
+<div id="validator-badges">
+  <p><small><a href="http://validator.w3.org/check/referer">[Validate]</a></small></p>
+</div>
+
+</body>
+</html>

@@ -1,0 +1,22 @@
+--- !ruby/object:RI::MethodDescription 
+aliases: []
+
+block_params: 
+comment: 
+- !ruby/struct:SM::Flow::P 
+  body: This is the main method for accessing map tags - http://msdn.microsoft.com/workshop/author/dhtml/reference/objects/map.asp?frame=true
+- !ruby/struct:SM::Flow::VERB 
+  body: " *  how   - symbol - how we access the map,\n *  what  - string, integer or regular expression - what we are looking for,\n"
+- !ruby/struct:SM::Flow::P 
+  body: Valid values for 'how' are listed in the Watir Wiki - http://wiki.openqa.org/display/WTR/Methods+supported+by+Element
+- !ruby/struct:SM::Flow::P 
+  body: returns a map object
+- !ruby/struct:SM::Flow::P 
+  body: Typical Usage
+- !ruby/struct:SM::Flow::VERB 
+  body: "  ie.map(:id, /list/)                 # access the first map that matches list.\n  ie.map(:index,2)                    # access the second map on the page\n  ie.map(:title, &quot;A Picture&quot;)         # access a map using the tooltip text. See http://msdn.microsoft.com/workshop/author/dhtml/reference/properties/title_1.asp?frame=true\n"
+full_name: Watir::Container#map
+is_singleton: false
+name: map
+params: (how, what=nil)
+visibility: public

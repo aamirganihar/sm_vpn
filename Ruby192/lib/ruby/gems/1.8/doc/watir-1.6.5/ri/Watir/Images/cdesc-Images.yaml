@@ -1,0 +1,20 @@
+--- !ruby/object:RI::ClassDescription 
+attributes: []
+
+class_methods: []
+
+comment: 
+- !ruby/struct:SM::Flow::P 
+  body: this class collects the images in the container An instance is returned by Watir::Container#images
+constants: []
+
+full_name: Watir::Images
+includes: []
+
+instance_methods: 
+- !ruby/object:RI::MethodSummary 
+  name: element_class
+- !ruby/object:RI::MethodSummary 
+  name: length
+name: Images
+superclass: ElementCollections

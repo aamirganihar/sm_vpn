@@ -1,0 +1,28 @@
+--- !ruby/object:RI::ClassDescription 
+attributes: []
+
+class_methods: []
+
+comment: 
+- !ruby/struct:SM::Flow::P 
+  body: Monkey-patch RSpec Example Group so that we can track whether an example already failed or not in an after(:each) block
+- !ruby/struct:SM::Flow::P 
+  body: Useful to only capture Selenium screenshots when a test fails
+- !ruby/object:SM::Flow::LIST 
+  contents: 
+  - !ruby/struct:SM::Flow::LI 
+    label: "*"
+    body: Changed execution_error to be an instance variable (in lieu of a local variable).
+  - !ruby/struct:SM::Flow::LI 
+    label: "*"
+    body: Introduced an unique id (example_uid) that is the same for a real Example (passed in after(:each) when screenshot is taken) as well as the corresponding ExampleProxy (passed to the HTML formatter). This unique id gives us a way to correlate file names between generation and reporting time.
+  type: :BULLET
+constants: []
+
+full_name: Spec
+includes: []
+
+instance_methods: []
+
+name: Spec
+superclass: 

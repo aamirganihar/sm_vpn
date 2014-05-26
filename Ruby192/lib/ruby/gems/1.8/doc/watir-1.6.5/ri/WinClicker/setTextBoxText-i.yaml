@@ -1,0 +1,13 @@
+--- !ruby/object:RI::MethodDescription 
+aliases: 
+- !ruby/object:RI::AliasName 
+  name: set_textbox_txt
+block_params: 
+comment: 
+- !ruby/struct:SM::Flow::P 
+  body: Call set text on the given window handle
+full_name: WinClicker#setTextBoxText
+is_singleton: false
+name: setTextBoxText
+params: (hWnd , textToSet)
+visibility: public

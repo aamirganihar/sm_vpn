@@ -1,0 +1,154 @@
+--- !ruby/object:RI::ClassDescription 
+attributes: 
+- !ruby/object:RI::Attribute 
+  comment: 
+  - !ruby/struct:SM::Flow::P 
+    body: The color we want to use for the active object. This can be any valid web-friendly color.
+  name: activeObjectHighLightColor
+  rw: RW
+- !ruby/object:RI::Attribute 
+  comment: 
+  - !ruby/struct:SM::Flow::P 
+    body: The PageContainer object containing this element
+  name: page_container
+  rw: RW
+- !ruby/object:RI::Attribute 
+  comment: 
+  name: type_keys
+  rw: RW
+- !ruby/object:RI::Attribute 
+  comment: 
+  - !ruby/struct:SM::Flow::P 
+    body: This is used to change the typing speed when entering text on a page.
+  name: typingspeed
+  rw: RW
+class_methods: []
+
+comment: 
+- !ruby/struct:SM::Flow::P 
+  body: This module contains the factory methods that are used to access most html objects
+- !ruby/struct:SM::Flow::P 
+  body: For example, to access a button on a web page that has the following html
+- !ruby/struct:SM::Flow::VERB 
+  body: " &lt;input type = button name= 'b1' value='Click Me' onClick='javascript:doSomething()'&gt;\n"
+- !ruby/struct:SM::Flow::P 
+  body: the following watir code could be used
+- !ruby/struct:SM::Flow::VERB 
+  body: " ie.button(:name, 'b1').click\n"
+- !ruby/struct:SM::Flow::P 
+  body: or
+- !ruby/struct:SM::Flow::VERB 
+  body: " ie.button(:value, 'Click Me').to_s\n"
+- !ruby/struct:SM::Flow::P 
+  body: there are many methods available to the Button object
+- !ruby/struct:SM::Flow::P 
+  body: Is includable for classes that have @container, document and ole_inner_elements
+constants: []
+
+full_name: Watir::Container
+includes: 
+- !ruby/object:RI::IncludedModule 
+  name: Watir::Exception
+instance_methods: 
+- !ruby/object:RI::MethodSummary 
+  name: area
+- !ruby/object:RI::MethodSummary 
+  name: areas
+- !ruby/object:RI::MethodSummary 
+  name: button
+- !ruby/object:RI::MethodSummary 
+  name: buttons
+- !ruby/object:RI::MethodSummary 
+  name: cell
+- !ruby/object:RI::MethodSummary 
+  name: cells
+- !ruby/object:RI::MethodSummary 
+  name: checkbox
+- !ruby/object:RI::MethodSummary 
+  name: checkboxes
+- !ruby/object:RI::MethodSummary 
+  name: dds
+- !ruby/object:RI::MethodSummary 
+  name: divs
+- !ruby/object:RI::MethodSummary 
+  name: dls
+- !ruby/object:RI::MethodSummary 
+  name: dts
+- !ruby/object:RI::MethodSummary 
+  name: ems
+- !ruby/object:RI::MethodSummary 
+  name: file_field
+- !ruby/object:RI::MethodSummary 
+  name: file_fields
+- !ruby/object:RI::MethodSummary 
+  name: form
+- !ruby/object:RI::MethodSummary 
+  name: forms
+- !ruby/object:RI::MethodSummary 
+  name: frame
+- !ruby/object:RI::MethodSummary 
+  name: hidden
+- !ruby/object:RI::MethodSummary 
+  name: hiddens
+- !ruby/object:RI::MethodSummary 
+  name: image
+- !ruby/object:RI::MethodSummary 
+  name: images
+- !ruby/object:RI::MethodSummary 
+  name: labels
+- !ruby/object:RI::MethodSummary 
+  name: link
+- !ruby/object:RI::MethodSummary 
+  name: links
+- !ruby/object:RI::MethodSummary 
+  name: lis
+- !ruby/object:RI::MethodSummary 
+  name: locate_input_element
+- !ruby/object:RI::MethodSummary 
+  name: locate_tagged_element
+- !ruby/object:RI::MethodSummary 
+  name: log
+- !ruby/object:RI::MethodSummary 
+  name: map
+- !ruby/object:RI::MethodSummary 
+  name: maps
+- !ruby/object:RI::MethodSummary 
+  name: modal_dialog
+- !ruby/object:RI::MethodSummary 
+  name: popup
+- !ruby/object:RI::MethodSummary 
+  name: pres
+- !ruby/object:RI::MethodSummary 
+  name: ps
+- !ruby/object:RI::MethodSummary 
+  name: radio
+- !ruby/object:RI::MethodSummary 
+  name: radios
+- !ruby/object:RI::MethodSummary 
+  name: row
+- !ruby/object:RI::MethodSummary 
+  name: rows
+- !ruby/object:RI::MethodSummary 
+  name: select_list
+- !ruby/object:RI::MethodSummary 
+  name: select_lists
+- !ruby/object:RI::MethodSummary 
+  name: set_container
+- !ruby/object:RI::MethodSummary 
+  name: show_all_objects
+- !ruby/object:RI::MethodSummary 
+  name: spans
+- !ruby/object:RI::MethodSummary 
+  name: strongs
+- !ruby/object:RI::MethodSummary 
+  name: table
+- !ruby/object:RI::MethodSummary 
+  name: tables
+- !ruby/object:RI::MethodSummary 
+  name: text_field
+- !ruby/object:RI::MethodSummary 
+  name: text_fields
+- !ruby/object:RI::MethodSummary 
+  name: wait
+name: Container
+superclass: 

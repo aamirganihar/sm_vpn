@@ -1,0 +1,10 @@
+--- !ruby/object:RI::MethodDescription 
+aliases: []
+
+block_params: 
+comment: 
+full_name: Selenium::SeleniumDriver#get_boolean
+is_singleton: false
+name: get_boolean
+params: (verb, args)
+visibility: public

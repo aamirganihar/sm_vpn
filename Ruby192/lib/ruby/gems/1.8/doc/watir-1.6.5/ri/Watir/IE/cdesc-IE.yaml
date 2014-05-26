@@ -1,0 +1,228 @@
+--- !ruby/object:RI::ClassDescription 
+attributes: 
+- !ruby/object:RI::Attribute 
+  comment: 
+  - !ruby/struct:SM::Flow::P 
+    body: The time, in seconds, it took for the new page to load after executing the the last command
+  name: down_load_time
+  rw: R
+- !ruby/object:RI::Attribute 
+  comment: 
+  name: hwnd
+  rw: W
+- !ruby/object:RI::Attribute 
+  comment: 
+  - !ruby/struct:SM::Flow::P 
+    body: the OLE Internet Explorer object
+  name: ie
+  rw: RW
+- !ruby/object:RI::Attribute 
+  comment: 
+  - !ruby/struct:SM::Flow::P 
+    body: access to the logger object
+  name: logger
+  rw: RW
+- !ruby/object:RI::Attribute 
+  comment: 
+  name: process_id
+  rw: W
+- !ruby/object:RI::Attribute 
+  comment: 
+  - !ruby/struct:SM::Flow::P 
+    body: this contains the list of unique urls that have been visited
+  name: url_list
+  rw: R
+class_methods: 
+- !ruby/object:RI::MethodSummary 
+  name: _find
+- !ruby/object:RI::MethodSummary 
+  name: attach
+- !ruby/object:RI::MethodSummary 
+  name: attach_timeout
+- !ruby/object:RI::MethodSummary 
+  name: attach_timeout=
+- !ruby/object:RI::MethodSummary 
+  name: bind
+- !ruby/object:RI::MethodSummary 
+  name: close_all
+- !ruby/object:RI::MethodSummary 
+  name: each
+- !ruby/object:RI::MethodSummary 
+  name: find
+- !ruby/object:RI::MethodSummary 
+  name: new
+- !ruby/object:RI::MethodSummary 
+  name: new_process
+- !ruby/object:RI::MethodSummary 
+  name: new_window
+- !ruby/object:RI::MethodSummary 
+  name: options
+- !ruby/object:RI::MethodSummary 
+  name: process_count
+- !ruby/object:RI::MethodSummary 
+  name: set_options
+- !ruby/object:RI::MethodSummary 
+  name: speed
+- !ruby/object:RI::MethodSummary 
+  name: speed=
+- !ruby/object:RI::MethodSummary 
+  name: start
+- !ruby/object:RI::MethodSummary 
+  name: start_process
+- !ruby/object:RI::MethodSummary 
+  name: start_window
+- !ruby/object:RI::MethodSummary 
+  name: visible
+- !ruby/object:RI::MethodSummary 
+  name: visible=
+comment: 
+constants: 
+- !ruby/object:RI::Constant 
+  comment: 
+  - !ruby/struct:SM::Flow::P 
+    body: Used internally to determine when IE has finished loading a page
+  name: READYSTATE_COMPLETE
+  value: "4"
+- !ruby/object:RI::Constant 
+  comment: 
+  - !ruby/struct:SM::Flow::P 
+    body: The default color for highlighting objects as they are accessed.
+  name: HIGHLIGHT_COLOR
+  value: "'yellow'"
+- !ruby/object:RI::Constant 
+  comment: 
+  - !ruby/struct:SM::Flow::P 
+    body: IE inserts some element whose tagName is empty and just acts as block level element Probably some IE method of cleaning things To pass the same to the xml parser we need to give some name to empty tagName
+  name: EMPTY_TAG_NAME
+  value: "\"DUMMY\""
+- !ruby/object:RI::Constant 
+  comment: 
+  name: VERSION
+  value: "'1.6.5'"
+full_name: Watir::IE
+includes: 
+- !ruby/object:RI::IncludedModule 
+  name: Watir::Exception
+- !ruby/object:RI::IncludedModule 
+  name: Container
+- !ruby/object:RI::IncludedModule 
+  name: PageContainer
+- !ruby/object:RI::IncludedModule 
+  name: Watir::Win32
+- !ruby/object:RI::IncludedModule 
+  name: Watir::Utils
+instance_methods: 
+- !ruby/object:RI::MethodSummary 
+  name: _attach_init
+- !ruby/object:RI::MethodSummary 
+  name: _new_process_init
+- !ruby/object:RI::MethodSummary 
+  name: _new_window_init
+- !ruby/object:RI::MethodSummary 
+  name: add_checker
+- !ruby/object:RI::MethodSummary 
+  name: attach_command
+- !ruby/object:RI::MethodSummary 
+  name: back
+- !ruby/object:RI::MethodSummary 
+  name: bring_to_front
+- !ruby/object:RI::MethodSummary 
+  name: clear_url_list
+- !ruby/object:RI::MethodSummary 
+  name: close
+- !ruby/object:RI::MethodSummary 
+  name: close_modal
+- !ruby/object:RI::MethodSummary 
+  name: close_others
+- !ruby/object:RI::MethodSummary 
+  name: dir
+- !ruby/object:RI::MethodSummary 
+  name: disable_checker
+- !ruby/object:RI::MethodSummary 
+  name: document
+- !ruby/object:RI::MethodSummary 
+  name: element_by_xpath
+- !ruby/object:RI::MethodSummary 
+  name: elements_by_xpath
+- !ruby/object:RI::MethodSummary 
+  name: execute_script
+- !ruby/object:RI::MethodSummary 
+  name: exist?
+- !ruby/object:RI::MethodSummary 
+  name: exists?
+- !ruby/object:RI::MethodSummary 
+  name: focus
+- !ruby/object:RI::MethodSummary 
+  name: forward
+- !ruby/object:RI::MethodSummary 
+  name: front?
+- !ruby/object:RI::MethodSummary 
+  name: goto
+- !ruby/object:RI::MethodSummary 
+  name: hwnd
+- !ruby/object:RI::MethodSummary 
+  name: initialize_options
+- !ruby/object:RI::MethodSummary 
+  name: inspect
+- !ruby/object:RI::MethodSummary 
+  name: kill
+- !ruby/object:RI::MethodSummary 
+  name: log
+- !ruby/object:RI::MethodSummary 
+  name: maximize
+- !ruby/object:RI::MethodSummary 
+  name: minimize
+- !ruby/object:RI::MethodSummary 
+  name: process_id
+- !ruby/object:RI::MethodSummary 
+  name: refresh
+- !ruby/object:RI::MethodSummary 
+  name: restore
+- !ruby/object:RI::MethodSummary 
+  name: run_error_checks
+- !ruby/object:RI::MethodSummary 
+  name: send_keys
+- !ruby/object:RI::MethodSummary 
+  name: set_fast_speed
+- !ruby/object:RI::MethodSummary 
+  name: set_logger
+- !ruby/object:RI::MethodSummary 
+  name: set_slow_speed
+- !ruby/object:RI::MethodSummary 
+  name: show_active
+- !ruby/object:RI::MethodSummary 
+  name: show_divs
+- !ruby/object:RI::MethodSummary 
+  name: show_forms
+- !ruby/object:RI::MethodSummary 
+  name: show_images
+- !ruby/object:RI::MethodSummary 
+  name: show_labels
+- !ruby/object:RI::MethodSummary 
+  name: show_links
+- !ruby/object:RI::MethodSummary 
+  name: show_pres
+- !ruby/object:RI::MethodSummary 
+  name: show_spans
+- !ruby/object:RI::MethodSummary 
+  name: show_tables
+- !ruby/object:RI::MethodSummary 
+  name: speed
+- !ruby/object:RI::MethodSummary 
+  name: speed=
+- !ruby/object:RI::MethodSummary 
+  name: status
+- !ruby/object:RI::MethodSummary 
+  name: title
+- !ruby/object:RI::MethodSummary 
+  name: url
+- !ruby/object:RI::MethodSummary 
+  name: visible
+- !ruby/object:RI::MethodSummary 
+  name: visible=
+- !ruby/object:RI::MethodSummary 
+  name: wait
+- !ruby/object:RI::MethodSummary 
+  name: xmlparser_document_object
+name: IE
+superclass: Object

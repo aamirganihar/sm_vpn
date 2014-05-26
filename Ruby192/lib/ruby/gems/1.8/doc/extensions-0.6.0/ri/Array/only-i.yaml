@@ -1,0 +1,14 @@
+--- !ruby/object:RI::MethodDescription 
+aliases: []
+
+block_params: 
+comment: 
+- !ruby/struct:SM::Flow::P 
+  body: Returns the <em>only</em> element in the array. Raises an IndexError if the array's size is not 1.
+- !ruby/struct:SM::Flow::VERB 
+  body: "  [5].only      # -&gt; 5\n  [1,2,3].only  # -&gt; IndexError\n  [].only       # -&gt; IndexError\n"
+full_name: Array#only
+is_singleton: false
+name: only
+params: ()
+visibility: public

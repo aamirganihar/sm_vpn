@@ -1,0 +1,13 @@
+--- !ruby/object:RI::MethodDescription 
+aliases: 
+- !ruby/object:RI::AliasName 
+  name: clear_security_alert
+block_params: 
+comment: 
+- !ruby/struct:SM::Flow::P 
+  body: Looks for a window titled &quot;Security Alert&quot;, clicks on Yes button
+full_name: WinClicker#clearSecurityAlertBox
+is_singleton: false
+name: clearSecurityAlertBox
+params: ()
+visibility: public

@@ -1,0 +1,14 @@
+--- !ruby/object:RI::MethodDescription 
+aliases: []
+
+block_params: 
+comment: 
+- !ruby/struct:SM::Flow::P 
+  body: "Description:"
+- !ruby/struct:SM::Flow::VERB 
+  body: "  Wait for the browser to get loaded, after the event is being fired.\n"
+full_name: FireWatir::Element#wait
+is_singleton: false
+name: wait
+params: ()
+visibility: public

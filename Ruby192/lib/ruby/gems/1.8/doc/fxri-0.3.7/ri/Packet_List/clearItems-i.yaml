@@ -1,0 +1,12 @@
+--- !ruby/object:RI::MethodDescription 
+aliases: []
+
+block_params: 
+comment: 
+- !ruby/struct:SM::Flow::P 
+  body: Remove all items, but do this within the mutex to be sure everything goes ok.
+full_name: Packet_List#clearItems
+is_singleton: false
+name: clearItems
+params: (*args)
+visibility: public

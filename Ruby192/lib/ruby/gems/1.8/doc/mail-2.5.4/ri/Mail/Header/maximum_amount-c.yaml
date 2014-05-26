@@ -1,0 +1,12 @@
+--- !ruby/object:RI::MethodDescription 
+aliases: []
+
+block_params: 
+comment: 
+- !ruby/struct:SM::Flow::P 
+  body: "Large amount of headers in Email might create extra high CPU load Use this parameter to limit number of headers that will be parsed by mail library. Default: 1000"
+full_name: Mail::Header::maximum_amount
+is_singleton: true
+name: maximum_amount
+params: ()
+visibility: public

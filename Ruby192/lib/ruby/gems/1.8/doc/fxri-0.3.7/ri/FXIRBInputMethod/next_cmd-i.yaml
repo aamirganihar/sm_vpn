@@ -1,0 +1,10 @@
+--- !ruby/object:RI::MethodDescription 
+aliases: []
+
+block_params: 
+comment: 
+full_name: FXIRBInputMethod#next_cmd
+is_singleton: false
+name: next_cmd
+params: ()
+visibility: public

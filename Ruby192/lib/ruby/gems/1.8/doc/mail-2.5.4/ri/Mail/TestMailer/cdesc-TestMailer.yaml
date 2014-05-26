@@ -1,0 +1,29 @@
+--- !ruby/object:RI::ClassDescription 
+attributes: 
+- !ruby/object:RI::Attribute 
+  comment: 
+  name: settings
+  rw: RW
+class_methods: 
+- !ruby/object:RI::MethodSummary 
+  name: deliveries
+- !ruby/object:RI::MethodSummary 
+  name: deliveries=
+- !ruby/object:RI::MethodSummary 
+  name: new
+comment: 
+- !ruby/struct:SM::Flow::P 
+  body: The TestMailer is a bare bones mailer that does nothing. It is useful when you are testing.
+- !ruby/struct:SM::Flow::P 
+  body: It also provides a template of the minimum methods you require to implement if you want to make a custom mailer for Mail
+constants: []
+
+full_name: Mail::TestMailer
+includes: 
+- !ruby/object:RI::IncludedModule 
+  name: Mail::CheckDeliveryParams
+instance_methods: 
+- !ruby/object:RI::MethodSummary 
+  name: deliver!
+name: TestMailer
+superclass: Object

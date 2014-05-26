@@ -1,0 +1,12 @@
+--- !ruby/object:RI::MethodDescription 
+aliases: []
+
+block_params: 
+comment: 
+- !ruby/struct:SM::Flow::P 
+  body: Returns an array of addresses (the encoded value) in the Bcc field, if no Bcc field, returns an empty array
+full_name: Mail::Message#bcc_addrs
+is_singleton: false
+name: bcc_addrs
+params: ()
+visibility: public

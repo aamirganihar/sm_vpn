@@ -1,0 +1,10 @@
+--- !ruby/object:RI::MethodDescription 
+aliases: []
+
+block_params: 
+comment: 
+full_name: Selenium::RSpec::Reporting::HtmlReport::append_css
+is_singleton: true
+name: append_css
+params: (global_styles)
+visibility: public

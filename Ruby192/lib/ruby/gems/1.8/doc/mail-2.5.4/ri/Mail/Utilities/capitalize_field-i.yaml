@@ -1,0 +1,16 @@
+--- !ruby/object:RI::MethodDescription 
+aliases: []
+
+block_params: 
+comment: 
+- !ruby/struct:SM::Flow::P 
+  body: Capitalizes a string that is joined by hyphens correctly.
+- !ruby/struct:SM::Flow::P 
+  body: "Example:"
+- !ruby/struct:SM::Flow::VERB 
+  body: " string = 'resent-from-field'\n capitalize_field( string ) #=&gt; 'Resent-From-Field'\n"
+full_name: Mail::Utilities#capitalize_field
+is_singleton: false
+name: capitalize_field
+params: ( str )
+visibility: public

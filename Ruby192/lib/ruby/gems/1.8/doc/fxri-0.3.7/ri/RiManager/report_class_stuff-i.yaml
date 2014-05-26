@@ -1,0 +1,10 @@
+--- !ruby/object:RI::MethodDescription 
+aliases: []
+
+block_params: 
+comment: 
+full_name: RiManager#report_class_stuff
+is_singleton: false
+name: report_class_stuff
+params: (namespace)
+visibility: public

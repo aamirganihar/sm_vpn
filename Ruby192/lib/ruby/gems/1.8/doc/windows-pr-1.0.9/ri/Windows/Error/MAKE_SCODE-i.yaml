@@ -1,0 +1,10 @@
+--- !ruby/object:RI::MethodDescription 
+aliases: []
+
+block_params: 
+comment: 
+full_name: Windows::Error#MAKE_SCODE
+is_singleton: false
+name: MAKE_SCODE
+params: (sev, fac, code)
+visibility: public

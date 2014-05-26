@@ -1,0 +1,46 @@
+--- !ruby/object:RI::ClassDescription 
+attributes: 
+- !ruby/object:RI::Attribute 
+  comment: 
+  name: settings
+  rw: RW
+- !ruby/object:RI::Attribute 
+  comment: 
+  name: smtp
+  rw: RW
+class_methods: 
+- !ruby/object:RI::MethodSummary 
+  name: new
+comment: 
+- !ruby/struct:SM::Flow::H 
+  level: 2
+  text: Sending Email with SMTP
+- !ruby/struct:SM::Flow::P 
+  body: Mail allows you to send emails using an open SMTP connection. This is done by passing a created Net::SMTP object. This way we can get better performance to our local mail server by reducing the number of connections at any one time.
+- !ruby/struct:SM::Flow::H 
+  level: 3
+  text: Sending via SMTP server on Localhost
+- !ruby/struct:SM::Flow::P 
+  body: To send mail open a connection with Net::Smtp using any options you like
+- !ruby/struct:SM::Flow::H 
+  level: 3
+  text: Delivering the email
+- !ruby/struct:SM::Flow::P 
+  body: "Once you have the settings right, sending the email is done by:"
+- !ruby/struct:SM::Flow::VERB 
+  body: "  smtp_conn = Net::SMTP.start(settings[:address], settings[:port])\n  Mail.defaults do\n    delivery_method :smtp_connection, { :connection =&gt; smtp_conn }\n  end\n\n  Mail.deliver do\n    to 'mikel@test.lindsaar.net'\n    from 'ada@test.lindsaar.net'\n    subject 'testing sendmail'\n    body 'testing sendmail'\n  end\n"
+- !ruby/struct:SM::Flow::P 
+  body: Or by calling deliver on a Mail message
+- !ruby/struct:SM::Flow::VERB 
+  body: "  mail = Mail.new do\n    to 'mikel@test.lindsaar.net'\n    from 'ada@test.lindsaar.net'\n    subject 'testing sendmail'\n    body 'testing sendmail'\n  end\n\n  mail.deliver!\n"
+constants: []
+
+full_name: Mail::SMTPConnection
+includes: 
+- !ruby/object:RI::IncludedModule 
+  name: Mail::CheckDeliveryParams
+instance_methods: 
+- !ruby/object:RI::MethodSummary 
+  name: deliver!
+name: SMTPConnection
+superclass: Object

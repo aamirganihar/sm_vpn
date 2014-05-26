@@ -1,0 +1,14 @@
+--- !ruby/object:RI::MethodDescription 
+aliases: []
+
+block_params: 
+comment: 
+- !ruby/struct:SM::Flow::P 
+  body: "Creates a new instance of Firefox. Loads the URL and return the instance. Input:"
+- !ruby/struct:SM::Flow::VERB 
+  body: "  url - url of the page to be loaded.\n"
+full_name: FireWatir::Firefox::start
+is_singleton: true
+name: start
+params: (url)
+visibility: public

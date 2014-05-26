@@ -1,0 +1,163 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+<!DOCTYPE html 
+     PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+     "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html>
+<head>
+  <title>_nt_obs_fields (Mail::RFC2822Obsolete)</title>
+  <meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" />
+  <link rel="stylesheet" href="../../.././rdoc-style.css" type="text/css" media="screen" />
+</head>
+<body class="standalone-code">
+  <pre><span class="ruby-comment cmt"># File lib/mail/parsers/rfc2822_obsolete.rb, line 1725</span>
+    <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">_nt_obs_fields</span>
+      <span class="ruby-identifier">start_index</span> = <span class="ruby-identifier">index</span>
+      <span class="ruby-keyword kw">if</span> <span class="ruby-identifier">node_cache</span>[<span class="ruby-identifier">:obs_fields</span>].<span class="ruby-identifier">has_key?</span>(<span class="ruby-identifier">index</span>)
+        <span class="ruby-identifier">cached</span> = <span class="ruby-identifier">node_cache</span>[<span class="ruby-identifier">:obs_fields</span>][<span class="ruby-identifier">index</span>]
+        <span class="ruby-keyword kw">if</span> <span class="ruby-identifier">cached</span>
+          <span class="ruby-identifier">cached</span> = <span class="ruby-constant">SyntaxNode</span>.<span class="ruby-identifier">new</span>(<span class="ruby-identifier">input</span>, <span class="ruby-identifier">index</span><span class="ruby-operator">...</span>(<span class="ruby-identifier">index</span> <span class="ruby-operator">+</span> <span class="ruby-value">1</span>)) <span class="ruby-keyword kw">if</span> <span class="ruby-identifier">cached</span> <span class="ruby-operator">==</span> <span class="ruby-keyword kw">true</span>
+          <span class="ruby-ivar">@index</span> = <span class="ruby-identifier">cached</span>.<span class="ruby-identifier">interval</span>.<span class="ruby-identifier">end</span>
+        <span class="ruby-keyword kw">end</span>
+        <span class="ruby-keyword kw">return</span> <span class="ruby-identifier">cached</span>
+      <span class="ruby-keyword kw">end</span>
+
+      <span class="ruby-identifier">s0</span>, <span class="ruby-identifier">i0</span> = [], <span class="ruby-identifier">index</span>
+      <span class="ruby-identifier">loop</span> <span class="ruby-keyword kw">do</span>
+        <span class="ruby-identifier">i1</span> = <span class="ruby-identifier">index</span>
+        <span class="ruby-identifier">r2</span> = <span class="ruby-identifier">_nt_obs_return</span>
+        <span class="ruby-keyword kw">if</span> <span class="ruby-identifier">r2</span>
+          <span class="ruby-identifier">r1</span> = <span class="ruby-identifier">r2</span>
+        <span class="ruby-keyword kw">else</span>
+          <span class="ruby-identifier">r3</span> = <span class="ruby-identifier">_nt_obs_received</span>
+          <span class="ruby-keyword kw">if</span> <span class="ruby-identifier">r3</span>
+            <span class="ruby-identifier">r1</span> = <span class="ruby-identifier">r3</span>
+          <span class="ruby-keyword kw">else</span>
+            <span class="ruby-identifier">r4</span> = <span class="ruby-identifier">_nt_obs_orig_date</span>
+            <span class="ruby-keyword kw">if</span> <span class="ruby-identifier">r4</span>
+              <span class="ruby-identifier">r1</span> = <span class="ruby-identifier">r4</span>
+            <span class="ruby-keyword kw">else</span>
+              <span class="ruby-identifier">r5</span> = <span class="ruby-identifier">_nt_obs_from</span>
+              <span class="ruby-keyword kw">if</span> <span class="ruby-identifier">r5</span>
+                <span class="ruby-identifier">r1</span> = <span class="ruby-identifier">r5</span>
+              <span class="ruby-keyword kw">else</span>
+                <span class="ruby-identifier">r6</span> = <span class="ruby-identifier">_nt_obs_sender</span>
+                <span class="ruby-keyword kw">if</span> <span class="ruby-identifier">r6</span>
+                  <span class="ruby-identifier">r1</span> = <span class="ruby-identifier">r6</span>
+                <span class="ruby-keyword kw">else</span>
+                  <span class="ruby-identifier">r7</span> = <span class="ruby-identifier">_nt_obs_reply_to</span>
+                  <span class="ruby-keyword kw">if</span> <span class="ruby-identifier">r7</span>
+                    <span class="ruby-identifier">r1</span> = <span class="ruby-identifier">r7</span>
+                  <span class="ruby-keyword kw">else</span>
+                    <span class="ruby-identifier">r8</span> = <span class="ruby-identifier">_nt_obs_to</span>
+                    <span class="ruby-keyword kw">if</span> <span class="ruby-identifier">r8</span>
+                      <span class="ruby-identifier">r1</span> = <span class="ruby-identifier">r8</span>
+                    <span class="ruby-keyword kw">else</span>
+                      <span class="ruby-identifier">r9</span> = <span class="ruby-identifier">_nt_obs_cc</span>
+                      <span class="ruby-keyword kw">if</span> <span class="ruby-identifier">r9</span>
+                        <span class="ruby-identifier">r1</span> = <span class="ruby-identifier">r9</span>
+                      <span class="ruby-keyword kw">else</span>
+                        <span class="ruby-identifier">r10</span> = <span class="ruby-identifier">_nt_obs_bcc</span>
+                        <span class="ruby-keyword kw">if</span> <span class="ruby-identifier">r10</span>
+                          <span class="ruby-identifier">r1</span> = <span class="ruby-identifier">r10</span>
+                        <span class="ruby-keyword kw">else</span>
+                          <span class="ruby-identifier">r11</span> = <span class="ruby-identifier">_nt_obs_message_id</span>
+                          <span class="ruby-keyword kw">if</span> <span class="ruby-identifier">r11</span>
+                            <span class="ruby-identifier">r1</span> = <span class="ruby-identifier">r11</span>
+                          <span class="ruby-keyword kw">else</span>
+                            <span class="ruby-identifier">r12</span> = <span class="ruby-identifier">_nt_obs_in_reply_to</span>
+                            <span class="ruby-keyword kw">if</span> <span class="ruby-identifier">r12</span>
+                              <span class="ruby-identifier">r1</span> = <span class="ruby-identifier">r12</span>
+                            <span class="ruby-keyword kw">else</span>
+                              <span class="ruby-identifier">r13</span> = <span class="ruby-identifier">_nt_obs_references</span>
+                              <span class="ruby-keyword kw">if</span> <span class="ruby-identifier">r13</span>
+                                <span class="ruby-identifier">r1</span> = <span class="ruby-identifier">r13</span>
+                              <span class="ruby-keyword kw">else</span>
+                                <span class="ruby-identifier">r14</span> = <span class="ruby-identifier">_nt_obs_subject</span>
+                                <span class="ruby-keyword kw">if</span> <span class="ruby-identifier">r14</span>
+                                  <span class="ruby-identifier">r1</span> = <span class="ruby-identifier">r14</span>
+                                <span class="ruby-keyword kw">else</span>
+                                  <span class="ruby-identifier">r15</span> = <span class="ruby-identifier">_nt_obs_comments</span>
+                                  <span class="ruby-keyword kw">if</span> <span class="ruby-identifier">r15</span>
+                                    <span class="ruby-identifier">r1</span> = <span class="ruby-identifier">r15</span>
+                                  <span class="ruby-keyword kw">else</span>
+                                    <span class="ruby-identifier">r16</span> = <span class="ruby-identifier">_nt_obs_keywords</span>
+                                    <span class="ruby-keyword kw">if</span> <span class="ruby-identifier">r16</span>
+                                      <span class="ruby-identifier">r1</span> = <span class="ruby-identifier">r16</span>
+                                    <span class="ruby-keyword kw">else</span>
+                                      <span class="ruby-identifier">r17</span> = <span class="ruby-identifier">_nt_obs_resent_date</span>
+                                      <span class="ruby-keyword kw">if</span> <span class="ruby-identifier">r17</span>
+                                        <span class="ruby-identifier">r1</span> = <span class="ruby-identifier">r17</span>
+                                      <span class="ruby-keyword kw">else</span>
+                                        <span class="ruby-identifier">r18</span> = <span class="ruby-identifier">_nt_obs_resent_from</span>
+                                        <span class="ruby-keyword kw">if</span> <span class="ruby-identifier">r18</span>
+                                          <span class="ruby-identifier">r1</span> = <span class="ruby-identifier">r18</span>
+                                        <span class="ruby-keyword kw">else</span>
+                                          <span class="ruby-identifier">r19</span> = <span class="ruby-identifier">_nt_obs_resent_send</span>
+                                          <span class="ruby-keyword kw">if</span> <span class="ruby-identifier">r19</span>
+                                            <span class="ruby-identifier">r1</span> = <span class="ruby-identifier">r19</span>
+                                          <span class="ruby-keyword kw">else</span>
+                                            <span class="ruby-identifier">r20</span> = <span class="ruby-identifier">_nt_obs_resent_rply</span>
+                                            <span class="ruby-keyword kw">if</span> <span class="ruby-identifier">r20</span>
+                                              <span class="ruby-identifier">r1</span> = <span class="ruby-identifier">r20</span>
+                                            <span class="ruby-keyword kw">else</span>
+                                              <span class="ruby-identifier">r21</span> = <span class="ruby-identifier">_nt_obs_resent_to</span>
+                                              <span class="ruby-keyword kw">if</span> <span class="ruby-identifier">r21</span>
+                                                <span class="ruby-identifier">r1</span> = <span class="ruby-identifier">r21</span>
+                                              <span class="ruby-keyword kw">else</span>
+                                                <span class="ruby-identifier">r22</span> = <span class="ruby-identifier">_nt_obs_resent_cc</span>
+                                                <span class="ruby-keyword kw">if</span> <span class="ruby-identifier">r22</span>
+                                                  <span class="ruby-identifier">r1</span> = <span class="ruby-identifier">r22</span>
+                                                <span class="ruby-keyword kw">else</span>
+                                                  <span class="ruby-identifier">r23</span> = <span class="ruby-identifier">_nt_obs_resent_bcc</span>
+                                                  <span class="ruby-keyword kw">if</span> <span class="ruby-identifier">r23</span>
+                                                    <span class="ruby-identifier">r1</span> = <span class="ruby-identifier">r23</span>
+                                                  <span class="ruby-keyword kw">else</span>
+                                                    <span class="ruby-identifier">r24</span> = <span class="ruby-identifier">_nt_obs_resent_mid</span>
+                                                    <span class="ruby-keyword kw">if</span> <span class="ruby-identifier">r24</span>
+                                                      <span class="ruby-identifier">r1</span> = <span class="ruby-identifier">r24</span>
+                                                    <span class="ruby-keyword kw">else</span>
+                                                      <span class="ruby-identifier">r25</span> = <span class="ruby-identifier">_nt_obs_optional</span>
+                                                      <span class="ruby-keyword kw">if</span> <span class="ruby-identifier">r25</span>
+                                                        <span class="ruby-identifier">r1</span> = <span class="ruby-identifier">r25</span>
+                                                      <span class="ruby-keyword kw">else</span>
+                                                        <span class="ruby-ivar">@index</span> = <span class="ruby-identifier">i1</span>
+                                                        <span class="ruby-identifier">r1</span> = <span class="ruby-keyword kw">nil</span>
+                                                      <span class="ruby-keyword kw">end</span>
+                                                    <span class="ruby-keyword kw">end</span>
+                                                  <span class="ruby-keyword kw">end</span>
+                                                <span class="ruby-keyword kw">end</span>
+                                              <span class="ruby-keyword kw">end</span>
+                                            <span class="ruby-keyword kw">end</span>
+                                          <span class="ruby-keyword kw">end</span>
+                                        <span class="ruby-keyword kw">end</span>
+                                      <span class="ruby-keyword kw">end</span>
+                                    <span class="ruby-keyword kw">end</span>
+                                  <span class="ruby-keyword kw">end</span>
+                                <span class="ruby-keyword kw">end</span>
+                              <span class="ruby-keyword kw">end</span>
+                            <span class="ruby-keyword kw">end</span>
+                          <span class="ruby-keyword kw">end</span>
+                        <span class="ruby-keyword kw">end</span>
+                      <span class="ruby-keyword kw">end</span>
+                    <span class="ruby-keyword kw">end</span>
+                  <span class="ruby-keyword kw">end</span>
+                <span class="ruby-keyword kw">end</span>
+              <span class="ruby-keyword kw">end</span>
+            <span class="ruby-keyword kw">end</span>
+          <span class="ruby-keyword kw">end</span>
+        <span class="ruby-keyword kw">end</span>
+        <span class="ruby-keyword kw">if</span> <span class="ruby-identifier">r1</span>
+          <span class="ruby-identifier">s0</span> <span class="ruby-operator">&lt;&lt;</span> <span class="ruby-identifier">r1</span>
+        <span class="ruby-keyword kw">else</span>
+          <span class="ruby-keyword kw">break</span>
+        <span class="ruby-keyword kw">end</span>
+      <span class="ruby-keyword kw">end</span>
+      <span class="ruby-identifier">r0</span> = <span class="ruby-identifier">instantiate_node</span>(<span class="ruby-constant">SyntaxNode</span>,<span class="ruby-identifier">input</span>, <span class="ruby-identifier">i0</span><span class="ruby-operator">...</span><span class="ruby-identifier">index</span>, <span class="ruby-identifier">s0</span>)
+
+      <span class="ruby-identifier">node_cache</span>[<span class="ruby-identifier">:obs_fields</span>][<span class="ruby-identifier">start_index</span>] = <span class="ruby-identifier">r0</span>
+
+      <span class="ruby-identifier">r0</span>
+    <span class="ruby-keyword kw">end</span></pre>
+</body>
+</html>

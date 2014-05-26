@@ -1,0 +1,10 @@
+--- !ruby/object:RI::MethodDescription 
+aliases: []
+
+block_params: 
+comment: 
+full_name: Mail::RFC2822::MessageIds0#msg_id_value
+is_singleton: false
+name: msg_id_value
+params: ()
+visibility: public

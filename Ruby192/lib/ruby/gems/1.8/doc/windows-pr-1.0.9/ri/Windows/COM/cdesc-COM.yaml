@@ -1,0 +1,376 @@
+--- !ruby/object:RI::ClassDescription 
+attributes: []
+
+class_methods: []
+
+comment: 
+constants: 
+- !ruby/object:RI::Constant 
+  comment: 
+  - !ruby/struct:SM::Flow::P 
+    body: These constants are from wtypes.h but are only used in a COM context as far as I know.
+  name: VT_EMPTY
+  value: "0"
+- !ruby/object:RI::Constant 
+  comment: 
+  name: VT_NULL
+  value: "1"
+- !ruby/object:RI::Constant 
+  comment: 
+  name: VT_I2
+  value: "2"
+- !ruby/object:RI::Constant 
+  comment: 
+  name: VT_I4
+  value: "3"
+- !ruby/object:RI::Constant 
+  comment: 
+  name: VT_R4
+  value: "4"
+- !ruby/object:RI::Constant 
+  comment: 
+  name: VT_R8
+  value: "5"
+- !ruby/object:RI::Constant 
+  comment: 
+  name: VT_CY
+  value: "6"
+- !ruby/object:RI::Constant 
+  comment: 
+  name: VT_DATE
+  value: "7"
+- !ruby/object:RI::Constant 
+  comment: 
+  name: VT_BSTR
+  value: "8"
+- !ruby/object:RI::Constant 
+  comment: 
+  name: VT_DISPATCH
+  value: "9"
+- !ruby/object:RI::Constant 
+  comment: 
+  name: VT_ERROR
+  value: "10"
+- !ruby/object:RI::Constant 
+  comment: 
+  name: VT_BOOL
+  value: "11"
+- !ruby/object:RI::Constant 
+  comment: 
+  name: VT_VARIANT
+  value: "12"
+- !ruby/object:RI::Constant 
+  comment: 
+  name: VT_UNKNOWN
+  value: "13"
+- !ruby/object:RI::Constant 
+  comment: 
+  name: VT_DECIMAL
+  value: "14"
+- !ruby/object:RI::Constant 
+  comment: 
+  name: VT_I1
+  value: "16"
+- !ruby/object:RI::Constant 
+  comment: 
+  name: VT_UI1
+  value: "17"
+- !ruby/object:RI::Constant 
+  comment: 
+  name: VT_UI2
+  value: "18"
+- !ruby/object:RI::Constant 
+  comment: 
+  name: VT_UI4
+  value: "19"
+- !ruby/object:RI::Constant 
+  comment: 
+  name: VT_I8
+  value: "20"
+- !ruby/object:RI::Constant 
+  comment: 
+  name: VT_UI8
+  value: "21"
+- !ruby/object:RI::Constant 
+  comment: 
+  name: VT_INT
+  value: "22"
+- !ruby/object:RI::Constant 
+  comment: 
+  name: VT_UINT
+  value: "23"
+- !ruby/object:RI::Constant 
+  comment: 
+  name: VT_VOID
+  value: "24"
+- !ruby/object:RI::Constant 
+  comment: 
+  name: VT_HRESULT
+  value: "25"
+- !ruby/object:RI::Constant 
+  comment: 
+  name: VT_PTR
+  value: "26"
+- !ruby/object:RI::Constant 
+  comment: 
+  name: VT_SAFEARRAY
+  value: "27"
+- !ruby/object:RI::Constant 
+  comment: 
+  name: VT_CARRAY
+  value: "28"
+- !ruby/object:RI::Constant 
+  comment: 
+  name: VT_USERDEFINED
+  value: "29"
+- !ruby/object:RI::Constant 
+  comment: 
+  name: VT_LPSTR
+  value: "30"
+- !ruby/object:RI::Constant 
+  comment: 
+  name: VT_LPWSTR
+  value: "31"
+- !ruby/object:RI::Constant 
+  comment: 
+  name: VT_RECORD
+  value: "36"
+- !ruby/object:RI::Constant 
+  comment: 
+  name: VT_INT_PTR
+  value: "37"
+- !ruby/object:RI::Constant 
+  comment: 
+  name: VT_UINT_PTR
+  value: "38"
+- !ruby/object:RI::Constant 
+  comment: 
+  name: VT_FILETIME
+  value: "64"
+- !ruby/object:RI::Constant 
+  comment: 
+  name: VT_BLOB
+  value: "65"
+- !ruby/object:RI::Constant 
+  comment: 
+  name: VT_STREAM
+  value: "66"
+- !ruby/object:RI::Constant 
+  comment: 
+  name: VT_STORAGE
+  value: "67"
+- !ruby/object:RI::Constant 
+  comment: 
+  name: VT_STREAMED_OBJECT
+  value: "68"
+- !ruby/object:RI::Constant 
+  comment: 
+  name: VT_STORED_OBJECT
+  value: "69"
+- !ruby/object:RI::Constant 
+  comment: 
+  name: VT_BLOB_OBJECT
+  value: "70"
+- !ruby/object:RI::Constant 
+  comment: 
+  name: VT_CF
+  value: "71"
+- !ruby/object:RI::Constant 
+  comment: 
+  name: VT_CLSID
+  value: "72"
+- !ruby/object:RI::Constant 
+  comment: 
+  name: VT_VERSIONED_STREAM
+  value: "73"
+- !ruby/object:RI::Constant 
+  comment: 
+  name: VT_BSTR_BLOB
+  value: "0xfff"
+- !ruby/object:RI::Constant 
+  comment: 
+  name: VT_VECTOR
+  value: "0x1000"
+- !ruby/object:RI::Constant 
+  comment: 
+  name: VT_ARRAY
+  value: "0x2000"
+- !ruby/object:RI::Constant 
+  comment: 
+  name: VT_BYREF
+  value: "0x4000"
+- !ruby/object:RI::Constant 
+  comment: 
+  name: VT_RESERVED
+  value: "0x8000"
+- !ruby/object:RI::Constant 
+  comment: 
+  name: VT_ILLEGAL
+  value: "0xffff"
+- !ruby/object:RI::Constant 
+  comment: 
+  name: VT_ILLEGALMASKED
+  value: "0xfff"
+- !ruby/object:RI::Constant 
+  comment: 
+  name: VT_TYPEMASK
+  value: "0xfff"
+- !ruby/object:RI::Constant 
+  comment: 
+  - !ruby/struct:SM::Flow::P 
+    body: These constants are from OAldl.h
+  name: INVOKE_FUNC
+  value: "1"
+- !ruby/object:RI::Constant 
+  comment: 
+  name: INVOKE_PROPERTYGET
+  value: "2"
+- !ruby/object:RI::Constant 
+  comment: 
+  name: INVOKE_PROPERTYPUT
+  value: "4"
+- !ruby/object:RI::Constant 
+  comment: 
+  name: INVOKE_PROPERTYPUTREF
+  value: "8"
+- !ruby/object:RI::Constant 
+  comment: 
+  - !ruby/struct:SM::Flow::P 
+    body: CLSCTX enum constants
+  name: CLSCTX_INPROC_SERVER
+  value: "0x1"
+- !ruby/object:RI::Constant 
+  comment: 
+  name: CLSCTX_INPROC_HANDLER
+  value: "0x2"
+- !ruby/object:RI::Constant 
+  comment: 
+  name: CLSCTX_LOCAL_SERVER
+  value: "0x4"
+- !ruby/object:RI::Constant 
+  comment: 
+  name: CLSCTX_INPROC_SERVER16
+  value: "0x8"
+- !ruby/object:RI::Constant 
+  comment: 
+  name: CLSCTX_REMOTE_SERVER
+  value: "0x10"
+- !ruby/object:RI::Constant 
+  comment: 
+  name: CLSCTX_INPROC_HANDLER16
+  value: "0x20"
+- !ruby/object:RI::Constant 
+  comment: 
+  name: CLSCTX_RESERVED1
+  value: "0x40"
+- !ruby/object:RI::Constant 
+  comment: 
+  name: CLSCTX_RESERVED2
+  value: "0x80"
+- !ruby/object:RI::Constant 
+  comment: 
+  name: CLSCTX_RESERVED3
+  value: "0x100"
+- !ruby/object:RI::Constant 
+  comment: 
+  name: CLSCTX_RESERVED4
+  value: "0x200"
+- !ruby/object:RI::Constant 
+  comment: 
+  name: CLSCTX_NO_CODE_DOWNLOAD
+  value: "0x400"
+- !ruby/object:RI::Constant 
+  comment: 
+  name: CLSCTX_RESERVED5
+  value: "0x800"
+- !ruby/object:RI::Constant 
+  comment: 
+  name: CLSCTX_NO_CUSTOM_MARSHAL
+  value: "0x1000"
+- !ruby/object:RI::Constant 
+  comment: 
+  name: CLSCTX_ENABLE_CODE_DOWNLOAD
+  value: "0x2000"
+- !ruby/object:RI::Constant 
+  comment: 
+  name: CLSCTX_NO_FAILURE_LOG
+  value: "0x4000"
+- !ruby/object:RI::Constant 
+  comment: 
+  name: CLSCTX_DISABLE_AAA
+  value: "0x8000"
+- !ruby/object:RI::Constant 
+  comment: 
+  name: CLSCTX_ENABLE_AAA
+  value: "0x10000"
+- !ruby/object:RI::Constant 
+  comment: 
+  name: CLSCTX_FROM_DEFAULT_CONTEXT
+  value: "0x20000"
+- !ruby/object:RI::Constant 
+  comment: 
+  name: CLSCTX_ACTIVATE_32_BIT_SERVER
+  value: "0x40000"
+- !ruby/object:RI::Constant 
+  comment: 
+  name: CLSCTX_ACTIVATE_64_BIT_SERVER
+  value: "0x80000"
+- !ruby/object:RI::Constant 
+  comment: 
+  - !ruby/struct:SM::Flow::P 
+    body: IDispatch
+  name: DISPID_UNKNOWN
+  value: "-1"
+- !ruby/object:RI::Constant 
+  comment: 
+  name: DISPID_VALUE
+  value: "0"
+- !ruby/object:RI::Constant 
+  comment: 
+  name: DISPID_PROPERTYPUT
+  value: "-3"
+- !ruby/object:RI::Constant 
+  comment: 
+  name: DISPID_NEWENUM
+  value: "-4"
+- !ruby/object:RI::Constant 
+  comment: 
+  name: DISPID_EVALUATE
+  value: "-5"
+- !ruby/object:RI::Constant 
+  comment: 
+  name: DISPID_CONSTRUCTOR
+  value: "-6"
+- !ruby/object:RI::Constant 
+  comment: 
+  name: DISPID_DESTRUCTOR
+  value: "-7"
+- !ruby/object:RI::Constant 
+  comment: 
+  name: DISPID_COLLECT
+  value: "-8"
+- !ruby/object:RI::Constant 
+  comment: 
+  - !ruby/struct:SM::Flow::P 
+    body: Flags for IDispatch::Invoke
+  name: DISPATCH_METHOD
+  value: "0x1"
+- !ruby/object:RI::Constant 
+  comment: 
+  name: DISPATCH_PROPERTYGET
+  value: "0x2"
+- !ruby/object:RI::Constant 
+  comment: 
+  name: DISPATCH_PROPERTYPUT
+  value: "0x4"
+- !ruby/object:RI::Constant 
+  comment: 
+  name: DISPATCH_PROPERTYPUTREF
+  value: "0x8"
+full_name: Windows::COM
+includes: []
+
+instance_methods: []
+
+name: COM
+superclass: 

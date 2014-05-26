@@ -1,0 +1,16 @@
+--- !ruby/object:RI::MethodDescription 
+aliases: []
+
+block_params: 
+comment: 
+- !ruby/struct:SM::Flow::P 
+  body: this is the main method for accessing the tables iterator. It returns a Tables object
+- !ruby/struct:SM::Flow::P 
+  body: "Typical usage:"
+- !ruby/struct:SM::Flow::VERB 
+  body: "  ie.tables.each { |t| puts t.to_s }            # iterate through all the tables on the page\n  ie.tables[1].to_s                             # goto the first table on the page\n  ie.tables.length                              # show how many tables are on the page. Tables that are nested will be included in this\n"
+full_name: Watir::Container#tables
+is_singleton: false
+name: tables
+params: ()
+visibility: public

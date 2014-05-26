@@ -1,0 +1,14 @@
+--- !ruby/object:RI::MethodDescription 
+aliases: []
+
+block_params: 
+comment: 
+- !ruby/struct:SM::Flow::P 
+  body: Compare this string to <tt>other</tt>, returning the first index at which they differ, or <tt>nil</tt> if they are equal.
+- !ruby/struct:SM::Flow::VERB 
+  body: "  &quot;practise&quot;.cmp(&quot;practice&quot;)    # -&gt; 6\n  &quot;noun&quot;.cmp(&quot;nouns&quot;)           # -&gt; 5 (and vice versa)\n  &quot;fly&quot;.cmp(&quot;fly&quot;)              # -&gt; nil\n"
+full_name: String#cmp
+is_singleton: false
+name: cmp
+params: (other)
+visibility: public

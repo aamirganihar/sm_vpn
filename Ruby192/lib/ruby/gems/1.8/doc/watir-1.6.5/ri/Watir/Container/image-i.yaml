@@ -1,0 +1,22 @@
+--- !ruby/object:RI::MethodDescription 
+aliases: []
+
+block_params: 
+comment: 
+- !ruby/struct:SM::Flow::P 
+  body: This is the main method for accessing images - normally an &lt;img src=&quot;image.gif&quot;&gt; HTML tag.
+- !ruby/struct:SM::Flow::VERB 
+  body: " *  how   - symbol - how we access the image, :index, :id, :name, :src, :title or :alt are supported\n *  what  - string, integer or regular expression - what we are looking for,\n"
+- !ruby/struct:SM::Flow::P 
+  body: Valid values for 'how' are listed in the Watir Wiki - http://wiki.openqa.org/display/WTR/Methods+supported+by+Element
+- !ruby/struct:SM::Flow::P 
+  body: returns an Image object
+- !ruby/struct:SM::Flow::P 
+  body: Typical Usage
+- !ruby/struct:SM::Flow::VERB 
+  body: "  ie.image(:src, /myPic/)             # access the first image that matches myPic. We can use a string in place of the regular expression\n                                      # but the complete path must be used, ie.image(:src, 'http://myserver.com/my_path/my_image.jpg')\n  ie.image(:index,2)                  # access the second image on the page\n  ie.image(:alt, &quot;A Picture&quot;)         # access an image using the alt text\n  ie.image(:xpath, &quot;//img[@alt='A Picture']/&quot;)    # access an image using the alt text\n"
+full_name: Watir::Container#image
+is_singleton: false
+name: image
+params: (how, what=nil)
+visibility: public

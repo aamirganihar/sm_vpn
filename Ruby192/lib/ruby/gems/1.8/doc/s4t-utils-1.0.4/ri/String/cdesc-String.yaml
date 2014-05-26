@@ -1,0 +1,22 @@
+--- !ruby/object:RI::ClassDescription 
+attributes: []
+
+class_methods: []
+
+comment: 
+- !ruby/struct:SM::Flow::P 
+  body: After some time trying to write libraries that used facets or extensions and didn't conflict with other libraries that used (for example) active_support, I give up. I'm going to copy the methods I need, rename them to something so bad there'll never be a conflict, and see if that's more painful.
+constants: []
+
+full_name: String
+includes: []
+
+instance_methods: 
+- !ruby/object:RI::MethodSummary 
+  name: has_exact_prefix?
+- !ruby/object:RI::MethodSummary 
+  name: indent_by
+- !ruby/object:RI::MethodSummary 
+  name: without_pretty_indentation
+name: String
+superclass: Object

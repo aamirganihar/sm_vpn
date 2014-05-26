@@ -1,0 +1,20 @@
+--- !ruby/object:RI::ClassDescription 
+attributes: []
+
+class_methods: 
+- !ruby/object:RI::MethodSummary 
+  name: new
+comment: 
+- !ruby/struct:SM::Flow::P 
+  body: An ArgForwarder is associated with a <em>target</em>. It forwards messages sent to it to the target, passing along any arguments to the method. So far, so boring. But an ArgForwarder is also created with some <em>added_args</em>. When the ArgForwarder forwards, it prepends those <em>added_args</em> to the message's given arguments.
+- !ruby/struct:SM::Flow::VERB 
+  body: "  array = []\n  forwarder = ArgForwarder.new(array, 5)\n  forwarder.push\n  assert_equal([5], array)\n"
+constants: []
+
+full_name: S4tUtils::ArgForwarder
+includes: []
+
+instance_methods: []
+
+name: ArgForwarder
+superclass: Object

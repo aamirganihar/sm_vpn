@@ -1,0 +1,10 @@
+--- !ruby/object:RI::MethodDescription 
+aliases: []
+
+block_params: 
+comment: 
+full_name: AutoItWindow#activate_if_needed
+is_singleton: false
+name: activate_if_needed
+params: ()
+visibility: public

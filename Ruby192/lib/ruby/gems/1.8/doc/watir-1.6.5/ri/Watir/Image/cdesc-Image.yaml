@@ -1,0 +1,35 @@
+--- !ruby/object:RI::ClassDescription 
+attributes: []
+
+class_methods: 
+- !ruby/object:RI::MethodSummary 
+  name: new
+comment: 
+- !ruby/struct:SM::Flow::P 
+  body: This class is the means of accessing an image on a page. Normally a user would not need to create this object as it is returned by the Watir::Container#image method
+- !ruby/struct:SM::Flow::P 
+  body: many of the methods available to this object are inherited from the Element class
+constants: []
+
+full_name: Watir::Image
+includes: []
+
+instance_methods: 
+- !ruby/object:RI::MethodSummary 
+  name: file_created_date
+- !ruby/object:RI::MethodSummary 
+  name: file_size
+- !ruby/object:RI::MethodSummary 
+  name: height
+- !ruby/object:RI::MethodSummary 
+  name: loaded?
+- !ruby/object:RI::MethodSummary 
+  name: locate
+- !ruby/object:RI::MethodSummary 
+  name: save
+- !ruby/object:RI::MethodSummary 
+  name: to_s
+- !ruby/object:RI::MethodSummary 
+  name: width
+name: Image
+superclass: Element

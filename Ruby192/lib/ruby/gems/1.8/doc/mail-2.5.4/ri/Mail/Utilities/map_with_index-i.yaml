@@ -1,0 +1,10 @@
+--- !ruby/object:RI::MethodDescription 
+aliases: []
+
+block_params: 
+comment: 
+full_name: Mail::Utilities#map_with_index
+is_singleton: false
+name: map_with_index
+params: ( enum, &block )
+visibility: public

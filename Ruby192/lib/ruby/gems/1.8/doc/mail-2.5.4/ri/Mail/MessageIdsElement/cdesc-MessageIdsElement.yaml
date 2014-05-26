@@ -1,0 +1,22 @@
+--- !ruby/object:RI::ClassDescription 
+attributes: []
+
+class_methods: 
+- !ruby/object:RI::MethodSummary 
+  name: new
+comment: 
+constants: []
+
+full_name: Mail::MessageIdsElement
+includes: 
+- !ruby/object:RI::IncludedModule 
+  name: Mail::Utilities
+instance_methods: 
+- !ruby/object:RI::MethodSummary 
+  name: clean_msg_id
+- !ruby/object:RI::MethodSummary 
+  name: message_id
+- !ruby/object:RI::MethodSummary 
+  name: message_ids
+name: MessageIdsElement
+superclass: Object

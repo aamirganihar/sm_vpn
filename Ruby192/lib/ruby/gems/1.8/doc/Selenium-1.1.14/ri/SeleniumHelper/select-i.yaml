@@ -1,0 +1,12 @@
+--- !ruby/object:RI::MethodDescription 
+aliases: []
+
+block_params: 
+comment: 
+- !ruby/struct:SM::Flow::P 
+  body: Overrides standard &quot;select&quot; method with @selenium.select
+full_name: SeleniumHelper#select
+is_singleton: false
+name: select
+params: (inputLocator, optionLocator)
+visibility: public

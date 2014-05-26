@@ -1,0 +1,28 @@
+--- !ruby/object:RI::MethodDescription 
+aliases: []
+
+block_params: 
+comment: 
+- !ruby/struct:SM::Flow::P 
+  body: "<em>Note: the following documentation uses &quot;class&quot; because it's more common, but it applies to modules as well.</em>"
+- !ruby/struct:SM::Flow::P 
+  body: Given the <em>name</em> of a class, returns the class itself (i.e. instance of Class). The dereferencing starts at Object. That is,
+- !ruby/struct:SM::Flow::VERB 
+  body: "  Class.by_name(&quot;String&quot;)\n"
+- !ruby/struct:SM::Flow::P 
+  body: is equivalent to
+- !ruby/struct:SM::Flow::VERB 
+  body: "  Object.get_const(&quot;String&quot;)\n"
+- !ruby/struct:SM::Flow::P 
+  body: The parameter <em>name</em> is expected to be a Symbol or String, or at least to respond to <tt>to_str</tt>.
+- !ruby/struct:SM::Flow::P 
+  body: An ArgumentError is raised if <em>name</em> does not correspond to an existing class. If <em>name</em> is not even a valid class name, the error you'll get is not defined.
+- !ruby/struct:SM::Flow::P 
+  body: "Examples:"
+- !ruby/struct:SM::Flow::VERB 
+  body: "  Class.by_name(&quot;String&quot;)             # -&gt; String\n  Class.by_name(&quot;::String&quot;)           # -&gt; String\n  Class.by_name(&quot;Process::Sys&quot;)       # -&gt; Process::Sys\n  Class.by_name(&quot;GorillaZ&quot;)           # -&gt; (ArgumentError)\n\n  Class.by_name(&quot;Enumerable&quot;)         # -&gt; Enumerable\n  Module.by_name(&quot;Enumerable&quot;)        # -&gt; Enumerable\n"
+full_name: Module::by_name
+is_singleton: true
+name: by_name
+params: (name)
+visibility: public

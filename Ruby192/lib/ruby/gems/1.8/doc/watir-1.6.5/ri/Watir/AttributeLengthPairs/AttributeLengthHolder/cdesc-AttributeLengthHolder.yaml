@@ -1,0 +1,25 @@
+--- !ruby/object:RI::ClassDescription 
+attributes: 
+- !ruby/object:RI::Attribute 
+  comment: 
+  name: attribute
+  rw: RW
+- !ruby/object:RI::Attribute 
+  comment: 
+  name: length
+  rw: RW
+class_methods: 
+- !ruby/object:RI::MethodSummary 
+  name: new
+comment: 
+- !ruby/struct:SM::Flow::P 
+  body: This class is used as part of the .show method of the iterators class it would not normally be used by a user
+constants: []
+
+full_name: Watir::AttributeLengthPairs::AttributeLengthHolder
+includes: []
+
+instance_methods: []
+
+name: AttributeLengthHolder
+superclass: Object

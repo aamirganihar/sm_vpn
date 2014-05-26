@@ -1,0 +1,22 @@
+--- !ruby/object:RI::ClassDescription 
+attributes: []
+
+class_methods: []
+
+comment: 
+constants: []
+
+full_name: I18n::Backend::Links
+includes: []
+
+instance_methods: 
+- !ruby/object:RI::MethodSummary 
+  name: find_link
+- !ruby/object:RI::MethodSummary 
+  name: links
+- !ruby/object:RI::MethodSummary 
+  name: resolve_link
+- !ruby/object:RI::MethodSummary 
+  name: store_link
+name: Links
+superclass: 

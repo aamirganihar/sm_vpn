@@ -1,0 +1,30 @@
+--- !ruby/object:RI::MethodDescription 
+aliases: []
+
+block_params: 
+comment: 
+- !ruby/struct:SM::Flow::P 
+  body: This is the main method for accessing a check box. Usually an &lt;input type = checkbox&gt; HTML tag.
+- !ruby/struct:SM::Flow::VERB 
+  body: " *  how   - symbol - how we access the check box - :index, :id, :name etc\n *  what  - string, integer or regular expression - what we are looking for,\n *  value - string - when there are multiple objects with different value attributes, this can be used to find the correct object\n"
+- !ruby/struct:SM::Flow::P 
+  body: Valid values for 'how' are listed in the Watir Wiki - http://wiki.openqa.org/display/WTR/Methods+supported+by+Element
+- !ruby/struct:SM::Flow::P 
+  body: returns a CheckBox object
+- !ruby/struct:SM::Flow::P 
+  body: Typical usage
+- !ruby/struct:SM::Flow::VERB 
+  body: "   ie.checkbox(:id, 'send_email')                    # access the check box with an id of send_mail\n   ie.checkbox(:name, 'send_copy')                   # access the check box with a name of send_copy\n   ie.checkbox(:name, /n_/)                          # access the first check box whose name matches n_\n   ie.checkbox(:index, 2)                            # access the second check box on the page (1 based, so the first field is accessed with :index,1)\n"
+- !ruby/struct:SM::Flow::P 
+  body: In many instances, checkboxes on an html page have the same name, but are identified by different values. An example is shown next.
+- !ruby/struct:SM::Flow::VERB 
+  body: " &lt;input type = checkbox name = email_frequency value = 'daily' &gt; Daily Email\n &lt;input type = checkbox name = email_frequency value = 'Weekly'&gt; Weekly Email\n &lt;input type = checkbox name = email_frequency value = 'monthly'&gt;Monthly Email\n"
+- !ruby/struct:SM::Flow::P 
+  body: "Watir can access these using the following:"
+- !ruby/struct:SM::Flow::VERB 
+  body: "   ie.checkbox(:id, 'day_to_send', 'monday')         # access the check box with an id of day_to_send and a value of monday\n   ie.checkbox(:name,'email_frequency', 'weekly')    # access the check box with a name of email_frequency and a value of 'weekly'\n   ie.checkbox(:xpath, &quot;//input[@name='email_frequency' and @value='daily']/&quot;)     # access the checkbox with a name of email_frequency and a value of 'daily'\n"
+full_name: Watir::Container#checkbox
+is_singleton: false
+name: checkbox
+params: (how, what=nil, value=nil)
+visibility: public

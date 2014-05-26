@@ -1,0 +1,12 @@
+--- !ruby/object:RI::MethodDescription 
+aliases: []
+
+block_params: iterator_object(i) }
+comment: 
+- !ruby/struct:SM::Flow::P 
+  body: iterate through each of the elements in the collection in turn
+full_name: Watir::ElementCollections#each
+is_singleton: false
+name: each
+params: () {|iterator_object(i) }| ...}
+visibility: public

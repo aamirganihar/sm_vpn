@@ -1,0 +1,31 @@
+--- !ruby/object:RI::ClassDescription 
+attributes: []
+
+class_methods: 
+- !ruby/object:RI::MethodSummary 
+  name: new
+comment: 
+constants: 
+- !ruby/object:RI::Constant 
+  comment: 
+  name: FIELD_NAME
+  value: "'return-path'"
+- !ruby/object:RI::Constant 
+  comment: 
+  name: CAPITALIZED_FIELD
+  value: "'Return-Path'"
+full_name: Mail::ReturnPathField
+includes: 
+- !ruby/object:RI::IncludedModule 
+  name: Mail::CommonAddress
+instance_methods: 
+- !ruby/object:RI::MethodSummary 
+  name: address
+- !ruby/object:RI::MethodSummary 
+  name: decoded
+- !ruby/object:RI::MethodSummary 
+  name: default
+- !ruby/object:RI::MethodSummary 
+  name: encoded
+name: ReturnPathField
+superclass: StructuredField

@@ -1,0 +1,26 @@
+--- !ruby/object:RI::MethodDescription 
+aliases: []
+
+block_params: 
+comment: 
+- !ruby/struct:SM::Flow::P 
+  body: Method Missing in this implementation allows you to set any of the standard fields directly as you would the &quot;to&quot;, &quot;subject&quot; etc.
+- !ruby/struct:SM::Flow::P 
+  body: Those fields used most often (to, subject et al) are given their own method for ease of documentation and also to avoid the hook call to method missing.
+- !ruby/struct:SM::Flow::P 
+  body: "This will only catch the known fields listed in:"
+- !ruby/struct:SM::Flow::VERB 
+  body: " Mail::Field::KNOWN_FIELDS\n"
+- !ruby/struct:SM::Flow::P 
+  body: as per RFC 2822, any ruby string or method name could pretty much be a field name, so we don't want to just catch ANYTHING sent to a message object and interpret it as a header.
+- !ruby/struct:SM::Flow::P 
+  body: This method provides all three types of header call to set, read and explicitly set with the = operator
+- !ruby/struct:SM::Flow::P 
+  body: "Examples:"
+- !ruby/struct:SM::Flow::VERB 
+  body: " mail.comments = 'These are some comments'\n mail.comments #=&gt; 'These are some comments'\n\n mail.comments 'These are other comments'\n mail.comments #=&gt; 'These are other comments'\n\n mail.date = 'Tue, 1 Jul 2003 10:52:37 +0200'\n mail.date.to_s #=&gt; 'Tue, 1 Jul 2003 10:52:37 +0200'\n\n mail.date 'Tue, 1 Jul 2003 10:52:37 +0200'\n mail.date.to_s #=&gt; 'Tue, 1 Jul 2003 10:52:37 +0200'\n\n mail.resent_msg_id = '&lt;1234@resent_msg_id.lindsaar.net&gt;'\n mail.resent_msg_id #=&gt; '&lt;1234@resent_msg_id.lindsaar.net&gt;'\n\n mail.resent_msg_id '&lt;4567@resent_msg_id.lindsaar.net&gt;'\n mail.resent_msg_id #=&gt; '&lt;4567@resent_msg_id.lindsaar.net&gt;'\n"
+full_name: Mail::Message#method_missing
+is_singleton: false
+name: method_missing
+params: (name, *args, &block)
+visibility: public

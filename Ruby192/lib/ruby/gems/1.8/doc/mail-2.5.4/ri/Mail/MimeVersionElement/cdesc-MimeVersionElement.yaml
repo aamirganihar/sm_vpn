@@ -1,0 +1,20 @@
+--- !ruby/object:RI::ClassDescription 
+attributes: []
+
+class_methods: 
+- !ruby/object:RI::MethodSummary 
+  name: new
+comment: 
+constants: []
+
+full_name: Mail::MimeVersionElement
+includes: 
+- !ruby/object:RI::IncludedModule 
+  name: Mail::Utilities
+instance_methods: 
+- !ruby/object:RI::MethodSummary 
+  name: major
+- !ruby/object:RI::MethodSummary 
+  name: minor
+name: MimeVersionElement
+superclass: Object

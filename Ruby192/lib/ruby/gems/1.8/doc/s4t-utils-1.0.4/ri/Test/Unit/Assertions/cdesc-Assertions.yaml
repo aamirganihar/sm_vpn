@@ -1,0 +1,26 @@
+--- !ruby/object:RI::ClassDescription 
+attributes: []
+
+class_methods: []
+
+comment: 
+- !ruby/struct:SM::Flow::P 
+  body: Some additional Test::Unit assertions.
+constants: []
+
+full_name: Test::Unit::Assertions
+includes: []
+
+instance_methods: 
+- !ruby/object:RI::MethodSummary 
+  name: assert_false
+- !ruby/object:RI::MethodSummary 
+  name: assert_raise_with_matching_message
+- !ruby/object:RI::MethodSummary 
+  name: assert_raises_with_matching_message
+- !ruby/object:RI::MethodSummary 
+  name: assert_true
+- !ruby/object:RI::MethodSummary 
+  name: assert_wants_to_exit
+name: Assertions
+superclass: 

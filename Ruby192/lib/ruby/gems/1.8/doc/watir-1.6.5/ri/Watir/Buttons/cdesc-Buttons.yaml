@@ -1,0 +1,20 @@
+--- !ruby/object:RI::ClassDescription 
+attributes: []
+
+class_methods: []
+
+comment: 
+- !ruby/struct:SM::Flow::P 
+  body: this class accesses the buttons in the document as a collection it would normally only be accessed by the Watir::Container#buttons method
+constants: []
+
+full_name: Watir::Buttons
+includes: []
+
+instance_methods: 
+- !ruby/object:RI::MethodSummary 
+  name: element_class
+- !ruby/object:RI::MethodSummary 
+  name: length
+name: Buttons
+superclass: ElementCollections

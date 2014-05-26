@@ -1,0 +1,30 @@
+--- !ruby/object:RI::ClassDescription 
+attributes: 
+- !ruby/object:RI::Attribute 
+  comment: 
+  name: element_name
+  rw: RW
+class_methods: 
+- !ruby/object:RI::MethodSummary 
+  name: new
+comment: 
+constants: []
+
+full_name: FireWatir::Frame
+includes: []
+
+instance_methods: 
+- !ruby/object:RI::MethodSummary 
+  name: body_var
+- !ruby/object:RI::MethodSummary 
+  name: browser_var
+- !ruby/object:RI::MethodSummary 
+  name: document_var
+- !ruby/object:RI::MethodSummary 
+  name: html
+- !ruby/object:RI::MethodSummary 
+  name: locate
+- !ruby/object:RI::MethodSummary 
+  name: window_var
+name: Frame
+superclass: Element

@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+<!DOCTYPE html 
+     PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+     "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html>
+<head>
+  <title>new (Selenium::Rake::RemoteControlStartTask)</title>
+  <meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" />
+  <link rel="stylesheet" href="../../../.././rdoc-style.css" type="text/css" media="screen" />
+</head>
+<body class="standalone-code">
+  <pre>    <span class="ruby-comment cmt"># File lib/selenium/rake/remote_control_start_task.rb, line 33</span>
+33:       <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">initialize</span>(<span class="ruby-identifier">name</span> = <span class="ruby-value str">'selenium:rc:start'</span><span class="ruby-value str">'selenium:rc:start'</span>)
+34:         <span class="ruby-ivar">@name</span> = <span class="ruby-identifier">name</span>
+35:         <span class="ruby-ivar">@host</span> = <span class="ruby-value str">&quot;localhost&quot;</span>
+36:         <span class="ruby-ivar">@port</span> = <span class="ruby-value">4444</span>
+37:         <span class="ruby-ivar">@timeout_in_seconds</span> = <span class="ruby-value">5</span>
+38:         <span class="ruby-identifier">project_specific_jar</span> = <span class="ruby-constant">Dir</span>[<span class="ruby-constant">JAR_FILE_PATTERN</span>].<span class="ruby-identifier">first</span>
+39:         <span class="ruby-ivar">@jar_file</span> = <span class="ruby-identifier">project_specific_jar</span>
+40:         <span class="ruby-ivar">@additional_args</span> = []
+41:         <span class="ruby-ivar">@background</span> = <span class="ruby-keyword kw">false</span>
+42:         <span class="ruby-ivar">@wait_until_up_and_running</span> = <span class="ruby-keyword kw">false</span>
+43:         <span class="ruby-keyword kw">yield</span> <span class="ruby-keyword kw">self</span> <span class="ruby-keyword kw">if</span> <span class="ruby-identifier">block_given?</span>
+44:         <span class="ruby-identifier">define</span>
+45:       <span class="ruby-keyword kw">end</span></pre>
+</body>
+</html>

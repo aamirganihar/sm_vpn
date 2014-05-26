@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+<!DOCTYPE html 
+     PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+     "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html>
+<head>
+  <title>visible? (Watir::Element)</title>
+  <meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" />
+  <link rel="stylesheet" href="../../.././rdoc-style.css" type="text/css" media="screen" />
+</head>
+<body class="standalone-code">
+  <pre><span class="ruby-comment cmt"># File lib/watir/element.rb, line 296</span>
+    <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">visible?</span>
+      <span class="ruby-comment cmt"># Now iterate up the DOM element tree and return false if any</span>
+      <span class="ruby-comment cmt"># parent element isn't visible or is disabled.</span>
+      <span class="ruby-identifier">assert_exists</span>
+      <span class="ruby-identifier">object</span> = <span class="ruby-ivar">@o</span>
+      <span class="ruby-keyword kw">while</span> <span class="ruby-identifier">object</span>
+        <span class="ruby-keyword kw">begin</span>
+          <span class="ruby-keyword kw">if</span> <span class="ruby-identifier">object</span>.<span class="ruby-identifier">currentstyle</span>.<span class="ruby-identifier">invoke</span>(<span class="ruby-value str">'visibility'</span>) <span class="ruby-operator">=~</span> <span class="ruby-regexp re">/^hidden$/i</span>
+            <span class="ruby-keyword kw">return</span> <span class="ruby-keyword kw">false</span>
+          <span class="ruby-keyword kw">end</span>
+          <span class="ruby-keyword kw">if</span> <span class="ruby-identifier">object</span>.<span class="ruby-identifier">currentstyle</span>.<span class="ruby-identifier">invoke</span>(<span class="ruby-value str">'display'</span>) <span class="ruby-operator">=~</span> <span class="ruby-regexp re">/^none$/i</span>
+            <span class="ruby-keyword kw">return</span> <span class="ruby-keyword kw">false</span>
+          <span class="ruby-keyword kw">end</span>
+          <span class="ruby-keyword kw">if</span> <span class="ruby-identifier">object</span>.<span class="ruby-identifier">invoke</span>(<span class="ruby-value str">'isDisabled'</span>)
+            <span class="ruby-keyword kw">return</span> <span class="ruby-keyword kw">false</span>
+          <span class="ruby-keyword kw">end</span>
+        <span class="ruby-keyword kw">rescue</span> <span class="ruby-constant">WIN32OLERuntimeError</span>
+        <span class="ruby-keyword kw">end</span>
+        <span class="ruby-identifier">object</span> = <span class="ruby-identifier">object</span>.<span class="ruby-identifier">parentElement</span>
+      <span class="ruby-keyword kw">end</span>
+      <span class="ruby-keyword kw">true</span>
+    <span class="ruby-keyword kw">end</span></pre>
+</body>
+</html>

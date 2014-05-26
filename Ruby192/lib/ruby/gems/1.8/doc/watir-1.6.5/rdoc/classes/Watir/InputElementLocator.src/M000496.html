@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+<!DOCTYPE html 
+     PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+     "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html>
+<head>
+  <title>fast_locate (Watir::InputElementLocator)</title>
+  <meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" />
+  <link rel="stylesheet" href="../../.././rdoc-style.css" type="text/css" media="screen" />
+</head>
+<body class="standalone-code">
+  <pre><span class="ruby-comment cmt"># File lib/watir/locator.rb, line 150</span>
+    <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">fast_locate</span>
+      <span class="ruby-comment cmt"># Searching through all elements returned by ole_inner_elements</span>
+      <span class="ruby-comment cmt"># is *significantly* slower than IE's getElementById() and</span>
+      <span class="ruby-comment cmt"># getElementsByName() calls when how is :id or :name.  However</span>
+      <span class="ruby-comment cmt"># IE doesn't match Regexps, so first we make sure what is a String.</span>
+      <span class="ruby-comment cmt"># In addition, IE's getElementById() will also return an element</span>
+      <span class="ruby-comment cmt"># where the :name matches, so we will only return the results of</span>
+      <span class="ruby-comment cmt"># getElementById() if the matching element actually HAS a matching</span>
+      <span class="ruby-comment cmt"># :id.</span>
+
+      <span class="ruby-identifier">the_id</span> = <span class="ruby-ivar">@specifiers</span>[<span class="ruby-identifier">:id</span>]
+      <span class="ruby-keyword kw">if</span> <span class="ruby-identifier">the_id</span> <span class="ruby-operator">&amp;&amp;</span> <span class="ruby-identifier">the_id</span>.<span class="ruby-identifier">class</span> <span class="ruby-operator">==</span> <span class="ruby-constant">String</span> <span class="ruby-operator">&amp;&amp;</span>
+        <span class="ruby-ivar">@specifiers</span>[<span class="ruby-identifier">:index</span>] <span class="ruby-operator">==</span> <span class="ruby-value">1</span> <span class="ruby-operator">&amp;&amp;</span> <span class="ruby-ivar">@specifiers</span>.<span class="ruby-identifier">length</span> <span class="ruby-operator">==</span> <span class="ruby-value">2</span>
+        <span class="ruby-ivar">@element</span> = <span class="ruby-ivar">@document</span>.<span class="ruby-identifier">getElementById</span>(<span class="ruby-identifier">the_id</span>) <span class="ruby-keyword kw">rescue</span> <span class="ruby-keyword kw">nil</span>
+        <span class="ruby-comment cmt"># Return if our fast match really HAS a matching :id</span>
+        <span class="ruby-keyword kw">return</span> <span class="ruby-keyword kw">true</span> <span class="ruby-keyword kw">if</span> <span class="ruby-ivar">@element</span> <span class="ruby-operator">&amp;&amp;</span> <span class="ruby-ivar">@element</span>.<span class="ruby-identifier">invoke</span>(<span class="ruby-value str">'id'</span>) <span class="ruby-operator">==</span> <span class="ruby-identifier">the_id</span>
+      <span class="ruby-keyword kw">end</span>
+
+      <span class="ruby-identifier">the_name</span> = <span class="ruby-ivar">@specifiers</span>[<span class="ruby-identifier">:name</span>]
+      <span class="ruby-keyword kw">if</span> <span class="ruby-identifier">the_name</span> <span class="ruby-operator">&amp;&amp;</span> <span class="ruby-identifier">the_name</span>.<span class="ruby-identifier">class</span> <span class="ruby-operator">==</span> <span class="ruby-constant">String</span>
+        <span class="ruby-ivar">@elements</span> = <span class="ruby-ivar">@document</span>.<span class="ruby-identifier">getElementsByName</span>(<span class="ruby-identifier">the_name</span>) <span class="ruby-keyword kw">rescue</span> <span class="ruby-keyword kw">nil</span>
+      <span class="ruby-keyword kw">end</span>
+      <span class="ruby-keyword kw">false</span>
+    <span class="ruby-keyword kw">end</span></pre>
+</body>
+</html>

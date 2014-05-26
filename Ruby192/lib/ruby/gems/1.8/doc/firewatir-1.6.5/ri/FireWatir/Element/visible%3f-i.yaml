@@ -1,0 +1,14 @@
+--- !ruby/object:RI::MethodDescription 
+aliases: []
+
+block_params: 
+comment: 
+- !ruby/struct:SM::Flow::P 
+  body: "Description:"
+- !ruby/struct:SM::Flow::VERB 
+  body: "  Checks element for display: none or visibility: hidden, these are\n  the most common methods to hide an html element\n"
+full_name: FireWatir::Element#visible?
+is_singleton: false
+name: visible?
+params: ()
+visibility: public

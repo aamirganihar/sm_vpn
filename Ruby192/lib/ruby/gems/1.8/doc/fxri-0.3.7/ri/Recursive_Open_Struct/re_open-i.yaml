@@ -1,0 +1,12 @@
+--- !ruby/object:RI::MethodDescription 
+aliases: []
+
+block_params: 
+comment: 
+- !ruby/struct:SM::Flow::P 
+  body: "Reopens a Recursive_Open_Struct which was closed with #close earlier. After this call, it is possible to modify the structure again."
+full_name: Recursive_Open_Struct#re_open
+is_singleton: false
+name: re_open
+params: ()
+visibility: public

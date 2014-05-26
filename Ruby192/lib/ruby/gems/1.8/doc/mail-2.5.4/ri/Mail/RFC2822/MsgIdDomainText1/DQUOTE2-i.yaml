@@ -1,0 +1,10 @@
+--- !ruby/object:RI::MethodDescription 
+aliases: []
+
+block_params: 
+comment: 
+full_name: Mail::RFC2822::MsgIdDomainText1#DQUOTE2
+is_singleton: false
+name: DQUOTE2
+params: ()
+visibility: public

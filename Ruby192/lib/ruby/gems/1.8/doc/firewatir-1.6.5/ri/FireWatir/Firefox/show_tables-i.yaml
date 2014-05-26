@@ -1,0 +1,19 @@
+--- !ruby/object:RI::MethodDescription 
+aliases: 
+- !ruby/object:RI::AliasName 
+  name: showTables
+block_params: 
+comment: 
+- !ruby/struct:SM::Flow::P 
+  body: "Description:"
+- !ruby/struct:SM::Flow::VERB 
+  body: "  Show all the tables available on the page.\n"
+- !ruby/struct:SM::Flow::P 
+  body: "Output:"
+- !ruby/struct:SM::Flow::VERB 
+  body: "  Id, row count, column count (only first row) and index of all the tables available on the page.\n"
+full_name: FireWatir::Firefox#show_tables
+is_singleton: false
+name: show_tables
+params: ()
+visibility: public

@@ -1,0 +1,44 @@
+--- !ruby/object:RI::ClassDescription 
+attributes: 
+- !ruby/object:RI::Attribute 
+  comment: 
+  name: host
+  rw: RW
+- !ruby/object:RI::Attribute 
+  comment: 
+  name: port
+  rw: RW
+- !ruby/object:RI::Attribute 
+  comment: 
+  name: shutdown_command
+  rw: RW
+- !ruby/object:RI::Attribute 
+  comment: 
+  name: timeout_in_seconds
+  rw: RW
+- !ruby/object:RI::Attribute 
+  comment: 
+  name: wait_until_stopped
+  rw: RW
+class_methods: 
+- !ruby/object:RI::MethodSummary 
+  name: new
+comment: 
+- !ruby/struct:SM::Flow::P 
+  body: Rake task to stop a Selenium Remote Control Server
+- !ruby/struct:SM::Flow::P 
+  body: Selenium::Rake::RemoteControlStopTask.new do |rc|
+- !ruby/struct:SM::Flow::VERB 
+  body: "  rc.host = &quot;localhost&quot;\n  rc.port = 4444\n  rc.timeout_in_seconds = 3 * 60\n"
+- !ruby/struct:SM::Flow::P 
+  body: end
+constants: []
+
+full_name: Selenium::Rake::RemoteControlStopTask
+includes: []
+
+instance_methods: 
+- !ruby/object:RI::MethodSummary 
+  name: define
+name: RemoteControlStopTask
+superclass: Object

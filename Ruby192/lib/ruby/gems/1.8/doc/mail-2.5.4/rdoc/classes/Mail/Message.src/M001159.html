@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+<!DOCTYPE html 
+     PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+     "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html>
+<head>
+  <title>new (Mail::Message)</title>
+  <meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" />
+  <link rel="stylesheet" href="../../.././rdoc-style.css" type="text/css" media="screen" />
+</head>
+<body class="standalone-code">
+  <pre><span class="ruby-comment cmt"># File lib/mail/message.rb, line 100</span>
+    <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">initialize</span>(<span class="ruby-operator">*</span><span class="ruby-identifier">args</span>, <span class="ruby-operator">&amp;</span><span class="ruby-identifier">block</span>)
+      <span class="ruby-ivar">@body</span> = <span class="ruby-keyword kw">nil</span>
+      <span class="ruby-ivar">@body_raw</span> = <span class="ruby-keyword kw">nil</span>
+      <span class="ruby-ivar">@separate_parts</span> = <span class="ruby-keyword kw">false</span>
+      <span class="ruby-ivar">@text_part</span> = <span class="ruby-keyword kw">nil</span>
+      <span class="ruby-ivar">@html_part</span> = <span class="ruby-keyword kw">nil</span>
+      <span class="ruby-ivar">@errors</span> = <span class="ruby-keyword kw">nil</span>
+      <span class="ruby-ivar">@header</span> = <span class="ruby-keyword kw">nil</span>
+      <span class="ruby-ivar">@charset</span> = <span class="ruby-value str">'UTF-8'</span>
+      <span class="ruby-ivar">@defaulted_charset</span> = <span class="ruby-keyword kw">true</span>
+
+      <span class="ruby-ivar">@smtp_envelope_from</span> = <span class="ruby-keyword kw">nil</span>
+      <span class="ruby-ivar">@smtp_envelope_to</span> = <span class="ruby-keyword kw">nil</span>
+
+      <span class="ruby-ivar">@perform_deliveries</span> = <span class="ruby-keyword kw">true</span>
+      <span class="ruby-ivar">@raise_delivery_errors</span> = <span class="ruby-keyword kw">true</span>
+
+      <span class="ruby-ivar">@delivery_handler</span> = <span class="ruby-keyword kw">nil</span>
+
+      <span class="ruby-ivar">@delivery_method</span> = <span class="ruby-constant">Mail</span>.<span class="ruby-identifier">delivery_method</span>.<span class="ruby-identifier">dup</span>
+
+      <span class="ruby-ivar">@transport_encoding</span> = <span class="ruby-constant">Mail</span><span class="ruby-operator">::</span><span class="ruby-constant">Encodings</span>.<span class="ruby-identifier">get_encoding</span>(<span class="ruby-value str">'7bit'</span>)
+
+      <span class="ruby-ivar">@mark_for_delete</span> = <span class="ruby-keyword kw">false</span>
+
+      <span class="ruby-keyword kw">if</span> <span class="ruby-identifier">args</span>.<span class="ruby-identifier">flatten</span>.<span class="ruby-identifier">first</span>.<span class="ruby-identifier">respond_to?</span>(<span class="ruby-identifier">:each_pair</span>)
+        <span class="ruby-identifier">init_with_hash</span>(<span class="ruby-identifier">args</span>.<span class="ruby-identifier">flatten</span>.<span class="ruby-identifier">first</span>)
+      <span class="ruby-keyword kw">else</span>
+        <span class="ruby-identifier">init_with_string</span>(<span class="ruby-identifier">args</span>.<span class="ruby-identifier">flatten</span>[<span class="ruby-value">0</span>].<span class="ruby-identifier">to_s</span>)
+      <span class="ruby-keyword kw">end</span>
+
+      <span class="ruby-keyword kw">if</span> <span class="ruby-identifier">block_given?</span>
+        <span class="ruby-identifier">instance_eval</span>(<span class="ruby-operator">&amp;</span><span class="ruby-identifier">block</span>)
+      <span class="ruby-keyword kw">end</span>
+
+      <span class="ruby-keyword kw">self</span>
+    <span class="ruby-keyword kw">end</span></pre>
+</body>
+</html>

@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+<!DOCTYPE html 
+     PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+     "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html>
+<head>
+  <title>locate (Watir::ModalDialog)</title>
+  <meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" />
+  <link rel="stylesheet" href="../../.././rdoc-style.css" type="text/css" media="screen" />
+</head>
+<body class="standalone-code">
+  <pre><span class="ruby-comment cmt"># File lib/watir/modal_dialog.rb, line 30</span>
+    <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">locate</span>
+      <span class="ruby-identifier">how</span> = <span class="ruby-ivar">@how</span>
+      <span class="ruby-identifier">what</span> = <span class="ruby-ivar">@what</span>
+
+      <span class="ruby-keyword kw">case</span> <span class="ruby-identifier">how</span>
+      <span class="ruby-keyword kw">when</span> <span class="ruby-keyword kw">nil</span>
+        <span class="ruby-keyword kw">unless</span> <span class="ruby-identifier">find_modal_from_window</span>
+          <span class="ruby-identifier">raise</span> <span class="ruby-constant">NoMatchingWindowFoundException</span>, 
+            <span class="ruby-node">&quot;Modal Dialog not found. Timeout = #{Watir::IE.attach_timeout}&quot;</span>
+        <span class="ruby-keyword kw">end</span>
+      <span class="ruby-keyword kw">when</span> <span class="ruby-identifier">:title</span>
+        <span class="ruby-keyword kw">case</span> <span class="ruby-identifier">what</span>.<span class="ruby-identifier">class</span>.<span class="ruby-identifier">to_s</span>
+        <span class="ruby-comment cmt"># TODO: re-write like WET's so we can select on regular expressions too.</span>
+        <span class="ruby-keyword kw">when</span> <span class="ruby-value str">&quot;String&quot;</span>
+          <span class="ruby-keyword kw">begin</span>
+            <span class="ruby-constant">Watir</span><span class="ruby-operator">::</span><span class="ruby-identifier">until_with_timeout</span> <span class="ruby-keyword kw">do</span>
+              <span class="ruby-identifier">title</span> = <span class="ruby-node">&quot;#{what} -- Web Page Dialog&quot;</span>
+              <span class="ruby-ivar">@hwnd</span>, <span class="ruby-identifier">arr</span> = <span class="ruby-constant">FindWindowEx</span>.<span class="ruby-identifier">call</span>(<span class="ruby-value">0</span>, <span class="ruby-value">0</span>, <span class="ruby-keyword kw">nil</span>, <span class="ruby-identifier">title</span>)
+              <span class="ruby-ivar">@hwnd</span> <span class="ruby-operator">&gt;</span> <span class="ruby-value">0</span>
+            <span class="ruby-keyword kw">end</span>
+          <span class="ruby-keyword kw">rescue</span> <span class="ruby-constant">TimeOutException</span>
+            <span class="ruby-identifier">raise</span> <span class="ruby-constant">NoMatchingWindowFoundException</span>, 
+              <span class="ruby-node">&quot;Modal Dialog with title #{what} not found. Timeout = #{Watir::IE.attach_timeout}&quot;</span>
+          <span class="ruby-keyword kw">end</span>
+        <span class="ruby-keyword kw">else</span>
+          <span class="ruby-identifier">raise</span> <span class="ruby-constant">ArgumentError</span>, <span class="ruby-value str">&quot;Title value must be String&quot;</span>
+        <span class="ruby-keyword kw">end</span>
+      <span class="ruby-keyword kw">else</span>
+        <span class="ruby-identifier">raise</span> <span class="ruby-constant">ArgumentError</span>, <span class="ruby-value str">&quot;Only null and :title methods are supported&quot;</span>
+      <span class="ruby-keyword kw">end</span>
+
+      <span class="ruby-identifier">intUnknown</span> = <span class="ruby-value">0</span>
+      <span class="ruby-keyword kw">begin</span>
+        <span class="ruby-constant">Watir</span><span class="ruby-operator">::</span><span class="ruby-identifier">until_with_timeout</span> <span class="ruby-keyword kw">do</span>
+          <span class="ruby-identifier">intPointer</span> = <span class="ruby-value str">&quot; &quot;</span> <span class="ruby-operator">*</span> <span class="ruby-value">4</span> <span class="ruby-comment cmt"># will contain the int value of the IUnknown*</span>
+          <span class="ruby-constant">GetUnknown</span>.<span class="ruby-identifier">call</span>(<span class="ruby-ivar">@hwnd</span>, <span class="ruby-identifier">intPointer</span>)
+          <span class="ruby-identifier">intArray</span> = <span class="ruby-identifier">intPointer</span>.<span class="ruby-identifier">unpack</span>(<span class="ruby-value str">'L'</span>)
+          <span class="ruby-identifier">intUnknown</span> = <span class="ruby-identifier">intArray</span>.<span class="ruby-identifier">first</span>
+          <span class="ruby-identifier">intUnknown</span> <span class="ruby-operator">&gt;</span> <span class="ruby-value">0</span>
+        <span class="ruby-keyword kw">end</span>
+      <span class="ruby-keyword kw">rescue</span> <span class="ruby-constant">TimeOutException</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-identifier">e</span>        
+        <span class="ruby-identifier">raise</span> <span class="ruby-constant">NoMatchingWindowFoundException</span>, 
+          <span class="ruby-node">&quot;Unable to attach to Modal Window #{what.inspect} after #{e.duration} seconds.&quot;</span>
+      <span class="ruby-keyword kw">end</span>
+      
+      <span class="ruby-identifier">copy_test_config</span> <span class="ruby-ivar">@parent_container</span>
+      <span class="ruby-ivar">@document</span> = <span class="ruby-constant">WIN32OLE</span>.<span class="ruby-identifier">connect_unknown</span>(<span class="ruby-identifier">intUnknown</span>)
+    <span class="ruby-keyword kw">end</span></pre>
+</body>
+</html>

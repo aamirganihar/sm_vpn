@@ -1,0 +1,10 @@
+--- !ruby/object:RI::MethodDescription 
+aliases: []
+
+block_params: 
+comment: 
+full_name: Mail::EnvelopeFrom::Primary0#ctime_date
+is_singleton: false
+name: ctime_date
+params: ()
+visibility: public

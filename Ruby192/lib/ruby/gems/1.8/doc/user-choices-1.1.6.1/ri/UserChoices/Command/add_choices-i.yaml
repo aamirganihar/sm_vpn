@@ -1,0 +1,14 @@
+--- !ruby/object:RI::MethodDescription 
+aliases: []
+
+block_params: 
+comment: 
+- !ruby/struct:SM::Flow::P 
+  body: Add choices to the ChoicesBuilder. A choice is a symbol that ends up in the @user_choices hash. It may have a :default value and a :type, as well as an OptionParser-style description of command-line arguments.
+- !ruby/struct:SM::Flow::P 
+  body: Must be defined in a subclass.
+full_name: UserChoices::Command#add_choices
+is_singleton: false
+name: add_choices
+params: (builder)
+visibility: public

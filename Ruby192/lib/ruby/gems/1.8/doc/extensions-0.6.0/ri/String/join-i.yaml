@@ -1,0 +1,14 @@
+--- !ruby/object:RI::MethodDescription 
+aliases: []
+
+block_params: 
+comment: 
+- !ruby/struct:SM::Flow::P 
+  body: Join all the lines of the string together, and compress spaces. The resulting string will have no surrounding whitespace.
+- !ruby/struct:SM::Flow::VERB 
+  body: "  text = %{\n    Once upon a time,\n         Little Red Riding Hood ...\n\n  }\n\n  text.join   # -&gt; &quot;Once upon a time, Little Red Riding Hood ...&quot;\n"
+full_name: String#join
+is_singleton: false
+name: join
+params: ()
+visibility: public

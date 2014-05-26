@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+<!DOCTYPE html 
+     PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+     "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html>
+<head>
+  <title>setTextValueForFileNameField (WinClicker)</title>
+  <meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" />
+  <link rel="stylesheet" href="../.././rdoc-style.css" type="text/css" media="screen" />
+</head>
+<body class="standalone-code">
+  <pre><span class="ruby-comment cmt"># File lib/watir/winClicker.rb, line 483</span>
+  <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">setTextValueForFileNameField</span>( <span class="ruby-identifier">parenthWnd</span> , <span class="ruby-identifier">textToSet</span> ) 
+    <span class="ruby-comment cmt"># get the handle of the nth control that is an Edit box</span>
+    <span class="ruby-identifier">f</span> = <span class="ruby-identifier">getHandleOfControl</span>(<span class="ruby-identifier">parenthWnd</span>, <span class="ruby-value str">&quot;Edit&quot;</span> , <span class="ruby-value">0</span> )
+    <span class="ruby-keyword kw">if</span> <span class="ruby-identifier">f</span> <span class="ruby-operator">==</span> <span class="ruby-value">-1</span> <span class="ruby-keyword kw">then</span>
+      <span class="ruby-comment cmt"># unable to get a handle on the first edit control</span>
+      <span class="ruby-keyword kw">return</span> <span class="ruby-keyword kw">false</span>
+    <span class="ruby-keyword kw">else</span>
+      <span class="ruby-comment cmt"># we found the control and can now send it some messages</span>
+      <span class="ruby-identifier">setComboBoxText</span>(<span class="ruby-identifier">f</span> , <span class="ruby-identifier">textToSet</span>)
+      <span class="ruby-keyword kw">return</span> <span class="ruby-keyword kw">true</span>
+    <span class="ruby-keyword kw">end</span>
+  <span class="ruby-keyword kw">end</span></pre>
+</body>
+</html>

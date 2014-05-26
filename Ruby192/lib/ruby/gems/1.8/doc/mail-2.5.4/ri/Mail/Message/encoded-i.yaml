@@ -1,0 +1,12 @@
+--- !ruby/object:RI::MethodDescription 
+aliases: []
+
+block_params: 
+comment: 
+- !ruby/struct:SM::Flow::P 
+  body: Outputs an encoded string representation of the mail message including all headers, attachments, etc. This is an encoded email in US-ASCII, so it is able to be directly sent to an email server.
+full_name: Mail::Message#encoded
+is_singleton: false
+name: encoded
+params: ()
+visibility: public

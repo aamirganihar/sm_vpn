@@ -1,0 +1,10 @@
+--- !ruby/object:RI::MethodDescription 
+aliases: []
+
+block_params: 
+comment: 
+full_name: Mail::Ruby18::b_value_encode
+is_singleton: true
+name: b_value_encode
+params: (str, encoding)
+visibility: public

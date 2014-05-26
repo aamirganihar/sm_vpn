@@ -1,0 +1,16 @@
+--- !ruby/object:RI::MethodDescription 
+aliases: []
+
+block_params: 
+comment: 
+- !ruby/struct:SM::Flow::P 
+  body: Unwraps a string from being wrapped in parenthesis
+- !ruby/struct:SM::Flow::P 
+  body: "Example:"
+- !ruby/struct:SM::Flow::VERB 
+  body: " str = '&lt;This is a string&gt;'\n unbracket( str ) #=&gt; 'This is a string'\n"
+full_name: Mail::Utilities#unbracket
+is_singleton: false
+name: unbracket
+params: ( str )
+visibility: public

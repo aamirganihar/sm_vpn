@@ -1,0 +1,86 @@
+--- !ruby/object:RI::ClassDescription 
+attributes: []
+
+class_methods: []
+
+comment: 
+constants: 
+- !ruby/object:RI::Constant 
+  comment: 
+  - !ruby/struct:SM::Flow::P 
+    body: Class Field Offsets
+  name: GCL_MENUNAME
+  value: "-8"
+- !ruby/object:RI::Constant 
+  comment: 
+  name: GCL_HBRBACKGROUND
+  value: "-10"
+- !ruby/object:RI::Constant 
+  comment: 
+  name: GCL_HCURSOR
+  value: "-12"
+- !ruby/object:RI::Constant 
+  comment: 
+  name: GCL_HICON
+  value: "-14"
+- !ruby/object:RI::Constant 
+  comment: 
+  name: GCL_HMODULE
+  value: "-16"
+- !ruby/object:RI::Constant 
+  comment: 
+  name: GCL_CBWNDEXTRA
+  value: "-18"
+- !ruby/object:RI::Constant 
+  comment: 
+  name: GCL_CBCLSEXTRA
+  value: "-20"
+- !ruby/object:RI::Constant 
+  comment: 
+  name: GCL_WNDPROC
+  value: "-24"
+- !ruby/object:RI::Constant 
+  comment: 
+  name: GCL_STYLE
+  value: "-26"
+- !ruby/object:RI::Constant 
+  comment: 
+  name: GCW_ATOM
+  value: "-32"
+- !ruby/object:RI::Constant 
+  comment: 
+  - !ruby/struct:SM::Flow::P 
+    body: Window Field Offsets
+  name: GWL_WNDPROC
+  value: "-4"
+- !ruby/object:RI::Constant 
+  comment: 
+  name: GWL_HINSTANCE
+  value: "-6"
+- !ruby/object:RI::Constant 
+  comment: 
+  name: GWL_HWNDPARENT
+  value: "-8"
+- !ruby/object:RI::Constant 
+  comment: 
+  name: GWL_STYLE
+  value: "-16"
+- !ruby/object:RI::Constant 
+  comment: 
+  name: GWL_EXSTYLE
+  value: "-20"
+- !ruby/object:RI::Constant 
+  comment: 
+  name: GWL_USERDATA
+  value: "-21"
+- !ruby/object:RI::Constant 
+  comment: 
+  name: GWL_ID
+  value: "-12"
+full_name: Windows::Window::Classes
+includes: []
+
+instance_methods: []
+
+name: Classes
+superclass: 

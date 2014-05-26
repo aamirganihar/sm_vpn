@@ -1,0 +1,23 @@
+--- !ruby/object:RI::ClassDescription 
+attributes: []
+
+class_methods: 
+- !ruby/object:RI::MethodSummary 
+  name: options
+- !ruby/object:RI::MethodSummary 
+  name: options=
+- !ruby/object:RI::MethodSummary 
+  name: options_file
+- !ruby/object:RI::MethodSummary 
+  name: options_file=
+comment: 
+constants: []
+
+full_name: Watir
+includes: []
+
+instance_methods: 
+- !ruby/object:RI::MethodSummary 
+  name: wait_until
+name: Watir
+superclass: 

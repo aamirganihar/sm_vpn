@@ -1,0 +1,1324 @@
+--- !ruby/object:RI::ClassDescription 
+attributes: []
+
+class_methods: []
+
+comment: 
+constants: 
+- !ruby/object:RI::Constant 
+  comment: 
+  name: ACL_REVISION
+  value: "2"
+- !ruby/object:RI::Constant 
+  comment: 
+  name: ACL_REVISION1
+  value: "1"
+- !ruby/object:RI::Constant 
+  comment: 
+  name: ACL_REVISION2
+  value: "2"
+- !ruby/object:RI::Constant 
+  comment: 
+  name: ACL_REVISION3
+  value: "3"
+- !ruby/object:RI::Constant 
+  comment: 
+  name: ACL_REVISION4
+  value: "4"
+- !ruby/object:RI::Constant 
+  comment: 
+  name: ALLOW_ACE_LENGTH
+  value: "62"
+- !ruby/object:RI::Constant 
+  comment: 
+  name: DACL_SECURITY_INFORMATION
+  value: "4"
+- !ruby/object:RI::Constant 
+  comment: 
+  name: SE_DACL_PRESENT
+  value: "4"
+- !ruby/object:RI::Constant 
+  comment: 
+  name: SECURITY_DESCRIPTOR_MIN_LENGTH
+  value: "20"
+- !ruby/object:RI::Constant 
+  comment: 
+  name: SECURITY_DESCRIPTOR_REVISION
+  value: "1"
+- !ruby/object:RI::Constant 
+  comment: 
+  name: SECURITY_DESCRIPTOR_REVISION1
+  value: "1"
+- !ruby/object:RI::Constant 
+  comment: 
+  name: SECURITY_NULL_SID_AUTHORITY
+  value: "0"
+- !ruby/object:RI::Constant 
+  comment: 
+  name: SECURITY_WORLD_SID_AUTHORITY
+  value: "1"
+- !ruby/object:RI::Constant 
+  comment: 
+  name: SECURITY_LOCAL_SID_AUTHORITY
+  value: "2"
+- !ruby/object:RI::Constant 
+  comment: 
+  name: SECURITY_CREATOR_SID_AUTHORITY
+  value: "3"
+- !ruby/object:RI::Constant 
+  comment: 
+  name: SECURITY_NON_UNIQUE_AUTHORITY
+  value: "4"
+- !ruby/object:RI::Constant 
+  comment: 
+  name: SECURITY_NT_AUTHORITY
+  value: "5"
+- !ruby/object:RI::Constant 
+  comment: 
+  name: SECURITY_RESOURCE_MANAGER_AUTHORITY
+  value: "9"
+- !ruby/object:RI::Constant 
+  comment: 
+  name: SECURITY_NULL_RID
+  value: "0x00000000"
+- !ruby/object:RI::Constant 
+  comment: 
+  name: SECURITY_WORLD_RID
+  value: "0x00000000"
+- !ruby/object:RI::Constant 
+  comment: 
+  name: SECURITY_LOCAL_RID
+  value: "0x00000000"
+- !ruby/object:RI::Constant 
+  comment: 
+  name: SECURITY_CREATOR_OWNER_RID
+  value: "0x00000000"
+- !ruby/object:RI::Constant 
+  comment: 
+  name: SECURITY_CREATOR_GROUP_RID
+  value: "0x00000001"
+- !ruby/object:RI::Constant 
+  comment: 
+  name: SECURITY_CREATOR_OWNER_SERVER_RID
+  value: "0x00000002"
+- !ruby/object:RI::Constant 
+  comment: 
+  name: SECURITY_CREATOR_GROUP_SERVER_RID
+  value: "0x00000003"
+- !ruby/object:RI::Constant 
+  comment: 
+  name: SECURITY_DIALUP_RID
+  value: "0x00000001"
+- !ruby/object:RI::Constant 
+  comment: 
+  name: SECURITY_NETWORK_RID
+  value: "0x00000002"
+- !ruby/object:RI::Constant 
+  comment: 
+  name: SECURITY_BATCH_RID
+  value: "0x00000003"
+- !ruby/object:RI::Constant 
+  comment: 
+  name: SECURITY_INTERACTIVE_RID
+  value: "0x00000004"
+- !ruby/object:RI::Constant 
+  comment: 
+  name: SECURITY_LOGON_IDS_RID
+  value: "0x00000005"
+- !ruby/object:RI::Constant 
+  comment: 
+  name: SECURITY_LOGON_IDS_RID_COUNT
+  value: "3"
+- !ruby/object:RI::Constant 
+  comment: 
+  name: SECURITY_SERVICE_RID
+  value: "0x00000006"
+- !ruby/object:RI::Constant 
+  comment: 
+  name: SECURITY_ANONYMOUS_LOGON_RID
+  value: "0x00000007"
+- !ruby/object:RI::Constant 
+  comment: 
+  name: SECURITY_PROXY_RID
+  value: "0x00000008"
+- !ruby/object:RI::Constant 
+  comment: 
+  name: SECURITY_ENTERPRISE_CONTROLLERS_RID
+  value: "0x00000009"
+- !ruby/object:RI::Constant 
+  comment: 
+  name: SECURITY_SERVER_LOGON_RID
+  value: SECURITY_ENTERPRISE_CONTROLLERS_RID
+- !ruby/object:RI::Constant 
+  comment: 
+  name: SECURITY_PRINCIPAL_SELF_RID
+  value: "0x0000000A"
+- !ruby/object:RI::Constant 
+  comment: 
+  name: SECURITY_AUTHENTICATED_USER_RID
+  value: "0x0000000B"
+- !ruby/object:RI::Constant 
+  comment: 
+  name: SECURITY_RESTRICTED_CODE_RID
+  value: "0x0000000C"
+- !ruby/object:RI::Constant 
+  comment: 
+  name: SECURITY_TERMINAL_SERVER_RID
+  value: "0x0000000D"
+- !ruby/object:RI::Constant 
+  comment: 
+  name: SECURITY_REMOTE_LOGON_RID
+  value: "0x0000000E"
+- !ruby/object:RI::Constant 
+  comment: 
+  name: SECURITY_THIS_ORGANIZATION_RID
+  value: "0x0000000F"
+- !ruby/object:RI::Constant 
+  comment: 
+  name: SECURITY_LOCAL_SYSTEM_RID
+  value: "0x00000012"
+- !ruby/object:RI::Constant 
+  comment: 
+  name: SECURITY_LOCAL_SERVICE_RID
+  value: "0x00000013"
+- !ruby/object:RI::Constant 
+  comment: 
+  name: SECURITY_NETWORK_SERVICE_RID
+  value: "0x00000014"
+- !ruby/object:RI::Constant 
+  comment: 
+  name: SECURITY_NT_NON_UNIQUE
+  value: "0x00000015"
+- !ruby/object:RI::Constant 
+  comment: 
+  name: SECURITY_NT_NON_UNIQUE_SUB_AUTH_COUNT
+  value: "3"
+- !ruby/object:RI::Constant 
+  comment: 
+  name: SECURITY_BUILTIN_DOMAIN_RID
+  value: "0x00000020"
+- !ruby/object:RI::Constant 
+  comment: 
+  name: SECURITY_PACKAGE_BASE_RID
+  value: "0x00000040"
+- !ruby/object:RI::Constant 
+  comment: 
+  name: SECURITY_PACKAGE_RID_COUNT
+  value: "2"
+- !ruby/object:RI::Constant 
+  comment: 
+  name: SECURITY_PACKAGE_NTLM_RID
+  value: "0x0000000A"
+- !ruby/object:RI::Constant 
+  comment: 
+  name: SECURITY_PACKAGE_SCHANNEL_RID
+  value: "0x0000000E"
+- !ruby/object:RI::Constant 
+  comment: 
+  name: SECURITY_PACKAGE_DIGEST_RID
+  value: "0x00000015"
+- !ruby/object:RI::Constant 
+  comment: 
+  name: SECURITY_MAX_ALWAYS_FILTERED
+  value: "0x000003E7"
+- !ruby/object:RI::Constant 
+  comment: 
+  name: SECURITY_MIN_NEVER_FILTERED
+  value: "0x000003E8"
+- !ruby/object:RI::Constant 
+  comment: 
+  name: SECURITY_OTHER_ORGANIZATION_RID
+  value: "0x000003E8"
+- !ruby/object:RI::Constant 
+  comment: 
+  name: FOREST_USER_RID_MAX
+  value: "0x000001F3"
+- !ruby/object:RI::Constant 
+  comment: 
+  name: DOMAIN_USER_RID_ADMIN
+  value: "0x000001F4"
+- !ruby/object:RI::Constant 
+  comment: 
+  name: DOMAIN_USER_RID_GUEST
+  value: "0x000001F5"
+- !ruby/object:RI::Constant 
+  comment: 
+  name: DOMAIN_USER_RID_KRBTGT
+  value: "0x000001F6"
+- !ruby/object:RI::Constant 
+  comment: 
+  name: DOMAIN_USER_RID_MAX
+  value: "0x000003E7"
+- !ruby/object:RI::Constant 
+  comment: 
+  name: DOMAIN_GROUP_RID_ADMINS
+  value: "0x00000200"
+- !ruby/object:RI::Constant 
+  comment: 
+  name: DOMAIN_GROUP_RID_USERS
+  value: "0x00000201"
+- !ruby/object:RI::Constant 
+  comment: 
+  name: DOMAIN_GROUP_RID_GUESTS
+  value: "0x00000202"
+- !ruby/object:RI::Constant 
+  comment: 
+  name: DOMAIN_GROUP_RID_COMPUTERS
+  value: "0x00000203"
+- !ruby/object:RI::Constant 
+  comment: 
+  name: DOMAIN_GROUP_RID_CONTROLLERS
+  value: "0x00000204"
+- !ruby/object:RI::Constant 
+  comment: 
+  name: DOMAIN_GROUP_RID_CERT_ADMINS
+  value: "0x00000205"
+- !ruby/object:RI::Constant 
+  comment: 
+  name: DOMAIN_GROUP_RID_SCHEMA_ADMINS
+  value: "0x00000206"
+- !ruby/object:RI::Constant 
+  comment: 
+  name: DOMAIN_GROUP_RID_ENTERPRISE_ADMINS
+  value: "0x00000207"
+- !ruby/object:RI::Constant 
+  comment: 
+  name: DOMAIN_GROUP_RID_POLICY_ADMINS
+  value: "0x00000208"
+- !ruby/object:RI::Constant 
+  comment: 
+  name: DOMAIN_ALIAS_RID_ADMINS
+  value: "0x00000220"
+- !ruby/object:RI::Constant 
+  comment: 
+  name: DOMAIN_ALIAS_RID_USERS
+  value: "0x00000221"
+- !ruby/object:RI::Constant 
+  comment: 
+  name: DOMAIN_ALIAS_RID_GUESTS
+  value: "0x00000222"
+- !ruby/object:RI::Constant 
+  comment: 
+  name: DOMAIN_ALIAS_RID_POWER_USERS
+  value: "0x00000223"
+- !ruby/object:RI::Constant 
+  comment: 
+  name: DOMAIN_ALIAS_RID_ACCOUNT_OPS
+  value: "0x00000224"
+- !ruby/object:RI::Constant 
+  comment: 
+  name: DOMAIN_ALIAS_RID_SYSTEM_OPS
+  value: "0x00000225"
+- !ruby/object:RI::Constant 
+  comment: 
+  name: DOMAIN_ALIAS_RID_PRINT_OPS
+  value: "0x00000226"
+- !ruby/object:RI::Constant 
+  comment: 
+  name: DOMAIN_ALIAS_RID_BACKUP_OPS
+  value: "0x00000227"
+- !ruby/object:RI::Constant 
+  comment: 
+  name: DOMAIN_ALIAS_RID_REPLICATOR
+  value: "0x00000228"
+- !ruby/object:RI::Constant 
+  comment: 
+  name: DOMAIN_ALIAS_RID_RAS_SERVERS
+  value: "0x00000229"
+- !ruby/object:RI::Constant 
+  comment: 
+  name: DOMAIN_ALIAS_RID_PREW2KCOMPACCESS
+  value: "0x0000022A"
+- !ruby/object:RI::Constant 
+  comment: 
+  name: DOMAIN_ALIAS_RID_REMOTE_DESKTOP_USERS
+  value: "0x0000022B"
+- !ruby/object:RI::Constant 
+  comment: 
+  name: DOMAIN_ALIAS_RID_NETWORK_CONFIGURATION_OPS
+  value: "0x0000022C"
+- !ruby/object:RI::Constant 
+  comment: 
+  name: DOMAIN_ALIAS_RID_INCOMING_FOREST_TRUST_BUILDERS
+  value: "0x0000022D"
+- !ruby/object:RI::Constant 
+  comment: 
+  name: DOMAIN_ALIAS_RID_MONITORING_USERS
+  value: "0x0000022E"
+- !ruby/object:RI::Constant 
+  comment: 
+  name: DOMAIN_ALIAS_RID_LOGGING_USERS
+  value: "0x0000022F"
+- !ruby/object:RI::Constant 
+  comment: 
+  name: DOMAIN_ALIAS_RID_AUTHORIZATIONACCESS
+  value: "0x00000230"
+- !ruby/object:RI::Constant 
+  comment: 
+  name: DOMAIN_ALIAS_RID_TS_LICENSE_SERVERS
+  value: "0x00000231"
+- !ruby/object:RI::Constant 
+  comment: 
+  name: DOMAIN_ALIAS_RID_DCOM_USERS
+  value: "0x00000232"
+- !ruby/object:RI::Constant 
+  comment: 
+  name: GENERIC_RIGHTS_MASK
+  value: "0xF0010000"
+- !ruby/object:RI::Constant 
+  comment: 
+  name: GENERIC_RIGHTS_CHK
+  value: "0xF0000000"
+- !ruby/object:RI::Constant 
+  comment: 
+  name: REST_RIGHTS_MASK
+  value: "0x001FFFFF"
+- !ruby/object:RI::Constant 
+  comment: 
+  name: TOKEN_READ
+  value: "131080"
+- !ruby/object:RI::Constant 
+  comment: 
+  name: TOKEN_WRITE
+  value: "131296"
+- !ruby/object:RI::Constant 
+  comment: 
+  name: TOKEN_EXECUTE
+  value: "131072"
+- !ruby/object:RI::Constant 
+  comment: 
+  name: TOKEN_ASSIGN_PRIMARY
+  value: "0x0001"
+- !ruby/object:RI::Constant 
+  comment: 
+  name: TOKEN_DUPLICATE
+  value: "0x0002"
+- !ruby/object:RI::Constant 
+  comment: 
+  name: TOKEN_IMPERSONATE
+  value: "0x0004"
+- !ruby/object:RI::Constant 
+  comment: 
+  name: TOKEN_QUERY
+  value: "0x0008"
+- !ruby/object:RI::Constant 
+  comment: 
+  name: TOKEN_QUERY_SOURCE
+  value: "0x0010"
+- !ruby/object:RI::Constant 
+  comment: 
+  name: TOKEN_ADJUST_PRIVILEGES
+  value: "0x0020"
+- !ruby/object:RI::Constant 
+  comment: 
+  name: TOKEN_ADJUST_GROUPS
+  value: "0x0040"
+- !ruby/object:RI::Constant 
+  comment: 
+  name: TOKEN_ADJUST_DEFAULT
+  value: "0x0080"
+- !ruby/object:RI::Constant 
+  comment: 
+  name: TOKEN_ADJUST_SESSIONID
+  value: "0x0100"
+- !ruby/object:RI::Constant 
+  comment: 
+  name: TOKEN_ALL_ACCESS_P
+  value: "983295"
+- !ruby/object:RI::Constant 
+  comment: 
+  name: TOKEN_ALL_ACCESS
+  value: TOKEN_ALL_ACCESS_P | TOKEN_ADJUST_SESSIONID
+- !ruby/object:RI::Constant 
+  comment: 
+  name: SE_PRIVILEGE_ENABLED_BY_DEFAULT
+  value: "0x00000001"
+- !ruby/object:RI::Constant 
+  comment: 
+  name: SE_PRIVILEGE_ENABLED
+  value: "0x00000002"
+- !ruby/object:RI::Constant 
+  comment: 
+  name: SE_PRIVILEGE_REMOVED
+  value: 0X00000004
+- !ruby/object:RI::Constant 
+  comment: 
+  name: SE_PRIVILEGE_USED_FOR_ACCESS
+  value: "0x80000000"
+- !ruby/object:RI::Constant 
+  comment: 
+  name: OWNER_SECURITY_INFORMATION
+  value: "1"
+- !ruby/object:RI::Constant 
+  comment: 
+  name: GROUP_SECURITY_INFORMATION
+  value: "2"
+- !ruby/object:RI::Constant 
+  comment: 
+  - !ruby/struct:SM::Flow::P 
+    body: SE_OBJECT_TYPE Enumeration
+  name: SE_UNKNOWN_OBJECT_TYPE
+  value: "0"
+- !ruby/object:RI::Constant 
+  comment: 
+  name: SE_FILE_OBJECT
+  value: "1"
+- !ruby/object:RI::Constant 
+  comment: 
+  name: SE_SERVICE
+  value: "2"
+- !ruby/object:RI::Constant 
+  comment: 
+  name: SE_PRINTER
+  value: "3"
+- !ruby/object:RI::Constant 
+  comment: 
+  name: SE_REGISTRY_KEY
+  value: "4"
+- !ruby/object:RI::Constant 
+  comment: 
+  name: SE_LMSHARE
+  value: "5"
+- !ruby/object:RI::Constant 
+  comment: 
+  name: SE_KERNEL_OBJECT
+  value: "6"
+- !ruby/object:RI::Constant 
+  comment: 
+  name: SE_WINDOW_OBJECT
+  value: "7"
+- !ruby/object:RI::Constant 
+  comment: 
+  name: SE_DS_OBJECT
+  value: "8"
+- !ruby/object:RI::Constant 
+  comment: 
+  name: SE_DS_OBJECT_ALL
+  value: "9"
+- !ruby/object:RI::Constant 
+  comment: 
+  name: SE_PROVIDER_DEFINED_OBJECT
+  value: "10"
+- !ruby/object:RI::Constant 
+  comment: 
+  name: SE_WMIGUID_OBJECT
+  value: "11"
+- !ruby/object:RI::Constant 
+  comment: 
+  name: SE_REGISTRY_WOW64_32KEY
+  value: "12"
+- !ruby/object:RI::Constant 
+  comment: 
+  - !ruby/struct:SM::Flow::P 
+    body: Defined Privileges
+  name: SE_CREATE_TOKEN_NAME
+  value: "\"SeCreateTokenPrivilege\""
+- !ruby/object:RI::Constant 
+  comment: 
+  name: SE_ASSIGNPRIMARYTOKEN_NAME
+  value: "\"SeAssignPrimaryTokenPrivilege\""
+- !ruby/object:RI::Constant 
+  comment: 
+  name: SE_LOCK_MEMORY_NAME
+  value: "\"SeLockMemoryPrivilege\""
+- !ruby/object:RI::Constant 
+  comment: 
+  name: SE_INCREASE_QUOTA_NAME
+  value: "\"SeIncreaseQuotaPrivilege\""
+- !ruby/object:RI::Constant 
+  comment: 
+  name: SE_UNSOLICITED_INPUT_NAME
+  value: "\"SeUnsolicitedInputPrivilege\""
+- !ruby/object:RI::Constant 
+  comment: 
+  name: SE_MACHINE_ACCOUNT_NAME
+  value: "\"SeMachineAccountPrivilege\""
+- !ruby/object:RI::Constant 
+  comment: 
+  name: SE_TCB_NAME
+  value: "\"SeTcbPrivilege\""
+- !ruby/object:RI::Constant 
+  comment: 
+  name: SE_SECURITY_NAME
+  value: "\"SeSecurityPrivilege\""
+- !ruby/object:RI::Constant 
+  comment: 
+  name: SE_TAKE_OWNERSHIP_NAME
+  value: "\"SeTakeOwnershipPrivilege\""
+- !ruby/object:RI::Constant 
+  comment: 
+  name: SE_LOAD_DRIVER_NAME
+  value: "\"SeLoadDriverPrivilege\""
+- !ruby/object:RI::Constant 
+  comment: 
+  name: SE_SYSTEM_PROFILE_NAME
+  value: "\"SeSystemProfilePrivilege\""
+- !ruby/object:RI::Constant 
+  comment: 
+  name: SE_SYSTEMTIME_NAME
+  value: "\"SeSystemtimePrivilege\""
+- !ruby/object:RI::Constant 
+  comment: 
+  name: SE_PROF_SINGLE_PROCESS_NAME
+  value: "\"SeProfileSingleProcessPrivilege\""
+- !ruby/object:RI::Constant 
+  comment: 
+  name: SE_INC_BASE_PRIORITY_NAME
+  value: "\"SeIncreaseBasePriorityPrivilege\""
+- !ruby/object:RI::Constant 
+  comment: 
+  name: SE_CREATE_PAGEFILE_NAME
+  value: "\"SeCreatePagefilePrivilege\""
+- !ruby/object:RI::Constant 
+  comment: 
+  name: SE_CREATE_PERMANENT_NAME
+  value: "\"SeCreatePermanentPrivilege\""
+- !ruby/object:RI::Constant 
+  comment: 
+  name: SE_BACKUP_NAME
+  value: "\"SeBackupPrivilege\""
+- !ruby/object:RI::Constant 
+  comment: 
+  name: SE_RESTORE_NAME
+  value: "\"SeRestorePrivilege\""
+- !ruby/object:RI::Constant 
+  comment: 
+  name: SE_SHUTDOWN_NAME
+  value: "\"SeShutdownPrivilege\""
+- !ruby/object:RI::Constant 
+  comment: 
+  name: SE_DEBUG_NAME
+  value: "\"SeDebugPrivilege\""
+- !ruby/object:RI::Constant 
+  comment: 
+  name: SE_AUDIT_NAME
+  value: "\"SeAuditPrivilege\""
+- !ruby/object:RI::Constant 
+  comment: 
+  name: SE_SYSTEM_ENVIRONMENT_NAME
+  value: "\"SeSystemEnvironmentPrivilege\""
+- !ruby/object:RI::Constant 
+  comment: 
+  name: SE_CHANGE_NOTIFY_NAME
+  value: "\"SeChangeNotifyPrivilege\""
+- !ruby/object:RI::Constant 
+  comment: 
+  name: SE_REMOTE_SHUTDOWN_NAME
+  value: "\"SeRemoteShutdownPrivilege\""
+- !ruby/object:RI::Constant 
+  comment: 
+  name: SE_UNDOCK_NAME
+  value: "\"SeUndockPrivilege\""
+- !ruby/object:RI::Constant 
+  comment: 
+  name: SE_SYNC_AGENT_NAME
+  value: "\"SeSyncAgentPrivilege\""
+- !ruby/object:RI::Constant 
+  comment: 
+  name: SE_ENABLE_DELEGATION_NAME
+  value: "\"SeEnableDelegationPrivilege\""
+- !ruby/object:RI::Constant 
+  comment: 
+  name: SE_MANAGE_VOLUME_NAME
+  value: "\"SeManageVolumePrivilege\""
+- !ruby/object:RI::Constant 
+  comment: 
+  name: SE_IMPERSONATE_NAME
+  value: "\"SeImpersonatePrivilege\""
+- !ruby/object:RI::Constant 
+  comment: 
+  name: SE_CREATE_GLOBAL_NAME
+  value: "\"SeCreateGlobalPrivilege\""
+- !ruby/object:RI::Constant 
+  comment: 
+  name: ACCESS_MIN_MS_ACE_TYPE
+  value: "0x0"
+- !ruby/object:RI::Constant 
+  comment: 
+  name: ACCESS_ALLOWED_ACE_TYPE
+  value: "0x0"
+- !ruby/object:RI::Constant 
+  comment: 
+  name: ACCESS_DENIED_ACE_TYPE
+  value: "0x1"
+- !ruby/object:RI::Constant 
+  comment: 
+  name: SYSTEM_AUDIT_ACE_TYPE
+  value: "0x2"
+- !ruby/object:RI::Constant 
+  comment: 
+  name: SYSTEM_ALARM_ACE_TYPE
+  value: "0x3"
+- !ruby/object:RI::Constant 
+  comment: 
+  name: ACCESS_MAX_MS_V2_ACE_TYPE
+  value: "0x3"
+- !ruby/object:RI::Constant 
+  comment: 
+  name: ACCESS_ALLOWED_COMPOUND_ACE_TYPE
+  value: "0x4"
+- !ruby/object:RI::Constant 
+  comment: 
+  name: ACCESS_MAX_MS_V3_ACE_TYPE
+  value: "0x4"
+- !ruby/object:RI::Constant 
+  comment: 
+  name: ACCESS_MIN_MS_OBJECT_ACE_TYPE
+  value: "0x5"
+- !ruby/object:RI::Constant 
+  comment: 
+  name: ACCESS_ALLOWED_OBJECT_ACE_TYPE
+  value: "0x5"
+- !ruby/object:RI::Constant 
+  comment: 
+  name: ACCESS_DENIED_OBJECT_ACE_TYPE
+  value: "0x6"
+- !ruby/object:RI::Constant 
+  comment: 
+  name: SYSTEM_AUDIT_OBJECT_ACE_TYPE
+  value: "0x7"
+- !ruby/object:RI::Constant 
+  comment: 
+  name: SYSTEM_ALARM_OBJECT_ACE_TYPE
+  value: "0x8"
+- !ruby/object:RI::Constant 
+  comment: 
+  name: ACCESS_MAX_MS_OBJECT_ACE_TYPE
+  value: "0x8"
+- !ruby/object:RI::Constant 
+  comment: 
+  name: ACCESS_MAX_MS_V4_ACE_TYPE
+  value: "0x8"
+- !ruby/object:RI::Constant 
+  comment: 
+  name: ACCESS_MAX_MS_ACE_TYPE
+  value: "0x8"
+- !ruby/object:RI::Constant 
+  comment: 
+  name: ACCESS_ALLOWED_CALLBACK_ACE_TYPE
+  value: "0x9"
+- !ruby/object:RI::Constant 
+  comment: 
+  name: ACCESS_DENIED_CALLBACK_ACE_TYPE
+  value: "0xA"
+- !ruby/object:RI::Constant 
+  comment: 
+  name: ACCESS_ALLOWED_CALLBACK_OBJECT_ACE_TYPE
+  value: "0xB"
+- !ruby/object:RI::Constant 
+  comment: 
+  name: ACCESS_DENIED_CALLBACK_OBJECT_ACE_TYPE
+  value: "0xC"
+- !ruby/object:RI::Constant 
+  comment: 
+  name: SYSTEM_AUDIT_CALLBACK_ACE_TYPE
+  value: "0xD"
+- !ruby/object:RI::Constant 
+  comment: 
+  name: SYSTEM_ALARM_CALLBACK_ACE_TYPE
+  value: "0xE"
+- !ruby/object:RI::Constant 
+  comment: 
+  name: SYSTEM_AUDIT_CALLBACK_OBJECT_ACE_TYPE
+  value: "0xF"
+- !ruby/object:RI::Constant 
+  comment: 
+  name: SYSTEM_ALARM_CALLBACK_OBJECT_ACE_TYPE
+  value: "0x10"
+- !ruby/object:RI::Constant 
+  comment: 
+  name: ACCESS_MAX_MS_V5_ACE_TYPE
+  value: "0x10"
+- !ruby/object:RI::Constant 
+  comment: 
+  name: OBJECT_INHERIT_ACE
+  value: "0x1"
+- !ruby/object:RI::Constant 
+  comment: 
+  name: CONTAINER_INHERIT_ACE
+  value: "0x2"
+- !ruby/object:RI::Constant 
+  comment: 
+  name: NO_PROPAGATE_INHERIT_ACE
+  value: "0x4"
+- !ruby/object:RI::Constant 
+  comment: 
+  name: INHERIT_ONLY_ACE
+  value: "0x8"
+- !ruby/object:RI::Constant 
+  comment: 
+  name: INHERITED_ACE
+  value: "0x10"
+- !ruby/object:RI::Constant 
+  comment: 
+  name: VALID_INHERIT_FLAGS
+  value: "0x1F"
+- !ruby/object:RI::Constant 
+  comment: 
+  name: SUCCESSFUL_ACCESS_ACE_FLAG
+  value: "0x40"
+- !ruby/object:RI::Constant 
+  comment: 
+  name: FAILED_ACCESS_ACE_FLAG
+  value: "0x80"
+- !ruby/object:RI::Constant 
+  comment: 
+  - !ruby/struct:SM::Flow::P 
+    body: Standard Access Rights
+  name: DELETE
+  value: "0x00010000"
+- !ruby/object:RI::Constant 
+  comment: 
+  name: READ_CONTROL
+  value: "0x20000"
+- !ruby/object:RI::Constant 
+  comment: 
+  name: WRITE_DAC
+  value: "0x40000"
+- !ruby/object:RI::Constant 
+  comment: 
+  name: WRITE_OWNER
+  value: "0x80000"
+- !ruby/object:RI::Constant 
+  comment: 
+  name: SYNCHRONIZE
+  value: "0x100000"
+- !ruby/object:RI::Constant 
+  comment: 
+  name: STANDARD_RIGHTS_REQUIRED
+  value: "0xf0000"
+- !ruby/object:RI::Constant 
+  comment: 
+  name: STANDARD_RIGHTS_READ
+  value: "0x20000"
+- !ruby/object:RI::Constant 
+  comment: 
+  name: STANDARD_RIGHTS_WRITE
+  value: "0x20000"
+- !ruby/object:RI::Constant 
+  comment: 
+  name: STANDARD_RIGHTS_EXECUTE
+  value: "0x20000"
+- !ruby/object:RI::Constant 
+  comment: 
+  name: STANDARD_RIGHTS_ALL
+  value: "0x1F0000"
+- !ruby/object:RI::Constant 
+  comment: 
+  name: SPECIFIC_RIGHTS_ALL
+  value: "0xFFFF"
+- !ruby/object:RI::Constant 
+  comment: 
+  name: ACCESS_SYSTEM_SECURITY
+  value: "0x1000000"
+- !ruby/object:RI::Constant 
+  comment: 
+  name: MAXIMUM_ALLOWED
+  value: "0x2000000"
+- !ruby/object:RI::Constant 
+  comment: 
+  name: GENERIC_READ
+  value: "0x80000000"
+- !ruby/object:RI::Constant 
+  comment: 
+  name: GENERIC_WRITE
+  value: "0x40000000"
+- !ruby/object:RI::Constant 
+  comment: 
+  name: GENERIC_EXECUTE
+  value: "0x20000000"
+- !ruby/object:RI::Constant 
+  comment: 
+  name: GENERIC_ALL
+  value: "0x10000000"
+- !ruby/object:RI::Constant 
+  comment: 
+  - !ruby/struct:SM::Flow::P 
+    body: Enum SidNameUse
+  name: SidTypeUser
+  value: "1"
+- !ruby/object:RI::Constant 
+  comment: 
+  name: SidTypeGroup
+  value: "2"
+- !ruby/object:RI::Constant 
+  comment: 
+  name: SidTypeDomain
+  value: "3"
+- !ruby/object:RI::Constant 
+  comment: 
+  name: SidTypeAlias
+  value: "4"
+- !ruby/object:RI::Constant 
+  comment: 
+  name: SidTypeWellKnownGroup
+  value: "5"
+- !ruby/object:RI::Constant 
+  comment: 
+  name: SidTypeDeletedAccount
+  value: "6"
+- !ruby/object:RI::Constant 
+  comment: 
+  name: SidTypeInvalid
+  value: "7"
+- !ruby/object:RI::Constant 
+  comment: 
+  name: SidTypeUnknown
+  value: "8"
+- !ruby/object:RI::Constant 
+  comment: 
+  name: SidTypeComputer
+  value: "9"
+- !ruby/object:RI::Constant 
+  comment: 
+  - !ruby/struct:SM::Flow::P 
+    body: Enum TokenInformationClass
+  name: TokenUser
+  value: "1"
+- !ruby/object:RI::Constant 
+  comment: 
+  name: TokenGroups
+  value: "2"
+- !ruby/object:RI::Constant 
+  comment: 
+  name: TokenPrivileges
+  value: "3"
+- !ruby/object:RI::Constant 
+  comment: 
+  name: TokenOwner
+  value: "4"
+- !ruby/object:RI::Constant 
+  comment: 
+  name: TokenPrimaryGroup
+  value: "5"
+- !ruby/object:RI::Constant 
+  comment: 
+  name: TokenDefaultDacl
+  value: "6"
+- !ruby/object:RI::Constant 
+  comment: 
+  name: TokenSource
+  value: "7"
+- !ruby/object:RI::Constant 
+  comment: 
+  name: TokenType
+  value: "8"
+- !ruby/object:RI::Constant 
+  comment: 
+  name: TokenImpersonationLevel
+  value: "9"
+- !ruby/object:RI::Constant 
+  comment: 
+  name: TokenStatistics
+  value: "10"
+- !ruby/object:RI::Constant 
+  comment: 
+  name: TokenRestrictedSids
+  value: "11"
+- !ruby/object:RI::Constant 
+  comment: 
+  name: TokenSessionId
+  value: "12"
+- !ruby/object:RI::Constant 
+  comment: 
+  name: TokenGroupsAndPrivileges
+  value: "13"
+- !ruby/object:RI::Constant 
+  comment: 
+  name: TokenSessionReference
+  value: "14"
+- !ruby/object:RI::Constant 
+  comment: 
+  name: TokenSandBoxInert
+  value: "15"
+- !ruby/object:RI::Constant 
+  comment: 
+  name: TokenAuditPolicy
+  value: "16"
+- !ruby/object:RI::Constant 
+  comment: 
+  name: TokenOrigin
+  value: "17"
+- !ruby/object:RI::Constant 
+  comment: 
+  name: TokenElevationType
+  value: "18"
+- !ruby/object:RI::Constant 
+  comment: 
+  name: TokenLinkedToken
+  value: "19"
+- !ruby/object:RI::Constant 
+  comment: 
+  name: TokenElevation
+  value: "20"
+- !ruby/object:RI::Constant 
+  comment: 
+  name: TokenHasRestrictions
+  value: "21"
+- !ruby/object:RI::Constant 
+  comment: 
+  name: TokenAccessInformation
+  value: "22"
+- !ruby/object:RI::Constant 
+  comment: 
+  name: TokenVirtualizationAllowed
+  value: "23"
+- !ruby/object:RI::Constant 
+  comment: 
+  name: TokenVirtualizationEnabled
+  value: "24"
+- !ruby/object:RI::Constant 
+  comment: 
+  name: TokenIntegrityLevel
+  value: "25"
+- !ruby/object:RI::Constant 
+  comment: 
+  name: TokenUIAccess
+  value: "26"
+- !ruby/object:RI::Constant 
+  comment: 
+  name: TokenMandatoryPolicy
+  value: "27"
+- !ruby/object:RI::Constant 
+  comment: 
+  name: TokenLogonSid
+  value: "28"
+- !ruby/object:RI::Constant 
+  comment: 
+  name: MaxTokenInfoClass
+  value: "29"
+- !ruby/object:RI::Constant 
+  comment: 
+  - !ruby/struct:SM::Flow::P 
+    body: Enum WellKnownSidType
+  name: WinNullSid
+  value: "0"
+- !ruby/object:RI::Constant 
+  comment: 
+  name: WinWorldSid
+  value: "1"
+- !ruby/object:RI::Constant 
+  comment: 
+  name: WinLocalSid
+  value: "2"
+- !ruby/object:RI::Constant 
+  comment: 
+  name: WinCreatorOwnerSid
+  value: "3"
+- !ruby/object:RI::Constant 
+  comment: 
+  name: WinCreatorGroupSid
+  value: "4"
+- !ruby/object:RI::Constant 
+  comment: 
+  name: WinCreatorOwnerServerSid
+  value: "5"
+- !ruby/object:RI::Constant 
+  comment: 
+  name: WinCreatorGroupServerSid
+  value: "6"
+- !ruby/object:RI::Constant 
+  comment: 
+  name: WinNtAuthoritySid
+  value: "7"
+- !ruby/object:RI::Constant 
+  comment: 
+  name: WinDialupSid
+  value: "8"
+- !ruby/object:RI::Constant 
+  comment: 
+  name: WinNetworkSid
+  value: "9"
+- !ruby/object:RI::Constant 
+  comment: 
+  name: WinBatchSid
+  value: "10"
+- !ruby/object:RI::Constant 
+  comment: 
+  name: WinInteractiveSid
+  value: "11"
+- !ruby/object:RI::Constant 
+  comment: 
+  name: WinServiceSid
+  value: "12"
+- !ruby/object:RI::Constant 
+  comment: 
+  name: WinAnonymousSid
+  value: "13"
+- !ruby/object:RI::Constant 
+  comment: 
+  name: WinProxySid
+  value: "14"
+- !ruby/object:RI::Constant 
+  comment: 
+  name: WinEnterpriseControllersSid
+  value: "15"
+- !ruby/object:RI::Constant 
+  comment: 
+  name: WinSelfSid
+  value: "16"
+- !ruby/object:RI::Constant 
+  comment: 
+  name: WinAuthenticatedUserSid
+  value: "17"
+- !ruby/object:RI::Constant 
+  comment: 
+  name: WinRestrictedCodeSid
+  value: "18"
+- !ruby/object:RI::Constant 
+  comment: 
+  name: WinTerminalServerSid
+  value: "19"
+- !ruby/object:RI::Constant 
+  comment: 
+  name: WinRemoteLogonIdSid
+  value: "20"
+- !ruby/object:RI::Constant 
+  comment: 
+  name: WinLogonIdsSid
+  value: "21"
+- !ruby/object:RI::Constant 
+  comment: 
+  name: WinLocalSystemSid
+  value: "22"
+- !ruby/object:RI::Constant 
+  comment: 
+  name: WinLocalServiceSid
+  value: "23"
+- !ruby/object:RI::Constant 
+  comment: 
+  name: WinNetworkServiceSid
+  value: "24"
+- !ruby/object:RI::Constant 
+  comment: 
+  name: WinBuiltinDomainSid
+  value: "25"
+- !ruby/object:RI::Constant 
+  comment: 
+  name: WinBuiltinAdministratorsSid
+  value: "26"
+- !ruby/object:RI::Constant 
+  comment: 
+  name: WinBuiltinUsersSid
+  value: "27"
+- !ruby/object:RI::Constant 
+  comment: 
+  name: WinBuiltinGuestsSid
+  value: "28"
+- !ruby/object:RI::Constant 
+  comment: 
+  name: WinBuiltinPowerUsersSid
+  value: "29"
+- !ruby/object:RI::Constant 
+  comment: 
+  name: WinBuiltinAccountOperatorsSid
+  value: "30"
+- !ruby/object:RI::Constant 
+  comment: 
+  name: WinBuiltinSystemOperatorsSid
+  value: "31"
+- !ruby/object:RI::Constant 
+  comment: 
+  name: WinBuiltinPrintOperatorsSid
+  value: "32"
+- !ruby/object:RI::Constant 
+  comment: 
+  name: WinBuiltinBackupOperatorsSid
+  value: "33"
+- !ruby/object:RI::Constant 
+  comment: 
+  name: WinBuiltinReplicatorSid
+  value: "34"
+- !ruby/object:RI::Constant 
+  comment: 
+  name: WinBuiltinPreWindows2000CompatibleAccessSid
+  value: "35"
+- !ruby/object:RI::Constant 
+  comment: 
+  name: WinBuiltinRemoteDesktopUsersSid
+  value: "36"
+- !ruby/object:RI::Constant 
+  comment: 
+  name: WinBuiltinNetworkConfigurationOperatorsSid
+  value: "37"
+- !ruby/object:RI::Constant 
+  comment: 
+  name: WinAccountAdministratorSid
+  value: "38"
+- !ruby/object:RI::Constant 
+  comment: 
+  name: WinAccountGuestSid
+  value: "39"
+- !ruby/object:RI::Constant 
+  comment: 
+  name: WinAccountKrbtgtSid
+  value: "40"
+- !ruby/object:RI::Constant 
+  comment: 
+  name: WinAccountDomainAdminsSid
+  value: "41"
+- !ruby/object:RI::Constant 
+  comment: 
+  name: WinAccountDomainUsersSid
+  value: "42"
+- !ruby/object:RI::Constant 
+  comment: 
+  name: WinAccountDomainGuestsSid
+  value: "43"
+- !ruby/object:RI::Constant 
+  comment: 
+  name: WinAccountComputersSid
+  value: "44"
+- !ruby/object:RI::Constant 
+  comment: 
+  name: WinAccountControllersSid
+  value: "45"
+- !ruby/object:RI::Constant 
+  comment: 
+  name: WinAccountCertAdminsSid
+  value: "46"
+- !ruby/object:RI::Constant 
+  comment: 
+  name: WinAccountSchemaAdminsSid
+  value: "47"
+- !ruby/object:RI::Constant 
+  comment: 
+  name: WinAccountEnterpriseAdminsSid
+  value: "48"
+- !ruby/object:RI::Constant 
+  comment: 
+  name: WinAccountPolicyAdminsSid
+  value: "49"
+- !ruby/object:RI::Constant 
+  comment: 
+  name: WinAccountRasAndIasServersSid
+  value: "50"
+- !ruby/object:RI::Constant 
+  comment: 
+  name: WinNTLMAuthenticationSid
+  value: "51"
+- !ruby/object:RI::Constant 
+  comment: 
+  name: WinDigestAuthenticationSid
+  value: "52"
+- !ruby/object:RI::Constant 
+  comment: 
+  name: WinSChannelAuthenticationSid
+  value: "53"
+- !ruby/object:RI::Constant 
+  comment: 
+  name: WinThisOrganizationSid
+  value: "54"
+- !ruby/object:RI::Constant 
+  comment: 
+  name: WinOtherOrganizationSid
+  value: "55"
+- !ruby/object:RI::Constant 
+  comment: 
+  name: WinBuiltinIncomingForestTrustBuildersSid
+  value: "56"
+- !ruby/object:RI::Constant 
+  comment: 
+  name: WinBuiltinPerfMonitoringUsersSid
+  value: "57"
+- !ruby/object:RI::Constant 
+  comment: 
+  name: WinBuiltinPerfLoggingUsersSid
+  value: "58"
+- !ruby/object:RI::Constant 
+  comment: 
+  name: WinBuiltinAuthorizationAccessSid
+  value: "59"
+- !ruby/object:RI::Constant 
+  comment: 
+  name: WinBuiltinTerminalServerLicenseServersSid
+  value: "60"
+- !ruby/object:RI::Constant 
+  comment: 
+  name: WinBuiltinDCOMUsersSid
+  value: "61"
+- !ruby/object:RI::Constant 
+  comment: 
+  name: WinBuiltinIUsersSid
+  value: "62"
+- !ruby/object:RI::Constant 
+  comment: 
+  name: WinIUserSid
+  value: "63"
+- !ruby/object:RI::Constant 
+  comment: 
+  name: WinBuiltinCryptoOperatorsSid
+  value: "64"
+- !ruby/object:RI::Constant 
+  comment: 
+  name: WinUntrustedLabelSid
+  value: "65"
+- !ruby/object:RI::Constant 
+  comment: 
+  name: WinLowLabelSid
+  value: "66"
+- !ruby/object:RI::Constant 
+  comment: 
+  name: WinMediumLabelSid
+  value: "67"
+- !ruby/object:RI::Constant 
+  comment: 
+  name: WinHighLabelSid
+  value: "68"
+- !ruby/object:RI::Constant 
+  comment: 
+  name: WinSystemLabelSid
+  value: "69"
+- !ruby/object:RI::Constant 
+  comment: 
+  name: WinWriteRestrictedCodeSid
+  value: "70"
+- !ruby/object:RI::Constant 
+  comment: 
+  name: WinCreatorOwnerRightsSid
+  value: "71"
+- !ruby/object:RI::Constant 
+  comment: 
+  name: WinCacheablePrincipalsGroupSid
+  value: "72"
+- !ruby/object:RI::Constant 
+  comment: 
+  name: WinNonCacheablePrincipalsGroupSid
+  value: "73"
+- !ruby/object:RI::Constant 
+  comment: 
+  name: WinEnterpriseReadonlyControllersSid
+  value: "74"
+- !ruby/object:RI::Constant 
+  comment: 
+  name: WinAccountReadonlyControllersSid
+  value: "75"
+- !ruby/object:RI::Constant 
+  comment: 
+  name: WinBuiltinEventLogReadersGroup
+  value: "76"
+- !ruby/object:RI::Constant 
+  comment: 
+  name: WinNewEnterpriseReadonlyControllersSid
+  value: "77"
+- !ruby/object:RI::Constant 
+  comment: 
+  name: WinBuiltinCertSvcDComAccessGroup
+  value: "78"
+- !ruby/object:RI::Constant 
+  comment: 
+  - !ruby/struct:SM::Flow::P 
+    body: Enum AclInformationClass
+  name: AclRevisionInformation
+  value: "1"
+- !ruby/object:RI::Constant 
+  comment: 
+  name: AclSizeInformation
+  value: "2"
+full_name: Windows::Security
+includes: []
+
+instance_methods: []
+
+name: Security
+superclass: 

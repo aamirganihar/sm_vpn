@@ -1,0 +1,13 @@
+--- !ruby/object:RI::MethodDescription 
+aliases: 
+- !ruby/object:RI::AliasName 
+  name: get_file_name
+block_params: 
+comment: 
+- !ruby/struct:SM::Flow::P 
+  body: Get the text in the first combo box file requester methods returns nil on failure to locate the 1st combobox
+full_name: WinClicker#getTextValueForFileNameField
+is_singleton: false
+name: getTextValueForFileNameField
+params: (parenthWnd)
+visibility: public

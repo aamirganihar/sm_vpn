@@ -1,0 +1,12 @@
+--- !ruby/object:RI::MethodDescription 
+aliases: []
+
+block_params: 
+comment: 
+- !ruby/struct:SM::Flow::P 
+  body: Returns the number of blocks used by the file, where a block is defined as size divided by blksize, rounded up.
+full_name: File::Stat#blocks
+is_singleton: false
+name: blocks
+params: ()
+visibility: public

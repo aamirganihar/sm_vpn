@@ -1,0 +1,14 @@
+--- !ruby/object:RI::MethodDescription 
+aliases: []
+
+block_params: 
+comment: 
+- !ruby/struct:SM::Flow::P 
+  body: Returns the path of the of the symbolic link referred to by <tt>file</tt>.
+- !ruby/struct:SM::Flow::P 
+  body: Requires Windows Vista or later. On older versions of Windows it will raise a NotImplementedError, as per MRI.
+full_name: File::readlink
+is_singleton: true
+name: readlink
+params: (file)
+visibility: public

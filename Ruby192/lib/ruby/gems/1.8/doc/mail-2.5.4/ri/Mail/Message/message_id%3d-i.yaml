@@ -1,0 +1,14 @@
+--- !ruby/object:RI::MethodDescription 
+aliases: []
+
+block_params: 
+comment: 
+- !ruby/struct:SM::Flow::P 
+  body: Sets the Message-ID. Note, per RFC 2822 the Message ID consists of what is INSIDE the &lt; &gt; usually seen in the mail header, so this method will return only what is inside.
+- !ruby/struct:SM::Flow::VERB 
+  body: " mail.message_id = '&lt;1234@message.id&gt;'\n mail.message_id #=&gt; '1234@message.id'\n"
+full_name: Mail::Message#message_id=
+is_singleton: false
+name: message_id=
+params: ( val )
+visibility: public

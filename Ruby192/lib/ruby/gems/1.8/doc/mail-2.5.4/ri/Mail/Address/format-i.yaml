@@ -1,0 +1,14 @@
+--- !ruby/object:RI::MethodDescription 
+aliases: []
+
+block_params: 
+comment: 
+- !ruby/struct:SM::Flow::P 
+  body: Returns a correctly formatted address for the email going out. If given an incorrectly formatted address as input, Mail::Address will do its best to format it correctly. This includes quoting display names as needed and putting the address in angle brackets etc.
+- !ruby/struct:SM::Flow::VERB 
+  body: " a = Address.new('Mikel Lindsaar (My email address) &lt;mikel@test.lindsaar.net&gt;')\n a.format #=&gt; 'Mikel Lindsaar &lt;mikel@test.lindsaar.net&gt; (My email address)'\n"
+full_name: Mail::Address#format
+is_singleton: false
+name: format
+params: ()
+visibility: public

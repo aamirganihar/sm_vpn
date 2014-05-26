@@ -1,0 +1,16 @@
+--- !ruby/object:RI::MethodDescription 
+aliases: []
+
+block_params: 
+comment: 
+- !ruby/struct:SM::Flow::P 
+  body: Fill a series of text fields. This takes a hash of textfield names to values for those fields.
+- !ruby/struct:SM::Flow::P 
+  body: "Example:"
+- !ruby/struct:SM::Flow::VERB 
+  body: "  fill_text_fields {\n    'username' =&gt; 'joe',\n    'password' =&gt; 'blahblah',\n    'email' =&gt; 'joe@blahblah.com',\n    'favorite_num' =&gt; 42\n  }\n"
+full_name: Watir::Simple#fill_text_fields
+is_singleton: false
+name: fill_text_fields
+params: (data)
+visibility: public

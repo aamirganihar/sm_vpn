@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+<!DOCTYPE html 
+     PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+     "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html>
+<head>
+  <title>fire_event (FireWatir::Element)</title>
+  <meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" />
+  <link rel="stylesheet" href="../../.././rdoc-style.css" type="text/css" media="screen" />
+</head>
+<body class="standalone-code">
+  <pre><span class="ruby-comment cmt"># File lib/firewatir/element.rb, line 831</span>
+    <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">fire_event</span>(<span class="ruby-identifier">event</span>, <span class="ruby-identifier">wait</span> = <span class="ruby-keyword kw">true</span>)
+      <span class="ruby-identifier">assert_exists</span>()
+      <span class="ruby-identifier">event</span> = <span class="ruby-identifier">event</span>.<span class="ruby-identifier">to_s</span> <span class="ruby-comment cmt"># in case event was given as a symbol</span>
+
+      <span class="ruby-identifier">event</span> = <span class="ruby-identifier">event</span>.<span class="ruby-identifier">downcase</span>
+
+      <span class="ruby-identifier">event</span> <span class="ruby-operator">=~</span> <span class="ruby-regexp re">/on(.*)/i</span>
+      <span class="ruby-identifier">event</span> = <span class="ruby-identifier">$1</span> <span class="ruby-keyword kw">if</span> <span class="ruby-identifier">$1</span>
+
+      <span class="ruby-comment cmt"># check if we've got an old-school on-event</span>
+      <span class="ruby-comment cmt">#jssh_socket.send(&quot;typeof(#{element_object}.#{event});\n&quot;, 0)</span>
+      <span class="ruby-comment cmt">#is_defined = read_socket()</span>
+
+      <span class="ruby-comment cmt"># info about event types harvested from:</span>
+      <span class="ruby-comment cmt">#   http://www.howtocreate.co.uk/tutorials/javascript/domevents</span>
+      <span class="ruby-keyword kw">case</span> <span class="ruby-identifier">event</span>
+        <span class="ruby-keyword kw">when</span> <span class="ruby-value str">'abort'</span>, <span class="ruby-value str">'blur'</span>, <span class="ruby-value str">'change'</span>, <span class="ruby-value str">'error'</span>, <span class="ruby-value str">'focus'</span>, <span class="ruby-value str">'load'</span>, <span class="ruby-value str">'reset'</span>, <span class="ruby-value str">'resize'</span>,
+                      <span class="ruby-value str">'scroll'</span>, <span class="ruby-value str">'select'</span>, <span class="ruby-value str">'submit'</span>, <span class="ruby-value str">'unload'</span>
+        <span class="ruby-identifier">dom_event_type</span> = <span class="ruby-value str">'HTMLEvents'</span>
+        <span class="ruby-identifier">dom_event_init</span> = <span class="ruby-node">&quot;initEvent(\&quot;#{event}\&quot;, true, true)&quot;</span>
+        <span class="ruby-keyword kw">when</span> <span class="ruby-value str">'keydown'</span>, <span class="ruby-value str">'keypress'</span>, <span class="ruby-value str">'keyup'</span>
+        <span class="ruby-identifier">dom_event_type</span> = <span class="ruby-value str">'KeyEvents'</span>
+        <span class="ruby-comment cmt"># Firefox has a proprietary initializer for keydown/keypress/keyup.</span>
+        <span class="ruby-comment cmt"># Args are as follows:</span>
+        <span class="ruby-comment cmt">#   'type', bubbles, cancelable, windowObject, ctrlKey, altKey, shiftKey, metaKey, keyCode, charCode</span>
+        <span class="ruby-identifier">dom_event_init</span> = <span class="ruby-node">&quot;initKeyEvent(\&quot;#{event}\&quot;, true, true, #{@container.window_var}, false, false, false, false, 0, 0)&quot;</span>
+        <span class="ruby-keyword kw">when</span> <span class="ruby-value str">'click'</span>, <span class="ruby-value str">'dblclick'</span>, <span class="ruby-value str">'mousedown'</span>, <span class="ruby-value str">'mousemove'</span>, <span class="ruby-value str">'mouseout'</span>, <span class="ruby-value str">'mouseover'</span>,
+                      <span class="ruby-value str">'mouseup'</span>
+        <span class="ruby-identifier">dom_event_type</span> = <span class="ruby-value str">'MouseEvents'</span>
+        <span class="ruby-comment cmt"># Args are as follows:</span>
+        <span class="ruby-comment cmt">#   'type', bubbles, cancelable, windowObject, detail, screenX, screenY, clientX, clientY, ctrlKey, altKey, shiftKey, metaKey, button, relatedTarget</span>
+        <span class="ruby-identifier">dom_event_init</span> = <span class="ruby-node">&quot;initMouseEvent(\&quot;#{event}\&quot;, true, true, #{@container.window_var}, 1, 0, 0, 0, 0, false, false, false, false, 0, null)&quot;</span>
+      <span class="ruby-keyword kw">else</span>
+        <span class="ruby-identifier">dom_event_type</span> = <span class="ruby-value str">'HTMLEvents'</span>
+        <span class="ruby-identifier">dom_event_init</span> = <span class="ruby-node">&quot;initEvents(\&quot;#{event}\&quot;, true, true)&quot;</span>
+      <span class="ruby-keyword kw">end</span>
+
+      <span class="ruby-keyword kw">if</span>(<span class="ruby-identifier">element_type</span> <span class="ruby-operator">==</span> <span class="ruby-value str">&quot;HTMLSelectElement&quot;</span>)
+        <span class="ruby-identifier">dom_event_type</span> = <span class="ruby-value str">'HTMLEvents'</span>
+        <span class="ruby-identifier">dom_event_init</span> = <span class="ruby-node">&quot;initEvent(\&quot;#{event}\&quot;, true, true)&quot;</span>
+      <span class="ruby-keyword kw">end</span>
+
+
+      <span class="ruby-identifier">jssh_command</span>  = <span class="ruby-node">&quot;var event = #{@container.document_var}.createEvent(\&quot;#{dom_event_type}\&quot;); &quot;</span>
+      <span class="ruby-identifier">jssh_command</span> <span class="ruby-operator">&lt;&lt;</span> <span class="ruby-node">&quot;event.#{dom_event_init}; &quot;</span>
+      <span class="ruby-identifier">jssh_command</span> <span class="ruby-operator">&lt;&lt;</span> <span class="ruby-node">&quot;#{element_object}.dispatchEvent(event);&quot;</span>
+
+      <span class="ruby-comment cmt">#puts &quot;JSSH COMMAND:\n#{jssh_command}\n&quot;</span>
+
+      <span class="ruby-identifier">jssh_socket</span>.<span class="ruby-identifier">send</span>(<span class="ruby-node">&quot;#{jssh_command}\n&quot;</span>, <span class="ruby-value">0</span>)
+      <span class="ruby-identifier">read_socket</span>() <span class="ruby-keyword kw">if</span> <span class="ruby-identifier">wait</span>
+      <span class="ruby-identifier">wait</span>() <span class="ruby-keyword kw">if</span> <span class="ruby-identifier">wait</span>
+
+      <span class="ruby-ivar">@@current_level</span> = <span class="ruby-value">0</span>
+    <span class="ruby-keyword kw">end</span></pre>
+</body>
+</html>

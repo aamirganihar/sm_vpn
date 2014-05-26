@@ -1,0 +1,16 @@
+--- !ruby/object:RI::MethodDescription 
+aliases: []
+
+block_params: (retval)
+comment: 
+- !ruby/struct:SM::Flow::P 
+  body: "The return value of prog1 is the <em>retval</em>. Before that's returned, though, the <em>retval</em> is yielded to the block. This method is an alternative to stashing a value in a temporary, fiddling around, then returning the temporary. Here's an example:"
+- !ruby/struct:SM::Flow::VERB 
+  body: "    prog1(1+1) { | s | puts &quot;Sum is #{s}.&quot;}   # =&gt; 2\n"
+- !ruby/struct:SM::Flow::P 
+  body: The name &quot;prog1&quot; is ancient Lisp jargon.
+full_name: S4tUtils#prog1
+is_singleton: false
+name: prog1
+params: (retval) {|retval| ...}
+visibility: public

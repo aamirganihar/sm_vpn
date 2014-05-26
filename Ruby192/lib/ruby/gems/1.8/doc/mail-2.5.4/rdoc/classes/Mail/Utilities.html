@@ -1,0 +1,635 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+<!DOCTYPE html 
+     PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+     "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+  <title>Module: Mail::Utilities</title>
+  <meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" />
+  <meta http-equiv="Content-Script-Type" content="text/javascript" />
+  <link rel="stylesheet" href="../.././rdoc-style.css" type="text/css" media="screen" />
+  <script type="text/javascript">
+  // <![CDATA[
+
+  function popupCode( url ) {
+    window.open(url, "Code", "resizable=yes,scrollbars=yes,toolbar=no,status=no,height=150,width=400")
+  }
+
+  function toggleCode( id ) {
+    if ( document.getElementById )
+      elem = document.getElementById( id );
+    else if ( document.all )
+      elem = eval( "document.all." + id );
+    else
+      return false;
+
+    elemStyle = elem.style;
+    
+    if ( elemStyle.display != "block" ) {
+      elemStyle.display = "block"
+    } else {
+      elemStyle.display = "none"
+    }
+
+    return true;
+  }
+  
+  // Make codeblocks hidden by default
+  document.writeln( "<style type=\"text/css\">div.method-source-code { display: none }</style>" )
+  
+  // ]]>
+  </script>
+
+</head>
+<body>
+
+
+
+    <div id="classHeader">
+        <table class="header-table">
+        <tr class="top-aligned-row">
+          <td><strong>Module</strong></td>
+          <td class="class-name-in-header">Mail::Utilities</td>
+        </tr>
+        <tr class="top-aligned-row">
+            <td><strong>In:</strong></td>
+            <td>
+                <a href="../../files/lib/mail/utilities_rb.html">
+                lib/mail/utilities.rb
+                </a>
+        <br />
+            </td>
+        </tr>
+
+        </table>
+    </div>
+  <!-- banner header -->
+
+  <div id="bodyContent">
+
+
+
+  <div id="contextContent">
+
+
+
+   </div>
+
+    <div id="method-list">
+      <h3 class="section-bar">Methods</h3>
+
+      <div class="name-list">
+      <a href="#M000907">atom_safe?</a>&nbsp;&nbsp;
+      <a href="#M000916">bracket</a>&nbsp;&nbsp;
+      <a href="#M000923">capitalize_field</a>&nbsp;&nbsp;
+      <a href="#M000924">constantize</a>&nbsp;&nbsp;
+      <a href="#M000925">dasherize</a>&nbsp;&nbsp;
+      <a href="#M000912">dquote</a>&nbsp;&nbsp;
+      <a href="#M000918">escape_paren</a>&nbsp;&nbsp;
+      <a href="#M000929">map_lines</a>&nbsp;&nbsp;
+      <a href="#M000927">map_lines</a>&nbsp;&nbsp;
+      <a href="#M000928">map_with_index</a>&nbsp;&nbsp;
+      <a href="#M000930">map_with_index</a>&nbsp;&nbsp;
+      <a href="#M000922">match_to_s</a>&nbsp;&nbsp;
+      <a href="#M000914">paren</a>&nbsp;&nbsp;
+      <a href="#M000908">quote_atom</a>&nbsp;&nbsp;
+      <a href="#M000909">quote_phrase</a>&nbsp;&nbsp;
+      <a href="#M000911">quote_token</a>&nbsp;&nbsp;
+      <a href="#M000910">token_safe?</a>&nbsp;&nbsp;
+      <a href="#M000917">unbracket</a>&nbsp;&nbsp;
+      <a href="#M000926">underscoreize</a>&nbsp;&nbsp;
+      <a href="#M000915">unparen</a>&nbsp;&nbsp;
+      <a href="#M000913">unquote</a>&nbsp;&nbsp;
+      <a href="#M000919">uri_escape</a>&nbsp;&nbsp;
+      <a href="#M000921">uri_parser</a>&nbsp;&nbsp;
+      <a href="#M000920">uri_unescape</a>&nbsp;&nbsp;
+      </div>
+    </div>
+
+  </div>
+
+
+    <!-- if includes -->
+    <div id="includes">
+      <h3 class="section-bar">Included Modules</h3>
+
+      <div id="includes-list">
+        <span class="include-name"><a href="Patterns.html">Patterns</a></span>
+      </div>
+    </div>
+
+    <div id="section">
+
+
+
+
+
+      
+
+
+    <!-- if method_list -->
+    <div id="methods">
+      <h3 class="section-bar">Public Instance methods</h3>
+
+      <div id="method-M000907" class="method-detail">
+        <a name="M000907"></a>
+
+        <div class="method-heading">
+          <a href="Utilities.src/M000907.html" target="Code" class="method-signature"
+            onclick="popupCode('Utilities.src/M000907.html');return false;">
+          <span class="method-name">atom_safe?</span><span class="method-args">( str )</span>
+          </a>
+        </div>
+      
+        <div class="method-description">
+          <p>
+Returns true if the string supplied is free from characters not allowed as
+an ATOM
+</p>
+        </div>
+      </div>
+
+      <div id="method-M000916" class="method-detail">
+        <a name="M000916"></a>
+
+        <div class="method-heading">
+          <a href="Utilities.src/M000916.html" target="Code" class="method-signature"
+            onclick="popupCode('Utilities.src/M000916.html');return false;">
+          <span class="method-name">bracket</span><span class="method-args">( str )</span>
+          </a>
+        </div>
+      
+        <div class="method-description">
+          <p>
+Wraps a string in angle brackets and escapes any that are in the string
+itself
+</p>
+<p>
+Example:
+</p>
+<pre>
+ bracket( 'This is a string' ) #=&gt; '&lt;This is a string&gt;'
+</pre>
+        </div>
+      </div>
+
+      <div id="method-M000923" class="method-detail">
+        <a name="M000923"></a>
+
+        <div class="method-heading">
+          <a href="Utilities.src/M000923.html" target="Code" class="method-signature"
+            onclick="popupCode('Utilities.src/M000923.html');return false;">
+          <span class="method-name">capitalize_field</span><span class="method-args">( str )</span>
+          </a>
+        </div>
+      
+        <div class="method-description">
+          <p>
+Capitalizes a string that is joined by hyphens correctly.
+</p>
+<p>
+Example:
+</p>
+<pre>
+ string = 'resent-from-field'
+ capitalize_field( string ) #=&gt; 'Resent-From-Field'
+</pre>
+        </div>
+      </div>
+
+      <div id="method-M000924" class="method-detail">
+        <a name="M000924"></a>
+
+        <div class="method-heading">
+          <a href="Utilities.src/M000924.html" target="Code" class="method-signature"
+            onclick="popupCode('Utilities.src/M000924.html');return false;">
+          <span class="method-name">constantize</span><span class="method-args">( str )</span>
+          </a>
+        </div>
+      
+        <div class="method-description">
+          <p>
+Takes an underscored word and turns it into a class name
+</p>
+<p>
+Example:
+</p>
+<pre>
+ constantize(&quot;hello&quot;) #=&gt; &quot;Hello&quot;
+ constantize(&quot;hello-there&quot;) #=&gt; &quot;HelloThere&quot;
+ constantize(&quot;hello-there-mate&quot;) #=&gt; &quot;HelloThereMate&quot;
+</pre>
+        </div>
+      </div>
+
+      <div id="method-M000925" class="method-detail">
+        <a name="M000925"></a>
+
+        <div class="method-heading">
+          <a href="Utilities.src/M000925.html" target="Code" class="method-signature"
+            onclick="popupCode('Utilities.src/M000925.html');return false;">
+          <span class="method-name">dasherize</span><span class="method-args">( str )</span>
+          </a>
+        </div>
+      
+        <div class="method-description">
+          <p>
+Swaps out all underscores (_) for hyphens (-) good for stringing from
+symbols a field name.
+</p>
+<p>
+Example:
+</p>
+<pre>
+ string = :resent_from_field
+ dasherize ( string ) #=&gt; 'resent_from_field'
+</pre>
+        </div>
+      </div>
+
+      <div id="method-M000912" class="method-detail">
+        <a name="M000912"></a>
+
+        <div class="method-heading">
+          <a href="Utilities.src/M000912.html" target="Code" class="method-signature"
+            onclick="popupCode('Utilities.src/M000912.html');return false;">
+          <span class="method-name">dquote</span><span class="method-args">( str )</span>
+          </a>
+        </div>
+      
+        <div class="method-description">
+          <p>
+Wraps supplied string in double quotes and applies \-escaping as necessary,
+unless it is already wrapped.
+</p>
+<p>
+Example:
+</p>
+<pre>
+ string = 'This is a string'
+ dquote(string) #=&gt; '&quot;This is a string&quot;'
+
+ string = 'This is &quot;a string&quot;'
+ dquote(string #=&gt; '&quot;This is \&quot;a string\&quot;'
+</pre>
+        </div>
+      </div>
+
+      <div id="method-M000918" class="method-detail">
+        <a name="M000918"></a>
+
+        <div class="method-heading">
+          <a href="Utilities.src/M000918.html" target="Code" class="method-signature"
+            onclick="popupCode('Utilities.src/M000918.html');return false;">
+          <span class="method-name">escape_paren</span><span class="method-args">( str )</span>
+          </a>
+        </div>
+      
+        <div class="method-description">
+          <p>
+Escape parenthesies in a string
+</p>
+<p>
+Example:
+</p>
+<pre>
+ str = 'This is (a) string'
+ escape_paren( str ) #=&gt; 'This is \(a\) string'
+</pre>
+        </div>
+      </div>
+
+      <div id="method-M000929" class="method-detail">
+        <a name="M000929"></a>
+
+        <div class="method-heading">
+          <a href="Utilities.src/M000929.html" target="Code" class="method-signature"
+            onclick="popupCode('Utilities.src/M000929.html');return false;">
+          <span class="method-name">map_lines</span><span class="method-args">( str, &amp;block )</span>
+          </a>
+        </div>
+      
+        <div class="method-description">
+        </div>
+      </div>
+
+      <div id="method-M000927" class="method-detail">
+        <a name="M000927"></a>
+
+        <div class="method-heading">
+          <a href="Utilities.src/M000927.html" target="Code" class="method-signature"
+            onclick="popupCode('Utilities.src/M000927.html');return false;">
+          <span class="method-name">map_lines</span><span class="method-args">( str ) {|line| ...}</span>
+          </a>
+        </div>
+      
+        <div class="method-description">
+        </div>
+      </div>
+
+      <div id="method-M000928" class="method-detail">
+        <a name="M000928"></a>
+
+        <div class="method-heading">
+          <a href="Utilities.src/M000928.html" target="Code" class="method-signature"
+            onclick="popupCode('Utilities.src/M000928.html');return false;">
+          <span class="method-name">map_with_index</span><span class="method-args">( enum ) {|token, i| ...}</span>
+          </a>
+        </div>
+      
+        <div class="method-description">
+        </div>
+      </div>
+
+      <div id="method-M000930" class="method-detail">
+        <a name="M000930"></a>
+
+        <div class="method-heading">
+          <a href="Utilities.src/M000930.html" target="Code" class="method-signature"
+            onclick="popupCode('Utilities.src/M000930.html');return false;">
+          <span class="method-name">map_with_index</span><span class="method-args">( enum, &amp;block )</span>
+          </a>
+        </div>
+      
+        <div class="method-description">
+        </div>
+      </div>
+
+      <div id="method-M000922" class="method-detail">
+        <a name="M000922"></a>
+
+        <div class="method-heading">
+          <a href="Utilities.src/M000922.html" target="Code" class="method-signature"
+            onclick="popupCode('Utilities.src/M000922.html');return false;">
+          <span class="method-name">match_to_s</span><span class="method-args">( obj1, obj2 )</span>
+          </a>
+        </div>
+      
+        <div class="method-description">
+          <p>
+Matches two objects with their to_s values case insensitively
+</p>
+<p>
+Example:
+</p>
+<pre>
+ obj2 = &quot;This_is_An_object&quot;
+ obj1 = :this_IS_an_object
+ match_to_s( obj1, obj2 ) #=&gt; true
+</pre>
+        </div>
+      </div>
+
+      <div id="method-M000914" class="method-detail">
+        <a name="M000914"></a>
+
+        <div class="method-heading">
+          <a href="Utilities.src/M000914.html" target="Code" class="method-signature"
+            onclick="popupCode('Utilities.src/M000914.html');return false;">
+          <span class="method-name">paren</span><span class="method-args">( str )</span>
+          </a>
+        </div>
+      
+        <div class="method-description">
+          <p>
+Wraps a string in parenthesis and escapes any that are in the string
+itself.
+</p>
+<p>
+Example:
+</p>
+<pre>
+ paren( 'This is a string' ) #=&gt; '(This is a string)'
+</pre>
+        </div>
+      </div>
+
+      <div id="method-M000908" class="method-detail">
+        <a name="M000908"></a>
+
+        <div class="method-heading">
+          <a href="Utilities.src/M000908.html" target="Code" class="method-signature"
+            onclick="popupCode('Utilities.src/M000908.html');return false;">
+          <span class="method-name">quote_atom</span><span class="method-args">( str )</span>
+          </a>
+        </div>
+      
+        <div class="method-description">
+          <p>
+If the string supplied has ATOM unsafe characters in it, will return the
+string quoted in double quotes, otherwise returns the string unmodified
+</p>
+        </div>
+      </div>
+
+      <div id="method-M000909" class="method-detail">
+        <a name="M000909"></a>
+
+        <div class="method-heading">
+          <a href="Utilities.src/M000909.html" target="Code" class="method-signature"
+            onclick="popupCode('Utilities.src/M000909.html');return false;">
+          <span class="method-name">quote_phrase</span><span class="method-args">( str )</span>
+          </a>
+        </div>
+      
+        <div class="method-description">
+          <p>
+If the string supplied has PHRASE unsafe characters in it, will return the
+string quoted in double quotes, otherwise returns the string unmodified
+</p>
+        </div>
+      </div>
+
+      <div id="method-M000911" class="method-detail">
+        <a name="M000911"></a>
+
+        <div class="method-heading">
+          <a href="Utilities.src/M000911.html" target="Code" class="method-signature"
+            onclick="popupCode('Utilities.src/M000911.html');return false;">
+          <span class="method-name">quote_token</span><span class="method-args">( str )</span>
+          </a>
+        </div>
+      
+        <div class="method-description">
+          <p>
+If the string supplied has TOKEN unsafe characters in it, will return the
+string quoted in double quotes, otherwise returns the string unmodified
+</p>
+        </div>
+      </div>
+
+      <div id="method-M000910" class="method-detail">
+        <a name="M000910"></a>
+
+        <div class="method-heading">
+          <a href="Utilities.src/M000910.html" target="Code" class="method-signature"
+            onclick="popupCode('Utilities.src/M000910.html');return false;">
+          <span class="method-name">token_safe?</span><span class="method-args">( str )</span>
+          </a>
+        </div>
+      
+        <div class="method-description">
+          <p>
+Returns true if the string supplied is free from characters not allowed as
+a TOKEN
+</p>
+        </div>
+      </div>
+
+      <div id="method-M000917" class="method-detail">
+        <a name="M000917"></a>
+
+        <div class="method-heading">
+          <a href="Utilities.src/M000917.html" target="Code" class="method-signature"
+            onclick="popupCode('Utilities.src/M000917.html');return false;">
+          <span class="method-name">unbracket</span><span class="method-args">( str )</span>
+          </a>
+        </div>
+      
+        <div class="method-description">
+          <p>
+Unwraps a string from being wrapped in parenthesis
+</p>
+<p>
+Example:
+</p>
+<pre>
+ str = '&lt;This is a string&gt;'
+ unbracket( str ) #=&gt; 'This is a string'
+</pre>
+        </div>
+      </div>
+
+      <div id="method-M000926" class="method-detail">
+        <a name="M000926"></a>
+
+        <div class="method-heading">
+          <a href="Utilities.src/M000926.html" target="Code" class="method-signature"
+            onclick="popupCode('Utilities.src/M000926.html');return false;">
+          <span class="method-name">underscoreize</span><span class="method-args">( str )</span>
+          </a>
+        </div>
+      
+        <div class="method-description">
+          <p>
+Swaps out all hyphens (-) for underscores (_) good for stringing to symbols
+a field name.
+</p>
+<p>
+Example:
+</p>
+<pre>
+ string = :resent_from_field
+ underscoreize ( string ) #=&gt; 'resent_from_field'
+</pre>
+        </div>
+      </div>
+
+      <div id="method-M000915" class="method-detail">
+        <a name="M000915"></a>
+
+        <div class="method-heading">
+          <a href="Utilities.src/M000915.html" target="Code" class="method-signature"
+            onclick="popupCode('Utilities.src/M000915.html');return false;">
+          <span class="method-name">unparen</span><span class="method-args">( str )</span>
+          </a>
+        </div>
+      
+        <div class="method-description">
+          <p>
+Unwraps a string from being wrapped in parenthesis
+</p>
+<p>
+Example:
+</p>
+<pre>
+ str = '(This is a string)'
+ unparen( str ) #=&gt; 'This is a string'
+</pre>
+        </div>
+      </div>
+
+      <div id="method-M000913" class="method-detail">
+        <a name="M000913"></a>
+
+        <div class="method-heading">
+          <a href="Utilities.src/M000913.html" target="Code" class="method-signature"
+            onclick="popupCode('Utilities.src/M000913.html');return false;">
+          <span class="method-name">unquote</span><span class="method-args">( str )</span>
+          </a>
+        </div>
+      
+        <div class="method-description">
+          <p>
+Unwraps supplied string from inside double quotes and removes any
+\-escaping.
+</p>
+<p>
+Example:
+</p>
+<pre>
+ string = '&quot;This is a string&quot;'
+ unquote(string) #=&gt; 'This is a string'
+
+ string = '&quot;This is \&quot;a string\&quot;&quot;'
+ unqoute(string) #=&gt; 'This is &quot;a string&quot;'
+</pre>
+        </div>
+      </div>
+
+      <div id="method-M000919" class="method-detail">
+        <a name="M000919"></a>
+
+        <div class="method-heading">
+          <a href="Utilities.src/M000919.html" target="Code" class="method-signature"
+            onclick="popupCode('Utilities.src/M000919.html');return false;">
+          <span class="method-name">uri_escape</span><span class="method-args">( str )</span>
+          </a>
+        </div>
+      
+        <div class="method-description">
+        </div>
+      </div>
+
+      <div id="method-M000921" class="method-detail">
+        <a name="M000921"></a>
+
+        <div class="method-heading">
+          <a href="Utilities.src/M000921.html" target="Code" class="method-signature"
+            onclick="popupCode('Utilities.src/M000921.html');return false;">
+          <span class="method-name">uri_parser</span><span class="method-args">()</span>
+          </a>
+        </div>
+      
+        <div class="method-description">
+        </div>
+      </div>
+
+      <div id="method-M000920" class="method-detail">
+        <a name="M000920"></a>
+
+        <div class="method-heading">
+          <a href="Utilities.src/M000920.html" target="Code" class="method-signature"
+            onclick="popupCode('Utilities.src/M000920.html');return false;">
+          <span class="method-name">uri_unescape</span><span class="method-args">( str )</span>
+          </a>
+        </div>
+      
+        <div class="method-description">
+        </div>
+      </div>
+
+
+    </div>
+
+
+  </div>
+
+
+<div id="validator-badges">
+  <p><small><a href="http://validator.w3.org/check/referer">[Validate]</a></small></p>
+</div>
+
+</body>
+</html>

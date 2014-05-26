@@ -1,0 +1,412 @@
+--- !ruby/object:RI::ClassDescription 
+attributes: 
+- !ruby/object:RI::Attribute 
+  comment: 
+  - !ruby/struct:SM::Flow::P 
+    body: If you assign a delivery handler, mail will call :deliver_mail on the object you assign to delivery_handler, it will pass itself as the single argument.
+  - !ruby/struct:SM::Flow::P 
+    body: "If you define a delivery_handler, then you are responsible for the following actions in the delivery cycle:"
+  - !ruby/object:SM::Flow::LIST 
+    contents: 
+    - !ruby/struct:SM::Flow::LI 
+      label: "*"
+      body: Appending the mail object to Mail.deliveries as you see fit.
+    - !ruby/struct:SM::Flow::LI 
+      label: "*"
+      body: Checking the mail.perform_deliveries flag to decide if you should actually call :deliver! the mail object or not.
+    - !ruby/struct:SM::Flow::LI 
+      label: "*"
+      body: Checking the mail.raise_delivery_errors flag to decide if you should raise delivery errors if they occur.
+    - !ruby/struct:SM::Flow::LI 
+      label: "*"
+      body: Actually calling :deliver! (with the bang) on the mail object to get it to deliver itself.
+    type: :BULLET
+  - !ruby/struct:SM::Flow::P 
+    body: A simplest implementation of a delivery_handler would be
+  - !ruby/struct:SM::Flow::VERB 
+    body: "  class MyObject\n\n    def initialize\n      @mail = Mail.new('To: mikel@test.lindsaar.net')\n      @mail.delivery_handler = self\n    end\n\n    attr_accessor :mail\n\n    def deliver_mail(mail)\n      yield\n    end\n  end\n"
+  - !ruby/struct:SM::Flow::P 
+    body: "Then doing:"
+  - !ruby/struct:SM::Flow::VERB 
+    body: "  obj = MyObject.new\n  obj.mail.deliver\n"
+  - !ruby/struct:SM::Flow::P 
+    body: Would cause Mail to call obj.deliver_mail passing itself as a parameter, which then can just yield and let Mail do its own private do_delivery method.
+  name: delivery_handler
+  rw: RW
+- !ruby/object:RI::Attribute 
+  comment: 
+  - !ruby/struct:SM::Flow::P 
+    body: If set to false, mail will go through the motions of doing a delivery, but not actually call the delivery method or append the mail object to the Mail.deliveries collection. Useful for testing.
+  - !ruby/struct:SM::Flow::VERB 
+    body: "  Mail.deliveries.size #=&gt; 0\n  mail.delivery_method :smtp\n  mail.perform_deliveries = false\n  mail.deliver                        # Mail::SMTP not called here\n  Mail.deliveries.size #=&gt; 0\n"
+  - !ruby/struct:SM::Flow::P 
+    body: "If you want to test and query the Mail.deliveries collection to see what mail you sent, you should set perform_deliveries to true and use the :test mail delivery_method:"
+  - !ruby/struct:SM::Flow::VERB 
+    body: "  Mail.deliveries.size #=&gt; 0\n  mail.delivery_method :test\n  mail.perform_deliveries = true\n  mail.deliver\n  Mail.deliveries.size #=&gt; 1\n"
+  - !ruby/struct:SM::Flow::P 
+    body: This setting is ignored by mail (though still available as a flag) if you define a delivery_handler
+  name: perform_deliveries
+  rw: RW
+- !ruby/object:RI::Attribute 
+  comment: 
+  - !ruby/struct:SM::Flow::P 
+    body: If set to false, mail will silently catch and ignore any exceptions raised through attempting to deliver an email.
+  - !ruby/struct:SM::Flow::P 
+    body: This setting is ignored by mail (though still available as a flag) if you define a delivery_handler
+  name: raise_delivery_errors
+  rw: RW
+class_methods: 
+- !ruby/object:RI::MethodSummary 
+  name: from_hash
+- !ruby/object:RI::MethodSummary 
+  name: from_yaml
+- !ruby/object:RI::MethodSummary 
+  name: new
+comment: 
+- !ruby/struct:SM::Flow::P 
+  body: The Message class provides a single point of access to all things to do with an email message.
+- !ruby/struct:SM::Flow::P 
+  body: You create a new email message by calling the Mail::Message.new method, or just Mail.new
+- !ruby/struct:SM::Flow::P 
+  body: "A Message object by default has the following objects inside it:"
+- !ruby/object:SM::Flow::LIST 
+  contents: 
+  - !ruby/struct:SM::Flow::LI 
+    label: "*"
+    body: A Header object which contains all information and settings of the header of the email
+  - !ruby/struct:SM::Flow::LI 
+    label: "*"
+    body: Body object which contains all parts of the email that are not part of the header, this includes any attachments, body text, MIME parts etc.
+  type: :BULLET
+- !ruby/struct:SM::Flow::H 
+  level: 2
+  text: Per RFC2822
+- !ruby/struct:SM::Flow::VERB 
+  body: " 2.1. General Description\n\n  At the most basic level, a message is a series of characters.  A\n  message that is conformant with this standard is comprised of\n  characters with values in the range 1 through 127 and interpreted as\n  US-ASCII characters [ASCII].  For brevity, this document sometimes\n  refers to this range of characters as simply &quot;US-ASCII characters&quot;.\n\n  Note: This standard specifies that messages are made up of characters\n  in the US-ASCII range of 1 through 127.  There are other documents,\n  specifically the MIME document series [RFC2045, RFC2046, RFC2047,\n  RFC2048, RFC2049], that extend this standard to allow for values\n  outside of that range.  Discussion of those mechanisms is not within\n  the scope of this standard.\n\n  Messages are divided into lines of characters.  A line is a series of\n  characters that is delimited with the two characters carriage-return\n  and line-feed; that is, the carriage return (CR) character (ASCII\n  value 13) followed immediately by the line feed (LF) character (ASCII\n  value 10).  (The carriage-return/line-feed pair is usually written in\n  this document as &quot;CRLF&quot;.)\n\n  A message consists of header fields (collectively called &quot;the header\n  of the message&quot;) followed, optionally, by a body.  The header is a\n  sequence of lines of characters with special syntax as defined in\n  this standard. The body is simply a sequence of characters that\n  follows the header and is separated from the header by an empty line\n  (i.e., a line with nothing preceding the CRLF).\n"
+constants: []
+
+full_name: Mail::Message
+includes: 
+- !ruby/object:RI::IncludedModule 
+  name: Patterns
+- !ruby/object:RI::IncludedModule 
+  name: Utilities
+instance_methods: 
+- !ruby/object:RI::MethodSummary 
+  name: <=>
+- !ruby/object:RI::MethodSummary 
+  name: ==
+- !ruby/object:RI::MethodSummary 
+  name: "[]"
+- !ruby/object:RI::MethodSummary 
+  name: "[]="
+- !ruby/object:RI::MethodSummary 
+  name: action
+- !ruby/object:RI::MethodSummary 
+  name: add_charset
+- !ruby/object:RI::MethodSummary 
+  name: add_content_transfer_encoding
+- !ruby/object:RI::MethodSummary 
+  name: add_content_type
+- !ruby/object:RI::MethodSummary 
+  name: add_date
+- !ruby/object:RI::MethodSummary 
+  name: add_file
+- !ruby/object:RI::MethodSummary 
+  name: add_message_id
+- !ruby/object:RI::MethodSummary 
+  name: add_mime_version
+- !ruby/object:RI::MethodSummary 
+  name: add_part
+- !ruby/object:RI::MethodSummary 
+  name: all_parts
+- !ruby/object:RI::MethodSummary 
+  name: attachment
+- !ruby/object:RI::MethodSummary 
+  name: attachment?
+- !ruby/object:RI::MethodSummary 
+  name: attachments
+- !ruby/object:RI::MethodSummary 
+  name: bcc
+- !ruby/object:RI::MethodSummary 
+  name: bcc=
+- !ruby/object:RI::MethodSummary 
+  name: bcc_addrs
+- !ruby/object:RI::MethodSummary 
+  name: body
+- !ruby/object:RI::MethodSummary 
+  name: body=
+- !ruby/object:RI::MethodSummary 
+  name: body_encoding
+- !ruby/object:RI::MethodSummary 
+  name: body_encoding=
+- !ruby/object:RI::MethodSummary 
+  name: bounced?
+- !ruby/object:RI::MethodSummary 
+  name: boundary
+- !ruby/object:RI::MethodSummary 
+  name: cc
+- !ruby/object:RI::MethodSummary 
+  name: cc=
+- !ruby/object:RI::MethodSummary 
+  name: cc_addrs
+- !ruby/object:RI::MethodSummary 
+  name: charset
+- !ruby/object:RI::MethodSummary 
+  name: charset=
+- !ruby/object:RI::MethodSummary 
+  name: comments
+- !ruby/object:RI::MethodSummary 
+  name: comments=
+- !ruby/object:RI::MethodSummary 
+  name: content_description
+- !ruby/object:RI::MethodSummary 
+  name: content_description=
+- !ruby/object:RI::MethodSummary 
+  name: content_disposition
+- !ruby/object:RI::MethodSummary 
+  name: content_disposition=
+- !ruby/object:RI::MethodSummary 
+  name: content_id
+- !ruby/object:RI::MethodSummary 
+  name: content_id=
+- !ruby/object:RI::MethodSummary 
+  name: content_location
+- !ruby/object:RI::MethodSummary 
+  name: content_location=
+- !ruby/object:RI::MethodSummary 
+  name: content_transfer_encoding
+- !ruby/object:RI::MethodSummary 
+  name: content_transfer_encoding=
+- !ruby/object:RI::MethodSummary 
+  name: content_type
+- !ruby/object:RI::MethodSummary 
+  name: content_type=
+- !ruby/object:RI::MethodSummary 
+  name: content_type_parameters
+- !ruby/object:RI::MethodSummary 
+  name: convert_to_multipart
+- !ruby/object:RI::MethodSummary 
+  name: date
+- !ruby/object:RI::MethodSummary 
+  name: date=
+- !ruby/object:RI::MethodSummary 
+  name: decode_body
+- !ruby/object:RI::MethodSummary 
+  name: decoded
+- !ruby/object:RI::MethodSummary 
+  name: default
+- !ruby/object:RI::MethodSummary 
+  name: deliver
+- !ruby/object:RI::MethodSummary 
+  name: deliver!
+- !ruby/object:RI::MethodSummary 
+  name: delivery_method
+- !ruby/object:RI::MethodSummary 
+  name: delivery_status_part
+- !ruby/object:RI::MethodSummary 
+  name: delivery_status_report?
+- !ruby/object:RI::MethodSummary 
+  name: destinations
+- !ruby/object:RI::MethodSummary 
+  name: diagnostic_code
+- !ruby/object:RI::MethodSummary 
+  name: encode!
+- !ruby/object:RI::MethodSummary 
+  name: encoded
+- !ruby/object:RI::MethodSummary 
+  name: envelope_date
+- !ruby/object:RI::MethodSummary 
+  name: envelope_from
+- !ruby/object:RI::MethodSummary 
+  name: error_status
+- !ruby/object:RI::MethodSummary 
+  name: errors
+- !ruby/object:RI::MethodSummary 
+  name: filename
+- !ruby/object:RI::MethodSummary 
+  name: final_recipient
+- !ruby/object:RI::MethodSummary 
+  name: find_first_mime_type
+- !ruby/object:RI::MethodSummary 
+  name: from
+- !ruby/object:RI::MethodSummary 
+  name: from=
+- !ruby/object:RI::MethodSummary 
+  name: from_addrs
+- !ruby/object:RI::MethodSummary 
+  name: has_attachments?
+- !ruby/object:RI::MethodSummary 
+  name: has_charset?
+- !ruby/object:RI::MethodSummary 
+  name: has_content_transfer_encoding?
+- !ruby/object:RI::MethodSummary 
+  name: has_content_type?
+- !ruby/object:RI::MethodSummary 
+  name: has_date?
+- !ruby/object:RI::MethodSummary 
+  name: has_message_id?
+- !ruby/object:RI::MethodSummary 
+  name: has_mime_version?
+- !ruby/object:RI::MethodSummary 
+  name: header
+- !ruby/object:RI::MethodSummary 
+  name: header=
+- !ruby/object:RI::MethodSummary 
+  name: header_fields
+- !ruby/object:RI::MethodSummary 
+  name: headers
+- !ruby/object:RI::MethodSummary 
+  name: html_part
+- !ruby/object:RI::MethodSummary 
+  name: html_part=
+- !ruby/object:RI::MethodSummary 
+  name: in_reply_to
+- !ruby/object:RI::MethodSummary 
+  name: in_reply_to=
+- !ruby/object:RI::MethodSummary 
+  name: inform_interceptors
+- !ruby/object:RI::MethodSummary 
+  name: inform_observers
+- !ruby/object:RI::MethodSummary 
+  name: inspect
+- !ruby/object:RI::MethodSummary 
+  name: is_marked_for_delete?
+- !ruby/object:RI::MethodSummary 
+  name: keywords
+- !ruby/object:RI::MethodSummary 
+  name: keywords=
+- !ruby/object:RI::MethodSummary 
+  name: main_type
+- !ruby/object:RI::MethodSummary 
+  name: mark_for_delete=
+- !ruby/object:RI::MethodSummary 
+  name: message_content_type
+- !ruby/object:RI::MethodSummary 
+  name: message_id
+- !ruby/object:RI::MethodSummary 
+  name: message_id=
+- !ruby/object:RI::MethodSummary 
+  name: method_missing
+- !ruby/object:RI::MethodSummary 
+  name: mime_parameters
+- !ruby/object:RI::MethodSummary 
+  name: mime_type
+- !ruby/object:RI::MethodSummary 
+  name: mime_version
+- !ruby/object:RI::MethodSummary 
+  name: mime_version=
+- !ruby/object:RI::MethodSummary 
+  name: multipart?
+- !ruby/object:RI::MethodSummary 
+  name: multipart_report?
+- !ruby/object:RI::MethodSummary 
+  name: part
+- !ruby/object:RI::MethodSummary 
+  name: parts
+- !ruby/object:RI::MethodSummary 
+  name: raw_envelope
+- !ruby/object:RI::MethodSummary 
+  name: raw_source
+- !ruby/object:RI::MethodSummary 
+  name: read
+- !ruby/object:RI::MethodSummary 
+  name: ready_to_send!
+- !ruby/object:RI::MethodSummary 
+  name: received
+- !ruby/object:RI::MethodSummary 
+  name: received=
+- !ruby/object:RI::MethodSummary 
+  name: references
+- !ruby/object:RI::MethodSummary 
+  name: references=
+- !ruby/object:RI::MethodSummary 
+  name: register_for_delivery_notification
+- !ruby/object:RI::MethodSummary 
+  name: remote_mta
+- !ruby/object:RI::MethodSummary 
+  name: reply
+- !ruby/object:RI::MethodSummary 
+  name: reply_to
+- !ruby/object:RI::MethodSummary 
+  name: reply_to=
+- !ruby/object:RI::MethodSummary 
+  name: resent_bcc
+- !ruby/object:RI::MethodSummary 
+  name: resent_bcc=
+- !ruby/object:RI::MethodSummary 
+  name: resent_cc
+- !ruby/object:RI::MethodSummary 
+  name: resent_cc=
+- !ruby/object:RI::MethodSummary 
+  name: resent_date
+- !ruby/object:RI::MethodSummary 
+  name: resent_date=
+- !ruby/object:RI::MethodSummary 
+  name: resent_from
+- !ruby/object:RI::MethodSummary 
+  name: resent_from=
+- !ruby/object:RI::MethodSummary 
+  name: resent_message_id
+- !ruby/object:RI::MethodSummary 
+  name: resent_message_id=
+- !ruby/object:RI::MethodSummary 
+  name: resent_sender
+- !ruby/object:RI::MethodSummary 
+  name: resent_sender=
+- !ruby/object:RI::MethodSummary 
+  name: resent_to
+- !ruby/object:RI::MethodSummary 
+  name: resent_to=
+- !ruby/object:RI::MethodSummary 
+  name: retryable?
+- !ruby/object:RI::MethodSummary 
+  name: return_path
+- !ruby/object:RI::MethodSummary 
+  name: return_path=
+- !ruby/object:RI::MethodSummary 
+  name: sender
+- !ruby/object:RI::MethodSummary 
+  name: sender=
+- !ruby/object:RI::MethodSummary 
+  name: set_envelope
+- !ruby/object:RI::MethodSummary 
+  name: skip_deletion
+- !ruby/object:RI::MethodSummary 
+  name: smtp_envelope_from
+- !ruby/object:RI::MethodSummary 
+  name: smtp_envelope_from=
+- !ruby/object:RI::MethodSummary 
+  name: smtp_envelope_to
+- !ruby/object:RI::MethodSummary 
+  name: smtp_envelope_to=
+- !ruby/object:RI::MethodSummary 
+  name: sub_type
+- !ruby/object:RI::MethodSummary 
+  name: subject
+- !ruby/object:RI::MethodSummary 
+  name: subject=
+- !ruby/object:RI::MethodSummary 
+  name: text?
+- !ruby/object:RI::MethodSummary 
+  name: text_part
+- !ruby/object:RI::MethodSummary 
+  name: text_part=
+- !ruby/object:RI::MethodSummary 
+  name: to
+- !ruby/object:RI::MethodSummary 
+  name: to=
+- !ruby/object:RI::MethodSummary 
+  name: to_addrs
+- !ruby/object:RI::MethodSummary 
+  name: to_s
+- !ruby/object:RI::MethodSummary 
+  name: to_yaml
+- !ruby/object:RI::MethodSummary 
+  name: transport_encoding
+- !ruby/object:RI::MethodSummary 
+  name: transport_encoding=
+- !ruby/object:RI::MethodSummary 
+  name: without_attachments!
+name: Message
+superclass: Object

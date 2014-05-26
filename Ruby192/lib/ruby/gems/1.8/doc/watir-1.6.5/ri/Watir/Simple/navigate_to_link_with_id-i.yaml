@@ -1,0 +1,12 @@
+--- !ruby/object:RI::MethodDescription 
+aliases: []
+
+block_params: 
+comment: 
+- !ruby/struct:SM::Flow::P 
+  body: Much like click_link_with_id but navigates to link instead of clicking it, thereby not invoking OnClick for links.
+full_name: Watir::Simple#navigate_to_link_with_id
+is_singleton: false
+name: navigate_to_link_with_id
+params: (id)
+visibility: public

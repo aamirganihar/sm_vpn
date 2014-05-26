@@ -1,0 +1,16 @@
+--- !ruby/object:RI::ClassDescription 
+attributes: []
+
+class_methods: []
+
+comment: 
+constants: []
+
+full_name: Mail::Matchers
+includes: []
+
+instance_methods: 
+- !ruby/object:RI::MethodSummary 
+  name: have_sent_email
+name: Matchers
+superclass: 

@@ -1,0 +1,16 @@
+--- !ruby/object:RI::MethodDescription 
+aliases: []
+
+block_params: 
+comment: 
+- !ruby/struct:SM::Flow::P 
+  body: this is the method for accessing the select lists iterator. Returns a SelectLists object
+- !ruby/struct:SM::Flow::P 
+  body: "Typical usage:"
+- !ruby/struct:SM::Flow::VERB 
+  body: "  ie.select_lists.each { |s| puts s.to_s }            # iterate through all the select boxes on the page\n  ie.select_lists[1].to_s                             # goto the first select boxes on the page\n  ie.select_lists.length                              # show how many select boxes are on the page.\n"
+full_name: Watir::Container#select_lists
+is_singleton: false
+name: select_lists
+params: ()
+visibility: public

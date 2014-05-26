@@ -1,0 +1,14 @@
+--- !ruby/object:RI::MethodDescription 
+aliases: []
+
+block_params: "@methods[attr]"
+comment: 
+- !ruby/struct:SM::Flow::P 
+  body: Iterates through all elements of the Recursive_Open_Struct in alphabetic order.
+full_name: Recursive_Open_Struct#each
+is_singleton: false
+name: each
+params: |
+  each() { |elem| ... }
+
+visibility: public

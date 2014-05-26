@@ -1,0 +1,12 @@
+--- !ruby/object:RI::MethodDescription 
+aliases: []
+
+block_params: 
+comment: 
+- !ruby/struct:SM::Flow::P 
+  body: Ask the question contained in the <em>question_lines</em>, prompt, and wait for an answer. If the stripped value read from STDIN is empty, use the <em>default_answer</em>.
+full_name: S4tUtils#ask
+is_singleton: false
+name: ask
+params: (default_answer, *question_lines)
+visibility: public

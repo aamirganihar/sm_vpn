@@ -1,0 +1,10 @@
+--- !ruby/object:RI::MethodDescription 
+aliases: []
+
+block_params: 
+comment: 
+full_name: X11::Window::new
+is_singleton: true
+name: new
+params: (xid,screen_num,xdisplay,parent=nil)
+visibility: public

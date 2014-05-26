@@ -1,0 +1,10 @@
+--- !ruby/object:RI::MethodDescription 
+aliases: []
+
+block_params: 
+comment: 
+full_name: FireWatir::Frame#window_var
+is_singleton: false
+name: window_var
+params: ()
+visibility: public

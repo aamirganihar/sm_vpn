@@ -1,0 +1,65 @@
+--- !ruby/object:RI::ClassDescription 
+attributes: []
+
+class_methods: 
+- !ruby/object:RI::MethodSummary 
+  name: _register
+- !ruby/object:RI::MethodSummary 
+  name: _unregister
+- !ruby/object:RI::MethodSummary 
+  name: autoit
+- !ruby/object:RI::MethodSummary 
+  name: until_with_timeout
+- !ruby/object:RI::MethodSummary 
+  name: window_exists?
+comment: 
+- !ruby/struct:SM::Flow::P 
+  body: watir/utils.rb
+constants: 
+- !ruby/object:RI::Constant 
+  comment: 
+  name: ATTACHER
+  value: Waiter.new
+- !ruby/object:RI::Constant 
+  comment: 
+  - !ruby/struct:SM::Flow::P 
+    body: GetWindows Constants
+  name: GW_HWNDFIRST
+  value: "0"
+- !ruby/object:RI::Constant 
+  comment: 
+  name: GW_HWNDLAST
+  value: "1"
+- !ruby/object:RI::Constant 
+  comment: 
+  name: GW_HWNDNEXT
+  value: "2"
+- !ruby/object:RI::Constant 
+  comment: 
+  name: GW_HWNDPREV
+  value: "3"
+- !ruby/object:RI::Constant 
+  comment: 
+  name: GW_OWNER
+  value: "4"
+- !ruby/object:RI::Constant 
+  comment: 
+  name: GW_CHILD
+  value: "5"
+- !ruby/object:RI::Constant 
+  comment: 
+  name: GW_ENABLEDPOPUP
+  value: "6"
+- !ruby/object:RI::Constant 
+  comment: 
+  name: GW_MAX
+  value: "6"
+full_name: Watir
+includes: 
+- !ruby/object:RI::IncludedModule 
+  name: Watir::Exception
+instance_methods: 
+- !ruby/object:RI::MethodSummary 
+  name: dialog
+name: Watir
+superclass: 

@@ -1,0 +1,108 @@
+--- !ruby/object:RI::MethodDescription 
+aliases: []
+
+block_params: 
+comment: 
+- !ruby/struct:SM::Flow::P 
+  body: "Sets the file permissions for the given file name. The 'permissions' argument is a hash with an account name as the key, and the various permission constants as possible values. The possible constant values are:"
+- !ruby/object:SM::Flow::LIST 
+  contents: 
+  - !ruby/struct:SM::Flow::LI 
+    label: "*"
+    body: FILE_READ_DATA
+  - !ruby/struct:SM::Flow::LI 
+    label: "*"
+    body: FILE_WRITE_DATA
+  - !ruby/struct:SM::Flow::LI 
+    label: "*"
+    body: FILE_APPEND_DATA
+  - !ruby/struct:SM::Flow::LI 
+    label: "*"
+    body: FILE_READ_EA
+  - !ruby/struct:SM::Flow::LI 
+    label: "*"
+    body: FILE_WRITE_EA
+  - !ruby/struct:SM::Flow::LI 
+    label: "*"
+    body: FILE_EXECUTE
+  - !ruby/struct:SM::Flow::LI 
+    label: "*"
+    body: FILE_DELETE_CHILD
+  - !ruby/struct:SM::Flow::LI 
+    label: "*"
+    body: FILE_READ_ATTRIBUTES
+  - !ruby/struct:SM::Flow::LI 
+    label: "*"
+    body: FILE_WRITE_ATTRIBUTES
+  - !ruby/struct:SM::Flow::LI 
+    label: "*"
+    body: STANDARD_RIGHTS_ALL
+  - !ruby/struct:SM::Flow::LI 
+    label: "*"
+    body: FULL
+  - !ruby/struct:SM::Flow::LI 
+    label: "*"
+    body: READ
+  - !ruby/struct:SM::Flow::LI 
+    label: "*"
+    body: ADD
+  - !ruby/struct:SM::Flow::LI 
+    label: "*"
+    body: CHANGE
+  - !ruby/struct:SM::Flow::LI 
+    label: "*"
+    body: DELETE
+  - !ruby/struct:SM::Flow::LI 
+    label: "*"
+    body: READ_CONTROL
+  - !ruby/struct:SM::Flow::LI 
+    label: "*"
+    body: WRITE_DAC
+  - !ruby/struct:SM::Flow::LI 
+    label: "*"
+    body: WRITE_OWNER
+  - !ruby/struct:SM::Flow::LI 
+    label: "*"
+    body: SYNCHRONIZE
+  - !ruby/struct:SM::Flow::LI 
+    label: "*"
+    body: STANDARD_RIGHTS_REQUIRED
+  - !ruby/struct:SM::Flow::LI 
+    label: "*"
+    body: STANDARD_RIGHTS_READ
+  - !ruby/struct:SM::Flow::LI 
+    label: "*"
+    body: STANDARD_RIGHTS_WRITE
+  - !ruby/struct:SM::Flow::LI 
+    label: "*"
+    body: STANDARD_RIGHTS_EXECUTE
+  - !ruby/struct:SM::Flow::LI 
+    label: "*"
+    body: STANDARD_RIGHTS_ALL
+  - !ruby/struct:SM::Flow::LI 
+    label: "*"
+    body: SPECIFIC_RIGHTS_ALL
+  - !ruby/struct:SM::Flow::LI 
+    label: "*"
+    body: ACCESS_SYSTEM_SECURITY
+  - !ruby/struct:SM::Flow::LI 
+    label: "*"
+    body: MAXIMUM_ALLOWED
+  - !ruby/struct:SM::Flow::LI 
+    label: "*"
+    body: GENERIC_READ
+  - !ruby/struct:SM::Flow::LI 
+    label: "*"
+    body: GENERIC_WRITE
+  - !ruby/struct:SM::Flow::LI 
+    label: "*"
+    body: GENERIC_EXECUTE
+  - !ruby/struct:SM::Flow::LI 
+    label: "*"
+    body: GENERIC_ALL
+  type: :BULLET
+full_name: File::set_permissions
+is_singleton: true
+name: set_permissions
+params: (file, perms)
+visibility: public

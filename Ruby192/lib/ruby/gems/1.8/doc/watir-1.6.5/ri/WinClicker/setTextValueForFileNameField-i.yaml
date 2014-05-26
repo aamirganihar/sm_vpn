@@ -1,0 +1,13 @@
+--- !ruby/object:RI::MethodDescription 
+aliases: 
+- !ruby/object:RI::AliasName 
+  name: set_file_name
+block_params: 
+comment: 
+- !ruby/struct:SM::Flow::P 
+  body: this sets the filename field to text to set
+full_name: WinClicker#setTextValueForFileNameField
+is_singleton: false
+name: setTextValueForFileNameField
+params: ( parenthWnd , textToSet )
+visibility: public

@@ -1,0 +1,12 @@
+--- !ruby/object:RI::MethodDescription 
+aliases: []
+
+block_params: 
+comment: 
+- !ruby/struct:SM::Flow::P 
+  body: returns the properties of the object in a string raises an ObjectNotFound exception if the object cannot be found
+full_name: Watir::Table#to_s
+is_singleton: false
+name: to_s
+params: ()
+visibility: public

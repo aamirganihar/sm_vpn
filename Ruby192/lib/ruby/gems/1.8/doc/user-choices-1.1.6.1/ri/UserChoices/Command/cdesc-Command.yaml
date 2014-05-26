@@ -1,0 +1,28 @@
+--- !ruby/object:RI::ClassDescription 
+attributes: 
+- !ruby/object:RI::Attribute 
+  comment: 
+  name: user_choices
+  rw: R
+class_methods: 
+- !ruby/object:RI::MethodSummary 
+  name: new
+comment: 
+- !ruby/struct:SM::Flow::P 
+  body: A template class. Subclasses describe all the choices a user may make to affect the execution of the command, and the sources for those choices (such as the command line).
+constants: []
+
+full_name: UserChoices::Command
+includes: []
+
+instance_methods: 
+- !ruby/object:RI::MethodSummary 
+  name: add_choices
+- !ruby/object:RI::MethodSummary 
+  name: add_sources
+- !ruby/object:RI::MethodSummary 
+  name: execute
+- !ruby/object:RI::MethodSummary 
+  name: postprocess_user_choices
+name: Command
+superclass: Object

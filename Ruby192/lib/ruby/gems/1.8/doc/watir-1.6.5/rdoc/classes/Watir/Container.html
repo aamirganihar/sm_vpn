@@ -1,0 +1,1750 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+<!DOCTYPE html 
+     PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+     "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+  <title>Module: Watir::Container</title>
+  <meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" />
+  <meta http-equiv="Content-Script-Type" content="text/javascript" />
+  <link rel="stylesheet" href="../.././rdoc-style.css" type="text/css" media="screen" />
+  <script type="text/javascript">
+  // <![CDATA[
+
+  function popupCode( url ) {
+    window.open(url, "Code", "resizable=yes,scrollbars=yes,toolbar=no,status=no,height=150,width=400")
+  }
+
+  function toggleCode( id ) {
+    if ( document.getElementById )
+      elem = document.getElementById( id );
+    else if ( document.all )
+      elem = eval( "document.all." + id );
+    else
+      return false;
+
+    elemStyle = elem.style;
+    
+    if ( elemStyle.display != "block" ) {
+      elemStyle.display = "block"
+    } else {
+      elemStyle.display = "none"
+    }
+
+    return true;
+  }
+  
+  // Make codeblocks hidden by default
+  document.writeln( "<style type=\"text/css\">div.method-source-code { display: none }</style>" )
+  
+  // ]]>
+  </script>
+
+</head>
+<body>
+
+
+
+    <div id="classHeader">
+        <table class="header-table">
+        <tr class="top-aligned-row">
+          <td><strong>Module</strong></td>
+          <td class="class-name-in-header">Watir::Container</td>
+        </tr>
+        <tr class="top-aligned-row">
+            <td><strong>In:</strong></td>
+            <td>
+                <a href="../../files/lib/watir/container_rb.html">
+                lib/watir/container.rb
+                </a>
+        <br />
+                <a href="../../files/lib/watir/form_rb.html">
+                lib/watir/form.rb
+                </a>
+        <br />
+            </td>
+        </tr>
+
+        </table>
+    </div>
+  <!-- banner header -->
+
+  <div id="bodyContent">
+
+
+
+  <div id="contextContent">
+
+    <div id="description">
+      <p>
+This module contains the factory methods that are used to access most html
+objects
+</p>
+<p>
+For example, to access a <a href="Container.html#M000086">button</a> on a
+web page that has the following html
+</p>
+<pre>
+ &lt;input type = button name= 'b1' value='Click Me' onClick='javascript:doSomething()'&gt;
+</pre>
+<p>
+the following watir code could be used
+</p>
+<pre>
+ ie.button(:name, 'b1').click
+</pre>
+<p>
+or
+</p>
+<pre>
+ ie.button(:value, 'Click Me').to_s
+</pre>
+<p>
+there are many methods available to the <a href="Button.html">Button</a>
+object
+</p>
+<p>
+Is includable for classes that have @container, document and
+ole_inner_elements
+</p>
+
+    </div>
+
+
+   </div>
+
+    <div id="method-list">
+      <h3 class="section-bar">Methods</h3>
+
+      <div class="name-list">
+      <a href="#M000105">area</a>&nbsp;&nbsp;
+      <a href="#M000106">areas</a>&nbsp;&nbsp;
+      <a href="#M000086">button</a>&nbsp;&nbsp;
+      <a href="#M000087">buttons</a>&nbsp;&nbsp;
+      <a href="#M000081">cell</a>&nbsp;&nbsp;
+      <a href="#M000082">cells</a>&nbsp;&nbsp;
+      <a href="#M000096">checkbox</a>&nbsp;&nbsp;
+      <a href="#M000097">checkboxes</a>&nbsp;&nbsp;
+      <a href="#M000112">dds</a>&nbsp;&nbsp;
+      <a href="#M000110">divs</a>&nbsp;&nbsp;
+      <a href="#M000111">dls</a>&nbsp;&nbsp;
+      <a href="#M000113">dts</a>&nbsp;&nbsp;
+      <a href="#M000114">ems</a>&nbsp;&nbsp;
+      <a href="#M000088">file_field</a>&nbsp;&nbsp;
+      <a href="#M000089">file_fields</a>&nbsp;&nbsp;
+      <a href="#M000078">form</a>&nbsp;&nbsp;
+      <a href="#M000123">forms</a>&nbsp;&nbsp;
+      <a href="#M000077">frame</a>&nbsp;&nbsp;
+      <a href="#M000092">hidden</a>&nbsp;&nbsp;
+      <a href="#M000093">hiddens</a>&nbsp;&nbsp;
+      <a href="#M000107">image</a>&nbsp;&nbsp;
+      <a href="#M000108">images</a>&nbsp;&nbsp;
+      <a href="#M000119">labels</a>&nbsp;&nbsp;
+      <a href="#M000100">link</a>&nbsp;&nbsp;
+      <a href="#M000101">links</a>&nbsp;&nbsp;
+      <a href="#M000102">lis</a>&nbsp;&nbsp;
+      <a href="#M000121">locate_input_element</a>&nbsp;&nbsp;
+      <a href="#M000122">locate_tagged_element</a>&nbsp;&nbsp;
+      <a href="#M000074">log</a>&nbsp;&nbsp;
+      <a href="#M000103">map</a>&nbsp;&nbsp;
+      <a href="#M000104">maps</a>&nbsp;&nbsp;
+      <a href="#M000085">modal_dialog</a>&nbsp;&nbsp;
+      <a href="#M000109">popup</a>&nbsp;&nbsp;
+      <a href="#M000118">pres</a>&nbsp;&nbsp;
+      <a href="#M000117">ps</a>&nbsp;&nbsp;
+      <a href="#M000098">radio</a>&nbsp;&nbsp;
+      <a href="#M000099">radios</a>&nbsp;&nbsp;
+      <a href="#M000083">row</a>&nbsp;&nbsp;
+      <a href="#M000084">rows</a>&nbsp;&nbsp;
+      <a href="#M000094">select_list</a>&nbsp;&nbsp;
+      <a href="#M000095">select_lists</a>&nbsp;&nbsp;
+      <a href="#M000076">set_container</a>&nbsp;&nbsp;
+      <a href="#M000120">show_all_objects</a>&nbsp;&nbsp;
+      <a href="#M000115">spans</a>&nbsp;&nbsp;
+      <a href="#M000116">strongs</a>&nbsp;&nbsp;
+      <a href="#M000079">table</a>&nbsp;&nbsp;
+      <a href="#M000080">tables</a>&nbsp;&nbsp;
+      <a href="#M000090">text_field</a>&nbsp;&nbsp;
+      <a href="#M000091">text_fields</a>&nbsp;&nbsp;
+      <a href="#M000075">wait</a>&nbsp;&nbsp;
+      </div>
+    </div>
+
+  </div>
+
+
+    <!-- if includes -->
+    <div id="includes">
+      <h3 class="section-bar">Included Modules</h3>
+
+      <div id="includes-list">
+        <span class="include-name">Watir::Exception</span>
+      </div>
+    </div>
+
+    <div id="section">
+
+
+
+
+
+    <div id="attribute-list">
+      <h3 class="section-bar">Attributes</h3>
+
+      <div class="name-list">
+        <table>
+        <tr class="top-aligned-row context-row">
+          <td class="context-item-name">activeObjectHighLightColor</td>
+          <td class="context-item-value">&nbsp;[RW]&nbsp;</td>
+          <td class="context-item-desc">
+The color we want to use for the active object. This can be any valid
+web-friendly color.
+
+</td>
+        </tr>
+        <tr class="top-aligned-row context-row">
+          <td class="context-item-name">page_container</td>
+          <td class="context-item-value">&nbsp;[RW]&nbsp;</td>
+          <td class="context-item-desc">
+The <a href="PageContainer.html">PageContainer</a> object containing this
+element
+
+</td>
+        </tr>
+        <tr class="top-aligned-row context-row">
+          <td class="context-item-name">type_keys</td>
+          <td class="context-item-value">&nbsp;[RW]&nbsp;</td>
+          <td class="context-item-desc"></td>
+        </tr>
+        <tr class="top-aligned-row context-row">
+          <td class="context-item-name">typingspeed</td>
+          <td class="context-item-value">&nbsp;[RW]&nbsp;</td>
+          <td class="context-item-desc">
+This is used to change the typing speed when entering text on a page.
+
+</td>
+        </tr>
+        </table>
+      </div>
+    </div>
+      
+
+
+    <!-- if method_list -->
+    <div id="methods">
+      <h3 class="section-bar">Public Instance methods</h3>
+
+      <div id="method-M000105" class="method-detail">
+        <a name="M000105"></a>
+
+        <div class="method-heading">
+          <a href="Container.src/M000105.html" target="Code" class="method-signature"
+            onclick="popupCode('Container.src/M000105.html');return false;">
+          <span class="method-name">area</span><span class="method-args">(how, what=nil)</span>
+          </a>
+        </div>
+      
+        <div class="method-description">
+          <p>
+This is the main method for accessing <a
+href="Container.html#M000105">area</a> tags - <a
+href="http://msdn.microsoft.com/workshop/author/dhtml/reference/objects/area.asp?frame=true">msdn.microsoft.com/workshop/author/dhtml/reference/objects/area.asp?frame=true</a>
+</p>
+<pre>
+ *  how   - symbol - how we access the area
+ *  what  - string, integer or regular expression - what we are looking for,
+</pre>
+<p>
+Valid values for &#8216;how&#8217; are listed in the <a
+href="../Watir.html">Watir</a> Wiki - <a
+href="http://wiki.openqa.org/display/WTR/Methods+supported+by+Element">wiki.openqa.org/display/WTR/Methods+supported+by+Element</a>
+</p>
+<p>
+returns a <a href="Container.html#M000105">area</a> object
+</p>
+<p>
+Typical Usage
+</p>
+<pre>
+  ie.area(:id, /list/)                 # access the first area that matches list.
+  ie.area(:index,2)                    # access the second area on the page
+  ie.area(:title, &quot;A Picture&quot;)         # access a area using the tooltip text. See http://msdn.microsoft.com/workshop/author/dhtml/reference/properties/title_1.asp?frame=true
+</pre>
+        </div>
+      </div>
+
+      <div id="method-M000106" class="method-detail">
+        <a name="M000106"></a>
+
+        <div class="method-heading">
+          <a href="Container.src/M000106.html" target="Code" class="method-signature"
+            onclick="popupCode('Container.src/M000106.html');return false;">
+          <span class="method-name">areas</span><span class="method-args">()</span>
+          </a>
+        </div>
+      
+        <div class="method-description">
+          <p>
+this is the main method for accessing the <a
+href="Container.html#M000106">areas</a> iterator.
+</p>
+<p>
+Returns a <a href="Container.html#M000106">areas</a> object
+</p>
+<p>
+Typical usage:
+</p>
+<pre>
+  ie.areas.each { |s| puts s.to_s }            # iterate through all the areas on the page
+  ie.areas[1].to_s                             # goto the first area on the page
+  ie.areas.length                              # show how many areas are on the page.
+</pre>
+        </div>
+      </div>
+
+      <div id="method-M000086" class="method-detail">
+        <a name="M000086"></a>
+
+        <div class="method-heading">
+          <a href="Container.src/M000086.html" target="Code" class="method-signature"
+            onclick="popupCode('Container.src/M000086.html');return false;">
+          <span class="method-name">button</span><span class="method-args">(how, what=nil)</span>
+          </a>
+        </div>
+      
+        <div class="method-description">
+          <p>
+This is the main method for accessing a <a
+href="Container.html#M000086">button</a>. Often declared as an &lt;input
+type = submit&gt; tag.
+</p>
+<pre>
+ *  how   - symbol - how we access the button, :index, :id, :name etc
+ *  what  - string, integer or regular expression - what we are looking for,
+</pre>
+<p>
+Valid values for &#8216;how&#8217; are listed in the <a
+href="../Watir.html">Watir</a> Wiki - <a
+href="http://wiki.openqa.org/display/WTR/Methods+supported+by+Element">wiki.openqa.org/display/WTR/Methods+supported+by+Element</a>
+</p>
+<p>
+Returns a <a href="Button.html">Button</a> object.
+</p>
+<p>
+Typical usage
+</p>
+<pre>
+   ie.button(:id,    'b_1')                             # access the button with an ID of b_1
+   ie.button(:name,  'verify_data')                     # access the button with a name of verify_data
+   ie.button(:value, 'Login')                           # access the button with a value (the text displayed on the button) of Login
+   ie.button(:caption, 'Login')                         # same as above
+   ie.button(:value, /Log/)                             # access the button that has text matching /Log/
+   ie.button(:index, 2)                                 # access the second button on the page (1 based, so the first button is accessed with :index,1)
+   ie.button(:class, 'my_custom_button_class')          # access the button with a class of my_custom_button_class
+   ie.button(:xpath, &quot;//input[@value='Click Me']/&quot;)     # access the button with a value of Click Me
+</pre>
+<p>
+Accessing a <a href="Button.html">Button</a> nested within another element
+</p>
+<pre>
+   ie.div(:class, 'xyz').button(:index, 2)              # access a div of class xyz, and the 2nd button within that div
+</pre>
+<p>
+If only a single parameter is supplied, then :value is used
+</p>
+<pre>
+   ie.button('Click Me')                                # access the button with a value of Click Me
+</pre>
+        </div>
+      </div>
+
+      <div id="method-M000087" class="method-detail">
+        <a name="M000087"></a>
+
+        <div class="method-heading">
+          <a href="Container.src/M000087.html" target="Code" class="method-signature"
+            onclick="popupCode('Container.src/M000087.html');return false;">
+          <span class="method-name">buttons</span><span class="method-args">()</span>
+          </a>
+        </div>
+      
+        <div class="method-description">
+          <p>
+this is the main method for accessing the <a
+href="Container.html#M000087">buttons</a> iterator. It returns a <a
+href="Buttons.html">Buttons</a> object
+</p>
+<p>
+Typical usage:
+</p>
+<pre>
+  ie.buttons.each { |b| puts b.to_s }                   # iterate through all the buttons on the page
+  ie.buttons[1].to_s                                    # goto the first button on the page
+  ie.buttons.length                                     # show how many buttons are on the page.
+</pre>
+        </div>
+      </div>
+
+      <div id="method-M000081" class="method-detail">
+        <a name="M000081"></a>
+
+        <div class="method-heading">
+          <a href="Container.src/M000081.html" target="Code" class="method-signature"
+            onclick="popupCode('Container.src/M000081.html');return false;">
+          <span class="method-name">cell</span><span class="method-args">(how, what=nil)</span>
+          </a>
+        </div>
+      
+        <div class="method-description">
+          <p>
+this method accesses a <a href="Container.html#M000079">table</a> <a
+href="Container.html#M000081">cell</a>. how - symbol - how we access the <a
+href="Container.html#M000081">cell</a>, valid values are
+</p>
+<pre>
+   :id       - find the table cell with given id.
+   :xpath    - find the table cell using xpath query.
+</pre>
+<p>
+returns a <a href="TableCell.html">TableCell</a> Object
+</p>
+        </div>
+      </div>
+
+      <div id="method-M000082" class="method-detail">
+        <a name="M000082"></a>
+
+        <div class="method-heading">
+          <a href="Container.src/M000082.html" target="Code" class="method-signature"
+            onclick="popupCode('Container.src/M000082.html');return false;">
+          <span class="method-name">cells</span><span class="method-args">()</span>
+          </a>
+        </div>
+      
+        <div class="method-description">
+        </div>
+      </div>
+
+      <div id="method-M000096" class="method-detail">
+        <a name="M000096"></a>
+
+        <div class="method-heading">
+          <a href="Container.src/M000096.html" target="Code" class="method-signature"
+            onclick="popupCode('Container.src/M000096.html');return false;">
+          <span class="method-name">checkbox</span><span class="method-args">(how, what=nil, value=nil)</span>
+          </a>
+        </div>
+      
+        <div class="method-description">
+          <p>
+This is the main method for accessing a check box. Usually an &lt;input
+type = <a href="Container.html#M000096">checkbox</a>&gt; HTML tag.
+</p>
+<pre>
+ *  how   - symbol - how we access the check box - :index, :id, :name etc
+ *  what  - string, integer or regular expression - what we are looking for,
+ *  value - string - when there are multiple objects with different value attributes, this can be used to find the correct object
+</pre>
+<p>
+Valid values for &#8216;how&#8217; are listed in the <a
+href="../Watir.html">Watir</a> Wiki - <a
+href="http://wiki.openqa.org/display/WTR/Methods+supported+by+Element">wiki.openqa.org/display/WTR/Methods+supported+by+Element</a>
+</p>
+<p>
+returns a <a href="CheckBox.html">CheckBox</a> object
+</p>
+<p>
+Typical usage
+</p>
+<pre>
+   ie.checkbox(:id, 'send_email')                    # access the check box with an id of send_mail
+   ie.checkbox(:name, 'send_copy')                   # access the check box with a name of send_copy
+   ie.checkbox(:name, /n_/)                          # access the first check box whose name matches n_
+   ie.checkbox(:index, 2)                            # access the second check box on the page (1 based, so the first field is accessed with :index,1)
+</pre>
+<p>
+In many instances, <a href="Container.html#M000097">checkboxes</a> on an
+html page have the same name, but are identified by different values. An
+example is shown next.
+</p>
+<pre>
+ &lt;input type = checkbox name = email_frequency value = 'daily' &gt; Daily Email
+ &lt;input type = checkbox name = email_frequency value = 'Weekly'&gt; Weekly Email
+ &lt;input type = checkbox name = email_frequency value = 'monthly'&gt;Monthly Email
+</pre>
+<p>
+<a href="../Watir.html">Watir</a> can access these using the following:
+</p>
+<pre>
+   ie.checkbox(:id, 'day_to_send', 'monday')         # access the check box with an id of day_to_send and a value of monday
+   ie.checkbox(:name,'email_frequency', 'weekly')    # access the check box with a name of email_frequency and a value of 'weekly'
+   ie.checkbox(:xpath, &quot;//input[@name='email_frequency' and @value='daily']/&quot;)     # access the checkbox with a name of email_frequency and a value of 'daily'
+</pre>
+        </div>
+      </div>
+
+      <div id="method-M000097" class="method-detail">
+        <a name="M000097"></a>
+
+        <div class="method-heading">
+          <a href="Container.src/M000097.html" target="Code" class="method-signature"
+            onclick="popupCode('Container.src/M000097.html');return false;">
+          <span class="method-name">checkboxes</span><span class="method-args">()</span>
+          </a>
+        </div>
+      
+        <div class="method-description">
+          <p>
+this is the method for accessing the check boxes iterator. Returns a <a
+href="CheckBoxes.html">CheckBoxes</a> object
+</p>
+<p>
+Typical usage:
+</p>
+<pre>
+  ie.checkboxes.each { |c| puts c.to_s }             # iterate through all the check boxes on the page
+  ie.checkboxes[1].to_s                              # goto the first check box on the page
+  ie.checkboxes.length                               # show how many check boxes are on the page.
+</pre>
+        </div>
+      </div>
+
+      <div id="method-M000112" class="method-detail">
+        <a name="M000112"></a>
+
+        <div class="method-heading">
+          <a href="Container.src/M000112.html" target="Code" class="method-signature"
+            onclick="popupCode('Container.src/M000112.html');return false;">
+          <span class="method-name">dds</span><span class="method-args">()</span>
+          </a>
+        </div>
+      
+        <div class="method-description">
+          <p>
+this is the main method for accessing the <a
+href="Container.html#M000112">dds</a> iterator. Returns a <a
+href="Dds.html">Dds</a> collection
+</p>
+<p>
+Typical usage:
+</p>
+<pre>
+  ie.dds.each { |d| puts d.to_s }            # iterate through all the dds on the page
+  ie.dds[1].to_s                             # goto the first dd on the page
+  ie.dds.length                              # show how many dds are on the page.
+</pre>
+        </div>
+      </div>
+
+      <div id="method-M000110" class="method-detail">
+        <a name="M000110"></a>
+
+        <div class="method-heading">
+          <a href="Container.src/M000110.html" target="Code" class="method-signature"
+            onclick="popupCode('Container.src/M000110.html');return false;">
+          <span class="method-name">divs</span><span class="method-args">()</span>
+          </a>
+        </div>
+      
+        <div class="method-description">
+          <p>
+this is the main method for accessing the <a
+href="Container.html#M000110">divs</a> iterator. Returns a <a
+href="Divs.html">Divs</a> collection
+</p>
+<p>
+Typical usage:
+</p>
+<pre>
+  ie.divs.each { |d| puts d.to_s }            # iterate through all the divs on the page
+  ie.divs[1].to_s                             # goto the first div on the page
+  ie.divs.length                              # show how many divs are on the page.
+</pre>
+        </div>
+      </div>
+
+      <div id="method-M000111" class="method-detail">
+        <a name="M000111"></a>
+
+        <div class="method-heading">
+          <a href="Container.src/M000111.html" target="Code" class="method-signature"
+            onclick="popupCode('Container.src/M000111.html');return false;">
+          <span class="method-name">dls</span><span class="method-args">()</span>
+          </a>
+        </div>
+      
+        <div class="method-description">
+          <p>
+this is the main method for accessing the <a
+href="Container.html#M000111">dls</a> iterator. Returns a <a
+href="Dls.html">Dls</a> collection
+</p>
+<p>
+Typical usage:
+</p>
+<pre>
+  ie.dls.each { |d| puts d.to_s }            # iterate through all the dls on the page
+  ie.dls[1].to_s                             # goto the first dl on the page
+  ie.dls.length                              # show how many dls are on the page.
+</pre>
+        </div>
+      </div>
+
+      <div id="method-M000113" class="method-detail">
+        <a name="M000113"></a>
+
+        <div class="method-heading">
+          <a href="Container.src/M000113.html" target="Code" class="method-signature"
+            onclick="popupCode('Container.src/M000113.html');return false;">
+          <span class="method-name">dts</span><span class="method-args">()</span>
+          </a>
+        </div>
+      
+        <div class="method-description">
+          <p>
+this is the main method for accessing the <a
+href="Container.html#M000113">dts</a> iterator. Returns a <a
+href="Dts.html">Dts</a> collection
+</p>
+<p>
+Typical usage:
+</p>
+<pre>
+  ie.dts.each { |d| puts d.to_s }            # iterate through all the dts on the page
+  ie.dts[1].to_s                             # goto the first dt on the page
+  ie.dts.length                              # show how many dts are on the page.
+</pre>
+        </div>
+      </div>
+
+      <div id="method-M000114" class="method-detail">
+        <a name="M000114"></a>
+
+        <div class="method-heading">
+          <a href="Container.src/M000114.html" target="Code" class="method-signature"
+            onclick="popupCode('Container.src/M000114.html');return false;">
+          <span class="method-name">ems</span><span class="method-args">()</span>
+          </a>
+        </div>
+      
+        <div class="method-description">
+          <p>
+this is the main method for accessing the <a
+href="Container.html#M000114">ems</a> iterator. Returns a <a
+href="Ems.html">Ems</a> collection
+</p>
+<p>
+Typical usage:
+</p>
+<pre>
+  ie.ems.each { |d| puts d.to_s }            # iterate through all the ems on the page
+  ie.ems[1].to_s                             # goto the first em on the page
+  ie.ems.length                              # show how many ems are on the page.
+</pre>
+        </div>
+      </div>
+
+      <div id="method-M000088" class="method-detail">
+        <a name="M000088"></a>
+
+        <div class="method-heading">
+          <a href="Container.src/M000088.html" target="Code" class="method-signature"
+            onclick="popupCode('Container.src/M000088.html');return false;">
+          <span class="method-name">file_field</span><span class="method-args">(how, what=nil)</span>
+          </a>
+        </div>
+      
+        <div class="method-description">
+          <p>
+This is the main method for accessing a file field. Usually an &lt;input
+type = file&gt; HTML tag.
+</p>
+<pre>
+ *  how   - symbol - how we access the field, valid values are
+   :index      - find the file field using index
+   :id         - find the file field using id attribute
+   :name       - find the file field using name attribute
+   :xpath      - find the file field using xpath query
+ *  what  - string, integer, regular expression, or xpath query - what we are looking for,
+</pre>
+<p>
+returns a <a href="FileField.html">FileField</a> object
+</p>
+<p>
+Typical Usage
+</p>
+<pre>
+   ie.file_field(:id,   'up_1')                     # access the file upload field with an ID of up_1
+   ie.file_field(:name, 'upload')                   # access the file upload field with a name of upload
+   ie.file_field(:index, 2)                         # access the second file upload on the page (1 based, so the first field is accessed with :index,1)
+</pre>
+        </div>
+      </div>
+
+      <div id="method-M000089" class="method-detail">
+        <a name="M000089"></a>
+
+        <div class="method-heading">
+          <a href="Container.src/M000089.html" target="Code" class="method-signature"
+            onclick="popupCode('Container.src/M000089.html');return false;">
+          <span class="method-name">file_fields</span><span class="method-args">()</span>
+          </a>
+        </div>
+      
+        <div class="method-description">
+          <p>
+this is the main method for accessing the <a
+href="Container.html#M000089">file_fields</a> iterator. It returns a <a
+href="FileFields.html">FileFields</a> object
+</p>
+<p>
+Typical usage:
+</p>
+<pre>
+  ie.file_fields.each { |f| puts f.to_s }            # iterate through all the file fields on the page
+  ie.file_fields[1].to_s                             # goto the first file field on the page
+  ie.file_fields.length                              # show how many file fields are on the page.
+</pre>
+        </div>
+      </div>
+
+      <div id="method-M000078" class="method-detail">
+        <a name="M000078"></a>
+
+        <div class="method-heading">
+          <a href="Container.src/M000078.html" target="Code" class="method-signature"
+            onclick="popupCode('Container.src/M000078.html');return false;">
+          <span class="method-name">form</span><span class="method-args">(how, what=nil)</span>
+          </a>
+        </div>
+      
+        <div class="method-description">
+          <p>
+this method is used to access a <a href="Container.html#M000078">form</a>.
+available ways of accessing it are, :index, :name, :id, :method, :action,
+:xpath
+</p>
+<pre>
+ * how    - symbol - What mecahnism we use to find the form, one of
+                the above. NOTE if what is not supplied this parameter is the NAME of the form
+ * what   - String - the text associated with the symbol
+</pre>
+<p>
+Valid values for &#8216;how&#8217; are listed in the <a
+href="../Watir.html">Watir</a> Wiki - <a
+href="http://wiki.openqa.org/display/WTR/Methods+supported+by+Element">wiki.openqa.org/display/WTR/Methods+supported+by+Element</a>
+</p>
+<p>
+returns a <a href="Form.html">Form</a> object
+</p>
+        </div>
+      </div>
+
+      <div id="method-M000123" class="method-detail">
+        <a name="M000123"></a>
+
+        <div class="method-heading">
+          <a href="Container.src/M000123.html" target="Code" class="method-signature"
+            onclick="popupCode('Container.src/M000123.html');return false;">
+          <span class="method-name">forms</span><span class="method-args">()</span>
+          </a>
+        </div>
+      
+        <div class="method-description">
+        </div>
+      </div>
+
+      <div id="method-M000077" class="method-detail">
+        <a name="M000077"></a>
+
+        <div class="method-heading">
+          <a href="Container.src/M000077.html" target="Code" class="method-signature"
+            onclick="popupCode('Container.src/M000077.html');return false;">
+          <span class="method-name">frame</span><span class="method-args">(how, what=nil)</span>
+          </a>
+        </div>
+      
+        <div class="method-description">
+          <p>
+this method is the main way of accessing a <a
+href="Container.html#M000077">frame</a>
+</p>
+<pre>
+  *  how   - how the frame is accessed. This can also just be the name of the frame.
+  *  what  - what we want to access.
+</pre>
+<p>
+Valid values for &#8216;how&#8217; are listed in the <a
+href="../Watir.html">Watir</a> Wiki - <a
+href="http://wiki.openqa.org/display/WTR/Methods+supported+by+Element">wiki.openqa.org/display/WTR/Methods+supported+by+Element</a>
+</p>
+<p>
+returns a <a href="Frame.html">Frame</a> object
+</p>
+<p>
+Typical usage:
+</p>
+<pre>
+  ie.frame(:index, 1)
+  ie.frame(:name, 'main_frame')
+  ie.frame('main_frame')        # in this case, just a name is supplied
+</pre>
+        </div>
+      </div>
+
+      <div id="method-M000092" class="method-detail">
+        <a name="M000092"></a>
+
+        <div class="method-heading">
+          <a href="Container.src/M000092.html" target="Code" class="method-signature"
+            onclick="popupCode('Container.src/M000092.html');return false;">
+          <span class="method-name">hidden</span><span class="method-args">(how, what=nil)</span>
+          </a>
+        </div>
+      
+        <div class="method-description">
+          <p>
+This is the main method for accessing a <a
+href="Container.html#M000092">hidden</a> field. Usually an &lt;input type =
+<a href="Container.html#M000092">hidden</a>&gt; HTML tag
+</p>
+<pre>
+ *  how   - symbol - how we access the hidden field, :index, :id, :name etc
+ *  what  - string, integer or regular expression - what we are looking for,
+</pre>
+<p>
+Valid values for &#8216;how&#8217; are listed in the <a
+href="../Watir.html">Watir</a> Wiki - <a
+href="http://wiki.openqa.org/display/WTR/Methods+supported+by+Element">wiki.openqa.org/display/WTR/Methods+supported+by+Element</a>
+</p>
+<p>
+returns a <a href="Hidden.html">Hidden</a> object
+</p>
+<p>
+Typical usage
+</p>
+<pre>
+   ie.hidden(:id, 'session_id')                 # access the hidden field with an ID of session_id
+   ie.hidden(:name, 'temp_value')               # access the hidden field with a name of temp_value
+   ie.hidden(:index, 2)                         # access the second hidden field on the page (1 based, so the first field is accessed with :index,1)
+   ie.hidden(:xpath, &quot;//input[@type='hidden' and @id='session_value']/&quot;)    # access the hidden field with an ID of session_id
+</pre>
+        </div>
+      </div>
+
+      <div id="method-M000093" class="method-detail">
+        <a name="M000093"></a>
+
+        <div class="method-heading">
+          <a href="Container.src/M000093.html" target="Code" class="method-signature"
+            onclick="popupCode('Container.src/M000093.html');return false;">
+          <span class="method-name">hiddens</span><span class="method-args">()</span>
+          </a>
+        </div>
+      
+        <div class="method-description">
+          <p>
+this is the method for accessing the <a
+href="Container.html#M000093">hiddens</a> iterator. It returns a <a
+href="Hiddens.html">Hiddens</a> object
+</p>
+<p>
+Typical usage:
+</p>
+<pre>
+  ie.hiddens.each { |t| puts t.to_s }            # iterate through all the hidden fields on the page
+  ie.hiddens[1].to_s                             # goto the first hidden field on the page
+  ie.hiddens.length                              # show how many hidden fields are on the page.
+</pre>
+        </div>
+      </div>
+
+      <div id="method-M000107" class="method-detail">
+        <a name="M000107"></a>
+
+        <div class="method-heading">
+          <a href="Container.src/M000107.html" target="Code" class="method-signature"
+            onclick="popupCode('Container.src/M000107.html');return false;">
+          <span class="method-name">image</span><span class="method-args">(how, what=nil)</span>
+          </a>
+        </div>
+      
+        <div class="method-description">
+          <p>
+This is the main method for accessing <a
+href="Container.html#M000108">images</a> - normally an &lt;img
+src=&quot;image.gif&quot;&gt; HTML tag.
+</p>
+<pre>
+ *  how   - symbol - how we access the image, :index, :id, :name, :src, :title or :alt are supported
+ *  what  - string, integer or regular expression - what we are looking for,
+</pre>
+<p>
+Valid values for &#8216;how&#8217; are listed in the <a
+href="../Watir.html">Watir</a> Wiki - <a
+href="http://wiki.openqa.org/display/WTR/Methods+supported+by+Element">wiki.openqa.org/display/WTR/Methods+supported+by+Element</a>
+</p>
+<p>
+returns an <a href="Image.html">Image</a> object
+</p>
+<p>
+Typical Usage
+</p>
+<pre>
+  ie.image(:src, /myPic/)             # access the first image that matches myPic. We can use a string in place of the regular expression
+                                      # but the complete path must be used, ie.image(:src, 'http://myserver.com/my_path/my_image.jpg')
+  ie.image(:index,2)                  # access the second image on the page
+  ie.image(:alt, &quot;A Picture&quot;)         # access an image using the alt text
+  ie.image(:xpath, &quot;//img[@alt='A Picture']/&quot;)    # access an image using the alt text
+</pre>
+        </div>
+      </div>
+
+      <div id="method-M000108" class="method-detail">
+        <a name="M000108"></a>
+
+        <div class="method-heading">
+          <a href="Container.src/M000108.html" target="Code" class="method-signature"
+            onclick="popupCode('Container.src/M000108.html');return false;">
+          <span class="method-name">images</span><span class="method-args">()</span>
+          </a>
+        </div>
+      
+        <div class="method-description">
+          <p>
+This is the main method for accessing the <a
+href="Container.html#M000108">images</a> collection. Returns an <a
+href="Images.html">Images</a> object
+</p>
+<p>
+Typical usage:
+</p>
+<pre>
+  ie.images.each { |i| puts i.to_s }            # iterate through all the images on the page
+  ie.images[1].to_s                             # goto the first image on the page
+  ie.images.length                              # show how many images are on the page.
+</pre>
+        </div>
+      </div>
+
+      <div id="method-M000119" class="method-detail">
+        <a name="M000119"></a>
+
+        <div class="method-heading">
+          <a href="Container.src/M000119.html" target="Code" class="method-signature"
+            onclick="popupCode('Container.src/M000119.html');return false;">
+          <span class="method-name">labels</span><span class="method-args">()</span>
+          </a>
+        </div>
+      
+        <div class="method-description">
+          <p>
+this is the main method for accessing the <a
+href="Container.html#M000119">labels</a> iterator. It returns a <a
+href="Labels.html">Labels</a> object
+</p>
+<p>
+Returns a <a href="Labels.html">Labels</a> object
+</p>
+<p>
+Typical usage:
+</p>
+<pre>
+  ie.labels.each { |l| puts l.to_s }            # iterate through all the labels on the page
+  ie.labels[1].to_s                             # goto the first label on the page
+  ie.labels.length                              # show how many labels are on the page.
+</pre>
+        </div>
+      </div>
+
+      <div id="method-M000100" class="method-detail">
+        <a name="M000100"></a>
+
+        <div class="method-heading">
+          <a href="Container.src/M000100.html" target="Code" class="method-signature"
+            onclick="popupCode('Container.src/M000100.html');return false;">
+          <span class="method-name">link</span><span class="method-args">(how, what=nil)</span>
+          </a>
+        </div>
+      
+        <div class="method-description">
+          <p>
+This is the main method for accessing a <a
+href="Container.html#M000100">link</a>.
+</p>
+<pre>
+ *  how   - symbol - how we access the link, :index, :id, :name, :title, :text, :url
+ *  what  - string, integer or regular expression - what we are looking for,
+</pre>
+<p>
+Valid values for &#8216;how&#8217; are listed in the <a
+href="../Watir.html">Watir</a> Wiki - <a
+href="http://wiki.openqa.org/display/WTR/Methods+supported+by+Element">wiki.openqa.org/display/WTR/Methods+supported+by+Element</a>
+</p>
+<p>
+returns a <a href="Link.html">Link</a> object
+</p>
+<p>
+Typical Usage
+</p>
+<pre>
+  ie.link(:url, /login/)              # access the first link whose url matches login. We can use a string in place of the regular expression
+                                      # but the complete path must be used, ie.link(:url, 'http://myserver.com/my_path/login.asp')
+  ie.link(:index,2)                   # access the second link on the page
+  ie.link(:title, &quot;Picture&quot;)         # access a link using the tool tip
+  ie.link(:text, 'Click Me')          # access the link that has Click Me as its text
+  ie.link(:xpath, &quot;//a[contains(.,'Click Me')]/&quot;)      # access the link with Click Me as its text
+</pre>
+        </div>
+      </div>
+
+      <div id="method-M000101" class="method-detail">
+        <a name="M000101"></a>
+
+        <div class="method-heading">
+          <a href="Container.src/M000101.html" target="Code" class="method-signature"
+            onclick="popupCode('Container.src/M000101.html');return false;">
+          <span class="method-name">links</span><span class="method-args">()</span>
+          </a>
+        </div>
+      
+        <div class="method-description">
+          <p>
+This is the main method for accessing the <a
+href="Container.html#M000101">links</a> collection. Returns a <a
+href="Links.html">Links</a> object
+</p>
+<p>
+Typical usage:
+</p>
+<pre>
+  ie.links.each { |l| puts l.to_s }            # iterate through all the links on the page
+  ie.links[1].to_s                             # goto the first link on the page
+  ie.links.length                              # show how many links are on the page.
+</pre>
+        </div>
+      </div>
+
+      <div id="method-M000102" class="method-detail">
+        <a name="M000102"></a>
+
+        <div class="method-heading">
+          <a href="Container.src/M000102.html" target="Code" class="method-signature"
+            onclick="popupCode('Container.src/M000102.html');return false;">
+          <span class="method-name">lis</span><span class="method-args">()</span>
+          </a>
+        </div>
+      
+        <div class="method-description">
+          <p>
+this is the main method for accessing the <a
+href="Container.html#M000102">lis</a> iterator.
+</p>
+<p>
+Returns a <a href="Container.html#M000102">lis</a> object
+</p>
+<p>
+Typical usage:
+</p>
+<pre>
+  ie.lis.each { |s| puts s.to_s }            # iterate through all the lis on the page
+  ie.lis[1].to_s                             # goto the first li on the page
+  ie.lis.length                              # show how many lis are on the page.
+</pre>
+        </div>
+      </div>
+
+      <div id="method-M000121" class="method-detail">
+        <a name="M000121"></a>
+
+        <div class="method-heading">
+          <a href="Container.src/M000121.html" target="Code" class="method-signature"
+            onclick="popupCode('Container.src/M000121.html');return false;">
+          <span class="method-name">locate_input_element</span><span class="method-args">(how, what, types, value=nil)</span>
+          </a>
+        </div>
+      
+        <div class="method-description">
+          <p>
+Returns the specified ole object for input elements on a web page.
+</p>
+<p>
+This method is used internally by <a href="../Watir.html">Watir</a> and
+should not be used externally. It cannot be marked as private because of
+the way mixins and inheritance work in watir
+</p>
+<pre>
+  * how - symbol - the way we look for the object. Supported values are
+                 - :name
+                 - :id
+                 - :index
+                 - :value etc
+  * what  - string that we are looking for, ex. the name, or id tag attribute or index of the object we are looking for.
+  * types - what object types we will look at.
+  * value - used for objects that have one name, but many values. ex. radio lists and checkboxes
+</pre>
+        </div>
+      </div>
+
+      <div id="method-M000122" class="method-detail">
+        <a name="M000122"></a>
+
+        <div class="method-heading">
+          <a href="Container.src/M000122.html" target="Code" class="method-signature"
+            onclick="popupCode('Container.src/M000122.html');return false;">
+          <span class="method-name">locate_tagged_element</span><span class="method-args">(tag, how, what)</span>
+          </a>
+        </div>
+      
+        <div class="method-description">
+          <p>
+returns the ole object for the specified element
+</p>
+        </div>
+      </div>
+
+      <div id="method-M000074" class="method-detail">
+        <a name="M000074"></a>
+
+        <div class="method-heading">
+          <a href="Container.src/M000074.html" target="Code" class="method-signature"
+            onclick="popupCode('Container.src/M000074.html');return false;">
+          <span class="method-name">log</span><span class="method-args">(what)</span>
+          </a>
+        </div>
+      
+        <div class="method-description">
+          <p>
+Write the specified string to the <a href="Container.html#M000074">log</a>.
+</p>
+        </div>
+      </div>
+
+      <div id="method-M000103" class="method-detail">
+        <a name="M000103"></a>
+
+        <div class="method-heading">
+          <a href="Container.src/M000103.html" target="Code" class="method-signature"
+            onclick="popupCode('Container.src/M000103.html');return false;">
+          <span class="method-name">map</span><span class="method-args">(how, what=nil)</span>
+          </a>
+        </div>
+      
+        <div class="method-description">
+          <p>
+This is the main method for accessing <a
+href="Container.html#M000103">map</a> tags - <a
+href="http://msdn.microsoft.com/workshop/author/dhtml/reference/objects/map.asp?frame=true">msdn.microsoft.com/workshop/author/dhtml/reference/objects/map.asp?frame=true</a>
+</p>
+<pre>
+ *  how   - symbol - how we access the map,
+ *  what  - string, integer or regular expression - what we are looking for,
+</pre>
+<p>
+Valid values for &#8216;how&#8217; are listed in the <a
+href="../Watir.html">Watir</a> Wiki - <a
+href="http://wiki.openqa.org/display/WTR/Methods+supported+by+Element">wiki.openqa.org/display/WTR/Methods+supported+by+Element</a>
+</p>
+<p>
+returns a <a href="Container.html#M000103">map</a> object
+</p>
+<p>
+Typical Usage
+</p>
+<pre>
+  ie.map(:id, /list/)                 # access the first map that matches list.
+  ie.map(:index,2)                    # access the second map on the page
+  ie.map(:title, &quot;A Picture&quot;)         # access a map using the tooltip text. See http://msdn.microsoft.com/workshop/author/dhtml/reference/properties/title_1.asp?frame=true
+</pre>
+        </div>
+      </div>
+
+      <div id="method-M000104" class="method-detail">
+        <a name="M000104"></a>
+
+        <div class="method-heading">
+          <a href="Container.src/M000104.html" target="Code" class="method-signature"
+            onclick="popupCode('Container.src/M000104.html');return false;">
+          <span class="method-name">maps</span><span class="method-args">()</span>
+          </a>
+        </div>
+      
+        <div class="method-description">
+          <p>
+this is the main method for accessing the <a
+href="Container.html#M000104">maps</a> iterator.
+</p>
+<p>
+Returns a <a href="Container.html#M000104">maps</a> object
+</p>
+<p>
+Typical usage:
+</p>
+<pre>
+  ie.maps.each { |s| puts s.to_s }            # iterate through all the maps on the page
+  ie.maps[1].to_s                             # goto the first map on the page
+  ie.maps.length                              # show how many maps are on the page.
+</pre>
+        </div>
+      </div>
+
+      <div id="method-M000085" class="method-detail">
+        <a name="M000085"></a>
+
+        <div class="method-heading">
+          <a href="Container.src/M000085.html" target="Code" class="method-signature"
+            onclick="popupCode('Container.src/M000085.html');return false;">
+          <span class="method-name">modal_dialog</span><span class="method-args">(how=nil, what=nil)</span>
+          </a>
+        </div>
+      
+        <div class="method-description">
+          <p>
+Access a modal web dialog, which is a <a
+href="PageContainer.html">PageContainer</a>, like <a href="IE.html">IE</a>
+or <a href="Frame.html">Frame</a>. Returns a <a
+href="ModalDialog.html">ModalDialog</a> object.
+</p>
+<p>
+Typical Usage
+</p>
+<pre>
+   ie.modal_dialog                  # access the modal dialog of ie
+   ie.modal_dialog(:title, 'Title') # access the modal dialog by title
+   ie.modal_dialog.modal_dialog     # access a modal dialog's modal dialog XXX untested!
+</pre>
+<p>
+This method will not work when <a href="../Watir.html">Watir</a>/Ruby is
+run under a service (instead of a user). Note: unlike Watir.attach, this
+returns before the page is assured to have loaded.
+</p>
+        </div>
+      </div>
+
+      <div id="method-M000109" class="method-detail">
+        <a name="M000109"></a>
+
+        <div class="method-heading">
+          <a href="Container.src/M000109.html" target="Code" class="method-signature"
+            onclick="popupCode('Container.src/M000109.html');return false;">
+          <span class="method-name">popup</span><span class="method-args">(</span>
+          </a>
+        </div>
+      
+        <div class="method-description">
+          <p>
+This is the main method for accessing JavaScript popups. returns a <a
+href="PopUp.html">PopUp</a> object
+</p>
+        </div>
+      </div>
+
+      <div id="method-M000118" class="method-detail">
+        <a name="M000118"></a>
+
+        <div class="method-heading">
+          <a href="Container.src/M000118.html" target="Code" class="method-signature"
+            onclick="popupCode('Container.src/M000118.html');return false;">
+          <span class="method-name">pres</span><span class="method-args">()</span>
+          </a>
+        </div>
+      
+        <div class="method-description">
+          <p>
+this is the main method for accessing the <a
+href="Container.html#M000117">ps</a> iterator.
+</p>
+<p>
+Returns a <a href="Pres.html">Pres</a> object
+</p>
+<p>
+Typical usage:
+</p>
+<pre>
+  ie.pres.each { |pre| puts pre.to_s }        # iterate through all the pre tags on the page
+  ie.pres[1].to_s                             # goto the first pre tag on the page
+  ie.pres.length                              # show how many pre tags are on the page.
+</pre>
+        </div>
+      </div>
+
+      <div id="method-M000117" class="method-detail">
+        <a name="M000117"></a>
+
+        <div class="method-heading">
+          <a href="Container.src/M000117.html" target="Code" class="method-signature"
+            onclick="popupCode('Container.src/M000117.html');return false;">
+          <span class="method-name">ps</span><span class="method-args">()</span>
+          </a>
+        </div>
+      
+        <div class="method-description">
+          <p>
+this is the main method for accessing the <a
+href="Container.html#M000117">ps</a> iterator.
+</p>
+<p>
+Returns a <a href="Ps.html">Ps</a> object
+</p>
+<p>
+Typical usage:
+</p>
+<pre>
+  ie.ps.each { |p| puts p.to_s }            # iterate through all the p tags on the page
+  ie.ps[1].to_s                             # goto the first p tag on the page
+  ie.ps.length                              # show how many p tags are on the page.
+</pre>
+        </div>
+      </div>
+
+      <div id="method-M000098" class="method-detail">
+        <a name="M000098"></a>
+
+        <div class="method-heading">
+          <a href="Container.src/M000098.html" target="Code" class="method-signature"
+            onclick="popupCode('Container.src/M000098.html');return false;">
+          <span class="method-name">radio</span><span class="method-args">(how, what=nil, value=nil)</span>
+          </a>
+        </div>
+      
+        <div class="method-description">
+          <p>
+This is the main method for accessing a <a
+href="Container.html#M000098">radio</a> <a
+href="Container.html#M000086">button</a>. Usually an &lt;input type = <a
+href="Container.html#M000098">radio</a>&gt; HTML tag.
+</p>
+<pre>
+ *  how   - symbol - how we access the radio button, :index, :id, :name etc
+ *  what  - string, integer or regular expression - what we are looking for,
+ *  value - string - when  there are multiple objects with different value attributes, this can be used to find the correct object
+</pre>
+<p>
+Valid values for &#8216;how&#8217; are listed in the <a
+href="../Watir.html">Watir</a> Wiki - <a
+href="http://wiki.openqa.org/display/WTR/Methods+supported+by+Element">wiki.openqa.org/display/WTR/Methods+supported+by+Element</a>
+</p>
+<p>
+returns a <a href="Radio.html">Radio</a> object
+</p>
+<p>
+Typical usage
+</p>
+<pre>
+   ie.radio(:id, 'send_email')                   # access the radio button with an id of currency
+   ie.radio(:name, 'send_copy')                  # access the radio button with a name of country
+   ie.radio(:name, /n_/)                        # access the first radio button whose name matches n_
+   ie.radio(:index, 2)                           # access the second radio button on the page (1 based, so the first field is accessed with :index,1)
+</pre>
+<p>
+In many instances, <a href="Container.html#M000098">radio</a> <a
+href="Container.html#M000087">buttons</a> on an html page have the same
+name, but are identified by different values. An example is shown next.
+</p>
+<pre>
+ &lt;input type=&quot;radio&quot; name=&quot;email_frequency&quot; value=&quot;daily&quot;&gt;Daily Email&lt;/input&gt;
+ &lt;input type=&quot;radio&quot; name=&quot;email_frequency&quot; value=&quot;weekly&quot;&gt;Weekly Email&lt;/input&gt;
+ &lt;input type=&quot;radio&quot; name=&quot;email_frequency&quot; value=&quot;monthly&quot;&gt;Monthly Email&lt;/input&gt;
+</pre>
+<p>
+<a href="../Watir.html">Watir</a> can access these using the following:
+</p>
+<pre>
+   ie.radio(:id, 'day_to_send', 'monday')         # access the radio button with an id of day_to_send and a value of monday
+   ie.radio(:name,'email_frequency', 'weekly')     # access the radio button with a name of email_frequency and a value of 'weekly'
+   ie.radio(:xpath, &quot;//input[@name='email_frequency' and @value='daily']/&quot;)     # access the radio button with a name of email_frequency and a value of 'daily'
+</pre>
+        </div>
+      </div>
+
+      <div id="method-M000099" class="method-detail">
+        <a name="M000099"></a>
+
+        <div class="method-heading">
+          <a href="Container.src/M000099.html" target="Code" class="method-signature"
+            onclick="popupCode('Container.src/M000099.html');return false;">
+          <span class="method-name">radios</span><span class="method-args">()</span>
+          </a>
+        </div>
+      
+        <div class="method-description">
+          <p>
+This is the method for accessing the <a
+href="Container.html#M000098">radio</a> <a
+href="Container.html#M000087">buttons</a> iterator. Returns a <a
+href="Radios.html">Radios</a> object
+</p>
+<p>
+Typical usage:
+</p>
+<pre>
+  ie.radios.each { |r| puts r.to_s }            # iterate through all the radio buttons on the page
+  ie.radios[1].to_s                             # goto the first radio button on the page
+  ie.radios.length                              # show how many radio buttons are on the page.
+</pre>
+        </div>
+      </div>
+
+      <div id="method-M000083" class="method-detail">
+        <a name="M000083"></a>
+
+        <div class="method-heading">
+          <a href="Container.src/M000083.html" target="Code" class="method-signature"
+            onclick="popupCode('Container.src/M000083.html');return false;">
+          <span class="method-name">row</span><span class="method-args">(how, what=nil)</span>
+          </a>
+        </div>
+      
+        <div class="method-description">
+          <p>
+this method accesses a <a href="Container.html#M000079">table</a> <a
+href="Container.html#M000083">row</a>. how - symbol - how we access the <a
+href="Container.html#M000083">row</a>, valid values are
+</p>
+<pre>
+   :id       - find the table row with given id.
+   :xpath    - find the table row using xpath query.
+</pre>
+<p>
+returns a <a href="TableRow.html">TableRow</a> object
+</p>
+        </div>
+      </div>
+
+      <div id="method-M000084" class="method-detail">
+        <a name="M000084"></a>
+
+        <div class="method-heading">
+          <a href="Container.src/M000084.html" target="Code" class="method-signature"
+            onclick="popupCode('Container.src/M000084.html');return false;">
+          <span class="method-name">rows</span><span class="method-args">()</span>
+          </a>
+        </div>
+      
+        <div class="method-description">
+        </div>
+      </div>
+
+      <div id="method-M000094" class="method-detail">
+        <a name="M000094"></a>
+
+        <div class="method-heading">
+          <a href="Container.src/M000094.html" target="Code" class="method-signature"
+            onclick="popupCode('Container.src/M000094.html');return false;">
+          <span class="method-name">select_list</span><span class="method-args">(how, what=nil)</span>
+          </a>
+        </div>
+      
+        <div class="method-description">
+          <p>
+This is the main method for accessing a selection list. Usually a
+&lt;select&gt; HTML tag.
+</p>
+<pre>
+ *  how   - symbol - how we access the selection list, :index, :id, :name etc
+ *  what  - string, integer or regular expression - what we are looking for,
+</pre>
+<p>
+Valid values for &#8216;how&#8217; are listed in the <a
+href="../Watir.html">Watir</a> Wiki - <a
+href="http://wiki.openqa.org/display/WTR/Methods+supported+by+Element">wiki.openqa.org/display/WTR/Methods+supported+by+Element</a>
+</p>
+<p>
+returns a <a href="SelectList.html">SelectList</a> object
+</p>
+<p>
+Typical usage
+</p>
+<pre>
+   ie.select_list(:id, 'currency')                   # access the select box with an id of currency
+   ie.select_list(:name, 'country')                  # access the select box with a name of country
+   ie.select_list(:name, /n_/)                       # access the first select box whose name matches n_
+   ie.select_list(:index, 2)                         # access the second select box on the page (1 based, so the first field is accessed with :index,1)
+   ie.select(:xpath, &quot;//select[@id='currency']/&quot;)    # access the select box with an id of currency
+</pre>
+        </div>
+      </div>
+
+      <div id="method-M000095" class="method-detail">
+        <a name="M000095"></a>
+
+        <div class="method-heading">
+          <a href="Container.src/M000095.html" target="Code" class="method-signature"
+            onclick="popupCode('Container.src/M000095.html');return false;">
+          <span class="method-name">select_lists</span><span class="method-args">()</span>
+          </a>
+        </div>
+      
+        <div class="method-description">
+          <p>
+this is the method for accessing the select lists iterator. Returns a <a
+href="SelectLists.html">SelectLists</a> object
+</p>
+<p>
+Typical usage:
+</p>
+<pre>
+  ie.select_lists.each { |s| puts s.to_s }            # iterate through all the select boxes on the page
+  ie.select_lists[1].to_s                             # goto the first select boxes on the page
+  ie.select_lists.length                              # show how many select boxes are on the page.
+</pre>
+        </div>
+      </div>
+
+      <div id="method-M000076" class="method-detail">
+        <a name="M000076"></a>
+
+        <div class="method-heading">
+          <a href="Container.src/M000076.html" target="Code" class="method-signature"
+            onclick="popupCode('Container.src/M000076.html');return false;">
+          <span class="method-name">set_container</span><span class="method-args">(container)</span>
+          </a>
+        </div>
+      
+        <div class="method-description">
+        </div>
+      </div>
+
+      <div id="method-M000120" class="method-detail">
+        <a name="M000120"></a>
+
+        <div class="method-heading">
+          <a href="Container.src/M000120.html" target="Code" class="method-signature"
+            onclick="popupCode('Container.src/M000120.html');return false;">
+          <span class="method-name">show_all_objects</span><span class="method-args">()</span>
+          </a>
+        </div>
+      
+        <div class="method-description">
+          <p>
+This method shows the available objects on the current page. This is
+usually only used for debugging or writing new test scripts. This is a nice
+feature to help find out what HTML objects are on a page when developing a
+test case using <a href="../Watir.html">Watir</a>.
+</p>
+        </div>
+      </div>
+
+      <div id="method-M000115" class="method-detail">
+        <a name="M000115"></a>
+
+        <div class="method-heading">
+          <a href="Container.src/M000115.html" target="Code" class="method-signature"
+            onclick="popupCode('Container.src/M000115.html');return false;">
+          <span class="method-name">spans</span><span class="method-args">()</span>
+          </a>
+        </div>
+      
+        <div class="method-description">
+          <p>
+this is the main method for accessing the <a
+href="Container.html#M000115">spans</a> iterator.
+</p>
+<p>
+Returns a <a href="Spans.html">Spans</a> object
+</p>
+<p>
+Typical usage:
+</p>
+<pre>
+  ie.spans.each { |s| puts s.to_s }            # iterate through all the spans on the page
+  ie.spans[1].to_s                             # goto the first span on the page
+  ie.spans.length                              # show how many spans are on the page.
+</pre>
+        </div>
+      </div>
+
+      <div id="method-M000116" class="method-detail">
+        <a name="M000116"></a>
+
+        <div class="method-heading">
+          <a href="Container.src/M000116.html" target="Code" class="method-signature"
+            onclick="popupCode('Container.src/M000116.html');return false;">
+          <span class="method-name">strongs</span><span class="method-args">()</span>
+          </a>
+        </div>
+      
+        <div class="method-description">
+          <p>
+this is the main method for accessing the <a
+href="Strongs.html">Strongs</a> iterator.
+</p>
+<p>
+Returns a <a href="Strongs.html">Strongs</a> object
+</p>
+<p>
+Typical usage:
+</p>
+<pre>
+  ie.strongs.each { |s| puts s.to_s }            # iterate through all the strongs on the page
+  ie.strongs[1].to_s                             # goto the first strong on the page
+  ie.strongs.length                              # show how many strongs are on the page.
+</pre>
+        </div>
+      </div>
+
+      <div id="method-M000079" class="method-detail">
+        <a name="M000079"></a>
+
+        <div class="method-heading">
+          <a href="Container.src/M000079.html" target="Code" class="method-signature"
+            onclick="popupCode('Container.src/M000079.html');return false;">
+          <span class="method-name">table</span><span class="method-args">(how, what=nil)</span>
+          </a>
+        </div>
+      
+        <div class="method-description">
+          <p>
+This method is used to get a <a href="Container.html#M000079">table</a>
+from the page. :index (1 based counting) and :id are supported.
+</p>
+<pre>
+ NOTE :name is not supported, as the table tag does not have a name attribute. It is not part of the DOM.
+</pre>
+<p>
+:index can be used when there are multiple <a
+href="Container.html#M000080">tables</a> on a page. :xpath can be used to
+select <a href="Container.html#M000079">table</a> using XPath query. The
+first <a href="Container.html#M000078">form</a> can be accessed with :index
+1, the second :index 2, etc.
+</p>
+<pre>
+  * how   - symbol - how we access the table, :index, :id, :xpath etc
+  * what  - string the thing we are looking for, ex. id, index or xpath query, of the object we are looking for
+</pre>
+<p>
+Valid values for &#8216;how&#8217; are listed in the <a
+href="../Watir.html">Watir</a> Wiki - <a
+href="http://wiki.openqa.org/display/WTR/Methods+supported+by+Element">wiki.openqa.org/display/WTR/Methods+supported+by+Element</a>
+</p>
+<p>
+returns a <a href="Table.html">Table</a> object
+</p>
+        </div>
+      </div>
+
+      <div id="method-M000080" class="method-detail">
+        <a name="M000080"></a>
+
+        <div class="method-heading">
+          <a href="Container.src/M000080.html" target="Code" class="method-signature"
+            onclick="popupCode('Container.src/M000080.html');return false;">
+          <span class="method-name">tables</span><span class="method-args">()</span>
+          </a>
+        </div>
+      
+        <div class="method-description">
+          <p>
+this is the main method for accessing the <a
+href="Container.html#M000080">tables</a> iterator. It returns a <a
+href="Tables.html">Tables</a> object
+</p>
+<p>
+Typical usage:
+</p>
+<pre>
+  ie.tables.each { |t| puts t.to_s }            # iterate through all the tables on the page
+  ie.tables[1].to_s                             # goto the first table on the page
+  ie.tables.length                              # show how many tables are on the page. Tables that are nested will be included in this
+</pre>
+        </div>
+      </div>
+
+      <div id="method-M000090" class="method-detail">
+        <a name="M000090"></a>
+
+        <div class="method-heading">
+          <a href="Container.src/M000090.html" target="Code" class="method-signature"
+            onclick="popupCode('Container.src/M000090.html');return false;">
+          <span class="method-name">text_field</span><span class="method-args">(how, what=nil)</span>
+          </a>
+        </div>
+      
+        <div class="method-description">
+          <p>
+This is the main method for accessing a text field. Usually an &lt;input
+type = text&gt; HTML tag. or a text <a
+href="Container.html#M000105">area</a> - a &lt;textarea&gt; tag
+</p>
+<pre>
+ *  how   - symbol - how we access the field, :index, :id, :name etc
+ *  what  - string, integer or regular expression - what we are looking for,
+</pre>
+<p>
+Valid values for &#8216;how&#8217; are listed in the <a
+href="../Watir.html">Watir</a> Wiki - <a
+href="http://wiki.openqa.org/display/WTR/Methods+supported+by+Element">wiki.openqa.org/display/WTR/Methods+supported+by+Element</a>
+</p>
+<p>
+returns a <a href="TextField.html">TextField</a> object
+</p>
+<p>
+Typical Usage
+</p>
+<pre>
+   ie.text_field(:id,   'user_name')                 # access the text field with an ID of user_name
+   ie.text_field(:name, 'address')                   # access the text field with a name of address
+   ie.text_field(:index, 2)                          # access the second text field on the page (1 based, so the first field is accessed with :index,1)
+   ie.text_field(:xpath, &quot;//textarea[@id='user_name']/&quot;)    # access the text field with an ID of user_name
+</pre>
+        </div>
+      </div>
+
+      <div id="method-M000091" class="method-detail">
+        <a name="M000091"></a>
+
+        <div class="method-heading">
+          <a href="Container.src/M000091.html" target="Code" class="method-signature"
+            onclick="popupCode('Container.src/M000091.html');return false;">
+          <span class="method-name">text_fields</span><span class="method-args">()</span>
+          </a>
+        </div>
+      
+        <div class="method-description">
+          <p>
+this is the method for accessing the <a
+href="Container.html#M000091">text_fields</a> iterator. It returns a
+Text_Fields object
+</p>
+<p>
+Typical usage:
+</p>
+<pre>
+  ie.text_fields.each { |t| puts t.to_s }            # iterate through all the text fields on the page
+  ie.text_fields[1].to_s                             # goto the first text field on the page
+  ie.text_fields.length                              # show how many text field are on the page.
+</pre>
+        </div>
+      </div>
+
+      <div id="method-M000075" class="method-detail">
+        <a name="M000075"></a>
+
+        <div class="method-heading">
+          <a href="Container.src/M000075.html" target="Code" class="method-signature"
+            onclick="popupCode('Container.src/M000075.html');return false;">
+          <span class="method-name">wait</span><span class="method-args">(no_sleep=false)</span>
+          </a>
+        </div>
+      
+        <div class="method-description">
+          <p>
+Wait until Internet Explorer has finished loading the page.
+</p>
+        </div>
+      </div>
+
+
+    </div>
+
+
+  </div>
+
+
+<div id="validator-badges">
+  <p><small><a href="http://validator.w3.org/check/referer">[Validate]</a></small></p>
+</div>
+
+</body>
+</html>

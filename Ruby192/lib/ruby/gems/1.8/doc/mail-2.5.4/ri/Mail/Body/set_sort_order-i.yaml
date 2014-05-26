@@ -1,0 +1,12 @@
+--- !ruby/object:RI::MethodDescription 
+aliases: []
+
+block_params: 
+comment: 
+- !ruby/struct:SM::Flow::P 
+  body: Allows you to set the sort order of the parts, overriding the default sort order. Defaults to 'text/plain', then 'text/enriched', then 'text/html' with any other content type coming after.
+full_name: Mail::Body#set_sort_order
+is_singleton: false
+name: set_sort_order
+params: (order)
+visibility: public

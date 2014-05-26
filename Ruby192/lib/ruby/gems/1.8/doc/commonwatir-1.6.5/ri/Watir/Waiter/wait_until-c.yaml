@@ -1,0 +1,12 @@
+--- !ruby/object:RI::MethodDescription 
+aliases: []
+
+block_params: ""
+comment: 
+- !ruby/struct:SM::Flow::P 
+  body: "IDEA: wait_until: remove defaults from Waiter.wait_until"
+full_name: Watir::Waiter::wait_until
+is_singleton: true
+name: wait_until
+params: (timeout=@@default_timeout, polling_interval=@@default_polling_interval) {|| ...}
+visibility: public

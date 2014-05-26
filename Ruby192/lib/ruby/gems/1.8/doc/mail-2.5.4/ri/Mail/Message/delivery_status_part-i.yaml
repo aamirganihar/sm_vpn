@@ -1,0 +1,12 @@
+--- !ruby/object:RI::MethodDescription 
+aliases: []
+
+block_params: 
+comment: 
+- !ruby/struct:SM::Flow::P 
+  body: returns the part in a multipart/report email that has the content-type delivery-status
+full_name: Mail::Message#delivery_status_part
+is_singleton: false
+name: delivery_status_part
+params: ()
+visibility: public

@@ -1,0 +1,12 @@
+--- !ruby/object:RI::MethodDescription 
+aliases: []
+
+block_params: ""
+comment: 
+- !ruby/struct:SM::Flow::P 
+  body: Run the block, capturing output to $stderr in a string. That string is the method's return value.
+full_name: S4tUtils#capturing_stderr
+is_singleton: false
+name: capturing_stderr
+params: () {|| ...}
+visibility: public

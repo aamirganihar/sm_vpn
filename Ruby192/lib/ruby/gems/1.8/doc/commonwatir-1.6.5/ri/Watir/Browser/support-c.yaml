@@ -1,0 +1,12 @@
+--- !ruby/object:RI::MethodDescription 
+aliases: []
+
+block_params: 
+comment: 
+- !ruby/struct:SM::Flow::P 
+  body: Add support for the browser option, using the specified class, provided as a string. Optionally, additional options supported by the class can be specified as an array of symbols. Options specified by the user and included in this list will be passed (as a hash) to the set_options class method (if defined) before creating an instance.
+full_name: Watir::Browser::support
+is_singleton: true
+name: support
+params: (hash_args)
+visibility: public

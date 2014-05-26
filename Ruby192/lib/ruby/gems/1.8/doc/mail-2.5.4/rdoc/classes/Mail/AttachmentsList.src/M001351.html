@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+<!DOCTYPE html 
+     PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+     "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html>
+<head>
+  <title>set_mime_type (Mail::AttachmentsList)</title>
+  <meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" />
+  <link rel="stylesheet" href="../../.././rdoc-style.css" type="text/css" media="screen" />
+</head>
+<body class="standalone-code">
+  <pre><span class="ruby-comment cmt"># File lib/mail/attachments_list.rb, line 94</span>
+    <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">set_mime_type</span>(<span class="ruby-identifier">filename</span>)
+      <span class="ruby-comment cmt"># Have to do this because MIME::Types is not Ruby 1.9 safe yet</span>
+      <span class="ruby-keyword kw">if</span> <span class="ruby-constant">RUBY_VERSION</span> <span class="ruby-operator">&gt;=</span> <span class="ruby-value str">'1.9'</span>
+        <span class="ruby-identifier">filename</span> = <span class="ruby-identifier">filename</span>.<span class="ruby-identifier">encode</span>(<span class="ruby-constant">Encoding</span><span class="ruby-operator">::</span><span class="ruby-constant">UTF_8</span>) <span class="ruby-keyword kw">if</span> <span class="ruby-identifier">filename</span>.<span class="ruby-identifier">respond_to?</span>(<span class="ruby-identifier">:encode</span>)
+      <span class="ruby-keyword kw">end</span>
+
+      <span class="ruby-ivar">@mime_type</span> = <span class="ruby-constant">MIME</span><span class="ruby-operator">::</span><span class="ruby-constant">Types</span>.<span class="ruby-identifier">type_for</span>(<span class="ruby-identifier">filename</span>).<span class="ruby-identifier">first</span>
+    <span class="ruby-keyword kw">end</span></pre>
+</body>
+</html>

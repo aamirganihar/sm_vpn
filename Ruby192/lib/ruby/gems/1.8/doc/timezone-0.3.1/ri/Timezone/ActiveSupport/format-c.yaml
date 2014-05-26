@@ -1,0 +1,10 @@
+--- !ruby/object:RI::MethodDescription 
+aliases: []
+
+block_params: 
+comment: 
+full_name: Timezone::ActiveSupport::format
+is_singleton: true
+name: format
+params: (zone)
+visibility: public

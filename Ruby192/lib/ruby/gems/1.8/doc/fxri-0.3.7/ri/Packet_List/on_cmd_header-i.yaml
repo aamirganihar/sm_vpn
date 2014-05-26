@@ -1,0 +1,12 @@
+--- !ruby/object:RI::MethodDescription 
+aliases: []
+
+block_params: 
+comment: 
+- !ruby/struct:SM::Flow::P 
+  body: Called whenever a header is clicked
+full_name: Packet_List#on_cmd_header
+is_singleton: false
+name: on_cmd_header
+params: (header_item_index)
+visibility: public

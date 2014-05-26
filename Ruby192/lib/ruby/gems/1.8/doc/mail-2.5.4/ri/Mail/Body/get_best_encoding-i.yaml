@@ -1,0 +1,10 @@
+--- !ruby/object:RI::MethodDescription 
+aliases: []
+
+block_params: 
+comment: 
+full_name: Mail::Body#get_best_encoding
+is_singleton: false
+name: get_best_encoding
+params: (target)
+visibility: public

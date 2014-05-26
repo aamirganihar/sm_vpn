@@ -1,0 +1,14 @@
+--- !ruby/object:RI::MethodDescription 
+aliases: []
+
+block_params: 
+comment: 
+- !ruby/struct:SM::Flow::P 
+  body: Returns an initialized instance of a table row
+- !ruby/struct:SM::Flow::VERB 
+  body: "  * o  - the object contained in the row\n  * container  - an instance of an IE object\n  * how          - symbol - how we access the row\n  * what         - what we use to access the row - id, index etc. If how is :ole_object then what is a Internet Explorer Raw Row\n"
+full_name: Watir::TableRow::new
+is_singleton: true
+name: new
+params: (container, how, what)
+visibility: public

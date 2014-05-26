@@ -1,0 +1,16 @@
+--- !ruby/object:RI::MethodDescription 
+aliases: []
+
+block_params: 
+comment: 
+- !ruby/struct:SM::Flow::P 
+  body: Return whether the structure is still open or not.
+- !ruby/struct:SM::Flow::VERB 
+  body: " s = Recursive_Open_Struct.new\n s.open? # returns true\n s.close\n s.open? # returns false\n"
+full_name: Recursive_Open_Struct#open?
+is_singleton: false
+name: open?
+params: |
+  open?() -> boolean
+
+visibility: public

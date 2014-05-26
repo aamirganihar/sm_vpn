@@ -1,0 +1,27 @@
+--- !ruby/object:RI::ClassDescription 
+attributes: []
+
+class_methods: 
+- !ruby/object:RI::MethodSummary 
+  name: check_autoit_installed
+- !ruby/object:RI::MethodSummary 
+  name: new
+comment: 
+constants: []
+
+full_name: WindowHelper
+includes: []
+
+instance_methods: 
+- !ruby/object:RI::MethodSummary 
+  name: logon
+- !ruby/object:RI::MethodSummary 
+  name: push_alert_button
+- !ruby/object:RI::MethodSummary 
+  name: push_confirm_button_cancel
+- !ruby/object:RI::MethodSummary 
+  name: push_confirm_button_ok
+- !ruby/object:RI::MethodSummary 
+  name: push_security_alert_yes
+name: WindowHelper
+superclass: Object

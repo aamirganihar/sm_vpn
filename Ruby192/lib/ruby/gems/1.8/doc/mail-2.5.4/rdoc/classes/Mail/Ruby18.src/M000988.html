@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+<!DOCTYPE html 
+     PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+     "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html>
+<head>
+  <title>q_value_decode (Mail::Ruby18)</title>
+  <meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" />
+  <link rel="stylesheet" href="../../.././rdoc-style.css" type="text/css" media="screen" />
+</head>
+<body class="standalone-code">
+  <pre><span class="ruby-comment cmt"># File lib/mail/version_specific/ruby_1_8.rb, line 81</span>
+    <span class="ruby-keyword kw">def</span> <span class="ruby-constant">Ruby18</span>.<span class="ruby-identifier">q_value_decode</span>(<span class="ruby-identifier">str</span>)
+      <span class="ruby-identifier">match</span> = <span class="ruby-identifier">str</span>.<span class="ruby-identifier">match</span>(<span class="ruby-regexp re">/\=\?(.+)?\?[Qq]\?(.+)?\?\=/</span><span class="ruby-identifier">m</span>)
+      <span class="ruby-keyword kw">if</span> <span class="ruby-identifier">match</span>
+        <span class="ruby-identifier">encoding</span> = <span class="ruby-identifier">match</span>[<span class="ruby-value">1</span>]
+        <span class="ruby-identifier">string</span> = <span class="ruby-identifier">match</span>[<span class="ruby-value">2</span>].<span class="ruby-identifier">gsub</span>(<span class="ruby-regexp re">/_/</span>, <span class="ruby-value str">'=20'</span>)
+        <span class="ruby-comment cmt"># Remove trailing = if it exists in a Q encoding</span>
+        <span class="ruby-identifier">string</span> = <span class="ruby-identifier">string</span>.<span class="ruby-identifier">sub</span>(<span class="ruby-regexp re">/\=$/</span>, <span class="ruby-value str">''</span>)
+        <span class="ruby-identifier">str</span> = <span class="ruby-constant">Encodings</span><span class="ruby-operator">::</span><span class="ruby-constant">QuotedPrintable</span>.<span class="ruby-identifier">decode</span>(<span class="ruby-identifier">string</span>)
+        <span class="ruby-identifier">str</span> = <span class="ruby-constant">Iconv</span>.<span class="ruby-identifier">conv</span>(<span class="ruby-value str">'UTF-8//IGNORE'</span>, <span class="ruby-identifier">fix_encoding</span>(<span class="ruby-identifier">encoding</span>), <span class="ruby-identifier">str</span>)
+      <span class="ruby-keyword kw">end</span>
+      <span class="ruby-identifier">str</span>
+    <span class="ruby-keyword kw">end</span></pre>
+</body>
+</html>

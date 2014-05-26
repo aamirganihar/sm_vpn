@@ -1,0 +1,67 @@
+--- !ruby/object:RI::ClassDescription 
+attributes: 
+- !ruby/object:RI::Attribute 
+  comment: 
+  name: additional_args
+  rw: RW
+- !ruby/object:RI::Attribute 
+  comment: 
+  name: background
+  rw: RW
+- !ruby/object:RI::Attribute 
+  comment: 
+  name: host
+  rw: RW
+- !ruby/object:RI::Attribute 
+  comment: 
+  name: jar_file
+  rw: R
+- !ruby/object:RI::Attribute 
+  comment: 
+  name: log_to
+  rw: RW
+- !ruby/object:RI::Attribute 
+  comment: 
+  name: port
+  rw: RW
+- !ruby/object:RI::Attribute 
+  comment: 
+  name: timeout_in_seconds
+  rw: RW
+- !ruby/object:RI::Attribute 
+  comment: 
+  name: wait_until_up_and_running
+  rw: RW
+class_methods: 
+- !ruby/object:RI::MethodSummary 
+  name: new
+comment: 
+- !ruby/struct:SM::Flow::P 
+  body: Rake tasks to start a Remote Control server.
+- !ruby/struct:SM::Flow::P 
+  body: require 'selenium/rake/tasks'
+- !ruby/struct:SM::Flow::P 
+  body: Selenium::Rake::RemoteControlStartTask.new do |rc|
+- !ruby/struct:SM::Flow::VERB 
+  body: "  rc.port = 4444\n  rc.timeout_in_seconds = 3 * 60\n  rc.background = true\n  rc.wait_until_up_and_running = true\n  rc.jar_file = &quot;/path/to/where/selenium-rc-standalone-jar-is-installed&quot;\n  rc.additional_args &lt;&lt; &quot;-singleWindow&quot;\n"
+- !ruby/struct:SM::Flow::P 
+  body: end
+- !ruby/struct:SM::Flow::P 
+  body: "If you do not explicitly specify the path to selenium remote control jar it will be &quot;auto-discovered&quot; in `vendor` directory using the following path : `vendor/selenium-remote-control/selenium-server*-standalone.jar`"
+- !ruby/struct:SM::Flow::P 
+  body: To leverage the latest selenium-client capabilities, you may need to download a recent nightly build of a standalone packaging of Selenium Remote Control. You will find the nightly build at http://nexus.openqa.org/content/repositories/snapshots/org/seleniumhq/selenium/server/selenium-server/
+constants: 
+- !ruby/object:RI::Constant 
+  comment: 
+  name: JAR_FILE_PATTERN
+  value: "\"vendor/selenium-remote-control/selenium-server-*.jar\""
+full_name: Selenium::Rake::RemoteControlStartTask
+includes: []
+
+instance_methods: 
+- !ruby/object:RI::MethodSummary 
+  name: define
+- !ruby/object:RI::MethodSummary 
+  name: jar_file=
+name: RemoteControlStartTask
+superclass: Object

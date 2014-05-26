@@ -1,0 +1,66 @@
+--- !ruby/object:RI::ClassDescription 
+attributes: []
+
+class_methods: []
+
+comment: 
+constants: 
+- !ruby/object:RI::Constant 
+  comment: 
+  - !ruby/struct:SM::Flow::P 
+    body: IP Address of the machine where the script is to be executed. Default to localhost.
+  name: MACHINE_IP
+  value: "\"127.0.0.1\""
+- !ruby/object:RI::Constant 
+  comment: 
+  - !ruby/struct:SM::Flow::P 
+    body: The default color for highlighting objects as they are accessed.
+  name: DEFAULT_HIGHLIGHT_COLOR
+  value: "\"yellow\""
+full_name: FireWatir::Container
+includes: 
+- !ruby/object:RI::IncludedModule 
+  name: FireWatir
+- !ruby/object:RI::IncludedModule 
+  name: Watir::Exception
+- !ruby/object:RI::IncludedModule 
+  name: JsshSocket
+instance_methods: 
+- !ruby/object:RI::MethodSummary 
+  name: button
+- !ruby/object:RI::MethodSummary 
+  name: cell
+- !ruby/object:RI::MethodSummary 
+  name: checkbox
+- !ruby/object:RI::MethodSummary 
+  name: dd
+- !ruby/object:RI::MethodSummary 
+  name: dl
+- !ruby/object:RI::MethodSummary 
+  name: dt
+- !ruby/object:RI::MethodSummary 
+  name: file_field
+- !ruby/object:RI::MethodSummary 
+  name: form
+- !ruby/object:RI::MethodSummary 
+  name: frame
+- !ruby/object:RI::MethodSummary 
+  name: hidden
+- !ruby/object:RI::MethodSummary 
+  name: image
+- !ruby/object:RI::MethodSummary 
+  name: link
+- !ruby/object:RI::MethodSummary 
+  name: radio
+- !ruby/object:RI::MethodSummary 
+  name: row
+- !ruby/object:RI::MethodSummary 
+  name: select_list
+- !ruby/object:RI::MethodSummary 
+  name: show_all_objects
+- !ruby/object:RI::MethodSummary 
+  name: table
+- !ruby/object:RI::MethodSummary 
+  name: text_field
+name: Container
+superclass: 

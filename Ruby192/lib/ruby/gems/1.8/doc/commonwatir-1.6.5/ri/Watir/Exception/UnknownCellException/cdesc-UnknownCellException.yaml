@@ -1,0 +1,17 @@
+--- !ruby/object:RI::ClassDescription 
+attributes: []
+
+class_methods: []
+
+comment: 
+- !ruby/struct:SM::Flow::P 
+  body: this exception is raised if an attempt is made to access a table cell that doesnt exist
+constants: []
+
+full_name: Watir::Exception::UnknownCellException
+includes: []
+
+instance_methods: []
+
+name: UnknownCellException
+superclass: WatirException

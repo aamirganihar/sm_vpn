@@ -1,0 +1,16 @@
+--- !ruby/object:RI::MethodDescription 
+aliases: []
+
+block_params: 
+comment: 
+- !ruby/struct:SM::Flow::P 
+  body: Sets the From address on the SMTP Envelope.
+- !ruby/struct:SM::Flow::P 
+  body: "Example:"
+- !ruby/struct:SM::Flow::VERB 
+  body: " mail.smtp_envelope_from = 'Mikel &lt;mikel@test.lindsaar.net&gt;'\n mail.smtp_envelope_from #=&gt; 'mikel@test.lindsaar.net'\n"
+full_name: Mail::Message#smtp_envelope_from=
+is_singleton: false
+name: smtp_envelope_from=
+params: ( val )
+visibility: public

@@ -1,0 +1,12 @@
+--- !ruby/object:RI::MethodDescription 
+aliases: []
+
+block_params: 
+comment: 
+- !ruby/struct:SM::Flow::P 
+  body: default implementation. overridden by some subclasses.
+full_name: FireWatir::ElementCollections#locate_elements
+is_singleton: false
+name: locate_elements
+params: ()
+visibility: public

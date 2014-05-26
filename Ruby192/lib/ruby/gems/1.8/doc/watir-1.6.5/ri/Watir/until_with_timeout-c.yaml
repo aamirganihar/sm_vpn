@@ -1,0 +1,12 @@
+--- !ruby/object:RI::MethodDescription 
+aliases: []
+
+block_params: ""
+comment: 
+- !ruby/struct:SM::Flow::P 
+  body: Like regular Ruby &quot;until&quot;, except that a TimeOutException is raised if the timeout is exceeded. Timeout is IE.attach_timeout.
+full_name: Watir::until_with_timeout
+is_singleton: true
+name: until_with_timeout
+params: ( {|| ...}
+visibility: public

@@ -1,0 +1,31 @@
+C:/Ruby192/bin/ruby.exe extconf.rb
+*** extconf.rb failed ***
+Could not create Makefile due to some reason, probably lack of
+necessary libraries and/or headers.  Check the mkmf.log file for more
+details.  You may need configuration options.
+
+Provided configuration options:
+	--with-opt-dir
+	--without-opt-dir
+	--with-opt-include
+	--without-opt-include=${opt-dir}/include
+	--with-opt-lib
+	--without-opt-lib=${opt-dir}/lib
+	--with-make-prog
+	--srcdir=.
+	--curdir
+	--ruby=C:/Ruby192/bin/ruby
+	--with-fox-dir
+	--without-fox-dir
+	--with-fox-include
+	--without-fox-include=${fox-dir}/include
+	--with-fox-lib
+	--without-fox-lib=${fox-dir}/lib
+	--with-fxscintilla-dir
+	--without-fxscintilla-dir
+	--with-fxscintilla-include
+	--without-fxscintilla-include=${fxscintilla-dir}/include
+	--with-fxscintilla-lib
+	--without-fxscintilla-lib=${fxscintilla-dir}/lib
+extconf.rb:31:in `find_installed_fox_version': couldn't find FOX header files (RuntimeError)
+	from extconf.rb:134

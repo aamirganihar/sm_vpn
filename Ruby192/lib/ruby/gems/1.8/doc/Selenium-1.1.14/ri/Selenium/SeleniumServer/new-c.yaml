@@ -1,0 +1,12 @@
+--- !ruby/object:RI::MethodDescription 
+aliases: []
+
+block_params: 
+comment: 
+- !ruby/struct:SM::Flow::P 
+  body: Initialize the server driver with an opitonal port number (default to 4444) and request timeout (default to 30)
+full_name: Selenium::SeleniumServer::new
+is_singleton: true
+name: new
+params: (port_number_to_use = 4444, request_timeout=30)
+visibility: public

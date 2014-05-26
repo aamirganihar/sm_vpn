@@ -1,0 +1,89 @@
+--- !ruby/object:RI::ClassDescription 
+attributes: 
+- !ruby/object:RI::Attribute 
+  comment: 
+  name: indent
+  rw: R
+- !ruby/object:RI::Attribute 
+  comment: 
+  name: width
+  rw: RW
+class_methods: 
+- !ruby/object:RI::MethodSummary 
+  name: new
+comment: 
+- !ruby/struct:SM::Flow::P 
+  body: This class is mostly copy &amp; paste from ri_formatter.rb. except that it always returns a string and does not print anything.
+constants: 
+- !ruby/object:RI::Constant 
+  comment: 
+  - !ruby/struct:SM::Flow::P 
+    body: define all possible styles
+  name: STYLE_NORMAL
+  value: ":STYLE_NORMAL"
+- !ruby/object:RI::Constant 
+  comment: 
+  name: STYLE_BOLD
+  value: ":STYLE_BOLD"
+- !ruby/object:RI::Constant 
+  comment: 
+  name: STYLE_CLASS
+  value: ":STYLE_CLASS"
+- !ruby/object:RI::Constant 
+  comment: 
+  name: STYLE_H1
+  value: ":STYLE_H1"
+- !ruby/object:RI::Constant 
+  comment: 
+  name: STYLE_H2
+  value: ":STYLE_H2"
+- !ruby/object:RI::Constant 
+  comment: 
+  name: STYLE_H3
+  value: ":STYLE_H3"
+- !ruby/object:RI::Constant 
+  comment: 
+  name: STYLE_TELETYPE
+  value: ":STYLE_TELETYPE"
+- !ruby/object:RI::Constant 
+  comment: 
+  name: STYLE_CODE
+  value: ":STYLE_CODE"
+- !ruby/object:RI::Constant 
+  comment: 
+  name: STYLE_EMPHASIS
+  value: ":STYLE_EMPHASIS"
+full_name: FoxTextFormatter
+includes: []
+
+instance_methods: 
+- !ruby/object:RI::MethodSummary 
+  name: blankline
+- !ruby/object:RI::MethodSummary 
+  name: bold_print
+- !ruby/object:RI::MethodSummary 
+  name: break_to_newline
+- !ruby/object:RI::MethodSummary 
+  name: conv_html
+- !ruby/object:RI::MethodSummary 
+  name: conv_markup
+- !ruby/object:RI::MethodSummary 
+  name: display_flow
+- !ruby/object:RI::MethodSummary 
+  name: display_flow_item
+- !ruby/object:RI::MethodSummary 
+  name: display_heading
+- !ruby/object:RI::MethodSummary 
+  name: display_list
+- !ruby/object:RI::MethodSummary 
+  name: display_params
+- !ruby/object:RI::MethodSummary 
+  name: display_verbatim_flow_item
+- !ruby/object:RI::MethodSummary 
+  name: draw_line
+- !ruby/object:RI::MethodSummary 
+  name: raw_print_line
+- !ruby/object:RI::MethodSummary 
+  name: wrap
+name: FoxTextFormatter
+superclass: Object

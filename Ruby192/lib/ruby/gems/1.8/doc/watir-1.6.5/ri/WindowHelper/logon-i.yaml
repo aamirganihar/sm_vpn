@@ -1,0 +1,10 @@
+--- !ruby/object:RI::MethodDescription 
+aliases: []
+
+block_params: 
+comment: 
+full_name: WindowHelper#logon
+is_singleton: false
+name: logon
+params: (title,name = 'john doe',password = 'john doe')
+visibility: public

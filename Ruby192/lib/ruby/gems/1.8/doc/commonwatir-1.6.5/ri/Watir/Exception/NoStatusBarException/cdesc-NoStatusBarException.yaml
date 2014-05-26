@@ -1,0 +1,17 @@
+--- !ruby/object:RI::ClassDescription 
+attributes: []
+
+class_methods: []
+
+comment: 
+- !ruby/struct:SM::Flow::P 
+  body: This exception is thrown if an attemp is made to acces the status bar of the browser when it doesnt exist
+constants: []
+
+full_name: Watir::Exception::NoStatusBarException
+includes: []
+
+instance_methods: []
+
+name: NoStatusBarException
+superclass: WatirException

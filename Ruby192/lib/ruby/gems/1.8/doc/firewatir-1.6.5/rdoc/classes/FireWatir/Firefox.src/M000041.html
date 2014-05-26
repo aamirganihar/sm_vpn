@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+<!DOCTYPE html 
+     PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+     "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html>
+<head>
+  <title>close (FireWatir::Firefox)</title>
+  <meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" />
+  <link rel="stylesheet" href="../../.././rdoc-style.css" type="text/css" media="screen" />
+</head>
+<body class="standalone-code">
+  <pre><span class="ruby-comment cmt"># File lib/firewatir/firefox.rb, line 298</span>
+    <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">close</span>
+
+      <span class="ruby-keyword kw">if</span> <span class="ruby-identifier">js_eval</span>(<span class="ruby-value str">&quot;getWindows().length&quot;</span>).<span class="ruby-identifier">to_i</span> <span class="ruby-operator">==</span> <span class="ruby-value">1</span>
+        <span class="ruby-identifier">js_eval</span>(<span class="ruby-value str">&quot;getWindows()[0].close()&quot;</span>)
+
+        <span class="ruby-keyword kw">if</span> <span class="ruby-identifier">current_os</span> <span class="ruby-operator">==</span> <span class="ruby-identifier">:macosx</span>
+          <span class="ruby-value">%x{ osascript -e 'tell application &quot;Firefox&quot; to quit' }</span>
+        <span class="ruby-keyword kw">end</span>
+
+        <span class="ruby-comment cmt"># wait for the app to close properly</span>
+        <span class="ruby-ivar">@t</span>.<span class="ruby-identifier">join</span> <span class="ruby-keyword kw">if</span> <span class="ruby-ivar">@t</span>
+      <span class="ruby-keyword kw">else</span>
+        <span class="ruby-comment cmt"># Check if window exists, because there may be the case that it has been closed by click event on some element.</span>
+        <span class="ruby-comment cmt"># For e.g: Close Button, Close this Window link etc.</span>
+        <span class="ruby-identifier">window_number</span> = <span class="ruby-identifier">find_window</span>(<span class="ruby-identifier">:url</span>, <span class="ruby-ivar">@window_url</span>)
+
+        <span class="ruby-comment cmt"># If matching window found. Close the window.</span>
+        <span class="ruby-keyword kw">if</span> <span class="ruby-identifier">window_number</span> <span class="ruby-operator">&gt;</span> <span class="ruby-value">0</span>
+          <span class="ruby-identifier">js_eval</span> <span class="ruby-node">&quot;getWindows()[#{window_number}].close()&quot;</span>
+        <span class="ruby-keyword kw">end</span>
+
+      <span class="ruby-keyword kw">end</span>
+    <span class="ruby-keyword kw">end</span></pre>
+</body>
+</html>

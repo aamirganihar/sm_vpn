@@ -1,0 +1,28 @@
+--- !ruby/object:RI::ClassDescription 
+attributes: []
+
+class_methods: []
+
+comment: 
+- !ruby/struct:SM::Flow::P 
+  body: This module includes checkers which are run on every page load
+- !ruby/struct:SM::Flow::P 
+  body: "In order to use this module, add a require to one of your test scripts: require 'watir/contrib/page_checker' To add checkers, call the ie.add_checker method"
+- !ruby/struct:SM::Flow::P 
+  body: ie.add_checker(PageCheckers::NAVIGATION_CHECKER)
+- !ruby/struct:SM::Flow::P 
+  body: Checkers are Ruby proc objects which are called within Watir::IE and passed the current instance of ie.
+constants: 
+- !ruby/object:RI::Constant 
+  comment: 
+  - !ruby/struct:SM::Flow::P 
+    body: This checker iterates through the current document including any frames and checks for http errors, 404, 500 etc
+  name: NAVIGATION_CHECKER
+  value: lambda do |ie|                 if ie.document.frames.length > 1
+full_name: PageCheckers
+includes: []
+
+instance_methods: []
+
+name: PageCheckers
+superclass: 

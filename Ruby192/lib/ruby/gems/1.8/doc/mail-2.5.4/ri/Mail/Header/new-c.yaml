@@ -1,0 +1,16 @@
+--- !ruby/object:RI::MethodDescription 
+aliases: []
+
+block_params: 
+comment: 
+- !ruby/struct:SM::Flow::P 
+  body: Creates a new header object.
+- !ruby/struct:SM::Flow::P 
+  body: Accepts raw text or nothing. If given raw text will attempt to parse it and split it into the various fields, instantiating each field as it goes.
+- !ruby/struct:SM::Flow::P 
+  body: If it finds a field that should be a structured field (such as content type), but it fails to parse it, it will simply make it an unstructured field and leave it alone. This will mean that the data is preserved but no automatic processing of that field will happen. If you find one of these cases, please make a patch and send it in, or at the least, send me the example so we can fix it.
+full_name: Mail::Header::new
+is_singleton: true
+name: new
+params: (header_text = nil, charset = nil)
+visibility: public

@@ -1,0 +1,16 @@
+--- !ruby/object:RI::MethodDescription 
+aliases: []
+
+block_params: 
+comment: 
+- !ruby/struct:SM::Flow::P 
+  body: "Return a sorted array of attribute names, similar to #methods."
+- !ruby/struct:SM::Flow::VERB 
+  body: " s = Recursive_Open_Struct.new\n s.name = &quot;martinus&quot;\n s.age = 25\n s.attrs # returns [&quot;age&quot;, &quot;name&quot;]\n"
+full_name: Recursive_Open_Struct#attrs
+is_singleton: false
+name: attrs
+params: |
+  attrs() -> an_array
+
+visibility: public

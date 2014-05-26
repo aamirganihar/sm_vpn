@@ -1,0 +1,22 @@
+--- !ruby/object:RI::MethodDescription 
+aliases: []
+
+block_params: 
+comment: 
+- !ruby/struct:SM::Flow::P 
+  body: This is the main method for accessing a text field. Usually an &lt;input type = text&gt; HTML tag. or a text area - a &lt;textarea&gt; tag
+- !ruby/struct:SM::Flow::VERB 
+  body: " *  how   - symbol - how we access the field, :index, :id, :name etc\n *  what  - string, integer or regular expression - what we are looking for,\n"
+- !ruby/struct:SM::Flow::P 
+  body: Valid values for 'how' are listed in the Watir Wiki - http://wiki.openqa.org/display/WTR/Methods+supported+by+Element
+- !ruby/struct:SM::Flow::P 
+  body: returns a TextField object
+- !ruby/struct:SM::Flow::P 
+  body: Typical Usage
+- !ruby/struct:SM::Flow::VERB 
+  body: "   ie.text_field(:id,   'user_name')                 # access the text field with an ID of user_name\n   ie.text_field(:name, 'address')                   # access the text field with a name of address\n   ie.text_field(:index, 2)                          # access the second text field on the page (1 based, so the first field is accessed with :index,1)\n   ie.text_field(:xpath, &quot;//textarea[@id='user_name']/&quot;)    # access the text field with an ID of user_name\n"
+full_name: Watir::Container#text_field
+is_singleton: false
+name: text_field
+params: (how, what=nil)
+visibility: public

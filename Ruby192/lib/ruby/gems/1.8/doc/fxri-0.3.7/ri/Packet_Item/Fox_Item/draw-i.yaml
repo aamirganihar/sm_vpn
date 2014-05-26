@@ -1,0 +1,12 @@
+--- !ruby/object:RI::MethodDescription 
+aliases: []
+
+block_params: 
+comment: 
+- !ruby/struct:SM::Flow::P 
+  body: "Sometimes draw is called AFTER the item has been removed. In this case: return immediately. Otherwise a Runtime Error would occur!"
+full_name: Packet_Item::Fox_Item#draw
+is_singleton: false
+name: draw
+params: (*args)
+visibility: public

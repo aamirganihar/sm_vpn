@@ -1,0 +1,14 @@
+--- !ruby/object:RI::MethodDescription 
+aliases: []
+
+block_params: elt
+comment: 
+- !ruby/struct:SM::Flow::P 
+  body: "Like <tt>#map</tt>/<tt>#collect</tt>, but it generates a Hash. The block is expected to return two values: the key and the value for the new hash."
+- !ruby/struct:SM::Flow::VERB 
+  body: "  numbers  = (1..3)\n  squares  = numbers.build_hash { |n| [n, n*n] }   # 1=&gt;1, 2=&gt;4, 3=&gt;9\n  sq_roots = numbers.build_hash { |n| [n*n, n] }   # 1=&gt;1, 4=&gt;2, 9=&gt;3\n"
+full_name: Enumerable#build_hash
+is_singleton: false
+name: build_hash
+params: () {|elt| ...}
+visibility: public

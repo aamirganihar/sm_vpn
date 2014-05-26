@@ -1,0 +1,14 @@
+--- !ruby/object:RI::MethodDescription 
+aliases: []
+
+block_params: 
+comment: 
+- !ruby/struct:SM::Flow::P 
+  body: Returns the default value of the field requested as a symbol.
+- !ruby/struct:SM::Flow::P 
+  body: Each header field has a :default method which returns the most common use case for that field, for example, the date field types will return a DateTime object when sent :default, the subject, or unstructured fields will return a decoded string of their value, the address field types will return a single addr_spec or an array of addr_specs if there is more than one.
+full_name: Mail::Message#default
+is_singleton: false
+name: default
+params: ( sym, val = nil )
+visibility: public

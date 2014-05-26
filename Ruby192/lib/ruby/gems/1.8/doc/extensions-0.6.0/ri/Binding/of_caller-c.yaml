@@ -1,0 +1,41 @@
+--- !ruby/object:RI::MethodDescription 
+aliases: []
+
+block_params: result
+comment: 
+- !ruby/struct:SM::Flow::P 
+  body: This method returns the binding of the method that called your method, enabling you to access its local variables. If you call it without being in a method, it will raise an Exception.
+- !ruby/struct:SM::Flow::H 
+  level: 3
+  text: Example
+- !ruby/struct:SM::Flow::VERB 
+  body: "  def inc_counter\n    Binding.of_caller do |b|\n      eval(&quot;counter += 1&quot;, b)\n    end\n    #              &lt;--- line (A)\n  end\n  counter = 0\n  inc_counter\n  inc_counter\n  counter           # -&gt; 2\n"
+- !ruby/struct:SM::Flow::H 
+  level: 3
+  text: Warning
+- !ruby/struct:SM::Flow::P 
+  body: <tt>Binding.of_caller</tt> must be the <em>last</em> method call in the method. For example, if you insert some code at line <b>A</b> in the example above, an Exception will be raised. You'll get away with a simple assignment, but anything involving a method call is trouble.
+- !ruby/struct:SM::Flow::H 
+  level: 3
+  text: Explanation
+- !ruby/struct:SM::Flow::P 
+  body: It works by installing a temporary trace_func (see Kernel.set_trace_func). This makes available -- to the trace function -- the binding of a method after it has returned. Using a continuation, <tt>Binding.of_caller</tt> will let <em>your</em> method return, retrieve the binding, and return to the <tt>of_caller</tt> call with that binding in hand. This time it executes the block.
+- !ruby/struct:SM::Flow::P 
+  body: Because it is actually running <tt>Binding.of_caller</tt> twice, and returning from your method twice, any code between the <tt>of_caller</tt> call and the end of your method will be run twice. This is obviously not desirable, so an Exception is raised if any code is found.
+- !ruby/struct:SM::Flow::P 
+  body: See the thread around ruby-talk:109607 for more discussion.
+- !ruby/struct:SM::Flow::H 
+  level: 3
+  text: Extra Warning
+- !ruby/struct:SM::Flow::P 
+  body: "If you have a trace function in place, <tt>Binding.of_caller</tt> will destroy that. Ruby does not allow you to access the current trace function, so it can't be restored afterwards. XXX: will this clash with the profiler and/or debugger?"
+- !ruby/struct:SM::Flow::H 
+  level: 3
+  text: Credits
+- !ruby/struct:SM::Flow::P 
+  body: <tt>Binding.of_caller</tt> was written by Florian Frank.
+full_name: Binding::of_caller
+is_singleton: true
+name: of_caller
+params: (&block) {|result| ...}
+visibility: public

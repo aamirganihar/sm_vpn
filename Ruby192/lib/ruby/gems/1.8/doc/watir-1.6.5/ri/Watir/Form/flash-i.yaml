@@ -1,0 +1,12 @@
+--- !ruby/object:RI::MethodDescription 
+aliases: []
+
+block_params: 
+comment: 
+- !ruby/struct:SM::Flow::P 
+  body: causes the object to flash. Normally used in IRB when creating scripts Default is 10
+full_name: Watir::Form#flash
+is_singleton: false
+name: flash
+params: (number=10)
+visibility: public

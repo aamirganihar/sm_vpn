@@ -1,0 +1,16 @@
+--- !ruby/object:RI::MethodDescription 
+aliases: []
+
+block_params: 
+comment: 
+- !ruby/struct:SM::Flow::P 
+  body: This is the main method for accessing the links collection. Returns a Links object
+- !ruby/struct:SM::Flow::P 
+  body: "Typical usage:"
+- !ruby/struct:SM::Flow::VERB 
+  body: "  ie.links.each { |l| puts l.to_s }            # iterate through all the links on the page\n  ie.links[1].to_s                             # goto the first link on the page\n  ie.links.length                              # show how many links are on the page.\n"
+full_name: Watir::Container#links
+is_singleton: false
+name: links
+params: ()
+visibility: public

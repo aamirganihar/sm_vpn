@@ -1,0 +1,26 @@
+--- !ruby/object:RI::ClassDescription 
+attributes: []
+
+class_methods: 
+- !ruby/object:RI::MethodSummary 
+  name: new
+comment: 
+constants: []
+
+full_name: Mail::EnvelopeFromElement
+includes: 
+- !ruby/object:RI::IncludedModule 
+  name: Mail::Utilities
+instance_methods: 
+- !ruby/object:RI::MethodSummary 
+  name: address
+- !ruby/object:RI::MethodSummary 
+  name: date_time
+- !ruby/object:RI::MethodSummary 
+  name: formatted_date_time
+- !ruby/object:RI::MethodSummary 
+  name: to_s
+- !ruby/object:RI::MethodSummary 
+  name: tree
+name: EnvelopeFromElement
+superclass: Object

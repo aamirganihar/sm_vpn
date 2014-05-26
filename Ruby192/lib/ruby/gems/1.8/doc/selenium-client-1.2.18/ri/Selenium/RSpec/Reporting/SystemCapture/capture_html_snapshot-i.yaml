@@ -1,0 +1,10 @@
+--- !ruby/object:RI::MethodDescription 
+aliases: []
+
+block_params: 
+comment: 
+full_name: Selenium::RSpec::Reporting::SystemCapture#capture_html_snapshot
+is_singleton: false
+name: capture_html_snapshot
+params: ()
+visibility: public

@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+<!DOCTYPE html 
+     PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+     "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html>
+<head>
+  <title>frames (FireWatir::Document)</title>
+  <meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" />
+  <link rel="stylesheet" href="../../.././rdoc-style.css" type="text/css" media="screen" />
+</head>
+<body class="standalone-code">
+  <pre><span class="ruby-comment cmt"># File lib/firewatir/document.rb, line 21</span>
+    <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">frames</span>
+      <span class="ruby-identifier">jssh_command</span> = <span class="ruby-node">&quot;var frameset = #{@container.window_var}.frames;
+                      var elements_frames = new Array();
+                      for(var i = 0; i &lt; frameset.length; i++)
+                      {
+                          var frames = frameset[i].frames;
+                          for(var j = 0; j &lt; frames.length; j++)
+                          {
+                              elements_frames.push(frames[j].frameElement);    
+                          }
+                      }
+                      elements_frames.length;&quot;</span>
+      
+      <span class="ruby-identifier">jssh_command</span>.<span class="ruby-identifier">gsub!</span>(<span class="ruby-value str">&quot;\n&quot;</span>, <span class="ruby-value str">&quot;&quot;</span>)
+      <span class="ruby-identifier">$jssh_socket</span>.<span class="ruby-identifier">send</span>(<span class="ruby-node">&quot;#{jssh_command};\n&quot;</span>, <span class="ruby-value">0</span>)
+      <span class="ruby-identifier">length</span> = <span class="ruby-identifier">read_socket</span>().<span class="ruby-identifier">to_i</span> 
+      
+      <span class="ruby-identifier">frame_array</span> = <span class="ruby-constant">Array</span>.<span class="ruby-identifier">new</span>(<span class="ruby-identifier">length</span>)
+      <span class="ruby-keyword kw">for</span> <span class="ruby-identifier">i</span> <span class="ruby-keyword kw">in</span> <span class="ruby-value">0</span><span class="ruby-operator">..</span><span class="ruby-identifier">length</span> <span class="ruby-operator">-</span> <span class="ruby-value">1</span> <span class="ruby-keyword kw">do</span>
+          <span class="ruby-identifier">frame_array</span>[<span class="ruby-identifier">i</span>] = <span class="ruby-constant">Frame</span>.<span class="ruby-identifier">new</span>(<span class="ruby-keyword kw">self</span>, <span class="ruby-identifier">:jssh_name</span>, <span class="ruby-node">&quot;elements_frames[#{i}]&quot;</span>)
+      <span class="ruby-keyword kw">end</span>
+      <span class="ruby-identifier">frame_array</span>
+    <span class="ruby-keyword kw">end</span></pre>
+</body>
+</html>

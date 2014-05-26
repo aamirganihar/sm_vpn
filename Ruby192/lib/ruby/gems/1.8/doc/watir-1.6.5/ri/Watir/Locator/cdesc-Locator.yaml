@@ -1,0 +1,19 @@
+--- !ruby/object:RI::ClassDescription 
+attributes: []
+
+class_methods: []
+
+comment: 
+constants: []
+
+full_name: Watir::Locator
+includes: 
+- !ruby/object:RI::IncludedModule 
+  name: Watir
+- !ruby/object:RI::IncludedModule 
+  name: Watir::Exception
+instance_methods: 
+- !ruby/object:RI::MethodSummary 
+  name: normalize_specifiers!
+name: Locator
+superclass: Object

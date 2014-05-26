@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+<!DOCTYPE html 
+     PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+     "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html>
+<head>
+  <title>click_no_wait (Watir::Element)</title>
+  <meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" />
+  <link rel="stylesheet" href="../../.././rdoc-style.css" type="text/css" media="screen" />
+</head>
+<body class="standalone-code">
+  <pre><span class="ruby-comment cmt"># File lib/watir/element.rb, line 223</span>
+    <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">click_no_wait</span>
+      <span class="ruby-identifier">assert_enabled</span>
+      
+      <span class="ruby-identifier">highlight</span>(<span class="ruby-identifier">:set</span>)
+      <span class="ruby-identifier">object</span> = <span class="ruby-node">&quot;#{self.class}.new(self, :unique_number, #{self.unique_number})&quot;</span>
+      <span class="ruby-ivar">@page_container</span>.<span class="ruby-identifier">eval_in_spawned_process</span>(<span class="ruby-identifier">object</span> <span class="ruby-operator">+</span> <span class="ruby-value str">&quot;.click!&quot;</span>)
+      <span class="ruby-identifier">highlight</span>(<span class="ruby-identifier">:clear</span>)
+    <span class="ruby-keyword kw">end</span></pre>
+</body>
+</html>

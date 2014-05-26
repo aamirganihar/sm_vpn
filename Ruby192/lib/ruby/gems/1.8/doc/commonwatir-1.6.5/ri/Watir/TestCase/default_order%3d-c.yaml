@@ -1,0 +1,10 @@
+--- !ruby/object:RI::MethodDescription 
+aliases: []
+
+block_params: 
+comment: 
+full_name: Watir::TestCase::default_order=
+is_singleton: true
+name: default_order=
+params: (order)
+visibility: public

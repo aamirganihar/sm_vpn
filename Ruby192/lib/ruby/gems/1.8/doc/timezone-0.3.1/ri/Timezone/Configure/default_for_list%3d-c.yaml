@@ -1,0 +1,10 @@
+--- !ruby/object:RI::MethodDescription 
+aliases: []
+
+block_params: 
+comment: 
+full_name: Timezone::Configure::default_for_list=
+is_singleton: true
+name: default_for_list=
+params: (*list)
+visibility: public

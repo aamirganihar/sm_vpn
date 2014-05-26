@@ -1,0 +1,12 @@
+--- !ruby/object:RI::MethodDescription 
+aliases: []
+
+block_params: 
+comment: 
+- !ruby/struct:SM::Flow::P 
+  body: Sets the value of the text field directly. It causes no events to be fired or exceptions to be raised, so generally shouldn't be used. It is preffered to use the set method.
+full_name: Watir::TextField#value=
+is_singleton: false
+name: value=
+params: (v)
+visibility: public

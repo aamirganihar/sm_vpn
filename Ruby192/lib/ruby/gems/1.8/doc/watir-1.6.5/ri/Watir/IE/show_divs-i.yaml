@@ -1,0 +1,12 @@
+--- !ruby/object:RI::MethodDescription 
+aliases: []
+
+block_params: 
+comment: 
+- !ruby/struct:SM::Flow::P 
+  body: this method shows all the divs availble in the document
+full_name: Watir::IE#show_divs
+is_singleton: false
+name: show_divs
+params: ()
+visibility: public

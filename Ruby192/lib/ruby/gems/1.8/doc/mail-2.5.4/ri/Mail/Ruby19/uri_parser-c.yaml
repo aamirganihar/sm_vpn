@@ -1,0 +1,10 @@
+--- !ruby/object:RI::MethodDescription 
+aliases: []
+
+block_params: 
+comment: 
+full_name: Mail::Ruby19::uri_parser
+is_singleton: true
+name: uri_parser
+params: ()
+visibility: public

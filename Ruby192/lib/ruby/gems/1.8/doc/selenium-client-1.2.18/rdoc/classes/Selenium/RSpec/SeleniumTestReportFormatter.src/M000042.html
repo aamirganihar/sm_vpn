@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+<!DOCTYPE html 
+     PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+     "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html>
+<head>
+  <title>example_failed (Selenium::RSpec::SeleniumTestReportFormatter)</title>
+  <meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" />
+  <link rel="stylesheet" href="../../../.././rdoc-style.css" type="text/css" media="screen" />
+</head>
+<body class="standalone-code">
+  <pre>    <span class="ruby-comment cmt"># File lib/selenium/rspec/reporting/selenium_test_report_formatter.rb, line 49</span>
+49:       <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">example_failed</span>(<span class="ruby-identifier">example</span>, <span class="ruby-identifier">counter</span>, <span class="ruby-identifier">failure</span>)        
+50:         <span class="ruby-identifier">old_output</span> = <span class="ruby-ivar">@output</span>
+51:         <span class="ruby-ivar">@output</span> = <span class="ruby-constant">StringIO</span>.<span class="ruby-identifier">new</span>
+52:         <span class="ruby-keyword kw">super</span>
+53:         
+54:         <span class="ruby-identifier">result</span> = <span class="ruby-ivar">@output</span>.<span class="ruby-identifier">string</span>
+55:         <span class="ruby-identifier">report</span> = <span class="ruby-constant">Selenium</span><span class="ruby-operator">::</span><span class="ruby-constant">RSpec</span><span class="ruby-operator">::</span><span class="ruby-constant">Reporting</span><span class="ruby-operator">::</span><span class="ruby-constant">HtmlReport</span>.<span class="ruby-identifier">new</span>(<span class="ruby-ivar">@@file_path_strategy</span>)
+56:         <span class="ruby-identifier">report</span>.<span class="ruby-identifier">replace_placeholder_with_system_state_content</span>(<span class="ruby-identifier">result</span>, <span class="ruby-identifier">example</span>)
+57:         <span class="ruby-identifier">old_output</span>.<span class="ruby-identifier">puts</span> <span class="ruby-identifier">result</span>
+58:         <span class="ruby-identifier">old_output</span>.<span class="ruby-identifier">flush</span>
+59:       <span class="ruby-keyword kw">ensure</span>
+60:         <span class="ruby-ivar">@output</span> = <span class="ruby-identifier">old_output</span>
+61:       <span class="ruby-keyword kw">end</span></pre>
+</body>
+</html>

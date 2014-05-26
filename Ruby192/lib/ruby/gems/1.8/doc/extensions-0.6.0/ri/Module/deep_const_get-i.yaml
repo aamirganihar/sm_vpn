@@ -1,0 +1,18 @@
+--- !ruby/object:RI::MethodDescription 
+aliases: []
+
+block_params: 
+comment: 
+- !ruby/struct:SM::Flow::P 
+  body: Recursively dereferences constants separated by &quot;<tt>::</tt>&quot;.
+- !ruby/struct:SM::Flow::P 
+  body: "<em>const</em> is a Symbol or responds to #to_str, for compatibility with the builtin method <tt>Module#const_get</tt>."
+- !ruby/struct:SM::Flow::VERB 
+  body: "  Object.const_get(&quot;String&quot;)                    # -&gt; String\n  Object.const_get(:String)                     # -&gt; String\n\n  Object.deep_const_get(&quot;String&quot;)               # -&gt; String\n  Object.deep_const_get(:String)                # -&gt; String\n\n  Object.deep_const_get(&quot;Process::Sys&quot;)         # -&gt; Process::Sys\n  Object.deep_const_get(&quot;Regexp::IGNORECASE&quot;)   # -&gt; 1\n  Object.deep_const_get(&quot;Regexp::MULTILINE&quot;)    # -&gt; 4\n\n  require 'test/unit'\n  Test.deep_const_get(&quot;Unit::Assertions&quot;)       # -&gt; Test::Unit::Assertions\n  Test.deep_const_get(&quot;::Test::Unit&quot;)           # -&gt; Test::Unit\n"
+- !ruby/struct:SM::Flow::P 
+  body: For resolving classes or modules based on their name, see Module.by_name, which uses this method.
+full_name: Module#deep_const_get
+is_singleton: false
+name: deep_const_get
+params: (const)
+visibility: public

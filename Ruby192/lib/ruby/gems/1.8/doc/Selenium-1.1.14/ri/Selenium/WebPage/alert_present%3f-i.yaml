@@ -1,0 +1,10 @@
+--- !ruby/object:RI::MethodDescription 
+aliases: []
+
+block_params: 
+comment: 
+full_name: Selenium::WebPage#alert_present?
+is_singleton: false
+name: alert_present?
+params: ()
+visibility: public

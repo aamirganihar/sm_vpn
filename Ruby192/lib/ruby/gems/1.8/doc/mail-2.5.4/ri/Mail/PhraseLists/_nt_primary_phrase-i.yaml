@@ -1,0 +1,10 @@
+--- !ruby/object:RI::MethodDescription 
+aliases: []
+
+block_params: 
+comment: 
+full_name: Mail::PhraseLists#_nt_primary_phrase
+is_singleton: false
+name: _nt_primary_phrase
+params: ()
+visibility: public

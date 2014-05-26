@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+<!DOCTYPE html 
+     PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+     "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html>
+<head>
+  <title>element_type (FireWatir::Element)</title>
+  <meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" />
+  <link rel="stylesheet" href="../../.././rdoc-style.css" type="text/css" media="screen" />
+</head>
+<body class="standalone-code">
+  <pre><span class="ruby-comment cmt"># File lib/firewatir/element.rb, line 802</span>
+    <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">element_type</span>
+      <span class="ruby-comment cmt">#puts &quot;in element_type object is : #{element_object}&quot;</span>
+      <span class="ruby-comment cmt"># Get the type of the element.</span>
+      <span class="ruby-identifier">jssh_socket</span>.<span class="ruby-identifier">send</span>(<span class="ruby-node">&quot;#{element_object};\n&quot;</span>, <span class="ruby-value">0</span>)
+      <span class="ruby-identifier">temp</span> = <span class="ruby-identifier">read_socket</span>()
+
+      <span class="ruby-comment cmt">#puts &quot;#{element_object} and type is #{temp}&quot;</span>
+      <span class="ruby-identifier">temp</span> <span class="ruby-operator">=~</span> <span class="ruby-regexp re">/\[object\s(.*)\]/</span>
+      <span class="ruby-keyword kw">if</span> <span class="ruby-identifier">$1</span>
+        <span class="ruby-keyword kw">return</span> <span class="ruby-identifier">$1</span>
+      <span class="ruby-keyword kw">else</span>
+        <span class="ruby-comment cmt"># This is done because in JSSh if you write element name of anchor type</span>
+        <span class="ruby-comment cmt"># then it displays the link to which it navigates instead of displaying</span>
+        <span class="ruby-comment cmt"># object type. So above regex match will return nil</span>
+        <span class="ruby-keyword kw">return</span> <span class="ruby-value str">&quot;HTMLAnchorElement&quot;</span>
+      <span class="ruby-keyword kw">end</span>
+    <span class="ruby-keyword kw">end</span></pre>
+</body>
+</html>

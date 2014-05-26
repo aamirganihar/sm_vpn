@@ -1,0 +1,960 @@
+--- !ruby/object:RI::ClassDescription 
+attributes: []
+
+class_methods: []
+
+comment: 
+constants: 
+- !ruby/object:RI::Constant 
+  comment: 
+  - !ruby/struct:SM::Flow::P 
+    body: These constants are in winuser.h
+  name: BSF_QUERY
+  value: "0x00000001"
+- !ruby/object:RI::Constant 
+  comment: 
+  name: BSF_IGNORECURRENTTASK
+  value: "0x00000002"
+- !ruby/object:RI::Constant 
+  comment: 
+  name: BSF_FLUSHDISK
+  value: "0x00000004"
+- !ruby/object:RI::Constant 
+  comment: 
+  name: BSF_NOHANG
+  value: "0x00000008"
+- !ruby/object:RI::Constant 
+  comment: 
+  name: BSF_POSTMESSAGE
+  value: "0x00000010"
+- !ruby/object:RI::Constant 
+  comment: 
+  name: BSF_FORCEIFHUNG
+  value: "0x00000020"
+- !ruby/object:RI::Constant 
+  comment: 
+  name: BSF_NOTIMEOUTIFNOTHUNG
+  value: "0x00000040"
+- !ruby/object:RI::Constant 
+  comment: 
+  name: BSF_ALLOWSFW
+  value: "0x00000080"
+- !ruby/object:RI::Constant 
+  comment: 
+  name: BSF_SENDNOTIFYMESSAGE
+  value: "0x00000100"
+- !ruby/object:RI::Constant 
+  comment: 
+  name: BSF_RETURNHDESK
+  value: "0x00000200"
+- !ruby/object:RI::Constant 
+  comment: 
+  name: BSF_LUID
+  value: "0x00000400"
+- !ruby/object:RI::Constant 
+  comment: 
+  name: SMTO_NORMAL
+  value: "0x0000"
+- !ruby/object:RI::Constant 
+  comment: 
+  name: SMTO_BLOCK
+  value: "0x0001"
+- !ruby/object:RI::Constant 
+  comment: 
+  name: SMTO_ABORTIFHUNG
+  value: "0x0002"
+- !ruby/object:RI::Constant 
+  comment: 
+  name: SMTO_NOTIMEOUTIFNOTHUNG
+  value: "0x0008"
+- !ruby/object:RI::Constant 
+  comment: 
+  name: WM_NULL
+  value: "0x0000"
+- !ruby/object:RI::Constant 
+  comment: 
+  name: WM_CREATE
+  value: "0x0001"
+- !ruby/object:RI::Constant 
+  comment: 
+  name: WM_DESTROY
+  value: "0x0002"
+- !ruby/object:RI::Constant 
+  comment: 
+  name: WM_MOVE
+  value: "0x0003"
+- !ruby/object:RI::Constant 
+  comment: 
+  name: WM_SIZE
+  value: "0x0005"
+- !ruby/object:RI::Constant 
+  comment: 
+  name: WM_ACTIVATE
+  value: "0x0006"
+- !ruby/object:RI::Constant 
+  comment: 
+  name: WM_SETFOCUS
+  value: "0x0007"
+- !ruby/object:RI::Constant 
+  comment: 
+  name: WM_KILLFOCUS
+  value: "0x0008"
+- !ruby/object:RI::Constant 
+  comment: 
+  name: WM_ENABLE
+  value: "0x000A"
+- !ruby/object:RI::Constant 
+  comment: 
+  name: WM_SETREDRAW
+  value: "0x000B"
+- !ruby/object:RI::Constant 
+  comment: 
+  name: WM_SETTEXT
+  value: "0x000C"
+- !ruby/object:RI::Constant 
+  comment: 
+  name: WM_GETTEXT
+  value: "0x000D"
+- !ruby/object:RI::Constant 
+  comment: 
+  name: WM_GETTEXTLENGTH
+  value: "0x000E"
+- !ruby/object:RI::Constant 
+  comment: 
+  name: WM_PAINT
+  value: "0x000F"
+- !ruby/object:RI::Constant 
+  comment: 
+  name: WM_CLOSE
+  value: "0x0010"
+- !ruby/object:RI::Constant 
+  comment: 
+  name: WM_QUERYENDSESSION
+  value: "0x0011"
+- !ruby/object:RI::Constant 
+  comment: 
+  name: WM_QUERYOPEN
+  value: "0x0013"
+- !ruby/object:RI::Constant 
+  comment: 
+  name: WM_ENDSESSION
+  value: "0x0016"
+- !ruby/object:RI::Constant 
+  comment: 
+  name: WM_QUIT
+  value: "0x0012"
+- !ruby/object:RI::Constant 
+  comment: 
+  name: WM_ERASEBKGND
+  value: "0x0014"
+- !ruby/object:RI::Constant 
+  comment: 
+  name: WM_SYSCOLORCHANGE
+  value: "0x0015"
+- !ruby/object:RI::Constant 
+  comment: 
+  name: WM_SHOWWINDOW
+  value: "0x0018"
+- !ruby/object:RI::Constant 
+  comment: 
+  name: WM_WININICHANGE
+  value: "0x001A"
+- !ruby/object:RI::Constant 
+  comment: 
+  name: WM_SETTINGCHANGE
+  value: WM_WININICHANGE
+- !ruby/object:RI::Constant 
+  comment: 
+  name: WM_DEVMODECHANGE
+  value: "0x001B"
+- !ruby/object:RI::Constant 
+  comment: 
+  name: WM_ACTIVATEAPP
+  value: "0x001C"
+- !ruby/object:RI::Constant 
+  comment: 
+  name: WM_FONTCHANGE
+  value: "0x001D"
+- !ruby/object:RI::Constant 
+  comment: 
+  name: WM_TIMECHANGE
+  value: "0x001E"
+- !ruby/object:RI::Constant 
+  comment: 
+  name: WM_CANCELMODE
+  value: "0x001F"
+- !ruby/object:RI::Constant 
+  comment: 
+  name: WM_SETCURSOR
+  value: "0x0020"
+- !ruby/object:RI::Constant 
+  comment: 
+  name: WM_MOUSEACTIVATE
+  value: "0x0021"
+- !ruby/object:RI::Constant 
+  comment: 
+  name: WM_CHILDACTIVATE
+  value: "0x0022"
+- !ruby/object:RI::Constant 
+  comment: 
+  name: WM_QUEUESYNC
+  value: "0x0023"
+- !ruby/object:RI::Constant 
+  comment: 
+  name: WM_GETMINMAXINFO
+  value: "0x0024"
+- !ruby/object:RI::Constant 
+  comment: 
+  name: WM_PAINTICON
+  value: "0x0026"
+- !ruby/object:RI::Constant 
+  comment: 
+  name: WM_ICONERASEBKGND
+  value: "0x0027"
+- !ruby/object:RI::Constant 
+  comment: 
+  name: WM_NEXTDLGCTL
+  value: "0x0028"
+- !ruby/object:RI::Constant 
+  comment: 
+  name: WM_SPOOLERSTATUS
+  value: "0x002A"
+- !ruby/object:RI::Constant 
+  comment: 
+  name: WM_DRAWITEM
+  value: "0x002B"
+- !ruby/object:RI::Constant 
+  comment: 
+  name: WM_MEASUREITEM
+  value: "0x002C"
+- !ruby/object:RI::Constant 
+  comment: 
+  name: WM_DELETEITEM
+  value: "0x002D"
+- !ruby/object:RI::Constant 
+  comment: 
+  name: WM_VKEYTOITEM
+  value: "0x002E"
+- !ruby/object:RI::Constant 
+  comment: 
+  name: WM_CHARTOITEM
+  value: "0x002F"
+- !ruby/object:RI::Constant 
+  comment: 
+  name: WM_SETFONT
+  value: "0x0030"
+- !ruby/object:RI::Constant 
+  comment: 
+  name: WM_GETFONT
+  value: "0x0031"
+- !ruby/object:RI::Constant 
+  comment: 
+  name: WM_SETHOTKEY
+  value: "0x0032"
+- !ruby/object:RI::Constant 
+  comment: 
+  name: WM_GETHOTKEY
+  value: "0x0033"
+- !ruby/object:RI::Constant 
+  comment: 
+  name: WM_QUERYDRAGICON
+  value: "0x0037"
+- !ruby/object:RI::Constant 
+  comment: 
+  name: WM_COMPAREITEM
+  value: "0x0039"
+- !ruby/object:RI::Constant 
+  comment: 
+  name: WM_GETOBJECT
+  value: "0x003D"
+- !ruby/object:RI::Constant 
+  comment: 
+  name: WM_COMPACTING
+  value: "0x0041"
+- !ruby/object:RI::Constant 
+  comment: 
+  name: WM_COMMNOTIFY
+  value: "0x0044"
+- !ruby/object:RI::Constant 
+  comment: 
+  name: WM_WINDOWPOSCHANGING
+  value: "0x0046"
+- !ruby/object:RI::Constant 
+  comment: 
+  name: WM_WINDOWPOSCHANGED
+  value: "0x0047"
+- !ruby/object:RI::Constant 
+  comment: 
+  name: WM_POWER
+  value: "0x0048"
+- !ruby/object:RI::Constant 
+  comment: 
+  name: WM_COPYDATA
+  value: "0x004A"
+- !ruby/object:RI::Constant 
+  comment: 
+  name: WM_CANCELJOURNAL
+  value: "0x004B"
+- !ruby/object:RI::Constant 
+  comment: 
+  name: WM_NOTIFY
+  value: "0x004E"
+- !ruby/object:RI::Constant 
+  comment: 
+  name: WM_INPUTLANGCHANGEREQUEST
+  value: "0x0050"
+- !ruby/object:RI::Constant 
+  comment: 
+  name: WM_INPUTLANGCHANGE
+  value: "0x0051"
+- !ruby/object:RI::Constant 
+  comment: 
+  name: WM_TCARD
+  value: "0x0052"
+- !ruby/object:RI::Constant 
+  comment: 
+  name: WM_HELP
+  value: "0x0053"
+- !ruby/object:RI::Constant 
+  comment: 
+  name: WM_USERCHANGED
+  value: "0x0054"
+- !ruby/object:RI::Constant 
+  comment: 
+  name: WM_NOTIFYFORMAT
+  value: "0x0055"
+- !ruby/object:RI::Constant 
+  comment: 
+  name: WM_CONTEXTMENU
+  value: "0x007B"
+- !ruby/object:RI::Constant 
+  comment: 
+  name: WM_STYLECHANGING
+  value: "0x007C"
+- !ruby/object:RI::Constant 
+  comment: 
+  name: WM_STYLECHANGED
+  value: "0x007D"
+- !ruby/object:RI::Constant 
+  comment: 
+  name: WM_DISPLAYCHANGE
+  value: "0x007E"
+- !ruby/object:RI::Constant 
+  comment: 
+  name: WM_GETICON
+  value: "0x007F"
+- !ruby/object:RI::Constant 
+  comment: 
+  name: WM_SETICON
+  value: "0x0080"
+- !ruby/object:RI::Constant 
+  comment: 
+  name: WM_NCCREATE
+  value: "0x0081"
+- !ruby/object:RI::Constant 
+  comment: 
+  name: WM_NCDESTROY
+  value: "0x0082"
+- !ruby/object:RI::Constant 
+  comment: 
+  name: WM_NCCALCSIZE
+  value: "0x0083"
+- !ruby/object:RI::Constant 
+  comment: 
+  name: WM_NCHITTEST
+  value: "0x0084"
+- !ruby/object:RI::Constant 
+  comment: 
+  name: WM_NCPAINT
+  value: "0x0085"
+- !ruby/object:RI::Constant 
+  comment: 
+  name: WM_NCACTIVATE
+  value: "0x0086"
+- !ruby/object:RI::Constant 
+  comment: 
+  name: WM_GETDLGCODE
+  value: "0x0087"
+- !ruby/object:RI::Constant 
+  comment: 
+  name: WM_SYNCPAINT
+  value: "0x0088"
+- !ruby/object:RI::Constant 
+  comment: 
+  name: WM_NCMOUSEMOVE
+  value: "0x00A0"
+- !ruby/object:RI::Constant 
+  comment: 
+  name: WM_NCLBUTTONDOWN
+  value: "0x00A1"
+- !ruby/object:RI::Constant 
+  comment: 
+  name: WM_NCLBUTTONUP
+  value: "0x00A2"
+- !ruby/object:RI::Constant 
+  comment: 
+  name: WM_NCLBUTTONDBLCLK
+  value: "0x00A3"
+- !ruby/object:RI::Constant 
+  comment: 
+  name: WM_NCRBUTTONDOWN
+  value: "0x00A4"
+- !ruby/object:RI::Constant 
+  comment: 
+  name: WM_NCRBUTTONUP
+  value: "0x00A5"
+- !ruby/object:RI::Constant 
+  comment: 
+  name: WM_NCRBUTTONDBLCLK
+  value: "0x00A6"
+- !ruby/object:RI::Constant 
+  comment: 
+  name: WM_NCMBUTTONDOWN
+  value: "0x00A7"
+- !ruby/object:RI::Constant 
+  comment: 
+  name: WM_NCMBUTTONUP
+  value: "0x00A8"
+- !ruby/object:RI::Constant 
+  comment: 
+  name: WM_NCMBUTTONDBLCLK
+  value: "0x00A9"
+- !ruby/object:RI::Constant 
+  comment: 
+  name: WM_NCXBUTTONDOWN
+  value: "0x00AB"
+- !ruby/object:RI::Constant 
+  comment: 
+  name: WM_NCXBUTTONUP
+  value: "0x00AC"
+- !ruby/object:RI::Constant 
+  comment: 
+  name: WM_NCXBUTTONDBLCLK
+  value: "0x00AD"
+- !ruby/object:RI::Constant 
+  comment: 
+  name: WM_INPUT
+  value: "0x00FF"
+- !ruby/object:RI::Constant 
+  comment: 
+  name: WM_KEYFIRST
+  value: "0x0100"
+- !ruby/object:RI::Constant 
+  comment: 
+  name: WM_KEYDOWN
+  value: "0x0100"
+- !ruby/object:RI::Constant 
+  comment: 
+  name: WM_KEYUP
+  value: "0x0101"
+- !ruby/object:RI::Constant 
+  comment: 
+  name: WM_CHAR
+  value: "0x0102"
+- !ruby/object:RI::Constant 
+  comment: 
+  name: WM_DEADCHAR
+  value: "0x0103"
+- !ruby/object:RI::Constant 
+  comment: 
+  name: WM_SYSKEYDOWN
+  value: "0x0104"
+- !ruby/object:RI::Constant 
+  comment: 
+  name: WM_SYSKEYUP
+  value: "0x0105"
+- !ruby/object:RI::Constant 
+  comment: 
+  name: WM_SYSCHAR
+  value: "0x0106"
+- !ruby/object:RI::Constant 
+  comment: 
+  name: WM_SYSDEADCHAR
+  value: "0x0107"
+- !ruby/object:RI::Constant 
+  comment: 
+  name: WM_UNICHAR
+  value: "0x0109"
+- !ruby/object:RI::Constant 
+  comment: 
+  name: WM_IME_STARTCOMPOSITION
+  value: "0x010D"
+- !ruby/object:RI::Constant 
+  comment: 
+  name: WM_IME_ENDCOMPOSITION
+  value: "0x010E"
+- !ruby/object:RI::Constant 
+  comment: 
+  name: WM_IME_COMPOSITION
+  value: "0x010F"
+- !ruby/object:RI::Constant 
+  comment: 
+  name: WM_IME_KEYLAST
+  value: "0x010F"
+- !ruby/object:RI::Constant 
+  comment: 
+  name: WM_INITDIALOG
+  value: "0x0110"
+- !ruby/object:RI::Constant 
+  comment: 
+  name: WM_COMMAND
+  value: "0x0111"
+- !ruby/object:RI::Constant 
+  comment: 
+  name: WM_SYSCOMMAND
+  value: "0x0112"
+- !ruby/object:RI::Constant 
+  comment: 
+  name: WM_TIMER
+  value: "0x0113"
+- !ruby/object:RI::Constant 
+  comment: 
+  name: WM_HSCROLL
+  value: "0x0114"
+- !ruby/object:RI::Constant 
+  comment: 
+  name: WM_VSCROLL
+  value: "0x0115"
+- !ruby/object:RI::Constant 
+  comment: 
+  name: WM_INITMENU
+  value: "0x0116"
+- !ruby/object:RI::Constant 
+  comment: 
+  name: WM_INITMENUPOPUP
+  value: "0x0117"
+- !ruby/object:RI::Constant 
+  comment: 
+  name: WM_MENUSELECT
+  value: "0x011F"
+- !ruby/object:RI::Constant 
+  comment: 
+  name: WM_MENUCHAR
+  value: "0x0120"
+- !ruby/object:RI::Constant 
+  comment: 
+  name: WM_ENTERIDLE
+  value: "0x0121"
+- !ruby/object:RI::Constant 
+  comment: 
+  name: WM_MENURBUTTONUP
+  value: "0x0122"
+- !ruby/object:RI::Constant 
+  comment: 
+  name: WM_MENUDRAG
+  value: "0x0123"
+- !ruby/object:RI::Constant 
+  comment: 
+  name: WM_MENUGETOBJECT
+  value: "0x0124"
+- !ruby/object:RI::Constant 
+  comment: 
+  name: WM_UNINITMENUPOPUP
+  value: "0x0125"
+- !ruby/object:RI::Constant 
+  comment: 
+  name: WM_MENUCOMMAND
+  value: "0x0126"
+- !ruby/object:RI::Constant 
+  comment: 
+  name: WM_CHANGEUISTATE
+  value: "0x0127"
+- !ruby/object:RI::Constant 
+  comment: 
+  name: WM_UPDATEUISTATE
+  value: "0x0128"
+- !ruby/object:RI::Constant 
+  comment: 
+  name: WM_QUERYUISTATE
+  value: "0x0129"
+- !ruby/object:RI::Constant 
+  comment: 
+  name: WM_CTLCOLORMSGBOX
+  value: "0x0132"
+- !ruby/object:RI::Constant 
+  comment: 
+  name: WM_CTLCOLOREDIT
+  value: "0x0133"
+- !ruby/object:RI::Constant 
+  comment: 
+  name: WM_CTLCOLORLISTBOX
+  value: "0x0134"
+- !ruby/object:RI::Constant 
+  comment: 
+  name: WM_CTLCOLORBTN
+  value: "0x0135"
+- !ruby/object:RI::Constant 
+  comment: 
+  name: WM_CTLCOLORDLG
+  value: "0x0136"
+- !ruby/object:RI::Constant 
+  comment: 
+  name: WM_CTLCOLORSCROLLBAR
+  value: "0x0137"
+- !ruby/object:RI::Constant 
+  comment: 
+  name: WM_CTLCOLORSTATIC
+  value: "0x0138"
+- !ruby/object:RI::Constant 
+  comment: 
+  name: WM_MOUSEFIRST
+  value: "0x0200"
+- !ruby/object:RI::Constant 
+  comment: 
+  name: WM_MOUSEMOVE
+  value: "0x0200"
+- !ruby/object:RI::Constant 
+  comment: 
+  name: WM_LBUTTONDOWN
+  value: "0x0201"
+- !ruby/object:RI::Constant 
+  comment: 
+  name: WM_LBUTTONUP
+  value: "0x0202"
+- !ruby/object:RI::Constant 
+  comment: 
+  name: WM_LBUTTONDBLCLK
+  value: "0x0203"
+- !ruby/object:RI::Constant 
+  comment: 
+  name: WM_RBUTTONDOWN
+  value: "0x0204"
+- !ruby/object:RI::Constant 
+  comment: 
+  name: WM_RBUTTONUP
+  value: "0x0205"
+- !ruby/object:RI::Constant 
+  comment: 
+  name: WM_RBUTTONDBLCLK
+  value: "0x0206"
+- !ruby/object:RI::Constant 
+  comment: 
+  name: WM_MBUTTONDOWN
+  value: "0x0207"
+- !ruby/object:RI::Constant 
+  comment: 
+  name: WM_MBUTTONUP
+  value: "0x0208"
+- !ruby/object:RI::Constant 
+  comment: 
+  name: WM_MBUTTONDBLCLK
+  value: "0x0209"
+- !ruby/object:RI::Constant 
+  comment: 
+  name: WM_MOUSEWHEEL
+  value: "0x020A"
+- !ruby/object:RI::Constant 
+  comment: 
+  name: WM_XBUTTONDOWN
+  value: "0x020B"
+- !ruby/object:RI::Constant 
+  comment: 
+  name: WM_XBUTTONUP
+  value: "0x020C"
+- !ruby/object:RI::Constant 
+  comment: 
+  name: WM_XBUTTONDBLCLK
+  value: "0x020D"
+- !ruby/object:RI::Constant 
+  comment: 
+  name: WM_MOUSELAST
+  value: "0x020D"
+- !ruby/object:RI::Constant 
+  comment: 
+  name: WM_PARENTNOTIFY
+  value: "0x0210"
+- !ruby/object:RI::Constant 
+  comment: 
+  name: WM_ENTERMENULOOP
+  value: "0x0211"
+- !ruby/object:RI::Constant 
+  comment: 
+  name: WM_EXITMENULOOP
+  value: "0x0212"
+- !ruby/object:RI::Constant 
+  comment: 
+  name: WM_NEXTMENU
+  value: "0x0213"
+- !ruby/object:RI::Constant 
+  comment: 
+  name: WM_SIZING
+  value: "0x0214"
+- !ruby/object:RI::Constant 
+  comment: 
+  name: WM_CAPTURECHANGED
+  value: "0x0215"
+- !ruby/object:RI::Constant 
+  comment: 
+  name: WM_MOVING
+  value: "0x0216"
+- !ruby/object:RI::Constant 
+  comment: 
+  name: WM_POWERBROADCAST
+  value: "0x0218"
+- !ruby/object:RI::Constant 
+  comment: 
+  name: WM_DEVICECHANGE
+  value: "0x0219"
+- !ruby/object:RI::Constant 
+  comment: 
+  name: WM_MDICREATE
+  value: "0x0220"
+- !ruby/object:RI::Constant 
+  comment: 
+  name: WM_MDIDESTROY
+  value: "0x0221"
+- !ruby/object:RI::Constant 
+  comment: 
+  name: WM_MDIACTIVATE
+  value: "0x0222"
+- !ruby/object:RI::Constant 
+  comment: 
+  name: WM_MDIRESTORE
+  value: "0x0223"
+- !ruby/object:RI::Constant 
+  comment: 
+  name: WM_MDINEXT
+  value: "0x0224"
+- !ruby/object:RI::Constant 
+  comment: 
+  name: WM_MDIMAXIMIZE
+  value: "0x0225"
+- !ruby/object:RI::Constant 
+  comment: 
+  name: WM_MDITILE
+  value: "0x0226"
+- !ruby/object:RI::Constant 
+  comment: 
+  name: WM_MDICASCADE
+  value: "0x0227"
+- !ruby/object:RI::Constant 
+  comment: 
+  name: WM_MDIICONARRANGE
+  value: "0x0228"
+- !ruby/object:RI::Constant 
+  comment: 
+  name: WM_MDIGETACTIVE
+  value: "0x0229"
+- !ruby/object:RI::Constant 
+  comment: 
+  name: WM_MDISETMENU
+  value: "0x0230"
+- !ruby/object:RI::Constant 
+  comment: 
+  name: WM_ENTERSIZEMOVE
+  value: "0x0231"
+- !ruby/object:RI::Constant 
+  comment: 
+  name: WM_EXITSIZEMOVE
+  value: "0x0232"
+- !ruby/object:RI::Constant 
+  comment: 
+  name: WM_DROPFILES
+  value: "0x0233"
+- !ruby/object:RI::Constant 
+  comment: 
+  name: WM_MDIREFRESHMENU
+  value: "0x0234"
+- !ruby/object:RI::Constant 
+  comment: 
+  name: WM_IME_SETCONTEXT
+  value: "0x0281"
+- !ruby/object:RI::Constant 
+  comment: 
+  name: WM_IME_NOTIFY
+  value: "0x0282"
+- !ruby/object:RI::Constant 
+  comment: 
+  name: WM_IME_CONTROL
+  value: "0x0283"
+- !ruby/object:RI::Constant 
+  comment: 
+  name: WM_IME_COMPOSITIONFULL
+  value: "0x0284"
+- !ruby/object:RI::Constant 
+  comment: 
+  name: WM_IME_SELECT
+  value: "0x0285"
+- !ruby/object:RI::Constant 
+  comment: 
+  name: WM_IME_CHAR
+  value: "0x0286"
+- !ruby/object:RI::Constant 
+  comment: 
+  name: WM_IME_REQUEST
+  value: "0x0288"
+- !ruby/object:RI::Constant 
+  comment: 
+  name: WM_IME_KEYDOWN
+  value: "0x0290"
+- !ruby/object:RI::Constant 
+  comment: 
+  name: WM_IME_KEYUP
+  value: "0x0291"
+- !ruby/object:RI::Constant 
+  comment: 
+  name: WM_MOUSEHOVER
+  value: "0x02A1"
+- !ruby/object:RI::Constant 
+  comment: 
+  name: WM_MOUSELEAVE
+  value: "0x02A3"
+- !ruby/object:RI::Constant 
+  comment: 
+  name: WM_NCMOUSEHOVER
+  value: "0x02A0"
+- !ruby/object:RI::Constant 
+  comment: 
+  name: WM_NCMOUSELEAVE
+  value: "0x02A2"
+- !ruby/object:RI::Constant 
+  comment: 
+  name: WM_WTSSESSION_CHANGE
+  value: "0x02B1"
+- !ruby/object:RI::Constant 
+  comment: 
+  name: WM_TABLET_FIRST
+  value: "0x02c0"
+- !ruby/object:RI::Constant 
+  comment: 
+  name: WM_TABLET_LAST
+  value: "0x02df"
+- !ruby/object:RI::Constant 
+  comment: 
+  name: WM_CUT
+  value: "0x0300"
+- !ruby/object:RI::Constant 
+  comment: 
+  name: WM_COPY
+  value: "0x0301"
+- !ruby/object:RI::Constant 
+  comment: 
+  name: WM_PASTE
+  value: "0x0302"
+- !ruby/object:RI::Constant 
+  comment: 
+  name: WM_CLEAR
+  value: "0x0303"
+- !ruby/object:RI::Constant 
+  comment: 
+  name: WM_UNDO
+  value: "0x0304"
+- !ruby/object:RI::Constant 
+  comment: 
+  name: WM_RENDERFORMAT
+  value: "0x0305"
+- !ruby/object:RI::Constant 
+  comment: 
+  name: WM_RENDERALLFORMATS
+  value: "0x0306"
+- !ruby/object:RI::Constant 
+  comment: 
+  name: WM_DESTROYCLIPBOARD
+  value: "0x0307"
+- !ruby/object:RI::Constant 
+  comment: 
+  name: WM_DRAWCLIPBOARD
+  value: "0x0308"
+- !ruby/object:RI::Constant 
+  comment: 
+  name: WM_PAINTCLIPBOARD
+  value: "0x0309"
+- !ruby/object:RI::Constant 
+  comment: 
+  name: WM_VSCROLLCLIPBOARD
+  value: "0x030A"
+- !ruby/object:RI::Constant 
+  comment: 
+  name: WM_SIZECLIPBOARD
+  value: "0x030B"
+- !ruby/object:RI::Constant 
+  comment: 
+  name: WM_ASKCBFORMATNAME
+  value: "0x030C"
+- !ruby/object:RI::Constant 
+  comment: 
+  name: WM_CHANGECBCHAIN
+  value: "0x030D"
+- !ruby/object:RI::Constant 
+  comment: 
+  name: WM_HSCROLLCLIPBOARD
+  value: "0x030E"
+- !ruby/object:RI::Constant 
+  comment: 
+  name: WM_QUERYNEWPALETTE
+  value: "0x030F"
+- !ruby/object:RI::Constant 
+  comment: 
+  name: WM_PALETTEISCHANGING
+  value: "0x0310"
+- !ruby/object:RI::Constant 
+  comment: 
+  name: WM_PALETTECHANGED
+  value: "0x0311"
+- !ruby/object:RI::Constant 
+  comment: 
+  name: WM_HOTKEY
+  value: "0x0312"
+- !ruby/object:RI::Constant 
+  comment: 
+  name: WM_PRINT
+  value: "0x0317"
+- !ruby/object:RI::Constant 
+  comment: 
+  name: WM_PRINTCLIENT
+  value: "0x0318"
+- !ruby/object:RI::Constant 
+  comment: 
+  name: WM_APPCOMMAND
+  value: "0x0319"
+- !ruby/object:RI::Constant 
+  comment: 
+  name: WM_THEMECHANGED
+  value: "0x031A"
+- !ruby/object:RI::Constant 
+  comment: 
+  name: WM_HANDHELDFIRST
+  value: "0x0358"
+- !ruby/object:RI::Constant 
+  comment: 
+  name: WM_HANDHELDLAST
+  value: "0x035F"
+- !ruby/object:RI::Constant 
+  comment: 
+  name: WM_AFXFIRST
+  value: "0x0360"
+- !ruby/object:RI::Constant 
+  comment: 
+  name: WM_AFXLAST
+  value: "0x037F"
+- !ruby/object:RI::Constant 
+  comment: 
+  name: WM_PENWINFIRST
+  value: "0x0380"
+- !ruby/object:RI::Constant 
+  comment: 
+  name: WM_PENWINLAST
+  value: "0x038F"
+- !ruby/object:RI::Constant 
+  comment: 
+  name: WM_APP
+  value: "0x8000"
+- !ruby/object:RI::Constant 
+  comment: 
+  name: WM_USER
+  value: "0x0400"
+- !ruby/object:RI::Constant 
+  comment: 
+  name: WM_KEYLAST
+  value: "0x0109"
+- !ruby/object:RI::Constant 
+  comment: 
+  name: WM_KEYLAST
+  value: "0x0108"
+full_name: Windows::Window::Message
+includes: []
+
+instance_methods: []
+
+name: Message
+superclass: 

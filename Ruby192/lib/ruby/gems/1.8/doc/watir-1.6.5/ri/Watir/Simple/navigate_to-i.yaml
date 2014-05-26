@@ -1,0 +1,12 @@
+--- !ruby/object:RI::MethodDescription 
+aliases: []
+
+block_params: 
+comment: 
+- !ruby/struct:SM::Flow::P 
+  body: Tell the browser to load a particular URL.
+full_name: Watir::Simple#navigate_to
+is_singleton: false
+name: navigate_to
+params: (url)
+visibility: public

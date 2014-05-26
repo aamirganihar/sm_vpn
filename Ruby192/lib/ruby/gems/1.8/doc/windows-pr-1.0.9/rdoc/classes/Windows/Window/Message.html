@@ -1,0 +1,1298 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+<!DOCTYPE html 
+     PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+     "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+  <title>Module: Windows::Window::Message</title>
+  <meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" />
+  <meta http-equiv="Content-Script-Type" content="text/javascript" />
+  <link rel="stylesheet" href="../../.././rdoc-style.css" type="text/css" media="screen" />
+  <script type="text/javascript">
+  // <![CDATA[
+
+  function popupCode( url ) {
+    window.open(url, "Code", "resizable=yes,scrollbars=yes,toolbar=no,status=no,height=150,width=400")
+  }
+
+  function toggleCode( id ) {
+    if ( document.getElementById )
+      elem = document.getElementById( id );
+    else if ( document.all )
+      elem = eval( "document.all." + id );
+    else
+      return false;
+
+    elemStyle = elem.style;
+    
+    if ( elemStyle.display != "block" ) {
+      elemStyle.display = "block"
+    } else {
+      elemStyle.display = "none"
+    }
+
+    return true;
+  }
+  
+  // Make codeblocks hidden by default
+  document.writeln( "<style type=\"text/css\">div.method-source-code { display: none }</style>" )
+  
+  // ]]>
+  </script>
+
+</head>
+<body>
+
+
+
+    <div id="classHeader">
+        <table class="header-table">
+        <tr class="top-aligned-row">
+          <td><strong>Module</strong></td>
+          <td class="class-name-in-header">Windows::Window::Message</td>
+        </tr>
+        <tr class="top-aligned-row">
+            <td><strong>In:</strong></td>
+            <td>
+                <a href="../../../files/lib/windows/window/message_rb.html">
+                lib/windows/window/message.rb
+                </a>
+        <br />
+            </td>
+        </tr>
+
+        </table>
+    </div>
+  <!-- banner header -->
+
+  <div id="bodyContent">
+
+
+
+  <div id="contextContent">
+
+
+
+   </div>
+
+
+  </div>
+
+
+    <!-- if includes -->
+
+    <div id="section">
+
+
+    <div id="constants-list">
+      <h3 class="section-bar">Constants</h3>
+
+      <div class="name-list">
+        <table summary="Constants">
+        <tr class="top-aligned-row context-row">
+          <td class="context-item-name">BSF_QUERY</td>
+          <td>=</td>
+          <td class="context-item-value">0x00000001</td>
+          <td width="3em">&nbsp;</td>
+          <td class="context-item-desc">
+These constants are in winuser.h
+
+</td>
+        </tr>
+        <tr class="top-aligned-row context-row">
+          <td class="context-item-name">BSF_IGNORECURRENTTASK</td>
+          <td>=</td>
+          <td class="context-item-value">0x00000002</td>
+        </tr>
+        <tr class="top-aligned-row context-row">
+          <td class="context-item-name">BSF_FLUSHDISK</td>
+          <td>=</td>
+          <td class="context-item-value">0x00000004</td>
+        </tr>
+        <tr class="top-aligned-row context-row">
+          <td class="context-item-name">BSF_NOHANG</td>
+          <td>=</td>
+          <td class="context-item-value">0x00000008</td>
+        </tr>
+        <tr class="top-aligned-row context-row">
+          <td class="context-item-name">BSF_POSTMESSAGE</td>
+          <td>=</td>
+          <td class="context-item-value">0x00000010</td>
+        </tr>
+        <tr class="top-aligned-row context-row">
+          <td class="context-item-name">BSF_FORCEIFHUNG</td>
+          <td>=</td>
+          <td class="context-item-value">0x00000020</td>
+        </tr>
+        <tr class="top-aligned-row context-row">
+          <td class="context-item-name">BSF_NOTIMEOUTIFNOTHUNG</td>
+          <td>=</td>
+          <td class="context-item-value">0x00000040</td>
+        </tr>
+        <tr class="top-aligned-row context-row">
+          <td class="context-item-name">BSF_ALLOWSFW</td>
+          <td>=</td>
+          <td class="context-item-value">0x00000080</td>
+        </tr>
+        <tr class="top-aligned-row context-row">
+          <td class="context-item-name">BSF_SENDNOTIFYMESSAGE</td>
+          <td>=</td>
+          <td class="context-item-value">0x00000100</td>
+        </tr>
+        <tr class="top-aligned-row context-row">
+          <td class="context-item-name">BSF_RETURNHDESK</td>
+          <td>=</td>
+          <td class="context-item-value">0x00000200</td>
+        </tr>
+        <tr class="top-aligned-row context-row">
+          <td class="context-item-name">BSF_LUID</td>
+          <td>=</td>
+          <td class="context-item-value">0x00000400</td>
+        </tr>
+        <tr class="top-aligned-row context-row">
+          <td class="context-item-name">SMTO_NORMAL</td>
+          <td>=</td>
+          <td class="context-item-value">0x0000</td>
+        </tr>
+        <tr class="top-aligned-row context-row">
+          <td class="context-item-name">SMTO_BLOCK</td>
+          <td>=</td>
+          <td class="context-item-value">0x0001</td>
+        </tr>
+        <tr class="top-aligned-row context-row">
+          <td class="context-item-name">SMTO_ABORTIFHUNG</td>
+          <td>=</td>
+          <td class="context-item-value">0x0002</td>
+        </tr>
+        <tr class="top-aligned-row context-row">
+          <td class="context-item-name">SMTO_NOTIMEOUTIFNOTHUNG</td>
+          <td>=</td>
+          <td class="context-item-value">0x0008</td>
+        </tr>
+        <tr class="top-aligned-row context-row">
+          <td class="context-item-name">WM_NULL</td>
+          <td>=</td>
+          <td class="context-item-value">0x0000</td>
+        </tr>
+        <tr class="top-aligned-row context-row">
+          <td class="context-item-name">WM_CREATE</td>
+          <td>=</td>
+          <td class="context-item-value">0x0001</td>
+        </tr>
+        <tr class="top-aligned-row context-row">
+          <td class="context-item-name">WM_DESTROY</td>
+          <td>=</td>
+          <td class="context-item-value">0x0002</td>
+        </tr>
+        <tr class="top-aligned-row context-row">
+          <td class="context-item-name">WM_MOVE</td>
+          <td>=</td>
+          <td class="context-item-value">0x0003</td>
+        </tr>
+        <tr class="top-aligned-row context-row">
+          <td class="context-item-name">WM_SIZE</td>
+          <td>=</td>
+          <td class="context-item-value">0x0005</td>
+        </tr>
+        <tr class="top-aligned-row context-row">
+          <td class="context-item-name">WM_ACTIVATE</td>
+          <td>=</td>
+          <td class="context-item-value">0x0006</td>
+        </tr>
+        <tr class="top-aligned-row context-row">
+          <td class="context-item-name">WM_SETFOCUS</td>
+          <td>=</td>
+          <td class="context-item-value">0x0007</td>
+        </tr>
+        <tr class="top-aligned-row context-row">
+          <td class="context-item-name">WM_KILLFOCUS</td>
+          <td>=</td>
+          <td class="context-item-value">0x0008</td>
+        </tr>
+        <tr class="top-aligned-row context-row">
+          <td class="context-item-name">WM_ENABLE</td>
+          <td>=</td>
+          <td class="context-item-value">0x000A</td>
+        </tr>
+        <tr class="top-aligned-row context-row">
+          <td class="context-item-name">WM_SETREDRAW</td>
+          <td>=</td>
+          <td class="context-item-value">0x000B</td>
+        </tr>
+        <tr class="top-aligned-row context-row">
+          <td class="context-item-name">WM_SETTEXT</td>
+          <td>=</td>
+          <td class="context-item-value">0x000C</td>
+        </tr>
+        <tr class="top-aligned-row context-row">
+          <td class="context-item-name">WM_GETTEXT</td>
+          <td>=</td>
+          <td class="context-item-value">0x000D</td>
+        </tr>
+        <tr class="top-aligned-row context-row">
+          <td class="context-item-name">WM_GETTEXTLENGTH</td>
+          <td>=</td>
+          <td class="context-item-value">0x000E</td>
+        </tr>
+        <tr class="top-aligned-row context-row">
+          <td class="context-item-name">WM_PAINT</td>
+          <td>=</td>
+          <td class="context-item-value">0x000F</td>
+        </tr>
+        <tr class="top-aligned-row context-row">
+          <td class="context-item-name">WM_CLOSE</td>
+          <td>=</td>
+          <td class="context-item-value">0x0010</td>
+        </tr>
+        <tr class="top-aligned-row context-row">
+          <td class="context-item-name">WM_QUERYENDSESSION</td>
+          <td>=</td>
+          <td class="context-item-value">0x0011</td>
+        </tr>
+        <tr class="top-aligned-row context-row">
+          <td class="context-item-name">WM_QUERYOPEN</td>
+          <td>=</td>
+          <td class="context-item-value">0x0013</td>
+        </tr>
+        <tr class="top-aligned-row context-row">
+          <td class="context-item-name">WM_ENDSESSION</td>
+          <td>=</td>
+          <td class="context-item-value">0x0016</td>
+        </tr>
+        <tr class="top-aligned-row context-row">
+          <td class="context-item-name">WM_QUIT</td>
+          <td>=</td>
+          <td class="context-item-value">0x0012</td>
+        </tr>
+        <tr class="top-aligned-row context-row">
+          <td class="context-item-name">WM_ERASEBKGND</td>
+          <td>=</td>
+          <td class="context-item-value">0x0014</td>
+        </tr>
+        <tr class="top-aligned-row context-row">
+          <td class="context-item-name">WM_SYSCOLORCHANGE</td>
+          <td>=</td>
+          <td class="context-item-value">0x0015</td>
+        </tr>
+        <tr class="top-aligned-row context-row">
+          <td class="context-item-name">WM_SHOWWINDOW</td>
+          <td>=</td>
+          <td class="context-item-value">0x0018</td>
+        </tr>
+        <tr class="top-aligned-row context-row">
+          <td class="context-item-name">WM_WININICHANGE</td>
+          <td>=</td>
+          <td class="context-item-value">0x001A</td>
+        </tr>
+        <tr class="top-aligned-row context-row">
+          <td class="context-item-name">WM_SETTINGCHANGE</td>
+          <td>=</td>
+          <td class="context-item-value">WM_WININICHANGE</td>
+        </tr>
+        <tr class="top-aligned-row context-row">
+          <td class="context-item-name">WM_DEVMODECHANGE</td>
+          <td>=</td>
+          <td class="context-item-value">0x001B</td>
+        </tr>
+        <tr class="top-aligned-row context-row">
+          <td class="context-item-name">WM_ACTIVATEAPP</td>
+          <td>=</td>
+          <td class="context-item-value">0x001C</td>
+        </tr>
+        <tr class="top-aligned-row context-row">
+          <td class="context-item-name">WM_FONTCHANGE</td>
+          <td>=</td>
+          <td class="context-item-value">0x001D</td>
+        </tr>
+        <tr class="top-aligned-row context-row">
+          <td class="context-item-name">WM_TIMECHANGE</td>
+          <td>=</td>
+          <td class="context-item-value">0x001E</td>
+        </tr>
+        <tr class="top-aligned-row context-row">
+          <td class="context-item-name">WM_CANCELMODE</td>
+          <td>=</td>
+          <td class="context-item-value">0x001F</td>
+        </tr>
+        <tr class="top-aligned-row context-row">
+          <td class="context-item-name">WM_SETCURSOR</td>
+          <td>=</td>
+          <td class="context-item-value">0x0020</td>
+        </tr>
+        <tr class="top-aligned-row context-row">
+          <td class="context-item-name">WM_MOUSEACTIVATE</td>
+          <td>=</td>
+          <td class="context-item-value">0x0021</td>
+        </tr>
+        <tr class="top-aligned-row context-row">
+          <td class="context-item-name">WM_CHILDACTIVATE</td>
+          <td>=</td>
+          <td class="context-item-value">0x0022</td>
+        </tr>
+        <tr class="top-aligned-row context-row">
+          <td class="context-item-name">WM_QUEUESYNC</td>
+          <td>=</td>
+          <td class="context-item-value">0x0023</td>
+        </tr>
+        <tr class="top-aligned-row context-row">
+          <td class="context-item-name">WM_GETMINMAXINFO</td>
+          <td>=</td>
+          <td class="context-item-value">0x0024</td>
+        </tr>
+        <tr class="top-aligned-row context-row">
+          <td class="context-item-name">WM_PAINTICON</td>
+          <td>=</td>
+          <td class="context-item-value">0x0026</td>
+        </tr>
+        <tr class="top-aligned-row context-row">
+          <td class="context-item-name">WM_ICONERASEBKGND</td>
+          <td>=</td>
+          <td class="context-item-value">0x0027</td>
+        </tr>
+        <tr class="top-aligned-row context-row">
+          <td class="context-item-name">WM_NEXTDLGCTL</td>
+          <td>=</td>
+          <td class="context-item-value">0x0028</td>
+        </tr>
+        <tr class="top-aligned-row context-row">
+          <td class="context-item-name">WM_SPOOLERSTATUS</td>
+          <td>=</td>
+          <td class="context-item-value">0x002A</td>
+        </tr>
+        <tr class="top-aligned-row context-row">
+          <td class="context-item-name">WM_DRAWITEM</td>
+          <td>=</td>
+          <td class="context-item-value">0x002B</td>
+        </tr>
+        <tr class="top-aligned-row context-row">
+          <td class="context-item-name">WM_MEASUREITEM</td>
+          <td>=</td>
+          <td class="context-item-value">0x002C</td>
+        </tr>
+        <tr class="top-aligned-row context-row">
+          <td class="context-item-name">WM_DELETEITEM</td>
+          <td>=</td>
+          <td class="context-item-value">0x002D</td>
+        </tr>
+        <tr class="top-aligned-row context-row">
+          <td class="context-item-name">WM_VKEYTOITEM</td>
+          <td>=</td>
+          <td class="context-item-value">0x002E</td>
+        </tr>
+        <tr class="top-aligned-row context-row">
+          <td class="context-item-name">WM_CHARTOITEM</td>
+          <td>=</td>
+          <td class="context-item-value">0x002F</td>
+        </tr>
+        <tr class="top-aligned-row context-row">
+          <td class="context-item-name">WM_SETFONT</td>
+          <td>=</td>
+          <td class="context-item-value">0x0030</td>
+        </tr>
+        <tr class="top-aligned-row context-row">
+          <td class="context-item-name">WM_GETFONT</td>
+          <td>=</td>
+          <td class="context-item-value">0x0031</td>
+        </tr>
+        <tr class="top-aligned-row context-row">
+          <td class="context-item-name">WM_SETHOTKEY</td>
+          <td>=</td>
+          <td class="context-item-value">0x0032</td>
+        </tr>
+        <tr class="top-aligned-row context-row">
+          <td class="context-item-name">WM_GETHOTKEY</td>
+          <td>=</td>
+          <td class="context-item-value">0x0033</td>
+        </tr>
+        <tr class="top-aligned-row context-row">
+          <td class="context-item-name">WM_QUERYDRAGICON</td>
+          <td>=</td>
+          <td class="context-item-value">0x0037</td>
+        </tr>
+        <tr class="top-aligned-row context-row">
+          <td class="context-item-name">WM_COMPAREITEM</td>
+          <td>=</td>
+          <td class="context-item-value">0x0039</td>
+        </tr>
+        <tr class="top-aligned-row context-row">
+          <td class="context-item-name">WM_GETOBJECT</td>
+          <td>=</td>
+          <td class="context-item-value">0x003D</td>
+        </tr>
+        <tr class="top-aligned-row context-row">
+          <td class="context-item-name">WM_COMPACTING</td>
+          <td>=</td>
+          <td class="context-item-value">0x0041</td>
+        </tr>
+        <tr class="top-aligned-row context-row">
+          <td class="context-item-name">WM_COMMNOTIFY</td>
+          <td>=</td>
+          <td class="context-item-value">0x0044</td>
+        </tr>
+        <tr class="top-aligned-row context-row">
+          <td class="context-item-name">WM_WINDOWPOSCHANGING</td>
+          <td>=</td>
+          <td class="context-item-value">0x0046</td>
+        </tr>
+        <tr class="top-aligned-row context-row">
+          <td class="context-item-name">WM_WINDOWPOSCHANGED</td>
+          <td>=</td>
+          <td class="context-item-value">0x0047</td>
+        </tr>
+        <tr class="top-aligned-row context-row">
+          <td class="context-item-name">WM_POWER</td>
+          <td>=</td>
+          <td class="context-item-value">0x0048</td>
+        </tr>
+        <tr class="top-aligned-row context-row">
+          <td class="context-item-name">WM_COPYDATA</td>
+          <td>=</td>
+          <td class="context-item-value">0x004A</td>
+        </tr>
+        <tr class="top-aligned-row context-row">
+          <td class="context-item-name">WM_CANCELJOURNAL</td>
+          <td>=</td>
+          <td class="context-item-value">0x004B</td>
+        </tr>
+        <tr class="top-aligned-row context-row">
+          <td class="context-item-name">WM_NOTIFY</td>
+          <td>=</td>
+          <td class="context-item-value">0x004E</td>
+        </tr>
+        <tr class="top-aligned-row context-row">
+          <td class="context-item-name">WM_INPUTLANGCHANGEREQUEST</td>
+          <td>=</td>
+          <td class="context-item-value">0x0050</td>
+        </tr>
+        <tr class="top-aligned-row context-row">
+          <td class="context-item-name">WM_INPUTLANGCHANGE</td>
+          <td>=</td>
+          <td class="context-item-value">0x0051</td>
+        </tr>
+        <tr class="top-aligned-row context-row">
+          <td class="context-item-name">WM_TCARD</td>
+          <td>=</td>
+          <td class="context-item-value">0x0052</td>
+        </tr>
+        <tr class="top-aligned-row context-row">
+          <td class="context-item-name">WM_HELP</td>
+          <td>=</td>
+          <td class="context-item-value">0x0053</td>
+        </tr>
+        <tr class="top-aligned-row context-row">
+          <td class="context-item-name">WM_USERCHANGED</td>
+          <td>=</td>
+          <td class="context-item-value">0x0054</td>
+        </tr>
+        <tr class="top-aligned-row context-row">
+          <td class="context-item-name">WM_NOTIFYFORMAT</td>
+          <td>=</td>
+          <td class="context-item-value">0x0055</td>
+        </tr>
+        <tr class="top-aligned-row context-row">
+          <td class="context-item-name">WM_CONTEXTMENU</td>
+          <td>=</td>
+          <td class="context-item-value">0x007B</td>
+        </tr>
+        <tr class="top-aligned-row context-row">
+          <td class="context-item-name">WM_STYLECHANGING</td>
+          <td>=</td>
+          <td class="context-item-value">0x007C</td>
+        </tr>
+        <tr class="top-aligned-row context-row">
+          <td class="context-item-name">WM_STYLECHANGED</td>
+          <td>=</td>
+          <td class="context-item-value">0x007D</td>
+        </tr>
+        <tr class="top-aligned-row context-row">
+          <td class="context-item-name">WM_DISPLAYCHANGE</td>
+          <td>=</td>
+          <td class="context-item-value">0x007E</td>
+        </tr>
+        <tr class="top-aligned-row context-row">
+          <td class="context-item-name">WM_GETICON</td>
+          <td>=</td>
+          <td class="context-item-value">0x007F</td>
+        </tr>
+        <tr class="top-aligned-row context-row">
+          <td class="context-item-name">WM_SETICON</td>
+          <td>=</td>
+          <td class="context-item-value">0x0080</td>
+        </tr>
+        <tr class="top-aligned-row context-row">
+          <td class="context-item-name">WM_NCCREATE</td>
+          <td>=</td>
+          <td class="context-item-value">0x0081</td>
+        </tr>
+        <tr class="top-aligned-row context-row">
+          <td class="context-item-name">WM_NCDESTROY</td>
+          <td>=</td>
+          <td class="context-item-value">0x0082</td>
+        </tr>
+        <tr class="top-aligned-row context-row">
+          <td class="context-item-name">WM_NCCALCSIZE</td>
+          <td>=</td>
+          <td class="context-item-value">0x0083</td>
+        </tr>
+        <tr class="top-aligned-row context-row">
+          <td class="context-item-name">WM_NCHITTEST</td>
+          <td>=</td>
+          <td class="context-item-value">0x0084</td>
+        </tr>
+        <tr class="top-aligned-row context-row">
+          <td class="context-item-name">WM_NCPAINT</td>
+          <td>=</td>
+          <td class="context-item-value">0x0085</td>
+        </tr>
+        <tr class="top-aligned-row context-row">
+          <td class="context-item-name">WM_NCACTIVATE</td>
+          <td>=</td>
+          <td class="context-item-value">0x0086</td>
+        </tr>
+        <tr class="top-aligned-row context-row">
+          <td class="context-item-name">WM_GETDLGCODE</td>
+          <td>=</td>
+          <td class="context-item-value">0x0087</td>
+        </tr>
+        <tr class="top-aligned-row context-row">
+          <td class="context-item-name">WM_SYNCPAINT</td>
+          <td>=</td>
+          <td class="context-item-value">0x0088</td>
+        </tr>
+        <tr class="top-aligned-row context-row">
+          <td class="context-item-name">WM_NCMOUSEMOVE</td>
+          <td>=</td>
+          <td class="context-item-value">0x00A0</td>
+        </tr>
+        <tr class="top-aligned-row context-row">
+          <td class="context-item-name">WM_NCLBUTTONDOWN</td>
+          <td>=</td>
+          <td class="context-item-value">0x00A1</td>
+        </tr>
+        <tr class="top-aligned-row context-row">
+          <td class="context-item-name">WM_NCLBUTTONUP</td>
+          <td>=</td>
+          <td class="context-item-value">0x00A2</td>
+        </tr>
+        <tr class="top-aligned-row context-row">
+          <td class="context-item-name">WM_NCLBUTTONDBLCLK</td>
+          <td>=</td>
+          <td class="context-item-value">0x00A3</td>
+        </tr>
+        <tr class="top-aligned-row context-row">
+          <td class="context-item-name">WM_NCRBUTTONDOWN</td>
+          <td>=</td>
+          <td class="context-item-value">0x00A4</td>
+        </tr>
+        <tr class="top-aligned-row context-row">
+          <td class="context-item-name">WM_NCRBUTTONUP</td>
+          <td>=</td>
+          <td class="context-item-value">0x00A5</td>
+        </tr>
+        <tr class="top-aligned-row context-row">
+          <td class="context-item-name">WM_NCRBUTTONDBLCLK</td>
+          <td>=</td>
+          <td class="context-item-value">0x00A6</td>
+        </tr>
+        <tr class="top-aligned-row context-row">
+          <td class="context-item-name">WM_NCMBUTTONDOWN</td>
+          <td>=</td>
+          <td class="context-item-value">0x00A7</td>
+        </tr>
+        <tr class="top-aligned-row context-row">
+          <td class="context-item-name">WM_NCMBUTTONUP</td>
+          <td>=</td>
+          <td class="context-item-value">0x00A8</td>
+        </tr>
+        <tr class="top-aligned-row context-row">
+          <td class="context-item-name">WM_NCMBUTTONDBLCLK</td>
+          <td>=</td>
+          <td class="context-item-value">0x00A9</td>
+        </tr>
+        <tr class="top-aligned-row context-row">
+          <td class="context-item-name">WM_NCXBUTTONDOWN</td>
+          <td>=</td>
+          <td class="context-item-value">0x00AB</td>
+        </tr>
+        <tr class="top-aligned-row context-row">
+          <td class="context-item-name">WM_NCXBUTTONUP</td>
+          <td>=</td>
+          <td class="context-item-value">0x00AC</td>
+        </tr>
+        <tr class="top-aligned-row context-row">
+          <td class="context-item-name">WM_NCXBUTTONDBLCLK</td>
+          <td>=</td>
+          <td class="context-item-value">0x00AD</td>
+        </tr>
+        <tr class="top-aligned-row context-row">
+          <td class="context-item-name">WM_INPUT</td>
+          <td>=</td>
+          <td class="context-item-value">0x00FF</td>
+        </tr>
+        <tr class="top-aligned-row context-row">
+          <td class="context-item-name">WM_KEYFIRST</td>
+          <td>=</td>
+          <td class="context-item-value">0x0100</td>
+        </tr>
+        <tr class="top-aligned-row context-row">
+          <td class="context-item-name">WM_KEYDOWN</td>
+          <td>=</td>
+          <td class="context-item-value">0x0100</td>
+        </tr>
+        <tr class="top-aligned-row context-row">
+          <td class="context-item-name">WM_KEYUP</td>
+          <td>=</td>
+          <td class="context-item-value">0x0101</td>
+        </tr>
+        <tr class="top-aligned-row context-row">
+          <td class="context-item-name">WM_CHAR</td>
+          <td>=</td>
+          <td class="context-item-value">0x0102</td>
+        </tr>
+        <tr class="top-aligned-row context-row">
+          <td class="context-item-name">WM_DEADCHAR</td>
+          <td>=</td>
+          <td class="context-item-value">0x0103</td>
+        </tr>
+        <tr class="top-aligned-row context-row">
+          <td class="context-item-name">WM_SYSKEYDOWN</td>
+          <td>=</td>
+          <td class="context-item-value">0x0104</td>
+        </tr>
+        <tr class="top-aligned-row context-row">
+          <td class="context-item-name">WM_SYSKEYUP</td>
+          <td>=</td>
+          <td class="context-item-value">0x0105</td>
+        </tr>
+        <tr class="top-aligned-row context-row">
+          <td class="context-item-name">WM_SYSCHAR</td>
+          <td>=</td>
+          <td class="context-item-value">0x0106</td>
+        </tr>
+        <tr class="top-aligned-row context-row">
+          <td class="context-item-name">WM_SYSDEADCHAR</td>
+          <td>=</td>
+          <td class="context-item-value">0x0107</td>
+        </tr>
+        <tr class="top-aligned-row context-row">
+          <td class="context-item-name">WM_UNICHAR</td>
+          <td>=</td>
+          <td class="context-item-value">0x0109</td>
+        </tr>
+        <tr class="top-aligned-row context-row">
+          <td class="context-item-name">WM_IME_STARTCOMPOSITION</td>
+          <td>=</td>
+          <td class="context-item-value">0x010D</td>
+        </tr>
+        <tr class="top-aligned-row context-row">
+          <td class="context-item-name">WM_IME_ENDCOMPOSITION</td>
+          <td>=</td>
+          <td class="context-item-value">0x010E</td>
+        </tr>
+        <tr class="top-aligned-row context-row">
+          <td class="context-item-name">WM_IME_COMPOSITION</td>
+          <td>=</td>
+          <td class="context-item-value">0x010F</td>
+        </tr>
+        <tr class="top-aligned-row context-row">
+          <td class="context-item-name">WM_IME_KEYLAST</td>
+          <td>=</td>
+          <td class="context-item-value">0x010F</td>
+        </tr>
+        <tr class="top-aligned-row context-row">
+          <td class="context-item-name">WM_INITDIALOG</td>
+          <td>=</td>
+          <td class="context-item-value">0x0110</td>
+        </tr>
+        <tr class="top-aligned-row context-row">
+          <td class="context-item-name">WM_COMMAND</td>
+          <td>=</td>
+          <td class="context-item-value">0x0111</td>
+        </tr>
+        <tr class="top-aligned-row context-row">
+          <td class="context-item-name">WM_SYSCOMMAND</td>
+          <td>=</td>
+          <td class="context-item-value">0x0112</td>
+        </tr>
+        <tr class="top-aligned-row context-row">
+          <td class="context-item-name">WM_TIMER</td>
+          <td>=</td>
+          <td class="context-item-value">0x0113</td>
+        </tr>
+        <tr class="top-aligned-row context-row">
+          <td class="context-item-name">WM_HSCROLL</td>
+          <td>=</td>
+          <td class="context-item-value">0x0114</td>
+        </tr>
+        <tr class="top-aligned-row context-row">
+          <td class="context-item-name">WM_VSCROLL</td>
+          <td>=</td>
+          <td class="context-item-value">0x0115</td>
+        </tr>
+        <tr class="top-aligned-row context-row">
+          <td class="context-item-name">WM_INITMENU</td>
+          <td>=</td>
+          <td class="context-item-value">0x0116</td>
+        </tr>
+        <tr class="top-aligned-row context-row">
+          <td class="context-item-name">WM_INITMENUPOPUP</td>
+          <td>=</td>
+          <td class="context-item-value">0x0117</td>
+        </tr>
+        <tr class="top-aligned-row context-row">
+          <td class="context-item-name">WM_MENUSELECT</td>
+          <td>=</td>
+          <td class="context-item-value">0x011F</td>
+        </tr>
+        <tr class="top-aligned-row context-row">
+          <td class="context-item-name">WM_MENUCHAR</td>
+          <td>=</td>
+          <td class="context-item-value">0x0120</td>
+        </tr>
+        <tr class="top-aligned-row context-row">
+          <td class="context-item-name">WM_ENTERIDLE</td>
+          <td>=</td>
+          <td class="context-item-value">0x0121</td>
+        </tr>
+        <tr class="top-aligned-row context-row">
+          <td class="context-item-name">WM_MENURBUTTONUP</td>
+          <td>=</td>
+          <td class="context-item-value">0x0122</td>
+        </tr>
+        <tr class="top-aligned-row context-row">
+          <td class="context-item-name">WM_MENUDRAG</td>
+          <td>=</td>
+          <td class="context-item-value">0x0123</td>
+        </tr>
+        <tr class="top-aligned-row context-row">
+          <td class="context-item-name">WM_MENUGETOBJECT</td>
+          <td>=</td>
+          <td class="context-item-value">0x0124</td>
+        </tr>
+        <tr class="top-aligned-row context-row">
+          <td class="context-item-name">WM_UNINITMENUPOPUP</td>
+          <td>=</td>
+          <td class="context-item-value">0x0125</td>
+        </tr>
+        <tr class="top-aligned-row context-row">
+          <td class="context-item-name">WM_MENUCOMMAND</td>
+          <td>=</td>
+          <td class="context-item-value">0x0126</td>
+        </tr>
+        <tr class="top-aligned-row context-row">
+          <td class="context-item-name">WM_CHANGEUISTATE</td>
+          <td>=</td>
+          <td class="context-item-value">0x0127</td>
+        </tr>
+        <tr class="top-aligned-row context-row">
+          <td class="context-item-name">WM_UPDATEUISTATE</td>
+          <td>=</td>
+          <td class="context-item-value">0x0128</td>
+        </tr>
+        <tr class="top-aligned-row context-row">
+          <td class="context-item-name">WM_QUERYUISTATE</td>
+          <td>=</td>
+          <td class="context-item-value">0x0129</td>
+        </tr>
+        <tr class="top-aligned-row context-row">
+          <td class="context-item-name">WM_CTLCOLORMSGBOX</td>
+          <td>=</td>
+          <td class="context-item-value">0x0132</td>
+        </tr>
+        <tr class="top-aligned-row context-row">
+          <td class="context-item-name">WM_CTLCOLOREDIT</td>
+          <td>=</td>
+          <td class="context-item-value">0x0133</td>
+        </tr>
+        <tr class="top-aligned-row context-row">
+          <td class="context-item-name">WM_CTLCOLORLISTBOX</td>
+          <td>=</td>
+          <td class="context-item-value">0x0134</td>
+        </tr>
+        <tr class="top-aligned-row context-row">
+          <td class="context-item-name">WM_CTLCOLORBTN</td>
+          <td>=</td>
+          <td class="context-item-value">0x0135</td>
+        </tr>
+        <tr class="top-aligned-row context-row">
+          <td class="context-item-name">WM_CTLCOLORDLG</td>
+          <td>=</td>
+          <td class="context-item-value">0x0136</td>
+        </tr>
+        <tr class="top-aligned-row context-row">
+          <td class="context-item-name">WM_CTLCOLORSCROLLBAR</td>
+          <td>=</td>
+          <td class="context-item-value">0x0137</td>
+        </tr>
+        <tr class="top-aligned-row context-row">
+          <td class="context-item-name">WM_CTLCOLORSTATIC</td>
+          <td>=</td>
+          <td class="context-item-value">0x0138</td>
+        </tr>
+        <tr class="top-aligned-row context-row">
+          <td class="context-item-name">WM_MOUSEFIRST</td>
+          <td>=</td>
+          <td class="context-item-value">0x0200</td>
+        </tr>
+        <tr class="top-aligned-row context-row">
+          <td class="context-item-name">WM_MOUSEMOVE</td>
+          <td>=</td>
+          <td class="context-item-value">0x0200</td>
+        </tr>
+        <tr class="top-aligned-row context-row">
+          <td class="context-item-name">WM_LBUTTONDOWN</td>
+          <td>=</td>
+          <td class="context-item-value">0x0201</td>
+        </tr>
+        <tr class="top-aligned-row context-row">
+          <td class="context-item-name">WM_LBUTTONUP</td>
+          <td>=</td>
+          <td class="context-item-value">0x0202</td>
+        </tr>
+        <tr class="top-aligned-row context-row">
+          <td class="context-item-name">WM_LBUTTONDBLCLK</td>
+          <td>=</td>
+          <td class="context-item-value">0x0203</td>
+        </tr>
+        <tr class="top-aligned-row context-row">
+          <td class="context-item-name">WM_RBUTTONDOWN</td>
+          <td>=</td>
+          <td class="context-item-value">0x0204</td>
+        </tr>
+        <tr class="top-aligned-row context-row">
+          <td class="context-item-name">WM_RBUTTONUP</td>
+          <td>=</td>
+          <td class="context-item-value">0x0205</td>
+        </tr>
+        <tr class="top-aligned-row context-row">
+          <td class="context-item-name">WM_RBUTTONDBLCLK</td>
+          <td>=</td>
+          <td class="context-item-value">0x0206</td>
+        </tr>
+        <tr class="top-aligned-row context-row">
+          <td class="context-item-name">WM_MBUTTONDOWN</td>
+          <td>=</td>
+          <td class="context-item-value">0x0207</td>
+        </tr>
+        <tr class="top-aligned-row context-row">
+          <td class="context-item-name">WM_MBUTTONUP</td>
+          <td>=</td>
+          <td class="context-item-value">0x0208</td>
+        </tr>
+        <tr class="top-aligned-row context-row">
+          <td class="context-item-name">WM_MBUTTONDBLCLK</td>
+          <td>=</td>
+          <td class="context-item-value">0x0209</td>
+        </tr>
+        <tr class="top-aligned-row context-row">
+          <td class="context-item-name">WM_MOUSEWHEEL</td>
+          <td>=</td>
+          <td class="context-item-value">0x020A</td>
+        </tr>
+        <tr class="top-aligned-row context-row">
+          <td class="context-item-name">WM_XBUTTONDOWN</td>
+          <td>=</td>
+          <td class="context-item-value">0x020B</td>
+        </tr>
+        <tr class="top-aligned-row context-row">
+          <td class="context-item-name">WM_XBUTTONUP</td>
+          <td>=</td>
+          <td class="context-item-value">0x020C</td>
+        </tr>
+        <tr class="top-aligned-row context-row">
+          <td class="context-item-name">WM_XBUTTONDBLCLK</td>
+          <td>=</td>
+          <td class="context-item-value">0x020D</td>
+        </tr>
+        <tr class="top-aligned-row context-row">
+          <td class="context-item-name">WM_MOUSELAST</td>
+          <td>=</td>
+          <td class="context-item-value">0x020D</td>
+        </tr>
+        <tr class="top-aligned-row context-row">
+          <td class="context-item-name">WM_PARENTNOTIFY</td>
+          <td>=</td>
+          <td class="context-item-value">0x0210</td>
+        </tr>
+        <tr class="top-aligned-row context-row">
+          <td class="context-item-name">WM_ENTERMENULOOP</td>
+          <td>=</td>
+          <td class="context-item-value">0x0211</td>
+        </tr>
+        <tr class="top-aligned-row context-row">
+          <td class="context-item-name">WM_EXITMENULOOP</td>
+          <td>=</td>
+          <td class="context-item-value">0x0212</td>
+        </tr>
+        <tr class="top-aligned-row context-row">
+          <td class="context-item-name">WM_NEXTMENU</td>
+          <td>=</td>
+          <td class="context-item-value">0x0213</td>
+        </tr>
+        <tr class="top-aligned-row context-row">
+          <td class="context-item-name">WM_SIZING</td>
+          <td>=</td>
+          <td class="context-item-value">0x0214</td>
+        </tr>
+        <tr class="top-aligned-row context-row">
+          <td class="context-item-name">WM_CAPTURECHANGED</td>
+          <td>=</td>
+          <td class="context-item-value">0x0215</td>
+        </tr>
+        <tr class="top-aligned-row context-row">
+          <td class="context-item-name">WM_MOVING</td>
+          <td>=</td>
+          <td class="context-item-value">0x0216</td>
+        </tr>
+        <tr class="top-aligned-row context-row">
+          <td class="context-item-name">WM_POWERBROADCAST</td>
+          <td>=</td>
+          <td class="context-item-value">0x0218</td>
+        </tr>
+        <tr class="top-aligned-row context-row">
+          <td class="context-item-name">WM_DEVICECHANGE</td>
+          <td>=</td>
+          <td class="context-item-value">0x0219</td>
+        </tr>
+        <tr class="top-aligned-row context-row">
+          <td class="context-item-name">WM_MDICREATE</td>
+          <td>=</td>
+          <td class="context-item-value">0x0220</td>
+        </tr>
+        <tr class="top-aligned-row context-row">
+          <td class="context-item-name">WM_MDIDESTROY</td>
+          <td>=</td>
+          <td class="context-item-value">0x0221</td>
+        </tr>
+        <tr class="top-aligned-row context-row">
+          <td class="context-item-name">WM_MDIACTIVATE</td>
+          <td>=</td>
+          <td class="context-item-value">0x0222</td>
+        </tr>
+        <tr class="top-aligned-row context-row">
+          <td class="context-item-name">WM_MDIRESTORE</td>
+          <td>=</td>
+          <td class="context-item-value">0x0223</td>
+        </tr>
+        <tr class="top-aligned-row context-row">
+          <td class="context-item-name">WM_MDINEXT</td>
+          <td>=</td>
+          <td class="context-item-value">0x0224</td>
+        </tr>
+        <tr class="top-aligned-row context-row">
+          <td class="context-item-name">WM_MDIMAXIMIZE</td>
+          <td>=</td>
+          <td class="context-item-value">0x0225</td>
+        </tr>
+        <tr class="top-aligned-row context-row">
+          <td class="context-item-name">WM_MDITILE</td>
+          <td>=</td>
+          <td class="context-item-value">0x0226</td>
+        </tr>
+        <tr class="top-aligned-row context-row">
+          <td class="context-item-name">WM_MDICASCADE</td>
+          <td>=</td>
+          <td class="context-item-value">0x0227</td>
+        </tr>
+        <tr class="top-aligned-row context-row">
+          <td class="context-item-name">WM_MDIICONARRANGE</td>
+          <td>=</td>
+          <td class="context-item-value">0x0228</td>
+        </tr>
+        <tr class="top-aligned-row context-row">
+          <td class="context-item-name">WM_MDIGETACTIVE</td>
+          <td>=</td>
+          <td class="context-item-value">0x0229</td>
+        </tr>
+        <tr class="top-aligned-row context-row">
+          <td class="context-item-name">WM_MDISETMENU</td>
+          <td>=</td>
+          <td class="context-item-value">0x0230</td>
+        </tr>
+        <tr class="top-aligned-row context-row">
+          <td class="context-item-name">WM_ENTERSIZEMOVE</td>
+          <td>=</td>
+          <td class="context-item-value">0x0231</td>
+        </tr>
+        <tr class="top-aligned-row context-row">
+          <td class="context-item-name">WM_EXITSIZEMOVE</td>
+          <td>=</td>
+          <td class="context-item-value">0x0232</td>
+        </tr>
+        <tr class="top-aligned-row context-row">
+          <td class="context-item-name">WM_DROPFILES</td>
+          <td>=</td>
+          <td class="context-item-value">0x0233</td>
+        </tr>
+        <tr class="top-aligned-row context-row">
+          <td class="context-item-name">WM_MDIREFRESHMENU</td>
+          <td>=</td>
+          <td class="context-item-value">0x0234</td>
+        </tr>
+        <tr class="top-aligned-row context-row">
+          <td class="context-item-name">WM_IME_SETCONTEXT</td>
+          <td>=</td>
+          <td class="context-item-value">0x0281</td>
+        </tr>
+        <tr class="top-aligned-row context-row">
+          <td class="context-item-name">WM_IME_NOTIFY</td>
+          <td>=</td>
+          <td class="context-item-value">0x0282</td>
+        </tr>
+        <tr class="top-aligned-row context-row">
+          <td class="context-item-name">WM_IME_CONTROL</td>
+          <td>=</td>
+          <td class="context-item-value">0x0283</td>
+        </tr>
+        <tr class="top-aligned-row context-row">
+          <td class="context-item-name">WM_IME_COMPOSITIONFULL</td>
+          <td>=</td>
+          <td class="context-item-value">0x0284</td>
+        </tr>
+        <tr class="top-aligned-row context-row">
+          <td class="context-item-name">WM_IME_SELECT</td>
+          <td>=</td>
+          <td class="context-item-value">0x0285</td>
+        </tr>
+        <tr class="top-aligned-row context-row">
+          <td class="context-item-name">WM_IME_CHAR</td>
+          <td>=</td>
+          <td class="context-item-value">0x0286</td>
+        </tr>
+        <tr class="top-aligned-row context-row">
+          <td class="context-item-name">WM_IME_REQUEST</td>
+          <td>=</td>
+          <td class="context-item-value">0x0288</td>
+        </tr>
+        <tr class="top-aligned-row context-row">
+          <td class="context-item-name">WM_IME_KEYDOWN</td>
+          <td>=</td>
+          <td class="context-item-value">0x0290</td>
+        </tr>
+        <tr class="top-aligned-row context-row">
+          <td class="context-item-name">WM_IME_KEYUP</td>
+          <td>=</td>
+          <td class="context-item-value">0x0291</td>
+        </tr>
+        <tr class="top-aligned-row context-row">
+          <td class="context-item-name">WM_MOUSEHOVER</td>
+          <td>=</td>
+          <td class="context-item-value">0x02A1</td>
+        </tr>
+        <tr class="top-aligned-row context-row">
+          <td class="context-item-name">WM_MOUSELEAVE</td>
+          <td>=</td>
+          <td class="context-item-value">0x02A3</td>
+        </tr>
+        <tr class="top-aligned-row context-row">
+          <td class="context-item-name">WM_NCMOUSEHOVER</td>
+          <td>=</td>
+          <td class="context-item-value">0x02A0</td>
+        </tr>
+        <tr class="top-aligned-row context-row">
+          <td class="context-item-name">WM_NCMOUSELEAVE</td>
+          <td>=</td>
+          <td class="context-item-value">0x02A2</td>
+        </tr>
+        <tr class="top-aligned-row context-row">
+          <td class="context-item-name">WM_WTSSESSION_CHANGE</td>
+          <td>=</td>
+          <td class="context-item-value">0x02B1</td>
+        </tr>
+        <tr class="top-aligned-row context-row">
+          <td class="context-item-name">WM_TABLET_FIRST</td>
+          <td>=</td>
+          <td class="context-item-value">0x02c0</td>
+        </tr>
+        <tr class="top-aligned-row context-row">
+          <td class="context-item-name">WM_TABLET_LAST</td>
+          <td>=</td>
+          <td class="context-item-value">0x02df</td>
+        </tr>
+        <tr class="top-aligned-row context-row">
+          <td class="context-item-name">WM_CUT</td>
+          <td>=</td>
+          <td class="context-item-value">0x0300</td>
+        </tr>
+        <tr class="top-aligned-row context-row">
+          <td class="context-item-name">WM_COPY</td>
+          <td>=</td>
+          <td class="context-item-value">0x0301</td>
+        </tr>
+        <tr class="top-aligned-row context-row">
+          <td class="context-item-name">WM_PASTE</td>
+          <td>=</td>
+          <td class="context-item-value">0x0302</td>
+        </tr>
+        <tr class="top-aligned-row context-row">
+          <td class="context-item-name">WM_CLEAR</td>
+          <td>=</td>
+          <td class="context-item-value">0x0303</td>
+        </tr>
+        <tr class="top-aligned-row context-row">
+          <td class="context-item-name">WM_UNDO</td>
+          <td>=</td>
+          <td class="context-item-value">0x0304</td>
+        </tr>
+        <tr class="top-aligned-row context-row">
+          <td class="context-item-name">WM_RENDERFORMAT</td>
+          <td>=</td>
+          <td class="context-item-value">0x0305</td>
+        </tr>
+        <tr class="top-aligned-row context-row">
+          <td class="context-item-name">WM_RENDERALLFORMATS</td>
+          <td>=</td>
+          <td class="context-item-value">0x0306</td>
+        </tr>
+        <tr class="top-aligned-row context-row">
+          <td class="context-item-name">WM_DESTROYCLIPBOARD</td>
+          <td>=</td>
+          <td class="context-item-value">0x0307</td>
+        </tr>
+        <tr class="top-aligned-row context-row">
+          <td class="context-item-name">WM_DRAWCLIPBOARD</td>
+          <td>=</td>
+          <td class="context-item-value">0x0308</td>
+        </tr>
+        <tr class="top-aligned-row context-row">
+          <td class="context-item-name">WM_PAINTCLIPBOARD</td>
+          <td>=</td>
+          <td class="context-item-value">0x0309</td>
+        </tr>
+        <tr class="top-aligned-row context-row">
+          <td class="context-item-name">WM_VSCROLLCLIPBOARD</td>
+          <td>=</td>
+          <td class="context-item-value">0x030A</td>
+        </tr>
+        <tr class="top-aligned-row context-row">
+          <td class="context-item-name">WM_SIZECLIPBOARD</td>
+          <td>=</td>
+          <td class="context-item-value">0x030B</td>
+        </tr>
+        <tr class="top-aligned-row context-row">
+          <td class="context-item-name">WM_ASKCBFORMATNAME</td>
+          <td>=</td>
+          <td class="context-item-value">0x030C</td>
+        </tr>
+        <tr class="top-aligned-row context-row">
+          <td class="context-item-name">WM_CHANGECBCHAIN</td>
+          <td>=</td>
+          <td class="context-item-value">0x030D</td>
+        </tr>
+        <tr class="top-aligned-row context-row">
+          <td class="context-item-name">WM_HSCROLLCLIPBOARD</td>
+          <td>=</td>
+          <td class="context-item-value">0x030E</td>
+        </tr>
+        <tr class="top-aligned-row context-row">
+          <td class="context-item-name">WM_QUERYNEWPALETTE</td>
+          <td>=</td>
+          <td class="context-item-value">0x030F</td>
+        </tr>
+        <tr class="top-aligned-row context-row">
+          <td class="context-item-name">WM_PALETTEISCHANGING</td>
+          <td>=</td>
+          <td class="context-item-value">0x0310</td>
+        </tr>
+        <tr class="top-aligned-row context-row">
+          <td class="context-item-name">WM_PALETTECHANGED</td>
+          <td>=</td>
+          <td class="context-item-value">0x0311</td>
+        </tr>
+        <tr class="top-aligned-row context-row">
+          <td class="context-item-name">WM_HOTKEY</td>
+          <td>=</td>
+          <td class="context-item-value">0x0312</td>
+        </tr>
+        <tr class="top-aligned-row context-row">
+          <td class="context-item-name">WM_PRINT</td>
+          <td>=</td>
+          <td class="context-item-value">0x0317</td>
+        </tr>
+        <tr class="top-aligned-row context-row">
+          <td class="context-item-name">WM_PRINTCLIENT</td>
+          <td>=</td>
+          <td class="context-item-value">0x0318</td>
+        </tr>
+        <tr class="top-aligned-row context-row">
+          <td class="context-item-name">WM_APPCOMMAND</td>
+          <td>=</td>
+          <td class="context-item-value">0x0319</td>
+        </tr>
+        <tr class="top-aligned-row context-row">
+          <td class="context-item-name">WM_THEMECHANGED</td>
+          <td>=</td>
+          <td class="context-item-value">0x031A</td>
+        </tr>
+        <tr class="top-aligned-row context-row">
+          <td class="context-item-name">WM_HANDHELDFIRST</td>
+          <td>=</td>
+          <td class="context-item-value">0x0358</td>
+        </tr>
+        <tr class="top-aligned-row context-row">
+          <td class="context-item-name">WM_HANDHELDLAST</td>
+          <td>=</td>
+          <td class="context-item-value">0x035F</td>
+        </tr>
+        <tr class="top-aligned-row context-row">
+          <td class="context-item-name">WM_AFXFIRST</td>
+          <td>=</td>
+          <td class="context-item-value">0x0360</td>
+        </tr>
+        <tr class="top-aligned-row context-row">
+          <td class="context-item-name">WM_AFXLAST</td>
+          <td>=</td>
+          <td class="context-item-value">0x037F</td>
+        </tr>
+        <tr class="top-aligned-row context-row">
+          <td class="context-item-name">WM_PENWINFIRST</td>
+          <td>=</td>
+          <td class="context-item-value">0x0380</td>
+        </tr>
+        <tr class="top-aligned-row context-row">
+          <td class="context-item-name">WM_PENWINLAST</td>
+          <td>=</td>
+          <td class="context-item-value">0x038F</td>
+        </tr>
+        <tr class="top-aligned-row context-row">
+          <td class="context-item-name">WM_APP</td>
+          <td>=</td>
+          <td class="context-item-value">0x8000</td>
+        </tr>
+        <tr class="top-aligned-row context-row">
+          <td class="context-item-name">WM_USER</td>
+          <td>=</td>
+          <td class="context-item-value">0x0400</td>
+        </tr>
+        <tr class="top-aligned-row context-row">
+          <td class="context-item-name">WM_KEYLAST</td>
+          <td>=</td>
+          <td class="context-item-value">0x0109</td>
+        </tr>
+        <tr class="top-aligned-row context-row">
+          <td class="context-item-name">WM_KEYLAST</td>
+          <td>=</td>
+          <td class="context-item-value">0x0108</td>
+        </tr>
+        </table>
+      </div>
+    </div>
+
+
+
+      
+
+
+    <!-- if method_list -->
+
+
+  </div>
+
+
+<div id="validator-badges">
+  <p><small><a href="http://validator.w3.org/check/referer">[Validate]</a></small></p>
+</div>
+
+</body>
+</html>

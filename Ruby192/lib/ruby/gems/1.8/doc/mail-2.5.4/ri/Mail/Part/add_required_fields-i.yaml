@@ -1,0 +1,10 @@
+--- !ruby/object:RI::MethodDescription 
+aliases: []
+
+block_params: 
+comment: 
+full_name: Mail::Part#add_required_fields
+is_singleton: false
+name: add_required_fields
+params: ()
+visibility: public

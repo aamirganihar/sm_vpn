@@ -1,0 +1,29 @@
+--- !ruby/object:RI::ClassDescription 
+attributes: []
+
+class_methods: []
+
+comment: 
+constants: 
+- !ruby/object:RI::Constant 
+  comment: 
+  name: CLASS
+  value: "0"
+- !ruby/object:RI::Constant 
+  comment: 
+  name: INSTANCE_METHOD
+  value: "1"
+- !ruby/object:RI::Constant 
+  comment: 
+  name: CLASS_METHOD
+  value: "2"
+full_name: NameDescriptor
+includes: []
+
+instance_methods: 
+- !ruby/object:RI::MethodSummary 
+  name: to_s
+- !ruby/object:RI::MethodSummary 
+  name: type
+name: NameDescriptor
+superclass: Object

@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+<!DOCTYPE html 
+     PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+     "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html>
+<head>
+  <title>close_modal (Watir::IE)</title>
+  <meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" />
+  <link rel="stylesheet" href="../../.././rdoc-style.css" type="text/css" media="screen" />
+</head>
+<body class="standalone-code">
+  <pre><span class="ruby-comment cmt"># File lib/watir/close_all.rb, line 25</span>
+    <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">close_modal</span>
+      <span class="ruby-keyword kw">begin</span>
+        <span class="ruby-identifier">original_attach_timeout</span> = <span class="ruby-constant">IE</span>.<span class="ruby-identifier">attach_timeout</span>
+        <span class="ruby-constant">IE</span>.<span class="ruby-identifier">attach_timeout</span> = <span class="ruby-value">0</span>
+        <span class="ruby-keyword kw">self</span>.<span class="ruby-identifier">modal_dialog</span>.<span class="ruby-identifier">close</span>
+        <span class="ruby-keyword kw">true</span>
+      <span class="ruby-keyword kw">rescue</span> <span class="ruby-constant">NoMatchingWindowFoundException</span>, <span class="ruby-constant">TimeOutException</span>
+        <span class="ruby-keyword kw">false</span>
+      <span class="ruby-keyword kw">ensure</span>
+        <span class="ruby-constant">IE</span>.<span class="ruby-identifier">attach_timeout</span> = <span class="ruby-identifier">original_attach_timeout</span>
+      <span class="ruby-keyword kw">end</span>
+    <span class="ruby-keyword kw">end</span></pre>
+</body>
+</html>

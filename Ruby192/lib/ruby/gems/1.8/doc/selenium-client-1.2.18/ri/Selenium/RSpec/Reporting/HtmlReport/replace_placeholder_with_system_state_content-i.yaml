@@ -1,0 +1,10 @@
+--- !ruby/object:RI::MethodDescription 
+aliases: []
+
+block_params: 
+comment: 
+full_name: Selenium::RSpec::Reporting::HtmlReport#replace_placeholder_with_system_state_content
+is_singleton: false
+name: replace_placeholder_with_system_state_content
+params: (result, example)
+visibility: public

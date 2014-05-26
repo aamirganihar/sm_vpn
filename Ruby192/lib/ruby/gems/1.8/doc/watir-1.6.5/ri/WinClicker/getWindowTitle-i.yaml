@@ -1,0 +1,13 @@
+--- !ruby/object:RI::MethodDescription 
+aliases: 
+- !ruby/object:RI::AliasName 
+  name: get_win_title
+block_params: 
+comment: 
+- !ruby/struct:SM::Flow::P 
+  body: get the title for the specified hwnd
+full_name: WinClicker#getWindowTitle
+is_singleton: false
+name: getWindowTitle
+params: (hWnd)
+visibility: public

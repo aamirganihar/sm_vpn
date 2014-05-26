@@ -1,0 +1,10 @@
+--- !ruby/object:RI::MethodDescription 
+aliases: []
+
+block_params: 
+comment: 
+full_name: Mail::Message#remote_mta
+is_singleton: false
+name: remote_mta
+params: ()
+visibility: public

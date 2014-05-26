@@ -1,0 +1,12 @@
+--- !ruby/object:RI::MethodDescription 
+aliases: []
+
+block_params: 
+comment: 
+- !ruby/struct:SM::Flow::P 
+  body: The following is an adaptation of ruby 1.9.2's shellwords.rb file, it is modified to include '+' in the allowed list to allow for sendmail to accept email addresses as the sender with a + in them.
+full_name: Mail::Sendmail::shellquote
+is_singleton: true
+name: shellquote
+params: (address)
+visibility: public

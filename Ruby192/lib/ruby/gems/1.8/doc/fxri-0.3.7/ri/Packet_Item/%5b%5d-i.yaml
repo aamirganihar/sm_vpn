@@ -1,0 +1,12 @@
+--- !ruby/object:RI::MethodDescription 
+aliases: []
+
+block_params: 
+comment: 
+- !ruby/struct:SM::Flow::P 
+  body: Get the content of the given column number.
+full_name: Packet_Item#[]
+is_singleton: false
+name: "[]"
+params: (column_nr)
+visibility: public

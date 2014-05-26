@@ -1,0 +1,948 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+<!DOCTYPE html 
+     PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+     "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+  <title>Module: Mail::RFC2822Obsolete</title>
+  <meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" />
+  <meta http-equiv="Content-Script-Type" content="text/javascript" />
+  <link rel="stylesheet" href="../.././rdoc-style.css" type="text/css" media="screen" />
+  <script type="text/javascript">
+  // <![CDATA[
+
+  function popupCode( url ) {
+    window.open(url, "Code", "resizable=yes,scrollbars=yes,toolbar=no,status=no,height=150,width=400")
+  }
+
+  function toggleCode( id ) {
+    if ( document.getElementById )
+      elem = document.getElementById( id );
+    else if ( document.all )
+      elem = eval( "document.all." + id );
+    else
+      return false;
+
+    elemStyle = elem.style;
+    
+    if ( elemStyle.display != "block" ) {
+      elemStyle.display = "block"
+    } else {
+      elemStyle.display = "none"
+    }
+
+    return true;
+  }
+  
+  // Make codeblocks hidden by default
+  document.writeln( "<style type=\"text/css\">div.method-source-code { display: none }</style>" )
+  
+  // ]]>
+  </script>
+
+</head>
+<body>
+
+
+
+    <div id="classHeader">
+        <table class="header-table">
+        <tr class="top-aligned-row">
+          <td><strong>Module</strong></td>
+          <td class="class-name-in-header">Mail::RFC2822Obsolete</td>
+        </tr>
+        <tr class="top-aligned-row">
+            <td><strong>In:</strong></td>
+            <td>
+                <a href="../../files/lib/mail/parsers/rfc2822_obsolete_rb.html">
+                lib/mail/parsers/rfc2822_obsolete.rb
+                </a>
+        <br />
+            </td>
+        </tr>
+
+        </table>
+    </div>
+  <!-- banner header -->
+
+  <div id="bodyContent">
+
+
+
+  <div id="contextContent">
+
+
+
+   </div>
+
+    <div id="method-list">
+      <h3 class="section-bar">Methods</h3>
+
+      <div class="name-list">
+      <a href="#M000549">_nt_obs_FWS</a>&nbsp;&nbsp;
+      <a href="#M000564">_nt_obs_addr_list</a>&nbsp;&nbsp;
+      <a href="#M000558">_nt_obs_angle_addr</a>&nbsp;&nbsp;
+      <a href="#M000572">_nt_obs_bcc</a>&nbsp;&nbsp;
+      <a href="#M000571">_nt_obs_cc</a>&nbsp;&nbsp;
+      <a href="#M000545">_nt_obs_char</a>&nbsp;&nbsp;
+      <a href="#M000579">_nt_obs_comments</a>&nbsp;&nbsp;
+      <a href="#M000553">_nt_obs_day</a>&nbsp;&nbsp;
+      <a href="#M000550">_nt_obs_day_of_week</a>&nbsp;&nbsp;
+      <a href="#M000562">_nt_obs_domain</a>&nbsp;&nbsp;
+      <a href="#M000560">_nt_obs_domain_list</a>&nbsp;&nbsp;
+      <a href="#M000565">_nt_obs_fields</a>&nbsp;&nbsp;
+      <a href="#M000567">_nt_obs_from</a>&nbsp;&nbsp;
+      <a href="#M000554">_nt_obs_hour</a>&nbsp;&nbsp;
+      <a href="#M000576">_nt_obs_id_left</a>&nbsp;&nbsp;
+      <a href="#M000577">_nt_obs_id_right</a>&nbsp;&nbsp;
+      <a href="#M000574">_nt_obs_in_reply_to</a>&nbsp;&nbsp;
+      <a href="#M000580">_nt_obs_keywords</a>&nbsp;&nbsp;
+      <a href="#M000561">_nt_obs_local_part</a>&nbsp;&nbsp;
+      <a href="#M000563">_nt_obs_mbox_list</a>&nbsp;&nbsp;
+      <a href="#M000573">_nt_obs_message_id</a>&nbsp;&nbsp;
+      <a href="#M000555">_nt_obs_minute</a>&nbsp;&nbsp;
+      <a href="#M000552">_nt_obs_month</a>&nbsp;&nbsp;
+      <a href="#M000592">_nt_obs_optional</a>&nbsp;&nbsp;
+      <a href="#M000566">_nt_obs_orig_date</a>&nbsp;&nbsp;
+      <a href="#M000591">_nt_obs_path</a>&nbsp;&nbsp;
+      <a href="#M000547">_nt_obs_phrase</a>&nbsp;&nbsp;
+      <a href="#M000548">_nt_obs_phrase_list</a>&nbsp;&nbsp;
+      <a href="#M000543">_nt_obs_qp</a>&nbsp;&nbsp;
+      <a href="#M000590">_nt_obs_received</a>&nbsp;&nbsp;
+      <a href="#M000575">_nt_obs_references</a>&nbsp;&nbsp;
+      <a href="#M000569">_nt_obs_reply_to</a>&nbsp;&nbsp;
+      <a href="#M000586">_nt_obs_resent_bcc</a>&nbsp;&nbsp;
+      <a href="#M000585">_nt_obs_resent_cc</a>&nbsp;&nbsp;
+      <a href="#M000583">_nt_obs_resent_date</a>&nbsp;&nbsp;
+      <a href="#M000581">_nt_obs_resent_from</a>&nbsp;&nbsp;
+      <a href="#M000587">_nt_obs_resent_mid</a>&nbsp;&nbsp;
+      <a href="#M000588">_nt_obs_resent_rply</a>&nbsp;&nbsp;
+      <a href="#M000582">_nt_obs_resent_send</a>&nbsp;&nbsp;
+      <a href="#M000584">_nt_obs_resent_to</a>&nbsp;&nbsp;
+      <a href="#M000589">_nt_obs_return</a>&nbsp;&nbsp;
+      <a href="#M000559">_nt_obs_route</a>&nbsp;&nbsp;
+      <a href="#M000556">_nt_obs_second</a>&nbsp;&nbsp;
+      <a href="#M000568">_nt_obs_sender</a>&nbsp;&nbsp;
+      <a href="#M000578">_nt_obs_subject</a>&nbsp;&nbsp;
+      <a href="#M000544">_nt_obs_text</a>&nbsp;&nbsp;
+      <a href="#M000570">_nt_obs_to</a>&nbsp;&nbsp;
+      <a href="#M000546">_nt_obs_utext</a>&nbsp;&nbsp;
+      <a href="#M000551">_nt_obs_year</a>&nbsp;&nbsp;
+      <a href="#M000557">_nt_obs_zone</a>&nbsp;&nbsp;
+      <a href="#M000542">root</a>&nbsp;&nbsp;
+      </div>
+    </div>
+
+  </div>
+
+
+    <!-- if includes -->
+    <div id="includes">
+      <h3 class="section-bar">Included Modules</h3>
+
+      <div id="includes-list">
+        <span class="include-name">Treetop::Runtime</span>
+      </div>
+    </div>
+
+    <div id="section">
+
+    <div id="class-list">
+      <h3 class="section-bar">Classes and Modules</h3>
+
+      Module <a href="RFC2822Obsolete/ObsAddrList0.html" class="link">Mail::RFC2822Obsolete::ObsAddrList0</a><br />
+Module <a href="RFC2822Obsolete/ObsAddrList1.html" class="link">Mail::RFC2822Obsolete::ObsAddrList1</a><br />
+Module <a href="RFC2822Obsolete/ObsAngleAddr0.html" class="link">Mail::RFC2822Obsolete::ObsAngleAddr0</a><br />
+Module <a href="RFC2822Obsolete/ObsBcc0.html" class="link">Mail::RFC2822Obsolete::ObsBcc0</a><br />
+Module <a href="RFC2822Obsolete/ObsCc0.html" class="link">Mail::RFC2822Obsolete::ObsCc0</a><br />
+Module <a href="RFC2822Obsolete/ObsComments0.html" class="link">Mail::RFC2822Obsolete::ObsComments0</a><br />
+Module <a href="RFC2822Obsolete/ObsDay0.html" class="link">Mail::RFC2822Obsolete::ObsDay0</a><br />
+Module <a href="RFC2822Obsolete/ObsDay1.html" class="link">Mail::RFC2822Obsolete::ObsDay1</a><br />
+Module <a href="RFC2822Obsolete/ObsDayOfWeek0.html" class="link">Mail::RFC2822Obsolete::ObsDayOfWeek0</a><br />
+Module <a href="RFC2822Obsolete/ObsDomain0.html" class="link">Mail::RFC2822Obsolete::ObsDomain0</a><br />
+Module <a href="RFC2822Obsolete/ObsDomain1.html" class="link">Mail::RFC2822Obsolete::ObsDomain1</a><br />
+Module <a href="RFC2822Obsolete/ObsDomainList0.html" class="link">Mail::RFC2822Obsolete::ObsDomainList0</a><br />
+Module <a href="RFC2822Obsolete/ObsDomainList1.html" class="link">Mail::RFC2822Obsolete::ObsDomainList1</a><br />
+Module <a href="RFC2822Obsolete/ObsFWS0.html" class="link">Mail::RFC2822Obsolete::ObsFWS0</a><br />
+Module <a href="RFC2822Obsolete/ObsFWS1.html" class="link">Mail::RFC2822Obsolete::ObsFWS1</a><br />
+Module <a href="RFC2822Obsolete/ObsFrom0.html" class="link">Mail::RFC2822Obsolete::ObsFrom0</a><br />
+Module <a href="RFC2822Obsolete/ObsHour0.html" class="link">Mail::RFC2822Obsolete::ObsHour0</a><br />
+Module <a href="RFC2822Obsolete/ObsHour1.html" class="link">Mail::RFC2822Obsolete::ObsHour1</a><br />
+Module <a href="RFC2822Obsolete/ObsInReplyTo0.html" class="link">Mail::RFC2822Obsolete::ObsInReplyTo0</a><br />
+Module <a href="RFC2822Obsolete/ObsKeywords0.html" class="link">Mail::RFC2822Obsolete::ObsKeywords0</a><br />
+Module <a href="RFC2822Obsolete/ObsLocalPart0.html" class="link">Mail::RFC2822Obsolete::ObsLocalPart0</a><br />
+Module <a href="RFC2822Obsolete/ObsLocalPart1.html" class="link">Mail::RFC2822Obsolete::ObsLocalPart1</a><br />
+Module <a href="RFC2822Obsolete/ObsMboxList0.html" class="link">Mail::RFC2822Obsolete::ObsMboxList0</a><br />
+Module <a href="RFC2822Obsolete/ObsMboxList1.html" class="link">Mail::RFC2822Obsolete::ObsMboxList1</a><br />
+Module <a href="RFC2822Obsolete/ObsMessageId0.html" class="link">Mail::RFC2822Obsolete::ObsMessageId0</a><br />
+Module <a href="RFC2822Obsolete/ObsMinute0.html" class="link">Mail::RFC2822Obsolete::ObsMinute0</a><br />
+Module <a href="RFC2822Obsolete/ObsMinute1.html" class="link">Mail::RFC2822Obsolete::ObsMinute1</a><br />
+Module <a href="RFC2822Obsolete/ObsMonth0.html" class="link">Mail::RFC2822Obsolete::ObsMonth0</a><br />
+Module <a href="RFC2822Obsolete/ObsOptional0.html" class="link">Mail::RFC2822Obsolete::ObsOptional0</a><br />
+Module <a href="RFC2822Obsolete/ObsOrigDate0.html" class="link">Mail::RFC2822Obsolete::ObsOrigDate0</a><br />
+Module <a href="RFC2822Obsolete/ObsPhraseList0.html" class="link">Mail::RFC2822Obsolete::ObsPhraseList0</a><br />
+Module <a href="RFC2822Obsolete/ObsPhraseList1.html" class="link">Mail::RFC2822Obsolete::ObsPhraseList1</a><br />
+Module <a href="RFC2822Obsolete/ObsQp0.html" class="link">Mail::RFC2822Obsolete::ObsQp0</a><br />
+Module <a href="RFC2822Obsolete/ObsReceived0.html" class="link">Mail::RFC2822Obsolete::ObsReceived0</a><br />
+Module <a href="RFC2822Obsolete/ObsReferences0.html" class="link">Mail::RFC2822Obsolete::ObsReferences0</a><br />
+Module <a href="RFC2822Obsolete/ObsReplyTo0.html" class="link">Mail::RFC2822Obsolete::ObsReplyTo0</a><br />
+Module <a href="RFC2822Obsolete/ObsResentBcc0.html" class="link">Mail::RFC2822Obsolete::ObsResentBcc0</a><br />
+Module <a href="RFC2822Obsolete/ObsResentCc0.html" class="link">Mail::RFC2822Obsolete::ObsResentCc0</a><br />
+Module <a href="RFC2822Obsolete/ObsResentDate0.html" class="link">Mail::RFC2822Obsolete::ObsResentDate0</a><br />
+Module <a href="RFC2822Obsolete/ObsResentFrom0.html" class="link">Mail::RFC2822Obsolete::ObsResentFrom0</a><br />
+Module <a href="RFC2822Obsolete/ObsResentMid0.html" class="link">Mail::RFC2822Obsolete::ObsResentMid0</a><br />
+Module <a href="RFC2822Obsolete/ObsResentRply0.html" class="link">Mail::RFC2822Obsolete::ObsResentRply0</a><br />
+Module <a href="RFC2822Obsolete/ObsResentSend0.html" class="link">Mail::RFC2822Obsolete::ObsResentSend0</a><br />
+Module <a href="RFC2822Obsolete/ObsResentTo0.html" class="link">Mail::RFC2822Obsolete::ObsResentTo0</a><br />
+Module <a href="RFC2822Obsolete/ObsReturn0.html" class="link">Mail::RFC2822Obsolete::ObsReturn0</a><br />
+Module <a href="RFC2822Obsolete/ObsRoute0.html" class="link">Mail::RFC2822Obsolete::ObsRoute0</a><br />
+Module <a href="RFC2822Obsolete/ObsSecond0.html" class="link">Mail::RFC2822Obsolete::ObsSecond0</a><br />
+Module <a href="RFC2822Obsolete/ObsSecond1.html" class="link">Mail::RFC2822Obsolete::ObsSecond1</a><br />
+Module <a href="RFC2822Obsolete/ObsSender0.html" class="link">Mail::RFC2822Obsolete::ObsSender0</a><br />
+Module <a href="RFC2822Obsolete/ObsSubject0.html" class="link">Mail::RFC2822Obsolete::ObsSubject0</a><br />
+Module <a href="RFC2822Obsolete/ObsText0.html" class="link">Mail::RFC2822Obsolete::ObsText0</a><br />
+Module <a href="RFC2822Obsolete/ObsText1.html" class="link">Mail::RFC2822Obsolete::ObsText1</a><br />
+Module <a href="RFC2822Obsolete/ObsTo0.html" class="link">Mail::RFC2822Obsolete::ObsTo0</a><br />
+Module <a href="RFC2822Obsolete/ObsYear0.html" class="link">Mail::RFC2822Obsolete::ObsYear0</a><br />
+Module <a href="RFC2822Obsolete/ObsYear1.html" class="link">Mail::RFC2822Obsolete::ObsYear1</a><br />
+
+    </div>
+
+
+
+
+      
+
+
+    <!-- if method_list -->
+    <div id="methods">
+      <h3 class="section-bar">Public Instance methods</h3>
+
+      <div id="method-M000549" class="method-detail">
+        <a name="M000549"></a>
+
+        <div class="method-heading">
+          <a href="RFC2822Obsolete.src/M000549.html" target="Code" class="method-signature"
+            onclick="popupCode('RFC2822Obsolete.src/M000549.html');return false;">
+          <span class="method-name">_nt_obs_FWS</span><span class="method-args">()</span>
+          </a>
+        </div>
+      
+        <div class="method-description">
+        </div>
+      </div>
+
+      <div id="method-M000564" class="method-detail">
+        <a name="M000564"></a>
+
+        <div class="method-heading">
+          <a href="RFC2822Obsolete.src/M000564.html" target="Code" class="method-signature"
+            onclick="popupCode('RFC2822Obsolete.src/M000564.html');return false;">
+          <span class="method-name">_nt_obs_addr_list</span><span class="method-args">()</span>
+          </a>
+        </div>
+      
+        <div class="method-description">
+        </div>
+      </div>
+
+      <div id="method-M000558" class="method-detail">
+        <a name="M000558"></a>
+
+        <div class="method-heading">
+          <a href="RFC2822Obsolete.src/M000558.html" target="Code" class="method-signature"
+            onclick="popupCode('RFC2822Obsolete.src/M000558.html');return false;">
+          <span class="method-name">_nt_obs_angle_addr</span><span class="method-args">()</span>
+          </a>
+        </div>
+      
+        <div class="method-description">
+        </div>
+      </div>
+
+      <div id="method-M000572" class="method-detail">
+        <a name="M000572"></a>
+
+        <div class="method-heading">
+          <a href="RFC2822Obsolete.src/M000572.html" target="Code" class="method-signature"
+            onclick="popupCode('RFC2822Obsolete.src/M000572.html');return false;">
+          <span class="method-name">_nt_obs_bcc</span><span class="method-args">()</span>
+          </a>
+        </div>
+      
+        <div class="method-description">
+        </div>
+      </div>
+
+      <div id="method-M000571" class="method-detail">
+        <a name="M000571"></a>
+
+        <div class="method-heading">
+          <a href="RFC2822Obsolete.src/M000571.html" target="Code" class="method-signature"
+            onclick="popupCode('RFC2822Obsolete.src/M000571.html');return false;">
+          <span class="method-name">_nt_obs_cc</span><span class="method-args">()</span>
+          </a>
+        </div>
+      
+        <div class="method-description">
+        </div>
+      </div>
+
+      <div id="method-M000545" class="method-detail">
+        <a name="M000545"></a>
+
+        <div class="method-heading">
+          <a href="RFC2822Obsolete.src/M000545.html" target="Code" class="method-signature"
+            onclick="popupCode('RFC2822Obsolete.src/M000545.html');return false;">
+          <span class="method-name">_nt_obs_char</span><span class="method-args">()</span>
+          </a>
+        </div>
+      
+        <div class="method-description">
+        </div>
+      </div>
+
+      <div id="method-M000579" class="method-detail">
+        <a name="M000579"></a>
+
+        <div class="method-heading">
+          <a href="RFC2822Obsolete.src/M000579.html" target="Code" class="method-signature"
+            onclick="popupCode('RFC2822Obsolete.src/M000579.html');return false;">
+          <span class="method-name">_nt_obs_comments</span><span class="method-args">()</span>
+          </a>
+        </div>
+      
+        <div class="method-description">
+        </div>
+      </div>
+
+      <div id="method-M000553" class="method-detail">
+        <a name="M000553"></a>
+
+        <div class="method-heading">
+          <a href="RFC2822Obsolete.src/M000553.html" target="Code" class="method-signature"
+            onclick="popupCode('RFC2822Obsolete.src/M000553.html');return false;">
+          <span class="method-name">_nt_obs_day</span><span class="method-args">()</span>
+          </a>
+        </div>
+      
+        <div class="method-description">
+        </div>
+      </div>
+
+      <div id="method-M000550" class="method-detail">
+        <a name="M000550"></a>
+
+        <div class="method-heading">
+          <a href="RFC2822Obsolete.src/M000550.html" target="Code" class="method-signature"
+            onclick="popupCode('RFC2822Obsolete.src/M000550.html');return false;">
+          <span class="method-name">_nt_obs_day_of_week</span><span class="method-args">()</span>
+          </a>
+        </div>
+      
+        <div class="method-description">
+        </div>
+      </div>
+
+      <div id="method-M000562" class="method-detail">
+        <a name="M000562"></a>
+
+        <div class="method-heading">
+          <a href="RFC2822Obsolete.src/M000562.html" target="Code" class="method-signature"
+            onclick="popupCode('RFC2822Obsolete.src/M000562.html');return false;">
+          <span class="method-name">_nt_obs_domain</span><span class="method-args">()</span>
+          </a>
+        </div>
+      
+        <div class="method-description">
+        </div>
+      </div>
+
+      <div id="method-M000560" class="method-detail">
+        <a name="M000560"></a>
+
+        <div class="method-heading">
+          <a href="RFC2822Obsolete.src/M000560.html" target="Code" class="method-signature"
+            onclick="popupCode('RFC2822Obsolete.src/M000560.html');return false;">
+          <span class="method-name">_nt_obs_domain_list</span><span class="method-args">()</span>
+          </a>
+        </div>
+      
+        <div class="method-description">
+        </div>
+      </div>
+
+      <div id="method-M000565" class="method-detail">
+        <a name="M000565"></a>
+
+        <div class="method-heading">
+          <a href="RFC2822Obsolete.src/M000565.html" target="Code" class="method-signature"
+            onclick="popupCode('RFC2822Obsolete.src/M000565.html');return false;">
+          <span class="method-name">_nt_obs_fields</span><span class="method-args">()</span>
+          </a>
+        </div>
+      
+        <div class="method-description">
+        </div>
+      </div>
+
+      <div id="method-M000567" class="method-detail">
+        <a name="M000567"></a>
+
+        <div class="method-heading">
+          <a href="RFC2822Obsolete.src/M000567.html" target="Code" class="method-signature"
+            onclick="popupCode('RFC2822Obsolete.src/M000567.html');return false;">
+          <span class="method-name">_nt_obs_from</span><span class="method-args">()</span>
+          </a>
+        </div>
+      
+        <div class="method-description">
+        </div>
+      </div>
+
+      <div id="method-M000554" class="method-detail">
+        <a name="M000554"></a>
+
+        <div class="method-heading">
+          <a href="RFC2822Obsolete.src/M000554.html" target="Code" class="method-signature"
+            onclick="popupCode('RFC2822Obsolete.src/M000554.html');return false;">
+          <span class="method-name">_nt_obs_hour</span><span class="method-args">()</span>
+          </a>
+        </div>
+      
+        <div class="method-description">
+        </div>
+      </div>
+
+      <div id="method-M000576" class="method-detail">
+        <a name="M000576"></a>
+
+        <div class="method-heading">
+          <a href="RFC2822Obsolete.src/M000576.html" target="Code" class="method-signature"
+            onclick="popupCode('RFC2822Obsolete.src/M000576.html');return false;">
+          <span class="method-name">_nt_obs_id_left</span><span class="method-args">()</span>
+          </a>
+        </div>
+      
+        <div class="method-description">
+        </div>
+      </div>
+
+      <div id="method-M000577" class="method-detail">
+        <a name="M000577"></a>
+
+        <div class="method-heading">
+          <a href="RFC2822Obsolete.src/M000577.html" target="Code" class="method-signature"
+            onclick="popupCode('RFC2822Obsolete.src/M000577.html');return false;">
+          <span class="method-name">_nt_obs_id_right</span><span class="method-args">()</span>
+          </a>
+        </div>
+      
+        <div class="method-description">
+        </div>
+      </div>
+
+      <div id="method-M000574" class="method-detail">
+        <a name="M000574"></a>
+
+        <div class="method-heading">
+          <a href="RFC2822Obsolete.src/M000574.html" target="Code" class="method-signature"
+            onclick="popupCode('RFC2822Obsolete.src/M000574.html');return false;">
+          <span class="method-name">_nt_obs_in_reply_to</span><span class="method-args">()</span>
+          </a>
+        </div>
+      
+        <div class="method-description">
+        </div>
+      </div>
+
+      <div id="method-M000580" class="method-detail">
+        <a name="M000580"></a>
+
+        <div class="method-heading">
+          <a href="RFC2822Obsolete.src/M000580.html" target="Code" class="method-signature"
+            onclick="popupCode('RFC2822Obsolete.src/M000580.html');return false;">
+          <span class="method-name">_nt_obs_keywords</span><span class="method-args">()</span>
+          </a>
+        </div>
+      
+        <div class="method-description">
+        </div>
+      </div>
+
+      <div id="method-M000561" class="method-detail">
+        <a name="M000561"></a>
+
+        <div class="method-heading">
+          <a href="RFC2822Obsolete.src/M000561.html" target="Code" class="method-signature"
+            onclick="popupCode('RFC2822Obsolete.src/M000561.html');return false;">
+          <span class="method-name">_nt_obs_local_part</span><span class="method-args">()</span>
+          </a>
+        </div>
+      
+        <div class="method-description">
+        </div>
+      </div>
+
+      <div id="method-M000563" class="method-detail">
+        <a name="M000563"></a>
+
+        <div class="method-heading">
+          <a href="RFC2822Obsolete.src/M000563.html" target="Code" class="method-signature"
+            onclick="popupCode('RFC2822Obsolete.src/M000563.html');return false;">
+          <span class="method-name">_nt_obs_mbox_list</span><span class="method-args">()</span>
+          </a>
+        </div>
+      
+        <div class="method-description">
+        </div>
+      </div>
+
+      <div id="method-M000573" class="method-detail">
+        <a name="M000573"></a>
+
+        <div class="method-heading">
+          <a href="RFC2822Obsolete.src/M000573.html" target="Code" class="method-signature"
+            onclick="popupCode('RFC2822Obsolete.src/M000573.html');return false;">
+          <span class="method-name">_nt_obs_message_id</span><span class="method-args">()</span>
+          </a>
+        </div>
+      
+        <div class="method-description">
+        </div>
+      </div>
+
+      <div id="method-M000555" class="method-detail">
+        <a name="M000555"></a>
+
+        <div class="method-heading">
+          <a href="RFC2822Obsolete.src/M000555.html" target="Code" class="method-signature"
+            onclick="popupCode('RFC2822Obsolete.src/M000555.html');return false;">
+          <span class="method-name">_nt_obs_minute</span><span class="method-args">()</span>
+          </a>
+        </div>
+      
+        <div class="method-description">
+        </div>
+      </div>
+
+      <div id="method-M000552" class="method-detail">
+        <a name="M000552"></a>
+
+        <div class="method-heading">
+          <a href="RFC2822Obsolete.src/M000552.html" target="Code" class="method-signature"
+            onclick="popupCode('RFC2822Obsolete.src/M000552.html');return false;">
+          <span class="method-name">_nt_obs_month</span><span class="method-args">()</span>
+          </a>
+        </div>
+      
+        <div class="method-description">
+        </div>
+      </div>
+
+      <div id="method-M000592" class="method-detail">
+        <a name="M000592"></a>
+
+        <div class="method-heading">
+          <a href="RFC2822Obsolete.src/M000592.html" target="Code" class="method-signature"
+            onclick="popupCode('RFC2822Obsolete.src/M000592.html');return false;">
+          <span class="method-name">_nt_obs_optional</span><span class="method-args">()</span>
+          </a>
+        </div>
+      
+        <div class="method-description">
+        </div>
+      </div>
+
+      <div id="method-M000566" class="method-detail">
+        <a name="M000566"></a>
+
+        <div class="method-heading">
+          <a href="RFC2822Obsolete.src/M000566.html" target="Code" class="method-signature"
+            onclick="popupCode('RFC2822Obsolete.src/M000566.html');return false;">
+          <span class="method-name">_nt_obs_orig_date</span><span class="method-args">()</span>
+          </a>
+        </div>
+      
+        <div class="method-description">
+        </div>
+      </div>
+
+      <div id="method-M000591" class="method-detail">
+        <a name="M000591"></a>
+
+        <div class="method-heading">
+          <a href="RFC2822Obsolete.src/M000591.html" target="Code" class="method-signature"
+            onclick="popupCode('RFC2822Obsolete.src/M000591.html');return false;">
+          <span class="method-name">_nt_obs_path</span><span class="method-args">()</span>
+          </a>
+        </div>
+      
+        <div class="method-description">
+        </div>
+      </div>
+
+      <div id="method-M000547" class="method-detail">
+        <a name="M000547"></a>
+
+        <div class="method-heading">
+          <a href="RFC2822Obsolete.src/M000547.html" target="Code" class="method-signature"
+            onclick="popupCode('RFC2822Obsolete.src/M000547.html');return false;">
+          <span class="method-name">_nt_obs_phrase</span><span class="method-args">()</span>
+          </a>
+        </div>
+      
+        <div class="method-description">
+        </div>
+      </div>
+
+      <div id="method-M000548" class="method-detail">
+        <a name="M000548"></a>
+
+        <div class="method-heading">
+          <a href="RFC2822Obsolete.src/M000548.html" target="Code" class="method-signature"
+            onclick="popupCode('RFC2822Obsolete.src/M000548.html');return false;">
+          <span class="method-name">_nt_obs_phrase_list</span><span class="method-args">()</span>
+          </a>
+        </div>
+      
+        <div class="method-description">
+        </div>
+      </div>
+
+      <div id="method-M000543" class="method-detail">
+        <a name="M000543"></a>
+
+        <div class="method-heading">
+          <a href="RFC2822Obsolete.src/M000543.html" target="Code" class="method-signature"
+            onclick="popupCode('RFC2822Obsolete.src/M000543.html');return false;">
+          <span class="method-name">_nt_obs_qp</span><span class="method-args">()</span>
+          </a>
+        </div>
+      
+        <div class="method-description">
+        </div>
+      </div>
+
+      <div id="method-M000590" class="method-detail">
+        <a name="M000590"></a>
+
+        <div class="method-heading">
+          <a href="RFC2822Obsolete.src/M000590.html" target="Code" class="method-signature"
+            onclick="popupCode('RFC2822Obsolete.src/M000590.html');return false;">
+          <span class="method-name">_nt_obs_received</span><span class="method-args">()</span>
+          </a>
+        </div>
+      
+        <div class="method-description">
+        </div>
+      </div>
+
+      <div id="method-M000575" class="method-detail">
+        <a name="M000575"></a>
+
+        <div class="method-heading">
+          <a href="RFC2822Obsolete.src/M000575.html" target="Code" class="method-signature"
+            onclick="popupCode('RFC2822Obsolete.src/M000575.html');return false;">
+          <span class="method-name">_nt_obs_references</span><span class="method-args">()</span>
+          </a>
+        </div>
+      
+        <div class="method-description">
+        </div>
+      </div>
+
+      <div id="method-M000569" class="method-detail">
+        <a name="M000569"></a>
+
+        <div class="method-heading">
+          <a href="RFC2822Obsolete.src/M000569.html" target="Code" class="method-signature"
+            onclick="popupCode('RFC2822Obsolete.src/M000569.html');return false;">
+          <span class="method-name">_nt_obs_reply_to</span><span class="method-args">()</span>
+          </a>
+        </div>
+      
+        <div class="method-description">
+        </div>
+      </div>
+
+      <div id="method-M000586" class="method-detail">
+        <a name="M000586"></a>
+
+        <div class="method-heading">
+          <a href="RFC2822Obsolete.src/M000586.html" target="Code" class="method-signature"
+            onclick="popupCode('RFC2822Obsolete.src/M000586.html');return false;">
+          <span class="method-name">_nt_obs_resent_bcc</span><span class="method-args">()</span>
+          </a>
+        </div>
+      
+        <div class="method-description">
+        </div>
+      </div>
+
+      <div id="method-M000585" class="method-detail">
+        <a name="M000585"></a>
+
+        <div class="method-heading">
+          <a href="RFC2822Obsolete.src/M000585.html" target="Code" class="method-signature"
+            onclick="popupCode('RFC2822Obsolete.src/M000585.html');return false;">
+          <span class="method-name">_nt_obs_resent_cc</span><span class="method-args">()</span>
+          </a>
+        </div>
+      
+        <div class="method-description">
+        </div>
+      </div>
+
+      <div id="method-M000583" class="method-detail">
+        <a name="M000583"></a>
+
+        <div class="method-heading">
+          <a href="RFC2822Obsolete.src/M000583.html" target="Code" class="method-signature"
+            onclick="popupCode('RFC2822Obsolete.src/M000583.html');return false;">
+          <span class="method-name">_nt_obs_resent_date</span><span class="method-args">()</span>
+          </a>
+        </div>
+      
+        <div class="method-description">
+        </div>
+      </div>
+
+      <div id="method-M000581" class="method-detail">
+        <a name="M000581"></a>
+
+        <div class="method-heading">
+          <a href="RFC2822Obsolete.src/M000581.html" target="Code" class="method-signature"
+            onclick="popupCode('RFC2822Obsolete.src/M000581.html');return false;">
+          <span class="method-name">_nt_obs_resent_from</span><span class="method-args">()</span>
+          </a>
+        </div>
+      
+        <div class="method-description">
+        </div>
+      </div>
+
+      <div id="method-M000587" class="method-detail">
+        <a name="M000587"></a>
+
+        <div class="method-heading">
+          <a href="RFC2822Obsolete.src/M000587.html" target="Code" class="method-signature"
+            onclick="popupCode('RFC2822Obsolete.src/M000587.html');return false;">
+          <span class="method-name">_nt_obs_resent_mid</span><span class="method-args">()</span>
+          </a>
+        </div>
+      
+        <div class="method-description">
+        </div>
+      </div>
+
+      <div id="method-M000588" class="method-detail">
+        <a name="M000588"></a>
+
+        <div class="method-heading">
+          <a href="RFC2822Obsolete.src/M000588.html" target="Code" class="method-signature"
+            onclick="popupCode('RFC2822Obsolete.src/M000588.html');return false;">
+          <span class="method-name">_nt_obs_resent_rply</span><span class="method-args">()</span>
+          </a>
+        </div>
+      
+        <div class="method-description">
+        </div>
+      </div>
+
+      <div id="method-M000582" class="method-detail">
+        <a name="M000582"></a>
+
+        <div class="method-heading">
+          <a href="RFC2822Obsolete.src/M000582.html" target="Code" class="method-signature"
+            onclick="popupCode('RFC2822Obsolete.src/M000582.html');return false;">
+          <span class="method-name">_nt_obs_resent_send</span><span class="method-args">()</span>
+          </a>
+        </div>
+      
+        <div class="method-description">
+        </div>
+      </div>
+
+      <div id="method-M000584" class="method-detail">
+        <a name="M000584"></a>
+
+        <div class="method-heading">
+          <a href="RFC2822Obsolete.src/M000584.html" target="Code" class="method-signature"
+            onclick="popupCode('RFC2822Obsolete.src/M000584.html');return false;">
+          <span class="method-name">_nt_obs_resent_to</span><span class="method-args">()</span>
+          </a>
+        </div>
+      
+        <div class="method-description">
+        </div>
+      </div>
+
+      <div id="method-M000589" class="method-detail">
+        <a name="M000589"></a>
+
+        <div class="method-heading">
+          <a href="RFC2822Obsolete.src/M000589.html" target="Code" class="method-signature"
+            onclick="popupCode('RFC2822Obsolete.src/M000589.html');return false;">
+          <span class="method-name">_nt_obs_return</span><span class="method-args">()</span>
+          </a>
+        </div>
+      
+        <div class="method-description">
+        </div>
+      </div>
+
+      <div id="method-M000559" class="method-detail">
+        <a name="M000559"></a>
+
+        <div class="method-heading">
+          <a href="RFC2822Obsolete.src/M000559.html" target="Code" class="method-signature"
+            onclick="popupCode('RFC2822Obsolete.src/M000559.html');return false;">
+          <span class="method-name">_nt_obs_route</span><span class="method-args">()</span>
+          </a>
+        </div>
+      
+        <div class="method-description">
+        </div>
+      </div>
+
+      <div id="method-M000556" class="method-detail">
+        <a name="M000556"></a>
+
+        <div class="method-heading">
+          <a href="RFC2822Obsolete.src/M000556.html" target="Code" class="method-signature"
+            onclick="popupCode('RFC2822Obsolete.src/M000556.html');return false;">
+          <span class="method-name">_nt_obs_second</span><span class="method-args">()</span>
+          </a>
+        </div>
+      
+        <div class="method-description">
+        </div>
+      </div>
+
+      <div id="method-M000568" class="method-detail">
+        <a name="M000568"></a>
+
+        <div class="method-heading">
+          <a href="RFC2822Obsolete.src/M000568.html" target="Code" class="method-signature"
+            onclick="popupCode('RFC2822Obsolete.src/M000568.html');return false;">
+          <span class="method-name">_nt_obs_sender</span><span class="method-args">()</span>
+          </a>
+        </div>
+      
+        <div class="method-description">
+        </div>
+      </div>
+
+      <div id="method-M000578" class="method-detail">
+        <a name="M000578"></a>
+
+        <div class="method-heading">
+          <a href="RFC2822Obsolete.src/M000578.html" target="Code" class="method-signature"
+            onclick="popupCode('RFC2822Obsolete.src/M000578.html');return false;">
+          <span class="method-name">_nt_obs_subject</span><span class="method-args">()</span>
+          </a>
+        </div>
+      
+        <div class="method-description">
+        </div>
+      </div>
+
+      <div id="method-M000544" class="method-detail">
+        <a name="M000544"></a>
+
+        <div class="method-heading">
+          <a href="RFC2822Obsolete.src/M000544.html" target="Code" class="method-signature"
+            onclick="popupCode('RFC2822Obsolete.src/M000544.html');return false;">
+          <span class="method-name">_nt_obs_text</span><span class="method-args">()</span>
+          </a>
+        </div>
+      
+        <div class="method-description">
+        </div>
+      </div>
+
+      <div id="method-M000570" class="method-detail">
+        <a name="M000570"></a>
+
+        <div class="method-heading">
+          <a href="RFC2822Obsolete.src/M000570.html" target="Code" class="method-signature"
+            onclick="popupCode('RFC2822Obsolete.src/M000570.html');return false;">
+          <span class="method-name">_nt_obs_to</span><span class="method-args">()</span>
+          </a>
+        </div>
+      
+        <div class="method-description">
+        </div>
+      </div>
+
+      <div id="method-M000546" class="method-detail">
+        <a name="M000546"></a>
+
+        <div class="method-heading">
+          <a href="RFC2822Obsolete.src/M000546.html" target="Code" class="method-signature"
+            onclick="popupCode('RFC2822Obsolete.src/M000546.html');return false;">
+          <span class="method-name">_nt_obs_utext</span><span class="method-args">()</span>
+          </a>
+        </div>
+      
+        <div class="method-description">
+        </div>
+      </div>
+
+      <div id="method-M000551" class="method-detail">
+        <a name="M000551"></a>
+
+        <div class="method-heading">
+          <a href="RFC2822Obsolete.src/M000551.html" target="Code" class="method-signature"
+            onclick="popupCode('RFC2822Obsolete.src/M000551.html');return false;">
+          <span class="method-name">_nt_obs_year</span><span class="method-args">()</span>
+          </a>
+        </div>
+      
+        <div class="method-description">
+        </div>
+      </div>
+
+      <div id="method-M000557" class="method-detail">
+        <a name="M000557"></a>
+
+        <div class="method-heading">
+          <a href="RFC2822Obsolete.src/M000557.html" target="Code" class="method-signature"
+            onclick="popupCode('RFC2822Obsolete.src/M000557.html');return false;">
+          <span class="method-name">_nt_obs_zone</span><span class="method-args">()</span>
+          </a>
+        </div>
+      
+        <div class="method-description">
+        </div>
+      </div>
+
+      <div id="method-M000542" class="method-detail">
+        <a name="M000542"></a>
+
+        <div class="method-heading">
+          <a href="RFC2822Obsolete.src/M000542.html" target="Code" class="method-signature"
+            onclick="popupCode('RFC2822Obsolete.src/M000542.html');return false;">
+          <span class="method-name">root</span><span class="method-args">()</span>
+          </a>
+        </div>
+      
+        <div class="method-description">
+        </div>
+      </div>
+
+
+    </div>
+
+
+  </div>
+
+
+<div id="validator-badges">
+  <p><small><a href="http://validator.w3.org/check/referer">[Validate]</a></small></p>
+</div>
+
+</body>
+</html>

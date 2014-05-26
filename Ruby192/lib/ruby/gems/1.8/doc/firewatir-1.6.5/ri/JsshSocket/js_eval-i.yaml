@@ -1,0 +1,12 @@
+--- !ruby/object:RI::MethodDescription 
+aliases: []
+
+block_params: 
+comment: 
+- !ruby/struct:SM::Flow::P 
+  body: Evaluate javascript and return result. Raise an exception if an error occurred.
+full_name: JsshSocket#js_eval
+is_singleton: false
+name: js_eval
+params: (str)
+visibility: public

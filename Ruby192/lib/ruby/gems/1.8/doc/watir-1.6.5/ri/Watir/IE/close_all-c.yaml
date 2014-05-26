@@ -1,0 +1,12 @@
+--- !ruby/object:RI::MethodDescription 
+aliases: []
+
+block_params: 
+comment: 
+- !ruby/struct:SM::Flow::P 
+  body: close all ie browser windows
+full_name: Watir::IE::close_all
+is_singleton: true
+name: close_all
+params: ()
+visibility: public

@@ -1,0 +1,1007 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+<!DOCTYPE html 
+     PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+     "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+  <title>Module: Watir::Simple</title>
+  <meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" />
+  <meta http-equiv="Content-Script-Type" content="text/javascript" />
+  <link rel="stylesheet" href="../.././rdoc-style.css" type="text/css" media="screen" />
+  <script type="text/javascript">
+  // <![CDATA[
+
+  function popupCode( url ) {
+    window.open(url, "Code", "resizable=yes,scrollbars=yes,toolbar=no,status=no,height=150,width=400")
+  }
+
+  function toggleCode( id ) {
+    if ( document.getElementById )
+      elem = document.getElementById( id );
+    else if ( document.all )
+      elem = eval( "document.all." + id );
+    else
+      return false;
+
+    elemStyle = elem.style;
+    
+    if ( elemStyle.display != "block" ) {
+      elemStyle.display = "block"
+    } else {
+      elemStyle.display = "none"
+    }
+
+    return true;
+  }
+  
+  // Make codeblocks hidden by default
+  document.writeln( "<style type=\"text/css\">div.method-source-code { display: none }</style>" )
+  
+  // ]]>
+  </script>
+
+</head>
+<body>
+
+
+
+    <div id="classHeader">
+        <table class="header-table">
+        <tr class="top-aligned-row">
+          <td><strong>Module</strong></td>
+          <td class="class-name-in-header">Watir::Simple</td>
+        </tr>
+        <tr class="top-aligned-row">
+            <td><strong>In:</strong></td>
+            <td>
+                <a href="../../files/lib/watir/watir_simple_rb.html">
+                lib/watir/watir_simple.rb
+                </a>
+        <br />
+            </td>
+        </tr>
+
+        </table>
+    </div>
+  <!-- banner header -->
+
+  <div id="bodyContent">
+
+
+
+  <div id="contextContent">
+
+    <div id="description">
+      <h1>Description</h1>
+<p>
+<a href="Simple.html">Watir::Simple</a> is a simple wrapper around the <a
+href="../Watir.html">Watir</a> module. It provides a similar set of
+operations while simplifying them and removing as much syntax and
+test-framework context code as possible. The goal is to allow toolsmiths to
+write domain-language frameworks on top of <a
+href="../Watir.html">Watir</a>, using <a
+href="Simple.html">Watir::Simple</a> as an easier, lightweight interface to
+the power of <a href="../Watir.html">Watir</a>.
+</p>
+<h1>Note</h1>
+<p>
+Most action methods in <a href="Simple.html">Watir::Simple</a> will
+automatically wait for the browser not to be busy before and after they
+perform the specified action.
+</p>
+<p>
+revision: $Revision$
+</p>
+
+    </div>
+
+
+   </div>
+
+    <div id="method-list">
+      <h3 class="section-bar">Methods</h3>
+
+      <div class="name-list">
+      <a href="#M000167">assert_image_with_id</a>&nbsp;&nbsp;
+      <a href="#M000166">assert_image_with_src</a>&nbsp;&nbsp;
+      <a href="#M000153">assert_text_in_body</a>&nbsp;&nbsp;
+      <a href="#M000157">assert_text_in_combobox_by_id</a>&nbsp;&nbsp;
+      <a href="#M000156">assert_text_in_combobox_by_name</a>&nbsp;&nbsp;
+      <a href="#M000155">assert_text_in_combobox_wrapper</a>&nbsp;&nbsp;
+      <a href="#M000154">assert_text_in_field</a>&nbsp;&nbsp;
+      <a href="#M000152">assert_text_not_in_body</a>&nbsp;&nbsp;
+      <a href="#M000150">click_button_with_caption</a>&nbsp;&nbsp;
+      <a href="#M000148">click_button_with_id</a>&nbsp;&nbsp;
+      <a href="#M000151">click_button_with_index</a>&nbsp;&nbsp;
+      <a href="#M000147">click_button_with_name</a>&nbsp;&nbsp;
+      <a href="#M000149">click_button_with_value</a>&nbsp;&nbsp;
+      <a href="#M000134">click_link_with_id</a>&nbsp;&nbsp;
+      <a href="#M000136">click_link_with_index</a>&nbsp;&nbsp;
+      <a href="#M000135">click_link_with_name</a>&nbsp;&nbsp;
+      <a href="#M000137">click_link_with_text</a>&nbsp;&nbsp;
+      <a href="#M000133">click_link_with_url</a>&nbsp;&nbsp;
+      <a href="#M000158">close_browser</a>&nbsp;&nbsp;
+      <a href="#M000164">combobox_default_selection</a>&nbsp;&nbsp;
+      <a href="#M000165">count_instances_of</a>&nbsp;&nbsp;
+      <a href="#M000139">enter_text_into_field_with_id</a>&nbsp;&nbsp;
+      <a href="#M000140">enter_text_into_field_with_index</a>&nbsp;&nbsp;
+      <a href="#M000138">enter_text_into_field_with_name</a>&nbsp;&nbsp;
+      <a href="#M000162">fill_text_field</a>&nbsp;&nbsp;
+      <a href="#M000161">fill_text_fields</a>&nbsp;&nbsp;
+      <a href="#M000159">go_back</a>&nbsp;&nbsp;
+      <a href="#M000160">go_forward</a>&nbsp;&nbsp;
+      <a href="#M000130">navigate_to</a>&nbsp;&nbsp;
+      <a href="#M000132">navigate_to_link_with_id</a>&nbsp;&nbsp;
+      <a href="#M000131">navigate_to_link_with_url</a>&nbsp;&nbsp;
+      <a href="#M000129">new_browser_at</a>&nbsp;&nbsp;
+      <a href="#M000142">select_from_combobox_with_id</a>&nbsp;&nbsp;
+      <a href="#M000143">select_from_combobox_with_index</a>&nbsp;&nbsp;
+      <a href="#M000141">select_from_combobox_with_name</a>&nbsp;&nbsp;
+      <a href="#M000146">select_radio_button_with_id</a>&nbsp;&nbsp;
+      <a href="#M000144">select_radio_button_with_name</a>&nbsp;&nbsp;
+      <a href="#M000145">select_radio_button_with_name</a>&nbsp;&nbsp;
+      <a href="#M000168">wait_before_and_after</a>&nbsp;&nbsp;
+      <a href="#M000163">wait_for_browser</a>&nbsp;&nbsp;
+      </div>
+    </div>
+
+  </div>
+
+
+    <!-- if includes -->
+
+    <div id="section">
+
+
+
+
+
+      
+
+
+    <!-- if method_list -->
+    <div id="methods">
+      <h3 class="section-bar">Public Instance methods</h3>
+
+      <div id="method-M000167" class="method-detail">
+        <a name="M000167"></a>
+
+        <div class="method-heading">
+          <a href="Simple.src/M000167.html" target="Code" class="method-signature"
+            onclick="popupCode('Simple.src/M000167.html');return false;">
+          <span class="method-name">assert_image_with_id</span><span class="method-args">(id, mesg=nil)</span>
+          </a>
+        </div>
+      
+        <div class="method-description">
+          <p>
+Make a Test::Unit assertion that an image exists on the page with the given
+<tt>id</tt> attribute. (Preferred method)
+</p>
+<ul>
+<li>mesg - <tt><a href="../String.html">String</a></tt> - An optional
+assertion-failed message.
+
+</li>
+</ul>
+        </div>
+      </div>
+
+      <div id="method-M000166" class="method-detail">
+        <a name="M000166"></a>
+
+        <div class="method-heading">
+          <a href="Simple.src/M000166.html" target="Code" class="method-signature"
+            onclick="popupCode('Simple.src/M000166.html');return false;">
+          <span class="method-name">assert_image_with_src</span><span class="method-args">(src, mesg=nil)</span>
+          </a>
+        </div>
+      
+        <div class="method-description">
+          <p>
+Make a Test::Unit assertion that an image exists on the page with the given
+<tt>src</tt> attribute.
+</p>
+<ul>
+<li>mesg - <tt><a href="../String.html">String</a></tt> - An optional
+assertion-failed message.
+
+</li>
+</ul>
+        </div>
+      </div>
+
+      <div id="method-M000153" class="method-detail">
+        <a name="M000153"></a>
+
+        <div class="method-heading">
+          <a href="Simple.src/M000153.html" target="Code" class="method-signature"
+            onclick="popupCode('Simple.src/M000153.html');return false;">
+          <span class="method-name">assert_text_in_body</span><span class="method-args">(text,mesg=nil)</span>
+          </a>
+        </div>
+      
+        <div class="method-description">
+          <p>
+Make a Test::Unit assertion that the given <tt>text</tt> appears in the
+text body.
+</p>
+<ul>
+<li>text - <tt><a href="../String.html">String</a></tt> or <tt>RegExp</tt> -
+The text or regular expression to search for.
+
+</li>
+<li>mesg - <tt><a href="../String.html">String</a></tt> - An optional
+assertion-failed message.
+
+</li>
+</ul>
+        </div>
+      </div>
+
+      <div id="method-M000157" class="method-detail">
+        <a name="M000157"></a>
+
+        <div class="method-heading">
+          <a href="Simple.src/M000157.html" target="Code" class="method-signature"
+            onclick="popupCode('Simple.src/M000157.html');return false;">
+          <span class="method-name">assert_text_in_combobox_by_id</span><span class="method-args">(id, text, mesg=nil)</span>
+          </a>
+        </div>
+      
+        <div class="method-description">
+          <p>
+This method returns true|false if the text is selected in the combobox with
+the supplied id.
+</p>
+<ul>
+<li>id - string - Id of field to examine.
+
+</li>
+<li>text - string/Array of Strings - The string or array of strings to search
+for.
+
+</li>
+<li>mesg - Optional! string - Set this if you want to supply your own error
+message
+
+</li>
+</ul>
+        </div>
+      </div>
+
+      <div id="method-M000156" class="method-detail">
+        <a name="M000156"></a>
+
+        <div class="method-heading">
+          <a href="Simple.src/M000156.html" target="Code" class="method-signature"
+            onclick="popupCode('Simple.src/M000156.html');return false;">
+          <span class="method-name">assert_text_in_combobox_by_name</span><span class="method-args">(name, text, mesg=nil)</span>
+          </a>
+        </div>
+      
+        <div class="method-description">
+          <p>
+This method returns true|false if the text is selected in the combobox with
+the supplied name.
+</p>
+<ul>
+<li>name - string - Name of field to examine.
+
+</li>
+<li>text - string/Array of Strings - The string or array of strings to search
+for.
+
+</li>
+<li>mesg - Optional! string - Set this if you want to supply your own error
+message
+
+</li>
+</ul>
+        </div>
+      </div>
+
+      <div id="method-M000155" class="method-detail">
+        <a name="M000155"></a>
+
+        <div class="method-heading">
+          <a href="Simple.src/M000155.html" target="Code" class="method-signature"
+            onclick="popupCode('Simple.src/M000155.html');return false;">
+          <span class="method-name">assert_text_in_combobox_wrapper</span><span class="method-args">(how, what, text, mesg=nil)</span>
+          </a>
+        </div>
+      
+        <div class="method-description">
+          <ul>
+<li>how - symbol - the way we look for the object. Supported values are
+
+<pre>
+             - :name
+             - :id
+             - :index
+</pre>
+</li>
+<li>what - string - What field, id or name to examine.
+
+</li>
+<li>text - string/Array of Strings - The string or array of strings to search
+for.
+
+</li>
+<li>mesg - Optional! string - Set this if you want to supply your own error
+message
+
+</li>
+</ul>
+        </div>
+      </div>
+
+      <div id="method-M000154" class="method-detail">
+        <a name="M000154"></a>
+
+        <div class="method-heading">
+          <a href="Simple.src/M000154.html" target="Code" class="method-signature"
+            onclick="popupCode('Simple.src/M000154.html');return false;">
+          <span class="method-name">assert_text_in_field</span><span class="method-args">(name, text, mesg=nil)</span>
+          </a>
+        </div>
+      
+        <div class="method-description">
+          <p>
+This method returns true|false if the text/reg exp supplied is in a the
+text field &quot;name&quot;.
+</p>
+<ul>
+<li>name - <tt><a href="../String.html">String</a></tt> - Name of field to
+examine.
+
+</li>
+<li>text - <tt><a href="../String.html">String</a></tt> or <tt>RegExp</tt> -
+The text or regular expression to search for.
+
+</li>
+<li>mesg - <tt><a href="../String.html">String</a></tt> - An optional
+assertion-failed message.
+
+</li>
+</ul>
+        </div>
+      </div>
+
+      <div id="method-M000152" class="method-detail">
+        <a name="M000152"></a>
+
+        <div class="method-heading">
+          <a href="Simple.src/M000152.html" target="Code" class="method-signature"
+            onclick="popupCode('Simple.src/M000152.html');return false;">
+          <span class="method-name">assert_text_not_in_body</span><span class="method-args">(text,mesg=nil)</span>
+          </a>
+        </div>
+      
+        <div class="method-description">
+          <p>
+Make a Test::Unit assertion that the given <tt>text</tt> does not appear in
+the text body.
+</p>
+<ul>
+<li>mesg - An assertion-failed message.
+
+</li>
+</ul>
+        </div>
+      </div>
+
+      <div id="method-M000150" class="method-detail">
+        <a name="M000150"></a>
+
+        <div class="method-heading">
+          <a href="Simple.src/M000150.html" target="Code" class="method-signature"
+            onclick="popupCode('Simple.src/M000150.html');return false;">
+          <span class="method-name">click_button_with_caption</span><span class="method-args">(caption)</span>
+          </a>
+        </div>
+      
+        <div class="method-description">
+          <p>
+Tell the browser to click on a form button with the specified caption text.
+</p>
+        </div>
+      </div>
+
+      <div id="method-M000148" class="method-detail">
+        <a name="M000148"></a>
+
+        <div class="method-heading">
+          <a href="Simple.src/M000148.html" target="Code" class="method-signature"
+            onclick="popupCode('Simple.src/M000148.html');return false;">
+          <span class="method-name">click_button_with_id</span><span class="method-args">(id)</span>
+          </a>
+        </div>
+      
+        <div class="method-description">
+          <p>
+Tell the browser to click on a form button with the specified id attribute.
+</p>
+        </div>
+      </div>
+
+      <div id="method-M000151" class="method-detail">
+        <a name="M000151"></a>
+
+        <div class="method-heading">
+          <a href="Simple.src/M000151.html" target="Code" class="method-signature"
+            onclick="popupCode('Simple.src/M000151.html');return false;">
+          <span class="method-name">click_button_with_index</span><span class="method-args">(index)</span>
+          </a>
+        </div>
+      
+        <div class="method-description">
+          <p>
+Tell the browser to click on the <tt>index</tt>&#8216;th form button on the
+page.
+</p>
+        </div>
+      </div>
+
+      <div id="method-M000147" class="method-detail">
+        <a name="M000147"></a>
+
+        <div class="method-heading">
+          <a href="Simple.src/M000147.html" target="Code" class="method-signature"
+            onclick="popupCode('Simple.src/M000147.html');return false;">
+          <span class="method-name">click_button_with_name</span><span class="method-args">(name)</span>
+          </a>
+        </div>
+      
+        <div class="method-description">
+          <p>
+Tell the browser to click on a form button with <tt>name</tt>.
+</p>
+        </div>
+      </div>
+
+      <div id="method-M000149" class="method-detail">
+        <a name="M000149"></a>
+
+        <div class="method-heading">
+          <a href="Simple.src/M000149.html" target="Code" class="method-signature"
+            onclick="popupCode('Simple.src/M000149.html');return false;">
+          <span class="method-name">click_button_with_value</span><span class="method-args">(value)</span>
+          </a>
+        </div>
+      
+        <div class="method-description">
+          <p>
+Tell the browser to click on a form button with the specified value
+attribute.
+</p>
+        </div>
+      </div>
+
+      <div id="method-M000134" class="method-detail">
+        <a name="M000134"></a>
+
+        <div class="method-heading">
+          <a href="Simple.src/M000134.html" target="Code" class="method-signature"
+            onclick="popupCode('Simple.src/M000134.html');return false;">
+          <span class="method-name">click_link_with_id</span><span class="method-args">(id)</span>
+          </a>
+        </div>
+      
+        <div class="method-description">
+          <p>
+Tell the browser to click on the first link with the specified id attribute
+(the preferred method.)
+</p>
+        </div>
+      </div>
+
+      <div id="method-M000136" class="method-detail">
+        <a name="M000136"></a>
+
+        <div class="method-heading">
+          <a href="Simple.src/M000136.html" target="Code" class="method-signature"
+            onclick="popupCode('Simple.src/M000136.html');return false;">
+          <span class="method-name">click_link_with_index</span><span class="method-args">(index)</span>
+          </a>
+        </div>
+      
+        <div class="method-description">
+          <p>
+Tell the browser to click on the specified link as determined by the
+sequential ordering of links on the document.
+</p>
+        </div>
+      </div>
+
+      <div id="method-M000135" class="method-detail">
+        <a name="M000135"></a>
+
+        <div class="method-heading">
+          <a href="Simple.src/M000135.html" target="Code" class="method-signature"
+            onclick="popupCode('Simple.src/M000135.html');return false;">
+          <span class="method-name">click_link_with_name</span><span class="method-args">(name)</span>
+          </a>
+        </div>
+      
+        <div class="method-description">
+          <p>
+Tell the browser to click on the first link with the specified name
+attribute
+</p>
+        </div>
+      </div>
+
+      <div id="method-M000137" class="method-detail">
+        <a name="M000137"></a>
+
+        <div class="method-heading">
+          <a href="Simple.src/M000137.html" target="Code" class="method-signature"
+            onclick="popupCode('Simple.src/M000137.html');return false;">
+          <span class="method-name">click_link_with_text</span><span class="method-args">(text)</span>
+          </a>
+        </div>
+      
+        <div class="method-description">
+          <p>
+Tell the browser to click on the first link with the specified text in the
+link body.
+</p>
+        </div>
+      </div>
+
+      <div id="method-M000133" class="method-detail">
+        <a name="M000133"></a>
+
+        <div class="method-heading">
+          <a href="Simple.src/M000133.html" target="Code" class="method-signature"
+            onclick="popupCode('Simple.src/M000133.html');return false;">
+          <span class="method-name">click_link_with_url</span><span class="method-args">(url)</span>
+          </a>
+        </div>
+      
+        <div class="method-description">
+          <p>
+Tell the browser to click on the first link with the specified URL. This
+takes the address of the link instead of the text displayed.
+</p>
+<ul>
+<li>url - can be a string to match exactly, or a regular expression.
+
+</li>
+</ul>
+<p>
+Example:
+</p>
+<pre>
+  click_link_with_url &quot;http://google.com&quot;
+</pre>
+<p>
+or:
+</p>
+<pre>
+  click_link_with_url /goo*/
+</pre>
+        </div>
+      </div>
+
+      <div id="method-M000158" class="method-detail">
+        <a name="M000158"></a>
+
+        <div class="method-heading">
+          <a href="Simple.src/M000158.html" target="Code" class="method-signature"
+            onclick="popupCode('Simple.src/M000158.html');return false;">
+          <span class="method-name">close_browser</span><span class="method-args">()</span>
+          </a>
+        </div>
+      
+        <div class="method-description">
+          <p>
+Close the browser window. Useful for automated test suites to reduce test
+interaction.
+</p>
+        </div>
+      </div>
+
+      <div id="method-M000164" class="method-detail">
+        <a name="M000164"></a>
+
+        <div class="method-heading">
+          <a href="Simple.src/M000164.html" target="Code" class="method-signature"
+            onclick="popupCode('Simple.src/M000164.html');return false;">
+          <span class="method-name">combobox_default_selection</span><span class="method-args">(name)</span>
+          </a>
+        </div>
+      
+        <div class="method-description">
+        </div>
+      </div>
+
+      <div id="method-M000165" class="method-detail">
+        <a name="M000165"></a>
+
+        <div class="method-heading">
+          <a href="Simple.src/M000165.html" target="Code" class="method-signature"
+            onclick="popupCode('Simple.src/M000165.html');return false;">
+          <span class="method-name">count_instances_of</span><span class="method-args">(text)</span>
+          </a>
+        </div>
+      
+        <div class="method-description">
+          <p>
+Returns the number of times <tt>text</tt> appears in the body text of the
+page.
+</p>
+        </div>
+      </div>
+
+      <div id="method-M000139" class="method-detail">
+        <a name="M000139"></a>
+
+        <div class="method-heading">
+          <a href="Simple.src/M000139.html" target="Code" class="method-signature"
+            onclick="popupCode('Simple.src/M000139.html');return false;">
+          <span class="method-name">enter_text_into_field_with_id</span><span class="method-args">(id, text)</span>
+          </a>
+        </div>
+      
+        <div class="method-description">
+          <p>
+Set the text of the field with a given id attribute (the preferred method.)
+This only types characters into the field and does not submit the form.
+</p>
+        </div>
+      </div>
+
+      <div id="method-M000140" class="method-detail">
+        <a name="M000140"></a>
+
+        <div class="method-heading">
+          <a href="Simple.src/M000140.html" target="Code" class="method-signature"
+            onclick="popupCode('Simple.src/M000140.html');return false;">
+          <span class="method-name">enter_text_into_field_with_index</span><span class="method-args">(index, text)</span>
+          </a>
+        </div>
+      
+        <div class="method-description">
+          <p>
+Set the text of the indexed field. This only types characters into the
+field and does not submit the form.
+</p>
+        </div>
+      </div>
+
+      <div id="method-M000138" class="method-detail">
+        <a name="M000138"></a>
+
+        <div class="method-heading">
+          <a href="Simple.src/M000138.html" target="Code" class="method-signature"
+            onclick="popupCode('Simple.src/M000138.html');return false;">
+          <span class="method-name">enter_text_into_field_with_name</span><span class="method-args">(name, text)</span>
+          </a>
+        </div>
+      
+        <div class="method-description">
+          <p>
+Set the text of the field with a given name (the preferred method.) This
+only types characters into the field and does not submit the form.
+</p>
+        </div>
+      </div>
+
+      <div id="method-M000162" class="method-detail">
+        <a name="M000162"></a>
+
+        <div class="method-heading">
+          <a href="Simple.src/M000162.html" target="Code" class="method-signature"
+            onclick="popupCode('Simple.src/M000162.html');return false;">
+          <span class="method-name">fill_text_field</span><span class="method-args">(field_name, text)</span>
+          </a>
+        </div>
+      
+        <div class="method-description">
+          <p>
+Fill a single textfield with a value
+</p>
+        </div>
+      </div>
+
+      <div id="method-M000161" class="method-detail">
+        <a name="M000161"></a>
+
+        <div class="method-heading">
+          <a href="Simple.src/M000161.html" target="Code" class="method-signature"
+            onclick="popupCode('Simple.src/M000161.html');return false;">
+          <span class="method-name">fill_text_fields</span><span class="method-args">(data)</span>
+          </a>
+        </div>
+      
+        <div class="method-description">
+          <p>
+Fill a series of text fields. This takes a hash of textfield names to
+values for those fields.
+</p>
+<p>
+Example:
+</p>
+<pre>
+  fill_text_fields {
+    'username' =&gt; 'joe',
+    'password' =&gt; 'blahblah',
+    'email' =&gt; 'joe@blahblah.com',
+    'favorite_num' =&gt; 42
+  }
+</pre>
+        </div>
+      </div>
+
+      <div id="method-M000159" class="method-detail">
+        <a name="M000159"></a>
+
+        <div class="method-heading">
+          <a href="Simple.src/M000159.html" target="Code" class="method-signature"
+            onclick="popupCode('Simple.src/M000159.html');return false;">
+          <span class="method-name">go_back</span><span class="method-args">()</span>
+          </a>
+        </div>
+      
+        <div class="method-description">
+          <p>
+Tell the browser to cick the Back button.
+</p>
+        </div>
+      </div>
+
+      <div id="method-M000160" class="method-detail">
+        <a name="M000160"></a>
+
+        <div class="method-heading">
+          <a href="Simple.src/M000160.html" target="Code" class="method-signature"
+            onclick="popupCode('Simple.src/M000160.html');return false;">
+          <span class="method-name">go_forward</span><span class="method-args">()</span>
+          </a>
+        </div>
+      
+        <div class="method-description">
+          <p>
+Tell the browser to cick the Forward button.
+</p>
+        </div>
+      </div>
+
+      <div id="method-M000130" class="method-detail">
+        <a name="M000130"></a>
+
+        <div class="method-heading">
+          <a href="Simple.src/M000130.html" target="Code" class="method-signature"
+            onclick="popupCode('Simple.src/M000130.html');return false;">
+          <span class="method-name">navigate_to</span><span class="method-args">(url)</span>
+          </a>
+        </div>
+      
+        <div class="method-description">
+          <p>
+Tell the browser to load a particular URL.
+</p>
+        </div>
+      </div>
+
+      <div id="method-M000132" class="method-detail">
+        <a name="M000132"></a>
+
+        <div class="method-heading">
+          <a href="Simple.src/M000132.html" target="Code" class="method-signature"
+            onclick="popupCode('Simple.src/M000132.html');return false;">
+          <span class="method-name">navigate_to_link_with_id</span><span class="method-args">(id)</span>
+          </a>
+        </div>
+      
+        <div class="method-description">
+          <p>
+Much like <a href="Simple.html#M000134">click_link_with_id</a> but
+navigates to link instead of clicking it, thereby not invoking OnClick for
+links.
+</p>
+        </div>
+      </div>
+
+      <div id="method-M000131" class="method-detail">
+        <a name="M000131"></a>
+
+        <div class="method-heading">
+          <a href="Simple.src/M000131.html" target="Code" class="method-signature"
+            onclick="popupCode('Simple.src/M000131.html');return false;">
+          <span class="method-name">navigate_to_link_with_url</span><span class="method-args">(url)</span>
+          </a>
+        </div>
+      
+        <div class="method-description">
+          <p>
+Much like <a href="Simple.html#M000133">click_link_with_url</a> but
+navigates to link instead of clicking it, thereby not invoking OnClick for
+links.
+</p>
+        </div>
+      </div>
+
+      <div id="method-M000129" class="method-detail">
+        <a name="M000129"></a>
+
+        <div class="method-heading">
+          <a href="Simple.src/M000129.html" target="Code" class="method-signature"
+            onclick="popupCode('Simple.src/M000129.html');return false;">
+          <span class="method-name">new_browser_at</span><span class="method-args">(url)</span>
+          </a>
+        </div>
+      
+        <div class="method-description">
+          <p>
+Open up a browser and point it at a certain URL.
+</p>
+        </div>
+      </div>
+
+      <div id="method-M000142" class="method-detail">
+        <a name="M000142"></a>
+
+        <div class="method-heading">
+          <a href="Simple.src/M000142.html" target="Code" class="method-signature"
+            onclick="popupCode('Simple.src/M000142.html');return false;">
+          <span class="method-name">select_from_combobox_with_id</span><span class="method-args">(id, text)</span>
+          </a>
+        </div>
+      
+        <div class="method-description">
+          <p>
+Select an item from a selectbox (a.k.a &quot;combo box&quot;, or
+&quot;pulldown&quot;) The selectbox is chose by matching its id attribute.
+The item is selected based on the text content of &lt;OPTION&gt; tags.
+</p>
+        </div>
+      </div>
+
+      <div id="method-M000143" class="method-detail">
+        <a name="M000143"></a>
+
+        <div class="method-heading">
+          <a href="Simple.src/M000143.html" target="Code" class="method-signature"
+            onclick="popupCode('Simple.src/M000143.html');return false;">
+          <span class="method-name">select_from_combobox_with_index</span><span class="method-args">(index, text)</span>
+          </a>
+        </div>
+      
+        <div class="method-description">
+          <p>
+Select an item from a selectbox (a.k.a &quot;combo box&quot;, or
+&quot;pulldown&quot;) The selectbox is chose by matching its order of
+appearance in the document. The item is selected based on the text content
+of &lt;OPTION&gt; tags.
+</p>
+        </div>
+      </div>
+
+      <div id="method-M000141" class="method-detail">
+        <a name="M000141"></a>
+
+        <div class="method-heading">
+          <a href="Simple.src/M000141.html" target="Code" class="method-signature"
+            onclick="popupCode('Simple.src/M000141.html');return false;">
+          <span class="method-name">select_from_combobox_with_name</span><span class="method-args">(name, text)</span>
+          </a>
+        </div>
+      
+        <div class="method-description">
+          <p>
+Select an item from a selectbox (a.k.a &quot;combo box&quot;, or
+&quot;pulldown&quot;) The selectbox is chose by matching its name
+attribute. The item is selected based on the text content of &lt;OPTION&gt;
+tags.
+</p>
+        </div>
+      </div>
+
+      <div id="method-M000146" class="method-detail">
+        <a name="M000146"></a>
+
+        <div class="method-heading">
+          <a href="Simple.src/M000146.html" target="Code" class="method-signature"
+            onclick="popupCode('Simple.src/M000146.html');return false;">
+          <span class="method-name">select_radio_button_with_id</span><span class="method-args">(id, value)</span>
+          </a>
+        </div>
+      
+        <div class="method-description">
+          <p>
+Select an item (<tt>value</tt>) from the radio button collection with a
+matching <tt>id</tt> attribute.
+</p>
+        </div>
+      </div>
+
+      <div id="method-M000144" class="method-detail">
+        <a name="M000144"></a>
+
+        <div class="method-heading">
+          <a href="Simple.src/M000144.html" target="Code" class="method-signature"
+            onclick="popupCode('Simple.src/M000144.html');return false;">
+          <span class="method-name">select_radio_button_with_name</span><span class="method-args">(name, value)</span>
+          </a>
+        </div>
+      
+        <div class="method-description">
+          <p>
+Select an item (<tt>value</tt>) from the radio button collection with
+<tt>name</tt>.
+</p>
+        </div>
+      </div>
+
+      <div id="method-M000145" class="method-detail">
+        <a name="M000145"></a>
+
+        <div class="method-heading">
+          <a href="Simple.src/M000145.html" target="Code" class="method-signature"
+            onclick="popupCode('Simple.src/M000145.html');return false;">
+          <span class="method-name">select_radio_button_with_name</span><span class="method-args">(index, value)</span>
+          </a>
+        </div>
+      
+        <div class="method-description">
+          <p>
+Select an item (<tt>value</tt>) from the <tt>index</tt>&#8216;th radio
+button collection.
+</p>
+        </div>
+      </div>
+
+      <div id="method-M000168" class="method-detail">
+        <a name="M000168"></a>
+
+        <div class="method-heading">
+          <a href="Simple.src/M000168.html" target="Code" class="method-signature"
+            onclick="popupCode('Simple.src/M000168.html');return false;">
+          <span class="method-name">wait_before_and_after</span><span class="method-args">() {|| ...}</span>
+          </a>
+        </div>
+      
+        <div class="method-description">
+          <p>
+A convenience method to wait at both ends of an operation for the browser
+to catch up.
+</p>
+        </div>
+      </div>
+
+      <div id="method-M000163" class="method-detail">
+        <a name="M000163"></a>
+
+        <div class="method-heading">
+          <a href="Simple.src/M000163.html" target="Code" class="method-signature"
+            onclick="popupCode('Simple.src/M000163.html');return false;">
+          <span class="method-name">wait_for_browser</span><span class="method-args">()</span>
+          </a>
+        </div>
+      
+        <div class="method-description">
+          <p>
+Some browsers (i.e. <a href="IE.html">IE</a>) need to be waited on before
+more actions can be performed. Most action methods in <a
+href="Simple.html">Watir::Simple</a> already call this before and after.
+</p>
+        </div>
+      </div>
+
+
+    </div>
+
+
+  </div>
+
+
+<div id="validator-badges">
+  <p><small><a href="http://validator.w3.org/check/referer">[Validate]</a></small></p>
+</div>
+
+</body>
+</html>

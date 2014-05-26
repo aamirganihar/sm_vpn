@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+<!DOCTYPE html 
+     PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+     "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html>
+<head>
+  <title>show_frames (FireWatir::Firefox)</title>
+  <meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" />
+  <link rel="stylesheet" href="../../.././rdoc-style.css" type="text/css" media="screen" />
+</head>
+<body class="standalone-code">
+  <pre><span class="ruby-comment cmt"># File lib/firewatir/firefox.rb, line 959</span>
+    <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">show_frames</span>
+      <span class="ruby-identifier">jssh_command</span> = <span class="ruby-node">&quot;var frameset = #{window_var}.frames;
+                            var elements_frames = new Array();
+                            for(var i = 0; i &lt; frameset.length; i++)
+                            {
+                                var frames = frameset[i].frames;
+                                for(var j = 0; j &lt; frames.length; j++)
+                                {
+                                    elements_frames.push(frames[j].frameElement);
+                                }
+                            }
+                            elements_frames.length;&quot;</span>
+
+      <span class="ruby-identifier">length</span> = <span class="ruby-identifier">js_eval</span>(<span class="ruby-identifier">jssh_command</span>).<span class="ruby-identifier">to_i</span>
+
+      <span class="ruby-identifier">puts</span> <span class="ruby-node">&quot;There are #{length} frames&quot;</span>
+
+      <span class="ruby-identifier">frames</span> = <span class="ruby-constant">Array</span>.<span class="ruby-identifier">new</span>(<span class="ruby-identifier">length</span>)
+      <span class="ruby-keyword kw">for</span> <span class="ruby-identifier">i</span> <span class="ruby-keyword kw">in</span> <span class="ruby-value">0</span><span class="ruby-operator">..</span><span class="ruby-identifier">length</span> <span class="ruby-operator">-</span> <span class="ruby-value">1</span> <span class="ruby-keyword kw">do</span>
+        <span class="ruby-identifier">frames</span>[<span class="ruby-identifier">i</span>] = <span class="ruby-constant">Frame</span>.<span class="ruby-identifier">new</span>(<span class="ruby-keyword kw">self</span>, <span class="ruby-identifier">:jssh_name</span>, <span class="ruby-node">&quot;elements_frames[#{i}]&quot;</span>)
+      <span class="ruby-keyword kw">end</span>
+
+      <span class="ruby-keyword kw">for</span> <span class="ruby-identifier">i</span> <span class="ruby-keyword kw">in</span> <span class="ruby-value">0</span><span class="ruby-operator">..</span><span class="ruby-identifier">length</span> <span class="ruby-operator">-</span> <span class="ruby-value">1</span> <span class="ruby-keyword kw">do</span>
+        <span class="ruby-identifier">puts</span> <span class="ruby-node">&quot;frame: name: #{frames[i].name}&quot;</span>
+        <span class="ruby-identifier">puts</span> <span class="ruby-node">&quot;      index: #{i+1}&quot;</span>
+      <span class="ruby-keyword kw">end</span>
+    <span class="ruby-keyword kw">end</span></pre>
+</body>
+</html>

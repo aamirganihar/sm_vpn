@@ -1,0 +1,36 @@
+--- !ruby/object:RI::ClassDescription 
+attributes: []
+
+class_methods: 
+- !ruby/object:RI::MethodSummary 
+  name: call
+- !ruby/object:RI::MethodSummary 
+  name: new
+comment: 
+- !ruby/struct:SM::Flow::P 
+  body: A delivery method implementation which sends via exim.
+- !ruby/struct:SM::Flow::P 
+  body: To use this, first find out where the exim binary is on your computer, if you are on a mac or unix box, it is usually in /usr/sbin/exim, this will be your exim location.
+- !ruby/struct:SM::Flow::VERB 
+  body: "  Mail.defaults do\n    delivery_method :exim\n  end\n"
+- !ruby/struct:SM::Flow::P 
+  body: Or if your exim binary is not at '/usr/sbin/exim'
+- !ruby/struct:SM::Flow::VERB 
+  body: "  Mail.defaults do\n    delivery_method :exim, :location =&gt; '/absolute/path/to/your/exim'\n  end\n"
+- !ruby/struct:SM::Flow::P 
+  body: "Then just deliver the email as normal:"
+- !ruby/struct:SM::Flow::VERB 
+  body: "  Mail.deliver do\n    to 'mikel@test.lindsaar.net'\n    from 'ada@test.lindsaar.net'\n    subject 'testing exim'\n    body 'testing exim'\n  end\n"
+- !ruby/struct:SM::Flow::P 
+  body: Or by calling deliver on a Mail message
+- !ruby/struct:SM::Flow::VERB 
+  body: "  mail = Mail.new do\n    to 'mikel@test.lindsaar.net'\n    from 'ada@test.lindsaar.net'\n    subject 'testing exim'\n    body 'testing exim'\n  end\n\n  mail.deliver!\n"
+constants: []
+
+full_name: Mail::Exim
+includes: []
+
+instance_methods: []
+
+name: Exim
+superclass: Sendmail

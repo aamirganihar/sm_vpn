@@ -1,0 +1,187 @@
+--- !ruby/object:RI::ClassDescription 
+attributes: []
+
+class_methods: []
+
+comment: 
+constants: 
+- !ruby/object:RI::Constant 
+  comment: 
+  name: FileAccessInformation
+  value: "8"
+- !ruby/object:RI::Constant 
+  comment: 
+  name: FileAlignmentInformation
+  value: "17"
+- !ruby/object:RI::Constant 
+  comment: 
+  name: FileAllInformation
+  value: "18"
+- !ruby/object:RI::Constant 
+  comment: 
+  name: FileAllocationInformation
+  value: "19"
+- !ruby/object:RI::Constant 
+  comment: 
+  name: FileAlternateNameInformation
+  value: "21"
+- !ruby/object:RI::Constant 
+  comment: 
+  name: FileAttributeTagInformation
+  value: "35"
+- !ruby/object:RI::Constant 
+  comment: 
+  name: FileBasicInformation
+  value: "4"
+- !ruby/object:RI::Constant 
+  comment: 
+  name: FileBothDirectoryInformation
+  value: "3"
+- !ruby/object:RI::Constant 
+  comment: 
+  name: FileCompletionInformation
+  value: "30"
+- !ruby/object:RI::Constant 
+  comment: 
+  name: FileCompressionInformation
+  value: "28"
+- !ruby/object:RI::Constant 
+  comment: 
+  name: FileDirectoryInformation
+  value: "1"
+- !ruby/object:RI::Constant 
+  comment: 
+  name: FileDispositionInformation
+  value: "13"
+- !ruby/object:RI::Constant 
+  comment: 
+  name: FileEaInformation
+  value: "7"
+- !ruby/object:RI::Constant 
+  comment: 
+  name: FileEndOfFileInformation
+  value: "20"
+- !ruby/object:RI::Constant 
+  comment: 
+  name: FileFullDirectoryInformation
+  value: "2"
+- !ruby/object:RI::Constant 
+  comment: 
+  name: FileFullEaInformation
+  value: "15"
+- !ruby/object:RI::Constant 
+  comment: 
+  name: FileHardLinkInformation
+  value: "46"
+- !ruby/object:RI::Constant 
+  comment: 
+  name: FileIdBothDirectoryInformation
+  value: "37"
+- !ruby/object:RI::Constant 
+  comment: 
+  name: FileIdFullDirectoryInformation
+  value: "38"
+- !ruby/object:RI::Constant 
+  comment: 
+  name: FileInternalInformation
+  value: "6"
+- !ruby/object:RI::Constant 
+  comment: 
+  name: FileLinkInformation
+  value: "11"
+- !ruby/object:RI::Constant 
+  comment: 
+  name: FileMailslotQueryInformation
+  value: "26"
+- !ruby/object:RI::Constant 
+  comment: 
+  name: FileMailslotSetInformation
+  value: "27"
+- !ruby/object:RI::Constant 
+  comment: 
+  name: FileModeInformation
+  value: "16"
+- !ruby/object:RI::Constant 
+  comment: 
+  name: FileMoveClusterInformation
+  value: "31"
+- !ruby/object:RI::Constant 
+  comment: 
+  name: FileNameInformation
+  value: "9"
+- !ruby/object:RI::Constant 
+  comment: 
+  name: FileNamesInformation
+  value: "12"
+- !ruby/object:RI::Constant 
+  comment: 
+  name: FileNetworkOpenInformation
+  value: "34"
+- !ruby/object:RI::Constant 
+  comment: 
+  name: FileObjectIdInformation
+  value: "29"
+- !ruby/object:RI::Constant 
+  comment: 
+  name: FilePipeInformation
+  value: "23"
+- !ruby/object:RI::Constant 
+  comment: 
+  name: FilePipeLocalInformation
+  value: "24"
+- !ruby/object:RI::Constant 
+  comment: 
+  name: FilePipeRemoteInformation
+  value: "25"
+- !ruby/object:RI::Constant 
+  comment: 
+  name: FilePositionInformation
+  value: "14"
+- !ruby/object:RI::Constant 
+  comment: 
+  name: FileQuotaInformation
+  value: "32"
+- !ruby/object:RI::Constant 
+  comment: 
+  name: FileRenameInformation
+  value: "10"
+- !ruby/object:RI::Constant 
+  comment: 
+  name: FileReparsePointInformation
+  value: "33"
+- !ruby/object:RI::Constant 
+  comment: 
+  name: FileShortNameInformation
+  value: "40"
+- !ruby/object:RI::Constant 
+  comment: 
+  name: FileStandardInformation
+  value: "5"
+- !ruby/object:RI::Constant 
+  comment: 
+  name: FileStreamInformation
+  value: "22"
+- !ruby/object:RI::Constant 
+  comment: 
+  name: FileTrackingInformation
+  value: "36"
+- !ruby/object:RI::Constant 
+  comment: 
+  name: FileValidDataLengthInformation
+  value: "39"
+- !ruby/object:RI::Constant 
+  comment: 
+  name: ObjectNameInformation
+  value: "1"
+- !ruby/object:RI::Constant 
+  comment: 
+  name: STATUS_SUCCESS
+  value: "0"
+full_name: Windows::NTFS::Winternl
+includes: []
+
+instance_methods: 
+- !ruby/object:RI::MethodSummary 
+  name: GetFinalPathNameByHandle
+name: Winternl
+superclass: 

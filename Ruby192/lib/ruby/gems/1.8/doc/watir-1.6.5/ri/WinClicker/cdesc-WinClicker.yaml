@@ -1,0 +1,174 @@
+--- !ruby/object:RI::ClassDescription 
+attributes: []
+
+class_methods: 
+- !ruby/object:RI::MethodSummary 
+  name: new
+comment: 
+constants: 
+- !ruby/object:RI::Constant 
+  comment: 
+  name: WM_CLOSE
+  value: "0x0010"
+- !ruby/object:RI::Constant 
+  comment: 
+  name: WM_KEYDOWN
+  value: "0x0100"
+- !ruby/object:RI::Constant 
+  comment: 
+  name: WM_KEYUP
+  value: "0x0101"
+- !ruby/object:RI::Constant 
+  comment: 
+  name: WM_CHAR
+  value: "0x0102"
+- !ruby/object:RI::Constant 
+  comment: 
+  name: BM_CLICK
+  value: "0x00F5"
+- !ruby/object:RI::Constant 
+  comment: 
+  name: WM_COMMAND
+  value: "0x0111"
+- !ruby/object:RI::Constant 
+  comment: 
+  name: WM_SETTEXT
+  value: "0x000C"
+- !ruby/object:RI::Constant 
+  comment: 
+  name: WM_GETTEXT
+  value: "0x000D"
+- !ruby/object:RI::Constant 
+  comment: 
+  name: HWND_TOP
+  value: "0"
+- !ruby/object:RI::Constant 
+  comment: 
+  name: HWND_BOTTOM
+  value: "1"
+- !ruby/object:RI::Constant 
+  comment: 
+  name: HWND_TOPMOST
+  value: "-1"
+- !ruby/object:RI::Constant 
+  comment: 
+  name: HWND_NOTOPMOST
+  value: "-2"
+- !ruby/object:RI::Constant 
+  comment: 
+  name: SWP_SHOWWINDOW
+  value: "0x40"
+- !ruby/object:RI::Constant 
+  comment: 
+  name: SWP_NOSIZE
+  value: "1"
+- !ruby/object:RI::Constant 
+  comment: 
+  name: SWP_NOMOVE
+  value: "2"
+- !ruby/object:RI::Constant 
+  comment: 
+  name: TRUE_1
+  value: "1"
+- !ruby/object:RI::Constant 
+  comment: 
+  - !ruby/struct:SM::Flow::P 
+    body: these are constants for commonly used windows windows
+  name: WINCLASS_DIALOG
+  value: "\"32770\""
+full_name: WinClicker
+includes: []
+
+instance_methods: 
+- !ruby/object:RI::MethodSummary 
+  name: clearSecurityAlertBox
+- !ruby/object:RI::MethodSummary 
+  name: clear_security_alert
+- !ruby/object:RI::MethodSummary 
+  name: clickButtonWithHandle
+- !ruby/object:RI::MethodSummary 
+  name: clickJSDialog_NewProcess
+- !ruby/object:RI::MethodSummary 
+  name: clickJSDialog_Thread
+- !ruby/object:RI::MethodSummary 
+  name: clickJavaScriptDialog
+- !ruby/object:RI::MethodSummary 
+  name: clickWindowsButton
+- !ruby/object:RI::MethodSummary 
+  name: clickWindowsButton_hwnd
+- !ruby/object:RI::MethodSummary 
+  name: click_button_with_handle
+- !ruby/object:RI::MethodSummary 
+  name: click_windows_button
+- !ruby/object:RI::MethodSummary 
+  name: click_windows_button_hwnd
+- !ruby/object:RI::MethodSummary 
+  name: getChildHandle
+- !ruby/object:RI::MethodSummary 
+  name: getControlText
+- !ruby/object:RI::MethodSummary 
+  name: getFileRequesterFileName
+- !ruby/object:RI::MethodSummary 
+  name: getHandleOfControl
+- !ruby/object:RI::MethodSummary 
+  name: getParent
+- !ruby/object:RI::MethodSummary 
+  name: getShortFileName
+- !ruby/object:RI::MethodSummary 
+  name: getStaticText
+- !ruby/object:RI::MethodSummary 
+  name: getStaticTextFromWindow
+- !ruby/object:RI::MethodSummary 
+  name: getStaticText_hWnd
+- !ruby/object:RI::MethodSummary 
+  name: getTextValueForFileNameField
+- !ruby/object:RI::MethodSummary 
+  name: getWindowHandle
+- !ruby/object:RI::MethodSummary 
+  name: getWindowTitle
+- !ruby/object:RI::MethodSummary 
+  name: get_chwnd
+- !ruby/object:RI::MethodSummary 
+  name: get_ctrl_txt
+- !ruby/object:RI::MethodSummary 
+  name: get_file_name
+- !ruby/object:RI::MethodSummary 
+  name: get_handle_of_ctrl
+- !ruby/object:RI::MethodSummary 
+  name: get_parent
+- !ruby/object:RI::MethodSummary 
+  name: get_static_text
+- !ruby/object:RI::MethodSummary 
+  name: get_static_text_from_window
+- !ruby/object:RI::MethodSummary 
+  name: get_static_text_hwnd
+- !ruby/object:RI::MethodSummary 
+  name: get_win_title
+- !ruby/object:RI::MethodSummary 
+  name: get_window_handle
+- !ruby/object:RI::MethodSummary 
+  name: makeWindowActive
+- !ruby/object:RI::MethodSummary 
+  name: make_window_active
+- !ruby/object:RI::MethodSummary 
+  name: setComboBoxText
+- !ruby/object:RI::MethodSummary 
+  name: setFileRequesterFileName
+- !ruby/object:RI::MethodSummary 
+  name: setFileRequesterFileName_newProcess
+- !ruby/object:RI::MethodSummary 
+  name: setTextBoxText
+- !ruby/object:RI::MethodSummary 
+  name: setTextValueForFileNameField
+- !ruby/object:RI::MethodSummary 
+  name: set_combo_txt
+- !ruby/object:RI::MethodSummary 
+  name: set_file_name
+- !ruby/object:RI::MethodSummary 
+  name: set_textbox_txt
+- !ruby/object:RI::MethodSummary 
+  name: winsystem
+- !ruby/object:RI::MethodSummary 
+  name: with_dl_callback
+name: WinClicker
+superclass: Object

@@ -1,0 +1,1890 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+<!DOCTYPE html 
+     PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+     "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+  <title>File: CHANGELOG.rdoc</title>
+  <meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" />
+  <meta http-equiv="Content-Script-Type" content="text/javascript" />
+  <link rel="stylesheet" href=".././rdoc-style.css" type="text/css" media="screen" />
+  <script type="text/javascript">
+  // <![CDATA[
+
+  function popupCode( url ) {
+    window.open(url, "Code", "resizable=yes,scrollbars=yes,toolbar=no,status=no,height=150,width=400")
+  }
+
+  function toggleCode( id ) {
+    if ( document.getElementById )
+      elem = document.getElementById( id );
+    else if ( document.all )
+      elem = eval( "document.all." + id );
+    else
+      return false;
+
+    elemStyle = elem.style;
+    
+    if ( elemStyle.display != "block" ) {
+      elemStyle.display = "block"
+    } else {
+      elemStyle.display = "none"
+    }
+
+    return true;
+  }
+  
+  // Make codeblocks hidden by default
+  document.writeln( "<style type=\"text/css\">div.method-source-code { display: none }</style>" )
+  
+  // ]]>
+  </script>
+
+</head>
+<body>
+
+
+
+  <div id="fileHeader">
+    <h1>CHANGELOG.rdoc</h1>
+    <table class="header-table">
+    <tr class="top-aligned-row">
+      <td><strong>Path:</strong></td>
+      <td>CHANGELOG.rdoc
+      </td>
+    </tr>
+    <tr class="top-aligned-row">
+      <td><strong>Last Update:</strong></td>
+      <td>Fri Dec 06 09:20:08 +0530 2013</td>
+    </tr>
+    </table>
+  </div>
+  <!-- banner header -->
+
+  <div id="bodyContent">
+
+
+
+  <div id="contextContent">
+
+    <div id="description">
+      <h2>HEAD</h2>
+<h2>Version 2.5.4 - Tue May 14 14:45:00 +1100 2013 Mikel Lindsaar &lt;mikel@lindsaar.net&gt;</h2>
+<p>
+Features:
+</p>
+<ul>
+<li>Save settings passed to TestMailer#new (svanderbleek)
+
+</li>
+<li>Allow the setting of envelope from directly (jeremy)
+
+</li>
+<li>Accept other IETF/IANA-registered Content-Types and
+Content-Transfer-Encodings (jeremy)
+
+</li>
+<li>Alias shift-jis charset to Shift_JIS Ruby encoding (jeremy)
+
+</li>
+<li>Add support for ks_c_5601-1987 charset, aliased to CP949 Ruby encoding
+(jeremy)
+
+</li>
+<li>Don&#8216;t allow colons in header names (jeremy)
+
+</li>
+<li>Can assign arrays of Message-IDs to References and In-Reply-To (jeremy)
+
+</li>
+<li>Setting the html_ or text_part sets a default text/html or text/plain
+content type (jeremy)
+
+</li>
+<li>Setting the html_ or text_part to nil removes it (jeremy)
+
+</li>
+<li>Addresses without a parsable email or display name still format as their
+raw text (jeremy)
+
+</li>
+<li>Close pull request 504 - Alias GB2312 charset to GB18030 Ruby encoding
+(bpot)
+
+</li>
+<li>Close pull request 399 - Accept :ca_path and :ca_file options for SMTP
+delivery (ndbroadbent)
+
+</li>
+<li>Close pull request 389 - Don&#8216;t add superfluous message headers to
+MIME parts (djmaze, jeremy)
+
+</li>
+</ul>
+<p>
+Performance:
+</p>
+<ul>
+<li>Close pull request 488 - Speed up field construction &amp; comparison
+(bpot)
+
+</li>
+</ul>
+<p>
+Bugs:
+</p>
+<ul>
+<li>Don&#8216;t include separating semicolon in paramter value when sanitizing
+(bpot)
+
+</li>
+<li>Fix fencepost encoding problem with binhex strings and only one token
+(drasch)
+
+</li>
+<li>Fix sendmail delivery to addresses with a leading hyphen (lifo, jeremy)
+
+</li>
+<li>Correctly format mbox From headers per RFC4155 (bpot, jeremy)
+
+</li>
+<li>Fix bogus &#8217;=&#8217; at the end of some quoted-printable messages
+(jeremy)
+
+</li>
+<li>Shouldn&#8216;t be fooled into encoding strings on 1.8 by unrelated
+Encoding constant (emiellohr, jeremy)
+
+</li>
+<li>Header encoding should be US-ASCII, not the default external encoding
+(jeremy)
+
+</li>
+<li>Address elements should return decoded display names by default (jeremy)
+
+</li>
+<li>Fix up tests that depend on utf-8 external encoding; read fixtures as
+binary (jeremy)
+
+</li>
+<li>Capture stderr from Sendmail and Exim deliveries (jeremy)
+
+</li>
+<li>RFC2822 quoted_string content may be empty (jeremy)
+
+</li>
+<li>Calling to_s on a field with a nil value returns an empty string instead of
+nil (jeremy)
+
+</li>
+<li>The Received header may contain zero name/value pairs, qmail-style (jeremy)
+
+</li>
+<li>Fix that setting an attachment with a :mime_type and :encoding would
+override the :encoding (jeremy)
+
+</li>
+<li>Fix that declaring an html_part but no text_part would use
+multipart/alternative anyway (jeremy)
+
+</li>
+<li>Close pull request 508 - Don&#8216;t add an extra CRLF to MIME parts; split
+MIME parts on correct CRLF boundaries (Aalanar)
+
+</li>
+<li>Close pull request 506 - Escape backslashes in quoted strings (ConradIrwin)
+
+</li>
+<li>Close pull request 496 - Correctly handle quoted-printable line breaks
+(jeremy)
+
+</li>
+<li>Close pull request 493 - Repair misencoded quoted-printable line breaks
+(jeremy)
+
+</li>
+<li>Close pull request 487 - Extract comments from group email addresses (bpot)
+
+</li>
+<li>Close pull request 481 - Correctly quote filename attributes (bpot)
+
+</li>
+<li>Close pull request 480 - Support mixed encodings in a single header body
+(adamvaughan)
+
+</li>
+<li>Close pull request 471 - Fix Ruby 1.8 build when UTF16/32 default to
+little-endian (kennyj)
+
+</li>
+</ul>
+<p>
+Coping with third-party bugs:
+</p>
+<ul>
+<li>Parse multipart boundary from Content-Type headers containing extra
+semicolons (jeremy)
+
+</li>
+<li>Close pull request 389 - Only add Content-ID to inline attachments to
+appease Outlook (djmaze, jeremy)
+
+</li>
+</ul>
+<p>
+Housekeeping:
+</p>
+<ul>
+<li>Add development gem dependency on rdoc (jeremy)
+
+</li>
+<li>Refresh Bundler dependencies &amp; setup (jeremy)
+
+</li>
+<li>Remove i18n dependency and last vestiges of activesupport dependency in
+specs (jeremy)
+
+</li>
+<li>Clarify that Sender is a single address, not an address list (jeremy)
+
+</li>
+<li>Add an MIT-LICENSE file to make licensing clear &amp; obvious; update to
+2013 (jeremy)
+
+</li>
+<li>Close pull request 501 - Tighten up header/body whitespace splitting
+(ConradIrwin)
+
+</li>
+<li>Close pull request 499 - Clean up some dead code (ConradIrwin)
+
+</li>
+<li>Close pull request 489, 495 - Docs typos (JackDanger, francois)
+
+</li>
+<li>Close pull request 485 - Be explicit about unsupported address parsing
+(bpot)
+
+</li>
+<li>Close pull request 484 - Remove tree specs in preparation for deprecation
+removal (bpot)
+
+</li>
+<li>Close pull request 482 - Update address field specs to reflect to
+initialize API (bpot)
+
+</li>
+<li>Close pull request 475 - Shush warning on Object#blank? redefinition
+(amatsuda)
+
+</li>
+<li>Close pull request 472 - Clean up UTF8/UTF-8 internals (kennyj)
+
+</li>
+</ul>
+<h2>Version 2.5.3 - Sun Dec 4 15:52:00 +1100 2012 Mikel Lindsaar &lt;mikel@reinteractive.net&gt;</h2>
+<ul>
+<li>Close pull request 468 - Remove debug output to STDOUT (tadman)
+
+</li>
+<li>Fix up spec warnings
+
+</li>
+<li>Remove un needed require
+
+</li>
+<li>Ensure spec_helper constants only defined once
+
+</li>
+<li>Use stub against time instead of DateTime to avoid double redefinition
+error
+
+</li>
+</ul>
+<h2>Version 2.5.2 - Sun Nov 18 15:01:00 +1100 2012 Mikel Lindsaar &lt;mikel@reinteractive.net&gt;</h2>
+<ul>
+<li>Removing double loading of treetop parsers to remove warnings
+
+</li>
+<li>Making parsers auto compile on spec suite and load in production code to
+avoid error that caused yank of 2.5.0
+
+</li>
+<li>Reapply pull request 443 - CC fields with semicolon are now parsed right
+(paulwittmann)
+
+</li>
+</ul>
+<h2>Version 2.5.1 - Sun Nov 18 14:01:00 +1100 2012 Mikel Lindsaar &lt;mikel@reinteractive.net&gt;</h2>
+<ul>
+<li>Yanked 2.5.0
+
+</li>
+<li>Reverted pull request 443 - CC fields with semicolon are now parsed right
+(paulwittmann)
+
+</li>
+</ul>
+<h2>Version 2.5.0 - Sun Nov 18 12:20:00 +1100 2012 Mikel Lindsaar &lt;mikel@reinteractive.net&gt;</h2>
+<p>
+Features:
+</p>
+<ul>
+<li>Close pull request 406 - Add Mail#eager_autoload! to load all autoloaded
+files on demand (bpot)
+
+</li>
+<li>Close pull request 461 - Allow string as delivery_method (skyeagle, radar)
+
+</li>
+<li>Close pull request 407 - Do not require Net::IMAP or Net::POP if
+they&#8216;re already loaded (bpot)
+
+</li>
+<li>Close pull request 400 - Raise exception if delivery values or from values
+are missing completely from an email that is getting delivered (dmathieu)
+
+</li>
+<li>Close pull request 397 - Support dots in local part of the addresses (eac)
+
+</li>
+<li>Close pull request 477 - Fixed handling content_type with superfluous
+spaces (ledermann)
+
+</li>
+<li>Close pull request 451 - Ignore nil in addresses so things do not blow up
+when e.g. a user had no email (grosser)
+
+</li>
+<li>Close pull request 362 - Enable TLS in Ruby 1.8 (kingargyle)
+
+</li>
+<li>Close pull request 358 - Fix Mail::CommonAddress#value=,
+Mail::CommonAddress#&lt;&lt; and Mail::Encodings.encode_non_usascii (mrkn)
+
+</li>
+<li>Close pull request 350 - Makes mail Header object ennumerable (ged)
+
+</li>
+</ul>
+<p>
+Performance:
+</p>
+<ul>
+<li>Close pull request 369 - Mail::Header#charset is called pretty often during
+header parser work (bogdan)
+
+</li>
+<li>Close pull request 368 - Improve existing code by moving some objects to
+contstant instead of constructing them over and over again. (bogdan)
+
+</li>
+<li>Close pull request 366 - Headers parsing performance optimization (bogdan)
+
+</li>
+<li>Close pull request 365 - Add maximum_amount of parsed headers configuration
+parameter (bogdan)
+
+</li>
+</ul>
+<p>
+Bugs:
+</p>
+<ul>
+<li>Close pull request 444 - Fix typo in spec (cczona)
+
+</li>
+<li>Close pull request 439 - Fix Ruby 1.9 behaviour to match 1.8.7 behaviour on
+ignoring invalid or undefined characters (ochko)
+
+</li>
+<li>Close pull request 430 - Unstructured field converts to string before
+calling encoding on it (brupm mikel)
+
+</li>
+<li>Close pull request 424 - Use String#to_crlf instead of String#gsub (okkez)
+
+</li>
+<li>Close pull request 429 - Fix an obvious bug in exim delivery_method (dskim)
+
+</li>
+<li>Close pull request 425 - Remove Gemfile.lock from generated gem
+(kbackowski)
+
+</li>
+<li>Close pull request 414 - Fix typo on &quot;ignoring&quot; (derwiki)
+
+</li>
+<li>Close pull request 405 - Fix stack overflow (RegexpError) triggered by
+large emails with an envelope (bpot)
+
+</li>
+<li>Close pull request 402 - Prevent InReplyTo, Keyword, References or
+ResentMessageId fields from generating lines longer than 998 chars (pplr)
+
+</li>
+<li>Close pull request 391 - Fixed failed attachment parsing when file name in
+headers contains spaces and is not wrapped in quotes (danieltreacy)
+
+</li>
+<li>Close pull request 385 - Fix Multibyte::Chars#upcase/downcase
+(technoweenie)
+
+</li>
+<li>Close pull request 384 - copy dat unicode over from active support
+(technoweenie)
+
+</li>
+<li>Close pull request 380 - Split strictly on MIME boundary lines
+(ConradIrwin)
+
+</li>
+<li>Close pull request 277 - Fix specific email decoding failure example
+(yalab)
+
+</li>
+<li>Close pull request 361 - Support 8bit encoding for ruby 1.9 (bogdan)
+
+</li>
+<li>Close pull request 346 - Fix two bugs of TestRetriever (ermaker)
+
+</li>
+<li>Close pull request 337 - Make the behavior of value_decode the same between
+Ruby 1.8 and Ruby 1.9. (kennyj)
+
+</li>
+<li>Close pull request 336 - Fix more warning: possibly useless use of == in
+void context (kennyj)
+
+</li>
+<li>Close pull request 293 - make charset and mime type more resliant to bad
+header values (kmeehl)
+
+</li>
+<li>Fix failing spec Issue 453 on Ruby 1.9.3
+
+</li>
+<li>Fix mail reading: don&#8216;t raise invalid byte sequence in UTF-8 when
+reading non-UTF-8 emails (mreinsch)
+
+</li>
+<li>Close pull request 353 - define NilClass#blank? only if not defined yet
+(amatsuda)
+
+</li>
+<li>Close pull request 357 - Fixes 349 an inverted condition on imap open
+read_only (felixroeser)
+
+</li>
+<li>Remove duplicated line feed from regexp
+
+</li>
+<li>Remove unused variable
+
+</li>
+<li>Updated IMAP documentation
+
+</li>
+<li>Tweak publisher
+
+</li>
+</ul>
+<h2>Version 2.4.4 - Wed Mar 14 22:44:00 +1100 2012 Mikel Lindsaar &lt;mikel@reinteractive.net&gt;</h2>
+<ul>
+<li>Fix security vulnerability allowing command line exploit when using file
+delivery method
+
+</li>
+</ul>
+<h2>Version 2.4.3 - Tue Mar 6 19:38:00 UTC 2012 Mikel Lindsaar &lt;mikel@reinteractive.net&gt;</h2>
+<ul>
+<li>Fix security vulnerability allowing command line exploit when using exim or
+sendmail from the command line
+
+</li>
+<li>Change Mail#deliver! to also inform the interceptors
+
+</li>
+<li>Encodings.value_decode(str): Treat lines with mixed encoding correctly when
+the line ends with a plain text part.
+
+</li>
+</ul>
+<h2>Version 2.4.1 - Thu Jan 19 13:49:34 UTC 2012 Mikel Lindsaar &lt;mikel@reinteractive.net&gt;</h2>
+<ul>
+<li>Fix non ascii character folding problems
+
+</li>
+<li>Handle multipart mail in Mail::Message#to_yaml / from_yaml
+
+</li>
+<li>More warning fixes
+
+</li>
+<li>Normalize the Parse Error class and messages
+
+</li>
+<li>Fix for Mail::Encodings.unquote_and_convert not handling unquoted
+characters mixed in between quoted strings
+
+</li>
+<li>Updated treetop to latest version, specs now run approximately 25-30%
+faster!
+
+</li>
+<li>Version bump to 2.4.1 and gem release
+
+</li>
+</ul>
+<h2>Version 2.4.0 - Sun Jan 15 18:15:56 UTC 2011 Mikel Lindsaar &lt;mikel@reinteractive.net&gt;</h2>
+<ul>
+<li>Speed up reading of messages by about 12x
+
+</li>
+<li>Added Message#without_attachments! that removes all message&#8216;s
+attachments
+
+</li>
+<li>Added shoulda-style RSpec matchers
+
+</li>
+<li>Added support for @ in display name
+
+</li>
+<li>Added support for the :tls and :ssl options
+
+</li>
+<li>Added UTF-16 and UTF-32 support
+
+</li>
+<li>Added Exim as it&#8216;s own delivery manager
+
+</li>
+<li>Added Ruby 1.9.3 compatibility
+
+</li>
+<li>Fix for Sendmail return-path escaping
+
+</li>
+<li>Fix for alias for SJIS was changed from shift_jis to windows-31J in Ruby
+1.9.3
+
+</li>
+<li>Fix for undefined method &#8216;constantize&#8217; error when no <a
+href="../classes/ActiveSupport.html">ActiveSupport</a> loaded
+
+</li>
+<li>Fix <a href="../classes/Mail/Field.html">Mail::Field</a>#== comparison
+
+</li>
+<li>Fixed Regexp warning: character class has duplicated range
+
+</li>
+<li>Fixed encoding non-latin names in addresses
+
+</li>
+<li>Fixed issue with non-7bit attachment filenames
+
+</li>
+<li>Now define String#blank? only if not defined yet
+
+</li>
+<li>Decoding text parts using charset from Content-Type field
+
+</li>
+<li>Per RFC 5322, do not accept emails with consecutive dots
+
+</li>
+<li>Bunch of bug fixes from contributed pull requests
+
+</li>
+<li>Travis CI setup and passing on 6 rubies
+
+</li>
+<li>Upgrade RSpec to 2.8.0
+
+</li>
+<li>Lots of warnings fixed
+
+</li>
+<li>Version bump to 2.4.0 and gem release
+
+</li>
+</ul>
+<h2>Version 2.3.0 - Tue Apr 26 09:59:56 UTC 2011 Mikel Lindsaar &lt;mikel@rubyx.com&gt;</h2>
+<ul>
+<li>Remove <a href="../classes/ActiveSupport.html">ActiveSupport</a> from the
+dependencies, load Active Support if present, or use internals if not
+
+</li>
+<li>Created v2.2 branch for all 2.2 related commits
+
+</li>
+<li>Update activesupport require to use inflector - closes 217
+
+</li>
+<li>Version bump to 2.3 and gem release
+
+</li>
+</ul>
+<h2>Tue Apr 26 06:18:19 UTC 2011 Mikel Lindsaar &lt;mikel@rubyx.com&gt;</h2>
+<ul>
+<li>Fixed charset warning issue with multipart messages - <a
+href="https://github.com/arvindsv">github.com/arvindsv</a>
+
+</li>
+<li>Version bump to 2.2.18 and gem release
+
+</li>
+</ul>
+<h2>Wed 20 Apr 2011 15:16:20 UTC Mikel Lindsaar &lt;mikel@rubyx.com&gt;</h2>
+<ul>
+<li>Mail::Field.new(&quot;Subject: foobar&quot;, &#8216;iso-2022-jp&#8217;)
+does not set charset - <a
+href="https://github.com/yalab">github.com/yalab</a>
+
+</li>
+</ul>
+<h2>Tue Apr 19 00:20:54 UTC 2011 Mikel Lindsaar &lt;mikel@rubyx.com&gt;</h2>
+<ul>
+<li>Fixed an exception with nil in Reply-To and References field - <a
+href="https://github.com/dcormier">github.com/dcormier</a>
+
+</li>
+<li>Version bump to 2.2.17 and gem release
+
+</li>
+</ul>
+<h2>Sat Apr 16 12:57:27 UTC 2011 Mikel Lindsaar &lt;mikel@rubyx.com&gt;</h2>
+<ul>
+<li>Added support for open SMTP connections and returning the Mail
+server&#8216;s response - <a
+href="https://github.com/spiegela">github.com/spiegela</a>
+
+</li>
+<li>RE: not appended to subject when replying to a reply - <a
+href="https://github.com/prateekdayal">github.com/prateekdayal</a>
+
+</li>
+<li>Support not ascii compatible charset mail send - <a
+href="https://github.com/yalab">github.com/yalab</a>
+
+</li>
+<li>Fix for issue 208 &quot;mail.body after mail.add_file truncates message
+body&quot; - <a href="https://github.com/glongman">github.com/glongman</a>
+
+</li>
+<li>Handle bad subject encoding (or &quot;:invalid =&gt; :replace&quot; is
+ineffective for utf-8 to utf-8 encoding) - <a
+href="https://github.com/choonkeat">github.com/choonkeat</a>
+
+</li>
+<li>Handle blank Received header field - <a
+href="https://github.com/bcantin">github.com/bcantin</a>
+
+</li>
+<li>Handle part with missing content type - <a
+href="https://github.com/bcantin">github.com/bcantin</a>
+
+</li>
+<li>Handle a &quot;&lt;&gt;&quot; Return field - <a
+href="https://github.com/bcantin">github.com/bcantin</a>
+
+</li>
+<li>Performance improvements for 1.9 - <a
+href="https://github.com/nobu">github.com/nobu</a>
+
+</li>
+<li>Fix heavy CPU issues when messages are missing a space - <a
+href="https://github.com/scsmith">github.com/scsmith</a>
+
+</li>
+<li>Tighten up allowed encodings - <a
+href="https://github.com/scsmith">github.com/scsmith</a>
+
+</li>
+<li>Added to_yaml &amp; from_yaml (as well as to_hash &amp; from_hash) - <a
+href="https://github.com/srushti">github.com/srushti</a>
+
+</li>
+<li>Fix up some comments - <a
+href="https://github.com/takahashim">github.com/takahashim</a>
+
+</li>
+<li>Version bump to 2.2.16 and gem release
+
+</li>
+</ul>
+<h2>Wed 26 Jan 2011 02:23:09 UTC Mikel Lindsaar &lt;mikel@rubyx.com&gt;</h2>
+<ul>
+<li>Update addresses passed into sendmail to escape them (Andy Lindeman)
+
+</li>
+<li>Version bump to 2.2.15 and gem release
+
+</li>
+</ul>
+<h2>Mon 3 Jan 2011 12:48:59 UTC Mikel Lindsaar &lt;mikel@rubyx.com&gt;</h2>
+<ul>
+<li>Update field_spec to handle encodings, closes issues 44 and 120 (Luis
+Lopez)
+
+</li>
+<li>Version bump to 2.2.14 and gem release
+
+</li>
+</ul>
+<h2>Mon 3 Jan 2011 00:09:27 UTC Mikel Lindsaar &lt;mikel@rubyx.com&gt;</h2>
+<ul>
+<li>Use default IANA port on the IMAP retriever_method (Adrian Silva)
+
+</li>
+<li>Updated README to reflect latest ruby versions we test against (mikel)
+
+</li>
+<li>Only remove tlsconnect if it exists (mikel)
+
+</li>
+</ul>
+<h2>Thu 23 Dec 2010 09:15:58 UTC Mikel Lindsaar &lt;mikel@rubyx.com&gt;</h2>
+<ul>
+<li>Added backport fix for net/smtp bug (Aaron Patterson)
+
+</li>
+<li>Changed &quot;Mail#text_part&quot; so that it does not return a plain text
+attachment (Anton Mironov)
+
+</li>
+<li>Added in rescue blocks for badly formatted dates as well as encoding
+problems (Karl Baum)
+
+</li>
+<li>Fixed warning errors of duplicated regular expressions (Kouhei Sutou)
+
+</li>
+<li>Removed duplication from Regex&#8216;s containing [\w\d]+ as \w contains \d
+(mikel)
+
+</li>
+<li>Add authentication selection for imap retriever (Björn Albers)
+
+</li>
+<li>Removing warning on @name not being initialized (mikel)
+
+</li>
+<li>Version bump to 2.2.13 and gem release
+
+</li>
+</ul>
+<h2>Fri 10 Dec 2010 09:06:49 UTC Mikel Lindsaar &lt;mikel@rubyx.com&gt;</h2>
+<ul>
+<li>Fixing problems with multibyte filenamed attachment (amatsuda)
+
+</li>
+<li>Providing IMAP uid and imap object as options to IMAP calls (dball)
+
+</li>
+<li>Fixing filename for windows (mikel)
+
+</li>
+</ul>
+<h2>Sun Dec 5 02:24:55 UTC 2010 Mikel Lindsaar &lt;mikel@rubyx.com&gt;</h2>
+<ul>
+<li>Updating requirement on i18n to be more relaxed for now until we nuke <a
+href="../classes/ActiveSupport.html">ActiveSupport</a> dependency (Mikel)
+
+</li>
+<li>Version bump to 2.2.12 and gem release
+
+</li>
+</ul>
+<h2>Tue 30 Nov 2010 00:36:11 UTC Mikel Lindsaar &lt;mikel@rubyx.com&gt;</h2>
+<ul>
+<li>Allow address lists to handle and ignore empty addresses (Donald Ball)
+
+</li>
+<li>Allow address lists to handle repeating strings of commas (Donald Ball)
+
+</li>
+<li>Noting pending test for malformed folding whitespace (Donald Ball)
+
+</li>
+<li>Adding spec to test error email for missing addresses in to header (Mikel)
+
+</li>
+<li>Bumping i18n dependency to ~&gt; 0.5.0
+
+</li>
+<li>Version bump to 2.2.11 and gem release
+
+</li>
+</ul>
+<h2>Wed 17 Nov 2010 00:43:31 UTC Mikel Lindsaar &lt;mikel@rubyx.com&gt;</h2>
+<ul>
+<li>Added test retriever and updated documentation (Donald Ball)
+
+</li>
+<li>Fix test suite to work in any timezone (Donald Ball)
+
+</li>
+<li>Added dependency for tlsmail for Ruby 1.8.6 (Donald Ball)
+
+</li>
+<li>Added new feature, replies for mail message
+
+</li>
+<li>Fix references header to use CFWS instead of comma as the separator per
+RFC2822
+
+</li>
+<li>Version Bum to 2.2.10 and pushed.
+
+</li>
+</ul>
+<h2>Mon Nov 15 13:04:41 UTC 2010 Mikel Lindsaar &lt;mikel@rubyx.com&gt;</h2>
+<ul>
+<li>Add find_and_delete convenience method for consistency with POP3, document
+delete_after_find option (Donald Ball)
+
+</li>
+<li>Documenting the openssl_verify_mode setting (Donald Ball)
+
+</li>
+<li>Added ruby-1.8.6 back into the list of tested platforms (Donald Ball)
+
+</li>
+<li>Relax i18n dependency until we remove active support requirement
+
+</li>
+<li>Version Bump to 2.2.9.1 to include new i18n dependency
+
+</li>
+</ul>
+<h2>Tue Oct 26 07:14:36 UTC 2010 Mikel Lindsaar &lt;mikel@rubyx.com&gt;</h2>
+<ul>
+<li>Version Bump to 2.2.9 and tag
+
+</li>
+<li>Updating Gemfile and gemspec to include i18n and sync dependency versions
+
+</li>
+<li>Added work from Kendall Gifford closing issues 104, 107 and 117
+
+</li>
+<li>Always encode mailbox names with UTF-7 (github: fasta)
+
+</li>
+</ul>
+<h2>Tue Oct 26 06:43:17 UTC 2010 Mikel Lindsaar &lt;mikel@rubyx.com&gt;</h2>
+<ul>
+<li>Added updates from Donald Ball (github: dball) to improve 1.8.6 support
+
+</li>
+<li>Added patch from Ryan Bigg (github: ryanb) for mark_for_delete
+
+</li>
+</ul>
+<h2>Thu Oct 7 15:44:31 UTC 2010 Mikel Lindsaar &lt;mikel@rubyx.com&gt;</h2>
+<ul>
+<li>Version Bump to 2.2.7
+
+</li>
+<li>Release 2.2.7
+
+</li>
+</ul>
+<h2>Thu Oct 7 15:42:57 UTC 2010 Mikel Lindsaar &lt;mikel@rubyx.com&gt;</h2>
+<ul>
+<li>Added fix for Windows using &#8216;rb&#8217; flags, thanks to Luis Lavena
+and dzhang for pointing it out
+
+</li>
+<li>Fixed up Rakefile to require bundler to run specs and give more appropriate
+errors messages if this fails
+
+</li>
+</ul>
+<h2>Tue Sep 28 14:59:03 UTC 2010 Mikel Lindsaar &lt;mikel@rubyx.com&gt;</h2>
+<ul>
+<li>Merged POP3 delete support work from Michael Prendergast
+
+</li>
+<li>Merged IMAP support work from Fabian Staubli
+
+</li>
+</ul>
+<h2>Mon Sep 13 02:31:21 UTC 2010 Mikel Lindsaar &lt;mikel@rubyx.com&gt;</h2>
+<ul>
+<li>Replace some missing documentation
+
+</li>
+<li>Version bump to 2.2.6.1
+
+</li>
+</ul>
+<h2>Sat 11 Sep 2010 05:13:36 UTC Mikel Lindsaar &lt;mikel@rubyx.com&gt;</h2>
+<ul>
+<li>Fixed parsing an email with an empty In-Reply-To header (Reported by Eugene
+Pimenov)
+
+</li>
+<li>Adding address spec for groupname+domain.com@example.com format emails
+
+</li>
+<li>Version bump to 2.2.6
+
+</li>
+</ul>
+<h2>Sat Sep 11 01:56:59 UTC 2010 Mikel Lindsaar &lt;mikel@rubyx.com&gt;</h2>
+<ul>
+<li>Added new way to do versioning for rubygems
+
+</li>
+<li>Added additional specs for Content-Disposition: inline which are not being
+encoded correctly - Shawn Pyle
+
+</li>
+<li>Make sure Mail::Message#attachment? returns true/false - Simone Carletti
+
+</li>
+<li>Replace hard-coded references to Mail with more generic self references to
+allow easier inheritance (closes 61) - Simone Carletti
+
+</li>
+<li>Force encoding on Regexp for Ruby 1.9 to avoid encoding conflicts - Golubev
+Pavel
+
+</li>
+<li>Added lazy evaluation to message body: body is not parsed until need. It
+greatly improves performance with big mails if you don&#8216;t need to read
+the body (yet)
+
+</li>
+<li>Added Mail.read_from_string as an explicit method (mcansky)
+
+</li>
+<li>Fixed bounce detection for multipart reports that contain a human readable
+report status part
+
+</li>
+<li>Closed Issue 65 found (incredibly) by quetz - major Kudos for bug hunting
+
+</li>
+<li>Fixed missing trailing CRLF in content type field - Closes issue 57 - Kudos
+to Henry Flower for finding it
+
+</li>
+<li>Version bump to 2.2.5.2
+
+</li>
+</ul>
+<h2>Sat Sep 11 01:32:13 UTC 2010 Mikel Lindsaar &lt;mikel@rubyx.com&gt;</h2>
+<ul>
+<li>Closed issue 58 - Content Type not parsing unless lower case.
+
+</li>
+<li>Version bump to 2.2.5.1
+
+</li>
+</ul>
+<h2>Thu 17 Jun 2010 22:13:18 UTC Mikel Lindsaar &lt;mikel@rubyx.com&gt;</h2>
+<ul>
+<li>Added Mail::POP3.delete_all, including specs (Martijn Storck)
+
+</li>
+<li>Lars Pind updates on header folding
+
+</li>
+<li>Version bump to 2.2.5
+
+</li>
+</ul>
+<h2>Tue Jun 8 01:55:21 UTC 2010 Mikel Lindsaar &lt;mikel@rubyx.com&gt;</h2>
+<ul>
+<li>Added inline attachment support to mail (mikel)
+
+</li>
+</ul>
+<h2>Mon Jun 7 18:00:39 UTC 2010 Mikel Lindsaar &lt;mikel@rubyx.com&gt;</h2>
+<ul>
+<li>Updating versioning so we only have one source, VERSION.yml (mikel)
+
+</li>
+<li>Changed activesupport dependency to 2.3.6 to fix 53, 64, and def 67. (Artem
+Titoulenko)
+
+</li>
+<li>Fixing typo in break_down_to.rb. (mikel)
+
+</li>
+</ul>
+<h2>Mon Jun 7 18:07:16 UTC 2010 Mikel Lindsaar &lt;mikel@rubyx.com&gt;</h2>
+<ul>
+<li>fixing a typo when generating docs. (Andrew Bloom)
+
+</li>
+<li>Changing \r\n\t to \r\n\s throughout mail (mikel)
+
+</li>
+<li>Handle multiple quoted words in Encodings.unquote_and_convert_to (Eric
+Kidd)
+
+</li>
+<li>Ruby 1.9: mark source encoding so it&#8216;s usable with -Ks, -Ke, etc
+(Jeremy Kemper)
+
+</li>
+<li>Add include? to mail body for convenience (Maxim Chernyak)
+
+</li>
+<li>Use Mail::TestMailer.deliveries in README example (John Trupiano)
+
+</li>
+<li>Allow bundler to automatically build a gem directly from git (Eric Kidd)
+
+</li>
+</ul>
+<h2>Sun Apr 11 07:49:15 UTC 2010 Mikel Lindsaar &lt;raasdnil@gmail.com&gt;</h2>
+<ul>
+<li>Lots of updates on encoding and decoding of headers and unstructured
+fields. This is now a lot cleaner and nicer. Also more predictable.
+
+</li>
+<li>Merged encoding branch back into head
+
+</li>
+<li>Version bump to 2.2.0
+
+</li>
+<li>Tagged 2.2.0
+
+</li>
+</ul>
+<h2>Sun Apr 4 06:41:46 UTC 2010 Mikel Lindsaar &lt;raasdnil@gmail.com&gt;</h2>
+<ul>
+<li>Created non-ascii header auto encoding for address fields and unstructured
+fields
+
+</li>
+<li>Changed default behaviour of mail, if you specify a charset, it will use
+that charset regardless of what is in the body. Previously, if the body was
+all US-ASCII, it would set the charset to US-ASCII in preference.
+
+</li>
+<li>Many internal version jumps from 2.1.5.3 =&gt; 2.1.5.8 - unreleased
+development versions
+
+</li>
+</ul>
+<h2>Mon 29 Mar 2010 07:04:34 UTC Mikel Lindsaar &lt;raasdnil@gmail.com&gt;</h2>
+<ul>
+<li>Version bump to 2.1.5.3
+
+</li>
+<li>No longer depend on vendor&#8216;d treetop as treetop now has optional
+loading of parts of the library
+
+</li>
+<li>Change treetop dependency to 1.4.5
+
+</li>
+</ul>
+<h2>Sun 28 Mar 2010 10:31:33 UTC Mikel Lindsaar &lt;raasdnil@gmail.com&gt;</h2>
+<ul>
+<li>Version bump to 2.1.5.2
+
+</li>
+<li>Fixed up preserve case in header fields when assigned from a message closes
+issue 46
+
+</li>
+</ul>
+<h2>Sun 28 Mar 2010 09:02:20 UTC Mikel Lindsaar &lt;raasdnil@gmail.com&gt;</h2>
+<ul>
+<li>Version bump to 2.1.5.1
+
+</li>
+<li>Fixed net/pop3.rb regression for Ruby 1.8.6
+
+</li>
+<li>Merged in Jeremy Kemper&#8216;s updates:
+
+<ul>
+<li>Bump vendored treetop to 1.4.4
+
+</li>
+<li>Use Mikel&#8216;s treetop for cucumber workaround
+
+</li>
+<li>Use LOAD_PATH for spec_helper instead of relative requires
+
+</li>
+<li>Force treetop from git so cucumber doesn&#8216;t pull in old version
+
+</li>
+</ul>
+</li>
+</ul>
+<h2>Sun Mar 28 07:01:07 UTC 2010 Mikel Lindsaar &lt;raasdnil@gmail.com&gt;</h2>
+<ul>
+<li>Version bump to 2.1.5
+
+</li>
+<li>Changed guess encoding to short circuit to binary if the mime type is
+unknown, should be safe
+
+</li>
+<li>Renaming spec to match the file for attachment_lists.rb
+
+</li>
+<li>Adding Message#decoded returns Message#body#decoded if the message is not
+multipart
+
+</li>
+</ul>
+<h2>Sun Mar 28 02:55:42 UTC 2010 Mikel Lindsaar &lt;raasdnil@gmail.com&gt;</h2>
+<ul>
+<li>Version bump to 2.1.4
+
+</li>
+</ul>
+<h2>Sun Mar 28 00:26:27 UTC 2010 Mikel Lindsaar &lt;raasdnil@gmail.com&gt;</h2>
+<ul>
+<li>Merged in Jeremy/treetop to vendored treetop
+
+</li>
+<li>Merged in nathansobo/treetop to vendored treetop
+
+</li>
+<li>Merged in pzbowen/mail into mail - Adds body auto encoding - awesome work
+
+</li>
+<li>Fixed content-transfer-encoding parser to be more compliant per RFC, also
+now handles trailing semi-colons correctly
+
+</li>
+<li>Fixed content-transfer-encoding parser to handle weird &quot;from the
+wild&quot; misspellings
+
+</li>
+<li>Added message.errors, header.errors arrays, returns array of [field_name,
+value, error_object] for each field that failed to parse
+
+</li>
+<li>Removed bundler require from Rakefile
+
+</li>
+</ul>
+<h2>Sun Mar 17 03:03:03 UTC 2010 Mikel Lindsaar &lt;raasdnil@gmail.com&gt;</h2>
+<ul>
+<li>Keep header name case when failing to unstructured field
+
+</li>
+</ul>
+<h2>Wed Feb 24 09:14:56 UTC 2010 Mikel Lindsaar &lt;raasdnil@gmail.com&gt;</h2>
+<ul>
+<li>Fixed multiaddress bounce messages crashing when calling .bounced? Now just
+take the first report and return that.
+
+</li>
+<li>Closes issue 38 - final_recipient method give problem when one bounce email
+for multiple email ids
+
+</li>
+<li>Fixing up TODO and Docs
+
+</li>
+</ul>
+<h2>Sun Mar 22 03:24:15 UTC 2010 Mikel Lindsaar &lt;raasdnil@gmail.com&gt;</h2>
+<ul>
+<li>Version bump to 2.1.3
+
+</li>
+</ul>
+<h2>Thu Jan 28 00:25:02 UTC 2010 Mikel Lindsaar &lt;raasdnil@gmail.com&gt;</h2>
+<ul>
+<li>Added TMM1&#8216;s patch to not raise errors if a email is not
+multipart/report
+
+</li>
+<li>Added html_part and text_part now return the first text/html or text/plain
+part they find. Order is from top to bottom of the email, all parts,
+flattened.
+
+</li>
+<li>Cleaning up register_interceptor and register_observer including
+documentation
+
+</li>
+<li>Renamed register_for_delivery_notification to register_observer
+
+</li>
+<li>Renamed register_for_delivery_interception to register_interceptor
+
+</li>
+<li>Adding spec to check for folding of non ASCII words that have been encoded
+
+</li>
+<li>Updating Message#inspect to be a bit more friendly&#8230; it is for us mere
+mortals after all
+
+</li>
+<li>Version bump to 2.1.2
+
+</li>
+</ul>
+<h2>Sun Jan 28 02:59:34 UTC 2010 Mikel Lindsaar &lt;raasdnil@gmail.com&gt;</h2>
+<ul>
+<li>Removed old method of setting delivery_method
+
+</li>
+</ul>
+<h2>Mon Jan 25 11:36:13 UTC 2010 Mikel Lindsaar &lt;raasdnil@gmail.com&gt;</h2>
+<ul>
+<li>Added ability for address fields to init on an array instead of just a
+string.
+
+</li>
+<li>Version bump to 2.1.1
+
+</li>
+</ul>
+<h2>Mon Jan 25 10:36:33 UTC 2010 Mikel Lindsaar &lt;raasdnil@gmail.com&gt;</h2>
+<ul>
+<li>Now passes a block to the delivery handler, which can just call yield if it
+want&#8216;s Mail to just do it&#8216;s normal delivery method
+
+</li>
+<li>Moved Mail.deliveries into Mail::TestMailer.deliveries. Now only gets mail
+appended to it if you are sending with the :test delivery_method (only for
+testing)
+
+</li>
+<li>Version bump to 2.1.0
+
+</li>
+</ul>
+<h2>Mon Jan 25 01:44:13 UTC 2010 Mikel Lindsaar &lt;raasdnil@gmail.com&gt;</h2>
+<ul>
+<li>Change :deliver! to deliver a mail object, bypassing the
+:perform_deliveries and :raise_delivery_errors flags, also does not append
+the mail object to Mail.deliveries, thus the ! (dangerous). The intended
+use for :deliver! is for people wanting to have their own delivery_handler
+(like ActionMailer uses) to track and handle delivery failures.
+
+</li>
+<li>Added :delivery_handler to Message. Allows you to pass an object that will
+be sent :deliver_mail(self) by the <a
+href="../classes/Mail/Message.html">Mail::Message</a> instance when it is
+sent :deliver and bypasses the usual delivery method.
+
+</li>
+<li>Changed :perform_deliveries flag to be more consistent with it&#8216;s
+name, mail will not append itself to the Mail.deliveries collection if
+:perform_deliveries is false
+
+</li>
+</ul>
+<h2>Sat Jan 23 23:49:50 UTC 2010 Mikel Lindsaar &lt;raasdnil@gmail.com&gt;</h2>
+<ul>
+<li>Version bump to 2.0.5
+
+</li>
+<li>Added :raise_delivery_errors to <a
+href="../classes/Mail/Message.html">Mail::Message</a>, if set to false will
+silently rescue all errors raised by the delivery methods, set to true by
+default
+
+</li>
+</ul>
+<h2>Sat Jan 23 23:28:42 UTC 2010 Mikel Lindsaar &lt;raasdnil@gmail.com&gt;</h2>
+<ul>
+<li>Version bump to 2.0.4
+
+</li>
+<li>Added :perform_deliveries to mail, will not actually call deliver on the
+delivery method if this is set to false, set to true by default.
+
+</li>
+<li>Added @delivery_notification_observers to mail messages, you can register
+an observer with mail by calling
+mail.register_for_delivery_notification(observer) and then when mail is
+told to :deliver it will call your observer with
+observer.delivered_email(self). It will call your observer if it actually
+performed the delivery or not (that is, irregardless of the
+:perform_deliveries flag)
+
+</li>
+<li>Added ability to overwrite the Mail.deliveries store with an object of your
+choice instead of just an array, this is a good way to find out if
+something actually got delivered as if :perform_deliveries is false, this
+collection will not get the mail message appended
+
+</li>
+</ul>
+<h2>Sat Jan 23 05:32:53 UTC 2010 Mikel Lindsaar &lt;raasdnil@gmail.com&gt;</h2>
+<ul>
+<li>Version bump to 2.0.3
+
+</li>
+<li>Made body.sort_parts! recursive, to do the entire body
+
+</li>
+<li>Added ability to use &lt;&lt; on the results returned by the various
+address fields, ie, mail.to &lt;&lt; &#8216;new@address&#8217; now works
+
+</li>
+<li>Message now adds multipart/mixed as the content type if nothing is set and
+there are parts to the message
+
+</li>
+<li>Added display_names and addrs to all address fields. addrs returns the
+actual <a href="../classes/Mail/Address.html">Mail::Address</a> object for
+each address in the field.
+
+</li>
+<li>Body should call to_s on given input&#8230; incase someone gave it an
+IO.readlines result (Array)
+
+</li>
+</ul>
+<p>
+*
+</p>
+<h2>Thu Jan 21 05:27:17 UTC 2010 Mikel Lindsaar &lt;raasdnil@gmail.com&gt;</h2>
+<ul>
+<li>Version bump to 2.0.2
+
+</li>
+<li>Major change to attachments, add_file now only accepts {:filename =&gt;
+&#8216;full/path/to/file.png&#8217;} or {:filename =&gt;
+&#8216;file.png&#8217;, :content =&gt; &#8216;string of file
+content&#8217;} you can also now do <a
+href="http://'filename.png'">mail.attachments</a> =
+File.read(&#8216;path/to/file.png&#8217;) which is nice too!
+
+</li>
+</ul>
+<h2>Fri Jan 15 09:20:51 UTC 2010 Mikel Lindsaar &lt;raasdnil@gmail.com&gt;</h2>
+<ul>
+<li>Rewrote all network classes to not use singletons. Means different <a
+href="../classes/Mail/Message.html">Mail::Message</a> objects can have
+different delivery methods.
+
+</li>
+<li>Added examples for how to send via GMail, MobileMe, Sendmail, File etc.
+
+</li>
+<li>Version bump to 2.0.0 as Network API changed drastically, now not a
+singleton class.
+
+</li>
+<li>Fixed that return-path should only return one address
+
+</li>
+</ul>
+<h2>Thu Jan 14 10:41:22 UTC 2010 Mikel Lindsaar &lt;raasdnil@gmail.com&gt;</h2>
+<ul>
+<li>Version update to 1.6.0 - API change on mail.address_fields to always
+return arrays
+
+</li>
+<li>Updated all message.address_field methods to always return arrays, so
+mail.from #=&gt; [&#8216;one@address.com&#8217;] now, is least surprise
+
+</li>
+<li>Updated handling of empty group lists so it didn&#8216;t crash
+
+</li>
+</ul>
+<h2>Thu Jan 12 10:41:47 UTC 2010 Mikel Lindsaar &lt;raasdnil@gmail.com&gt;</h2>
+<ul>
+<li>Version 1.5.3, handling invalid input on fields. Highly recommended update
+
+</li>
+<li>Updated fields to always try parsing the given data (unless blank). This
+allows mail to catch invalid input and return UnstructuredFields. Makes
+mail a lot more resistant to invalid input.
+
+</li>
+</ul>
+<h2>Fri 8 Jan 2010 00:00:08 UTC Mikel Lindsaar &lt;raasdnil@gmail.com&gt;</h2>
+<ul>
+<li>Version bump to 1.5.2
+
+</li>
+</ul>
+<h2>Fri 8 Jan 8:55:49 2010 +1100 Mikel Lindsaar &lt;raasdnil@gmail.com&gt;</h2>
+<ul>
+<li>Updated Sendmail and SMTP delivery methods to use return-path if present
+
+</li>
+<li>Fix up a lot of content-type parsing problems
+
+</li>
+<li>Updating compat listing
+
+</li>
+<li>Moving error emails into one directory
+
+</li>
+<li>Moving error emails into one directory
+
+</li>
+<li>Initializing @tls variable to remove warnings
+
+</li>
+<li>Moved default corpus directory
+
+</li>
+<li>Fixed up git ignore file
+
+</li>
+</ul>
+<h2>Thu 6 Jan 2010 23:59:29 UTC Mikel Lindsaar &lt;raasdnil@gmail.com&gt;</h2>
+<ul>
+<li>Added compatibility list to Readme.rdoc
+
+</li>
+<li>Fixing encoding of return path to be per RFC 2822, adding angle brackets
+around the addr_spec
+
+</li>
+<li>Specs covering return path setting and preserving
+
+</li>
+</ul>
+<h2>Thu 5 Jan 2010 23:59:48 UTC Mikel Lindsaar &lt;raasdnil@gmail.com&gt;</h2>
+<ul>
+<li>Moving the require for tlsmail for Ruby 1.8.6 into mail.rb
+
+</li>
+</ul>
+<h2>Sun Jan 3 00:08:06 UTC 2010 Mikel Lindsaar &lt;raasdnil@gmail.com&gt;</h2>
+<ul>
+<li>Version bump to 1.5.0
+
+</li>
+<li>Major API change in Message#field_name. This WILL break your applications
+that use Mail. Message#field_name now returns good, intelligent, default
+values. You can still access the field object by calling
+Message#[:field_name] or Message#[&#8216;field_name&#8217;].
+
+</li>
+</ul>
+<h2>Sat Jan 2 04:12:53 UTC 2010 Mikel Lindsaar &lt;raasdnil@gmail.com&gt;</h2>
+<ul>
+<li>Message-ID, Content-ID, References et al, now return the default value of
+the message ID without the angle brackets, as per RFC 2822,
+&quot;Semantically, the angle bracket characters are not part of the
+msg-id; the msg-id is what is contained between the two angle bracket
+characters.&quot;
+
+</li>
+<li>Message class now has getter and setter methods for all the supported field
+types explicitly. This allows us to return a &quot;default&quot; value for
+all fields.
+
+</li>
+<li>All address fields, when called from Message#to or Message#from or the
+like, return either a string of the address spec (mikel@test.lindsaar.net)
+if it is a single entry, or an array of address specs if there is more than
+one [&#8216;mikel@test.lindsaar.net&#8217;,
+&#8216;ada@test.lindsaar.net&#8217;]
+
+</li>
+</ul>
+<h2>Mon 28 Dec 2009 01:21:52 UTC Mikel Lindsaar &lt;raasdnil@gmail.com&gt;</h2>
+<ul>
+<li>Added sorting of parts, default is text/plain, then text/enriched and
+text/html. Access through Body#set_sort_order and Body#sort_parts! (called
+from Body#encode automatically)
+
+</li>
+<li>Version bump to 1.4.2
+
+</li>
+</ul>
+<h2>Sun Dec 27 10:38:24 UTC 2009 Mikel Lindsaar &lt;raasdnil@gmail.com&gt;</h2>
+<ul>
+<li>Updating treetop and mail to initialize uninitialized instance variables to
+nil
+
+</li>
+<li>Version bump to 1.4.1
+
+</li>
+</ul>
+<h2>Sun Dec 27 09:51:27 UTC 2009 Mikel Lindsaar &lt;raasdnil@gmail.com&gt;</h2>
+<ul>
+<li>Version bump to 1.4 because now :to_s calls :decoded for all fields and
+body while :to_s calls :encoded for Message and Header containers. Makes
+sense&#8230; really.
+
+</li>
+</ul>
+<h2>Sun Dec 27 07:30:02 UTC 2009 Mikel Lindsaar &lt;raasdnil@gmail.com&gt;</h2>
+<ul>
+<li>Changed fields to default to :decoded on :to_s, all container objects
+retain :encoded as the default for :to_s
+
+</li>
+</ul>
+<h2>Thu Dec 17 06:35:05 UTC 2009 Mikel Lindsaar &lt;raasdnil@gmail.com&gt;</h2>
+<ul>
+<li>Fixed parsing error &#8216;Subject: =?ISO-8859-1?Q?Re=3A_ol=E1?=&#8217;
+(has a new line embedded)
+
+</li>
+</ul>
+<h2>Thu Dec 17 02:14:23 UTC 2009 Mikel Lindsaar &lt;raasdnil@gmail.com&gt;</h2>
+<ul>
+<li>Version 1.3.4
+
+</li>
+<li>Vendor&#8216;d treetop
+
+</li>
+</ul>
+<h2>Thu Dec 17 01:32:00 UTC 2009 Mikel Lindsaar &lt;raasdnil@gmail.com&gt;</h2>
+<ul>
+<li>Version 1.3.3
+
+</li>
+<li>Removed dependency on treetop, don&#8216;t need it at runtime
+
+</li>
+</ul>
+<h2>Wed Dec 16 23:48:46 UTC 2009 Mikel Lindsaar &lt;raasdnil@gmail.com&gt;</h2>
+<ul>
+<li>Version 1.3.2
+
+</li>
+<li>Resolved Ruby 1.9.1-head not working because File.basename only accepts
+US-ASCII or 8Bit
+
+</li>
+</ul>
+<h2>Sun Dec 13 01:06:17 UTC 2009 Mikel Lindsaar &lt;raasdnil@gmail.com&gt;</h2>
+<ul>
+<li>Version 1.3.1
+
+</li>
+<li>Resolved Issue 18 - Wrong instance variable name
+
+</li>
+<li>Resolved Issue 15 - Duplicate block call
+
+</li>
+</ul>
+<h2>Thu Dec 10 21:25:37 UTC 2009 Mikel Lindsaar &lt;raasdnil@gmail.com&gt;</h2>
+<ul>
+<li>Resolved Issue 13 - replacing From field results in from field becoming
+optional field.
+
+</li>
+</ul>
+<h2>Thu 3 Dec 2009 00:52:12 UTC Mikel Lindsaar &lt;raasdnil@gmail.com&gt;</h2>
+<ul>
+<li>Added POP upgrades from Nicolas Fouché
+
+</li>
+<li>Added patch to handle multiple from lines in email from Luke Grimstrup
+
+</li>
+</ul>
+<h2>Mon Nov 23 23:34:22 UTC 2009 Mikel Lindsaar &lt;raasdnil@gmail.com&gt;</h2>
+<ul>
+<li>Resolved Issue 12 - Wrong comment in smtp.rb
+
+</li>
+</ul>
+<h2>Mon Nov 23 22:35:50 UTC 2009 Mikel Lindsaar &lt;raasdnil@gmail.com&gt;</h2>
+<ul>
+<li>Changed the way attachments are added so that it does not break depending
+on the order of the Hash passed in.
+
+</li>
+<li>Version bump to 1.3.0 - Now works with Edge ActionMailer, MRI 1.8.6, 1.8.7,
+1.9.1, all tests passing
+
+</li>
+</ul>
+<h2>Sun Nov 22 12:19:44 UTC 2009 Mikel Lindsaar &lt;raasdnil@gmail.com&gt;</h2>
+<ul>
+<li>Added check on add_part to make sure if there is already a body, and if so,
+make a text_part of the body
+
+</li>
+<li>Fixing up attachment adding and making sure multipart emails always have
+boundaries
+
+</li>
+<li>Change Message#attachments to now recursively return all attachments in the
+email in an ordered flattened array
+
+</li>
+<li>Added ability for <a href="../classes/Mail/Message.html">Mail::Message</a>
+to accept {:headers =&gt; {&#8216;custom-header&#8217; =&gt;
+&#8216;value&#8217;, &#8216;another-custom-header&#8217; =&gt;
+&#8216;value&#8217;}} as a param on init
+
+</li>
+<li>Adding ability to <a href="../classes/Mail/Message.html">Mail::Message</a>
+to add a part via :part(params) with optional block
+
+</li>
+<li>Fixed up QP encoding forcing underscores into everything with a space
+
+</li>
+<li>Added ReturnPathField#address
+
+</li>
+<li>Updating gem loads and active support loads
+
+</li>
+</ul>
+<h2>Sat Nov 21 12:52:46 UTC 2009 Mikel Lindsaar &lt;raasdnil@gmail.com&gt;</h2>
+<ul>
+<li>Changed <a href="../classes/Mail/Encodings.html">Mail::Encodings</a> to
+clean it up, added in unquote_and_convert_to as well as refactor in this
+area
+
+</li>
+</ul>
+<h2>Thu Nov 19 04:16:10 UTC 2009 Mikel Lindsaar &lt;raasdnil@gmail.com&gt;</h2>
+<ul>
+<li>Added sendmail support from (Simon Rozet)
+
+</li>
+<li>Changed to bundler for gem dependancies and moved gem generation into
+rakefile (Simon Rozet)
+
+</li>
+<li>Bumped to 1.2.6 for sendmail support
+
+</li>
+</ul>
+<h2>Wed Nov 18 04:26:21 UTC 2009 Mikel Lindsaar &lt;raasdnil@gmail.com&gt;</h2>
+<ul>
+<li>Changed Encodings.param_encode(string) so it intelligently encodes and
+quotes needed items and leaves plain, no special char, US-ASCII alone
+unquoted.
+
+</li>
+</ul>
+<h2>Sat Nov 14 08:20:21 UTC 2009 Mikel Lindsaar &lt;raasdnil@gmail.com&gt;</h2>
+<ul>
+<li>Resolved Issue 10 - empty/nil cc/bcc field causes exception
+(Mail::Field::ParseError)
+
+</li>
+</ul>
+<h2>Fri Nov 13 00:31:04 UTC 2009 Mikel Lindsaar &lt;raasdnil@gmail.com&gt;</h2>
+<ul>
+<li>Hacked and mutilated the network section, made it easier to extend out with
+other delivery and retriever methods. API changed SLIGHTLY with this.
+Please check the readme
+
+</li>
+<li>Resolved Issue 8 - <a href="../classes/Mail/SMTP.html">Mail::SMTP</a> now
+delivers to all mail.destinations
+
+</li>
+<li>Version bump to 1.2.5
+
+</li>
+</ul>
+<h2>Thu Nov 12 02:58:01 UTC 2009 Mikel Lindsaar &lt;raasdnil@gmail.com&gt;</h2>
+<ul>
+<li>Resolved Issue 5 - Message ID not handling multiple periods in left hand
+side
+
+</li>
+<li>Resolved Issue 6 - Ordering of add_file and body items causes invalid
+emails
+
+</li>
+</ul>
+<h2>Tue Nov 10 08:15:14 UTC 2009 Mikel Lindsaar &lt;raasdnil@gmail.com&gt;</h2>
+<ul>
+<li>Resolved Issue 5 - Message ID generation issue
+
+</li>
+<li>Resolved Issue 7 - README add_file examples don&#8216;t seem to work -
+Updated readme and rdoc in Message#add_file
+
+</li>
+</ul>
+<h2>Mon Nov 9 23:38:33 UTC 2009 Mikel Lindsaar &lt;raasdnil@gmail.com&gt;</h2>
+<ul>
+<li>Added ability to create new email via a hash or hash-like object.
+&lt;mikel&gt;
+
+</li>
+<li>Moved all of the Part init into the Message class. Part now just uses
+Message&#8216;s init, also moved all the attachment related functions into
+Message. As Part is a subclass of message, you shouldn&#8216;t see any
+interface changes here.
+
+</li>
+</ul>
+<h2>Fri Nov 6 22:52:10 UTC 2009 Mikel Lindsaar &lt;raasdnil@gmail.com&gt;</h2>
+<ul>
+<li>a6ef2b4: Fixed Issue 4 - Can&#8216;t call encoding on non existant
+content-transer-encoding header
+
+</li>
+</ul>
+<h2>Fri Nov 6 00:51:55 UTC 2009 Mikel Lindsaar &lt;raasdnil@gmail.com&gt;</h2>
+<ul>
+<li>Handled unstructured field folding &quot;blank&quot; lines
+
+</li>
+<li>Fixed error in header.rb that created fields into an array, instead of a
+FieldList, resulting in mail.encode returning a random sort order on the
+header.
+
+</li>
+<li>Made unstructured fields attempt to decode their values on :decode
+
+</li>
+</ul>
+<h2>Thu Nov 5 04:45:31 UTC 2009 Mikel Lindsaar &lt;raasdnil@gmail.com&gt;</h2>
+<ul>
+<li>2acb70a: Closes Issue 1 - Handling badly formatted content-type fields
+&lt;mikel&gt;
+
+</li>
+</ul>
+<h2>Wed Nov 4 23:24:32 UTC 2009 Mikel Lindsaar &lt;raasdnil@gmail.com&gt;</h2>
+<ul>
+<li>2b5d608: Closes Issue 2 - Empty header field values not parsing
+&lt;mikel&gt;
+
+</li>
+<li>Version bumb to 1.2.1
+
+</li>
+</ul>
+<h2>Wed Nov 4 12:54:43 UTC 2009 Mikel Lindsaar &lt;raasdnil@gmail.com&gt;</h2>
+<ul>
+<li>Renamed Mail::Message.encode! to Mail::Message.ready_to_send!, deprecated
+:encode! &lt;mikel&gt;
+
+</li>
+<li>Rewrote encoding and decoding methods on all classes. Adds a lot of boiler
+plate code, but allows us to be really precise in each field type that
+needs custom encoding. Now all encoding is done by the field_type itself.
+Need to follow through on the body. &lt;mikel&gt;
+
+</li>
+<li>Bump version to 1.2.0 due to changes of :encoded, :decoded behaviour
+&lt;mikel&gt;
+
+</li>
+</ul>
+<h2>Tue Nov 3 00:59:45 UTC 2009 Mikel Lindsaar &lt;raasdnil@gmail.com&gt;</h2>
+<ul>
+<li>Tested mail against entire Enron set (2.3gb) and the Trec 2005 set (0.5gb),
+~ half a million emails without crashing &lt;jlindley&gt;
+
+</li>
+<li>Some headers only can appear once, enforce during header parse assignment.
+&lt;jlindley&gt;
+
+</li>
+<li>Convert empty bodies into empty arrays instead of nil. &lt;jlindley&gt;
+
+</li>
+<li>Handle blank content dispositions. &lt;jlindley&gt;
+
+</li>
+<li>Mention Trec 2005 Spam Corpus in readme &lt;jlindley&gt;
+
+</li>
+<li>Add &#8216;rake corpus:verify_all&#8217; to allow parse checks in bulk.
+&lt;jlindley&gt;
+
+</li>
+<li>Added handling of multi value parameters, like
+filename*1*=&quot;us-ascii&#8216;en&#8216;blah&quot;
+filename*2=&quot;bleh&quot; &lt;mikel&gt;
+
+</li>
+<li>Added dependency on <a
+href="../classes/ActiveSupport.html">ActiveSupport</a> 2.3 or higher
+&lt;mikel&gt;
+
+</li>
+</ul>
+<h2>Sun Nov 1 12:00:00 UTC 2009 Mikel Lindsaar &lt;raasdnil@gmail.com&gt;</h2>
+<ul>
+<li>handle OpenSSL::SSL::VERIFY_NONE returning 0 &lt;jlindley&gt;
+
+</li>
+<li>doing Mail.new { content_type [text, plain, { charset =&gt; UTF-8 }] } is
+now possible (content type accepts an array) &lt;mikel&gt;
+
+</li>
+</ul>
+<h2>Sat Oct 31 11:00:41 UTC 2009 Mikel Lindsaar &lt;raasdnil@gmail.com&gt;</h2>
+<ul>
+<li>Fixed attachment handling, so mail can find attachment from a content-type,
+
+</li>
+</ul>
+<p>
+content-disposition or content-location
+</p>
+<ul>
+<li>Added content-location field and parser
+
+</li>
+<li>Added message.has_attachments? for ActionMailer friendliness
+
+</li>
+<li>Added attachment.original_filename for ActionMailer friendliness
+
+</li>
+</ul>
+<h2>Sat Oct 25 13:38:01 UTC 2009 Mikel Lindsaar &lt;raasdnil@gmail.com&gt;</h2>
+<ul>
+<li>Birthday, Mail released as a gem&#8230; phew
+
+</li>
+</ul>
+
+    </div>
+
+
+   </div>
+
+
+  </div>
+
+
+    <!-- if includes -->
+
+    <div id="section">
+
+
+
+
+
+      
+
+
+    <!-- if method_list -->
+
+
+  </div>
+
+
+<div id="validator-badges">
+  <p><small><a href="http://validator.w3.org/check/referer">[Validate]</a></small></p>
+</div>
+
+</body>
+</html>

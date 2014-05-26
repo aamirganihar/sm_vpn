@@ -1,0 +1,12 @@
+--- !ruby/object:RI::MethodDescription 
+aliases: []
+
+block_params: 
+comment: 
+- !ruby/struct:SM::Flow::P 
+  body: update FXIconItem's sort key and reversed status
+full_name: Packet_Item#update_sort_key
+is_singleton: false
+name: update_sort_key
+params: ()
+visibility: public

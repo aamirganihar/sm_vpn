@@ -1,0 +1,248 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+<!DOCTYPE html 
+     PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+     "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+  <title>Class: UserChoices::Command</title>
+  <meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" />
+  <meta http-equiv="Content-Script-Type" content="text/javascript" />
+  <link rel="stylesheet" href="../.././rdoc-style.css" type="text/css" media="screen" />
+  <script type="text/javascript">
+  // <![CDATA[
+
+  function popupCode( url ) {
+    window.open(url, "Code", "resizable=yes,scrollbars=yes,toolbar=no,status=no,height=150,width=400")
+  }
+
+  function toggleCode( id ) {
+    if ( document.getElementById )
+      elem = document.getElementById( id );
+    else if ( document.all )
+      elem = eval( "document.all." + id );
+    else
+      return false;
+
+    elemStyle = elem.style;
+    
+    if ( elemStyle.display != "block" ) {
+      elemStyle.display = "block"
+    } else {
+      elemStyle.display = "none"
+    }
+
+    return true;
+  }
+  
+  // Make codeblocks hidden by default
+  document.writeln( "<style type=\"text/css\">div.method-source-code { display: none }</style>" )
+  
+  // ]]>
+  </script>
+
+</head>
+<body>
+
+
+
+    <div id="classHeader">
+        <table class="header-table">
+        <tr class="top-aligned-row">
+          <td><strong>Class</strong></td>
+          <td class="class-name-in-header">UserChoices::Command</td>
+        </tr>
+        <tr class="top-aligned-row">
+            <td><strong>In:</strong></td>
+            <td>
+                <a href="../../files/lib/user-choices/command_rb.html">
+                lib/user-choices/command.rb
+                </a>
+        <br />
+            </td>
+        </tr>
+
+        <tr class="top-aligned-row">
+            <td><strong>Parent:</strong></td>
+            <td>
+                Object
+            </td>
+        </tr>
+        </table>
+    </div>
+  <!-- banner header -->
+
+  <div id="bodyContent">
+
+
+
+  <div id="contextContent">
+
+    <div id="description">
+      <p>
+A template class. Subclasses describe all the choices a user may make to
+affect the execution of the command, and the sources for those choices
+(such as the command line).
+</p>
+
+    </div>
+
+
+   </div>
+
+    <div id="method-list">
+      <h3 class="section-bar">Methods</h3>
+
+      <div class="name-list">
+      <a href="#M000791">add_choices</a>&nbsp;&nbsp;
+      <a href="#M000790">add_sources</a>&nbsp;&nbsp;
+      <a href="#M000793">execute</a>&nbsp;&nbsp;
+      <a href="#M000789">new</a>&nbsp;&nbsp;
+      <a href="#M000792">postprocess_user_choices</a>&nbsp;&nbsp;
+      </div>
+    </div>
+
+  </div>
+
+
+    <!-- if includes -->
+
+    <div id="section">
+
+
+
+
+
+    <div id="attribute-list">
+      <h3 class="section-bar">Attributes</h3>
+
+      <div class="name-list">
+        <table>
+        <tr class="top-aligned-row context-row">
+          <td class="context-item-name">user_choices</td>
+          <td class="context-item-value">&nbsp;[R]&nbsp;</td>
+          <td class="context-item-desc"></td>
+        </tr>
+        </table>
+      </div>
+    </div>
+      
+
+
+    <!-- if method_list -->
+    <div id="methods">
+      <h3 class="section-bar">Public Class methods</h3>
+
+      <div id="method-M000789" class="method-detail">
+        <a name="M000789"></a>
+
+        <div class="method-heading">
+          <a href="Command.src/M000789.html" target="Code" class="method-signature"
+            onclick="popupCode('Command.src/M000789.html');return false;">
+          <span class="method-name">new</span><span class="method-args">()</span>
+          </a>
+        </div>
+      
+        <div class="method-description">
+        </div>
+      </div>
+
+      <h3 class="section-bar">Public Instance methods</h3>
+
+      <div id="method-M000791" class="method-detail">
+        <a name="M000791"></a>
+
+        <div class="method-heading">
+          <a href="Command.src/M000791.html" target="Code" class="method-signature"
+            onclick="popupCode('Command.src/M000791.html');return false;">
+          <span class="method-name">add_choices</span><span class="method-args">(builder)</span>
+          </a>
+        </div>
+      
+        <div class="method-description">
+          <p>
+Add choices to the <a href="ChoicesBuilder.html">ChoicesBuilder</a>. A
+choice is a symbol that ends up in the @user_choices hash. It may have a
+:default value and a :type, as well as an OptionParser-style description of
+command-line arguments.
+</p>
+<p>
+Must be defined in a subclass.
+</p>
+        </div>
+      </div>
+
+      <div id="method-M000790" class="method-detail">
+        <a name="M000790"></a>
+
+        <div class="method-heading">
+          <a href="Command.src/M000790.html" target="Code" class="method-signature"
+            onclick="popupCode('Command.src/M000790.html');return false;">
+          <span class="method-name">add_sources</span><span class="method-args">(builder)</span>
+          </a>
+        </div>
+      
+        <div class="method-description">
+          <p>
+Add sources such as <a href="EnvironmentSource.html">EnvironmentSource</a>,
+<a href="XmlConfigFileSource.html">XmlConfigFileSource</a>, and <a
+href="CommandLineSource.html">CommandLineSource</a> to the <a
+href="ChoicesBuilder.html">ChoicesBuilder</a>.
+</p>
+<p>
+Must be defined in a subclass.
+</p>
+        </div>
+      </div>
+
+      <div id="method-M000793" class="method-detail">
+        <a name="M000793"></a>
+
+        <div class="method-heading">
+          <a href="Command.src/M000793.html" target="Code" class="method-signature"
+            onclick="popupCode('Command.src/M000793.html');return false;">
+          <span class="method-name">execute</span><span class="method-args">()</span>
+          </a>
+        </div>
+      
+        <div class="method-description">
+          <p>
+Execute the command, using @user_choices for parameterization.
+</p>
+<p>
+Must be defined in a subclass.
+</p>
+        </div>
+      </div>
+
+      <div id="method-M000792" class="method-detail">
+        <a name="M000792"></a>
+
+        <div class="method-heading">
+          <a href="Command.src/M000792.html" target="Code" class="method-signature"
+            onclick="popupCode('Command.src/M000792.html');return false;">
+          <span class="method-name">postprocess_user_choices</span><span class="method-args">()</span>
+          </a>
+        </div>
+      
+        <div class="method-description">
+          <p>
+After choices from all sources are collected into @user_choices, this
+method is called to do any postprocessing. Does nothing unless overridden.
+</p>
+        </div>
+      </div>
+
+
+    </div>
+
+
+  </div>
+
+
+<div id="validator-badges">
+  <p><small><a href="http://validator.w3.org/check/referer">[Validate]</a></small></p>
+</div>
+
+</body>
+</html>

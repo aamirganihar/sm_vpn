@@ -1,0 +1,12 @@
+--- !ruby/object:RI::MethodDescription 
+aliases: []
+
+block_params: 
+comment: 
+- !ruby/struct:SM::Flow::P 
+  body: "Get the sort for a given header index. The sort function has been supplied when calling #new. This is used from Packet_Item."
+full_name: Packet_List#sort_function
+is_singleton: false
+name: sort_function
+params: (header_item_index)
+visibility: public

@@ -1,0 +1,17 @@
+--- !ruby/object:RI::ClassDescription 
+attributes: []
+
+class_methods: []
+
+comment: 
+- !ruby/struct:SM::Flow::P 
+  body: The arglist is to be treated as a list, possibly with a Conversion that limits its length. It defers processing of an empty arglist until the last possible moment and only does it if there's no other value for the choice symbol.
+constants: []
+
+full_name: UserChoices::ArbitraryArglist
+includes: []
+
+instance_methods: []
+
+name: ArbitraryArglist
+superclass: AbstractArglistStrategy

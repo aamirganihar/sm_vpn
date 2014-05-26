@@ -1,0 +1,26 @@
+--- !ruby/object:RI::MethodDescription 
+aliases: []
+
+block_params: 
+comment: 
+- !ruby/struct:SM::Flow::P 
+  body: Sets the body object of the message object.
+- !ruby/struct:SM::Flow::P 
+  body: "Example:"
+- !ruby/struct:SM::Flow::VERB 
+  body: " mail.body = 'This is the body'\n mail.body #=&gt; #&lt;Mail::Body:0x13919c @raw_source=&quot;This is the bo...\n"
+- !ruby/struct:SM::Flow::P 
+  body: You can also reset the body of an Message object by setting body to nil
+- !ruby/struct:SM::Flow::P 
+  body: "Example:"
+- !ruby/struct:SM::Flow::VERB 
+  body: " mail.body = 'this is the body'\n mail.body.encoded #=&gt; 'this is the body'\n mail.body = nil\n mail.body.encoded #=&gt; ''\n"
+- !ruby/struct:SM::Flow::P 
+  body: "If you try and set the body of an email that is a multipart email, then instead of deleting all the parts of your email, mail will add a text/plain part to your email:"
+- !ruby/struct:SM::Flow::VERB 
+  body: " mail.add_file 'somefilename.png'\n mail.parts.length #=&gt; 1\n mail.body = &quot;This is a body&quot;\n mail.parts.length #=&gt; 2\n mail.parts.last.content_type.content_type #=&gt; 'This is a body'\n"
+full_name: Mail::Message#body=
+is_singleton: false
+name: body=
+params: (value)
+visibility: public

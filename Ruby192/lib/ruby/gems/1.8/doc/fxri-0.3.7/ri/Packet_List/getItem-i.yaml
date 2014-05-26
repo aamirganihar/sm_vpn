@@ -1,0 +1,10 @@
+--- !ruby/object:RI::MethodDescription 
+aliases: []
+
+block_params: 
+comment: 
+full_name: Packet_List#getItem
+is_singleton: false
+name: getItem
+params: (num)
+visibility: public

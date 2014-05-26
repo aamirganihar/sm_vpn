@@ -1,0 +1,33 @@
+--- !ruby/object:RI::ClassDescription 
+attributes: []
+
+class_methods: 
+- !ruby/object:RI::MethodSummary 
+  name: new
+comment: 
+- !ruby/struct:SM::Flow::P 
+  body: Provides access to a structured header field
+- !ruby/struct:SM::Flow::H 
+  level: 3
+  text: "Per RFC 2822:"
+- !ruby/struct:SM::Flow::VERB 
+  body: " 2.2.2. Structured Header Field Bodies\n\n    Some field bodies in this standard have specific syntactical\n    structure more restrictive than the unstructured field bodies\n    described above. These are referred to as &quot;structured&quot; field bodies.\n    Structured field bodies are sequences of specific lexical tokens as\n    described in sections 3 and 4 of this standard.  Many of these tokens\n    are allowed (according to their syntax) to be introduced or end with\n    comments (as described in section 3.2.3) as well as the space (SP,\n    ASCII value 32) and horizontal tab (HTAB, ASCII value 9) characters\n    (together known as the white space characters, WSP), and those WSP\n    characters are subject to header &quot;folding&quot; and &quot;unfolding&quot; as\n    described in section 2.2.3.  Semantic analysis of structured field\n    bodies is given along with their syntax.\n"
+constants: []
+
+full_name: Mail::StructuredField
+includes: 
+- !ruby/object:RI::IncludedModule 
+  name: Mail::CommonField
+- !ruby/object:RI::IncludedModule 
+  name: Mail::Utilities
+instance_methods: 
+- !ruby/object:RI::MethodSummary 
+  name: charset
+- !ruby/object:RI::MethodSummary 
+  name: charset=
+- !ruby/object:RI::MethodSummary 
+  name: default
+- !ruby/object:RI::MethodSummary 
+  name: errors
+name: StructuredField
+superclass: Object

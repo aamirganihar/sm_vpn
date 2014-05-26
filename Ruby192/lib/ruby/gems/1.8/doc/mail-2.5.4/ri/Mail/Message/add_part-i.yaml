@@ -1,0 +1,12 @@
+--- !ruby/object:RI::MethodDescription 
+aliases: []
+
+block_params: 
+comment: 
+- !ruby/struct:SM::Flow::P 
+  body: Adds a part to the parts list or creates the part list
+full_name: Mail::Message#add_part
+is_singleton: false
+name: add_part
+params: (part)
+visibility: public

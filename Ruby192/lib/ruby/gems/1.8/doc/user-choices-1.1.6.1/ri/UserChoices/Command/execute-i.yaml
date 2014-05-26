@@ -1,0 +1,14 @@
+--- !ruby/object:RI::MethodDescription 
+aliases: []
+
+block_params: 
+comment: 
+- !ruby/struct:SM::Flow::P 
+  body: Execute the command, using @user_choices for parameterization.
+- !ruby/struct:SM::Flow::P 
+  body: Must be defined in a subclass.
+full_name: UserChoices::Command#execute
+is_singleton: false
+name: execute
+params: ()
+visibility: public

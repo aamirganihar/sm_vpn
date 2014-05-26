@@ -1,0 +1,128 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+<!DOCTYPE html 
+     PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+     "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+  <title>File: Manifest.txt</title>
+  <meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" />
+  <meta http-equiv="Content-Script-Type" content="text/javascript" />
+  <link rel="stylesheet" href=".././rdoc-style.css" type="text/css" media="screen" />
+  <script type="text/javascript">
+  // <![CDATA[
+
+  function popupCode( url ) {
+    window.open(url, "Code", "resizable=yes,scrollbars=yes,toolbar=no,status=no,height=150,width=400")
+  }
+
+  function toggleCode( id ) {
+    if ( document.getElementById )
+      elem = document.getElementById( id );
+    else if ( document.all )
+      elem = eval( "document.all." + id );
+    else
+      return false;
+
+    elemStyle = elem.style;
+    
+    if ( elemStyle.display != "block" ) {
+      elemStyle.display = "block"
+    } else {
+      elemStyle.display = "none"
+    }
+
+    return true;
+  }
+  
+  // Make codeblocks hidden by default
+  document.writeln( "<style type=\"text/css\">div.method-source-code { display: none }</style>" )
+  
+  // ]]>
+  </script>
+
+</head>
+<body>
+
+
+
+  <div id="fileHeader">
+    <h1>Manifest.txt</h1>
+    <table class="header-table">
+    <tr class="top-aligned-row">
+      <td><strong>Path:</strong></td>
+      <td>Manifest.txt
+      </td>
+    </tr>
+    <tr class="top-aligned-row">
+      <td><strong>Last Update:</strong></td>
+      <td>Thu Aug 12 10:39:46 +0530 2010</td>
+    </tr>
+    </table>
+  </div>
+  <!-- banner header -->
+
+  <div id="bodyContent">
+
+
+
+  <div id="contextContent">
+
+    <div id="description">
+      <p>
+History.txt LICENSE.txt Manifest.txt README.txt Rakefile
+examples/older/README.txt examples/older/command-line.rb
+examples/older/default-values.rb examples/older/multiple-sources.rb
+examples/older/postprocess.rb examples/older/switches.rb
+examples/older/two-args.rb examples/older/types.rb
+examples/tutorial/css/LICENSE.txt examples/tutorial/css/bg2.gif
+examples/tutorial/css/left.gif examples/tutorial/css/left_on.gif
+examples/tutorial/css/main.css examples/tutorial/css/right.gif
+examples/tutorial/css/right_on.gif examples/tutorial/css/tvline.gif
+examples/tutorial/css/von-foerster.jpg
+examples/tutorial/css/von-foerster2.jpg examples/tutorial/index.html
+examples/tutorial/tutorial1.rb examples/tutorial/tutorial2.rb
+examples/tutorial/tutorial3.rb examples/tutorial/tutorial4.rb
+examples/tutorial/tutorial5.rb examples/tutorial/tutorial6.rb
+examples/tutorial/tutorial7.rb lib/user-choices.rb
+lib/user-choices/arglist-strategies.rb lib/user-choices/builder.rb
+lib/user-choices/command-line-source.rb lib/user-choices/command.rb
+lib/user-choices/conversions.rb lib/user-choices/ruby-extensions.rb
+lib/user-choices/sources.rb lib/user-choices/version.rb setup.rb
+test/arglist-strategy-tests.rb test/builder-tests.rb
+test/command-line-source-tests.rb test/conversion-tests.rb
+test/source-tests.rb test/user-choices-slowtests.rb
+</p>
+
+    </div>
+
+
+   </div>
+
+
+  </div>
+
+
+    <!-- if includes -->
+
+    <div id="section">
+
+
+
+
+
+      
+
+
+    <!-- if method_list -->
+
+
+  </div>
+
+
+<div id="validator-badges">
+  <p><small><a href="http://validator.w3.org/check/referer">[Validate]</a></small></p>
+</div>
+
+</body>
+</html>

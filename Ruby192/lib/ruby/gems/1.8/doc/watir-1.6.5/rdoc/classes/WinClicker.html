@@ -1,0 +1,1013 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+<!DOCTYPE html 
+     PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+     "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+  <title>Class: WinClicker</title>
+  <meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" />
+  <meta http-equiv="Content-Script-Type" content="text/javascript" />
+  <link rel="stylesheet" href=".././rdoc-style.css" type="text/css" media="screen" />
+  <script type="text/javascript">
+  // <![CDATA[
+
+  function popupCode( url ) {
+    window.open(url, "Code", "resizable=yes,scrollbars=yes,toolbar=no,status=no,height=150,width=400")
+  }
+
+  function toggleCode( id ) {
+    if ( document.getElementById )
+      elem = document.getElementById( id );
+    else if ( document.all )
+      elem = eval( "document.all." + id );
+    else
+      return false;
+
+    elemStyle = elem.style;
+    
+    if ( elemStyle.display != "block" ) {
+      elemStyle.display = "block"
+    } else {
+      elemStyle.display = "none"
+    }
+
+    return true;
+  }
+  
+  // Make codeblocks hidden by default
+  document.writeln( "<style type=\"text/css\">div.method-source-code { display: none }</style>" )
+  
+  // ]]>
+  </script>
+
+</head>
+<body>
+
+
+
+    <div id="classHeader">
+        <table class="header-table">
+        <tr class="top-aligned-row">
+          <td><strong>Class</strong></td>
+          <td class="class-name-in-header">WinClicker</td>
+        </tr>
+        <tr class="top-aligned-row">
+            <td><strong>In:</strong></td>
+            <td>
+                <a href="../files/lib/watir/winClicker_rb.html">
+                lib/watir/winClicker.rb
+                </a>
+        <br />
+            </td>
+        </tr>
+
+        <tr class="top-aligned-row">
+            <td><strong>Parent:</strong></td>
+            <td>
+                Object
+            </td>
+        </tr>
+        </table>
+    </div>
+  <!-- banner header -->
+
+  <div id="bodyContent">
+
+
+
+  <div id="contextContent">
+
+
+
+   </div>
+
+    <div id="method-list">
+      <h3 class="section-bar">Methods</h3>
+
+      <div class="name-list">
+      <a href="#M000017">clearSecurityAlertBox</a>&nbsp;&nbsp;
+      <a href="#M000018">clear_security_alert</a>&nbsp;&nbsp;
+      <a href="#M000026">clickButtonWithHandle</a>&nbsp;&nbsp;
+      <a href="#M000015">clickJSDialog_NewProcess</a>&nbsp;&nbsp;
+      <a href="#M000016">clickJSDialog_Thread</a>&nbsp;&nbsp;
+      <a href="#M000014">clickJavaScriptDialog</a>&nbsp;&nbsp;
+      <a href="#M000030">clickWindowsButton</a>&nbsp;&nbsp;
+      <a href="#M000028">clickWindowsButton_hwnd</a>&nbsp;&nbsp;
+      <a href="#M000027">click_button_with_handle</a>&nbsp;&nbsp;
+      <a href="#M000031">click_windows_button</a>&nbsp;&nbsp;
+      <a href="#M000029">click_windows_button_hwnd</a>&nbsp;&nbsp;
+      <a href="#M000032">getChildHandle</a>&nbsp;&nbsp;
+      <a href="#M000046">getControlText</a>&nbsp;&nbsp;
+      <a href="#M000013">getFileRequesterFileName</a>&nbsp;&nbsp;
+      <a href="#M000040">getHandleOfControl</a>&nbsp;&nbsp;
+      <a href="#M000019">getParent</a>&nbsp;&nbsp;
+      <a href="#M000010">getShortFileName</a>&nbsp;&nbsp;
+      <a href="#M000034">getStaticText</a>&nbsp;&nbsp;
+      <a href="#M000038">getStaticTextFromWindow</a>&nbsp;&nbsp;
+      <a href="#M000036">getStaticText_hWnd</a>&nbsp;&nbsp;
+      <a href="#M000050">getTextValueForFileNameField</a>&nbsp;&nbsp;
+      <a href="#M000022">getWindowHandle</a>&nbsp;&nbsp;
+      <a href="#M000048">getWindowTitle</a>&nbsp;&nbsp;
+      <a href="#M000033">get_chwnd</a>&nbsp;&nbsp;
+      <a href="#M000047">get_ctrl_txt</a>&nbsp;&nbsp;
+      <a href="#M000051">get_file_name</a>&nbsp;&nbsp;
+      <a href="#M000041">get_handle_of_ctrl</a>&nbsp;&nbsp;
+      <a href="#M000020">get_parent</a>&nbsp;&nbsp;
+      <a href="#M000035">get_static_text</a>&nbsp;&nbsp;
+      <a href="#M000039">get_static_text_from_window</a>&nbsp;&nbsp;
+      <a href="#M000037">get_static_text_hwnd</a>&nbsp;&nbsp;
+      <a href="#M000049">get_win_title</a>&nbsp;&nbsp;
+      <a href="#M000023">get_window_handle</a>&nbsp;&nbsp;
+      <a href="#M000024">makeWindowActive</a>&nbsp;&nbsp;
+      <a href="#M000025">make_window_active</a>&nbsp;&nbsp;
+      <a href="#M000008">new</a>&nbsp;&nbsp;
+      <a href="#M000042">setComboBoxText</a>&nbsp;&nbsp;
+      <a href="#M000011">setFileRequesterFileName</a>&nbsp;&nbsp;
+      <a href="#M000012">setFileRequesterFileName_newProcess</a>&nbsp;&nbsp;
+      <a href="#M000044">setTextBoxText</a>&nbsp;&nbsp;
+      <a href="#M000052">setTextValueForFileNameField</a>&nbsp;&nbsp;
+      <a href="#M000043">set_combo_txt</a>&nbsp;&nbsp;
+      <a href="#M000053">set_file_name</a>&nbsp;&nbsp;
+      <a href="#M000045">set_textbox_txt</a>&nbsp;&nbsp;
+      <a href="#M000009">winsystem</a>&nbsp;&nbsp;
+      <a href="#M000021">with_dl_callback</a>&nbsp;&nbsp;
+      </div>
+    </div>
+
+  </div>
+
+
+    <!-- if includes -->
+
+    <div id="section">
+
+
+    <div id="constants-list">
+      <h3 class="section-bar">Constants</h3>
+
+      <div class="name-list">
+        <table summary="Constants">
+        <tr class="top-aligned-row context-row">
+          <td class="context-item-name">WM_CLOSE</td>
+          <td>=</td>
+          <td class="context-item-value">0x0010</td>
+        </tr>
+        <tr class="top-aligned-row context-row">
+          <td class="context-item-name">WM_KEYDOWN</td>
+          <td>=</td>
+          <td class="context-item-value">0x0100</td>
+        </tr>
+        <tr class="top-aligned-row context-row">
+          <td class="context-item-name">WM_KEYUP</td>
+          <td>=</td>
+          <td class="context-item-value">0x0101</td>
+        </tr>
+        <tr class="top-aligned-row context-row">
+          <td class="context-item-name">WM_CHAR</td>
+          <td>=</td>
+          <td class="context-item-value">0x0102</td>
+        </tr>
+        <tr class="top-aligned-row context-row">
+          <td class="context-item-name">BM_CLICK</td>
+          <td>=</td>
+          <td class="context-item-value">0x00F5</td>
+        </tr>
+        <tr class="top-aligned-row context-row">
+          <td class="context-item-name">WM_COMMAND</td>
+          <td>=</td>
+          <td class="context-item-value">0x0111</td>
+        </tr>
+        <tr class="top-aligned-row context-row">
+          <td class="context-item-name">WM_SETTEXT</td>
+          <td>=</td>
+          <td class="context-item-value">0x000C</td>
+        </tr>
+        <tr class="top-aligned-row context-row">
+          <td class="context-item-name">WM_GETTEXT</td>
+          <td>=</td>
+          <td class="context-item-value">0x000D</td>
+        </tr>
+        <tr class="top-aligned-row context-row">
+          <td class="context-item-name">HWND_TOP</td>
+          <td>=</td>
+          <td class="context-item-value">0</td>
+        </tr>
+        <tr class="top-aligned-row context-row">
+          <td class="context-item-name">HWND_BOTTOM</td>
+          <td>=</td>
+          <td class="context-item-value">1</td>
+        </tr>
+        <tr class="top-aligned-row context-row">
+          <td class="context-item-name">HWND_TOPMOST</td>
+          <td>=</td>
+          <td class="context-item-value">-1</td>
+        </tr>
+        <tr class="top-aligned-row context-row">
+          <td class="context-item-name">HWND_NOTOPMOST</td>
+          <td>=</td>
+          <td class="context-item-value">-2</td>
+        </tr>
+        <tr class="top-aligned-row context-row">
+          <td class="context-item-name">SWP_SHOWWINDOW</td>
+          <td>=</td>
+          <td class="context-item-value">0x40</td>
+        </tr>
+        <tr class="top-aligned-row context-row">
+          <td class="context-item-name">SWP_NOSIZE</td>
+          <td>=</td>
+          <td class="context-item-value">1</td>
+        </tr>
+        <tr class="top-aligned-row context-row">
+          <td class="context-item-name">SWP_NOMOVE</td>
+          <td>=</td>
+          <td class="context-item-value">2</td>
+        </tr>
+        <tr class="top-aligned-row context-row">
+          <td class="context-item-name">TRUE_1</td>
+          <td>=</td>
+          <td class="context-item-value">1</td>
+        </tr>
+        <tr class="top-aligned-row context-row">
+          <td class="context-item-name">WINCLASS_DIALOG</td>
+          <td>=</td>
+          <td class="context-item-value">&quot;32770&quot;</td>
+          <td width="3em">&nbsp;</td>
+          <td class="context-item-desc">
+these are constants for commonly used windows windows
+
+</td>
+        </tr>
+        </table>
+      </div>
+    </div>
+
+
+
+      
+
+
+    <!-- if method_list -->
+    <div id="methods">
+      <h3 class="section-bar">Public Class methods</h3>
+
+      <div id="method-M000008" class="method-detail">
+        <a name="M000008"></a>
+
+        <div class="method-heading">
+          <a href="WinClicker.src/M000008.html" target="Code" class="method-signature"
+            onclick="popupCode('WinClicker.src/M000008.html');return false;">
+          <span class="method-name">new</span><span class="method-args">()</span>
+          </a>
+        </div>
+      
+        <div class="method-description">
+          <p>
+these are the most used methods
+</p>
+        </div>
+      </div>
+
+      <h3 class="section-bar">Public Instance methods</h3>
+
+      <div id="method-M000017" class="method-detail">
+        <a name="M000017"></a>
+
+        <div class="method-heading">
+          <a href="WinClicker.src/M000017.html" target="Code" class="method-signature"
+            onclick="popupCode('WinClicker.src/M000017.html');return false;">
+          <span class="method-name">clearSecurityAlertBox</span><span class="method-args">()</span>
+          </a>
+        </div>
+      
+        <div class="method-description">
+          <p>
+Looks for a window titled &quot;Security Alert&quot;, clicks on Yes button
+</p>
+        </div>
+      </div>
+
+      <div id="method-M000018" class="method-detail">
+        <a name="M000018"></a>
+
+        <div class="method-heading">
+          <span class="method-name">clear_security_alert</span><span class="method-args">()</span>
+        </div>
+      
+        <div class="method-description">
+          <p>
+Alias for <a href="WinClicker.html#M000017">clearSecurityAlertBox</a>
+</p>
+        </div>
+      </div>
+
+      <div id="method-M000026" class="method-detail">
+        <a name="M000026"></a>
+
+        <div class="method-heading">
+          <a href="WinClicker.src/M000026.html" target="Code" class="method-signature"
+            onclick="popupCode('WinClicker.src/M000026.html');return false;">
+          <span class="method-name">clickButtonWithHandle</span><span class="method-args">(buttonhWnd)</span>
+          </a>
+        </div>
+      
+        <div class="method-description">
+          <p>
+Posts a message to the handle passed in to click
+</p>
+        </div>
+      </div>
+
+      <div id="method-M000015" class="method-detail">
+        <a name="M000015"></a>
+
+        <div class="method-heading">
+          <a href="WinClicker.src/M000015.html" target="Code" class="method-signature"
+            onclick="popupCode('WinClicker.src/M000015.html');return false;">
+          <span class="method-name">clickJSDialog_NewProcess</span><span class="method-args">(button = &quot;OK&quot; )</span>
+          </a>
+        </div>
+      
+        <div class="method-description">
+          <p>
+Calls system to launch a <a href="WinClicker.html#M000008">new</a> process
+to click on the button defaults to &quot;OK&quot; button
+</p>
+        </div>
+      </div>
+
+      <div id="method-M000016" class="method-detail">
+        <a name="M000016"></a>
+
+        <div class="method-heading">
+          <a href="WinClicker.src/M000016.html" target="Code" class="method-signature"
+            onclick="popupCode('WinClicker.src/M000016.html');return false;">
+          <span class="method-name">clickJSDialog_Thread</span><span class="method-args">(button = &quot;OK&quot; )</span>
+          </a>
+        </div>
+      
+        <div class="method-description">
+          <p>
+as a thread
+</p>
+        </div>
+      </div>
+
+      <div id="method-M000014" class="method-detail">
+        <a name="M000014"></a>
+
+        <div class="method-heading">
+          <a href="WinClicker.src/M000014.html" target="Code" class="method-signature"
+            onclick="popupCode('WinClicker.src/M000014.html');return false;">
+          <span class="method-name">clickJavaScriptDialog</span><span class="method-args">(button=&quot;OK&quot; , parenthWnd = -1)</span>
+          </a>
+        </div>
+      
+        <div class="method-description">
+          <p>
+Click on a dialog with title of &quot;Internet Explorer&quot; Default
+button to click is &quot;OK&quot; parenthWnd not used
+</p>
+        </div>
+      </div>
+
+      <div id="method-M000030" class="method-detail">
+        <a name="M000030"></a>
+
+        <div class="method-heading">
+          <a href="WinClicker.src/M000030.html" target="Code" class="method-signature"
+            onclick="popupCode('WinClicker.src/M000030.html');return false;">
+          <span class="method-name">clickWindowsButton</span><span class="method-args">(windowCaption , buttonCaption , maxWaitTime=30 )</span>
+          </a>
+        </div>
+      
+        <div class="method-description">
+          <p>
+this clicks the button with the name in the window with the caption. It
+keeps looking for the button until until the timeout expires
+</p>
+        </div>
+      </div>
+
+      <div id="method-M000028" class="method-detail">
+        <a name="M000028"></a>
+
+        <div class="method-heading">
+          <a href="WinClicker.src/M000028.html" target="Code" class="method-signature"
+            onclick="popupCode('WinClicker.src/M000028.html');return false;">
+          <span class="method-name">clickWindowsButton_hwnd</span><span class="method-args">(hwnd , buttonCaption )</span>
+          </a>
+        </div>
+      
+        <div class="method-description">
+          <p>
+Based on the parent window handle passed in, click on the button with the
+given caption.
+</p>
+        </div>
+      </div>
+
+      <div id="method-M000027" class="method-detail">
+        <a name="M000027"></a>
+
+        <div class="method-heading">
+          <span class="method-name">click_button_with_handle</span><span class="method-args">(buttonhWnd)</span>
+        </div>
+      
+        <div class="method-description">
+          <p>
+Alias for <a href="WinClicker.html#M000026">clickButtonWithHandle</a>
+</p>
+        </div>
+      </div>
+
+      <div id="method-M000031" class="method-detail">
+        <a name="M000031"></a>
+
+        <div class="method-heading">
+          <span class="method-name">click_windows_button</span><span class="method-args">(windowCaption , buttonCaption , maxWaitTime=30 )</span>
+        </div>
+      
+        <div class="method-description">
+          <p>
+Alias for <a href="WinClicker.html#M000030">clickWindowsButton</a>
+</p>
+        </div>
+      </div>
+
+      <div id="method-M000029" class="method-detail">
+        <a name="M000029"></a>
+
+        <div class="method-heading">
+          <span class="method-name">click_windows_button_hwnd</span><span class="method-args">(hwnd , buttonCaption )</span>
+        </div>
+      
+        <div class="method-description">
+          <p>
+Alias for <a href="WinClicker.html#M000028">clickWindowsButton_hwnd</a>
+</p>
+        </div>
+      </div>
+
+      <div id="method-M000032" class="method-detail">
+        <a name="M000032"></a>
+
+        <div class="method-heading">
+          <a href="WinClicker.src/M000032.html" target="Code" class="method-signature"
+            onclick="popupCode('WinClicker.src/M000032.html');return false;">
+          <span class="method-name">getChildHandle</span><span class="method-args">( hWnd , childCaption )</span>
+          </a>
+        </div>
+      
+        <div class="method-description">
+          <p>
+Enumerate through children of the parent hwnd, pass back the handle for the
+control with the given caption the caption is compared as a regex
+</p>
+        </div>
+      </div>
+
+      <div id="method-M000046" class="method-detail">
+        <a name="M000046"></a>
+
+        <div class="method-heading">
+          <a href="WinClicker.src/M000046.html" target="Code" class="method-signature"
+            onclick="popupCode('WinClicker.src/M000046.html');return false;">
+          <span class="method-name">getControlText</span><span class="method-args">(hWnd)</span>
+          </a>
+        </div>
+      
+        <div class="method-description">
+          <p>
+Get the text in the handle for the given control
+</p>
+        </div>
+      </div>
+
+      <div id="method-M000013" class="method-detail">
+        <a name="M000013"></a>
+
+        <div class="method-heading">
+          <a href="WinClicker.src/M000013.html" target="Code" class="method-signature"
+            onclick="popupCode('WinClicker.src/M000013.html');return false;">
+          <span class="method-name">getFileRequesterFileName</span><span class="method-args">()</span>
+          </a>
+        </div>
+      
+        <div class="method-description">
+          <p>
+Return the text value from the first combo box on the Choose file dialog or
+nil if not found
+</p>
+        </div>
+      </div>
+
+      <div id="method-M000040" class="method-detail">
+        <a name="M000040"></a>
+
+        <div class="method-heading">
+          <a href="WinClicker.src/M000040.html" target="Code" class="method-signature"
+            onclick="popupCode('WinClicker.src/M000040.html');return false;">
+          <span class="method-name">getHandleOfControl</span><span class="method-args">(hWnd , controlClass, position )</span>
+          </a>
+        </div>
+      
+        <div class="method-description">
+          <p>
+returns the handle (or -1 if its not found) of the nth control of this
+class in the parent window specified by the window handle
+</p>
+        </div>
+      </div>
+
+      <div id="method-M000019" class="method-detail">
+        <a name="M000019"></a>
+
+        <div class="method-heading">
+          <a href="WinClicker.src/M000019.html" target="Code" class="method-signature"
+            onclick="popupCode('WinClicker.src/M000019.html');return false;">
+          <span class="method-name">getParent</span><span class="method-args">(childhWnd )</span>
+          </a>
+        </div>
+      
+        <div class="method-description">
+          <p>
+Returns the parent handle for the given child handle
+</p>
+        </div>
+      </div>
+
+      <div id="method-M000010" class="method-detail">
+        <a name="M000010"></a>
+
+        <div class="method-heading">
+          <a href="WinClicker.src/M000010.html" target="Code" class="method-signature"
+            onclick="popupCode('WinClicker.src/M000010.html');return false;">
+          <span class="method-name">getShortFileName</span><span class="method-args">(longName)</span>
+          </a>
+        </div>
+      
+        <div class="method-description">
+          <p>
+returns the short path version of a long path 8.3 style
+</p>
+        </div>
+      </div>
+
+      <div id="method-M000034" class="method-detail">
+        <a name="M000034"></a>
+
+        <div class="method-heading">
+          <a href="WinClicker.src/M000034.html" target="Code" class="method-signature"
+            onclick="popupCode('WinClicker.src/M000034.html');return false;">
+          <span class="method-name">getStaticText</span><span class="method-args">(caption)</span>
+          </a>
+        </div>
+      
+        <div class="method-description">
+          <p>
+Convenience method to return Static text for children of the window with
+the given caption
+</p>
+        </div>
+      </div>
+
+      <div id="method-M000038" class="method-detail">
+        <a name="M000038"></a>
+
+        <div class="method-heading">
+          <a href="WinClicker.src/M000038.html" target="Code" class="method-signature"
+            onclick="popupCode('WinClicker.src/M000038.html');return false;">
+          <span class="method-name">getStaticTextFromWindow</span><span class="method-args">( windowCaption , hWnd)</span>
+          </a>
+        </div>
+      
+        <div class="method-description">
+          <p>
+Return text as an array from child controls of the window given as either a
+handle or with the given caption that have a class type of Static
+</p>
+        </div>
+      </div>
+
+      <div id="method-M000036" class="method-detail">
+        <a name="M000036"></a>
+
+        <div class="method-heading">
+          <a href="WinClicker.src/M000036.html" target="Code" class="method-signature"
+            onclick="popupCode('WinClicker.src/M000036.html');return false;">
+          <span class="method-name">getStaticText_hWnd</span><span class="method-args">(hWnd)</span>
+          </a>
+        </div>
+      
+        <div class="method-description">
+          <p>
+Convenience method to return Static text for children of the window handle
+</p>
+        </div>
+      </div>
+
+      <div id="method-M000050" class="method-detail">
+        <a name="M000050"></a>
+
+        <div class="method-heading">
+          <a href="WinClicker.src/M000050.html" target="Code" class="method-signature"
+            onclick="popupCode('WinClicker.src/M000050.html');return false;">
+          <span class="method-name">getTextValueForFileNameField</span><span class="method-args">(parenthWnd)</span>
+          </a>
+        </div>
+      
+        <div class="method-description">
+          <p>
+Get the text in the first combo box file requester methods returns nil on
+failure to locate the 1st combobox
+</p>
+        </div>
+      </div>
+
+      <div id="method-M000022" class="method-detail">
+        <a name="M000022"></a>
+
+        <div class="method-heading">
+          <a href="WinClicker.src/M000022.html" target="Code" class="method-signature"
+            onclick="popupCode('WinClicker.src/M000022.html');return false;">
+          <span class="method-name">getWindowHandle</span><span class="method-args">(title, winclass = &quot;&quot; )</span>
+          </a>
+        </div>
+      
+        <div class="method-description">
+          <p>
+Enumerates open windows and returns a window handle from a given title and
+window class Window class and title are matched regexes
+</p>
+        </div>
+      </div>
+
+      <div id="method-M000048" class="method-detail">
+        <a name="M000048"></a>
+
+        <div class="method-heading">
+          <a href="WinClicker.src/M000048.html" target="Code" class="method-signature"
+            onclick="popupCode('WinClicker.src/M000048.html');return false;">
+          <span class="method-name">getWindowTitle</span><span class="method-args">(hWnd)</span>
+          </a>
+        </div>
+      
+        <div class="method-description">
+          <p>
+get the title for the specified hwnd
+</p>
+        </div>
+      </div>
+
+      <div id="method-M000033" class="method-detail">
+        <a name="M000033"></a>
+
+        <div class="method-heading">
+          <span class="method-name">get_chwnd</span><span class="method-args">( hWnd , childCaption )</span>
+        </div>
+      
+        <div class="method-description">
+          <p>
+Alias for <a href="WinClicker.html#M000032">getChildHandle</a>
+</p>
+        </div>
+      </div>
+
+      <div id="method-M000047" class="method-detail">
+        <a name="M000047"></a>
+
+        <div class="method-heading">
+          <span class="method-name">get_ctrl_txt</span><span class="method-args">(hWnd)</span>
+        </div>
+      
+        <div class="method-description">
+          <p>
+Alias for <a href="WinClicker.html#M000046">getControlText</a>
+</p>
+        </div>
+      </div>
+
+      <div id="method-M000051" class="method-detail">
+        <a name="M000051"></a>
+
+        <div class="method-heading">
+          <span class="method-name">get_file_name</span><span class="method-args">(parenthWnd)</span>
+        </div>
+      
+        <div class="method-description">
+          <p>
+Alias for <a
+href="WinClicker.html#M000050">getTextValueForFileNameField</a>
+</p>
+        </div>
+      </div>
+
+      <div id="method-M000041" class="method-detail">
+        <a name="M000041"></a>
+
+        <div class="method-heading">
+          <span class="method-name">get_handle_of_ctrl</span><span class="method-args">(hWnd , controlClass, position )</span>
+        </div>
+      
+        <div class="method-description">
+          <p>
+Alias for <a href="WinClicker.html#M000040">getHandleOfControl</a>
+</p>
+        </div>
+      </div>
+
+      <div id="method-M000020" class="method-detail">
+        <a name="M000020"></a>
+
+        <div class="method-heading">
+          <span class="method-name">get_parent</span><span class="method-args">(childhWnd )</span>
+        </div>
+      
+        <div class="method-description">
+          <p>
+Alias for <a href="WinClicker.html#M000019">getParent</a>
+</p>
+        </div>
+      </div>
+
+      <div id="method-M000035" class="method-detail">
+        <a name="M000035"></a>
+
+        <div class="method-heading">
+          <span class="method-name">get_static_text</span><span class="method-args">(caption)</span>
+        </div>
+      
+        <div class="method-description">
+          <p>
+Alias for <a href="WinClicker.html#M000034">getStaticText</a>
+</p>
+        </div>
+      </div>
+
+      <div id="method-M000039" class="method-detail">
+        <a name="M000039"></a>
+
+        <div class="method-heading">
+          <span class="method-name">get_static_text_from_window</span><span class="method-args">( windowCaption , hWnd)</span>
+        </div>
+      
+        <div class="method-description">
+          <p>
+Alias for <a href="WinClicker.html#M000038">getStaticTextFromWindow</a>
+</p>
+        </div>
+      </div>
+
+      <div id="method-M000037" class="method-detail">
+        <a name="M000037"></a>
+
+        <div class="method-heading">
+          <span class="method-name">get_static_text_hwnd</span><span class="method-args">(hWnd)</span>
+        </div>
+      
+        <div class="method-description">
+          <p>
+Alias for <a href="WinClicker.html#M000036">getStaticText_hWnd</a>
+</p>
+        </div>
+      </div>
+
+      <div id="method-M000049" class="method-detail">
+        <a name="M000049"></a>
+
+        <div class="method-heading">
+          <span class="method-name">get_win_title</span><span class="method-args">(hWnd)</span>
+        </div>
+      
+        <div class="method-description">
+          <p>
+Alias for <a href="WinClicker.html#M000048">getWindowTitle</a>
+</p>
+        </div>
+      </div>
+
+      <div id="method-M000023" class="method-detail">
+        <a name="M000023"></a>
+
+        <div class="method-heading">
+          <span class="method-name">get_window_handle</span><span class="method-args">(title, winclass = &quot;&quot; )</span>
+        </div>
+      
+        <div class="method-description">
+          <p>
+Alias for <a href="WinClicker.html#M000022">getWindowHandle</a>
+</p>
+        </div>
+      </div>
+
+      <div id="method-M000024" class="method-detail">
+        <a name="M000024"></a>
+
+        <div class="method-heading">
+          <a href="WinClicker.src/M000024.html" target="Code" class="method-signature"
+            onclick="popupCode('WinClicker.src/M000024.html');return false;">
+          <span class="method-name">makeWindowActive</span><span class="method-args">(hWnd)</span>
+          </a>
+        </div>
+      
+        <div class="method-description">
+          <p>
+Call SwitchToThisWindow win32api which will The SwitchToThisWindow function
+is called to switch focus to a specified window and bring it to the
+foreground
+</p>
+        </div>
+      </div>
+
+      <div id="method-M000025" class="method-detail">
+        <a name="M000025"></a>
+
+        <div class="method-heading">
+          <span class="method-name">make_window_active</span><span class="method-args">(hWnd)</span>
+        </div>
+      
+        <div class="method-description">
+          <p>
+Alias for <a href="WinClicker.html#M000024">makeWindowActive</a>
+</p>
+        </div>
+      </div>
+
+      <div id="method-M000042" class="method-detail">
+        <a name="M000042"></a>
+
+        <div class="method-heading">
+          <a href="WinClicker.src/M000042.html" target="Code" class="method-signature"
+            onclick="popupCode('WinClicker.src/M000042.html');return false;">
+          <span class="method-name">setComboBoxText</span><span class="method-args">(hWnd , textToSet)</span>
+          </a>
+        </div>
+      
+        <div class="method-description">
+          <p>
+Call set text on the given window handle
+</p>
+        </div>
+      </div>
+
+      <div id="method-M000011" class="method-detail">
+        <a name="M000011"></a>
+
+        <div class="method-heading">
+          <a href="WinClicker.src/M000011.html" target="Code" class="method-signature"
+            onclick="popupCode('WinClicker.src/M000011.html');return false;">
+          <span class="method-name">setFileRequesterFileName</span><span class="method-args">( textToSet, tryCount = 3 )</span>
+          </a>
+        </div>
+      
+        <div class="method-description">
+          <p>
+Set the first edit box in the Choose file dialog to textToSet we may need
+to play with the default try count. 3 is a reasonably safe value.
+</p>
+        </div>
+      </div>
+
+      <div id="method-M000012" class="method-detail">
+        <a name="M000012"></a>
+
+        <div class="method-heading">
+          <a href="WinClicker.src/M000012.html" target="Code" class="method-signature"
+            onclick="popupCode('WinClicker.src/M000012.html');return false;">
+          <span class="method-name">setFileRequesterFileName_newProcess</span><span class="method-args">( textToSet )</span>
+          </a>
+        </div>
+      
+        <div class="method-description">
+          <p>
+fire off setting the file name for the Choose file dialog in a <a
+href="WinClicker.html#M000008">new</a> process
+</p>
+        </div>
+      </div>
+
+      <div id="method-M000044" class="method-detail">
+        <a name="M000044"></a>
+
+        <div class="method-heading">
+          <a href="WinClicker.src/M000044.html" target="Code" class="method-signature"
+            onclick="popupCode('WinClicker.src/M000044.html');return false;">
+          <span class="method-name">setTextBoxText</span><span class="method-args">(hWnd , textToSet)</span>
+          </a>
+        </div>
+      
+        <div class="method-description">
+          <p>
+Call set text on the given window handle
+</p>
+        </div>
+      </div>
+
+      <div id="method-M000052" class="method-detail">
+        <a name="M000052"></a>
+
+        <div class="method-heading">
+          <a href="WinClicker.src/M000052.html" target="Code" class="method-signature"
+            onclick="popupCode('WinClicker.src/M000052.html');return false;">
+          <span class="method-name">setTextValueForFileNameField</span><span class="method-args">( parenthWnd , textToSet )</span>
+          </a>
+        </div>
+      
+        <div class="method-description">
+          <p>
+this sets the filename field to text to set
+</p>
+        </div>
+      </div>
+
+      <div id="method-M000043" class="method-detail">
+        <a name="M000043"></a>
+
+        <div class="method-heading">
+          <span class="method-name">set_combo_txt</span><span class="method-args">(hWnd , textToSet)</span>
+        </div>
+      
+        <div class="method-description">
+          <p>
+Alias for <a href="WinClicker.html#M000042">setComboBoxText</a>
+</p>
+        </div>
+      </div>
+
+      <div id="method-M000053" class="method-detail">
+        <a name="M000053"></a>
+
+        <div class="method-heading">
+          <span class="method-name">set_file_name</span><span class="method-args">( parenthWnd , textToSet )</span>
+        </div>
+      
+        <div class="method-description">
+          <p>
+Alias for <a
+href="WinClicker.html#M000052">setTextValueForFileNameField</a>
+</p>
+        </div>
+      </div>
+
+      <div id="method-M000045" class="method-detail">
+        <a name="M000045"></a>
+
+        <div class="method-heading">
+          <span class="method-name">set_textbox_txt</span><span class="method-args">(hWnd , textToSet)</span>
+        </div>
+      
+        <div class="method-description">
+          <p>
+Alias for <a href="WinClicker.html#M000044">setTextBoxText</a>
+</p>
+        </div>
+      </div>
+
+      <div id="method-M000009" class="method-detail">
+        <a name="M000009"></a>
+
+        <div class="method-heading">
+          <a href="WinClicker.src/M000009.html" target="Code" class="method-signature"
+            onclick="popupCode('WinClicker.src/M000009.html');return false;">
+          <span class="method-name">winsystem</span><span class="method-args">(command)</span>
+          </a>
+        </div>
+      
+        <div class="method-description">
+          <p>
+The system function passes command to the command interpreter, which
+executes the string as an operating-system command <a
+href="http://msdn.microsoft.com/library/default.asp?url=/library/en-us/vccore98/html/_crt_system.2c_._wsystem.asp">msdn.microsoft.com/library/default.asp?url=/library/en-us/vccore98/html/_crt_system.2c_._wsystem.asp</a>
+using win32api
+</p>
+        </div>
+      </div>
+
+      <div id="method-M000021" class="method-detail">
+        <a name="M000021"></a>
+
+        <div class="method-heading">
+          <a href="WinClicker.src/M000021.html" target="Code" class="method-signature"
+            onclick="popupCode('WinClicker.src/M000021.html');return false;">
+          <span class="method-name">with_dl_callback</span><span class="method-args">(type, prc) {|callback| ...}</span>
+          </a>
+        </div>
+      
+        <div class="method-description">
+        </div>
+      </div>
+
+
+    </div>
+
+
+  </div>
+
+
+<div id="validator-badges">
+  <p><small><a href="http://validator.w3.org/check/referer">[Validate]</a></small></p>
+</div>
+
+</body>
+</html>

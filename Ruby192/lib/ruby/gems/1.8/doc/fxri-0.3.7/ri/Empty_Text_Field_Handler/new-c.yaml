@@ -1,0 +1,12 @@
+--- !ruby/object:RI::MethodDescription 
+aliases: []
+
+block_params: 
+comment: 
+- !ruby/struct:SM::Flow::P 
+  body: Create a new handler for the specified textfield, with the given text. From now on you have to use the created object to get and set text, not the textfield or this handler would come out of sync
+full_name: Empty_Text_Field_Handler::new
+is_singleton: true
+name: new
+params: (textField, myText)
+visibility: public

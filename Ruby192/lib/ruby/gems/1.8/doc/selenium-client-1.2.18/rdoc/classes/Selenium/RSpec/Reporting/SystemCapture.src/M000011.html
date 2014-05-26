@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+<!DOCTYPE html 
+     PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+     "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html>
+<head>
+  <title>capture_system_screenshot (Selenium::RSpec::Reporting::SystemCapture)</title>
+  <meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" />
+  <link rel="stylesheet" href="../../../../.././rdoc-style.css" type="text/css" media="screen" />
+</head>
+<body class="standalone-code">
+  <pre>    <span class="ruby-comment cmt"># File lib/selenium/rspec/reporting/system_capture.rb, line 47</span>
+47:         <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">capture_system_screenshot</span>
+48:           <span class="ruby-ivar">@selenium_driver</span>.<span class="ruby-identifier">window_maximize</span> <span class="ruby-keyword kw">if</span> <span class="ruby-ivar">@selenium_driver</span>.<span class="ruby-identifier">session_started?</span>
+49:           
+50:           <span class="ruby-identifier">encodedImage</span> = <span class="ruby-ivar">@selenium_driver</span>.<span class="ruby-identifier">capture_screenshot_to_string</span>
+51:           <span class="ruby-identifier">pngImage</span> = <span class="ruby-constant">Base64</span>.<span class="ruby-identifier">decode64</span>(<span class="ruby-identifier">encodedImage</span>)
+52:           <span class="ruby-constant">File</span>.<span class="ruby-identifier">open</span>(<span class="ruby-ivar">@file_path_strategy</span>.<span class="ruby-identifier">file_path_for_system_screenshot</span>(<span class="ruby-ivar">@example</span>), <span class="ruby-value str">&quot;wb&quot;</span>) { <span class="ruby-operator">|</span><span class="ruby-identifier">f</span><span class="ruby-operator">|</span> <span class="ruby-identifier">f</span>.<span class="ruby-identifier">write</span> <span class="ruby-identifier">pngImage</span> }
+53:         <span class="ruby-keyword kw">end</span></pre>
+</body>
+</html>

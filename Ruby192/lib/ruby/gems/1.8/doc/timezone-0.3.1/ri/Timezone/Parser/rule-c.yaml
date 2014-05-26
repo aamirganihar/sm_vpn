@@ -1,0 +1,12 @@
+--- !ruby/object:RI::MethodDescription 
+aliases: []
+
+block_params: 
+comment: 
+- !ruby/struct:SM::Flow::P 
+  body: Given a rule from a TZDATA file, generate the appropriate rule objects.
+full_name: Timezone::Parser::rule
+is_singleton: true
+name: rule
+params: (line)
+visibility: public

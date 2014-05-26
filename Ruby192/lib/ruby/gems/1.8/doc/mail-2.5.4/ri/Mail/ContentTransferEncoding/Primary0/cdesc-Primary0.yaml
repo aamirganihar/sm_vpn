@@ -1,0 +1,22 @@
+--- !ruby/object:RI::ClassDescription 
+attributes: []
+
+class_methods: []
+
+comment: 
+constants: []
+
+full_name: Mail::ContentTransferEncoding::Primary0
+includes: []
+
+instance_methods: 
+- !ruby/object:RI::MethodSummary 
+  name: CFWS1
+- !ruby/object:RI::MethodSummary 
+  name: CFWS2
+- !ruby/object:RI::MethodSummary 
+  name: CFWS3
+- !ruby/object:RI::MethodSummary 
+  name: encoding
+name: Primary0
+superclass: 

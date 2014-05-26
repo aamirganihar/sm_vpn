@@ -1,0 +1,228 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+<!DOCTYPE html 
+     PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+     "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+  <title>File: firefox.rb</title>
+  <meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" />
+  <meta http-equiv="Content-Script-Type" content="text/javascript" />
+  <link rel="stylesheet" href="../../.././rdoc-style.css" type="text/css" media="screen" />
+  <script type="text/javascript">
+  // <![CDATA[
+
+  function popupCode( url ) {
+    window.open(url, "Code", "resizable=yes,scrollbars=yes,toolbar=no,status=no,height=150,width=400")
+  }
+
+  function toggleCode( id ) {
+    if ( document.getElementById )
+      elem = document.getElementById( id );
+    else if ( document.all )
+      elem = eval( "document.all." + id );
+    else
+      return false;
+
+    elemStyle = elem.style;
+    
+    if ( elemStyle.display != "block" ) {
+      elemStyle.display = "block"
+    } else {
+      elemStyle.display = "none"
+    }
+
+    return true;
+  }
+  
+  // Make codeblocks hidden by default
+  document.writeln( "<style type=\"text/css\">div.method-source-code { display: none }</style>" )
+  
+  // ]]>
+  </script>
+
+</head>
+<body>
+
+
+
+  <div id="fileHeader">
+    <h1>firefox.rb</h1>
+    <table class="header-table">
+    <tr class="top-aligned-row">
+      <td><strong>Path:</strong></td>
+      <td>lib/firewatir/firefox.rb
+      </td>
+    </tr>
+    <tr class="top-aligned-row">
+      <td><strong>Last Update:</strong></td>
+      <td>Thu Sep 30 10:50:37 +0530 2010</td>
+    </tr>
+    </table>
+  </div>
+  <!-- banner header -->
+
+  <div id="bodyContent">
+
+
+
+  <div id="contextContent">
+
+    <div id="description">
+      <p>
+This is <a href="../../../classes/FireWatir.html">FireWatir</a>, Web
+Application Testing In Ruby using Firefox browser
+</p>
+<p>
+Typical usage:
+</p>
+<pre>
+ # include the controller
+ require &quot;firewatir&quot;
+
+ # go to the page you want to test
+ ff = FireWatir::Firefox.start(&quot;http://myserver/mypage&quot;)
+
+ # enter &quot;Angrez&quot; into an input field named &quot;username&quot;
+ ff.text_field(:name, &quot;username&quot;).set(&quot;Angrez&quot;)
+
+ # enter &quot;Ruby Co&quot; into input field with id &quot;company_ID&quot;
+ ff.text_field(:id, &quot;company_ID&quot;).set(&quot;Ruby Co&quot;)
+
+ # click on a link that has &quot;green&quot; somewhere in the text that is displayed
+ # to the user, using a regular expression
+ ff.link(:text, /green/)
+
+ # click button that has a caption of &quot;Cancel&quot;
+ ff.button(:value, &quot;Cancel&quot;).click
+</pre>
+<p>
+<a href="../../../classes/FireWatir.html">FireWatir</a> allows your script
+to read and interact with HTML objects&#8212;HTML tags and their attributes
+and contents. Types of objects that <a
+href="../../../classes/FireWatir.html">FireWatir</a> can identify include:
+</p>
+<p>
+Type Description
+</p>
+<h6>===== ===============================================================</h6>
+<p>
+button &lt;input&gt; tags, with the type=&quot;button&quot; attribute
+check_box &lt;input&gt; tags, with the type=&quot;checkbox&quot; attribute
+div &lt;div&gt; tags form frame hidden hidden &lt;input&gt; tags image
+&lt;img&gt; tags label link &lt;a&gt; (anchor) tags p &lt;p&gt; (paragraph)
+tags radio radio buttons; &lt;input&gt; tags, with the
+type=&quot;radio&quot; attribute select_list &lt;select&gt; tags, known
+informally as drop-down boxes span &lt;span&gt; tags table &lt;table&gt;
+tags text_field &lt;input&gt; tags with the type=&quot;text&quot; attribute
+(a single-line
+</p>
+<pre>
+             text field), the type=&quot;text_area&quot; attribute (a multi-line
+             text field), and the type=&quot;password&quot; attribute (a
+             single-line field in which the input is replaced with asterisks)
+</pre>
+<p>
+In general, there are several ways to identify a specific object. <a
+href="../../../classes/FireWatir.html">FireWatir</a>&#8216;s syntax is in
+the form (how, what), where &quot;how&quot; is a means of identifying the
+object, and &quot;what&quot; is the specific string or regular expression
+that <a href="../../../classes/FireWatir.html">FireWatir</a> will seek, as
+shown in the examples above. Available &quot;how&quot; options depend upon
+the type of object, but here are a few examples:
+</p>
+<p>
+How Description
+</p>
+<h6>====== ===============================================================</h6>
+<p>
+:id Used to find an object that has an &quot;id=&quot; attribute. Since
+each
+</p>
+<pre>
+              id should be unique, according to the XHTML specification,
+              this is recommended as the most reliable method to find an
+              object.
+</pre>
+<p>
+:name Used to find an object that has a &quot;name=&quot; attribute. This
+is
+</p>
+<pre>
+              useful for older versions of HTML, but &quot;name&quot; is deprecated
+              in XHTML.
+</pre>
+<p>
+:value Used to find a text field with a given default value, or a
+</p>
+<pre>
+              button with a given caption
+</pre>
+<p>
+:index Used to find the nth object of the specified type on a page.
+</p>
+<pre>
+              For example, button(:index, 2) finds the second button.
+              Current versions of FireWatir use 1-based indexing, but future
+              versions will use 0-based indexing.
+</pre>
+<p>
+:xpath The xpath expression for identifying the element.
+</p>
+<p>
+Note that the XHTML specification requires that tags and their attributes
+be in lower case. <a href="../../../classes/FireWatir.html">FireWatir</a>
+doesn&#8216;t enforce this; <a
+href="../../../classes/FireWatir.html">FireWatir</a> will find tags and
+attributes whether they&#8216;re in upper, lower, or mixed case. This is
+either a bug or a feature.
+</p>
+<p>
+<a href="../../../classes/FireWatir.html">FireWatir</a> uses JSSh for
+interacting with the browser. For further information on Firefox and DOM go
+to the following Web page:
+</p>
+<p>
+<a
+href="http://www.xulplanet.com/references/objref">www.xulplanet.com/references/objref</a>/
+</p>
+
+    </div>
+
+    <div id="requires-list">
+      <h3 class="section-bar">Required files</h3>
+
+      <div class="name-list">
+      win32/registry.rb&nbsp;&nbsp;
+      </div>
+    </div>
+
+   </div>
+
+
+  </div>
+
+
+    <!-- if includes -->
+
+    <div id="section">
+
+
+
+
+
+      
+
+
+    <!-- if method_list -->
+
+
+  </div>
+
+
+<div id="validator-badges">
+  <p><small><a href="http://validator.w3.org/check/referer">[Validate]</a></small></p>
+</div>
+
+</body>
+</html>

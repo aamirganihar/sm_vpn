@@ -1,0 +1,1393 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+<!DOCTYPE html 
+     PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+     "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+  <title>Module: Mail::RFC2822</title>
+  <meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" />
+  <meta http-equiv="Content-Script-Type" content="text/javascript" />
+  <link rel="stylesheet" href="../.././rdoc-style.css" type="text/css" media="screen" />
+  <script type="text/javascript">
+  // <![CDATA[
+
+  function popupCode( url ) {
+    window.open(url, "Code", "resizable=yes,scrollbars=yes,toolbar=no,status=no,height=150,width=400")
+  }
+
+  function toggleCode( id ) {
+    if ( document.getElementById )
+      elem = document.getElementById( id );
+    else if ( document.all )
+      elem = eval( "document.all." + id );
+    else
+      return false;
+
+    elemStyle = elem.style;
+    
+    if ( elemStyle.display != "block" ) {
+      elemStyle.display = "block"
+    } else {
+      elemStyle.display = "none"
+    }
+
+    return true;
+  }
+  
+  // Make codeblocks hidden by default
+  document.writeln( "<style type=\"text/css\">div.method-source-code { display: none }</style>" )
+  
+  // ]]>
+  </script>
+
+</head>
+<body>
+
+
+
+    <div id="classHeader">
+        <table class="header-table">
+        <tr class="top-aligned-row">
+          <td><strong>Module</strong></td>
+          <td class="class-name-in-header">Mail::RFC2822</td>
+        </tr>
+        <tr class="top-aligned-row">
+            <td><strong>In:</strong></td>
+            <td>
+                <a href="../../files/lib/mail/parsers/rfc2822_rb.html">
+                lib/mail/parsers/rfc2822.rb
+                </a>
+        <br />
+            </td>
+        </tr>
+
+        </table>
+    </div>
+  <!-- banner header -->
+
+  <div id="bodyContent">
+
+
+
+  <div id="contextContent">
+
+
+
+   </div>
+
+    <div id="method-list">
+      <h3 class="section-bar">Methods</h3>
+
+      <div class="name-list">
+      <a href="#M000663">_nt_ALPHA</a>&nbsp;&nbsp;
+      <a href="#M000671">_nt_CFWS</a>&nbsp;&nbsp;
+      <a href="#M000667">_nt_CR</a>&nbsp;&nbsp;
+      <a href="#M000668">_nt_CRLF</a>&nbsp;&nbsp;
+      <a href="#M000664">_nt_DIGIT</a>&nbsp;&nbsp;
+      <a href="#M000665">_nt_DQUOTE</a>&nbsp;&nbsp;
+      <a href="#M000670">_nt_FWS</a>&nbsp;&nbsp;
+      <a href="#M000666">_nt_LF</a>&nbsp;&nbsp;
+      <a href="#M000672">_nt_NO_WS_CTL</a>&nbsp;&nbsp;
+      <a href="#M000669">_nt_WSP</a>&nbsp;&nbsp;
+      <a href="#M000695">_nt_addr_spec</a>&nbsp;&nbsp;
+      <a href="#M000709">_nt_address</a>&nbsp;&nbsp;
+      <a href="#M000710">_nt_address_list</a>&nbsp;&nbsp;
+      <a href="#M000694">_nt_angle_addr</a>&nbsp;&nbsp;
+      <a href="#M000677">_nt_atext</a>&nbsp;&nbsp;
+      <a href="#M000679">_nt_atom</a>&nbsp;&nbsp;
+      <a href="#M000675">_nt_ccontent</a>&nbsp;&nbsp;
+      <a href="#M000676">_nt_comment</a>&nbsp;&nbsp;
+      <a href="#M000674">_nt_ctext</a>&nbsp;&nbsp;
+      <a href="#M000714">_nt_date</a>&nbsp;&nbsp;
+      <a href="#M000711">_nt_date_time</a>&nbsp;&nbsp;
+      <a href="#M000718">_nt_day</a>&nbsp;&nbsp;
+      <a href="#M000713">_nt_day_name</a>&nbsp;&nbsp;
+      <a href="#M000712">_nt_day_of_week</a>&nbsp;&nbsp;
+      <a href="#M000692">_nt_dcontent</a>&nbsp;&nbsp;
+      <a href="#M000705">_nt_display_name</a>&nbsp;&nbsp;
+      <a href="#M000697">_nt_domain</a>&nbsp;&nbsp;
+      <a href="#M000691">_nt_domain_literal</a>&nbsp;&nbsp;
+      <a href="#M000685">_nt_domain_text</a>&nbsp;&nbsp;
+      <a href="#M000680">_nt_dot_atom</a>&nbsp;&nbsp;
+      <a href="#M000683">_nt_dot_atom_text</a>&nbsp;&nbsp;
+      <a href="#M000693">_nt_dtext</a>&nbsp;&nbsp;
+      <a href="#M000698">_nt_group</a>&nbsp;&nbsp;
+      <a href="#M000721">_nt_hour</a>&nbsp;&nbsp;
+      <a href="#M000735">_nt_id_left</a>&nbsp;&nbsp;
+      <a href="#M000736">_nt_id_right</a>&nbsp;&nbsp;
+      <a href="#M000730">_nt_item_name</a>&nbsp;&nbsp;
+      <a href="#M000731">_nt_item_value</a>&nbsp;&nbsp;
+      <a href="#M000681">_nt_local_dot_atom</a>&nbsp;&nbsp;
+      <a href="#M000684">_nt_local_dot_atom_text</a>&nbsp;&nbsp;
+      <a href="#M000696">_nt_local_part</a>&nbsp;&nbsp;
+      <a href="#M000708">_nt_mailbox</a>&nbsp;&nbsp;
+      <a href="#M000707">_nt_mailbox_list</a>&nbsp;&nbsp;
+      <a href="#M000699">_nt_mailbox_list_group</a>&nbsp;&nbsp;
+      <a href="#M000682">_nt_message_id_text</a>&nbsp;&nbsp;
+      <a href="#M000732">_nt_message_ids</a>&nbsp;&nbsp;
+      <a href="#M000722">_nt_minute</a>&nbsp;&nbsp;
+      <a href="#M000716">_nt_month</a>&nbsp;&nbsp;
+      <a href="#M000717">_nt_month_name</a>&nbsp;&nbsp;
+      <a href="#M000733">_nt_msg_id</a>&nbsp;&nbsp;
+      <a href="#M000739">_nt_msg_id_atext</a>&nbsp;&nbsp;
+      <a href="#M000738">_nt_msg_id_domain_text</a>&nbsp;&nbsp;
+      <a href="#M000737">_nt_msg_id_dot_atom_text</a>&nbsp;&nbsp;
+      <a href="#M000734">_nt_msg_id_value</a>&nbsp;&nbsp;
+      <a href="#M000678">_nt_mtext</a>&nbsp;&nbsp;
+      <a href="#M000706">_nt_name_addr</a>&nbsp;&nbsp;
+      <a href="#M000728">_nt_name_val_list</a>&nbsp;&nbsp;
+      <a href="#M000729">_nt_name_val_pair</a>&nbsp;&nbsp;
+      <a href="#M000741">_nt_no_fold_literal</a>&nbsp;&nbsp;
+      <a href="#M000740">_nt_no_fold_quote</a>&nbsp;&nbsp;
+      <a href="#M000726">_nt_path</a>&nbsp;&nbsp;
+      <a href="#M000688">_nt_phrase</a>&nbsp;&nbsp;
+      <a href="#M000690">_nt_phrase_list</a>&nbsp;&nbsp;
+      <a href="#M000701">_nt_qcontent</a>&nbsp;&nbsp;
+      <a href="#M000687">_nt_qdcontent</a>&nbsp;&nbsp;
+      <a href="#M000703">_nt_qtext</a>&nbsp;&nbsp;
+      <a href="#M000686">_nt_quoted_domain</a>&nbsp;&nbsp;
+      <a href="#M000702">_nt_quoted_pair</a>&nbsp;&nbsp;
+      <a href="#M000700">_nt_quoted_string</a>&nbsp;&nbsp;
+      <a href="#M000727">_nt_received</a>&nbsp;&nbsp;
+      <a href="#M000725">_nt_return</a>&nbsp;&nbsp;
+      <a href="#M000723">_nt_second</a>&nbsp;&nbsp;
+      <a href="#M000673">_nt_specials</a>&nbsp;&nbsp;
+      <a href="#M000704">_nt_text</a>&nbsp;&nbsp;
+      <a href="#M000719">_nt_time</a>&nbsp;&nbsp;
+      <a href="#M000720">_nt_time_of_day</a>&nbsp;&nbsp;
+      <a href="#M000689">_nt_word</a>&nbsp;&nbsp;
+      <a href="#M000715">_nt_year</a>&nbsp;&nbsp;
+      <a href="#M000724">_nt_zone</a>&nbsp;&nbsp;
+      <a href="#M000662">root</a>&nbsp;&nbsp;
+      </div>
+    </div>
+
+  </div>
+
+
+    <!-- if includes -->
+    <div id="includes">
+      <h3 class="section-bar">Included Modules</h3>
+
+      <div id="includes-list">
+        <span class="include-name">Treetop::Runtime</span>
+        <span class="include-name"><a href="RFC2822Obsolete.html">RFC2822Obsolete</a></span>
+      </div>
+    </div>
+
+    <div id="section">
+
+    <div id="class-list">
+      <h3 class="section-bar">Classes and Modules</h3>
+
+      Module <a href="RFC2822/AddrSpec0.html" class="link">Mail::RFC2822::AddrSpec0</a><br />
+Module <a href="RFC2822/Address0.html" class="link">Mail::RFC2822::Address0</a><br />
+Module <a href="RFC2822/AddressList0.html" class="link">Mail::RFC2822::AddressList0</a><br />
+Module <a href="RFC2822/AddressList1.html" class="link">Mail::RFC2822::AddressList1</a><br />
+Module <a href="RFC2822/AngleAddr0.html" class="link">Mail::RFC2822::AngleAddr0</a><br />
+Module <a href="RFC2822/Atom0.html" class="link">Mail::RFC2822::Atom0</a><br />
+Module <a href="RFC2822/CFWS0.html" class="link">Mail::RFC2822::CFWS0</a><br />
+Module <a href="RFC2822/CFWS1.html" class="link">Mail::RFC2822::CFWS1</a><br />
+Module <a href="RFC2822/Comment0.html" class="link">Mail::RFC2822::Comment0</a><br />
+Module <a href="RFC2822/Comment1.html" class="link">Mail::RFC2822::Comment1</a><br />
+Module <a href="RFC2822/Date0.html" class="link">Mail::RFC2822::Date0</a><br />
+Module <a href="RFC2822/DateTime0.html" class="link">Mail::RFC2822::DateTime0</a><br />
+Module <a href="RFC2822/DateTime1.html" class="link">Mail::RFC2822::DateTime1</a><br />
+Module <a href="RFC2822/Day0.html" class="link">Mail::RFC2822::Day0</a><br />
+Module <a href="RFC2822/DayOfWeek0.html" class="link">Mail::RFC2822::DayOfWeek0</a><br />
+Module <a href="RFC2822/DomainLiteral0.html" class="link">Mail::RFC2822::DomainLiteral0</a><br />
+Module <a href="RFC2822/DomainLiteral1.html" class="link">Mail::RFC2822::DomainLiteral1</a><br />
+Module <a href="RFC2822/DomainText0.html" class="link">Mail::RFC2822::DomainText0</a><br />
+Module <a href="RFC2822/DomainText1.html" class="link">Mail::RFC2822::DomainText1</a><br />
+Module <a href="RFC2822/DotAtom0.html" class="link">Mail::RFC2822::DotAtom0</a><br />
+Module <a href="RFC2822/DotAtomText0.html" class="link">Mail::RFC2822::DotAtomText0</a><br />
+Module <a href="RFC2822/FWS0.html" class="link">Mail::RFC2822::FWS0</a><br />
+Module <a href="RFC2822/FWS1.html" class="link">Mail::RFC2822::FWS1</a><br />
+Module <a href="RFC2822/Group0.html" class="link">Mail::RFC2822::Group0</a><br />
+Module <a href="RFC2822/Hour0.html" class="link">Mail::RFC2822::Hour0</a><br />
+Module <a href="RFC2822/ItemName0.html" class="link">Mail::RFC2822::ItemName0</a><br />
+Module <a href="RFC2822/ItemName1.html" class="link">Mail::RFC2822::ItemName1</a><br />
+Module <a href="RFC2822/LocalDotAtom0.html" class="link">Mail::RFC2822::LocalDotAtom0</a><br />
+Module <a href="RFC2822/LocalDotAtomText0.html" class="link">Mail::RFC2822::LocalDotAtomText0</a><br />
+Module <a href="RFC2822/Mailbox0.html" class="link">Mail::RFC2822::Mailbox0</a><br />
+Module <a href="RFC2822/MailboxList0.html" class="link">Mail::RFC2822::MailboxList0</a><br />
+Module <a href="RFC2822/MailboxList1.html" class="link">Mail::RFC2822::MailboxList1</a><br />
+Module <a href="RFC2822/MailboxListGroup0.html" class="link">Mail::RFC2822::MailboxListGroup0</a><br />
+Module <a href="RFC2822/MessageIds0.html" class="link">Mail::RFC2822::MessageIds0</a><br />
+Module <a href="RFC2822/MessageIds1.html" class="link">Mail::RFC2822::MessageIds1</a><br />
+Module <a href="RFC2822/Minute0.html" class="link">Mail::RFC2822::Minute0</a><br />
+Module <a href="RFC2822/Month0.html" class="link">Mail::RFC2822::Month0</a><br />
+Module <a href="RFC2822/MsgId0.html" class="link">Mail::RFC2822::MsgId0</a><br />
+Module <a href="RFC2822/MsgIdDomainText0.html" class="link">Mail::RFC2822::MsgIdDomainText0</a><br />
+Module <a href="RFC2822/MsgIdDomainText1.html" class="link">Mail::RFC2822::MsgIdDomainText1</a><br />
+Module <a href="RFC2822/MsgIdDotAtomText0.html" class="link">Mail::RFC2822::MsgIdDotAtomText0</a><br />
+Module <a href="RFC2822/MsgIdValue0.html" class="link">Mail::RFC2822::MsgIdValue0</a><br />
+Module <a href="RFC2822/NameAddr0.html" class="link">Mail::RFC2822::NameAddr0</a><br />
+Module <a href="RFC2822/NameValList0.html" class="link">Mail::RFC2822::NameValList0</a><br />
+Module <a href="RFC2822/NameValList1.html" class="link">Mail::RFC2822::NameValList1</a><br />
+Module <a href="RFC2822/NameValList2.html" class="link">Mail::RFC2822::NameValList2</a><br />
+Module <a href="RFC2822/NameValPair0.html" class="link">Mail::RFC2822::NameValPair0</a><br />
+Module <a href="RFC2822/NoFoldLiteral0.html" class="link">Mail::RFC2822::NoFoldLiteral0</a><br />
+Module <a href="RFC2822/NoFoldQuote0.html" class="link">Mail::RFC2822::NoFoldQuote0</a><br />
+Module <a href="RFC2822/Path0.html" class="link">Mail::RFC2822::Path0</a><br />
+Module <a href="RFC2822/PhraseList0.html" class="link">Mail::RFC2822::PhraseList0</a><br />
+Module <a href="RFC2822/PhraseList1.html" class="link">Mail::RFC2822::PhraseList1</a><br />
+Module <a href="RFC2822/QuotedDomain0.html" class="link">Mail::RFC2822::QuotedDomain0</a><br />
+Module <a href="RFC2822/QuotedPair0.html" class="link">Mail::RFC2822::QuotedPair0</a><br />
+Module <a href="RFC2822/QuotedString0.html" class="link">Mail::RFC2822::QuotedString0</a><br />
+Module <a href="RFC2822/QuotedString1.html" class="link">Mail::RFC2822::QuotedString1</a><br />
+Module <a href="RFC2822/Received0.html" class="link">Mail::RFC2822::Received0</a><br />
+Module <a href="RFC2822/Return0.html" class="link">Mail::RFC2822::Return0</a><br />
+Module <a href="RFC2822/Second0.html" class="link">Mail::RFC2822::Second0</a><br />
+Module <a href="RFC2822/Time0.html" class="link">Mail::RFC2822::Time0</a><br />
+Module <a href="RFC2822/TimeOfDay0.html" class="link">Mail::RFC2822::TimeOfDay0</a><br />
+Module <a href="RFC2822/TimeOfDay1.html" class="link">Mail::RFC2822::TimeOfDay1</a><br />
+Module <a href="RFC2822/Year0.html" class="link">Mail::RFC2822::Year0</a><br />
+Module <a href="RFC2822/Zone0.html" class="link">Mail::RFC2822::Zone0</a><br />
+
+    </div>
+
+
+
+
+      
+
+
+    <!-- if method_list -->
+    <div id="methods">
+      <h3 class="section-bar">Public Instance methods</h3>
+
+      <div id="method-M000663" class="method-detail">
+        <a name="M000663"></a>
+
+        <div class="method-heading">
+          <a href="RFC2822.src/M000663.html" target="Code" class="method-signature"
+            onclick="popupCode('RFC2822.src/M000663.html');return false;">
+          <span class="method-name">_nt_ALPHA</span><span class="method-args">()</span>
+          </a>
+        </div>
+      
+        <div class="method-description">
+        </div>
+      </div>
+
+      <div id="method-M000671" class="method-detail">
+        <a name="M000671"></a>
+
+        <div class="method-heading">
+          <a href="RFC2822.src/M000671.html" target="Code" class="method-signature"
+            onclick="popupCode('RFC2822.src/M000671.html');return false;">
+          <span class="method-name">_nt_CFWS</span><span class="method-args">()</span>
+          </a>
+        </div>
+      
+        <div class="method-description">
+        </div>
+      </div>
+
+      <div id="method-M000667" class="method-detail">
+        <a name="M000667"></a>
+
+        <div class="method-heading">
+          <a href="RFC2822.src/M000667.html" target="Code" class="method-signature"
+            onclick="popupCode('RFC2822.src/M000667.html');return false;">
+          <span class="method-name">_nt_CR</span><span class="method-args">()</span>
+          </a>
+        </div>
+      
+        <div class="method-description">
+        </div>
+      </div>
+
+      <div id="method-M000668" class="method-detail">
+        <a name="M000668"></a>
+
+        <div class="method-heading">
+          <a href="RFC2822.src/M000668.html" target="Code" class="method-signature"
+            onclick="popupCode('RFC2822.src/M000668.html');return false;">
+          <span class="method-name">_nt_CRLF</span><span class="method-args">()</span>
+          </a>
+        </div>
+      
+        <div class="method-description">
+        </div>
+      </div>
+
+      <div id="method-M000664" class="method-detail">
+        <a name="M000664"></a>
+
+        <div class="method-heading">
+          <a href="RFC2822.src/M000664.html" target="Code" class="method-signature"
+            onclick="popupCode('RFC2822.src/M000664.html');return false;">
+          <span class="method-name">_nt_DIGIT</span><span class="method-args">()</span>
+          </a>
+        </div>
+      
+        <div class="method-description">
+        </div>
+      </div>
+
+      <div id="method-M000665" class="method-detail">
+        <a name="M000665"></a>
+
+        <div class="method-heading">
+          <a href="RFC2822.src/M000665.html" target="Code" class="method-signature"
+            onclick="popupCode('RFC2822.src/M000665.html');return false;">
+          <span class="method-name">_nt_DQUOTE</span><span class="method-args">()</span>
+          </a>
+        </div>
+      
+        <div class="method-description">
+        </div>
+      </div>
+
+      <div id="method-M000670" class="method-detail">
+        <a name="M000670"></a>
+
+        <div class="method-heading">
+          <a href="RFC2822.src/M000670.html" target="Code" class="method-signature"
+            onclick="popupCode('RFC2822.src/M000670.html');return false;">
+          <span class="method-name">_nt_FWS</span><span class="method-args">()</span>
+          </a>
+        </div>
+      
+        <div class="method-description">
+        </div>
+      </div>
+
+      <div id="method-M000666" class="method-detail">
+        <a name="M000666"></a>
+
+        <div class="method-heading">
+          <a href="RFC2822.src/M000666.html" target="Code" class="method-signature"
+            onclick="popupCode('RFC2822.src/M000666.html');return false;">
+          <span class="method-name">_nt_LF</span><span class="method-args">()</span>
+          </a>
+        </div>
+      
+        <div class="method-description">
+        </div>
+      </div>
+
+      <div id="method-M000672" class="method-detail">
+        <a name="M000672"></a>
+
+        <div class="method-heading">
+          <a href="RFC2822.src/M000672.html" target="Code" class="method-signature"
+            onclick="popupCode('RFC2822.src/M000672.html');return false;">
+          <span class="method-name">_nt_NO_WS_CTL</span><span class="method-args">()</span>
+          </a>
+        </div>
+      
+        <div class="method-description">
+        </div>
+      </div>
+
+      <div id="method-M000669" class="method-detail">
+        <a name="M000669"></a>
+
+        <div class="method-heading">
+          <a href="RFC2822.src/M000669.html" target="Code" class="method-signature"
+            onclick="popupCode('RFC2822.src/M000669.html');return false;">
+          <span class="method-name">_nt_WSP</span><span class="method-args">()</span>
+          </a>
+        </div>
+      
+        <div class="method-description">
+        </div>
+      </div>
+
+      <div id="method-M000695" class="method-detail">
+        <a name="M000695"></a>
+
+        <div class="method-heading">
+          <a href="RFC2822.src/M000695.html" target="Code" class="method-signature"
+            onclick="popupCode('RFC2822.src/M000695.html');return false;">
+          <span class="method-name">_nt_addr_spec</span><span class="method-args">()</span>
+          </a>
+        </div>
+      
+        <div class="method-description">
+        </div>
+      </div>
+
+      <div id="method-M000709" class="method-detail">
+        <a name="M000709"></a>
+
+        <div class="method-heading">
+          <a href="RFC2822.src/M000709.html" target="Code" class="method-signature"
+            onclick="popupCode('RFC2822.src/M000709.html');return false;">
+          <span class="method-name">_nt_address</span><span class="method-args">()</span>
+          </a>
+        </div>
+      
+        <div class="method-description">
+        </div>
+      </div>
+
+      <div id="method-M000710" class="method-detail">
+        <a name="M000710"></a>
+
+        <div class="method-heading">
+          <a href="RFC2822.src/M000710.html" target="Code" class="method-signature"
+            onclick="popupCode('RFC2822.src/M000710.html');return false;">
+          <span class="method-name">_nt_address_list</span><span class="method-args">()</span>
+          </a>
+        </div>
+      
+        <div class="method-description">
+        </div>
+      </div>
+
+      <div id="method-M000694" class="method-detail">
+        <a name="M000694"></a>
+
+        <div class="method-heading">
+          <a href="RFC2822.src/M000694.html" target="Code" class="method-signature"
+            onclick="popupCode('RFC2822.src/M000694.html');return false;">
+          <span class="method-name">_nt_angle_addr</span><span class="method-args">()</span>
+          </a>
+        </div>
+      
+        <div class="method-description">
+        </div>
+      </div>
+
+      <div id="method-M000677" class="method-detail">
+        <a name="M000677"></a>
+
+        <div class="method-heading">
+          <a href="RFC2822.src/M000677.html" target="Code" class="method-signature"
+            onclick="popupCode('RFC2822.src/M000677.html');return false;">
+          <span class="method-name">_nt_atext</span><span class="method-args">()</span>
+          </a>
+        </div>
+      
+        <div class="method-description">
+        </div>
+      </div>
+
+      <div id="method-M000679" class="method-detail">
+        <a name="M000679"></a>
+
+        <div class="method-heading">
+          <a href="RFC2822.src/M000679.html" target="Code" class="method-signature"
+            onclick="popupCode('RFC2822.src/M000679.html');return false;">
+          <span class="method-name">_nt_atom</span><span class="method-args">()</span>
+          </a>
+        </div>
+      
+        <div class="method-description">
+        </div>
+      </div>
+
+      <div id="method-M000675" class="method-detail">
+        <a name="M000675"></a>
+
+        <div class="method-heading">
+          <a href="RFC2822.src/M000675.html" target="Code" class="method-signature"
+            onclick="popupCode('RFC2822.src/M000675.html');return false;">
+          <span class="method-name">_nt_ccontent</span><span class="method-args">()</span>
+          </a>
+        </div>
+      
+        <div class="method-description">
+        </div>
+      </div>
+
+      <div id="method-M000676" class="method-detail">
+        <a name="M000676"></a>
+
+        <div class="method-heading">
+          <a href="RFC2822.src/M000676.html" target="Code" class="method-signature"
+            onclick="popupCode('RFC2822.src/M000676.html');return false;">
+          <span class="method-name">_nt_comment</span><span class="method-args">()</span>
+          </a>
+        </div>
+      
+        <div class="method-description">
+        </div>
+      </div>
+
+      <div id="method-M000674" class="method-detail">
+        <a name="M000674"></a>
+
+        <div class="method-heading">
+          <a href="RFC2822.src/M000674.html" target="Code" class="method-signature"
+            onclick="popupCode('RFC2822.src/M000674.html');return false;">
+          <span class="method-name">_nt_ctext</span><span class="method-args">()</span>
+          </a>
+        </div>
+      
+        <div class="method-description">
+        </div>
+      </div>
+
+      <div id="method-M000714" class="method-detail">
+        <a name="M000714"></a>
+
+        <div class="method-heading">
+          <a href="RFC2822.src/M000714.html" target="Code" class="method-signature"
+            onclick="popupCode('RFC2822.src/M000714.html');return false;">
+          <span class="method-name">_nt_date</span><span class="method-args">()</span>
+          </a>
+        </div>
+      
+        <div class="method-description">
+        </div>
+      </div>
+
+      <div id="method-M000711" class="method-detail">
+        <a name="M000711"></a>
+
+        <div class="method-heading">
+          <a href="RFC2822.src/M000711.html" target="Code" class="method-signature"
+            onclick="popupCode('RFC2822.src/M000711.html');return false;">
+          <span class="method-name">_nt_date_time</span><span class="method-args">()</span>
+          </a>
+        </div>
+      
+        <div class="method-description">
+        </div>
+      </div>
+
+      <div id="method-M000718" class="method-detail">
+        <a name="M000718"></a>
+
+        <div class="method-heading">
+          <a href="RFC2822.src/M000718.html" target="Code" class="method-signature"
+            onclick="popupCode('RFC2822.src/M000718.html');return false;">
+          <span class="method-name">_nt_day</span><span class="method-args">()</span>
+          </a>
+        </div>
+      
+        <div class="method-description">
+        </div>
+      </div>
+
+      <div id="method-M000713" class="method-detail">
+        <a name="M000713"></a>
+
+        <div class="method-heading">
+          <a href="RFC2822.src/M000713.html" target="Code" class="method-signature"
+            onclick="popupCode('RFC2822.src/M000713.html');return false;">
+          <span class="method-name">_nt_day_name</span><span class="method-args">()</span>
+          </a>
+        </div>
+      
+        <div class="method-description">
+        </div>
+      </div>
+
+      <div id="method-M000712" class="method-detail">
+        <a name="M000712"></a>
+
+        <div class="method-heading">
+          <a href="RFC2822.src/M000712.html" target="Code" class="method-signature"
+            onclick="popupCode('RFC2822.src/M000712.html');return false;">
+          <span class="method-name">_nt_day_of_week</span><span class="method-args">()</span>
+          </a>
+        </div>
+      
+        <div class="method-description">
+        </div>
+      </div>
+
+      <div id="method-M000692" class="method-detail">
+        <a name="M000692"></a>
+
+        <div class="method-heading">
+          <a href="RFC2822.src/M000692.html" target="Code" class="method-signature"
+            onclick="popupCode('RFC2822.src/M000692.html');return false;">
+          <span class="method-name">_nt_dcontent</span><span class="method-args">()</span>
+          </a>
+        </div>
+      
+        <div class="method-description">
+        </div>
+      </div>
+
+      <div id="method-M000705" class="method-detail">
+        <a name="M000705"></a>
+
+        <div class="method-heading">
+          <a href="RFC2822.src/M000705.html" target="Code" class="method-signature"
+            onclick="popupCode('RFC2822.src/M000705.html');return false;">
+          <span class="method-name">_nt_display_name</span><span class="method-args">()</span>
+          </a>
+        </div>
+      
+        <div class="method-description">
+        </div>
+      </div>
+
+      <div id="method-M000697" class="method-detail">
+        <a name="M000697"></a>
+
+        <div class="method-heading">
+          <a href="RFC2822.src/M000697.html" target="Code" class="method-signature"
+            onclick="popupCode('RFC2822.src/M000697.html');return false;">
+          <span class="method-name">_nt_domain</span><span class="method-args">()</span>
+          </a>
+        </div>
+      
+        <div class="method-description">
+        </div>
+      </div>
+
+      <div id="method-M000691" class="method-detail">
+        <a name="M000691"></a>
+
+        <div class="method-heading">
+          <a href="RFC2822.src/M000691.html" target="Code" class="method-signature"
+            onclick="popupCode('RFC2822.src/M000691.html');return false;">
+          <span class="method-name">_nt_domain_literal</span><span class="method-args">()</span>
+          </a>
+        </div>
+      
+        <div class="method-description">
+        </div>
+      </div>
+
+      <div id="method-M000685" class="method-detail">
+        <a name="M000685"></a>
+
+        <div class="method-heading">
+          <a href="RFC2822.src/M000685.html" target="Code" class="method-signature"
+            onclick="popupCode('RFC2822.src/M000685.html');return false;">
+          <span class="method-name">_nt_domain_text</span><span class="method-args">()</span>
+          </a>
+        </div>
+      
+        <div class="method-description">
+        </div>
+      </div>
+
+      <div id="method-M000680" class="method-detail">
+        <a name="M000680"></a>
+
+        <div class="method-heading">
+          <a href="RFC2822.src/M000680.html" target="Code" class="method-signature"
+            onclick="popupCode('RFC2822.src/M000680.html');return false;">
+          <span class="method-name">_nt_dot_atom</span><span class="method-args">()</span>
+          </a>
+        </div>
+      
+        <div class="method-description">
+        </div>
+      </div>
+
+      <div id="method-M000683" class="method-detail">
+        <a name="M000683"></a>
+
+        <div class="method-heading">
+          <a href="RFC2822.src/M000683.html" target="Code" class="method-signature"
+            onclick="popupCode('RFC2822.src/M000683.html');return false;">
+          <span class="method-name">_nt_dot_atom_text</span><span class="method-args">()</span>
+          </a>
+        </div>
+      
+        <div class="method-description">
+        </div>
+      </div>
+
+      <div id="method-M000693" class="method-detail">
+        <a name="M000693"></a>
+
+        <div class="method-heading">
+          <a href="RFC2822.src/M000693.html" target="Code" class="method-signature"
+            onclick="popupCode('RFC2822.src/M000693.html');return false;">
+          <span class="method-name">_nt_dtext</span><span class="method-args">()</span>
+          </a>
+        </div>
+      
+        <div class="method-description">
+        </div>
+      </div>
+
+      <div id="method-M000698" class="method-detail">
+        <a name="M000698"></a>
+
+        <div class="method-heading">
+          <a href="RFC2822.src/M000698.html" target="Code" class="method-signature"
+            onclick="popupCode('RFC2822.src/M000698.html');return false;">
+          <span class="method-name">_nt_group</span><span class="method-args">()</span>
+          </a>
+        </div>
+      
+        <div class="method-description">
+        </div>
+      </div>
+
+      <div id="method-M000721" class="method-detail">
+        <a name="M000721"></a>
+
+        <div class="method-heading">
+          <a href="RFC2822.src/M000721.html" target="Code" class="method-signature"
+            onclick="popupCode('RFC2822.src/M000721.html');return false;">
+          <span class="method-name">_nt_hour</span><span class="method-args">()</span>
+          </a>
+        </div>
+      
+        <div class="method-description">
+        </div>
+      </div>
+
+      <div id="method-M000735" class="method-detail">
+        <a name="M000735"></a>
+
+        <div class="method-heading">
+          <a href="RFC2822.src/M000735.html" target="Code" class="method-signature"
+            onclick="popupCode('RFC2822.src/M000735.html');return false;">
+          <span class="method-name">_nt_id_left</span><span class="method-args">()</span>
+          </a>
+        </div>
+      
+        <div class="method-description">
+        </div>
+      </div>
+
+      <div id="method-M000736" class="method-detail">
+        <a name="M000736"></a>
+
+        <div class="method-heading">
+          <a href="RFC2822.src/M000736.html" target="Code" class="method-signature"
+            onclick="popupCode('RFC2822.src/M000736.html');return false;">
+          <span class="method-name">_nt_id_right</span><span class="method-args">()</span>
+          </a>
+        </div>
+      
+        <div class="method-description">
+        </div>
+      </div>
+
+      <div id="method-M000730" class="method-detail">
+        <a name="M000730"></a>
+
+        <div class="method-heading">
+          <a href="RFC2822.src/M000730.html" target="Code" class="method-signature"
+            onclick="popupCode('RFC2822.src/M000730.html');return false;">
+          <span class="method-name">_nt_item_name</span><span class="method-args">()</span>
+          </a>
+        </div>
+      
+        <div class="method-description">
+        </div>
+      </div>
+
+      <div id="method-M000731" class="method-detail">
+        <a name="M000731"></a>
+
+        <div class="method-heading">
+          <a href="RFC2822.src/M000731.html" target="Code" class="method-signature"
+            onclick="popupCode('RFC2822.src/M000731.html');return false;">
+          <span class="method-name">_nt_item_value</span><span class="method-args">()</span>
+          </a>
+        </div>
+      
+        <div class="method-description">
+        </div>
+      </div>
+
+      <div id="method-M000681" class="method-detail">
+        <a name="M000681"></a>
+
+        <div class="method-heading">
+          <a href="RFC2822.src/M000681.html" target="Code" class="method-signature"
+            onclick="popupCode('RFC2822.src/M000681.html');return false;">
+          <span class="method-name">_nt_local_dot_atom</span><span class="method-args">()</span>
+          </a>
+        </div>
+      
+        <div class="method-description">
+        </div>
+      </div>
+
+      <div id="method-M000684" class="method-detail">
+        <a name="M000684"></a>
+
+        <div class="method-heading">
+          <a href="RFC2822.src/M000684.html" target="Code" class="method-signature"
+            onclick="popupCode('RFC2822.src/M000684.html');return false;">
+          <span class="method-name">_nt_local_dot_atom_text</span><span class="method-args">()</span>
+          </a>
+        </div>
+      
+        <div class="method-description">
+        </div>
+      </div>
+
+      <div id="method-M000696" class="method-detail">
+        <a name="M000696"></a>
+
+        <div class="method-heading">
+          <a href="RFC2822.src/M000696.html" target="Code" class="method-signature"
+            onclick="popupCode('RFC2822.src/M000696.html');return false;">
+          <span class="method-name">_nt_local_part</span><span class="method-args">()</span>
+          </a>
+        </div>
+      
+        <div class="method-description">
+        </div>
+      </div>
+
+      <div id="method-M000708" class="method-detail">
+        <a name="M000708"></a>
+
+        <div class="method-heading">
+          <a href="RFC2822.src/M000708.html" target="Code" class="method-signature"
+            onclick="popupCode('RFC2822.src/M000708.html');return false;">
+          <span class="method-name">_nt_mailbox</span><span class="method-args">()</span>
+          </a>
+        </div>
+      
+        <div class="method-description">
+        </div>
+      </div>
+
+      <div id="method-M000707" class="method-detail">
+        <a name="M000707"></a>
+
+        <div class="method-heading">
+          <a href="RFC2822.src/M000707.html" target="Code" class="method-signature"
+            onclick="popupCode('RFC2822.src/M000707.html');return false;">
+          <span class="method-name">_nt_mailbox_list</span><span class="method-args">()</span>
+          </a>
+        </div>
+      
+        <div class="method-description">
+        </div>
+      </div>
+
+      <div id="method-M000699" class="method-detail">
+        <a name="M000699"></a>
+
+        <div class="method-heading">
+          <a href="RFC2822.src/M000699.html" target="Code" class="method-signature"
+            onclick="popupCode('RFC2822.src/M000699.html');return false;">
+          <span class="method-name">_nt_mailbox_list_group</span><span class="method-args">()</span>
+          </a>
+        </div>
+      
+        <div class="method-description">
+        </div>
+      </div>
+
+      <div id="method-M000682" class="method-detail">
+        <a name="M000682"></a>
+
+        <div class="method-heading">
+          <a href="RFC2822.src/M000682.html" target="Code" class="method-signature"
+            onclick="popupCode('RFC2822.src/M000682.html');return false;">
+          <span class="method-name">_nt_message_id_text</span><span class="method-args">()</span>
+          </a>
+        </div>
+      
+        <div class="method-description">
+        </div>
+      </div>
+
+      <div id="method-M000732" class="method-detail">
+        <a name="M000732"></a>
+
+        <div class="method-heading">
+          <a href="RFC2822.src/M000732.html" target="Code" class="method-signature"
+            onclick="popupCode('RFC2822.src/M000732.html');return false;">
+          <span class="method-name">_nt_message_ids</span><span class="method-args">()</span>
+          </a>
+        </div>
+      
+        <div class="method-description">
+        </div>
+      </div>
+
+      <div id="method-M000722" class="method-detail">
+        <a name="M000722"></a>
+
+        <div class="method-heading">
+          <a href="RFC2822.src/M000722.html" target="Code" class="method-signature"
+            onclick="popupCode('RFC2822.src/M000722.html');return false;">
+          <span class="method-name">_nt_minute</span><span class="method-args">()</span>
+          </a>
+        </div>
+      
+        <div class="method-description">
+        </div>
+      </div>
+
+      <div id="method-M000716" class="method-detail">
+        <a name="M000716"></a>
+
+        <div class="method-heading">
+          <a href="RFC2822.src/M000716.html" target="Code" class="method-signature"
+            onclick="popupCode('RFC2822.src/M000716.html');return false;">
+          <span class="method-name">_nt_month</span><span class="method-args">()</span>
+          </a>
+        </div>
+      
+        <div class="method-description">
+        </div>
+      </div>
+
+      <div id="method-M000717" class="method-detail">
+        <a name="M000717"></a>
+
+        <div class="method-heading">
+          <a href="RFC2822.src/M000717.html" target="Code" class="method-signature"
+            onclick="popupCode('RFC2822.src/M000717.html');return false;">
+          <span class="method-name">_nt_month_name</span><span class="method-args">()</span>
+          </a>
+        </div>
+      
+        <div class="method-description">
+        </div>
+      </div>
+
+      <div id="method-M000733" class="method-detail">
+        <a name="M000733"></a>
+
+        <div class="method-heading">
+          <a href="RFC2822.src/M000733.html" target="Code" class="method-signature"
+            onclick="popupCode('RFC2822.src/M000733.html');return false;">
+          <span class="method-name">_nt_msg_id</span><span class="method-args">()</span>
+          </a>
+        </div>
+      
+        <div class="method-description">
+        </div>
+      </div>
+
+      <div id="method-M000739" class="method-detail">
+        <a name="M000739"></a>
+
+        <div class="method-heading">
+          <a href="RFC2822.src/M000739.html" target="Code" class="method-signature"
+            onclick="popupCode('RFC2822.src/M000739.html');return false;">
+          <span class="method-name">_nt_msg_id_atext</span><span class="method-args">()</span>
+          </a>
+        </div>
+      
+        <div class="method-description">
+        </div>
+      </div>
+
+      <div id="method-M000738" class="method-detail">
+        <a name="M000738"></a>
+
+        <div class="method-heading">
+          <a href="RFC2822.src/M000738.html" target="Code" class="method-signature"
+            onclick="popupCode('RFC2822.src/M000738.html');return false;">
+          <span class="method-name">_nt_msg_id_domain_text</span><span class="method-args">()</span>
+          </a>
+        </div>
+      
+        <div class="method-description">
+        </div>
+      </div>
+
+      <div id="method-M000737" class="method-detail">
+        <a name="M000737"></a>
+
+        <div class="method-heading">
+          <a href="RFC2822.src/M000737.html" target="Code" class="method-signature"
+            onclick="popupCode('RFC2822.src/M000737.html');return false;">
+          <span class="method-name">_nt_msg_id_dot_atom_text</span><span class="method-args">()</span>
+          </a>
+        </div>
+      
+        <div class="method-description">
+        </div>
+      </div>
+
+      <div id="method-M000734" class="method-detail">
+        <a name="M000734"></a>
+
+        <div class="method-heading">
+          <a href="RFC2822.src/M000734.html" target="Code" class="method-signature"
+            onclick="popupCode('RFC2822.src/M000734.html');return false;">
+          <span class="method-name">_nt_msg_id_value</span><span class="method-args">()</span>
+          </a>
+        </div>
+      
+        <div class="method-description">
+        </div>
+      </div>
+
+      <div id="method-M000678" class="method-detail">
+        <a name="M000678"></a>
+
+        <div class="method-heading">
+          <a href="RFC2822.src/M000678.html" target="Code" class="method-signature"
+            onclick="popupCode('RFC2822.src/M000678.html');return false;">
+          <span class="method-name">_nt_mtext</span><span class="method-args">()</span>
+          </a>
+        </div>
+      
+        <div class="method-description">
+        </div>
+      </div>
+
+      <div id="method-M000706" class="method-detail">
+        <a name="M000706"></a>
+
+        <div class="method-heading">
+          <a href="RFC2822.src/M000706.html" target="Code" class="method-signature"
+            onclick="popupCode('RFC2822.src/M000706.html');return false;">
+          <span class="method-name">_nt_name_addr</span><span class="method-args">()</span>
+          </a>
+        </div>
+      
+        <div class="method-description">
+        </div>
+      </div>
+
+      <div id="method-M000728" class="method-detail">
+        <a name="M000728"></a>
+
+        <div class="method-heading">
+          <a href="RFC2822.src/M000728.html" target="Code" class="method-signature"
+            onclick="popupCode('RFC2822.src/M000728.html');return false;">
+          <span class="method-name">_nt_name_val_list</span><span class="method-args">()</span>
+          </a>
+        </div>
+      
+        <div class="method-description">
+        </div>
+      </div>
+
+      <div id="method-M000729" class="method-detail">
+        <a name="M000729"></a>
+
+        <div class="method-heading">
+          <a href="RFC2822.src/M000729.html" target="Code" class="method-signature"
+            onclick="popupCode('RFC2822.src/M000729.html');return false;">
+          <span class="method-name">_nt_name_val_pair</span><span class="method-args">()</span>
+          </a>
+        </div>
+      
+        <div class="method-description">
+        </div>
+      </div>
+
+      <div id="method-M000741" class="method-detail">
+        <a name="M000741"></a>
+
+        <div class="method-heading">
+          <a href="RFC2822.src/M000741.html" target="Code" class="method-signature"
+            onclick="popupCode('RFC2822.src/M000741.html');return false;">
+          <span class="method-name">_nt_no_fold_literal</span><span class="method-args">()</span>
+          </a>
+        </div>
+      
+        <div class="method-description">
+        </div>
+      </div>
+
+      <div id="method-M000740" class="method-detail">
+        <a name="M000740"></a>
+
+        <div class="method-heading">
+          <a href="RFC2822.src/M000740.html" target="Code" class="method-signature"
+            onclick="popupCode('RFC2822.src/M000740.html');return false;">
+          <span class="method-name">_nt_no_fold_quote</span><span class="method-args">()</span>
+          </a>
+        </div>
+      
+        <div class="method-description">
+        </div>
+      </div>
+
+      <div id="method-M000726" class="method-detail">
+        <a name="M000726"></a>
+
+        <div class="method-heading">
+          <a href="RFC2822.src/M000726.html" target="Code" class="method-signature"
+            onclick="popupCode('RFC2822.src/M000726.html');return false;">
+          <span class="method-name">_nt_path</span><span class="method-args">()</span>
+          </a>
+        </div>
+      
+        <div class="method-description">
+        </div>
+      </div>
+
+      <div id="method-M000688" class="method-detail">
+        <a name="M000688"></a>
+
+        <div class="method-heading">
+          <a href="RFC2822.src/M000688.html" target="Code" class="method-signature"
+            onclick="popupCode('RFC2822.src/M000688.html');return false;">
+          <span class="method-name">_nt_phrase</span><span class="method-args">()</span>
+          </a>
+        </div>
+      
+        <div class="method-description">
+        </div>
+      </div>
+
+      <div id="method-M000690" class="method-detail">
+        <a name="M000690"></a>
+
+        <div class="method-heading">
+          <a href="RFC2822.src/M000690.html" target="Code" class="method-signature"
+            onclick="popupCode('RFC2822.src/M000690.html');return false;">
+          <span class="method-name">_nt_phrase_list</span><span class="method-args">()</span>
+          </a>
+        </div>
+      
+        <div class="method-description">
+        </div>
+      </div>
+
+      <div id="method-M000701" class="method-detail">
+        <a name="M000701"></a>
+
+        <div class="method-heading">
+          <a href="RFC2822.src/M000701.html" target="Code" class="method-signature"
+            onclick="popupCode('RFC2822.src/M000701.html');return false;">
+          <span class="method-name">_nt_qcontent</span><span class="method-args">()</span>
+          </a>
+        </div>
+      
+        <div class="method-description">
+        </div>
+      </div>
+
+      <div id="method-M000687" class="method-detail">
+        <a name="M000687"></a>
+
+        <div class="method-heading">
+          <a href="RFC2822.src/M000687.html" target="Code" class="method-signature"
+            onclick="popupCode('RFC2822.src/M000687.html');return false;">
+          <span class="method-name">_nt_qdcontent</span><span class="method-args">()</span>
+          </a>
+        </div>
+      
+        <div class="method-description">
+        </div>
+      </div>
+
+      <div id="method-M000703" class="method-detail">
+        <a name="M000703"></a>
+
+        <div class="method-heading">
+          <a href="RFC2822.src/M000703.html" target="Code" class="method-signature"
+            onclick="popupCode('RFC2822.src/M000703.html');return false;">
+          <span class="method-name">_nt_qtext</span><span class="method-args">()</span>
+          </a>
+        </div>
+      
+        <div class="method-description">
+        </div>
+      </div>
+
+      <div id="method-M000686" class="method-detail">
+        <a name="M000686"></a>
+
+        <div class="method-heading">
+          <a href="RFC2822.src/M000686.html" target="Code" class="method-signature"
+            onclick="popupCode('RFC2822.src/M000686.html');return false;">
+          <span class="method-name">_nt_quoted_domain</span><span class="method-args">()</span>
+          </a>
+        </div>
+      
+        <div class="method-description">
+        </div>
+      </div>
+
+      <div id="method-M000702" class="method-detail">
+        <a name="M000702"></a>
+
+        <div class="method-heading">
+          <a href="RFC2822.src/M000702.html" target="Code" class="method-signature"
+            onclick="popupCode('RFC2822.src/M000702.html');return false;">
+          <span class="method-name">_nt_quoted_pair</span><span class="method-args">()</span>
+          </a>
+        </div>
+      
+        <div class="method-description">
+        </div>
+      </div>
+
+      <div id="method-M000700" class="method-detail">
+        <a name="M000700"></a>
+
+        <div class="method-heading">
+          <a href="RFC2822.src/M000700.html" target="Code" class="method-signature"
+            onclick="popupCode('RFC2822.src/M000700.html');return false;">
+          <span class="method-name">_nt_quoted_string</span><span class="method-args">()</span>
+          </a>
+        </div>
+      
+        <div class="method-description">
+        </div>
+      </div>
+
+      <div id="method-M000727" class="method-detail">
+        <a name="M000727"></a>
+
+        <div class="method-heading">
+          <a href="RFC2822.src/M000727.html" target="Code" class="method-signature"
+            onclick="popupCode('RFC2822.src/M000727.html');return false;">
+          <span class="method-name">_nt_received</span><span class="method-args">()</span>
+          </a>
+        </div>
+      
+        <div class="method-description">
+        </div>
+      </div>
+
+      <div id="method-M000725" class="method-detail">
+        <a name="M000725"></a>
+
+        <div class="method-heading">
+          <a href="RFC2822.src/M000725.html" target="Code" class="method-signature"
+            onclick="popupCode('RFC2822.src/M000725.html');return false;">
+          <span class="method-name">_nt_return</span><span class="method-args">()</span>
+          </a>
+        </div>
+      
+        <div class="method-description">
+        </div>
+      </div>
+
+      <div id="method-M000723" class="method-detail">
+        <a name="M000723"></a>
+
+        <div class="method-heading">
+          <a href="RFC2822.src/M000723.html" target="Code" class="method-signature"
+            onclick="popupCode('RFC2822.src/M000723.html');return false;">
+          <span class="method-name">_nt_second</span><span class="method-args">()</span>
+          </a>
+        </div>
+      
+        <div class="method-description">
+        </div>
+      </div>
+
+      <div id="method-M000673" class="method-detail">
+        <a name="M000673"></a>
+
+        <div class="method-heading">
+          <a href="RFC2822.src/M000673.html" target="Code" class="method-signature"
+            onclick="popupCode('RFC2822.src/M000673.html');return false;">
+          <span class="method-name">_nt_specials</span><span class="method-args">()</span>
+          </a>
+        </div>
+      
+        <div class="method-description">
+        </div>
+      </div>
+
+      <div id="method-M000704" class="method-detail">
+        <a name="M000704"></a>
+
+        <div class="method-heading">
+          <a href="RFC2822.src/M000704.html" target="Code" class="method-signature"
+            onclick="popupCode('RFC2822.src/M000704.html');return false;">
+          <span class="method-name">_nt_text</span><span class="method-args">()</span>
+          </a>
+        </div>
+      
+        <div class="method-description">
+        </div>
+      </div>
+
+      <div id="method-M000719" class="method-detail">
+        <a name="M000719"></a>
+
+        <div class="method-heading">
+          <a href="RFC2822.src/M000719.html" target="Code" class="method-signature"
+            onclick="popupCode('RFC2822.src/M000719.html');return false;">
+          <span class="method-name">_nt_time</span><span class="method-args">()</span>
+          </a>
+        </div>
+      
+        <div class="method-description">
+        </div>
+      </div>
+
+      <div id="method-M000720" class="method-detail">
+        <a name="M000720"></a>
+
+        <div class="method-heading">
+          <a href="RFC2822.src/M000720.html" target="Code" class="method-signature"
+            onclick="popupCode('RFC2822.src/M000720.html');return false;">
+          <span class="method-name">_nt_time_of_day</span><span class="method-args">()</span>
+          </a>
+        </div>
+      
+        <div class="method-description">
+        </div>
+      </div>
+
+      <div id="method-M000689" class="method-detail">
+        <a name="M000689"></a>
+
+        <div class="method-heading">
+          <a href="RFC2822.src/M000689.html" target="Code" class="method-signature"
+            onclick="popupCode('RFC2822.src/M000689.html');return false;">
+          <span class="method-name">_nt_word</span><span class="method-args">()</span>
+          </a>
+        </div>
+      
+        <div class="method-description">
+        </div>
+      </div>
+
+      <div id="method-M000715" class="method-detail">
+        <a name="M000715"></a>
+
+        <div class="method-heading">
+          <a href="RFC2822.src/M000715.html" target="Code" class="method-signature"
+            onclick="popupCode('RFC2822.src/M000715.html');return false;">
+          <span class="method-name">_nt_year</span><span class="method-args">()</span>
+          </a>
+        </div>
+      
+        <div class="method-description">
+        </div>
+      </div>
+
+      <div id="method-M000724" class="method-detail">
+        <a name="M000724"></a>
+
+        <div class="method-heading">
+          <a href="RFC2822.src/M000724.html" target="Code" class="method-signature"
+            onclick="popupCode('RFC2822.src/M000724.html');return false;">
+          <span class="method-name">_nt_zone</span><span class="method-args">()</span>
+          </a>
+        </div>
+      
+        <div class="method-description">
+        </div>
+      </div>
+
+      <div id="method-M000662" class="method-detail">
+        <a name="M000662"></a>
+
+        <div class="method-heading">
+          <a href="RFC2822.src/M000662.html" target="Code" class="method-signature"
+            onclick="popupCode('RFC2822.src/M000662.html');return false;">
+          <span class="method-name">root</span><span class="method-args">()</span>
+          </a>
+        </div>
+      
+        <div class="method-description">
+        </div>
+      </div>
+
+
+    </div>
+
+
+  </div>
+
+
+<div id="validator-badges">
+  <p><small><a href="http://validator.w3.org/check/referer">[Validate]</a></small></p>
+</div>
+
+</body>
+</html>

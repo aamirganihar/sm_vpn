@@ -1,0 +1,12 @@
+--- !ruby/object:RI::MethodDescription 
+aliases: []
+
+block_params: 
+comment: 
+- !ruby/struct:SM::Flow::P 
+  body: If any parent element isn't visible then we cannot write to the element. The only realiable way to determine this is to iterate up the DOM element tree checking every element to make sure it's visible.
+full_name: Watir::Element#visible?
+is_singleton: false
+name: visible?
+params: ()
+visibility: public

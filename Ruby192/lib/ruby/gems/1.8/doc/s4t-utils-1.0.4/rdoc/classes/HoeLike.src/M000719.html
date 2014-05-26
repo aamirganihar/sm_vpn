@@ -1,0 +1,92 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+<!DOCTYPE html 
+     PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+     "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html>
+<head>
+  <title>new (HoeLike)</title>
+  <meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" />
+  <link rel="stylesheet" href="../.././rdoc-style.css" type="text/css" media="screen" />
+</head>
+<body class="standalone-code">
+  <pre><span class="ruby-comment cmt"># File lib/s4t-utils/hoelike.rb, line 40</span>
+  <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">initialize</span>(<span class="ruby-identifier">keys</span>)
+    <span class="ruby-ivar">@keys</span> = <span class="ruby-identifier">keys</span>
+    <span class="ruby-identifier">project</span> = <span class="ruby-identifier">pull</span>(<span class="ruby-identifier">:project</span>)
+    <span class="ruby-identifier">this_release</span> = <span class="ruby-identifier">pull</span>(<span class="ruby-identifier">:this_release</span>)
+    <span class="ruby-identifier">login</span> = <span class="ruby-identifier">pull</span>(<span class="ruby-identifier">:login</span>)
+    <span class="ruby-identifier">web_site_root</span> = <span class="ruby-identifier">pull</span>(<span class="ruby-identifier">:web_site_root</span>)
+    <span class="ruby-identifier">export_root</span> = <span class="ruby-identifier">pull</span>(<span class="ruby-identifier">:export_root</span>)
+    
+    <span class="ruby-identifier">root</span> = <span class="ruby-node">&quot;svn+ssh://#{login}/var/svn/#{project}&quot;</span>
+    <span class="ruby-identifier">project_exports</span> = <span class="ruby-node">&quot;#{export_root}/#{project}&quot;</span>
+    
+    <span class="ruby-identifier">desc</span> <span class="ruby-value str">&quot;Run fast tests.&quot;</span>
+    <span class="ruby-identifier">task</span> <span class="ruby-value str">'fast'</span> <span class="ruby-keyword kw">do</span>
+      <span class="ruby-constant">S4tUtils</span>.<span class="ruby-identifier">run_particular_tests</span>(<span class="ruby-value str">'test'</span>, <span class="ruby-value str">'fast'</span>)
+    <span class="ruby-keyword kw">end</span>
+    
+    <span class="ruby-identifier">desc</span> <span class="ruby-value str">&quot;Run slow tests.&quot;</span>
+    <span class="ruby-identifier">task</span> <span class="ruby-value str">'slow'</span> <span class="ruby-keyword kw">do</span>
+      <span class="ruby-constant">S4tUtils</span>.<span class="ruby-identifier">run_particular_tests</span>(<span class="ruby-value str">'test'</span>, <span class="ruby-value str">'slow'</span>)
+    <span class="ruby-keyword kw">end</span>
+    
+    <span class="ruby-identifier">desc</span> <span class="ruby-value str">&quot;Upload all the web pages (as part of release)&quot;</span>
+    <span class="ruby-identifier">task</span> <span class="ruby-value str">'upload_pages'</span> <span class="ruby-keyword kw">do</span> <span class="ruby-operator">|</span> <span class="ruby-identifier">task</span> <span class="ruby-operator">|</span>
+      <span class="ruby-identifier">assert_in</span>(<span class="ruby-identifier">project_exports</span>, <span class="ruby-identifier">task</span>.<span class="ruby-identifier">name</span>)
+      <span class="ruby-identifier">exec</span> = <span class="ruby-node">&quot;scp -r #{web_site_root}/* #{login}:/var/www/gforge-projects/#{project}/&quot;</span>
+      <span class="ruby-identifier">puts</span> <span class="ruby-identifier">exec</span>
+      <span class="ruby-identifier">system</span>(<span class="ruby-identifier">exec</span>)
+    <span class="ruby-keyword kw">end</span>
+    
+    <span class="ruby-identifier">desc</span> <span class="ruby-value str">&quot;Upload all the web pages (not as part of release)&quot;</span>
+    <span class="ruby-identifier">task</span> <span class="ruby-value str">'export_and_upload_pages'</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-value str">'export'</span> <span class="ruby-keyword kw">do</span> <span class="ruby-operator">|</span> <span class="ruby-identifier">task</span> <span class="ruby-operator">|</span>
+      <span class="ruby-constant">Dir</span>.<span class="ruby-identifier">chdir</span>(<span class="ruby-identifier">project_exports</span>) <span class="ruby-keyword kw">do</span>
+        <span class="ruby-identifier">exec</span> = <span class="ruby-node">&quot;scp -r #{web_site_root}/* #{login}:/var/www/gforge-projects/#{project}/&quot;</span>
+        <span class="ruby-identifier">puts</span> <span class="ruby-identifier">exec</span>
+        <span class="ruby-identifier">system</span>(<span class="ruby-identifier">exec</span>)
+      <span class="ruby-keyword kw">end</span>
+    <span class="ruby-keyword kw">end</span>
+
+    <span class="ruby-identifier">desc</span> <span class="ruby-value str">&quot;Tag release with current version.&quot;</span>
+    <span class="ruby-identifier">task</span> <span class="ruby-value str">'tag_release'</span> <span class="ruby-keyword kw">do</span>
+      <span class="ruby-identifier">from</span> = <span class="ruby-node">&quot;#{root}/trunk&quot;</span>
+      <span class="ruby-identifier">to</span> = <span class="ruby-node">&quot;#{root}/tags/rel-#{this_release}&quot;</span>
+      <span class="ruby-identifier">message</span> = <span class="ruby-node">&quot;Release #{this_release}&quot;</span>
+      <span class="ruby-identifier">exec</span> = <span class="ruby-node">&quot;svn copy -m '#{message}' #{from} #{to}&quot;</span>
+      <span class="ruby-identifier">puts</span> <span class="ruby-identifier">exec</span>
+      <span class="ruby-identifier">system</span>(<span class="ruby-identifier">exec</span>)
+    <span class="ruby-keyword kw">end</span>
+    
+    <span class="ruby-identifier">desc</span> <span class="ruby-node">&quot;Export to #{project_exports}&quot;</span>
+    <span class="ruby-identifier">task</span> <span class="ruby-value str">'export'</span> <span class="ruby-keyword kw">do</span> 
+      <span class="ruby-constant">Dir</span>.<span class="ruby-identifier">chdir</span>(<span class="ruby-identifier">export_root</span>) <span class="ruby-keyword kw">do</span>
+        <span class="ruby-identifier">rm_rf</span> <span class="ruby-identifier">project</span>
+        <span class="ruby-identifier">exec</span> = <span class="ruby-node">&quot;svn export #{root}/trunk #{project}&quot;</span>
+        <span class="ruby-identifier">puts</span> <span class="ruby-identifier">exec</span>
+        <span class="ruby-identifier">system</span> <span class="ruby-identifier">exec</span>
+      <span class="ruby-keyword kw">end</span>
+    <span class="ruby-keyword kw">end</span>
+    
+
+    <span class="ruby-identifier">desc</span> <span class="ruby-value str">&quot;Complete release of everything - asks for confirmation after steps&quot;</span>
+    <span class="ruby-comment cmt"># Because in Ruby 1.8.6, Rake doesn't notice subtask failures, so it</span>
+    <span class="ruby-comment cmt"># won't stop for us.</span>
+    <span class="ruby-identifier">task</span> <span class="ruby-value str">'release_everything'</span> <span class="ruby-keyword kw">do</span>  
+      <span class="ruby-identifier">confirmed_step</span> <span class="ruby-value str">'check_manifest'</span>
+      <span class="ruby-identifier">confirmed_step</span> <span class="ruby-value str">'export'</span>
+      <span class="ruby-constant">Dir</span>.<span class="ruby-identifier">chdir</span>(<span class="ruby-identifier">project_exports</span>) <span class="ruby-keyword kw">do</span>
+        <span class="ruby-identifier">puts</span> <span class="ruby-node">&quot;Working in #{Dir.pwd}&quot;</span>
+        <span class="ruby-identifier">confirmed_step</span> <span class="ruby-value str">'test'</span>
+        <span class="ruby-identifier">confirmed_step</span> <span class="ruby-value str">'upload_pages'</span>
+        <span class="ruby-identifier">confirmed_step</span> <span class="ruby-value str">'publish_docs'</span>
+        <span class="ruby-constant">ENV</span>[<span class="ruby-value str">'VERSION'</span>] = <span class="ruby-identifier">this_release</span>
+        <span class="ruby-identifier">confirmed_step</span> <span class="ruby-value str">'release'</span>
+      <span class="ruby-keyword kw">end</span>
+      <span class="ruby-identifier">confirmed_step</span> <span class="ruby-value str">'tag_release'</span>
+    <span class="ruby-keyword kw">end</span>
+
+  <span class="ruby-keyword kw">end</span></pre>
+</body>
+</html>

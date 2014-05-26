@@ -1,0 +1,12 @@
+--- !ruby/object:RI::MethodDescription 
+aliases: []
+
+block_params: 
+comment: 
+- !ruby/struct:SM::Flow::P 
+  body: Make the window come to the front
+full_name: Watir::IE#bring_to_front
+is_singleton: false
+name: bring_to_front
+params: ()
+visibility: public

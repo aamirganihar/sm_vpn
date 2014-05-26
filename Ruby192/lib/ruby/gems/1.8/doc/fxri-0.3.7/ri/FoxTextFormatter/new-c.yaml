@@ -1,0 +1,12 @@
+--- !ruby/object:RI::MethodDescription 
+aliases: []
+
+block_params: 
+comment: 
+- !ruby/struct:SM::Flow::P 
+  body: whenever text should be printed/added/shown, proc is called with the text as the argument.
+full_name: FoxTextFormatter::new
+is_singleton: true
+name: new
+params: (width, indent, &proc)
+visibility: public

@@ -1,0 +1,18 @@
+--- !ruby/object:RI::MethodDescription 
+aliases: []
+
+block_params: 
+comment: 
+- !ruby/struct:SM::Flow::P 
+  body: "Description:"
+- !ruby/struct:SM::Flow::VERB 
+  body: "  Sets the contents of the text field to the provided text. Overwrite the existing contents.\n  Raises ObjectDisabledException if text field is disabled.\n  Raises ObjectReadOnlyException if text field is read only.\n"
+- !ruby/struct:SM::Flow::P 
+  body: "Input:"
+- !ruby/struct:SM::Flow::VERB 
+  body: "  - setThis - Text to be set.\n"
+full_name: FireWatir::TextField#set
+is_singleton: false
+name: set
+params: ( setThis )
+visibility: public

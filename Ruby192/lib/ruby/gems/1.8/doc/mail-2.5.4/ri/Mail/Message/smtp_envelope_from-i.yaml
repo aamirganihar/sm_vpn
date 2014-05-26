@@ -1,0 +1,24 @@
+--- !ruby/object:RI::MethodDescription 
+aliases: []
+
+block_params: 
+comment: 
+- !ruby/struct:SM::Flow::P 
+  body: Returns the SMTP Envelope From value of the mail object, as a single string of an address spec.
+- !ruby/struct:SM::Flow::P 
+  body: Defaults to Return-Path, Sender, or the first From address.
+- !ruby/struct:SM::Flow::P 
+  body: "Example:"
+- !ruby/struct:SM::Flow::VERB 
+  body: " mail.smtp_envelope_from = 'Mikel &lt;mikel@test.lindsaar.net&gt;'\n mail.smtp_envelope_from #=&gt; 'mikel@test.lindsaar.net'\n"
+- !ruby/struct:SM::Flow::P 
+  body: Also allows you to set the value by passing a value as a parameter
+- !ruby/struct:SM::Flow::P 
+  body: "Example:"
+- !ruby/struct:SM::Flow::VERB 
+  body: " mail.smtp_envelope_from 'Mikel &lt;mikel@test.lindsaar.net&gt;'\n mail.smtp_envelope_from #=&gt; 'mikel@test.lindsaar.net'\n"
+full_name: Mail::Message#smtp_envelope_from
+is_singleton: false
+name: smtp_envelope_from
+params: ( val = nil )
+visibility: public

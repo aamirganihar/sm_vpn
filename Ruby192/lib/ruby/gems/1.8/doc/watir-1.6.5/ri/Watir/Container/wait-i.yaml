@@ -1,0 +1,12 @@
+--- !ruby/object:RI::MethodDescription 
+aliases: []
+
+block_params: 
+comment: 
+- !ruby/struct:SM::Flow::P 
+  body: Wait until Internet Explorer has finished loading the page.
+full_name: Watir::Container#wait
+is_singleton: false
+name: wait
+params: (no_sleep=false)
+visibility: public

@@ -1,0 +1,14 @@
+--- !ruby/object:RI::MethodDescription 
+aliases: []
+
+block_params: 
+comment: 
+- !ruby/struct:SM::Flow::P 
+  body: "Description:"
+- !ruby/struct:SM::Flow::VERB 
+  body: "  Locate the element on the page. Element can be a span, div, label, p or pre HTML tag.\n"
+full_name: FireWatir::NonControlElement#locate
+is_singleton: false
+name: locate
+params: ()
+visibility: public

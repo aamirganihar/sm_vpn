@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+<!DOCTYPE html 
+     PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+     "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html>
+<head>
+  <title>elements_by_xpath (FireWatir::Element)</title>
+  <meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" />
+  <link rel="stylesheet" href="../../.././rdoc-style.css" type="text/css" media="screen" />
+</head>
+<body class="standalone-code">
+  <pre><span class="ruby-comment cmt"># File lib/firewatir/element.rb, line 708</span>
+    <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">elements_by_xpath</span>(<span class="ruby-identifier">container</span>, <span class="ruby-identifier">xpath</span>)
+      <span class="ruby-identifier">rand_no</span> = <span class="ruby-identifier">rand</span>(<span class="ruby-value">1000</span>)
+      <span class="ruby-comment cmt">#jssh_command = &quot;var xpathResult = document.evaluate(\&quot;count(#{xpath})\&quot;, document, null, #{NUMBER_TYPE}, null); xpathResult.numberValue;&quot;</span>
+      <span class="ruby-comment cmt">#jssh_socket.send(&quot;#{jssh_command}\n&quot;, 0);</span>
+      <span class="ruby-comment cmt">#node_count = read_socket()</span>
+      <span class="ruby-identifier">xpath</span>.<span class="ruby-identifier">gsub!</span>(<span class="ruby-value str">&quot;\&quot;&quot;</span>, <span class="ruby-value str">&quot;\\\&quot;&quot;</span>)
+      <span class="ruby-identifier">jssh_command</span> = <span class="ruby-node">&quot;var element_xpath_#{rand_no} = new Array();&quot;</span>
+
+      <span class="ruby-identifier">jssh_command</span> <span class="ruby-operator">&lt;&lt;</span> <span class="ruby-node">&quot;var result = #{@container.document_var}.evaluate(\&quot;#{xpath}\&quot;, #{@container.document_var}, null, #{ORDERED_NODE_ITERATOR_TYPE}, null);
+                               var iterate = result.iterateNext();
+                               while(iterate)
+                               {
+                                  element_xpath_#{rand_no}.push(iterate);
+                                  iterate = result.iterateNext();
+                               }
+                               element_xpath_#{rand_no}.length;
+                               &quot;</span>
+
+      <span class="ruby-comment cmt"># Remove \n that are there in the string as a result of pressing enter while formatting.</span>
+      <span class="ruby-identifier">jssh_command</span>.<span class="ruby-identifier">gsub!</span>(<span class="ruby-regexp re">/\n/</span>, <span class="ruby-value str">&quot;&quot;</span>)
+      <span class="ruby-comment cmt">#puts jssh_command</span>
+      <span class="ruby-identifier">jssh_socket</span>.<span class="ruby-identifier">send</span>(<span class="ruby-node">&quot;#{jssh_command};\n&quot;</span>, <span class="ruby-value">0</span>)
+      <span class="ruby-identifier">node_count</span> = <span class="ruby-identifier">read_socket</span>()
+      <span class="ruby-comment cmt">#puts &quot;value of count is : #{node_count}&quot;</span>
+
+      <span class="ruby-identifier">elements</span> = <span class="ruby-constant">Array</span>.<span class="ruby-identifier">new</span>(<span class="ruby-identifier">node_count</span>.<span class="ruby-identifier">to_i</span>)
+
+      <span class="ruby-keyword kw">for</span> <span class="ruby-identifier">i</span> <span class="ruby-keyword kw">in</span> <span class="ruby-value">0</span><span class="ruby-operator">..</span><span class="ruby-identifier">elements</span>.<span class="ruby-identifier">length</span> <span class="ruby-operator">-</span> <span class="ruby-value">1</span> <span class="ruby-keyword kw">do</span>
+        <span class="ruby-identifier">elements</span>[<span class="ruby-identifier">i</span>] = <span class="ruby-node">&quot;element_xpath_#{rand_no}[#{i}]&quot;</span>
+      <span class="ruby-keyword kw">end</span>
+
+      <span class="ruby-keyword kw">return</span> <span class="ruby-identifier">elements</span>;
+    <span class="ruby-keyword kw">end</span></pre>
+</body>
+</html>

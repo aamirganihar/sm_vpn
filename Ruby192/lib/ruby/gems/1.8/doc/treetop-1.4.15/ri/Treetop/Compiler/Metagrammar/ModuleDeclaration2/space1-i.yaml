@@ -1,0 +1,10 @@
+--- !ruby/object:RI::MethodDescription 
+aliases: []
+
+block_params: 
+comment: 
+full_name: Treetop::Compiler::Metagrammar::ModuleDeclaration2#space1
+is_singleton: false
+name: space1
+params: ()
+visibility: public

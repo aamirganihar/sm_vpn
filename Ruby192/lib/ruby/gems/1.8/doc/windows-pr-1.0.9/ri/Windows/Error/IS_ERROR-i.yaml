@@ -1,0 +1,12 @@
+--- !ruby/object:RI::MethodDescription 
+aliases: []
+
+block_params: 
+comment: 
+- !ruby/struct:SM::Flow::P 
+  body: Macros from WinError.h
+full_name: Windows::Error#IS_ERROR
+is_singleton: false
+name: IS_ERROR
+params: (status)
+visibility: public

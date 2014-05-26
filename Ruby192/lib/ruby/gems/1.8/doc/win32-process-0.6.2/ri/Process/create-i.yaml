@@ -1,0 +1,132 @@
+--- !ruby/object:RI::MethodDescription 
+aliases: []
+
+block_params: 
+comment: 
+- !ruby/struct:SM::Flow::P 
+  body: Process.create(key =&gt; value, ...) =&gt; ProcessInfo
+- !ruby/struct:SM::Flow::P 
+  body: "This is a wrapper for the CreateProcess() function. It executes a process, returning a ProcessInfo struct. It accepts a hash as an argument. There are several primary keys:"
+- !ruby/object:SM::Flow::LIST 
+  contents: 
+  - !ruby/struct:SM::Flow::LI 
+    label: "*"
+    body: command_line (mandatory)
+  - !ruby/struct:SM::Flow::LI 
+    label: "*"
+    body: "app_name (default: nil)"
+  - !ruby/struct:SM::Flow::LI 
+    label: "*"
+    body: "inherit (default: false)"
+  - !ruby/struct:SM::Flow::LI 
+    label: "*"
+    body: "process_inherit (default: false)"
+  - !ruby/struct:SM::Flow::LI 
+    label: "*"
+    body: "thread_inherit (default: false)"
+  - !ruby/struct:SM::Flow::LI 
+    label: "*"
+    body: "creation_flags (default: 0)"
+  - !ruby/struct:SM::Flow::LI 
+    label: "*"
+    body: "cwd (default: Dir.pwd)"
+  - !ruby/struct:SM::Flow::LI 
+    label: "*"
+    body: "startup_info (default: nil)"
+  - !ruby/struct:SM::Flow::LI 
+    label: "*"
+    body: "environment (default: nil)"
+  - !ruby/struct:SM::Flow::LI 
+    label: "*"
+    body: "close_handles (default: true)"
+  - !ruby/struct:SM::Flow::LI 
+    label: "*"
+    body: "with_logon (default: nil)"
+  - !ruby/struct:SM::Flow::LI 
+    label: "*"
+    body: "domain (default: nil)"
+  - !ruby/struct:SM::Flow::LI 
+    label: "*"
+    body: "password (default: nil)"
+  type: :BULLET
+- !ruby/struct:SM::Flow::P 
+  body: Of these, the 'command_line' or 'app_name' must be specified or an error is raised. Both may be set individually, but 'command_line' should be preferred if only one of them is set because it does not (necessarily) require an explicit path or extension to work.
+- !ruby/struct:SM::Flow::P 
+  body: The 'domain' and 'password' options are only relevent in the context of 'with_logon'.
+- !ruby/struct:SM::Flow::P 
+  body: The startup_info key takes a hash. Its keys are attributes that are part of the StartupInfo struct, and are generally only meaningful for GUI or console processes. See the documentation on CreateProcess() and the StartupInfo struct on MSDN for more information.
+- !ruby/object:SM::Flow::LIST 
+  contents: 
+  - !ruby/struct:SM::Flow::LI 
+    label: "*"
+    body: desktop
+  - !ruby/struct:SM::Flow::LI 
+    label: "*"
+    body: title
+  - !ruby/struct:SM::Flow::LI 
+    label: "*"
+    body: x
+  - !ruby/struct:SM::Flow::LI 
+    label: "*"
+    body: y
+  - !ruby/struct:SM::Flow::LI 
+    label: "*"
+    body: x_size
+  - !ruby/struct:SM::Flow::LI 
+    label: "*"
+    body: y_size
+  - !ruby/struct:SM::Flow::LI 
+    label: "*"
+    body: x_count_chars
+  - !ruby/struct:SM::Flow::LI 
+    label: "*"
+    body: y_count_chars
+  - !ruby/struct:SM::Flow::LI 
+    label: "*"
+    body: fill_attribute
+  - !ruby/struct:SM::Flow::LI 
+    label: "*"
+    body: sw_flags
+  - !ruby/struct:SM::Flow::LI 
+    label: "*"
+    body: startf_flags
+  - !ruby/struct:SM::Flow::LI 
+    label: "*"
+    body: stdin
+  - !ruby/struct:SM::Flow::LI 
+    label: "*"
+    body: stdout
+  - !ruby/struct:SM::Flow::LI 
+    label: "*"
+    body: stderr
+  type: :BULLET
+- !ruby/struct:SM::Flow::P 
+  body: The relevant constants for 'creation_flags', 'sw_flags' and 'startf_flags' are included in the Windows::Process, Windows::Console and Windows::Window modules. These come with the windows-pr library, a prerequisite of this library. Note that the 'stdin', 'stdout' and 'stderr' options can be either Ruby IO objects or file descriptors (i.e. a fileno). However, StringIO objects are not currently supported.
+- !ruby/struct:SM::Flow::P 
+  body: If 'stdin', 'stdout' or 'stderr' are specified, then the <tt>inherit</tt> value is automatically set to true and the Process::STARTF_USESTDHANDLES flag is automatically OR'd to the <tt>startf_flags</tt> value.
+- !ruby/struct:SM::Flow::P 
+  body: "The ProcessInfo struct contains the following members:"
+- !ruby/object:SM::Flow::LIST 
+  contents: 
+  - !ruby/struct:SM::Flow::LI 
+    label: "*"
+    body: process_handle - The handle to the newly created process.
+  - !ruby/struct:SM::Flow::LI 
+    label: "*"
+    body: thread_handle - The handle to the primary thread of the process.
+  - !ruby/struct:SM::Flow::LI 
+    label: "*"
+    body: process_id - Process ID.
+  - !ruby/struct:SM::Flow::LI 
+    label: "*"
+    body: thread_id - Thread ID.
+  type: :BULLET
+- !ruby/struct:SM::Flow::P 
+  body: If the 'close_handles' option is set to true (the default) then the process_handle and the thread_handle are automatically closed for you before the ProcessInfo struct is returned.
+- !ruby/struct:SM::Flow::P 
+  body: If the 'with_logon' option is set, then the process runs the specified executable file in the security context of the specified credentials.
+full_name: Process#create
+is_singleton: false
+name: create
+params: (args)
+visibility: public

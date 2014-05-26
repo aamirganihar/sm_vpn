@@ -1,0 +1,10 @@
+--- !ruby/object:RI::MethodDescription 
+aliases: []
+
+block_params: 
+comment: 
+full_name: Mail::ContentType::Parameter1#param_hash
+is_singleton: false
+name: param_hash
+params: ()
+visibility: public

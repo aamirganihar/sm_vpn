@@ -1,0 +1,14 @@
+--- !ruby/object:RI::MethodDescription 
+aliases: []
+
+block_params: 
+comment: 
+- !ruby/struct:SM::Flow::P 
+  body: An alternative way to access the value of an attribute
+- !ruby/struct:SM::Flow::VERB 
+  body: " s = Recursive_Open_Struct.new\n s.name = &quot;Hugo&quot;\n s[&quot;name&quot;] # &quot;Hugo&quot;\n"
+full_name: Recursive_Open_Struct#[]
+is_singleton: false
+name: "[]"
+params: (key)
+visibility: public

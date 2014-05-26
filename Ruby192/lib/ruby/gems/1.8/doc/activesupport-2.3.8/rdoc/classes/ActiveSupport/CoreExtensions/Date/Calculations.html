@@ -1,0 +1,862 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+<!DOCTYPE html 
+     PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+     "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+  <title>Module: ActiveSupport::CoreExtensions::Date::Calculations</title>
+  <meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" />
+  <meta http-equiv="Content-Script-Type" content="text/javascript" />
+  <link rel="stylesheet" href="../../../.././rdoc-style.css" type="text/css" media="screen" />
+  <script type="text/javascript">
+  // <![CDATA[
+
+  function popupCode( url ) {
+    window.open(url, "Code", "resizable=yes,scrollbars=yes,toolbar=no,status=no,height=150,width=400")
+  }
+
+  function toggleCode( id ) {
+    if ( document.getElementById )
+      elem = document.getElementById( id );
+    else if ( document.all )
+      elem = eval( "document.all." + id );
+    else
+      return false;
+
+    elemStyle = elem.style;
+    
+    if ( elemStyle.display != "block" ) {
+      elemStyle.display = "block"
+    } else {
+      elemStyle.display = "none"
+    }
+
+    return true;
+  }
+  
+  // Make codeblocks hidden by default
+  document.writeln( "<style type=\"text/css\">div.method-source-code { display: none }</style>" )
+  
+  // ]]>
+  </script>
+
+</head>
+<body>
+
+
+
+    <div id="classHeader">
+        <table class="header-table">
+        <tr class="top-aligned-row">
+          <td><strong>Module</strong></td>
+          <td class="class-name-in-header">ActiveSupport::CoreExtensions::Date::Calculations</td>
+        </tr>
+        <tr class="top-aligned-row">
+            <td><strong>In:</strong></td>
+            <td>
+                <a href="../../../../files/lib/active_support/core_ext/date/calculations_rb.html">
+                lib/active_support/core_ext/date/calculations.rb
+                </a>
+        <br />
+            </td>
+        </tr>
+
+        </table>
+    </div>
+  <!-- banner header -->
+
+  <div id="bodyContent">
+
+
+
+  <div id="contextContent">
+
+    <div id="description">
+      <p>
+Enables the use of time calculations within Date itself
+</p>
+
+    </div>
+
+
+   </div>
+
+    <div id="method-list">
+      <h3 class="section-bar">Methods</h3>
+
+      <div class="name-list">
+      <a href="#M001391">advance</a>&nbsp;&nbsp;
+      <a href="#M001383">ago</a>&nbsp;&nbsp;
+      <a href="#M001389">at_beginning_of_day</a>&nbsp;&nbsp;
+      <a href="#M001408">at_beginning_of_month</a>&nbsp;&nbsp;
+      <a href="#M001412">at_beginning_of_quarter</a>&nbsp;&nbsp;
+      <a href="#M001403">at_beginning_of_week</a>&nbsp;&nbsp;
+      <a href="#M001416">at_beginning_of_year</a>&nbsp;&nbsp;
+      <a href="#M001410">at_end_of_month</a>&nbsp;&nbsp;
+      <a href="#M001414">at_end_of_quarter</a>&nbsp;&nbsp;
+      <a href="#M001405">at_end_of_week</a>&nbsp;&nbsp;
+      <a href="#M001418">at_end_of_year</a>&nbsp;&nbsp;
+      <a href="#M001388">at_midnight</a>&nbsp;&nbsp;
+      <a href="#M001386">beginning_of_day</a>&nbsp;&nbsp;
+      <a href="#M001407">beginning_of_month</a>&nbsp;&nbsp;
+      <a href="#M001411">beginning_of_quarter</a>&nbsp;&nbsp;
+      <a href="#M001401">beginning_of_week</a>&nbsp;&nbsp;
+      <a href="#M001415">beginning_of_year</a>&nbsp;&nbsp;
+      <a href="#M001392">change</a>&nbsp;&nbsp;
+      <a href="#M001390">end_of_day</a>&nbsp;&nbsp;
+      <a href="#M001409">end_of_month</a>&nbsp;&nbsp;
+      <a href="#M001413">end_of_quarter</a>&nbsp;&nbsp;
+      <a href="#M001404">end_of_week</a>&nbsp;&nbsp;
+      <a href="#M001417">end_of_year</a>&nbsp;&nbsp;
+      <a href="#M001382">future?</a>&nbsp;&nbsp;
+      <a href="#M001385">in</a>&nbsp;&nbsp;
+      <a href="#M001387">midnight</a>&nbsp;&nbsp;
+      <a href="#M001402">monday</a>&nbsp;&nbsp;
+      <a href="#M001393">months_ago</a>&nbsp;&nbsp;
+      <a href="#M001394">months_since</a>&nbsp;&nbsp;
+      <a href="#M001400">next_month</a>&nbsp;&nbsp;
+      <a href="#M001406">next_week</a>&nbsp;&nbsp;
+      <a href="#M001398">next_year</a>&nbsp;&nbsp;
+      <a href="#M001380">past?</a>&nbsp;&nbsp;
+      <a href="#M001399">prev_month</a>&nbsp;&nbsp;
+      <a href="#M001397">prev_year</a>&nbsp;&nbsp;
+      <a href="#M001384">since</a>&nbsp;&nbsp;
+      <a href="#M001381">today?</a>&nbsp;&nbsp;
+      <a href="#M001420">tomorrow</a>&nbsp;&nbsp;
+      <a href="#M001395">years_ago</a>&nbsp;&nbsp;
+      <a href="#M001396">years_since</a>&nbsp;&nbsp;
+      <a href="#M001419">yesterday</a>&nbsp;&nbsp;
+      </div>
+    </div>
+
+  </div>
+
+
+    <!-- if includes -->
+
+    <div id="section">
+
+    <div id="class-list">
+      <h3 class="section-bar">Classes and Modules</h3>
+
+      Module <a href="Calculations/ClassMethods.html" class="link">ActiveSupport::CoreExtensions::Date::Calculations::ClassMethods</a><br />
+
+    </div>
+
+
+
+
+      
+
+
+    <!-- if method_list -->
+    <div id="methods">
+      <h3 class="section-bar">Public Instance methods</h3>
+
+      <div id="method-M001391" class="method-detail">
+        <a name="M001391"></a>
+
+        <div class="method-heading">
+          <a href="Calculations.src/M001391.html" target="Code" class="method-signature"
+            onclick="popupCode('Calculations.src/M001391.html');return false;">
+          <span class="method-name">advance</span><span class="method-args">(options)</span>
+          </a>
+        </div>
+      
+        <div class="method-description">
+          <p>
+Provides precise Date calculations for years, months, and days. The
+<tt>options</tt> parameter takes a hash with any of these keys:
+<tt>:years</tt>, <tt>:months</tt>, <tt>:weeks</tt>, <tt>:days</tt>.
+</p>
+        </div>
+      </div>
+
+      <div id="method-M001383" class="method-detail">
+        <a name="M001383"></a>
+
+        <div class="method-heading">
+          <a href="Calculations.src/M001383.html" target="Code" class="method-signature"
+            onclick="popupCode('Calculations.src/M001383.html');return false;">
+          <span class="method-name">ago</span><span class="method-args">(seconds)</span>
+          </a>
+        </div>
+      
+        <div class="method-description">
+          <p>
+Converts Date to a Time (or DateTime if necessary) with the time portion
+set to the beginning of the day (0:00) and then subtracts the specified
+number of seconds
+</p>
+        </div>
+      </div>
+
+      <div id="method-M001389" class="method-detail">
+        <a name="M001389"></a>
+
+        <div class="method-heading">
+          <span class="method-name">at_beginning_of_day</span><span class="method-args">()</span>
+        </div>
+      
+        <div class="method-description">
+          <p>
+Alias for <a href="Calculations.html#M001386">beginning_of_day</a>
+</p>
+        </div>
+      </div>
+
+      <div id="method-M001408" class="method-detail">
+        <a name="M001408"></a>
+
+        <div class="method-heading">
+          <span class="method-name">at_beginning_of_month</span><span class="method-args">()</span>
+        </div>
+      
+        <div class="method-description">
+          <p>
+Alias for <a href="Calculations.html#M001407">beginning_of_month</a>
+</p>
+        </div>
+      </div>
+
+      <div id="method-M001412" class="method-detail">
+        <a name="M001412"></a>
+
+        <div class="method-heading">
+          <span class="method-name">at_beginning_of_quarter</span><span class="method-args">()</span>
+        </div>
+      
+        <div class="method-description">
+          <p>
+Alias for <a href="Calculations.html#M001411">beginning_of_quarter</a>
+</p>
+        </div>
+      </div>
+
+      <div id="method-M001403" class="method-detail">
+        <a name="M001403"></a>
+
+        <div class="method-heading">
+          <span class="method-name">at_beginning_of_week</span><span class="method-args">()</span>
+        </div>
+      
+        <div class="method-description">
+          <p>
+Alias for <a href="Calculations.html#M001401">beginning_of_week</a>
+</p>
+        </div>
+      </div>
+
+      <div id="method-M001416" class="method-detail">
+        <a name="M001416"></a>
+
+        <div class="method-heading">
+          <span class="method-name">at_beginning_of_year</span><span class="method-args">()</span>
+        </div>
+      
+        <div class="method-description">
+          <p>
+Alias for <a href="Calculations.html#M001415">beginning_of_year</a>
+</p>
+        </div>
+      </div>
+
+      <div id="method-M001410" class="method-detail">
+        <a name="M001410"></a>
+
+        <div class="method-heading">
+          <span class="method-name">at_end_of_month</span><span class="method-args">()</span>
+        </div>
+      
+        <div class="method-description">
+          <p>
+Alias for <a href="Calculations.html#M001409">end_of_month</a>
+</p>
+        </div>
+      </div>
+
+      <div id="method-M001414" class="method-detail">
+        <a name="M001414"></a>
+
+        <div class="method-heading">
+          <span class="method-name">at_end_of_quarter</span><span class="method-args">()</span>
+        </div>
+      
+        <div class="method-description">
+          <p>
+Alias for <a href="Calculations.html#M001413">end_of_quarter</a>
+</p>
+        </div>
+      </div>
+
+      <div id="method-M001405" class="method-detail">
+        <a name="M001405"></a>
+
+        <div class="method-heading">
+          <span class="method-name">at_end_of_week</span><span class="method-args">()</span>
+        </div>
+      
+        <div class="method-description">
+          <p>
+Alias for <a href="Calculations.html#M001404">end_of_week</a>
+</p>
+        </div>
+      </div>
+
+      <div id="method-M001418" class="method-detail">
+        <a name="M001418"></a>
+
+        <div class="method-heading">
+          <span class="method-name">at_end_of_year</span><span class="method-args">()</span>
+        </div>
+      
+        <div class="method-description">
+          <p>
+Alias for <a href="Calculations.html#M001417">end_of_year</a>
+</p>
+        </div>
+      </div>
+
+      <div id="method-M001388" class="method-detail">
+        <a name="M001388"></a>
+
+        <div class="method-heading">
+          <span class="method-name">at_midnight</span><span class="method-args">()</span>
+        </div>
+      
+        <div class="method-description">
+          <p>
+Alias for <a href="Calculations.html#M001386">beginning_of_day</a>
+</p>
+        </div>
+      </div>
+
+      <div id="method-M001386" class="method-detail">
+        <a name="M001386"></a>
+
+        <div class="method-heading">
+          <a href="Calculations.src/M001386.html" target="Code" class="method-signature"
+            onclick="popupCode('Calculations.src/M001386.html');return false;">
+          <span class="method-name">beginning_of_day</span><span class="method-args">()</span>
+          </a>
+        </div>
+      
+        <div class="method-description">
+          <p>
+Converts Date to a Time (or DateTime if necessary) with the time portion
+set to the beginning of the day (0:00)
+</p>
+        </div>
+      </div>
+
+      <div id="method-M001407" class="method-detail">
+        <a name="M001407"></a>
+
+        <div class="method-heading">
+          <a href="Calculations.src/M001407.html" target="Code" class="method-signature"
+            onclick="popupCode('Calculations.src/M001407.html');return false;">
+          <span class="method-name">beginning_of_month</span><span class="method-args">()</span>
+          </a>
+        </div>
+      
+        <div class="method-description">
+          <p>
+Returns a new ; DateTime objects will have time set to 0:00DateTime
+representing the start of the month (1st of the month; DateTime objects
+will have time set to 0:00)
+</p>
+        </div>
+      </div>
+
+      <div id="method-M001411" class="method-detail">
+        <a name="M001411"></a>
+
+        <div class="method-heading">
+          <a href="Calculations.src/M001411.html" target="Code" class="method-signature"
+            onclick="popupCode('Calculations.src/M001411.html');return false;">
+          <span class="method-name">beginning_of_quarter</span><span class="method-args">()</span>
+          </a>
+        </div>
+      
+        <div class="method-description">
+          <p>
+Returns a new Date/DateTime representing the start of the quarter (1st of
+january, april, july, october; DateTime objects will have time set to 0:00)
+</p>
+        </div>
+      </div>
+
+      <div id="method-M001401" class="method-detail">
+        <a name="M001401"></a>
+
+        <div class="method-heading">
+          <a href="Calculations.src/M001401.html" target="Code" class="method-signature"
+            onclick="popupCode('Calculations.src/M001401.html');return false;">
+          <span class="method-name">beginning_of_week</span><span class="method-args">()</span>
+          </a>
+        </div>
+      
+        <div class="method-description">
+          <p>
+Returns a new Date/DateTime representing the &quot;start&quot; of this week
+(i.e, Monday; DateTime objects will have time set to 0:00)
+</p>
+        </div>
+      </div>
+
+      <div id="method-M001415" class="method-detail">
+        <a name="M001415"></a>
+
+        <div class="method-heading">
+          <a href="Calculations.src/M001415.html" target="Code" class="method-signature"
+            onclick="popupCode('Calculations.src/M001415.html');return false;">
+          <span class="method-name">beginning_of_year</span><span class="method-args">()</span>
+          </a>
+        </div>
+      
+        <div class="method-description">
+          <p>
+Returns a new Date/DateTime representing the start of the year (1st of
+january; DateTime objects will have time set to 0:00)
+</p>
+        </div>
+      </div>
+
+      <div id="method-M001392" class="method-detail">
+        <a name="M001392"></a>
+
+        <div class="method-heading">
+          <a href="Calculations.src/M001392.html" target="Code" class="method-signature"
+            onclick="popupCode('Calculations.src/M001392.html');return false;">
+          <span class="method-name">change</span><span class="method-args">(options)</span>
+          </a>
+        </div>
+      
+        <div class="method-description">
+          <p>
+Returns a new Date where one or more of the elements have been changed
+according to the <tt>options</tt> parameter.
+</p>
+<p>
+Examples:
+</p>
+<pre>
+  Date.new(2007, 5, 12).change(:day =&gt; 1)                  # =&gt; Date.new(2007, 5, 1)
+  Date.new(2007, 5, 12).change(:year =&gt; 2005, :month =&gt; 1) # =&gt; Date.new(2005, 1, 12)
+</pre>
+        </div>
+      </div>
+
+      <div id="method-M001390" class="method-detail">
+        <a name="M001390"></a>
+
+        <div class="method-heading">
+          <a href="Calculations.src/M001390.html" target="Code" class="method-signature"
+            onclick="popupCode('Calculations.src/M001390.html');return false;">
+          <span class="method-name">end_of_day</span><span class="method-args">()</span>
+          </a>
+        </div>
+      
+        <div class="method-description">
+          <p>
+Converts Date to a Time (or DateTime if necessary) with the time portion
+set to the end of the day (23:59:59)
+</p>
+        </div>
+      </div>
+
+      <div id="method-M001409" class="method-detail">
+        <a name="M001409"></a>
+
+        <div class="method-heading">
+          <a href="Calculations.src/M001409.html" target="Code" class="method-signature"
+            onclick="popupCode('Calculations.src/M001409.html');return false;">
+          <span class="method-name">end_of_month</span><span class="method-args">()</span>
+          </a>
+        </div>
+      
+        <div class="method-description">
+          <p>
+Returns a new Date/DateTime representing the end of the month (last day of
+the month; DateTime objects will have time set to 0:00)
+</p>
+        </div>
+      </div>
+
+      <div id="method-M001413" class="method-detail">
+        <a name="M001413"></a>
+
+        <div class="method-heading">
+          <a href="Calculations.src/M001413.html" target="Code" class="method-signature"
+            onclick="popupCode('Calculations.src/M001413.html');return false;">
+          <span class="method-name">end_of_quarter</span><span class="method-args">()</span>
+          </a>
+        </div>
+      
+        <div class="method-description">
+          <p>
+Returns a new Date/DateTime representing the end of the quarter (last day
+of march, june, september, december; DateTime objects will have time set to
+23:59:59)
+</p>
+        </div>
+      </div>
+
+      <div id="method-M001404" class="method-detail">
+        <a name="M001404"></a>
+
+        <div class="method-heading">
+          <a href="Calculations.src/M001404.html" target="Code" class="method-signature"
+            onclick="popupCode('Calculations.src/M001404.html');return false;">
+          <span class="method-name">end_of_week</span><span class="method-args">()</span>
+          </a>
+        </div>
+      
+        <div class="method-description">
+          <p>
+Returns a new Date/DateTime representing the end of this week (Sunday,
+DateTime objects will have time set to 23:59:59)
+</p>
+        </div>
+      </div>
+
+      <div id="method-M001417" class="method-detail">
+        <a name="M001417"></a>
+
+        <div class="method-heading">
+          <a href="Calculations.src/M001417.html" target="Code" class="method-signature"
+            onclick="popupCode('Calculations.src/M001417.html');return false;">
+          <span class="method-name">end_of_year</span><span class="method-args">()</span>
+          </a>
+        </div>
+      
+        <div class="method-description">
+          <p>
+Returns a new Time representing the end of the year (31st of december;
+DateTime objects will have time set to 23:59:59)
+</p>
+        </div>
+      </div>
+
+      <div id="method-M001382" class="method-detail">
+        <a name="M001382"></a>
+
+        <div class="method-heading">
+          <a href="Calculations.src/M001382.html" target="Code" class="method-signature"
+            onclick="popupCode('Calculations.src/M001382.html');return false;">
+          <span class="method-name">future?</span><span class="method-args">()</span>
+          </a>
+        </div>
+      
+        <div class="method-description">
+          <p>
+Tells whether the Date object&#8216;s date lies <a
+href="Calculations.html#M001385">in</a> the future
+</p>
+        </div>
+      </div>
+
+      <div id="method-M001385" class="method-detail">
+        <a name="M001385"></a>
+
+        <div class="method-heading">
+          <span class="method-name">in</span><span class="method-args">(seconds)</span>
+        </div>
+      
+        <div class="method-description">
+          <p>
+Alias for <a href="Calculations.html#M001384">since</a>
+</p>
+        </div>
+      </div>
+
+      <div id="method-M001387" class="method-detail">
+        <a name="M001387"></a>
+
+        <div class="method-heading">
+          <span class="method-name">midnight</span><span class="method-args">()</span>
+        </div>
+      
+        <div class="method-description">
+          <p>
+Alias for <a href="Calculations.html#M001386">beginning_of_day</a>
+</p>
+        </div>
+      </div>
+
+      <div id="method-M001402" class="method-detail">
+        <a name="M001402"></a>
+
+        <div class="method-heading">
+          <span class="method-name">monday</span><span class="method-args">()</span>
+        </div>
+      
+        <div class="method-description">
+          <p>
+Alias for <a href="Calculations.html#M001401">beginning_of_week</a>
+</p>
+        </div>
+      </div>
+
+      <div id="method-M001393" class="method-detail">
+        <a name="M001393"></a>
+
+        <div class="method-heading">
+          <a href="Calculations.src/M001393.html" target="Code" class="method-signature"
+            onclick="popupCode('Calculations.src/M001393.html');return false;">
+          <span class="method-name">months_ago</span><span class="method-args">(months)</span>
+          </a>
+        </div>
+      
+        <div class="method-description">
+          <p>
+Returns a new Date/DateTime representing the time a number of specified
+months <a href="Calculations.html#M001383">ago</a>
+</p>
+        </div>
+      </div>
+
+      <div id="method-M001394" class="method-detail">
+        <a name="M001394"></a>
+
+        <div class="method-heading">
+          <a href="Calculations.src/M001394.html" target="Code" class="method-signature"
+            onclick="popupCode('Calculations.src/M001394.html');return false;">
+          <span class="method-name">months_since</span><span class="method-args">(months)</span>
+          </a>
+        </div>
+      
+        <div class="method-description">
+          <p>
+Returns a new Date/DateTime representing the time a number of specified
+months <a href="Calculations.html#M001385">in</a> the future
+</p>
+        </div>
+      </div>
+
+      <div id="method-M001400" class="method-detail">
+        <a name="M001400"></a>
+
+        <div class="method-heading">
+          <a href="Calculations.src/M001400.html" target="Code" class="method-signature"
+            onclick="popupCode('Calculations.src/M001400.html');return false;">
+          <span class="method-name">next_month</span><span class="method-args">()</span>
+          </a>
+        </div>
+      
+        <div class="method-description">
+          <p>
+Short-hand for <a href="Calculations.html#M001394">months_since</a>(1)
+</p>
+        </div>
+      </div>
+
+      <div id="method-M001406" class="method-detail">
+        <a name="M001406"></a>
+
+        <div class="method-heading">
+          <a href="Calculations.src/M001406.html" target="Code" class="method-signature"
+            onclick="popupCode('Calculations.src/M001406.html');return false;">
+          <span class="method-name">next_week</span><span class="method-args">(day = :monday)</span>
+          </a>
+        </div>
+      
+        <div class="method-description">
+          <p>
+Returns a new Date/DateTime representing the start of the given day <a
+href="Calculations.html#M001385">in</a> next week (default is Monday).
+</p>
+        </div>
+      </div>
+
+      <div id="method-M001398" class="method-detail">
+        <a name="M001398"></a>
+
+        <div class="method-heading">
+          <a href="Calculations.src/M001398.html" target="Code" class="method-signature"
+            onclick="popupCode('Calculations.src/M001398.html');return false;">
+          <span class="method-name">next_year</span><span class="method-args">()</span>
+          </a>
+        </div>
+      
+        <div class="method-description">
+          <p>
+Short-hand for <a href="Calculations.html#M001396">years_since</a>(1)
+</p>
+        </div>
+      </div>
+
+      <div id="method-M001380" class="method-detail">
+        <a name="M001380"></a>
+
+        <div class="method-heading">
+          <a href="Calculations.src/M001380.html" target="Code" class="method-signature"
+            onclick="popupCode('Calculations.src/M001380.html');return false;">
+          <span class="method-name">past?</span><span class="method-args">()</span>
+          </a>
+        </div>
+      
+        <div class="method-description">
+          <p>
+Tells whether the Date object&#8216;s date lies <a
+href="Calculations.html#M001385">in</a> the past
+</p>
+        </div>
+      </div>
+
+      <div id="method-M001399" class="method-detail">
+        <a name="M001399"></a>
+
+        <div class="method-heading">
+          <a href="Calculations.src/M001399.html" target="Code" class="method-signature"
+            onclick="popupCode('Calculations.src/M001399.html');return false;">
+          <span class="method-name">prev_month</span><span class="method-args">()</span>
+          </a>
+        </div>
+      
+        <div class="method-description">
+          <p>
+Short-hand for <a href="Calculations.html#M001393">months_ago</a>(1)
+</p>
+        </div>
+      </div>
+
+      <div id="method-M001397" class="method-detail">
+        <a name="M001397"></a>
+
+        <div class="method-heading">
+          <a href="Calculations.src/M001397.html" target="Code" class="method-signature"
+            onclick="popupCode('Calculations.src/M001397.html');return false;">
+          <span class="method-name">prev_year</span><span class="method-args">()</span>
+          </a>
+        </div>
+      
+        <div class="method-description">
+          <p>
+Short-hand for <a href="Calculations.html#M001395">years_ago</a>(1)
+</p>
+        </div>
+      </div>
+
+      <div id="method-M001384" class="method-detail">
+        <a name="M001384"></a>
+
+        <div class="method-heading">
+          <a href="Calculations.src/M001384.html" target="Code" class="method-signature"
+            onclick="popupCode('Calculations.src/M001384.html');return false;">
+          <span class="method-name">since</span><span class="method-args">(seconds)</span>
+          </a>
+        </div>
+      
+        <div class="method-description">
+          <p>
+Converts Date to a Time (or DateTime if necessary) with the time portion
+set to the beginning of the day (0:00) and then adds the specified number
+of seconds
+</p>
+        </div>
+      </div>
+
+      <div id="method-M001381" class="method-detail">
+        <a name="M001381"></a>
+
+        <div class="method-heading">
+          <a href="Calculations.src/M001381.html" target="Code" class="method-signature"
+            onclick="popupCode('Calculations.src/M001381.html');return false;">
+          <span class="method-name">today?</span><span class="method-args">()</span>
+          </a>
+        </div>
+      
+        <div class="method-description">
+          <p>
+Tells whether the Date object&#8216;s date is today
+</p>
+        </div>
+      </div>
+
+      <div id="method-M001420" class="method-detail">
+        <a name="M001420"></a>
+
+        <div class="method-heading">
+          <a href="Calculations.src/M001420.html" target="Code" class="method-signature"
+            onclick="popupCode('Calculations.src/M001420.html');return false;">
+          <span class="method-name">tomorrow</span><span class="method-args">()</span>
+          </a>
+        </div>
+      
+        <div class="method-description">
+          <p>
+Convenience method which returns a new Date/DateTime representing the time
+1 day <a href="Calculations.html#M001384">since</a> the instance time
+</p>
+        </div>
+      </div>
+
+      <div id="method-M001395" class="method-detail">
+        <a name="M001395"></a>
+
+        <div class="method-heading">
+          <a href="Calculations.src/M001395.html" target="Code" class="method-signature"
+            onclick="popupCode('Calculations.src/M001395.html');return false;">
+          <span class="method-name">years_ago</span><span class="method-args">(years)</span>
+          </a>
+        </div>
+      
+        <div class="method-description">
+          <p>
+Returns a new Date/DateTime representing the time a number of specified
+years <a href="Calculations.html#M001383">ago</a>
+</p>
+        </div>
+      </div>
+
+      <div id="method-M001396" class="method-detail">
+        <a name="M001396"></a>
+
+        <div class="method-heading">
+          <a href="Calculations.src/M001396.html" target="Code" class="method-signature"
+            onclick="popupCode('Calculations.src/M001396.html');return false;">
+          <span class="method-name">years_since</span><span class="method-args">(years)</span>
+          </a>
+        </div>
+      
+        <div class="method-description">
+          <p>
+Returns a new Date/DateTime representing the time a number of specified
+years <a href="Calculations.html#M001385">in</a> the future
+</p>
+        </div>
+      </div>
+
+      <div id="method-M001419" class="method-detail">
+        <a name="M001419"></a>
+
+        <div class="method-heading">
+          <a href="Calculations.src/M001419.html" target="Code" class="method-signature"
+            onclick="popupCode('Calculations.src/M001419.html');return false;">
+          <span class="method-name">yesterday</span><span class="method-args">()</span>
+          </a>
+        </div>
+      
+        <div class="method-description">
+          <p>
+Convenience method which returns a new Date/DateTime representing the time
+1 day <a href="Calculations.html#M001383">ago</a>
+</p>
+        </div>
+      </div>
+
+
+    </div>
+
+
+  </div>
+
+
+<div id="validator-badges">
+  <p><small><a href="http://validator.w3.org/check/referer">[Validate]</a></small></p>
+</div>
+
+</body>
+</html>

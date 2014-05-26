@@ -1,0 +1,10 @@
+--- !ruby/object:RI::MethodDescription 
+aliases: []
+
+block_params: 
+comment: 
+full_name: Watir::Assertions#verify_match
+is_singleton: false
+name: verify_match
+params: (pattern, string, message=nil)
+visibility: public

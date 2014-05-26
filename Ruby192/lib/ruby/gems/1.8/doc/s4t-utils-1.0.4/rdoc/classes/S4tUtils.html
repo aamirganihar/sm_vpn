@@ -1,0 +1,628 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+<!DOCTYPE html 
+     PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+     "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+  <title>Module: S4tUtils</title>
+  <meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" />
+  <meta http-equiv="Content-Script-Type" content="text/javascript" />
+  <link rel="stylesheet" href=".././rdoc-style.css" type="text/css" media="screen" />
+  <script type="text/javascript">
+  // <![CDATA[
+
+  function popupCode( url ) {
+    window.open(url, "Code", "resizable=yes,scrollbars=yes,toolbar=no,status=no,height=150,width=400")
+  }
+
+  function toggleCode( id ) {
+    if ( document.getElementById )
+      elem = document.getElementById( id );
+    else if ( document.all )
+      elem = eval( "document.all." + id );
+    else
+      return false;
+
+    elemStyle = elem.style;
+    
+    if ( elemStyle.display != "block" ) {
+      elemStyle.display = "block"
+    } else {
+      elemStyle.display = "none"
+    }
+
+    return true;
+  }
+  
+  // Make codeblocks hidden by default
+  document.writeln( "<style type=\"text/css\">div.method-source-code { display: none }</style>" )
+  
+  // ]]>
+  </script>
+
+</head>
+<body>
+
+
+
+    <div id="classHeader">
+        <table class="header-table">
+        <tr class="top-aligned-row">
+          <td><strong>Module</strong></td>
+          <td class="class-name-in-header">S4tUtils</td>
+        </tr>
+        <tr class="top-aligned-row">
+            <td><strong>In:</strong></td>
+            <td>
+                <a href="../files/lib/s4t-utils/capturing-globals_rb.html">
+                lib/s4t-utils/capturing-globals.rb
+                </a>
+        <br />
+                <a href="../files/lib/s4t-utils/claims_rb.html">
+                lib/s4t-utils/claims.rb
+                </a>
+        <br />
+                <a href="../files/lib/s4t-utils/command-line_rb.html">
+                lib/s4t-utils/command-line.rb
+                </a>
+        <br />
+                <a href="../files/lib/s4t-utils/error-handling_rb.html">
+                lib/s4t-utils/error-handling.rb
+                </a>
+        <br />
+                <a href="../files/lib/s4t-utils/friendly-format_rb.html">
+                lib/s4t-utils/friendly-format.rb
+                </a>
+        <br />
+                <a href="../files/lib/s4t-utils/hacks_rb.html">
+                lib/s4t-utils/hacks.rb
+                </a>
+        <br />
+                <a href="../files/lib/s4t-utils/load-path-auto-adjuster_rb.html">
+                lib/s4t-utils/load-path-auto-adjuster.rb
+                </a>
+        <br />
+                <a href="../files/lib/s4t-utils/os_rb.html">
+                lib/s4t-utils/os.rb
+                </a>
+        <br />
+                <a href="../files/lib/s4t-utils/rake-task-helpers_rb.html">
+                lib/s4t-utils/rake-task-helpers.rb
+                </a>
+        <br />
+                <a href="../files/lib/s4t-utils/svn-file-movement_rb.html">
+                lib/s4t-utils/svn-file-movement.rb
+                </a>
+        <br />
+                <a href="../files/lib/s4t-utils/test-util_rb.html">
+                lib/s4t-utils/test-util.rb
+                </a>
+        <br />
+                <a href="../files/lib/s4t-utils/version_rb.html">
+                lib/s4t-utils/version.rb
+                </a>
+        <br />
+                <a href="../files/lib/s4t-utils_rb.html">
+                lib/s4t-utils.rb
+                </a>
+        <br />
+            </td>
+        </tr>
+
+        </table>
+    </div>
+  <!-- banner header -->
+
+  <div id="bodyContent">
+
+
+
+  <div id="contextContent">
+
+    <div id="description">
+      <p>
+Note, unless otherwise noted, all methods defined in <a
+href="S4tUtils.html">S4tUtils</a> are both module functions and instance
+functions.
+</p>
+
+    </div>
+
+
+   </div>
+
+    <div id="method-list">
+      <h3 class="section-bar">Methods</h3>
+
+      <div class="name-list">
+      <a href="#M000740">ask</a>&nbsp;&nbsp;
+      <a href="#M000728">capturing_stderr</a>&nbsp;&nbsp;
+      <a href="#M000729">capturing_stdout</a>&nbsp;&nbsp;
+      <a href="#M000732">erasing_local_config_file</a>&nbsp;&nbsp;
+      <a href="#M000743">friendly_list</a>&nbsp;&nbsp;
+      <a href="#M000746">pi</a>&nbsp;&nbsp;
+      <a href="#M000745">prog1</a>&nbsp;&nbsp;
+      <a href="#M000748">set_script_lib_path</a>&nbsp;&nbsp;
+      <a href="#M000747">set_test_paths</a>&nbsp;&nbsp;
+      <a href="#M000744">symbol_safe_name</a>&nbsp;&nbsp;
+      <a href="#M000736">user_claims</a>&nbsp;&nbsp;
+      <a href="#M000738">user_denies</a>&nbsp;&nbsp;
+      <a href="#M000737">user_disputes</a>&nbsp;&nbsp;
+      <a href="#M000739">user_is_bewildered</a>&nbsp;&nbsp;
+      <a href="#M000734">with_command_args</a>&nbsp;&nbsp;
+      <a href="#M000730">with_environment_vars</a>&nbsp;&nbsp;
+      <a href="#M000731">with_home_right_here</a>&nbsp;&nbsp;
+      <a href="#M000733">with_local_config_file</a>&nbsp;&nbsp;
+      <a href="#M000741">with_pleasant_exceptions</a>&nbsp;&nbsp;
+      <a href="#M000735">with_stdin</a>&nbsp;&nbsp;
+      <a href="#M000742">without_pleasant_exceptions</a>&nbsp;&nbsp;
+      </div>
+    </div>
+
+  </div>
+
+
+    <!-- if includes -->
+
+    <div id="section">
+
+    <div id="class-list">
+      <h3 class="section-bar">Classes and Modules</h3>
+
+      Class <a href="S4tUtils/ArgForwarder.html" class="link">S4tUtils::ArgForwarder</a><br />
+
+    </div>
+
+    <div id="constants-list">
+      <h3 class="section-bar">Constants</h3>
+
+      <div class="name-list">
+        <table summary="Constants">
+        <tr class="top-aligned-row context-row">
+          <td class="context-item-name">Version</td>
+          <td>=</td>
+          <td class="context-item-value">'1.0.4'</td>
+        </tr>
+        </table>
+      </div>
+    </div>
+
+
+
+      
+
+
+    <!-- if method_list -->
+    <div id="methods">
+      <h3 class="section-bar">Public Instance methods</h3>
+
+      <div id="method-M000740" class="method-detail">
+        <a name="M000740"></a>
+
+        <div class="method-heading">
+          <a href="S4tUtils.src/M000740.html" target="Code" class="method-signature"
+            onclick="popupCode('S4tUtils.src/M000740.html');return false;">
+          <span class="method-name">ask</span><span class="method-args">(default_answer, *question_lines)</span>
+          </a>
+        </div>
+      
+        <div class="method-description">
+          <p>
+Ask the question contained in the <em>question_lines</em>, prompt, and wait
+for an answer. If the stripped value read from STDIN is empty, use the
+<em>default_answer</em>.
+</p>
+        </div>
+      </div>
+
+      <div id="method-M000728" class="method-detail">
+        <a name="M000728"></a>
+
+        <div class="method-heading">
+          <a href="S4tUtils.src/M000728.html" target="Code" class="method-signature"
+            onclick="popupCode('S4tUtils.src/M000728.html');return false;">
+          <span class="method-name">capturing_stderr</span><span class="method-args">() {|| ...}</span>
+          </a>
+        </div>
+      
+        <div class="method-description">
+          <p>
+Run the block, capturing output to $stderr in a string. That string is the
+method&#8216;s return value.
+</p>
+        </div>
+      </div>
+
+      <div id="method-M000729" class="method-detail">
+        <a name="M000729"></a>
+
+        <div class="method-heading">
+          <a href="S4tUtils.src/M000729.html" target="Code" class="method-signature"
+            onclick="popupCode('S4tUtils.src/M000729.html');return false;">
+          <span class="method-name">capturing_stdout</span><span class="method-args">() {|| ...}</span>
+          </a>
+        </div>
+      
+        <div class="method-description">
+          <p>
+Run the block, capturing output to $stdout in a string. That string is the
+method&#8216;s return value.
+</p>
+<p>
+Note: this assigns to $stdout, which is deprecated in favor of
+$stdout.reopen. However, reopen can&#8216;t take a StringIO as an argument.
+</p>
+        </div>
+      </div>
+
+      <div id="method-M000732" class="method-detail">
+        <a name="M000732"></a>
+
+        <div class="method-heading">
+          <a href="S4tUtils.src/M000732.html" target="Code" class="method-signature"
+            onclick="popupCode('S4tUtils.src/M000732.html');return false;">
+          <span class="method-name">erasing_local_config_file</span><span class="method-args">(file) {|| ...}</span>
+          </a>
+        </div>
+      
+        <div class="method-description">
+          <p>
+Run the block with the given <em>file</em> (named by a string) deleted
+before and after.
+</p>
+        </div>
+      </div>
+
+      <div id="method-M000743" class="method-detail">
+        <a name="M000743"></a>
+
+        <div class="method-heading">
+          <a href="S4tUtils.src/M000743.html" target="Code" class="method-signature"
+            onclick="popupCode('S4tUtils.src/M000743.html');return false;">
+          <span class="method-name">friendly_list</span><span class="method-args">(connector, array)</span>
+          </a>
+        </div>
+      
+        <div class="method-description">
+          <p>
+Use <em>connector</em> to join <em>array</em> into a human-friendly list.
+</p>
+<pre>
+   friendly_list(&quot;or&quot;, [1])   =&gt; &quot;'1'&quot;
+   friendly_list(&quot;or&quot;), [1, 2]  =&gt; &quot;'1' or '2'&quot;
+   friendly_list(&quot;or&quot;), [1, 2, 3] =&gt; &quot;'1', '2', or '3'&quot;
+</pre>
+        </div>
+      </div>
+
+      <div id="method-M000746" class="method-detail">
+        <a name="M000746"></a>
+
+        <div class="method-heading">
+          <a href="S4tUtils.src/M000746.html" target="Code" class="method-signature"
+            onclick="popupCode('S4tUtils.src/M000746.html');return false;">
+          <span class="method-name">pi</span><span class="method-args">(arg, leader=nil)</span>
+          </a>
+        </div>
+      
+        <div class="method-description">
+          <p>
+A way of putting debugging statements in code that requires less typing
+than <tt>puts</tt>.
+</p>
+<pre>
+    pi [1, 2, 3], 'input'    # =&gt; 'input: [1, 2, 3]
+</pre>
+<p>
+The <em>arg</em> is printed using <tt>inspect</tt>. If <em>leader</em>
+isn&#8216;t given, nothing is printed before <em>arg</em>. <em>leader</em>
+can be a string or symbol.
+</p>
+<p>
+<a href="S4tUtils.html#M000746">pi</a> returns its <em>arg</em>, which is
+occasionally useful for sticking debugging into the middle of complicated
+expressions.
+</p>
+        </div>
+      </div>
+
+      <div id="method-M000745" class="method-detail">
+        <a name="M000745"></a>
+
+        <div class="method-heading">
+          <a href="S4tUtils.src/M000745.html" target="Code" class="method-signature"
+            onclick="popupCode('S4tUtils.src/M000745.html');return false;">
+          <span class="method-name">prog1</span><span class="method-args">(retval) {|retval| ...}</span>
+          </a>
+        </div>
+      
+        <div class="method-description">
+          <p>
+The return value of <a href="S4tUtils.html#M000745">prog1</a> is the
+<em>retval</em>. Before that&#8216;s returned, though, the <em>retval</em>
+is yielded to the block. This method is an alternative to stashing a value
+in a temporary, fiddling around, then returning the temporary. Here&#8216;s
+an example:
+</p>
+<pre>
+    prog1(1+1) { | s | puts &quot;Sum is #{s}.&quot;}   # =&gt; 2
+</pre>
+<p>
+The name &quot;<a href="S4tUtils.html#M000745">prog1</a>&quot; is ancient
+Lisp jargon.
+</p>
+        </div>
+      </div>
+
+      <div id="method-M000748" class="method-detail">
+        <a name="M000748"></a>
+
+        <div class="method-heading">
+          <a href="S4tUtils.src/M000748.html" target="Code" class="method-signature"
+            onclick="popupCode('S4tUtils.src/M000748.html');return false;">
+          <span class="method-name">set_script_lib_path</span><span class="method-args">(given)</span>
+          </a>
+        </div>
+      
+        <div class="method-description">
+          <p>
+If the <em>given</em> file lives as a script inside a typical Ruby
+development structure, put ../lib at the front of the path. That includes
+files from there in preference to old gems lying around.
+</p>
+        </div>
+      </div>
+
+      <div id="method-M000747" class="method-detail">
+        <a name="M000747"></a>
+
+        <div class="method-heading">
+          <a href="S4tUtils.src/M000747.html" target="Code" class="method-signature"
+            onclick="popupCode('S4tUtils.src/M000747.html');return false;">
+          <span class="method-name">set_test_paths</span><span class="method-args">(given)</span>
+          </a>
+        </div>
+      
+        <div class="method-description">
+          <p>
+Find and set the paths a test needs to run, given the normal Ruby directory
+structure. <em>given</em> is something below the test directory.
+PACKAGE_ROOT becomes the root of the structure. PACKAGE_ROOT/lib and
+PACKAGE_ROOT itself are put on the front of the path (the latter is so that
+tests can require &#8216;test/something&#8217;.
+</p>
+        </div>
+      </div>
+
+      <div id="method-M000744" class="method-detail">
+        <a name="M000744"></a>
+
+        <div class="method-heading">
+          <a href="S4tUtils.src/M000744.html" target="Code" class="method-signature"
+            onclick="popupCode('S4tUtils.src/M000744.html');return false;">
+          <span class="method-name">symbol_safe_name</span><span class="method-args">(name)</span>
+          </a>
+        </div>
+      
+        <div class="method-description">
+          <p>
+Produces a version of a string that can be typed after a : (Can also be
+safely given at a command-line prompt.)
+</p>
+        </div>
+      </div>
+
+      <div id="method-M000736" class="method-detail">
+        <a name="M000736"></a>
+
+        <div class="method-heading">
+          <a href="S4tUtils.src/M000736.html" target="Code" class="method-signature"
+            onclick="popupCode('S4tUtils.src/M000736.html');return false;">
+          <span class="method-name">user_claims</span><span class="method-args">(fact, &amp;block)</span>
+          </a>
+        </div>
+      
+        <div class="method-description">
+          <p>
+A StandardError is thrown if the <em>fact</em> the user claims is true is
+actually false. The <em>block</em> is called to provide the exception
+message.
+</p>
+        </div>
+      </div>
+
+      <div id="method-M000738" class="method-detail">
+        <a name="M000738"></a>
+
+        <div class="method-heading">
+          <span class="method-name">user_denies</span><span class="method-args">(fact, &amp;block)</span>
+        </div>
+      
+        <div class="method-description">
+          <p>
+Alias for <a href="S4tUtils.html#M000737">user_disputes</a>
+</p>
+        </div>
+      </div>
+
+      <div id="method-M000737" class="method-detail">
+        <a name="M000737"></a>
+
+        <div class="method-heading">
+          <a href="S4tUtils.src/M000737.html" target="Code" class="method-signature"
+            onclick="popupCode('S4tUtils.src/M000737.html');return false;">
+          <span class="method-name">user_disputes</span><span class="method-args">(fact, &amp;block)</span>
+          </a>
+        </div>
+      
+        <div class="method-description">
+          <p>
+A StandardError is thrown if the <em>fact</em> the user disputes is
+nevertheless true. The <em>block</em> is called to provide the exception
+message.
+</p>
+        </div>
+      </div>
+
+      <div id="method-M000739" class="method-detail">
+        <a name="M000739"></a>
+
+        <div class="method-heading">
+          <a href="S4tUtils.src/M000739.html" target="Code" class="method-signature"
+            onclick="popupCode('S4tUtils.src/M000739.html');return false;">
+          <span class="method-name">user_is_bewildered</span><span class="method-args">(msg = &quot;How could this point be reached?&quot;)</span>
+          </a>
+        </div>
+      
+        <div class="method-description">
+          <p>
+An unconditional claim that the user is bewildered by something that should
+not have happened. Most usually, it&#8216;s that the code should never have
+gotten to this point.
+</p>
+        </div>
+      </div>
+
+      <div id="method-M000734" class="method-detail">
+        <a name="M000734"></a>
+
+        <div class="method-heading">
+          <a href="S4tUtils.src/M000734.html" target="Code" class="method-signature"
+            onclick="popupCode('S4tUtils.src/M000734.html');return false;">
+          <span class="method-name">with_command_args</span><span class="method-args">(string) {|| ...}</span>
+          </a>
+        </div>
+      
+        <div class="method-description">
+          <p>
+Run the block. During execution, <em>ARGV</em>&#8216;s is set as if the
+script had been executed with <em>string</em> as its argument list. If the
+block tries to exit, <a href="S4tUtils.html#M000734">with_command_args</a>
+will instead throw a StandardError.
+</p>
+        </div>
+      </div>
+
+      <div id="method-M000730" class="method-detail">
+        <a name="M000730"></a>
+
+        <div class="method-heading">
+          <a href="S4tUtils.src/M000730.html" target="Code" class="method-signature"
+            onclick="popupCode('S4tUtils.src/M000730.html');return false;">
+          <span class="method-name">with_environment_vars</span><span class="method-args">(settings) {|| ...}</span>
+          </a>
+        </div>
+      
+        <div class="method-description">
+          <p>
+Run the block, replacing the values of environment variables with the
+values given in the hash <em>settings</em>. The environment variables are
+restored when the method returns.
+</p>
+        </div>
+      </div>
+
+      <div id="method-M000731" class="method-detail">
+        <a name="M000731"></a>
+
+        <div class="method-heading">
+          <a href="S4tUtils.src/M000731.html" target="Code" class="method-signature"
+            onclick="popupCode('S4tUtils.src/M000731.html');return false;">
+          <span class="method-name">with_home_right_here</span><span class="method-args">() {|| ...}</span>
+          </a>
+        </div>
+      
+        <div class="method-description">
+          <p>
+Run the block with the <em>HOME</em> environment variable set to the
+current working directory.
+</p>
+        </div>
+      </div>
+
+      <div id="method-M000733" class="method-detail">
+        <a name="M000733"></a>
+
+        <div class="method-heading">
+          <a href="S4tUtils.src/M000733.html" target="Code" class="method-signature"
+            onclick="popupCode('S4tUtils.src/M000733.html');return false;">
+          <span class="method-name">with_local_config_file</span><span class="method-args">(file, contents) {|| ...}</span>
+          </a>
+        </div>
+      
+        <div class="method-description">
+          <p>
+Run the block. During the execution, the contents of <em>file</em> (named
+by a string) is replaced with <em>contents</em>.
+</p>
+        </div>
+      </div>
+
+      <div id="method-M000741" class="method-detail">
+        <a name="M000741"></a>
+
+        <div class="method-heading">
+          <a href="S4tUtils.src/M000741.html" target="Code" class="method-signature"
+            onclick="popupCode('S4tUtils.src/M000741.html');return false;">
+          <span class="method-name">with_pleasant_exceptions</span><span class="method-args">() {|| ...}</span>
+          </a>
+        </div>
+      
+        <div class="method-description">
+          <p>
+Typically used to wrap the execution of an entire script. If an exception
+is thrown, a terse message is printed (to $stderr) instead of a stack dump.
+The message printed is gotten from the exception.
+</p>
+        </div>
+      </div>
+
+      <div id="method-M000735" class="method-detail">
+        <a name="M000735"></a>
+
+        <div class="method-heading">
+          <a href="S4tUtils.src/M000735.html" target="Code" class="method-signature"
+            onclick="popupCode('S4tUtils.src/M000735.html');return false;">
+          <span class="method-name">with_stdin</span><span class="method-args">(string) {|| ...}</span>
+          </a>
+        </div>
+      
+        <div class="method-description">
+        </div>
+      </div>
+
+      <div id="method-M000742" class="method-detail">
+        <a name="M000742"></a>
+
+        <div class="method-heading">
+          <a href="S4tUtils.src/M000742.html" target="Code" class="method-signature"
+            onclick="popupCode('S4tUtils.src/M000742.html');return false;">
+          <span class="method-name">without_pleasant_exceptions</span><span class="method-args">() {|| ...}</span>
+          </a>
+        </div>
+      
+        <div class="method-description">
+          <p>
+<a href="S4tUtils.html#M000741">with_pleasant_exceptions</a> swallows the
+stack trace, which you want to see during debugging. The easy way to see it
+is to add &#8216;out&#8217; to that message, producing this one. To reduce
+the chance you&#8216;ll forget to make exceptions pleasant again, a note
+that exceptions are turned off is always printed to $stderr.
+</p>
+        </div>
+      </div>
+
+
+    </div>
+
+
+  </div>
+
+
+<div id="validator-badges">
+  <p><small><a href="http://validator.w3.org/check/referer">[Validate]</a></small></p>
+</div>
+
+</body>
+</html>

@@ -1,0 +1,12 @@
+--- !ruby/object:RI::MethodDescription 
+aliases: []
+
+block_params: 
+comment: 
+- !ruby/struct:SM::Flow::P 
+  body: Sets a new text, and all styles
+full_name: FoxDisplayer#set_text
+is_singleton: false
+name: set_text
+params: ()
+visibility: public

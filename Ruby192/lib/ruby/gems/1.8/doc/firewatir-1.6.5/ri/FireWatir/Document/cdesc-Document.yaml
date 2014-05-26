@@ -1,0 +1,24 @@
+--- !ruby/object:RI::ClassDescription 
+attributes: []
+
+class_methods: 
+- !ruby/object:RI::MethodSummary 
+  name: new
+comment: 
+- !ruby/struct:SM::Flow::P 
+  body: "Description:"
+- !ruby/struct:SM::Flow::VERB 
+  body: "  Class for returning the document element.\n"
+constants: []
+
+full_name: FireWatir::Document
+includes: 
+- !ruby/object:RI::IncludedModule 
+  name: FireWatir::Container
+instance_methods: 
+- !ruby/object:RI::MethodSummary 
+  name: all
+- !ruby/object:RI::MethodSummary 
+  name: frames
+name: Document
+superclass: Object

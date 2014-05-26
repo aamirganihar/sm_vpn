@@ -1,0 +1,14 @@
+--- !ruby/object:RI::MethodDescription 
+aliases: []
+
+block_params: 
+comment: 
+- !ruby/struct:SM::Flow::P 
+  body: Creates a new empty Message-ID field and inserts it in the correct order into the Header. The MessageIdField object will automatically generate a unique message ID if you try and encode it or output it to_s without specifying a message id.
+- !ruby/struct:SM::Flow::P 
+  body: It will preserve the message ID you specify if you do.
+full_name: Mail::Message#add_message_id
+is_singleton: false
+name: add_message_id
+params: (msg_id_val = '')
+visibility: public

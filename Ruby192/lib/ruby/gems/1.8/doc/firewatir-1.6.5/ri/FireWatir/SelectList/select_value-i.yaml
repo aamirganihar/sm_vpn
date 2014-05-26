@@ -1,0 +1,22 @@
+--- !ruby/object:RI::MethodDescription 
+aliases: []
+
+block_params: 
+comment: 
+- !ruby/struct:SM::Flow::P 
+  body: "Description:"
+- !ruby/struct:SM::Flow::VERB 
+  body: "  Selects an item by value. If you need to select multiple items you need to call this function for each item.\n"
+- !ruby/struct:SM::Flow::P 
+  body: "Input:"
+- !ruby/object:SM::Flow::LIST 
+  contents: 
+  - !ruby/struct:SM::Flow::LI 
+    label: "-"
+    body: item - Value of the item to be selected.
+  type: :BULLET
+full_name: FireWatir::SelectList#select_value
+is_singleton: false
+name: select_value
+params: ( item )
+visibility: public

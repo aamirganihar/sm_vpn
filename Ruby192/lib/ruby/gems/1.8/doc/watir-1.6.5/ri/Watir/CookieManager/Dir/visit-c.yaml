@@ -1,0 +1,10 @@
+--- !ruby/object:RI::MethodDescription 
+aliases: []
+
+block_params: path
+comment: 
+full_name: Watir::CookieManager::Dir::visit
+is_singleton: true
+name: visit
+params: (dir = '.', files_first = false, &block) {|path| ...}
+visibility: public

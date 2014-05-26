@@ -1,0 +1,10 @@
+--- !ruby/object:RI::MethodDescription 
+aliases: []
+
+block_params: 
+comment: 
+full_name: I18n::Backend::Fast#cleanup_non_standard_separator
+is_singleton: false
+name: cleanup_non_standard_separator
+params: (key, user_separator)
+visibility: protected

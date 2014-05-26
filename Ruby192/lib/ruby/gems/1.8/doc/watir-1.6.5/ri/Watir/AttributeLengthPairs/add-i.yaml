@@ -1,0 +1,12 @@
+--- !ruby/object:RI::MethodDescription 
+aliases: []
+
+block_params: 
+comment: 
+- !ruby/struct:SM::Flow::P 
+  body: "BUG: Untested. (Null implementation passes all tests.)"
+full_name: Watir::AttributeLengthPairs#add
+is_singleton: false
+name: add
+params: (attrib, length)
+visibility: public

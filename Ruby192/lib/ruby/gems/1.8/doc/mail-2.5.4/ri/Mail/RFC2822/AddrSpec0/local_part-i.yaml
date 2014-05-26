@@ -1,0 +1,10 @@
+--- !ruby/object:RI::MethodDescription 
+aliases: []
+
+block_params: 
+comment: 
+full_name: Mail::RFC2822::AddrSpec0#local_part
+is_singleton: false
+name: local_part
+params: ()
+visibility: public

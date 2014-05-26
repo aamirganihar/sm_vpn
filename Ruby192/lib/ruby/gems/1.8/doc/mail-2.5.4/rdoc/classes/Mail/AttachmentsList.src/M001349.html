@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+<!DOCTYPE html 
+     PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+     "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html>
+<head>
+  <title>[]= (Mail::AttachmentsList)</title>
+  <meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" />
+  <link rel="stylesheet" href="../../.././rdoc-style.css" type="text/css" media="screen" />
+</head>
+<body class="standalone-code">
+  <pre><span class="ruby-comment cmt"># File lib/mail/attachments_list.rb, line 39</span>
+    <span class="ruby-keyword kw">def</span> <span class="ruby-operator">[]=</span>(<span class="ruby-identifier">name</span>, <span class="ruby-identifier">value</span>)
+      <span class="ruby-identifier">encoded_name</span> = <span class="ruby-constant">Mail</span><span class="ruby-operator">::</span><span class="ruby-constant">Encodings</span>.<span class="ruby-identifier">decode_encode</span> <span class="ruby-identifier">name</span>, <span class="ruby-identifier">:encode</span>
+      <span class="ruby-identifier">default_values</span> = { <span class="ruby-identifier">:content_type</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-node">&quot;#{set_mime_type(name)}; filename=\&quot;#{encoded_name}\&quot;&quot;</span>,
+                         <span class="ruby-identifier">:content_transfer_encoding</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-node">&quot;#{guess_encoding}&quot;</span>,
+                         <span class="ruby-identifier">:content_disposition</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-node">&quot;#{@content_disposition_type}; filename=\&quot;#{encoded_name}\&quot;&quot;</span> }
+
+      <span class="ruby-keyword kw">if</span> <span class="ruby-identifier">value</span>.<span class="ruby-identifier">is_a?</span>(<span class="ruby-constant">Hash</span>)
+
+        <span class="ruby-identifier">default_values</span>[<span class="ruby-identifier">:body</span>] = <span class="ruby-identifier">value</span>.<span class="ruby-identifier">delete</span>(<span class="ruby-identifier">:content</span>) <span class="ruby-keyword kw">if</span> <span class="ruby-identifier">value</span>[<span class="ruby-identifier">:content</span>]
+
+        <span class="ruby-identifier">default_values</span>[<span class="ruby-identifier">:body</span>] = <span class="ruby-identifier">value</span>.<span class="ruby-identifier">delete</span>(<span class="ruby-identifier">:data</span>) <span class="ruby-keyword kw">if</span> <span class="ruby-identifier">value</span>[<span class="ruby-identifier">:data</span>]
+
+        <span class="ruby-identifier">encoding</span> = <span class="ruby-identifier">value</span>.<span class="ruby-identifier">delete</span>(<span class="ruby-identifier">:transfer_encoding</span>) <span class="ruby-operator">||</span> <span class="ruby-identifier">value</span>.<span class="ruby-identifier">delete</span>(<span class="ruby-identifier">:encoding</span>)
+        <span class="ruby-keyword kw">if</span> <span class="ruby-identifier">encoding</span>
+          <span class="ruby-keyword kw">if</span> <span class="ruby-constant">Mail</span><span class="ruby-operator">::</span><span class="ruby-constant">Encodings</span>.<span class="ruby-identifier">defined?</span> <span class="ruby-identifier">encoding</span>
+            <span class="ruby-identifier">default_values</span>[<span class="ruby-identifier">:content_transfer_encoding</span>] = <span class="ruby-identifier">encoding</span>
+          <span class="ruby-keyword kw">else</span>
+            <span class="ruby-identifier">raise</span> <span class="ruby-node">&quot;Do not know how to handle Content Transfer Encoding #{encoding}, please choose either quoted-printable or base64&quot;</span>
+          <span class="ruby-keyword kw">end</span>
+        <span class="ruby-keyword kw">end</span>
+
+        <span class="ruby-keyword kw">if</span> <span class="ruby-identifier">value</span>[<span class="ruby-identifier">:mime_type</span>]
+          <span class="ruby-identifier">default_values</span>[<span class="ruby-identifier">:content_type</span>] = <span class="ruby-identifier">value</span>.<span class="ruby-identifier">delete</span>(<span class="ruby-identifier">:mime_type</span>)
+          <span class="ruby-ivar">@mime_type</span> = <span class="ruby-constant">MIME</span><span class="ruby-operator">::</span><span class="ruby-constant">Types</span>[<span class="ruby-identifier">default_values</span>[<span class="ruby-identifier">:content_type</span>]].<span class="ruby-identifier">first</span>
+          <span class="ruby-identifier">default_values</span>[<span class="ruby-identifier">:content_transfer_encoding</span>] <span class="ruby-operator">||=</span> <span class="ruby-identifier">guess_encoding</span>
+        <span class="ruby-keyword kw">end</span>
+
+        <span class="ruby-identifier">hash</span> = <span class="ruby-identifier">default_values</span>.<span class="ruby-identifier">merge</span>(<span class="ruby-identifier">value</span>)
+      <span class="ruby-keyword kw">else</span>
+        <span class="ruby-identifier">default_values</span>[<span class="ruby-identifier">:body</span>] = <span class="ruby-identifier">value</span>
+        <span class="ruby-identifier">hash</span> = <span class="ruby-identifier">default_values</span>
+      <span class="ruby-keyword kw">end</span>
+
+      <span class="ruby-keyword kw">if</span> <span class="ruby-identifier">hash</span>[<span class="ruby-identifier">:body</span>].<span class="ruby-identifier">respond_to?</span> <span class="ruby-identifier">:force_encoding</span> <span class="ruby-keyword kw">and</span> <span class="ruby-identifier">hash</span>[<span class="ruby-identifier">:body</span>].<span class="ruby-identifier">respond_to?</span> <span class="ruby-identifier">:valid_encoding?</span>
+        <span class="ruby-keyword kw">if</span> <span class="ruby-keyword kw">not</span> <span class="ruby-identifier">hash</span>[<span class="ruby-identifier">:body</span>].<span class="ruby-identifier">valid_encoding?</span> <span class="ruby-keyword kw">and</span> <span class="ruby-identifier">default_values</span>[<span class="ruby-identifier">:content_transfer_encoding</span>].<span class="ruby-identifier">downcase</span> <span class="ruby-operator">==</span> <span class="ruby-value str">&quot;binary&quot;</span>
+          <span class="ruby-identifier">hash</span>[<span class="ruby-identifier">:body</span>].<span class="ruby-identifier">force_encoding</span>(<span class="ruby-value str">&quot;BINARY&quot;</span>)
+        <span class="ruby-keyword kw">end</span>
+      <span class="ruby-keyword kw">end</span>
+
+      <span class="ruby-identifier">attachment</span> = <span class="ruby-constant">Part</span>.<span class="ruby-identifier">new</span>(<span class="ruby-identifier">hash</span>)
+      <span class="ruby-identifier">attachment</span>.<span class="ruby-identifier">add_content_id</span>(<span class="ruby-identifier">hash</span>[<span class="ruby-identifier">:content_id</span>])
+
+      <span class="ruby-ivar">@parts_list</span> <span class="ruby-operator">&lt;&lt;</span> <span class="ruby-identifier">attachment</span>
+    <span class="ruby-keyword kw">end</span></pre>
+</body>
+</html>

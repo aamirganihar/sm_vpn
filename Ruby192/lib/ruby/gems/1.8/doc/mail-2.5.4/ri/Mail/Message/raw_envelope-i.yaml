@@ -1,0 +1,12 @@
+--- !ruby/object:RI::MethodDescription 
+aliases: []
+
+block_params: 
+comment: 
+- !ruby/struct:SM::Flow::P 
+  body: The raw_envelope is the From mikel@test.lindsaar.net Mon May 2 16:07:05 2009 type field that you can see at the top of any email that has come from a mailbox
+full_name: Mail::Message#raw_envelope
+is_singleton: false
+name: raw_envelope
+params: ()
+visibility: public

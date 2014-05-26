@@ -1,0 +1,44 @@
+--- !ruby/object:RI::ClassDescription 
+attributes: []
+
+class_methods: []
+
+comment: 
+constants: []
+
+full_name: TestRecursiveOpenStruct
+includes: []
+
+instance_methods: 
+- !ruby/object:RI::MethodSummary 
+  name: setAndAssertValue
+- !ruby/object:RI::MethodSummary 
+  name: setup
+- !ruby/object:RI::MethodSummary 
+  name: testAttrs
+- !ruby/object:RI::MethodSummary 
+  name: testDeep
+- !ruby/object:RI::MethodSummary 
+  name: testKlammer
+- !ruby/object:RI::MethodSummary 
+  name: testRaiseTypeError
+- !ruby/object:RI::MethodSummary 
+  name: testRecursive
+- !ruby/object:RI::MethodSummary 
+  name: testSet0
+- !ruby/object:RI::MethodSummary 
+  name: testSetClass
+- !ruby/object:RI::MethodSummary 
+  name: testSetFalse
+- !ruby/object:RI::MethodSummary 
+  name: testSetNil
+- !ruby/object:RI::MethodSummary 
+  name: testSetStr
+- !ruby/object:RI::MethodSummary 
+  name: testSetTrue
+- !ruby/object:RI::MethodSummary 
+  name: testSimple
+- !ruby/object:RI::MethodSummary 
+  name: testStrange
+name: TestRecursiveOpenStruct
+superclass: Test::Unit::TestCase

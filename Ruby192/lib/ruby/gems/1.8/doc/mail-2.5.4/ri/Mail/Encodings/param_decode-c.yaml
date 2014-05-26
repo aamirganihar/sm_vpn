@@ -1,0 +1,16 @@
+--- !ruby/object:RI::MethodDescription 
+aliases: []
+
+block_params: 
+comment: 
+- !ruby/struct:SM::Flow::P 
+  body: Decodes a parameter value using URI Escaping.
+- !ruby/struct:SM::Flow::P 
+  body: "Example:"
+- !ruby/struct:SM::Flow::VERB 
+  body: " Mail::Encodings.param_decode(&quot;This%20is%20fun&quot;, 'us-ascii') #=&gt; &quot;This is fun&quot;\n\n str = Mail::Encodings.param_decode(&quot;This%20is%20fun&quot;, 'iso-8559-1')\n str.encoding #=&gt; 'ISO-8859-1'      ## Only on Ruby 1.9\n str #=&gt; &quot;This is fun&quot;\n"
+full_name: Mail::Encodings::param_decode
+is_singleton: true
+name: param_decode
+params: (str, encoding)
+visibility: public

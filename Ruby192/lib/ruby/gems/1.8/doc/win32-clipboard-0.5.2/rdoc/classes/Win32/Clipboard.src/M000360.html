@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+<!DOCTYPE html 
+     PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+     "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html>
+<head>
+  <title>data (Win32::Clipboard)</title>
+  <meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" />
+  <link rel="stylesheet" href="../../.././rdoc-style.css" type="text/css" media="screen" />
+</head>
+<body class="standalone-code">
+  <pre><span class="ruby-comment cmt"># File lib/win32/clipboard.rb, line 114</span>
+      <span class="ruby-keyword kw">def</span> <span class="ruby-keyword kw">self</span>.<span class="ruby-identifier">data</span>(<span class="ruby-identifier">format</span> = <span class="ruby-constant">TEXT</span>)
+         <span class="ruby-keyword kw">begin</span>
+            <span class="ruby-keyword kw">self</span>.<span class="ruby-identifier">open</span>
+            <span class="ruby-keyword kw">if</span> <span class="ruby-constant">IsClipboardFormatAvailable</span>(<span class="ruby-identifier">format</span>)
+               <span class="ruby-identifier">handle</span> = <span class="ruby-constant">GetClipboardData</span>(<span class="ruby-identifier">format</span>)
+               <span class="ruby-keyword kw">case</span> <span class="ruby-identifier">format</span>
+                  <span class="ruby-keyword kw">when</span> <span class="ruby-constant">TEXT</span>, <span class="ruby-constant">OEMTEXT</span>, <span class="ruby-constant">UNICODETEXT</span>
+                     <span class="ruby-identifier">clip_data</span> = <span class="ruby-value">0</span>.<span class="ruby-identifier">chr</span> <span class="ruby-operator">*</span> <span class="ruby-constant">GlobalSize</span>(<span class="ruby-identifier">handle</span>)
+                     <span class="ruby-identifier">memcpy</span>(<span class="ruby-identifier">clip_data</span>, <span class="ruby-identifier">handle</span>, <span class="ruby-identifier">clip_data</span>.<span class="ruby-identifier">size</span>)
+                     <span class="ruby-identifier">clip_data</span> = <span class="ruby-identifier">clip_data</span>[ <span class="ruby-regexp re">/^[^\0]*/</span> ]
+                  <span class="ruby-keyword kw">when</span> <span class="ruby-constant">HDROP</span>
+                     <span class="ruby-identifier">clip_data</span> = <span class="ruby-identifier">get_file_list</span>(<span class="ruby-identifier">handle</span>)
+                  <span class="ruby-keyword kw">when</span> <span class="ruby-constant">ENHMETAFILE</span>
+                     <span class="ruby-identifier">clip_data</span> = <span class="ruby-identifier">get_metafile_data</span>(<span class="ruby-identifier">handle</span>)
+                  <span class="ruby-keyword kw">when</span> <span class="ruby-constant">DIB</span>, <span class="ruby-constant">BITMAP</span>
+                     <span class="ruby-identifier">clip_data</span> = <span class="ruby-identifier">get_image_data</span>(<span class="ruby-identifier">handle</span>)
+                  <span class="ruby-keyword kw">else</span>
+                     <span class="ruby-identifier">raise</span> <span class="ruby-constant">Error</span>, <span class="ruby-value str">'format not supported'</span>
+               <span class="ruby-keyword kw">end</span>
+            <span class="ruby-keyword kw">else</span>
+               <span class="ruby-identifier">clip_data</span> = <span class="ruby-value str">''</span>
+            <span class="ruby-keyword kw">end</span>
+         <span class="ruby-keyword kw">ensure</span>
+            <span class="ruby-keyword kw">self</span>.<span class="ruby-identifier">close</span>
+         <span class="ruby-keyword kw">end</span>
+
+         <span class="ruby-identifier">clip_data</span>
+      <span class="ruby-keyword kw">end</span></pre>
+</body>
+</html>

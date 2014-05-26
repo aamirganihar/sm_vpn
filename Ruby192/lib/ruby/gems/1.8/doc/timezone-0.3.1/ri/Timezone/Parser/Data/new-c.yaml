@@ -1,0 +1,10 @@
+--- !ruby/object:RI::MethodDescription 
+aliases: []
+
+block_params: 
+comment: 
+full_name: Timezone::Parser::Data::new
+is_singleton: true
+name: new
+params: (start_date, end_date, zone, rule = NilRule.new)
+visibility: public

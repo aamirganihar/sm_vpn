@@ -1,0 +1,18 @@
+--- !ruby/object:RI::MethodDescription 
+aliases: []
+
+block_params: 
+comment: 
+- !ruby/struct:SM::Flow::P 
+  body: "Description:"
+- !ruby/struct:SM::Flow::VERB 
+  body: "  Get the option using attribute and its value.\n"
+- !ruby/struct:SM::Flow::P 
+  body: "Input:"
+- !ruby/struct:SM::Flow::VERB 
+  body: "  - attribute - Attribute used to find the option.\n  - value - value of that attribute.\n"
+full_name: FireWatir::SelectList#option
+is_singleton: false
+name: option
+params: (attribute, value)
+visibility: public

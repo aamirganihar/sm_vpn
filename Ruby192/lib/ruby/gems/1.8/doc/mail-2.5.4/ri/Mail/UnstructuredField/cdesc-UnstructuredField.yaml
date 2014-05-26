@@ -1,0 +1,40 @@
+--- !ruby/object:RI::ClassDescription 
+attributes: 
+- !ruby/object:RI::Attribute 
+  comment: 
+  name: charset
+  rw: RW
+- !ruby/object:RI::Attribute 
+  comment: 
+  name: errors
+  rw: R
+class_methods: 
+- !ruby/object:RI::MethodSummary 
+  name: new
+comment: 
+- !ruby/struct:SM::Flow::P 
+  body: Provides access to an unstructured header field
+- !ruby/struct:SM::Flow::H 
+  level: 3
+  text: "Per RFC 2822:"
+- !ruby/struct:SM::Flow::VERB 
+  body: " 2.2.1. Unstructured Header Field Bodies\n\n    Some field bodies in this standard are defined simply as\n    &quot;unstructured&quot; (which is specified below as any US-ASCII characters,\n    except for CR and LF) with no further restrictions.  These are\n    referred to as unstructured field bodies.  Semantically, unstructured\n    field bodies are simply to be treated as a single line of characters\n    with no further processing (except for header &quot;folding&quot; and\n    &quot;unfolding&quot; as described in section 2.2.3).\n"
+constants: []
+
+full_name: Mail::UnstructuredField
+includes: 
+- !ruby/object:RI::IncludedModule 
+  name: Mail::CommonField
+- !ruby/object:RI::IncludedModule 
+  name: Mail::Utilities
+instance_methods: 
+- !ruby/object:RI::MethodSummary 
+  name: decoded
+- !ruby/object:RI::MethodSummary 
+  name: default
+- !ruby/object:RI::MethodSummary 
+  name: encoded
+- !ruby/object:RI::MethodSummary 
+  name: parse
+name: UnstructuredField
+superclass: Object

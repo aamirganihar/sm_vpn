@@ -1,0 +1,10 @@
+--- !ruby/object:RI::MethodDescription 
+aliases: []
+
+block_params: 
+comment: 
+full_name: Watir::IE#_new_window_init
+is_singleton: false
+name: _new_window_init
+params: ()
+visibility: public

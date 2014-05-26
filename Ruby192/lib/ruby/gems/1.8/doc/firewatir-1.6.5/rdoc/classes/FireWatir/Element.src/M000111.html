@@ -1,0 +1,115 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+<!DOCTYPE html 
+     PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+     "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html>
+<head>
+  <title>method_missing (FireWatir::Element)</title>
+  <meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" />
+  <link rel="stylesheet" href="../../.././rdoc-style.css" type="text/css" media="screen" />
+</head>
+<body class="standalone-code">
+  <pre><span class="ruby-comment cmt"># File lib/firewatir/element.rb, line 1263</span>
+    <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">method_missing</span>(<span class="ruby-identifier">methId</span>, <span class="ruby-operator">*</span><span class="ruby-identifier">args</span>)
+      <span class="ruby-identifier">methodName</span> = <span class="ruby-identifier">methId</span>.<span class="ruby-identifier">id2name</span>
+      <span class="ruby-comment cmt">#puts &quot;method name is : #{methodName}&quot;</span>
+      <span class="ruby-identifier">assert_exists</span>
+      <span class="ruby-comment cmt">#assert_enabled</span>
+      <span class="ruby-identifier">methodName</span> = <span class="ruby-value str">&quot;colSpan&quot;</span> <span class="ruby-keyword kw">if</span> <span class="ruby-identifier">methodName</span> <span class="ruby-operator">==</span> <span class="ruby-value str">&quot;colspan&quot;</span>
+      <span class="ruby-keyword kw">if</span>(<span class="ruby-identifier">methodName</span> <span class="ruby-operator">=~</span> <span class="ruby-regexp re">/invoke/</span>)
+        <span class="ruby-identifier">jssh_command</span> = <span class="ruby-node">&quot;#{element_object}.&quot;</span>
+        <span class="ruby-keyword kw">for</span> <span class="ruby-identifier">i</span> <span class="ruby-keyword kw">in</span> <span class="ruby-identifier">args</span> <span class="ruby-keyword kw">do</span>
+          <span class="ruby-identifier">jssh_command</span> <span class="ruby-operator">&lt;&lt;</span> <span class="ruby-identifier">i</span>;
+        <span class="ruby-keyword kw">end</span>
+        <span class="ruby-comment cmt">#puts &quot;#{jssh_command}&quot;</span>
+        <span class="ruby-identifier">jssh_socket</span>.<span class="ruby-identifier">send</span>(<span class="ruby-node">&quot;#{jssh_command};\n&quot;</span>, <span class="ruby-value">0</span>)
+        <span class="ruby-identifier">return_value</span> = <span class="ruby-identifier">read_socket</span>()
+        <span class="ruby-comment cmt">#puts &quot;return value is : #{return_value}&quot;</span>
+        <span class="ruby-keyword kw">return</span> <span class="ruby-identifier">return_value</span>
+      <span class="ruby-keyword kw">else</span>
+        <span class="ruby-comment cmt">#assert_exists</span>
+        <span class="ruby-comment cmt">#puts &quot;element name is #{element_object}&quot;</span>
+
+        <span class="ruby-comment cmt"># We get method name with trailing '=' when we try to assign a value to a</span>
+        <span class="ruby-comment cmt"># property. So just remove the '=' to get the type</span>
+        <span class="ruby-identifier">temp</span> = <span class="ruby-value str">&quot;&quot;</span>
+        <span class="ruby-identifier">assigning_value</span> = <span class="ruby-keyword kw">false</span>
+        <span class="ruby-keyword kw">if</span>(<span class="ruby-identifier">methodName</span> <span class="ruby-operator">=~</span> <span class="ruby-regexp re">/(.*)=$/</span>)
+          <span class="ruby-identifier">temp</span>  = <span class="ruby-node">&quot;#{element_object}.#{$1}&quot;</span>
+          <span class="ruby-identifier">assigning_value</span> = <span class="ruby-keyword kw">true</span>
+        <span class="ruby-keyword kw">else</span>
+          <span class="ruby-identifier">temp</span> = <span class="ruby-node">&quot;#{element_object}.#{methodName}&quot;</span>
+        <span class="ruby-keyword kw">end</span>
+        <span class="ruby-comment cmt">#puts &quot;temp is : #{temp}&quot;</span>
+
+        <span class="ruby-identifier">jssh_socket</span>.<span class="ruby-identifier">send</span>(<span class="ruby-node">&quot;typeof(#{temp});\n&quot;</span>, <span class="ruby-value">0</span>)
+        <span class="ruby-identifier">method_type</span> = <span class="ruby-identifier">read_socket</span>()
+        <span class="ruby-comment cmt">#puts &quot;method_type is : #{method_type}&quot;</span>
+
+        <span class="ruby-keyword kw">if</span>(<span class="ruby-identifier">assigning_value</span>)
+          <span class="ruby-keyword kw">if</span>(<span class="ruby-identifier">method_type</span> <span class="ruby-operator">!=</span> <span class="ruby-value str">&quot;boolean&quot;</span> <span class="ruby-operator">&amp;&amp;</span> <span class="ruby-identifier">args</span>[<span class="ruby-value">0</span>].<span class="ruby-identifier">class</span> <span class="ruby-operator">!=</span> <span class="ruby-constant">Fixnum</span>)
+            <span class="ruby-identifier">args</span>[<span class="ruby-value">0</span>].<span class="ruby-identifier">gsub!</span>(<span class="ruby-value str">&quot;\\&quot;</span>, <span class="ruby-value str">&quot;\\&quot;</span><span class="ruby-operator">*</span><span class="ruby-value">4</span>)
+            <span class="ruby-identifier">args</span>[<span class="ruby-value">0</span>].<span class="ruby-identifier">gsub!</span>(<span class="ruby-value str">&quot;\&quot;&quot;</span>, <span class="ruby-value str">&quot;\\\&quot;&quot;</span>)
+            <span class="ruby-identifier">args</span>[<span class="ruby-value">0</span>].<span class="ruby-identifier">gsub!</span>(<span class="ruby-value str">&quot;\n&quot;</span>,<span class="ruby-value str">&quot;\\n&quot;</span>)
+            <span class="ruby-identifier">jssh_command</span> = <span class="ruby-node">&quot;#{element_object}.#{methodName}\&quot;#{args[0]}\&quot;&quot;</span>
+          <span class="ruby-keyword kw">else</span>
+            <span class="ruby-identifier">jssh_command</span> = <span class="ruby-node">&quot;#{element_object}.#{methodName}#{args[0]}&quot;</span>
+          <span class="ruby-keyword kw">end</span>
+          <span class="ruby-comment cmt">#puts &quot;jssh_command is : #{jssh_command}&quot;</span>
+          <span class="ruby-identifier">jssh_socket</span>.<span class="ruby-identifier">send</span>(<span class="ruby-node">&quot;#{jssh_command};\n&quot;</span>, <span class="ruby-value">0</span>)
+          <span class="ruby-identifier">read_socket</span>()
+          <span class="ruby-keyword kw">return</span>
+        <span class="ruby-keyword kw">end</span>
+
+        <span class="ruby-identifier">methodName</span> = <span class="ruby-node">&quot;#{element_object}.#{methodName}&quot;</span>
+        <span class="ruby-keyword kw">if</span>(<span class="ruby-identifier">args</span>.<span class="ruby-identifier">length</span> <span class="ruby-operator">==</span> <span class="ruby-value">0</span>)
+          <span class="ruby-comment cmt">#puts &quot;In if loop #{methodName}&quot;</span>
+          <span class="ruby-keyword kw">if</span>(<span class="ruby-identifier">method_type</span> <span class="ruby-operator">==</span> <span class="ruby-value str">&quot;function&quot;</span>)
+            <span class="ruby-identifier">jssh_command</span> =  <span class="ruby-node">&quot;#{methodName}();\n&quot;</span>
+          <span class="ruby-keyword kw">else</span>
+            <span class="ruby-identifier">jssh_command</span> =  <span class="ruby-node">&quot;#{methodName};\n&quot;</span>
+          <span class="ruby-keyword kw">end</span>
+        <span class="ruby-keyword kw">else</span>
+          <span class="ruby-comment cmt">#puts &quot;In else loop : #{methodName}&quot;</span>
+          <span class="ruby-identifier">jssh_command</span> =  <span class="ruby-node">&quot;#{methodName}(&quot;</span>
+
+          <span class="ruby-identifier">count</span> = <span class="ruby-value">0</span>
+          <span class="ruby-keyword kw">if</span> <span class="ruby-identifier">args</span> <span class="ruby-operator">!=</span> <span class="ruby-keyword kw">nil</span>
+            <span class="ruby-keyword kw">for</span> <span class="ruby-identifier">i</span> <span class="ruby-keyword kw">in</span> <span class="ruby-identifier">args</span>
+              <span class="ruby-identifier">jssh_command</span> <span class="ruby-operator">&lt;&lt;</span> <span class="ruby-value str">&quot;,&quot;</span> <span class="ruby-keyword kw">if</span> <span class="ruby-identifier">count</span> <span class="ruby-operator">!=</span> <span class="ruby-value">0</span>
+              <span class="ruby-keyword kw">if</span> <span class="ruby-identifier">i</span>.<span class="ruby-identifier">kind_of?</span> <span class="ruby-constant">Numeric</span>
+                <span class="ruby-identifier">jssh_command</span> <span class="ruby-operator">&lt;&lt;</span> <span class="ruby-identifier">i</span>.<span class="ruby-identifier">to_s</span>
+              <span class="ruby-keyword kw">else</span>
+                <span class="ruby-identifier">jssh_command</span> <span class="ruby-operator">&lt;&lt;</span> <span class="ruby-node">&quot;\&quot;#{i.to_s.gsub(/&quot;/,&quot;\\\&quot;&quot;)}\&quot;&quot;</span>
+              <span class="ruby-keyword kw">end</span>
+              <span class="ruby-identifier">count</span> = <span class="ruby-identifier">count</span> <span class="ruby-operator">+</span> <span class="ruby-value">1</span>
+            <span class="ruby-keyword kw">end</span>
+          <span class="ruby-keyword kw">end</span>
+
+          <span class="ruby-identifier">jssh_command</span> <span class="ruby-operator">&lt;&lt;</span> <span class="ruby-value str">&quot;);\n&quot;</span>
+        <span class="ruby-keyword kw">end</span>
+
+        <span class="ruby-keyword kw">if</span>(<span class="ruby-identifier">method_type</span> <span class="ruby-operator">==</span> <span class="ruby-value str">&quot;boolean&quot;</span>)
+          <span class="ruby-identifier">jssh_command</span> = <span class="ruby-identifier">jssh_command</span>.<span class="ruby-identifier">gsub</span>(<span class="ruby-value str">&quot;\&quot;false\&quot;&quot;</span>, <span class="ruby-value str">&quot;false&quot;</span>)
+          <span class="ruby-identifier">jssh_command</span> = <span class="ruby-identifier">jssh_command</span>.<span class="ruby-identifier">gsub</span>(<span class="ruby-value str">&quot;\&quot;true\&quot;&quot;</span>, <span class="ruby-value str">&quot;true&quot;</span>)
+        <span class="ruby-keyword kw">end</span>
+        <span class="ruby-comment cmt">#puts &quot;jssh_command is #{jssh_command}&quot;</span>
+        <span class="ruby-identifier">jssh_socket</span>.<span class="ruby-identifier">send</span>(<span class="ruby-node">&quot;#{jssh_command}&quot;</span>, <span class="ruby-value">0</span>)
+        <span class="ruby-identifier">returnValue</span> = <span class="ruby-identifier">read_socket</span>()
+        <span class="ruby-comment cmt">#puts &quot;return value is : #{returnValue}&quot;</span>
+
+        <span class="ruby-ivar">@@current_level</span> = <span class="ruby-value">0</span>
+
+        <span class="ruby-keyword kw">if</span>(<span class="ruby-identifier">method_type</span> <span class="ruby-operator">==</span> <span class="ruby-value str">&quot;boolean&quot;</span>)
+          <span class="ruby-keyword kw">return</span> <span class="ruby-keyword kw">false</span> <span class="ruby-keyword kw">if</span>(<span class="ruby-identifier">returnValue</span> <span class="ruby-operator">==</span> <span class="ruby-value str">&quot;false&quot;</span>)
+          <span class="ruby-keyword kw">return</span> <span class="ruby-keyword kw">true</span> <span class="ruby-keyword kw">if</span>(<span class="ruby-identifier">returnValue</span> <span class="ruby-operator">==</span> <span class="ruby-value str">&quot;true&quot;</span>)
+        <span class="ruby-keyword kw">elsif</span>(<span class="ruby-identifier">method_type</span> <span class="ruby-operator">==</span> <span class="ruby-value str">&quot;number&quot;</span>)
+          <span class="ruby-keyword kw">return</span> <span class="ruby-identifier">returnValue</span>.<span class="ruby-identifier">to_i</span>
+        <span class="ruby-keyword kw">else</span>
+          <span class="ruby-keyword kw">return</span> <span class="ruby-identifier">returnValue</span>
+        <span class="ruby-keyword kw">end</span>
+      <span class="ruby-keyword kw">end</span>
+    <span class="ruby-keyword kw">end</span></pre>
+</body>
+</html>

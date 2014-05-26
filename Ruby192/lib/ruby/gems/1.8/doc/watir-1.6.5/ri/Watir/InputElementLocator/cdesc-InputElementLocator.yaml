@@ -1,0 +1,34 @@
+--- !ruby/object:RI::ClassDescription 
+attributes: 
+- !ruby/object:RI::Attribute 
+  comment: 
+  name: document
+  rw: RW
+- !ruby/object:RI::Attribute 
+  comment: 
+  name: element
+  rw: RW
+- !ruby/object:RI::Attribute 
+  comment: 
+  name: elements
+  rw: RW
+class_methods: 
+- !ruby/object:RI::MethodSummary 
+  name: new
+comment: 
+constants: []
+
+full_name: Watir::InputElementLocator
+includes: []
+
+instance_methods: 
+- !ruby/object:RI::MethodSummary 
+  name: fast_locate
+- !ruby/object:RI::MethodSummary 
+  name: locate
+- !ruby/object:RI::MethodSummary 
+  name: match?
+- !ruby/object:RI::MethodSummary 
+  name: specifier=
+name: InputElementLocator
+superclass: Locator

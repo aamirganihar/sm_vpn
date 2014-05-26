@@ -1,0 +1,12 @@
+--- !ruby/object:RI::MethodDescription 
+aliases: []
+
+block_params: 
+comment: 
+- !ruby/struct:SM::Flow::P 
+  body: Before actually deleting, the item has to be marked as deleted to prevent drawing afterwards.
+full_name: Packet_List#removeItem
+is_singleton: false
+name: removeItem
+params: (*args)
+visibility: public

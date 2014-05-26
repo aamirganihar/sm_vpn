@@ -1,0 +1,563 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+<!DOCTYPE html 
+     PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+     "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+  <title>Class: Mail::Header</title>
+  <meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" />
+  <meta http-equiv="Content-Script-Type" content="text/javascript" />
+  <link rel="stylesheet" href="../.././rdoc-style.css" type="text/css" media="screen" />
+  <script type="text/javascript">
+  // <![CDATA[
+
+  function popupCode( url ) {
+    window.open(url, "Code", "resizable=yes,scrollbars=yes,toolbar=no,status=no,height=150,width=400")
+  }
+
+  function toggleCode( id ) {
+    if ( document.getElementById )
+      elem = document.getElementById( id );
+    else if ( document.all )
+      elem = eval( "document.all." + id );
+    else
+      return false;
+
+    elemStyle = elem.style;
+    
+    if ( elemStyle.display != "block" ) {
+      elemStyle.display = "block"
+    } else {
+      elemStyle.display = "none"
+    }
+
+    return true;
+  }
+  
+  // Make codeblocks hidden by default
+  document.writeln( "<style type=\"text/css\">div.method-source-code { display: none }</style>" )
+  
+  // ]]>
+  </script>
+
+</head>
+<body>
+
+
+
+    <div id="classHeader">
+        <table class="header-table">
+        <tr class="top-aligned-row">
+          <td><strong>Class</strong></td>
+          <td class="class-name-in-header">Mail::Header</td>
+        </tr>
+        <tr class="top-aligned-row">
+            <td><strong>In:</strong></td>
+            <td>
+                <a href="../../files/lib/mail/header_rb.html">
+                lib/mail/header.rb
+                </a>
+        <br />
+            </td>
+        </tr>
+
+        <tr class="top-aligned-row">
+            <td><strong>Parent:</strong></td>
+            <td>
+                <a href="../Object.html">
+                Object
+               </a>
+            </td>
+        </tr>
+        </table>
+    </div>
+  <!-- banner header -->
+
+  <div id="bodyContent">
+
+
+
+  <div id="contextContent">
+
+    <div id="description">
+      <p>
+Provides access to a header object.
+</p>
+<h3>Per <a href="RFC2822.html">RFC2822</a></h3>
+<pre>
+ 2.2. Header Fields
+
+  Header fields are lines composed of a field name, followed by a colon
+  (&quot;:&quot;), followed by a field body, and terminated by CRLF.  A field
+  name MUST be composed of printable US-ASCII characters (i.e.,
+  characters that have values between 33 and 126, inclusive), except
+  colon.  A field body may be composed of any US-ASCII characters,
+  except for CR and LF.  However, a field body may contain CRLF when
+  used in header &quot;folding&quot; and  &quot;unfolding&quot; as described in section
+  2.2.3.  All field bodies MUST conform to the syntax described in
+  sections 3 and 4 of this standard.
+</pre>
+
+    </div>
+
+
+   </div>
+
+    <div id="method-list">
+      <h3 class="section-bar">Methods</h3>
+
+      <div class="name-list">
+      <a href="#M001009">[]</a>&nbsp;&nbsp;
+      <a href="#M001010">[]=</a>&nbsp;&nbsp;
+      <a href="#M001011">charset</a>&nbsp;&nbsp;
+      <a href="#M001012">charset=</a>&nbsp;&nbsp;
+      <a href="#M001015">decoded</a>&nbsp;&nbsp;
+      <a href="#M001013">encoded</a>&nbsp;&nbsp;
+      <a href="#M001008">errors</a>&nbsp;&nbsp;
+      <a href="#M001016">field_summary</a>&nbsp;&nbsp;
+      <a href="#M001006">fields</a>&nbsp;&nbsp;
+      <a href="#M001007">fields=</a>&nbsp;&nbsp;
+      <a href="#M001018">has_content_id?</a>&nbsp;&nbsp;
+      <a href="#M001019">has_date?</a>&nbsp;&nbsp;
+      <a href="#M001017">has_message_id?</a>&nbsp;&nbsp;
+      <a href="#M001020">has_mime_version?</a>&nbsp;&nbsp;
+      <a href="#M001002">maximum_amount</a>&nbsp;&nbsp;
+      <a href="#M001003">maximum_amount=</a>&nbsp;&nbsp;
+      <a href="#M001004">new</a>&nbsp;&nbsp;
+      <a href="#M001005">raw_source</a>&nbsp;&nbsp;
+      <a href="#M001014">to_s</a>&nbsp;&nbsp;
+      </div>
+    </div>
+
+  </div>
+
+
+    <!-- if includes -->
+    <div id="includes">
+      <h3 class="section-bar">Included Modules</h3>
+
+      <div id="includes-list">
+        <span class="include-name"><a href="Patterns.html">Patterns</a></span>
+        <span class="include-name"><a href="Utilities.html">Utilities</a></span>
+        <span class="include-name">Enumerable</span>
+      </div>
+    </div>
+
+    <div id="section">
+
+
+    <div id="constants-list">
+      <h3 class="section-bar">Constants</h3>
+
+      <div class="name-list">
+        <table summary="Constants">
+        <tr class="top-aligned-row context-row">
+          <td class="context-item-name">LIMITED_FIELDS</td>
+          <td>=</td>
+          <td class="context-item-value">%w[ date from sender reply-to to cc bcc                             message-id in-reply-to references subject                            return-path content-type mime-version                            content-transfer-encoding content-description                             content-id content-disposition content-location]</td>
+        </tr>
+        </table>
+      </div>
+    </div>
+
+
+
+      
+
+
+    <!-- if method_list -->
+    <div id="methods">
+      <h3 class="section-bar">Public Class methods</h3>
+
+      <div id="method-M001002" class="method-detail">
+        <a name="M001002"></a>
+
+        <div class="method-heading">
+          <a href="Header.src/M001002.html" target="Code" class="method-signature"
+            onclick="popupCode('Header.src/M001002.html');return false;">
+          <span class="method-name">maximum_amount</span><span class="method-args">()</span>
+          </a>
+        </div>
+      
+        <div class="method-description">
+          <p>
+Large amount of headers in Email might create extra high CPU load Use this
+parameter to limit number of headers that will be parsed by mail library.
+Default: 1000
+</p>
+        </div>
+      </div>
+
+      <div id="method-M001003" class="method-detail">
+        <a name="M001003"></a>
+
+        <div class="method-heading">
+          <a href="Header.src/M001003.html" target="Code" class="method-signature"
+            onclick="popupCode('Header.src/M001003.html');return false;">
+          <span class="method-name">maximum_amount=</span><span class="method-args">(value)</span>
+          </a>
+        </div>
+      
+        <div class="method-description">
+        </div>
+      </div>
+
+      <div id="method-M001004" class="method-detail">
+        <a name="M001004"></a>
+
+        <div class="method-heading">
+          <a href="Header.src/M001004.html" target="Code" class="method-signature"
+            onclick="popupCode('Header.src/M001004.html');return false;">
+          <span class="method-name">new</span><span class="method-args">(header_text = nil, charset = nil)</span>
+          </a>
+        </div>
+      
+        <div class="method-description">
+          <p>
+Creates a <a href="Header.html#M001004">new</a> header object.
+</p>
+<p>
+Accepts raw text or nothing. If given raw text will attempt to parse it and
+split it into the various <a href="Header.html#M001006">fields</a>,
+instantiating each field as it goes.
+</p>
+<p>
+If it finds a field that should be a structured field (such as content
+type), but it fails to parse it, it will simply make it an unstructured
+field and leave it alone. This will mean that the data is preserved but no
+automatic processing of that field will happen. If you find one of these
+cases, please make a patch and send it in, or at the least, send me the
+example so we can fix it.
+</p>
+        </div>
+      </div>
+
+      <h3 class="section-bar">Public Instance methods</h3>
+
+      <div id="method-M001009" class="method-detail">
+        <a name="M001009"></a>
+
+        <div class="method-heading">
+          <a href="Header.src/M001009.html" target="Code" class="method-signature"
+            onclick="popupCode('Header.src/M001009.html');return false;">
+          <span class="method-name">[]</span><span class="method-args">(name)</span>
+          </a>
+        </div>
+      
+        <div class="method-description">
+          <pre>
+ 3.6. Field definitions
+
+  The following table indicates limits on the number of times each
+  field may occur in a message header as well as any special
+  limitations on the use of those fields.  An asterisk next to a value
+  in the minimum or maximum column indicates that a special restriction
+  appears in the Notes column.
+
+  &lt;snip table from 3.6&gt;
+</pre>
+<p>
+As per RFC, many <a href="Header.html#M001006">fields</a> can appear more
+than once, we will return a string of the value if there is only one
+header, or if there is more than one matching header, will return an array
+of values in order that they appear in the header ordered from top to
+bottom.
+</p>
+<p>
+Example:
+</p>
+<pre>
+ h = Header.new
+ h.fields = ['To: mikel@me.com', 'X-Mail-SPAM: 15', 'X-Mail-SPAM: 20']
+ h['To']          #=&gt; 'mikel@me.com'
+ h['X-Mail-SPAM'] #=&gt; ['15', '20']
+</pre>
+        </div>
+      </div>
+
+      <div id="method-M001010" class="method-detail">
+        <a name="M001010"></a>
+
+        <div class="method-heading">
+          <a href="Header.src/M001010.html" target="Code" class="method-signature"
+            onclick="popupCode('Header.src/M001010.html');return false;">
+          <span class="method-name">[]=</span><span class="method-args">(name, value)</span>
+          </a>
+        </div>
+      
+        <div class="method-description">
+          <p>
+Sets the FIRST matching field in the header to passed value, or deletes the
+FIRST field matched from the header if passed nil
+</p>
+<p>
+Example:
+</p>
+<pre>
+ h = Header.new
+ h.fields = ['To: mikel@me.com', 'X-Mail-SPAM: 15', 'X-Mail-SPAM: 20']
+ h['To'] = 'bob@you.com'
+ h['To']    #=&gt; 'bob@you.com'
+ h['X-Mail-SPAM'] = '10000'
+ h['X-Mail-SPAM'] # =&gt; ['15', '20', '10000']
+ h['X-Mail-SPAM'] = nil
+ h['X-Mail-SPAM'] # =&gt; nil
+</pre>
+        </div>
+      </div>
+
+      <div id="method-M001011" class="method-detail">
+        <a name="M001011"></a>
+
+        <div class="method-heading">
+          <a href="Header.src/M001011.html" target="Code" class="method-signature"
+            onclick="popupCode('Header.src/M001011.html');return false;">
+          <span class="method-name">charset</span><span class="method-args">()</span>
+          </a>
+        </div>
+      
+        <div class="method-description">
+        </div>
+      </div>
+
+      <div id="method-M001012" class="method-detail">
+        <a name="M001012"></a>
+
+        <div class="method-heading">
+          <a href="Header.src/M001012.html" target="Code" class="method-signature"
+            onclick="popupCode('Header.src/M001012.html');return false;">
+          <span class="method-name">charset=</span><span class="method-args">(val)</span>
+          </a>
+        </div>
+      
+        <div class="method-description">
+        </div>
+      </div>
+
+      <div id="method-M001015" class="method-detail">
+        <a name="M001015"></a>
+
+        <div class="method-heading">
+          <a href="Header.src/M001015.html" target="Code" class="method-signature"
+            onclick="popupCode('Header.src/M001015.html');return false;">
+          <span class="method-name">decoded</span><span class="method-args">()</span>
+          </a>
+        </div>
+      
+        <div class="method-description">
+        </div>
+      </div>
+
+      <div id="method-M001013" class="method-detail">
+        <a name="M001013"></a>
+
+        <div class="method-heading">
+          <a href="Header.src/M001013.html" target="Code" class="method-signature"
+            onclick="popupCode('Header.src/M001013.html');return false;">
+          <span class="method-name">encoded</span><span class="method-args">()</span>
+          </a>
+        </div>
+      
+        <div class="method-description">
+        </div>
+      </div>
+
+      <div id="method-M001008" class="method-detail">
+        <a name="M001008"></a>
+
+        <div class="method-heading">
+          <a href="Header.src/M001008.html" target="Code" class="method-signature"
+            onclick="popupCode('Header.src/M001008.html');return false;">
+          <span class="method-name">errors</span><span class="method-args">()</span>
+          </a>
+        </div>
+      
+        <div class="method-description">
+        </div>
+      </div>
+
+      <div id="method-M001016" class="method-detail">
+        <a name="M001016"></a>
+
+        <div class="method-heading">
+          <a href="Header.src/M001016.html" target="Code" class="method-signature"
+            onclick="popupCode('Header.src/M001016.html');return false;">
+          <span class="method-name">field_summary</span><span class="method-args">()</span>
+          </a>
+        </div>
+      
+        <div class="method-description">
+        </div>
+      </div>
+
+      <div id="method-M001006" class="method-detail">
+        <a name="M001006"></a>
+
+        <div class="method-heading">
+          <a href="Header.src/M001006.html" target="Code" class="method-signature"
+            onclick="popupCode('Header.src/M001006.html');return false;">
+          <span class="method-name">fields</span><span class="method-args">()</span>
+          </a>
+        </div>
+      
+        <div class="method-description">
+          <p>
+Returns an array of all the <a href="Header.html#M001006">fields</a> in the
+header in order that they were read in.
+</p>
+        </div>
+      </div>
+
+      <div id="method-M001007" class="method-detail">
+        <a name="M001007"></a>
+
+        <div class="method-heading">
+          <a href="Header.src/M001007.html" target="Code" class="method-signature"
+            onclick="popupCode('Header.src/M001007.html');return false;">
+          <span class="method-name">fields=</span><span class="method-args">(unfolded_fields)</span>
+          </a>
+        </div>
+      
+        <div class="method-description">
+          <pre>
+ 3.6. Field definitions
+
+  It is important to note that the header fields are not guaranteed to
+  be in a particular order.  They may appear in any order, and they
+  have been known to be reordered occasionally when transported over
+  the Internet.  However, for the purposes of this standard, header
+  fields SHOULD NOT be reordered when a message is transported or
+  transformed.  More importantly, the trace header fields and resent
+  header fields MUST NOT be reordered, and SHOULD be kept in blocks
+  prepended to the message.  See sections 3.6.6 and 3.6.7 for more
+  information.
+</pre>
+<p>
+Populates the <a href="Header.html#M001006">fields</a> container with <a
+href="Field.html">Field</a> objects in the order it receives them in.
+</p>
+<p>
+Acceps an array of field string values, for example:
+</p>
+<pre>
+ h = Header.new
+ h.fields = ['From: mikel@me.com', 'To: bob@you.com']
+</pre>
+        </div>
+      </div>
+
+      <div id="method-M001018" class="method-detail">
+        <a name="M001018"></a>
+
+        <div class="method-heading">
+          <a href="Header.src/M001018.html" target="Code" class="method-signature"
+            onclick="popupCode('Header.src/M001018.html');return false;">
+          <span class="method-name">has_content_id?</span><span class="method-args">()</span>
+          </a>
+        </div>
+      
+        <div class="method-description">
+          <p>
+Returns true if the header has a Content-ID defined (empty or not)
+</p>
+        </div>
+      </div>
+
+      <div id="method-M001019" class="method-detail">
+        <a name="M001019"></a>
+
+        <div class="method-heading">
+          <a href="Header.src/M001019.html" target="Code" class="method-signature"
+            onclick="popupCode('Header.src/M001019.html');return false;">
+          <span class="method-name">has_date?</span><span class="method-args">()</span>
+          </a>
+        </div>
+      
+        <div class="method-description">
+          <p>
+Returns true if the header has a Date defined (empty or not)
+</p>
+        </div>
+      </div>
+
+      <div id="method-M001017" class="method-detail">
+        <a name="M001017"></a>
+
+        <div class="method-heading">
+          <a href="Header.src/M001017.html" target="Code" class="method-signature"
+            onclick="popupCode('Header.src/M001017.html');return false;">
+          <span class="method-name">has_message_id?</span><span class="method-args">()</span>
+          </a>
+        </div>
+      
+        <div class="method-description">
+          <p>
+Returns true if the header has a <a href="Message.html">Message</a>-ID
+defined (empty or not)
+</p>
+        </div>
+      </div>
+
+      <div id="method-M001020" class="method-detail">
+        <a name="M001020"></a>
+
+        <div class="method-heading">
+          <a href="Header.src/M001020.html" target="Code" class="method-signature"
+            onclick="popupCode('Header.src/M001020.html');return false;">
+          <span class="method-name">has_mime_version?</span><span class="method-args">()</span>
+          </a>
+        </div>
+      
+        <div class="method-description">
+          <p>
+Returns true if the header has a MIME version defined (empty or not)
+</p>
+        </div>
+      </div>
+
+      <div id="method-M001005" class="method-detail">
+        <a name="M001005"></a>
+
+        <div class="method-heading">
+          <a href="Header.src/M001005.html" target="Code" class="method-signature"
+            onclick="popupCode('Header.src/M001005.html');return false;">
+          <span class="method-name">raw_source</span><span class="method-args">()</span>
+          </a>
+        </div>
+      
+        <div class="method-description">
+          <p>
+The preserved raw source of the header as you passed it in, untouched for
+your Regexing glory.
+</p>
+        </div>
+      </div>
+
+      <div id="method-M001014" class="method-detail">
+        <a name="M001014"></a>
+
+        <div class="method-heading">
+          <a href="Header.src/M001014.html" target="Code" class="method-signature"
+            onclick="popupCode('Header.src/M001014.html');return false;">
+          <span class="method-name">to_s</span><span class="method-args">()</span>
+          </a>
+        </div>
+      
+        <div class="method-description">
+        </div>
+      </div>
+
+
+    </div>
+
+
+  </div>
+
+
+<div id="validator-badges">
+  <p><small><a href="http://validator.w3.org/check/referer">[Validate]</a></small></p>
+</div>
+
+</body>
+</html>

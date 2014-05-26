@@ -1,0 +1,10 @@
+--- !ruby/object:RI::MethodDescription 
+aliases: []
+
+block_params: 
+comment: 
+full_name: Timezone::Zone#active_support_time_zone
+is_singleton: false
+name: active_support_time_zone
+params: ()
+visibility: public

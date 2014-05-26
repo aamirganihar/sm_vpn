@@ -1,0 +1,10 @@
+--- !ruby/object:RI::MethodDescription 
+aliases: []
+
+block_params: 
+comment: 
+full_name: Selenium::RSpec::SeleniumTestReportFormatter::file_path_strategy
+is_singleton: true
+name: file_path_strategy
+params: ()
+visibility: public

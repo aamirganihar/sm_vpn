@@ -1,0 +1,12 @@
+--- !ruby/object:RI::MethodDescription 
+aliases: []
+
+block_params: ""
+comment: 
+- !ruby/struct:SM::Flow::P 
+  body: Run the block. During execution, <em>ARGV</em>'s is set as if the script had been executed with <em>string</em> as its argument list. If the block tries to exit, with_command_args will instead throw a StandardError.
+full_name: S4tUtils#with_command_args
+is_singleton: false
+name: with_command_args
+params: (string) {|| ...}
+visibility: public

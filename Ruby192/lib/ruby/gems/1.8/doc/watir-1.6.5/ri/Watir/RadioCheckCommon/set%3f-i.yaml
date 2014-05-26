@@ -1,0 +1,13 @@
+--- !ruby/object:RI::MethodDescription 
+aliases: 
+- !ruby/object:RI::AliasName 
+  name: checked?
+block_params: 
+comment: 
+- !ruby/struct:SM::Flow::P 
+  body: This method determines if a radio button or check box is set. Returns true is set/checked or false if not set/checked. Raises UnknownObjectException if its unable to locate an object.
+full_name: Watir::RadioCheckCommon#set?
+is_singleton: false
+name: set?
+params: (
+visibility: public

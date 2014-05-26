@@ -1,0 +1,10 @@
+--- !ruby/object:RI::MethodDescription 
+aliases: []
+
+block_params: 
+comment: 
+full_name: UserChoices::XmlConfigFileSource#format_specific_exception?
+is_singleton: false
+name: format_specific_exception?
+params: (ex)
+visibility: public

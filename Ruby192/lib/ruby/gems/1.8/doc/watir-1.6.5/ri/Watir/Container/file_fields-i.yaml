@@ -1,0 +1,16 @@
+--- !ruby/object:RI::MethodDescription 
+aliases: []
+
+block_params: 
+comment: 
+- !ruby/struct:SM::Flow::P 
+  body: this is the main method for accessing the file_fields iterator. It returns a FileFields object
+- !ruby/struct:SM::Flow::P 
+  body: "Typical usage:"
+- !ruby/struct:SM::Flow::VERB 
+  body: "  ie.file_fields.each { |f| puts f.to_s }            # iterate through all the file fields on the page\n  ie.file_fields[1].to_s                             # goto the first file field on the page\n  ie.file_fields.length                              # show how many file fields are on the page.\n"
+full_name: Watir::Container#file_fields
+is_singleton: false
+name: file_fields
+params: ()
+visibility: public

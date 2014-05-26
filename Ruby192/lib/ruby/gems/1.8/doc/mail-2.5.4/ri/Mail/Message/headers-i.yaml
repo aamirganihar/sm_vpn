@@ -1,0 +1,12 @@
+--- !ruby/object:RI::MethodDescription 
+aliases: []
+
+block_params: 
+comment: 
+- !ruby/struct:SM::Flow::P 
+  body: Provides a way to set custom headers, by passing in a hash
+full_name: Mail::Message#headers
+is_singleton: false
+name: headers
+params: (hash = {})
+visibility: public

@@ -1,0 +1,23 @@
+--- !ruby/object:RI::ClassDescription 
+attributes: 
+- !ruby/object:RI::Attribute 
+  comment: 
+  - !ruby/struct:SM::Flow::P 
+    body: The numeric address of the function pointer
+  name: address
+  rw: R
+class_methods: 
+- !ruby/object:RI::MethodSummary 
+  name: new
+comment: 
+- !ruby/struct:SM::Flow::P 
+  body: The API::Function class encapsulates a raw function pointer
+constants: []
+
+full_name: Win32::API::Function
+includes: []
+
+instance_methods: []
+
+name: Function
+superclass: Win32::API

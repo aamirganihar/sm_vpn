@@ -1,0 +1,302 @@
+--- !ruby/object:RI::ClassDescription 
+attributes: []
+
+class_methods: []
+
+comment: 
+constants: 
+- !ruby/object:RI::Constant 
+  comment: 
+  name: REGKIND_DEFAULT
+  value: "0"
+- !ruby/object:RI::Constant 
+  comment: 
+  name: REGKIND_REGISTER
+  value: "1"
+- !ruby/object:RI::Constant 
+  comment: 
+  name: REGKIND_NONE
+  value: "2"
+- !ruby/object:RI::Constant 
+  comment: 
+  - !ruby/struct:SM::Flow::P 
+    body: VARKIND enum
+  name: VAR_PERINSTANCE
+  value: "0"
+- !ruby/object:RI::Constant 
+  comment: 
+  name: VAR_STATIC
+  value: "1"
+- !ruby/object:RI::Constant 
+  comment: 
+  name: VAR_CONST
+  value: "2"
+- !ruby/object:RI::Constant 
+  comment: 
+  name: VAR_DISPATCH
+  value: "3"
+- !ruby/object:RI::Constant 
+  comment: 
+  - !ruby/struct:SM::Flow::P 
+    body: TYPEKIND enum
+  name: TKIND_ENUM
+  value: "0"
+- !ruby/object:RI::Constant 
+  comment: 
+  name: TKIND_RECORD
+  value: "1"
+- !ruby/object:RI::Constant 
+  comment: 
+  name: TKIND_MODULE
+  value: "2"
+- !ruby/object:RI::Constant 
+  comment: 
+  name: TKIND_INTERFACE
+  value: "3"
+- !ruby/object:RI::Constant 
+  comment: 
+  name: TKIND_DISPATCH
+  value: "4"
+- !ruby/object:RI::Constant 
+  comment: 
+  name: TKIND_COCLASS
+  value: "5"
+- !ruby/object:RI::Constant 
+  comment: 
+  name: TKIND_ALIAS
+  value: "6"
+- !ruby/object:RI::Constant 
+  comment: 
+  name: TKIND_UNION
+  value: "7"
+- !ruby/object:RI::Constant 
+  comment: 
+  name: TKIND_MAX
+  value: "8"
+- !ruby/object:RI::Constant 
+  comment: 
+  - !ruby/struct:SM::Flow::P 
+    body: LIBFLAGS enum
+  name: LIBFLAG_FRESTRICTED
+  value: "0x1"
+- !ruby/object:RI::Constant 
+  comment: 
+  name: LIBFLAG_FCONTROL
+  value: "0x2"
+- !ruby/object:RI::Constant 
+  comment: 
+  name: LIBFLAG_FHIDDEN
+  value: "0x4"
+- !ruby/object:RI::Constant 
+  comment: 
+  name: LIBFLAG_FHASDISKIMAGE
+  value: "0x8"
+- !ruby/object:RI::Constant 
+  comment: 
+  name: PARAMFLAG_NONE
+  value: "0"
+- !ruby/object:RI::Constant 
+  comment: 
+  name: PARAMFLAG_FIN
+  value: "0x1"
+- !ruby/object:RI::Constant 
+  comment: 
+  name: PARAMFLAG_FOUT
+  value: "0x2"
+- !ruby/object:RI::Constant 
+  comment: 
+  name: PARAMFLAG_FLCID
+  value: "0x4"
+- !ruby/object:RI::Constant 
+  comment: 
+  name: PARAMFLAG_FRETVAL
+  value: "0x8"
+- !ruby/object:RI::Constant 
+  comment: 
+  name: PARAMFLAG_FOPT
+  value: "0x10"
+- !ruby/object:RI::Constant 
+  comment: 
+  name: PARAMFLAG_FHASDEFAULT
+  value: "0x20"
+- !ruby/object:RI::Constant 
+  comment: 
+  name: PARAMFLAG_FHASCUSTDATA
+  value: "0x40"
+- !ruby/object:RI::Constant 
+  comment: 
+  - !ruby/struct:SM::Flow::P 
+    body: FUNCFLAGS enum
+  name: FUNCFLAG_FRESTRICTED
+  value: "0x1"
+- !ruby/object:RI::Constant 
+  comment: 
+  name: FUNCFLAG_FSOURCE
+  value: "0x2"
+- !ruby/object:RI::Constant 
+  comment: 
+  name: FUNCFLAG_FBINDABLE
+  value: "0x4"
+- !ruby/object:RI::Constant 
+  comment: 
+  name: FUNCFLAG_FREQUESTEDIT
+  value: "0x8"
+- !ruby/object:RI::Constant 
+  comment: 
+  name: FUNCFLAG_FDISPLAYBIND
+  value: "0x10"
+- !ruby/object:RI::Constant 
+  comment: 
+  name: FUNCFLAG_FDEFAULTBIND
+  value: "0x20"
+- !ruby/object:RI::Constant 
+  comment: 
+  name: FUNCFLAG_FHIDDEN
+  value: "0x40"
+- !ruby/object:RI::Constant 
+  comment: 
+  name: FUNCFLAG_FUSESGETLASTERROR
+  value: "0x80"
+- !ruby/object:RI::Constant 
+  comment: 
+  name: FUNCFLAG_FDEFAULTCOLLELEM
+  value: "0x100"
+- !ruby/object:RI::Constant 
+  comment: 
+  name: FUNCFLAG_FUIDEFAULT
+  value: "0x200"
+- !ruby/object:RI::Constant 
+  comment: 
+  name: FUNCFLAG_FNONBROWSABLE
+  value: "0x400"
+- !ruby/object:RI::Constant 
+  comment: 
+  name: FUNCFLAG_FREPLACEABLE
+  value: "0x800"
+- !ruby/object:RI::Constant 
+  comment: 
+  name: FUNCFLAG_FIMMEDIATEBIND
+  value: "0x1000"
+- !ruby/object:RI::Constant 
+  comment: 
+  - !ruby/struct:SM::Flow::P 
+    body: TYPEFLAGS enum
+  name: TYPEFLAG_FAPPOBJECT
+  value: "0x1"
+- !ruby/object:RI::Constant 
+  comment: 
+  name: TYPEFLAG_FCANCREATE
+  value: "0x2"
+- !ruby/object:RI::Constant 
+  comment: 
+  name: TYPEFLAG_FLICENSED
+  value: "0x4"
+- !ruby/object:RI::Constant 
+  comment: 
+  name: TYPEFLAG_FPREDECLID
+  value: "0x8"
+- !ruby/object:RI::Constant 
+  comment: 
+  name: TYPEFLAG_FHIDDEN
+  value: "0x10"
+- !ruby/object:RI::Constant 
+  comment: 
+  name: TYPEFLAG_FCONTROL
+  value: "0x20"
+- !ruby/object:RI::Constant 
+  comment: 
+  name: TYPEFLAG_FDUAL
+  value: "0x40"
+- !ruby/object:RI::Constant 
+  comment: 
+  name: TYPEFLAG_FNONEXTENSIBLE
+  value: "0x80"
+- !ruby/object:RI::Constant 
+  comment: 
+  name: TYPEFLAG_FOLEAUTOMATION
+  value: "0x100"
+- !ruby/object:RI::Constant 
+  comment: 
+  name: TYPEFLAG_FRESTRICTED
+  value: "0x200"
+- !ruby/object:RI::Constant 
+  comment: 
+  name: TYPEFLAG_FAGGREGATABLE
+  value: "0x400"
+- !ruby/object:RI::Constant 
+  comment: 
+  name: TYPEFLAG_FREPLACEABLE
+  value: "0x800"
+- !ruby/object:RI::Constant 
+  comment: 
+  name: TYPEFLAG_FDISPATCHABLE
+  value: "0x1000"
+- !ruby/object:RI::Constant 
+  comment: 
+  name: TYPEFLAG_FREVERSEBIND
+  value: "0x2000"
+- !ruby/object:RI::Constant 
+  comment: 
+  name: TYPEFLAG_FPROXY
+  value: "0x4000"
+- !ruby/object:RI::Constant 
+  comment: 
+  - !ruby/struct:SM::Flow::P 
+    body: VARFLAGS enum
+  name: VARFLAG_FREADONLY
+  value: "0x1"
+- !ruby/object:RI::Constant 
+  comment: 
+  name: VARFLAG_FSOURCE
+  value: "0x2"
+- !ruby/object:RI::Constant 
+  comment: 
+  name: VARFLAG_FBINDABLE
+  value: "0x4"
+- !ruby/object:RI::Constant 
+  comment: 
+  name: VARFLAG_FREQUESTEDIT
+  value: "0x8"
+- !ruby/object:RI::Constant 
+  comment: 
+  name: VARFLAG_FDISPLAYBIND
+  value: "0x10"
+- !ruby/object:RI::Constant 
+  comment: 
+  name: VARFLAG_FDEFAULTBIND
+  value: "0x20"
+- !ruby/object:RI::Constant 
+  comment: 
+  name: VARFLAG_FHIDDEN
+  value: "0x40"
+- !ruby/object:RI::Constant 
+  comment: 
+  name: VARFLAG_FRESTRICTED
+  value: "0x80"
+- !ruby/object:RI::Constant 
+  comment: 
+  name: VARFLAG_FDEFAULTCOLLELEM
+  value: "0x100"
+- !ruby/object:RI::Constant 
+  comment: 
+  name: VARFLAG_FUIDEFAULT
+  value: "0x200"
+- !ruby/object:RI::Constant 
+  comment: 
+  name: VARFLAG_FNONBROWSABLE
+  value: "0x400"
+- !ruby/object:RI::Constant 
+  comment: 
+  name: VARFLAG_FREPLACEABLE
+  value: "0x800"
+- !ruby/object:RI::Constant 
+  comment: 
+  name: VARFLAG_FIMMEDIATEBIND
+  value: "0x1000"
+full_name: Windows::COM::Automation
+includes: []
+
+instance_methods: []
+
+name: Automation
+superclass: 

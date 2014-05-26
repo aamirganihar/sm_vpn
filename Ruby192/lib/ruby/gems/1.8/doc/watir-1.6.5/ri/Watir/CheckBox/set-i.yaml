@@ -1,0 +1,14 @@
+--- !ruby/object:RI::MethodDescription 
+aliases: []
+
+block_params: 
+comment: 
+- !ruby/struct:SM::Flow::P 
+  body: With no arguments supplied, sets the check box. If the optional value is supplied, the checkbox is set, when its true and cleared when its false
+- !ruby/struct:SM::Flow::VERB 
+  body: "  Raises UnknownObjectException if it's unable to locate an object\n        ObjectDisabledException if the object is disabled\n"
+full_name: Watir::CheckBox#set
+is_singleton: false
+name: set
+params: (value=true)
+visibility: public

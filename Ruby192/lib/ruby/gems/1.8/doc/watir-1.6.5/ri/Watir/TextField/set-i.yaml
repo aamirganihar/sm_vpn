@@ -1,0 +1,14 @@
+--- !ruby/object:RI::MethodDescription 
+aliases: []
+
+block_params: 
+comment: 
+- !ruby/struct:SM::Flow::P 
+  body: Sets the contents of the text box to the specified text value
+- !ruby/struct:SM::Flow::VERB 
+  body: "  Raises UnknownObjectException if the object cant be found\n  Raises ObjectDisabledException if the object is disabled\n  Raises ObjectReadOnlyException if the object is read only\n"
+full_name: Watir::TextField#set
+is_singleton: false
+name: set
+params: (value)
+visibility: public

@@ -1,0 +1,12 @@
+--- !ruby/object:RI::MethodDescription 
+aliases: []
+
+block_params: 
+comment: 
+- !ruby/struct:SM::Flow::P 
+  body: click the link, wait for the page to load, and asserts the target that was passed in during initialization
+full_name: Selenium::Link#go
+is_singleton: false
+name: go
+params: ()
+visibility: public

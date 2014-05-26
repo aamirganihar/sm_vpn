@@ -1,0 +1,14 @@
+--- !ruby/object:RI::MethodDescription 
+aliases: []
+
+block_params: 
+comment: 
+- !ruby/struct:SM::Flow::P 
+  body: Some environment variables have names you don't like. For example, $HOME might be annoying because of the uppercase. Also, if most of your program's environment variables have some prefix (see with_prefix) but you also want to use $HOME, you need a way to do that. You can satisfy both desires with
+- !ruby/struct:SM::Flow::VERB 
+  body: "     EnvironmentSource.new.with_prefix(&quot;my_&quot;).mapping(:home =&gt; &quot;HOME&quot;)\n"
+full_name: UserChoices::EnvironmentSource#mapping
+is_singleton: false
+name: mapping
+params: (map)
+visibility: public

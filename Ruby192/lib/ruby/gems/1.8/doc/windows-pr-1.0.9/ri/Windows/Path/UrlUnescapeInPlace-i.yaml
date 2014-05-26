@@ -1,0 +1,10 @@
+--- !ruby/object:RI::MethodDescription 
+aliases: []
+
+block_params: 
+comment: 
+full_name: Windows::Path#UrlUnescapeInPlace
+is_singleton: false
+name: UrlUnescapeInPlace
+params: (pszUrl, dwFlags)
+visibility: public

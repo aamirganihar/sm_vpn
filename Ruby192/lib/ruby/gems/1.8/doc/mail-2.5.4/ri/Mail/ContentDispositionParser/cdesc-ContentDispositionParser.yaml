@@ -1,0 +1,16 @@
+--- !ruby/object:RI::ClassDescription 
+attributes: []
+
+class_methods: []
+
+comment: 
+constants: []
+
+full_name: Mail::ContentDispositionParser
+includes: 
+- !ruby/object:RI::IncludedModule 
+  name: ContentDisposition
+instance_methods: []
+
+name: ContentDispositionParser
+superclass: Treetop::Runtime::CompiledParser

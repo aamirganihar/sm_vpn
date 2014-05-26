@@ -1,0 +1,106 @@
+--- !ruby/object:RI::ClassDescription 
+attributes: []
+
+class_methods: []
+
+comment: 
+- !ruby/struct:SM::Flow::H 
+  level: 1
+  text: Description
+- !ruby/struct:SM::Flow::P 
+  body: Watir::Simple is a simple wrapper around the Watir module. It provides a similar set of operations while simplifying them and removing as much syntax and test-framework context code as possible. The goal is to allow toolsmiths to write domain-language frameworks on top of Watir, using Watir::Simple as an easier, lightweight interface to the power of Watir.
+- !ruby/struct:SM::Flow::H 
+  level: 1
+  text: Note
+- !ruby/struct:SM::Flow::P 
+  body: Most action methods in Watir::Simple will automatically wait for the browser not to be busy before and after they perform the specified action.
+- !ruby/struct:SM::Flow::P 
+  body: "revision: $Revision$"
+constants: []
+
+full_name: Watir::Simple
+includes: []
+
+instance_methods: 
+- !ruby/object:RI::MethodSummary 
+  name: assert_image_with_id
+- !ruby/object:RI::MethodSummary 
+  name: assert_image_with_src
+- !ruby/object:RI::MethodSummary 
+  name: assert_text_in_body
+- !ruby/object:RI::MethodSummary 
+  name: assert_text_in_combobox_by_id
+- !ruby/object:RI::MethodSummary 
+  name: assert_text_in_combobox_by_name
+- !ruby/object:RI::MethodSummary 
+  name: assert_text_in_combobox_wrapper
+- !ruby/object:RI::MethodSummary 
+  name: assert_text_in_field
+- !ruby/object:RI::MethodSummary 
+  name: assert_text_not_in_body
+- !ruby/object:RI::MethodSummary 
+  name: click_button_with_caption
+- !ruby/object:RI::MethodSummary 
+  name: click_button_with_id
+- !ruby/object:RI::MethodSummary 
+  name: click_button_with_index
+- !ruby/object:RI::MethodSummary 
+  name: click_button_with_name
+- !ruby/object:RI::MethodSummary 
+  name: click_button_with_value
+- !ruby/object:RI::MethodSummary 
+  name: click_link_with_id
+- !ruby/object:RI::MethodSummary 
+  name: click_link_with_index
+- !ruby/object:RI::MethodSummary 
+  name: click_link_with_name
+- !ruby/object:RI::MethodSummary 
+  name: click_link_with_text
+- !ruby/object:RI::MethodSummary 
+  name: click_link_with_url
+- !ruby/object:RI::MethodSummary 
+  name: close_browser
+- !ruby/object:RI::MethodSummary 
+  name: combobox_default_selection
+- !ruby/object:RI::MethodSummary 
+  name: count_instances_of
+- !ruby/object:RI::MethodSummary 
+  name: enter_text_into_field_with_id
+- !ruby/object:RI::MethodSummary 
+  name: enter_text_into_field_with_index
+- !ruby/object:RI::MethodSummary 
+  name: enter_text_into_field_with_name
+- !ruby/object:RI::MethodSummary 
+  name: fill_text_field
+- !ruby/object:RI::MethodSummary 
+  name: fill_text_fields
+- !ruby/object:RI::MethodSummary 
+  name: go_back
+- !ruby/object:RI::MethodSummary 
+  name: go_forward
+- !ruby/object:RI::MethodSummary 
+  name: navigate_to
+- !ruby/object:RI::MethodSummary 
+  name: navigate_to_link_with_id
+- !ruby/object:RI::MethodSummary 
+  name: navigate_to_link_with_url
+- !ruby/object:RI::MethodSummary 
+  name: new_browser_at
+- !ruby/object:RI::MethodSummary 
+  name: select_from_combobox_with_id
+- !ruby/object:RI::MethodSummary 
+  name: select_from_combobox_with_index
+- !ruby/object:RI::MethodSummary 
+  name: select_from_combobox_with_name
+- !ruby/object:RI::MethodSummary 
+  name: select_radio_button_with_id
+- !ruby/object:RI::MethodSummary 
+  name: select_radio_button_with_name
+- !ruby/object:RI::MethodSummary 
+  name: select_radio_button_with_name
+- !ruby/object:RI::MethodSummary 
+  name: wait_before_and_after
+- !ruby/object:RI::MethodSummary 
+  name: wait_for_browser
+name: Simple
+superclass: 

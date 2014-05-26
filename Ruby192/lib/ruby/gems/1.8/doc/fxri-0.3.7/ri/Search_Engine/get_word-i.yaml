@@ -1,0 +1,10 @@
+--- !ruby/object:RI::MethodDescription 
+aliases: []
+
+block_params: 
+comment: 
+full_name: Search_Engine#get_word
+is_singleton: false
+name: get_word
+params: (str, index, delim=32)
+visibility: public

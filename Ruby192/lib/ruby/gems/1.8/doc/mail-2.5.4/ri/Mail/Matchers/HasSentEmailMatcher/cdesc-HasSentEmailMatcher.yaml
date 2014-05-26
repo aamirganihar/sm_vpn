@@ -1,0 +1,53 @@
+--- !ruby/object:RI::ClassDescription 
+attributes: []
+
+class_methods: 
+- !ruby/object:RI::MethodSummary 
+  name: new
+comment: 
+constants: []
+
+full_name: Mail::Matchers::HasSentEmailMatcher
+includes: []
+
+instance_methods: 
+- !ruby/object:RI::MethodSummary 
+  name: description
+- !ruby/object:RI::MethodSummary 
+  name: dump_deliveries
+- !ruby/object:RI::MethodSummary 
+  name: explain_expectations
+- !ruby/object:RI::MethodSummary 
+  name: failure_message
+- !ruby/object:RI::MethodSummary 
+  name: filter_matched_deliveries
+- !ruby/object:RI::MethodSummary 
+  name: from
+- !ruby/object:RI::MethodSummary 
+  name: matches?
+- !ruby/object:RI::MethodSummary 
+  name: matches_on_body?
+- !ruby/object:RI::MethodSummary 
+  name: matches_on_body_matcher?
+- !ruby/object:RI::MethodSummary 
+  name: matches_on_recipients?
+- !ruby/object:RI::MethodSummary 
+  name: matches_on_sender?
+- !ruby/object:RI::MethodSummary 
+  name: matches_on_subject?
+- !ruby/object:RI::MethodSummary 
+  name: matches_on_subject_matcher?
+- !ruby/object:RI::MethodSummary 
+  name: matching_body
+- !ruby/object:RI::MethodSummary 
+  name: matching_subject
+- !ruby/object:RI::MethodSummary 
+  name: negative_failure_message
+- !ruby/object:RI::MethodSummary 
+  name: to
+- !ruby/object:RI::MethodSummary 
+  name: with_body
+- !ruby/object:RI::MethodSummary 
+  name: with_subject
+name: HasSentEmailMatcher
+superclass: Object

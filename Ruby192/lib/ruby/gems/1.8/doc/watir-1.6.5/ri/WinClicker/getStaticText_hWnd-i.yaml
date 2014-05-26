@@ -1,0 +1,13 @@
+--- !ruby/object:RI::MethodDescription 
+aliases: 
+- !ruby/object:RI::AliasName 
+  name: get_static_text_hwnd
+block_params: 
+comment: 
+- !ruby/struct:SM::Flow::P 
+  body: Convenience method to return Static text for children of the window handle
+full_name: WinClicker#getStaticText_hWnd
+is_singleton: false
+name: getStaticText_hWnd
+params: (hWnd)
+visibility: public

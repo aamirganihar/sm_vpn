@@ -1,0 +1,12 @@
+--- !ruby/object:RI::MethodDescription 
+aliases: []
+
+block_params: 
+comment: 
+- !ruby/struct:SM::Flow::P 
+  body: Helper method to determine if you're on a 64 bit version of Windows
+full_name: Windows::Process#windows_64?
+is_singleton: false
+name: windows_64?
+params: ()
+visibility: public

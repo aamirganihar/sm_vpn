@@ -1,0 +1,62 @@
+--- !ruby/object:RI::ClassDescription 
+attributes: 
+- !ruby/object:RI::Attribute 
+  comment: 
+  name: settings
+  rw: RW
+class_methods: 
+- !ruby/object:RI::MethodSummary 
+  name: new
+comment: 
+- !ruby/struct:SM::Flow::H 
+  level: 2
+  text: Sending Email with SMTP
+- !ruby/struct:SM::Flow::P 
+  body: Mail allows you to send emails using SMTP. This is done by wrapping Net::SMTP in an easy to use manner.
+- !ruby/struct:SM::Flow::H 
+  level: 3
+  text: Sending via SMTP server on Localhost
+- !ruby/struct:SM::Flow::P 
+  body: Sending locally (to a postfix or sendmail server running on localhost) requires no special setup. Just to Mail.deliver &amp;block or message.deliver! and it will be sent in this method.
+- !ruby/struct:SM::Flow::H 
+  level: 3
+  text: Sending via MobileMe
+- !ruby/struct:SM::Flow::VERB 
+  body: "  Mail.defaults do\n    delivery_method :smtp, { :address              =&gt; &quot;smtp.me.com&quot;,\n                             :port                 =&gt; 587,\n                             :domain               =&gt; 'your.host.name',\n                             :user_name            =&gt; '&lt;username&gt;',\n                             :password             =&gt; '&lt;password&gt;',\n                             :authentication       =&gt; 'plain',\n                             :enable_starttls_auto =&gt; true  }\n  end\n"
+- !ruby/struct:SM::Flow::H 
+  level: 3
+  text: Sending via GMail
+- !ruby/struct:SM::Flow::VERB 
+  body: "  Mail.defaults do\n    delivery_method :smtp, { :address              =&gt; &quot;smtp.gmail.com&quot;,\n                             :port                 =&gt; 587,\n                             :domain               =&gt; 'your.host.name',\n                             :user_name            =&gt; '&lt;username&gt;',\n                             :password             =&gt; '&lt;password&gt;',\n                             :authentication       =&gt; 'plain',\n                             :enable_starttls_auto =&gt; true  }\n  end\n"
+- !ruby/struct:SM::Flow::H 
+  level: 3
+  text: Certificate verification
+- !ruby/struct:SM::Flow::P 
+  body: When using TLS, some mail servers provide certificates that are self-signed or whose names do not exactly match the hostname given in the address. OpenSSL will reject these by default. The best remedy is to use the correct hostname or update the certificate authorities trusted by your ruby. If that isn't possible, you can control this behavior with an :openssl_verify_mode setting. Its value may be either an OpenSSL verify mode constant (OpenSSL::SSL::VERIFY_NONE), or a string containing the name of an OpenSSL verify mode (none, peer, client_once, fail_if_no_peer_cert).
+- !ruby/struct:SM::Flow::H 
+  level: 3
+  text: Others
+- !ruby/struct:SM::Flow::P 
+  body: Feel free to send me other examples that were tricky
+- !ruby/struct:SM::Flow::H 
+  level: 3
+  text: Delivering the email
+- !ruby/struct:SM::Flow::P 
+  body: "Once you have the settings right, sending the email is done by:"
+- !ruby/struct:SM::Flow::VERB 
+  body: "  Mail.deliver do\n    to 'mikel@test.lindsaar.net'\n    from 'ada@test.lindsaar.net'\n    subject 'testing sendmail'\n    body 'testing sendmail'\n  end\n"
+- !ruby/struct:SM::Flow::P 
+  body: Or by calling deliver on a Mail message
+- !ruby/struct:SM::Flow::VERB 
+  body: "  mail = Mail.new do\n    to 'mikel@test.lindsaar.net'\n    from 'ada@test.lindsaar.net'\n    subject 'testing sendmail'\n    body 'testing sendmail'\n  end\n\n  mail.deliver!\n"
+constants: []
+
+full_name: Mail::SMTP
+includes: 
+- !ruby/object:RI::IncludedModule 
+  name: Mail::CheckDeliveryParams
+instance_methods: 
+- !ruby/object:RI::MethodSummary 
+  name: deliver!
+name: SMTP
+superclass: Object

@@ -1,0 +1,10 @@
+--- !ruby/object:RI::MethodDescription 
+aliases: []
+
+block_params: 
+comment: 
+full_name: Windows::MSVCRT::String#strtok_s
+is_singleton: false
+name: strtok_s
+params: (token, delimeter, context)
+visibility: public

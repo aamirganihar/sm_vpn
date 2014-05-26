@@ -1,0 +1,10 @@
+--- !ruby/object:RI::MethodDescription 
+aliases: []
+
+block_params: 
+comment: 
+full_name: Mail::RFC2822::LocalDotAtom0#local_dot_atom_text
+is_singleton: false
+name: local_dot_atom_text
+params: ()
+visibility: public

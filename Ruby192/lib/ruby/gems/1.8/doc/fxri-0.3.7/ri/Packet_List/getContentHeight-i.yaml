@@ -1,0 +1,12 @@
+--- !ruby/object:RI::MethodDescription 
+aliases: []
+
+block_params: 
+comment: 
+- !ruby/struct:SM::Flow::P 
+  body: This may be called when the item is currently beeing deleted. this method works only before or after the delete, therefore the mutex is necessary.
+full_name: Packet_List#getContentHeight
+is_singleton: false
+name: getContentHeight
+params: (*args)
+visibility: public

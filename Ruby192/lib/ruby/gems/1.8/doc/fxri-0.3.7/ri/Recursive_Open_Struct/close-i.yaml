@@ -1,0 +1,14 @@
+--- !ruby/object:RI::MethodDescription 
+aliases: []
+
+block_params: 
+comment: 
+- !ruby/struct:SM::Flow::P 
+  body: "After calling #close, no further modification of the configuration hierarchy is allowed. This is not as strict as #freeze, because you are still allowed to modify data."
+- !ruby/struct:SM::Flow::VERB 
+  body: " s = Recursive_Open_Struct.new\n s.name = &quot;Hugo&quot;\n s.close\n s.name = &quot;martinus&quot; # does still work\n s.age = 25 # raises NoMethodError\n"
+full_name: Recursive_Open_Struct#close
+is_singleton: false
+name: close
+params: ()
+visibility: public

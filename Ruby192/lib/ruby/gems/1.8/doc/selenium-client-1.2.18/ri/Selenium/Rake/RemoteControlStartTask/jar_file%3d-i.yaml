@@ -1,0 +1,10 @@
+--- !ruby/object:RI::MethodDescription 
+aliases: []
+
+block_params: 
+comment: 
+full_name: Selenium::Rake::RemoteControlStartTask#jar_file=
+is_singleton: false
+name: jar_file=
+params: (new_jar_file)
+visibility: public

@@ -1,0 +1,12 @@
+--- !ruby/object:RI::MethodDescription 
+aliases: []
+
+block_params: 
+comment: 
+- !ruby/struct:SM::Flow::P 
+  body: set the file location in the Choose file dialog in a new process will raise a Watir Exception if AutoIt is not correctly installed
+full_name: Watir::FileField#set
+is_singleton: false
+name: set
+params: (path_to_file)
+visibility: public

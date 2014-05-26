@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+<!DOCTYPE html 
+     PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+     "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html>
+<head>
+  <title>new (Mail::ContentTransferEncodingField)</title>
+  <meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" />
+  <link rel="stylesheet" href="../../.././rdoc-style.css" type="text/css" media="screen" />
+</head>
+<body class="standalone-code">
+  <pre><span class="ruby-comment cmt"># File lib/mail/fields/content_transfer_encoding_field.rb, line 11</span>
+    <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">initialize</span>(<span class="ruby-identifier">value</span> = <span class="ruby-keyword kw">nil</span>, <span class="ruby-identifier">charset</span> = <span class="ruby-value str">'utf-8'</span>)
+      <span class="ruby-keyword kw">self</span>.<span class="ruby-identifier">charset</span> = <span class="ruby-identifier">charset</span>
+      <span class="ruby-identifier">value</span> = <span class="ruby-value str">'7bit'</span> <span class="ruby-keyword kw">if</span> <span class="ruby-identifier">value</span>.<span class="ruby-identifier">to_s</span> <span class="ruby-operator">=~</span> <span class="ruby-regexp re">/7-?bits?/i</span>
+      <span class="ruby-identifier">value</span> = <span class="ruby-value str">'8bit'</span> <span class="ruby-keyword kw">if</span> <span class="ruby-identifier">value</span>.<span class="ruby-identifier">to_s</span> <span class="ruby-operator">=~</span> <span class="ruby-regexp re">/8-?bits?/i</span>
+      <span class="ruby-keyword kw">super</span>(<span class="ruby-constant">CAPITALIZED_FIELD</span>, <span class="ruby-identifier">strip_field</span>(<span class="ruby-constant">FIELD_NAME</span>, <span class="ruby-identifier">value</span>), <span class="ruby-identifier">charset</span>)
+      <span class="ruby-keyword kw">self</span>.<span class="ruby-identifier">parse</span>
+      <span class="ruby-keyword kw">self</span>
+    <span class="ruby-keyword kw">end</span></pre>
+</body>
+</html>

@@ -1,0 +1,12 @@
+--- !ruby/object:RI::MethodDescription 
+aliases: []
+
+block_params: 
+comment: 
+- !ruby/struct:SM::Flow::P 
+  body: Indents the string <tt>n</tt> spaces. Taken from extensions (extensions.rubyforge.org), except that this version doesn't take a negative argument.
+full_name: String#indent_by
+is_singleton: false
+name: indent_by
+params: (n)
+visibility: public

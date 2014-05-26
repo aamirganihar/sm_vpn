@@ -1,0 +1,12 @@
+--- !ruby/object:RI::MethodDescription 
+aliases: []
+
+block_params: "@rows[i]"
+comment: 
+- !ruby/struct:SM::Flow::P 
+  body: iterates through all the rows in the table body
+full_name: Watir::TableBody#each
+is_singleton: false
+name: each
+params: () {|@rows[i]| ...}
+visibility: public

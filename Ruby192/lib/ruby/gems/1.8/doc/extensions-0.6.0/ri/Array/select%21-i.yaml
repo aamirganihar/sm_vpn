@@ -1,0 +1,12 @@
+--- !ruby/object:RI::MethodDescription 
+aliases: []
+
+block_params: (e)
+comment: 
+- !ruby/struct:SM::Flow::P 
+  body: "In-place version of Array#select. (Counterpart to, and opposite of, the built-in #reject!)"
+full_name: Array#select!
+is_singleton: false
+name: select!
+params: () {|e| ...}
+visibility: public

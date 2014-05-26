@@ -1,0 +1,22 @@
+--- !ruby/object:RI::MethodDescription 
+aliases: []
+
+block_params: 
+comment: 
+- !ruby/struct:SM::Flow::P 
+  body: "Description:"
+- !ruby/struct:SM::Flow::VERB 
+  body: "  Checks if the provided text matches with the contents of text field. Text can be a string or regular expression.\n"
+- !ruby/struct:SM::Flow::P 
+  body: "Input:"
+- !ruby/struct:SM::Flow::VERB 
+  body: "  - containsThis - Text to verify.\n"
+- !ruby/struct:SM::Flow::P 
+  body: "Output:"
+- !ruby/struct:SM::Flow::VERB 
+  body: "  True if provided text matches with the contents of text field, false otherwise.\n"
+full_name: FireWatir::TextField#verify_contains
+is_singleton: false
+name: verify_contains
+params: ( containsThis )
+visibility: public

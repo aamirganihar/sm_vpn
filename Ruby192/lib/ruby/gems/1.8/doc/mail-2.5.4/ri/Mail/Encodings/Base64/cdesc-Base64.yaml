@@ -1,0 +1,29 @@
+--- !ruby/object:RI::ClassDescription 
+attributes: []
+
+class_methods: 
+- !ruby/object:RI::MethodSummary 
+  name: can_encode?
+- !ruby/object:RI::MethodSummary 
+  name: cost
+- !ruby/object:RI::MethodSummary 
+  name: decode
+- !ruby/object:RI::MethodSummary 
+  name: encode
+comment: 
+constants: 
+- !ruby/object:RI::Constant 
+  comment: 
+  name: NAME
+  value: "'base64'"
+- !ruby/object:RI::Constant 
+  comment: 
+  name: PRIORITY
+  value: "3"
+full_name: Mail::Encodings::Base64
+includes: []
+
+instance_methods: []
+
+name: Base64
+superclass: SevenBit

@@ -1,0 +1,10 @@
+--- !ruby/object:RI::MethodDescription 
+aliases: []
+
+block_params: 
+comment: 
+full_name: FoxDisplayer#init_text
+is_singleton: false
+name: init_text
+params: ()
+visibility: public

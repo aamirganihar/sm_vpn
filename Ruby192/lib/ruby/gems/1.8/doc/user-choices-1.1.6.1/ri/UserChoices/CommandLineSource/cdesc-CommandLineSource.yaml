@@ -1,0 +1,33 @@
+--- !ruby/object:RI::ClassDescription 
+attributes: []
+
+class_methods: 
+- !ruby/object:RI::MethodSummary 
+  name: new
+comment: 
+- !ruby/struct:SM::Flow::P 
+  body: Treat the command line (including the arguments) as a source of choices.
+constants: []
+
+full_name: UserChoices::CommandLineSource
+includes: []
+
+instance_methods: 
+- !ruby/object:RI::MethodSummary 
+  name: add_help_line
+- !ruby/object:RI::MethodSummary 
+  name: help
+- !ruby/object:RI::MethodSummary 
+  name: usage
+- !ruby/object:RI::MethodSummary 
+  name: uses_arg
+- !ruby/object:RI::MethodSummary 
+  name: uses_arglist
+- !ruby/object:RI::MethodSummary 
+  name: uses_option
+- !ruby/object:RI::MethodSummary 
+  name: uses_optional_arg
+- !ruby/object:RI::MethodSummary 
+  name: uses_switch
+name: CommandLineSource
+superclass: AbstractSource

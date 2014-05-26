@@ -1,0 +1,55 @@
+--- !ruby/object:RI::ClassDescription 
+attributes: 
+- !ruby/object:RI::Attribute 
+  comment: 
+  - !ruby/struct:SM::Flow::P 
+    body: The name of the DLL that exports the API function
+  name: dll_name
+  rw: R
+- !ruby/object:RI::Attribute 
+  comment: 
+  - !ruby/struct:SM::Flow::P 
+    body: The name of the actual function that is returned by the constructor.
+  - !ruby/struct:SM::Flow::VERB 
+    body: "   For example, if you passed 'GetUserName' to the constructor, then the\n   effective function name would be either 'GetUserNameA' or 'GetUserNameW'.\n"
+  name: effective_function_name
+  rw: R
+- !ruby/object:RI::Attribute 
+  comment: 
+  - !ruby/struct:SM::Flow::P 
+    body: The name of the function passed to the constructor
+  name: function_name
+  rw: R
+- !ruby/object:RI::Attribute 
+  comment: 
+  - !ruby/struct:SM::Flow::P 
+    body: The prototype, returned as an array of characters
+  name: prototype
+  rw: R
+- !ruby/object:RI::Attribute 
+  comment: 
+  - !ruby/struct:SM::Flow::P 
+    body: The return type, returned as a single character, S, P, L, I, V or B
+  name: return_type
+  rw: R
+class_methods: 
+- !ruby/object:RI::MethodSummary 
+  name: new
+comment: 
+- !ruby/struct:SM::Flow::P 
+  body: The API class encapsulates a function pointer to Windows API function
+constants: 
+- !ruby/object:RI::Constant 
+  comment: 
+  - !ruby/struct:SM::Flow::P 
+    body: The version of the win32-api library
+  name: VERSION
+  value: 1.4.5
+full_name: Win32::API
+includes: []
+
+instance_methods: 
+- !ruby/object:RI::MethodSummary 
+  name: call
+name: API
+superclass: Object

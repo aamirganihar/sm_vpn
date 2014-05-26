@@ -1,0 +1,38 @@
+--- !ruby/object:RI::ClassDescription 
+attributes: 
+- !ruby/object:RI::Attribute 
+  comment: 
+  name: order
+  rw: RW
+- !ruby/object:RI::Attribute 
+  comment: 
+  name: test_methods
+  rw: RW
+class_methods: 
+- !ruby/object:RI::MethodSummary 
+  name: default_order=
+- !ruby/object:RI::MethodSummary 
+  name: execute
+- !ruby/object:RI::MethodSummary 
+  name: method_added
+- !ruby/object:RI::MethodSummary 
+  name: new
+- !ruby/object:RI::MethodSummary 
+  name: order
+- !ruby/object:RI::MethodSummary 
+  name: sorted_test_methods
+- !ruby/object:RI::MethodSummary 
+  name: suite
+- !ruby/object:RI::MethodSummary 
+  name: test_methods
+comment: 
+constants: []
+
+full_name: Watir::TestCase
+includes: 
+- !ruby/object:RI::IncludedModule 
+  name: Watir::Assertions
+instance_methods: []
+
+name: TestCase
+superclass: Test::Unit::TestCase

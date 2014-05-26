@@ -1,0 +1,10 @@
+--- !ruby/object:RI::MethodDescription 
+aliases: []
+
+block_params: 
+comment: 
+full_name: Mail::Encodings::get_name
+is_singleton: true
+name: get_name
+params: (enc)
+visibility: public

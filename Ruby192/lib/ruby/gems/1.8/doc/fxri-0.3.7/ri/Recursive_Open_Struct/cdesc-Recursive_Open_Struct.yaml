@@ -1,0 +1,47 @@
+--- !ruby/object:RI::ClassDescription 
+attributes: []
+
+class_methods: 
+- !ruby/object:RI::MethodSummary 
+  name: new
+comment: 
+- !ruby/struct:SM::Flow::P 
+  body: Recursive_Open_Struct provides a convenient interface to a hierarchy of configuration parameters. You do not need to define the accessors, they are created automatically on demand.
+- !ruby/struct:SM::Flow::P 
+  body: "Have a look at this example:"
+- !ruby/struct:SM::Flow::VERB 
+  body: "   ac = Recursive_Open_Struct.new\n   ac.window.name = &quot;SuperDuper&quot;\n   ac.app.version = &quot;2.1.3&quot;\n   ac.this.is.automatically.created = &quot;blabla&quot;\n"
+- !ruby/struct:SM::Flow::P 
+  body: "After you have created all of your configuration parameters, to prevent typos when using the parameters, the structure can be closed:"
+- !ruby/struct:SM::Flow::VERB 
+  body: "   ac.close\n"
+- !ruby/struct:SM::Flow::P 
+  body: After closing,
+- !ruby/struct:SM::Flow::VERB 
+  body: "   ac.widnow.name = &quot;UberSuperDuper&quot;\n"
+- !ruby/struct:SM::Flow::P 
+  body: You get the usual NoMethodError, because 'widnow' does not exist.
+constants: []
+
+full_name: Recursive_Open_Struct
+includes: []
+
+instance_methods: 
+- !ruby/object:RI::MethodSummary 
+  name: "[]"
+- !ruby/object:RI::MethodSummary 
+  name: "[]="
+- !ruby/object:RI::MethodSummary 
+  name: attrs
+- !ruby/object:RI::MethodSummary 
+  name: close
+- !ruby/object:RI::MethodSummary 
+  name: do_set_open_status
+- !ruby/object:RI::MethodSummary 
+  name: each
+- !ruby/object:RI::MethodSummary 
+  name: open?
+- !ruby/object:RI::MethodSummary 
+  name: re_open
+name: Recursive_Open_Struct
+superclass: Object

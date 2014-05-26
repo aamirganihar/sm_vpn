@@ -1,0 +1,12 @@
+--- !ruby/object:RI::MethodDescription 
+aliases: []
+
+block_params: 
+comment: 
+- !ruby/struct:SM::Flow::P 
+  body: Overrides standard &quot;open&quot; method with @selenium.open
+full_name: SeleniumHelper#open
+is_singleton: false
+name: open
+params: (addr)
+visibility: public

@@ -1,0 +1,13 @@
+--- !ruby/object:RI::MethodDescription 
+aliases: 
+- !ruby/object:RI::AliasName 
+  name: get_static_text_from_window
+block_params: 
+comment: 
+- !ruby/struct:SM::Flow::P 
+  body: Return text as an array from child controls of the window given as either a handle or with the given caption that have a class type of Static
+full_name: WinClicker#getStaticTextFromWindow
+is_singleton: false
+name: getStaticTextFromWindow
+params: ( windowCaption , hWnd)
+visibility: public

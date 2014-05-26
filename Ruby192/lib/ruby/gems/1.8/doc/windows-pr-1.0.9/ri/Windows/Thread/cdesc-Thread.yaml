@@ -1,0 +1,86 @@
+--- !ruby/object:RI::ClassDescription 
+attributes: []
+
+class_methods: []
+
+comment: 
+constants: 
+- !ruby/object:RI::Constant 
+  comment: 
+  name: SYNCHRONIZE
+  value: "0x00100000"
+- !ruby/object:RI::Constant 
+  comment: 
+  name: THREAD_ALL_ACCESS
+  value: "0x1F03FF"
+- !ruby/object:RI::Constant 
+  comment: 
+  name: THREAD_DIRECT_IMPERSONATION
+  value: "0x0200"
+- !ruby/object:RI::Constant 
+  comment: 
+  name: THREAD_GET_CONTEXT
+  value: "0x0008"
+- !ruby/object:RI::Constant 
+  comment: 
+  name: THREAD_IMPERSONATE
+  value: "0x0100"
+- !ruby/object:RI::Constant 
+  comment: 
+  name: THREAD_QUERY_INFORMATION
+  value: "0x0040"
+- !ruby/object:RI::Constant 
+  comment: 
+  name: THREAD_SET_CONTEXT
+  value: "0x0010"
+- !ruby/object:RI::Constant 
+  comment: 
+  name: THREAD_SET_INFORMATION
+  value: "0x0020"
+- !ruby/object:RI::Constant 
+  comment: 
+  name: THREAD_SET_THREAD_TOKEN
+  value: "0x0080"
+- !ruby/object:RI::Constant 
+  comment: 
+  name: THREAD_SUSPEND_RESUME
+  value: "0x0002"
+- !ruby/object:RI::Constant 
+  comment: 
+  name: THREAD_TERMINATE
+  value: "0x0001"
+- !ruby/object:RI::Constant 
+  comment: 
+  name: THREAD_PRIORITY_ABOVE_NORMAL
+  value: "1"
+- !ruby/object:RI::Constant 
+  comment: 
+  name: THREAD_PRIORITY_BELOW_NORMAL
+  value: "-1"
+- !ruby/object:RI::Constant 
+  comment: 
+  name: THREAD_PRIORITY_HIGHEST
+  value: "2"
+- !ruby/object:RI::Constant 
+  comment: 
+  name: THREAD_PRIORITY_IDLE
+  value: "-15"
+- !ruby/object:RI::Constant 
+  comment: 
+  name: THREAD_PRIORITY_LOWEST
+  value: "-2"
+- !ruby/object:RI::Constant 
+  comment: 
+  name: THREAD_PRIORITY_NORMAL
+  value: "0"
+- !ruby/object:RI::Constant 
+  comment: 
+  name: THREAD_PRIORITY_TIME_CRITICAL
+  value: "15"
+full_name: Windows::Thread
+includes: []
+
+instance_methods: []
+
+name: Thread
+superclass: 

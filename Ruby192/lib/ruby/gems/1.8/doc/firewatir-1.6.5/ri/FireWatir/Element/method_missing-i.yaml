@@ -1,0 +1,18 @@
+--- !ruby/object:RI::MethodDescription 
+aliases: []
+
+block_params: 
+comment: 
+- !ruby/struct:SM::Flow::P 
+  body: "Description:"
+- !ruby/struct:SM::Flow::VERB 
+  body: "  Traps all the function calls for an element that is not defined and fires them again\n  as it is to the jssh. This can be used in case the element supports properties or methods\n  that are not defined in the corresponding element class or in the base class(Element).\n"
+- !ruby/struct:SM::Flow::P 
+  body: "Input:"
+- !ruby/struct:SM::Flow::VERB 
+  body: "  methodId - Id of the method that is called.\n  *args - arguments sent to the methods.\n"
+full_name: FireWatir::Element#method_missing
+is_singleton: false
+name: method_missing
+params: (methId, *args)
+visibility: public

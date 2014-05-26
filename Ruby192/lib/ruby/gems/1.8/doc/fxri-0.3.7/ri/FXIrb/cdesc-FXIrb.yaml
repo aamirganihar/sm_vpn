@@ -1,0 +1,37 @@
+--- !ruby/object:RI::ClassDescription 
+attributes: 
+- !ruby/object:RI::Attribute 
+  comment: 
+  name: input
+  rw: R
+- !ruby/object:RI::Attribute 
+  comment: 
+  name: multiline
+  rw: RW
+class_methods: 
+- !ruby/object:RI::MethodSummary 
+  name: init
+- !ruby/object:RI::MethodSummary 
+  name: new
+comment: 
+constants: []
+
+full_name: FXIrb
+includes: 
+- !ruby/object:RI::IncludedModule 
+  name: Singleton
+- !ruby/object:RI::IncludedModule 
+  name: Responder
+instance_methods: 
+- !ruby/object:RI::MethodSummary 
+  name: create
+- !ruby/object:RI::MethodSummary 
+  name: get_line
+- !ruby/object:RI::MethodSummary 
+  name: on_exit
+- !ruby/object:RI::MethodSummary 
+  name: send_command
+- !ruby/object:RI::MethodSummary 
+  name: write
+name: FXIrb
+superclass: FXText

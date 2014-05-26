@@ -1,0 +1,12 @@
+--- !ruby/object:RI::MethodDescription 
+aliases: []
+
+block_params: 
+comment: 
+- !ruby/struct:SM::Flow::P 
+  body: This method checks the currently displayed page for http errors, 404, 500 etc It gets called internally by the wait method, so a user does not need to call it explicitly
+full_name: Watir::PageContainer#check_for_http_error
+is_singleton: false
+name: check_for_http_error
+params: ()
+visibility: public

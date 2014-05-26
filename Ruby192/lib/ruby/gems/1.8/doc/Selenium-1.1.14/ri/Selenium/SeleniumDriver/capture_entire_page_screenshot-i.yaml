@@ -1,0 +1,14 @@
+--- !ruby/object:RI::MethodDescription 
+aliases: []
+
+block_params: 
+comment: 
+- !ruby/struct:SM::Flow::P 
+  body: Saves the entire contents of the current window canvas to a PNG file. Currently this only works in Mozilla and when running in chrome mode. Contrast this with the captureScreenshot command, which captures the contents of the OS viewport (i.e. whatever is currently being displayed on the monitor), and is implemented in the RC only. Implementation mostly borrowed from the Screengrab! Firefox extension. Please see http://www.screengrab.org for details.
+- !ruby/struct:SM::Flow::P 
+  body: "'filename' is the path to the file to persist the screenshot as. No filename extension will be appended by default. Directories will not be created if they do not exist, and an exception will be thrown, possibly by native code."
+full_name: Selenium::SeleniumDriver#capture_entire_page_screenshot
+is_singleton: false
+name: capture_entire_page_screenshot
+params: (filename)
+visibility: public

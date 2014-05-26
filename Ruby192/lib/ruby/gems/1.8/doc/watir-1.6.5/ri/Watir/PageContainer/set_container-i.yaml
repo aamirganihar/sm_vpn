@@ -1,0 +1,10 @@
+--- !ruby/object:RI::MethodDescription 
+aliases: []
+
+block_params: 
+comment: 
+full_name: Watir::PageContainer#set_container
+is_singleton: false
+name: set_container
+params: (container)
+visibility: public

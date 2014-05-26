@@ -1,0 +1,12 @@
+--- !ruby/object:RI::MethodDescription 
+aliases: []
+
+block_params: 
+comment: 
+- !ruby/struct:SM::Flow::P 
+  body: "Skips the deletion of this message. All other messages flagged for delete still will be deleted at session close (i.e. when #find exits). Only has an effect if you're using #find_and_delete or #find with :delete_after_find set to true."
+full_name: Mail::Message#skip_deletion
+is_singleton: false
+name: skip_deletion
+params: ()
+visibility: public

@@ -1,0 +1,12 @@
+--- !ruby/object:RI::MethodDescription 
+aliases: []
+
+block_params: 
+comment: 
+- !ruby/struct:SM::Flow::P 
+  body: This method returns the table as a 2 dimensional array. Don't expect too much if there are nested tables, colspan etc. Raises an UnknownObjectException if the table doesn't exist. http://www.w3.org/TR/html4/struct/tables.html
+full_name: Watir::Table#to_a
+is_singleton: false
+name: to_a
+params: ()
+visibility: public

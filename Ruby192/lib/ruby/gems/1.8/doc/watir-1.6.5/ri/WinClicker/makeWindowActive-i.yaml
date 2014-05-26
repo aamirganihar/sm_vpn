@@ -1,0 +1,13 @@
+--- !ruby/object:RI::MethodDescription 
+aliases: 
+- !ruby/object:RI::AliasName 
+  name: make_window_active
+block_params: 
+comment: 
+- !ruby/struct:SM::Flow::P 
+  body: Call SwitchToThisWindow win32api which will The SwitchToThisWindow function is called to switch focus to a specified window and bring it to the foreground
+full_name: WinClicker#makeWindowActive
+is_singleton: false
+name: makeWindowActive
+params: (hWnd)
+visibility: public

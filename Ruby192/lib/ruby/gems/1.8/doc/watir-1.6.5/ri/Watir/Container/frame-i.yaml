@@ -1,0 +1,22 @@
+--- !ruby/object:RI::MethodDescription 
+aliases: []
+
+block_params: 
+comment: 
+- !ruby/struct:SM::Flow::P 
+  body: this method is the main way of accessing a frame
+- !ruby/struct:SM::Flow::VERB 
+  body: "  *  how   - how the frame is accessed. This can also just be the name of the frame.\n  *  what  - what we want to access.\n"
+- !ruby/struct:SM::Flow::P 
+  body: Valid values for 'how' are listed in the Watir Wiki - http://wiki.openqa.org/display/WTR/Methods+supported+by+Element
+- !ruby/struct:SM::Flow::P 
+  body: returns a Frame object
+- !ruby/struct:SM::Flow::P 
+  body: "Typical usage:"
+- !ruby/struct:SM::Flow::VERB 
+  body: "  ie.frame(:index, 1)\n  ie.frame(:name, 'main_frame')\n  ie.frame('main_frame')        # in this case, just a name is supplied\n"
+full_name: Watir::Container#frame
+is_singleton: false
+name: frame
+params: (how, what=nil)
+visibility: public

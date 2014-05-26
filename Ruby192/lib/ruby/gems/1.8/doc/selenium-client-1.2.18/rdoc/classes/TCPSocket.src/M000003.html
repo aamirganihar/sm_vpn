@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+<!DOCTYPE html 
+     PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+     "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html>
+<head>
+  <title>listening_service? (TCPSocket)</title>
+  <meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" />
+  <link rel="stylesheet" href="../.././rdoc-style.css" type="text/css" media="screen" />
+</head>
+<body class="standalone-code">
+  <pre>    <span class="ruby-comment cmt"># File lib/tcp_socket_extension.rb, line 14</span>
+14:   <span class="ruby-keyword kw">def</span> <span class="ruby-keyword kw">self</span>.<span class="ruby-identifier">listening_service?</span>(<span class="ruby-identifier">options</span>)
+15:     <span class="ruby-constant">Timeout</span><span class="ruby-operator">::</span><span class="ruby-identifier">timeout</span>(<span class="ruby-identifier">options</span>[<span class="ruby-identifier">:timeout</span>] <span class="ruby-operator">||</span> <span class="ruby-value">20</span>) <span class="ruby-keyword kw">do</span>
+16:       <span class="ruby-keyword kw">begin</span>
+17:         <span class="ruby-identifier">socket</span> = <span class="ruby-constant">TCPSocket</span>.<span class="ruby-identifier">new</span>(<span class="ruby-identifier">options</span>[<span class="ruby-identifier">:host</span>], <span class="ruby-identifier">options</span>[<span class="ruby-identifier">:port</span>])
+18:         <span class="ruby-identifier">socket</span>.<span class="ruby-identifier">close</span> <span class="ruby-keyword kw">unless</span> <span class="ruby-identifier">socket</span>.<span class="ruby-identifier">nil?</span>
+19:         <span class="ruby-keyword kw">true</span>
+20:       <span class="ruby-keyword kw">rescue</span> <span class="ruby-constant">Errno</span><span class="ruby-operator">::</span><span class="ruby-constant">ECONNREFUSED</span>, 
+21:              <span class="ruby-constant">Errno</span><span class="ruby-operator">::</span><span class="ruby-constant">EBADF</span>           <span class="ruby-comment cmt"># Windows</span>
+22:         <span class="ruby-keyword kw">false</span>
+23:       <span class="ruby-keyword kw">end</span>
+24:     <span class="ruby-keyword kw">end</span>
+25:   <span class="ruby-keyword kw">end</span></pre>
+</body>
+</html>

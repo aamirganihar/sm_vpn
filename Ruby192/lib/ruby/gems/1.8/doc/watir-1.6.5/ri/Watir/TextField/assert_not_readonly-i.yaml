@@ -1,0 +1,10 @@
+--- !ruby/object:RI::MethodDescription 
+aliases: []
+
+block_params: 
+comment: 
+full_name: Watir::TextField#assert_not_readonly
+is_singleton: false
+name: assert_not_readonly
+params: ()
+visibility: public

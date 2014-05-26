@@ -1,0 +1,22 @@
+--- !ruby/object:RI::MethodDescription 
+aliases: []
+
+block_params: 
+comment: 
+- !ruby/struct:SM::Flow::P 
+  body: "Description:"
+- !ruby/struct:SM::Flow::VERB 
+  body: " Reads the javascript execution result from the jssh socket.\n"
+- !ruby/struct:SM::Flow::P 
+  body: "Input:"
+- !ruby/struct:SM::Flow::VERB 
+  body: "    - socket - It is the jssh socket, the  only point of communication between the browser and firewatir scripts.\n"
+- !ruby/struct:SM::Flow::P 
+  body: "Output:"
+- !ruby/struct:SM::Flow::VERB 
+  body: "    The javascript execution result as string.\n"
+full_name: JsshSocket#read_socket
+is_singleton: false
+name: read_socket
+params: (socket = jssh_socket)
+visibility: public

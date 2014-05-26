@@ -1,0 +1,61 @@
+--- !ruby/object:RI::ClassDescription 
+attributes: []
+
+class_methods: []
+
+comment: 
+- !ruby/struct:SM::Flow::P 
+  body: Note, unless otherwise noted, all methods defined in S4tUtils are both module functions and instance functions.
+constants: 
+- !ruby/object:RI::Constant 
+  comment: 
+  name: Version
+  value: "'1.0.4'"
+full_name: S4tUtils
+includes: []
+
+instance_methods: 
+- !ruby/object:RI::MethodSummary 
+  name: ask
+- !ruby/object:RI::MethodSummary 
+  name: capturing_stderr
+- !ruby/object:RI::MethodSummary 
+  name: capturing_stdout
+- !ruby/object:RI::MethodSummary 
+  name: erasing_local_config_file
+- !ruby/object:RI::MethodSummary 
+  name: friendly_list
+- !ruby/object:RI::MethodSummary 
+  name: pi
+- !ruby/object:RI::MethodSummary 
+  name: prog1
+- !ruby/object:RI::MethodSummary 
+  name: set_script_lib_path
+- !ruby/object:RI::MethodSummary 
+  name: set_test_paths
+- !ruby/object:RI::MethodSummary 
+  name: symbol_safe_name
+- !ruby/object:RI::MethodSummary 
+  name: user_claims
+- !ruby/object:RI::MethodSummary 
+  name: user_denies
+- !ruby/object:RI::MethodSummary 
+  name: user_disputes
+- !ruby/object:RI::MethodSummary 
+  name: user_is_bewildered
+- !ruby/object:RI::MethodSummary 
+  name: with_command_args
+- !ruby/object:RI::MethodSummary 
+  name: with_environment_vars
+- !ruby/object:RI::MethodSummary 
+  name: with_home_right_here
+- !ruby/object:RI::MethodSummary 
+  name: with_local_config_file
+- !ruby/object:RI::MethodSummary 
+  name: with_pleasant_exceptions
+- !ruby/object:RI::MethodSummary 
+  name: with_stdin
+- !ruby/object:RI::MethodSummary 
+  name: without_pleasant_exceptions
+name: S4tUtils
+superclass: 

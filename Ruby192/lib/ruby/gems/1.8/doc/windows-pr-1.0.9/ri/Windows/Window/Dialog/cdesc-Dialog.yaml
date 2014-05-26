@@ -1,0 +1,169 @@
+--- !ruby/object:RI::ClassDescription 
+attributes: []
+
+class_methods: []
+
+comment: 
+constants: 
+- !ruby/object:RI::Constant 
+  comment: 
+  name: MB_OK
+  value: "0x00000000"
+- !ruby/object:RI::Constant 
+  comment: 
+  name: MB_OKCANCEL
+  value: "0x00000001"
+- !ruby/object:RI::Constant 
+  comment: 
+  name: MB_ABORTRETRYIGNORE
+  value: "0x00000002"
+- !ruby/object:RI::Constant 
+  comment: 
+  name: MB_YESNOCANCEL
+  value: "0x00000003"
+- !ruby/object:RI::Constant 
+  comment: 
+  name: MB_YESNO
+  value: "0x00000004"
+- !ruby/object:RI::Constant 
+  comment: 
+  name: MB_RETRYCANCEL
+  value: "0x00000005"
+- !ruby/object:RI::Constant 
+  comment: 
+  name: MB_CANCELTRYCONTINUE
+  value: "0x00000006"
+- !ruby/object:RI::Constant 
+  comment: 
+  name: MB_ICONHAND
+  value: "0x00000010"
+- !ruby/object:RI::Constant 
+  comment: 
+  name: MB_ICONQUESTION
+  value: "0x00000020"
+- !ruby/object:RI::Constant 
+  comment: 
+  name: MB_ICONEXCLAMATION
+  value: "0x00000030"
+- !ruby/object:RI::Constant 
+  comment: 
+  name: MB_ICONASTERISK
+  value: "0x00000040"
+- !ruby/object:RI::Constant 
+  comment: 
+  name: MB_USERICON
+  value: "0x00000080"
+- !ruby/object:RI::Constant 
+  comment: 
+  name: MB_ICONWARNING
+  value: MB_ICONEXCLAMATION
+- !ruby/object:RI::Constant 
+  comment: 
+  name: MB_ICONERROR
+  value: MB_ICONHAND
+- !ruby/object:RI::Constant 
+  comment: 
+  name: MB_ICONINFORMATION
+  value: MB_ICONASTERISK
+- !ruby/object:RI::Constant 
+  comment: 
+  name: MB_ICONSTOP
+  value: MB_ICONHAND
+- !ruby/object:RI::Constant 
+  comment: 
+  name: MB_DEFBUTTON1
+  value: "0x00000000"
+- !ruby/object:RI::Constant 
+  comment: 
+  name: MB_DEFBUTTON2
+  value: "0x00000100"
+- !ruby/object:RI::Constant 
+  comment: 
+  name: MB_DEFBUTTON3
+  value: "0x00000200"
+- !ruby/object:RI::Constant 
+  comment: 
+  name: MB_DEFBUTTON4
+  value: "0x00000300"
+- !ruby/object:RI::Constant 
+  comment: 
+  name: MB_APPLMODAL
+  value: "0x00000000"
+- !ruby/object:RI::Constant 
+  comment: 
+  name: MB_SYSTEMMODAL
+  value: "0x00001000"
+- !ruby/object:RI::Constant 
+  comment: 
+  name: MB_TASKMODAL
+  value: "0x00002000"
+- !ruby/object:RI::Constant 
+  comment: 
+  name: MB_HELP
+  value: "0x00004000"
+- !ruby/object:RI::Constant 
+  comment: 
+  name: MB_NOFOCUS
+  value: "0x00008000"
+- !ruby/object:RI::Constant 
+  comment: 
+  name: MB_SETFOREGROUND
+  value: "0x00010000"
+- !ruby/object:RI::Constant 
+  comment: 
+  name: MB_DEFAULT_DESKTOP_ONLY
+  value: "0x00020000"
+- !ruby/object:RI::Constant 
+  comment: 
+  name: MB_TOPMOST
+  value: "0x00040000"
+- !ruby/object:RI::Constant 
+  comment: 
+  name: MB_RIGHT
+  value: "0x00080000"
+- !ruby/object:RI::Constant 
+  comment: 
+  name: MB_RTLREADING
+  value: "0x00100000"
+- !ruby/object:RI::Constant 
+  comment: 
+  name: MB_SERVICE_NOTIFICATION
+  value: "0x00200000"
+- !ruby/object:RI::Constant 
+  comment: 
+  name: MB_SERVICE_NOTIFICATION_NT3X
+  value: "0x00040000"
+- !ruby/object:RI::Constant 
+  comment: 
+  name: MB_TYPEMASK
+  value: "0x0000000F"
+- !ruby/object:RI::Constant 
+  comment: 
+  name: MB_ICONMASK
+  value: "0x000000F0"
+- !ruby/object:RI::Constant 
+  comment: 
+  name: MB_DEFMASK
+  value: "0x00000F00"
+- !ruby/object:RI::Constant 
+  comment: 
+  name: MB_MODEMASK
+  value: "0x00003000"
+- !ruby/object:RI::Constant 
+  comment: 
+  name: MB_MISCMASK
+  value: "0x0000C000"
+full_name: Windows::Window::Dialog
+includes: []
+
+instance_methods: 
+- !ruby/object:RI::MethodSummary 
+  name: CreateDialog
+- !ruby/object:RI::MethodSummary 
+  name: CreateDialogIndirect
+- !ruby/object:RI::MethodSummary 
+  name: DialogBox
+- !ruby/object:RI::MethodSummary 
+  name: DialogBoxIndirect
+name: Dialog
+superclass: 

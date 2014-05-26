@@ -1,0 +1,12 @@
+--- !ruby/object:RI::MethodDescription 
+aliases: []
+
+block_params: 
+comment: 
+- !ruby/struct:SM::Flow::P 
+  body: Accessor for text_part
+full_name: Mail::Message#text_part
+is_singleton: false
+name: text_part
+params: (&block)
+visibility: public

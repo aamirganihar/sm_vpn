@@ -1,0 +1,12 @@
+--- !ruby/object:RI::MethodDescription 
+aliases: []
+
+block_params: 
+comment: 
+- !ruby/struct:SM::Flow::P 
+  body: Returns a float indicating the major and minor version of Windows, e.g. 5.1, 6.0, etc.
+full_name: Windows::SystemInfo#windows_version
+is_singleton: false
+name: windows_version
+params: ()
+visibility: public

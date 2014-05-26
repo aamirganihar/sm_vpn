@@ -1,0 +1,12 @@
+--- !ruby/object:RI::MethodDescription 
+aliases: []
+
+block_params: 
+comment: 
+- !ruby/struct:SM::Flow::P 
+  body: Return the text value from the first combo box on the Choose file dialog or nil if not found
+full_name: WinClicker#getFileRequesterFileName
+is_singleton: false
+name: getFileRequesterFileName
+params: ()
+visibility: public

@@ -1,0 +1,12 @@
+--- !ruby/object:RI::MethodDescription 
+aliases: []
+
+block_params: 
+comment: 
+- !ruby/struct:SM::Flow::P 
+  body: Add a single line composed of <em>string</em> to the current position in the help output.
+full_name: UserChoices::ChoicesBuilder#add_help_line
+is_singleton: false
+name: add_help_line
+params: (string)
+visibility: public

@@ -1,0 +1,524 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+<!DOCTYPE html 
+     PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+     "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+  <title>Class: Log4r::Logger</title>
+  <meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" />
+  <meta http-equiv="Content-Script-Type" content="text/javascript" />
+  <link rel="stylesheet" href="../.././rdoc-style.css" type="text/css" media="screen" />
+  <script type="text/javascript">
+  // <![CDATA[
+
+  function popupCode( url ) {
+    window.open(url, "Code", "resizable=yes,scrollbars=yes,toolbar=no,status=no,height=150,width=400")
+  }
+
+  function toggleCode( id ) {
+    if ( document.getElementById )
+      elem = document.getElementById( id );
+    else if ( document.all )
+      elem = eval( "document.all." + id );
+    else
+      return false;
+
+    elemStyle = elem.style;
+    
+    if ( elemStyle.display != "block" ) {
+      elemStyle.display = "block"
+    } else {
+      elemStyle.display = "none"
+    }
+
+    return true;
+  }
+  
+  // Make codeblocks hidden by default
+  document.writeln( "<style type=\"text/css\">div.method-source-code { display: none }</style>" )
+  
+  // ]]>
+  </script>
+
+</head>
+<body>
+
+
+
+    <div id="classHeader">
+        <table class="header-table">
+        <tr class="top-aligned-row">
+          <td><strong>Class</strong></td>
+          <td class="class-name-in-header">Log4r::Logger</td>
+        </tr>
+        <tr class="top-aligned-row">
+            <td><strong>In:</strong></td>
+            <td>
+                <a href="../../files/lib/log4r/logger_rb.html">
+                lib/log4r/logger.rb
+                </a>
+        <br />
+                <a href="../../files/lib/log4r/loggerfactory_rb.html">
+                lib/log4r/loggerfactory.rb
+                </a>
+        <br />
+                <a href="../../files/lib/log4r/repository_rb.html">
+                lib/log4r/repository.rb
+                </a>
+        <br />
+                <a href="../../files/lib/log4r/staticlogger_rb.html">
+                lib/log4r/staticlogger.rb
+                </a>
+        <br />
+            </td>
+        </tr>
+
+        <tr class="top-aligned-row">
+            <td><strong>Parent:</strong></td>
+            <td>
+                Object
+            </td>
+        </tr>
+        </table>
+    </div>
+  <!-- banner header -->
+
+  <div id="bodyContent">
+
+
+
+  <div id="contextContent">
+
+    <div id="description">
+      <p>
+See log4r/logger.rb
+</p>
+
+    </div>
+
+
+   </div>
+
+    <div id="method-list">
+      <h3 class="section-bar">Methods</h3>
+
+      <div class="name-list">
+      <a href="#M000346">==</a>&nbsp;&nbsp;
+      <a href="#M000349">[]</a>&nbsp;&nbsp;
+      <a href="#M000343">add</a>&nbsp;&nbsp;
+      <a href="#M000339">additive=</a>&nbsp;&nbsp;
+      <a href="#M000351">each</a>&nbsp;&nbsp;
+      <a href="#M000352">each_logger</a>&nbsp;&nbsp;
+      <a href="#M000350">get</a>&nbsp;&nbsp;
+      <a href="#M000348">global</a>&nbsp;&nbsp;
+      <a href="#M000345">is_root?</a>&nbsp;&nbsp;
+      <a href="#M000337">level=</a>&nbsp;&nbsp;
+      <a href="#M000338">levels</a>&nbsp;&nbsp;
+      <a href="#M000353">log_internal</a>&nbsp;&nbsp;
+      <a href="#M000336">new</a>&nbsp;&nbsp;
+      <a href="#M000342">outputters=</a>&nbsp;&nbsp;
+      <a href="#M000341">parent=</a>&nbsp;&nbsp;
+      <a href="#M000344">remove</a>&nbsp;&nbsp;
+      <a href="#M000347">root</a>&nbsp;&nbsp;
+      <a href="#M000340">trace=</a>&nbsp;&nbsp;
+      </div>
+    </div>
+
+  </div>
+
+
+    <!-- if includes -->
+
+    <div id="section">
+
+
+
+
+
+    <div id="attribute-list">
+      <h3 class="section-bar">Attributes</h3>
+
+      <div class="name-list">
+        <table>
+        <tr class="top-aligned-row context-row">
+          <td class="context-item-name">additive</td>
+          <td class="context-item-value">&nbsp;[R]&nbsp;</td>
+          <td class="context-item-desc"></td>
+        </tr>
+        <tr class="top-aligned-row context-row">
+          <td class="context-item-name">fullname</td>
+          <td class="context-item-value">&nbsp;[R]&nbsp;</td>
+          <td class="context-item-desc"></td>
+        </tr>
+        <tr class="top-aligned-row context-row">
+          <td class="context-item-name">level</td>
+          <td class="context-item-value">&nbsp;[R]&nbsp;</td>
+          <td class="context-item-desc"></td>
+        </tr>
+        <tr class="top-aligned-row context-row">
+          <td class="context-item-name">name</td>
+          <td class="context-item-value">&nbsp;[R]&nbsp;</td>
+          <td class="context-item-desc"></td>
+        </tr>
+        <tr class="top-aligned-row context-row">
+          <td class="context-item-name">outputters</td>
+          <td class="context-item-value">&nbsp;[R]&nbsp;</td>
+          <td class="context-item-desc"></td>
+        </tr>
+        <tr class="top-aligned-row context-row">
+          <td class="context-item-name">parent</td>
+          <td class="context-item-value">&nbsp;[R]&nbsp;</td>
+          <td class="context-item-desc"></td>
+        </tr>
+        <tr class="top-aligned-row context-row">
+          <td class="context-item-name">path</td>
+          <td class="context-item-value">&nbsp;[R]&nbsp;</td>
+          <td class="context-item-desc"></td>
+        </tr>
+        <tr class="top-aligned-row context-row">
+          <td class="context-item-name">trace</td>
+          <td class="context-item-value">&nbsp;[R]&nbsp;</td>
+          <td class="context-item-desc"></td>
+        </tr>
+        </table>
+      </div>
+    </div>
+      
+
+
+    <!-- if method_list -->
+    <div id="methods">
+      <h3 class="section-bar">Public Class methods</h3>
+
+      <div id="method-M000349" class="method-detail">
+        <a name="M000349"></a>
+
+        <div class="method-heading">
+          <a href="Logger.src/M000349.html" target="Code" class="method-signature"
+            onclick="popupCode('Logger.src/M000349.html');return false;">
+          <span class="method-name">[]</span><span class="method-args">(_fullname)</span>
+          </a>
+        </div>
+      
+        <div class="method-description">
+          <p>
+Get a logger with a fullname from the repository or nil if logger
+wasn&#8216;t found.
+</p>
+        </div>
+      </div>
+
+      <div id="method-M000351" class="method-detail">
+        <a name="M000351"></a>
+
+        <div class="method-heading">
+          <a href="Logger.src/M000351.html" target="Code" class="method-signature"
+            onclick="popupCode('Logger.src/M000351.html');return false;">
+          <span class="method-name">each</span><span class="method-args">() {|fullname, logger| ...}</span>
+          </a>
+        </div>
+      
+        <div class="method-description">
+          <p>
+Yields fullname and logger for every logger in the system.
+</p>
+        </div>
+      </div>
+
+      <div id="method-M000352" class="method-detail">
+        <a name="M000352"></a>
+
+        <div class="method-heading">
+          <a href="Logger.src/M000352.html" target="Code" class="method-signature"
+            onclick="popupCode('Logger.src/M000352.html');return false;">
+          <span class="method-name">each_logger</span><span class="method-args">() {|logger| ...}</span>
+          </a>
+        </div>
+      
+        <div class="method-description">
+        </div>
+      </div>
+
+      <div id="method-M000350" class="method-detail">
+        <a name="M000350"></a>
+
+        <div class="method-heading">
+          <a href="Logger.src/M000350.html" target="Code" class="method-signature"
+            onclick="popupCode('Logger.src/M000350.html');return false;">
+          <span class="method-name">get</span><span class="method-args">(_fullname)</span>
+          </a>
+        </div>
+      
+        <div class="method-description">
+          <p>
+Like <a href="Logger.html">Logger</a>[] except that it raises NameError if
+<a href="Logger.html">Logger</a> wasn&#8216;t found.
+</p>
+        </div>
+      </div>
+
+      <div id="method-M000348" class="method-detail">
+        <a name="M000348"></a>
+
+        <div class="method-heading">
+          <a href="Logger.src/M000348.html" target="Code" class="method-signature"
+            onclick="popupCode('Logger.src/M000348.html');return false;">
+          <span class="method-name">global</span><span class="method-args">()</span>
+          </a>
+        </div>
+      
+        <div class="method-description">
+          <p>
+Returns the <a href="Logger.html#M000347">root</a> logger. Identical to <a
+href="Logger.html#M000347">Logger.root</a>
+</p>
+        </div>
+      </div>
+
+      <div id="method-M000353" class="method-detail">
+        <a name="M000353"></a>
+
+        <div class="method-heading">
+          <a href="Logger.src/M000353.html" target="Code" class="method-signature"
+            onclick="popupCode('Logger.src/M000353.html');return false;">
+          <span class="method-name">log_internal</span><span class="method-args">(level=1) {|| ...}</span>
+          </a>
+        </div>
+      
+        <div class="method-description">
+          <p>
+Internal logging for <a href="../Log4r.html">Log4r</a> components. Accepts
+only blocks. To see such log events, create a logger named
+&#8216;log4r&#8217; and give it an outputter.
+</p>
+        </div>
+      </div>
+
+      <div id="method-M000336" class="method-detail">
+        <a name="M000336"></a>
+
+        <div class="method-heading">
+          <a href="Logger.src/M000336.html" target="Code" class="method-signature"
+            onclick="popupCode('Logger.src/M000336.html');return false;">
+          <span class="method-name">new</span><span class="method-args">(_fullname, _level=nil, _additive=true, _trace=false)</span>
+          </a>
+        </div>
+      
+        <div class="method-description">
+          <p>
+<a href="Logger.html">Logger</a> requires a name. The last 3 parameters
+are:
+</p>
+<table>
+<tr><td valign="top">level:</td><td>Do I have a level? (Otherwise, I&#8216;ll inherit my parent&#8216;s)
+
+</td></tr>
+<tr><td valign="top">additive:</td><td>Am I additive?
+
+</td></tr>
+<tr><td valign="top">trace:</td><td>Do I record the execution trace? (slows things a wee bit)
+
+</td></tr>
+</table>
+        </div>
+      </div>
+
+      <div id="method-M000347" class="method-detail">
+        <a name="M000347"></a>
+
+        <div class="method-heading">
+          <a href="Logger.src/M000347.html" target="Code" class="method-signature"
+            onclick="popupCode('Logger.src/M000347.html');return false;">
+          <span class="method-name">root</span><span class="method-args">()</span>
+          </a>
+        </div>
+      
+        <div class="method-description">
+          <p>
+Returns the <a href="Logger.html#M000347">root</a> logger. Identical to <a
+href="Logger.html#M000348">Logger.global</a>
+</p>
+        </div>
+      </div>
+
+      <h3 class="section-bar">Public Instance methods</h3>
+
+      <div id="method-M000346" class="method-detail">
+        <a name="M000346"></a>
+
+        <div class="method-heading">
+          <a href="Logger.src/M000346.html" target="Code" class="method-signature"
+            onclick="popupCode('Logger.src/M000346.html');return false;">
+          <span class="method-name">==</span><span class="method-args">(other)</span>
+          </a>
+        </div>
+      
+        <div class="method-description">
+        </div>
+      </div>
+
+      <div id="method-M000343" class="method-detail">
+        <a name="M000343"></a>
+
+        <div class="method-heading">
+          <a href="Logger.src/M000343.html" target="Code" class="method-signature"
+            onclick="popupCode('Logger.src/M000343.html');return false;">
+          <span class="method-name">add</span><span class="method-args">(*_outputters)</span>
+          </a>
+        </div>
+      
+        <div class="method-description">
+          <p>
+Add outputters by name or by reference. Can be done any time.
+</p>
+        </div>
+      </div>
+
+      <div id="method-M000339" class="method-detail">
+        <a name="M000339"></a>
+
+        <div class="method-heading">
+          <a href="Logger.src/M000339.html" target="Code" class="method-signature"
+            onclick="popupCode('Logger.src/M000339.html');return false;">
+          <span class="method-name">additive=</span><span class="method-args">(_additive)</span>
+          </a>
+        </div>
+      
+        <div class="method-description">
+          <p>
+Set the additivity of the logger dynamically. True or false.
+</p>
+        </div>
+      </div>
+
+      <div id="method-M000345" class="method-detail">
+        <a name="M000345"></a>
+
+        <div class="method-heading">
+          <a href="Logger.src/M000345.html" target="Code" class="method-signature"
+            onclick="popupCode('Logger.src/M000345.html');return false;">
+          <span class="method-name">is_root?</span><span class="method-args">()</span>
+          </a>
+        </div>
+      
+        <div class="method-description">
+        </div>
+      </div>
+
+      <div id="method-M000337" class="method-detail">
+        <a name="M000337"></a>
+
+        <div class="method-heading">
+          <a href="Logger.src/M000337.html" target="Code" class="method-signature"
+            onclick="popupCode('Logger.src/M000337.html');return false;">
+          <span class="method-name">level=</span><span class="method-args">(_level)</span>
+          </a>
+        </div>
+      
+        <div class="method-description">
+          <p>
+Set the logger level dynamically. Does not affect children.
+</p>
+        </div>
+      </div>
+
+      <div id="method-M000338" class="method-detail">
+        <a name="M000338"></a>
+
+        <div class="method-heading">
+          <a href="Logger.src/M000338.html" target="Code" class="method-signature"
+            onclick="popupCode('Logger.src/M000338.html');return false;">
+          <span class="method-name">levels</span><span class="method-args">()</span>
+          </a>
+        </div>
+      
+        <div class="method-description">
+          <p>
+Return array of defined <a href="Logger.html#M000338">levels</a>.
+</p>
+        </div>
+      </div>
+
+      <div id="method-M000342" class="method-detail">
+        <a name="M000342"></a>
+
+        <div class="method-heading">
+          <a href="Logger.src/M000342.html" target="Code" class="method-signature"
+            onclick="popupCode('Logger.src/M000342.html');return false;">
+          <span class="method-name">outputters=</span><span class="method-args">(_outputters)</span>
+          </a>
+        </div>
+      
+        <div class="method-description">
+          <p>
+Set the Outputters dynamically by name or reference. Can be done any time.
+</p>
+        </div>
+      </div>
+
+      <div id="method-M000341" class="method-detail">
+        <a name="M000341"></a>
+
+        <div class="method-heading">
+          <a href="Logger.src/M000341.html" target="Code" class="method-signature"
+            onclick="popupCode('Logger.src/M000341.html');return false;">
+          <span class="method-name">parent=</span><span class="method-args">(parent)</span>
+          </a>
+        </div>
+      
+        <div class="method-description">
+          <p>
+Please don&#8216;t reset the parent
+</p>
+        </div>
+      </div>
+
+      <div id="method-M000344" class="method-detail">
+        <a name="M000344"></a>
+
+        <div class="method-heading">
+          <a href="Logger.src/M000344.html" target="Code" class="method-signature"
+            onclick="popupCode('Logger.src/M000344.html');return false;">
+          <span class="method-name">remove</span><span class="method-args">(*_outputters)</span>
+          </a>
+        </div>
+      
+        <div class="method-description">
+          <p>
+Remove outputters from this logger by name only. Can be done any time.
+</p>
+        </div>
+      </div>
+
+      <div id="method-M000340" class="method-detail">
+        <a name="M000340"></a>
+
+        <div class="method-heading">
+          <a href="Logger.src/M000340.html" target="Code" class="method-signature"
+            onclick="popupCode('Logger.src/M000340.html');return false;">
+          <span class="method-name">trace=</span><span class="method-args">(_trace)</span>
+          </a>
+        </div>
+      
+        <div class="method-description">
+          <p>
+Set whether the logger traces. Can be set dynamically. Defaults to false
+and understands the strings &#8216;true&#8217; and &#8216;false&#8217;.
+</p>
+        </div>
+      </div>
+
+
+    </div>
+
+
+  </div>
+
+
+<div id="validator-badges">
+  <p><small><a href="http://validator.w3.org/check/referer">[Validate]</a></small></p>
+</div>
+
+</body>
+</html>

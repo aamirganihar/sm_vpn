@@ -1,0 +1,12 @@
+--- !ruby/object:RI::MethodDescription 
+aliases: []
+
+block_params: TableBody.new(@container, :ole_object, ole_table_body_at_index(i))
+comment: 
+- !ruby/struct:SM::Flow::P 
+  body: iterates through each of the TableBodies in the Table. Yields a TableBody object
+full_name: Watir::TableBodies#each
+is_singleton: false
+name: each
+params: () {|TableBody.new(@container, :ole_object, ole_table_body_at_index(i))| ...}
+visibility: public

@@ -1,0 +1,15 @@
+--- !ruby/object:RI::ClassDescription 
+attributes: []
+
+class_methods: []
+
+comment: 
+constants: []
+
+full_name: Mail::ContentType::DiscreteType4
+includes: []
+
+instance_methods: []
+
+name: DiscreteType4
+superclass: 

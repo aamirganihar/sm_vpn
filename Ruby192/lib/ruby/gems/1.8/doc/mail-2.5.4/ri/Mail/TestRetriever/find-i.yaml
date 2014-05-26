@@ -1,0 +1,10 @@
+--- !ruby/object:RI::MethodDescription 
+aliases: []
+
+block_params: email
+comment: 
+full_name: Mail::TestRetriever#find
+is_singleton: false
+name: find
+params: (options = {}, &block) {|email| ...}
+visibility: public

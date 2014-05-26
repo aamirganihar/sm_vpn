@@ -1,0 +1,12 @@
+--- !ruby/object:RI::MethodDescription 
+aliases: []
+
+block_params: 
+comment: 
+- !ruby/struct:SM::Flow::P 
+  body: This method saves the image to the file path that is given. The path must be in windows format (c:\dirname\somename.gif). This method will not overwrite a previously existing image. If an image already exists at the given path then a dialog will be displayed prompting for overwrite. Raises a WatirException if AutoIt is not correctly installed path - directory path and file name of where image should be saved
+full_name: Watir::Image#save
+is_singleton: false
+name: save
+params: (path)
+visibility: public

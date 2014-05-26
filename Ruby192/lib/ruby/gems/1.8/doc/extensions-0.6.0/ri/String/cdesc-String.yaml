@@ -1,0 +1,38 @@
+--- !ruby/object:RI::ClassDescription 
+attributes: []
+
+class_methods: []
+
+comment: 
+constants: []
+
+full_name: String
+includes: []
+
+instance_methods: 
+- !ruby/object:RI::MethodSummary 
+  name: cmp
+- !ruby/object:RI::MethodSummary 
+  name: ends_with?
+- !ruby/object:RI::MethodSummary 
+  name: expand_tabs
+- !ruby/object:RI::MethodSummary 
+  name: indent
+- !ruby/object:RI::MethodSummary 
+  name: join
+- !ruby/object:RI::MethodSummary 
+  name: leftmost_indent
+- !ruby/object:RI::MethodSummary 
+  name: line
+- !ruby/object:RI::MethodSummary 
+  name: outdent
+- !ruby/object:RI::MethodSummary 
+  name: starts_with?
+- !ruby/object:RI::MethodSummary 
+  name: taballto
+- !ruby/object:RI::MethodSummary 
+  name: tabto
+- !ruby/object:RI::MethodSummary 
+  name: trim
+name: String
+superclass: Object

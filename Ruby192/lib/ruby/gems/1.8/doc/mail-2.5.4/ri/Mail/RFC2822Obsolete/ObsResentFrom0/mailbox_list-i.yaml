@@ -1,0 +1,10 @@
+--- !ruby/object:RI::MethodDescription 
+aliases: []
+
+block_params: 
+comment: 
+full_name: Mail::RFC2822Obsolete::ObsResentFrom0#mailbox_list
+is_singleton: false
+name: mailbox_list
+params: ()
+visibility: public

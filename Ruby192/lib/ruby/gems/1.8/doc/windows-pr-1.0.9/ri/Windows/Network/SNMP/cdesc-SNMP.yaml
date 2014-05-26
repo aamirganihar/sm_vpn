@@ -1,0 +1,182 @@
+--- !ruby/object:RI::ClassDescription 
+attributes: []
+
+class_methods: []
+
+comment: 
+constants: 
+- !ruby/object:RI::Constant 
+  comment: 
+  name: SNMPAPI_FAILURE
+  value: "0"
+- !ruby/object:RI::Constant 
+  comment: 
+  name: SNMPAPI_SUCCESS
+  value: "1"
+- !ruby/object:RI::Constant 
+  comment: 
+  name: SNMPAPI_ALLOC_ERROR
+  value: "2"
+- !ruby/object:RI::Constant 
+  comment: 
+  name: SNMPAPI_CONTEXT_INVALID
+  value: "3"
+- !ruby/object:RI::Constant 
+  comment: 
+  name: SNMPAPI_CONTEXT_UNKNOWN
+  value: "4"
+- !ruby/object:RI::Constant 
+  comment: 
+  name: SNMPAPI_ENTITY_INVALID
+  value: "5"
+- !ruby/object:RI::Constant 
+  comment: 
+  name: SNMPAPI_ENTITY_UNKNOWN
+  value: "6"
+- !ruby/object:RI::Constant 
+  comment: 
+  name: SNMPAPI_INDEX_INVALID
+  value: "7"
+- !ruby/object:RI::Constant 
+  comment: 
+  name: SNMPAPI_NOOP
+  value: "8"
+- !ruby/object:RI::Constant 
+  comment: 
+  name: SNMPAPI_OID_INVALID
+  value: "9"
+- !ruby/object:RI::Constant 
+  comment: 
+  name: SNMPAPI_OPERATION_INVALID
+  value: "10"
+- !ruby/object:RI::Constant 
+  comment: 
+  name: SNMPAPI_OUTPUT_TRUNCATED
+  value: "11"
+- !ruby/object:RI::Constant 
+  comment: 
+  name: SNMPAPI_PDU_INVALID
+  value: "12"
+- !ruby/object:RI::Constant 
+  comment: 
+  name: SNMPAPI_SESSION_INVALID
+  value: "13"
+- !ruby/object:RI::Constant 
+  comment: 
+  name: SNMPAPI_SYNTAX_INVALID
+  value: "14"
+- !ruby/object:RI::Constant 
+  comment: 
+  name: SNMPAPI_VBL_INVALID
+  value: "15"
+- !ruby/object:RI::Constant 
+  comment: 
+  name: SNMPAPI_MODE_INVALID
+  value: "16"
+- !ruby/object:RI::Constant 
+  comment: 
+  name: SNMPAPI_SIZE_INVALID
+  value: "17"
+- !ruby/object:RI::Constant 
+  comment: 
+  name: SNMPAPI_NOT_INITIALIZED
+  value: "18"
+- !ruby/object:RI::Constant 
+  comment: 
+  name: SNMPAPI_MESSAGE_INVALID
+  value: "19"
+- !ruby/object:RI::Constant 
+  comment: 
+  name: SNMPAPI_HWND_INVALID
+  value: "20"
+- !ruby/object:RI::Constant 
+  comment: 
+  name: SNMPAPI_OTHER_ERROR
+  value: "99"
+- !ruby/object:RI::Constant 
+  comment: 
+  name: SNMPAPI_TL_NOT_INITIALIZED
+  value: "100"
+- !ruby/object:RI::Constant 
+  comment: 
+  name: SNMPAPI_TL_NOT_SUPPORTED
+  value: "101"
+- !ruby/object:RI::Constant 
+  comment: 
+  name: SNMPAPI_TL_NOT_AVAILABLE
+  value: "102"
+- !ruby/object:RI::Constant 
+  comment: 
+  name: SNMPAPI_TL_RESOURCE_ERROR
+  value: "103"
+- !ruby/object:RI::Constant 
+  comment: 
+  name: SNMPAPI_TL_UNDELIVERABLE
+  value: "104"
+- !ruby/object:RI::Constant 
+  comment: 
+  name: SNMPAPI_TL_SRC_INVALID
+  value: "105"
+- !ruby/object:RI::Constant 
+  comment: 
+  name: SNMPAPI_TL_INVALID_PARAM
+  value: "106"
+- !ruby/object:RI::Constant 
+  comment: 
+  name: SNMPAPI_TL_IN_USE
+  value: "107"
+- !ruby/object:RI::Constant 
+  comment: 
+  name: SNMPAPI_TL_TIMEOUT
+  value: "108"
+- !ruby/object:RI::Constant 
+  comment: 
+  name: SNMPAPI_TL_PDU_TOO_BIG
+  value: "109"
+- !ruby/object:RI::Constant 
+  comment: 
+  name: SNMPAPI_TL_OTHER
+  value: "199"
+- !ruby/object:RI::Constant 
+  comment: 
+  name: SNMPAPI_TRANSLATED
+  value: "0"
+- !ruby/object:RI::Constant 
+  comment: 
+  name: SNMPAPI_UNTRANSLATED_V1
+  value: "1"
+- !ruby/object:RI::Constant 
+  comment: 
+  name: SNMPAPI_UNTRANSLATED_V2
+  value: "2"
+- !ruby/object:RI::Constant 
+  comment: 
+  name: SNMPAPI_NO_SUPPORT
+  value: "0"
+- !ruby/object:RI::Constant 
+  comment: 
+  name: SNMPAPI_V1_SUPPORT
+  value: "1"
+- !ruby/object:RI::Constant 
+  comment: 
+  name: SNMPAPI_V2_SUPPORT
+  value: "2"
+- !ruby/object:RI::Constant 
+  comment: 
+  name: SNMPAPI_M2M_SUPPORT
+  value: "3"
+- !ruby/object:RI::Constant 
+  comment: 
+  name: SNMPAPI_OFF
+  value: "0"
+- !ruby/object:RI::Constant 
+  comment: 
+  name: SNMPAPI_ON
+  value: "1"
+full_name: Windows::Network::SNMP
+includes: []
+
+instance_methods: []
+
+name: SNMP
+superclass: 

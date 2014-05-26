@@ -1,0 +1,28 @@
+--- !ruby/object:RI::ClassDescription 
+attributes: []
+
+class_methods: []
+
+comment: 
+- !ruby/struct:SM::Flow::P 
+  body: The Windows module serves as a namespace only
+constants: 
+- !ruby/object:RI::Constant 
+  comment: 
+  name: MSVCRT_DLL
+  value: "'msvcr' + CONFIG['host_os'].split('_')[1]"
+- !ruby/object:RI::Constant 
+  comment: 
+  name: MSVCRT_DLL
+  value: "'msvcrt'"
+- !ruby/object:RI::Constant 
+  comment: 
+  name: MSVCRT_DLL
+  value: "'msvcrt'"
+full_name: Windows
+includes: []
+
+instance_methods: []
+
+name: Windows
+superclass: 

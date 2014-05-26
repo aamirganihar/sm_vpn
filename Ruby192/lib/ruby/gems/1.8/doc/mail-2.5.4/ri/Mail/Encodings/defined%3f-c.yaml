@@ -1,0 +1,16 @@
+--- !ruby/object:RI::MethodDescription 
+aliases: []
+
+block_params: 
+comment: 
+- !ruby/struct:SM::Flow::P 
+  body: Is the encoding we want defined?
+- !ruby/struct:SM::Flow::P 
+  body: "Example:"
+- !ruby/struct:SM::Flow::VERB 
+  body: " Encodings.defined?(:base64) #=&gt; true\n"
+full_name: Mail::Encodings::defined?
+is_singleton: true
+name: defined?
+params: ( str )
+visibility: public

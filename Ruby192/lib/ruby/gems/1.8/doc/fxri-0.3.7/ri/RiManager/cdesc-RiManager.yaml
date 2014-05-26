@@ -1,0 +1,29 @@
+--- !ruby/object:RI::ClassDescription 
+attributes: []
+
+class_methods: 
+- !ruby/object:RI::MethodSummary 
+  name: new
+comment: 
+- !ruby/struct:SM::Flow::P 
+  body: This basically is a stripped down version of RiDriver. I cannot use RiDriver directly, because I need to set the driver.
+constants: []
+
+full_name: RiManager
+includes: []
+
+instance_methods: 
+- !ruby/object:RI::MethodSummary 
+  name: all_names
+- !ruby/object:RI::MethodSummary 
+  name: check_names
+- !ruby/object:RI::MethodSummary 
+  name: prepare_all_names
+- !ruby/object:RI::MethodSummary 
+  name: report_class_stuff
+- !ruby/object:RI::MethodSummary 
+  name: report_method_stuff
+- !ruby/object:RI::MethodSummary 
+  name: show
+name: RiManager
+superclass: Object

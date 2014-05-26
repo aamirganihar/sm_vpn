@@ -1,0 +1,12 @@
+--- !ruby/object:RI::MethodDescription 
+aliases: []
+
+block_params: 
+comment: 
+- !ruby/struct:SM::Flow::P 
+  body: The icon of this item.
+full_name: Packet_Item#icon
+is_singleton: false
+name: icon
+params: ()
+visibility: public

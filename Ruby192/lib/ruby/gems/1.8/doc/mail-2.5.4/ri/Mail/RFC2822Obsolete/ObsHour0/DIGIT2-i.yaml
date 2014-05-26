@@ -1,0 +1,10 @@
+--- !ruby/object:RI::MethodDescription 
+aliases: []
+
+block_params: 
+comment: 
+full_name: Mail::RFC2822Obsolete::ObsHour0#DIGIT2
+is_singleton: false
+name: DIGIT2
+params: ()
+visibility: public

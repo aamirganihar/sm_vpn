@@ -1,0 +1,198 @@
+--- !ruby/object:RI::ClassDescription 
+attributes: []
+
+class_methods: []
+
+comment: 
+- !ruby/struct:SM::Flow::P 
+  body: Defines an object that runs Selenium commands.
+- !ruby/struct:SM::Flow::H 
+  level: 3
+  text: Element Locators
+- !ruby/struct:SM::Flow::P 
+  body: "Element Locators tell Selenium which HTML element a command refers to. The format of a locator is: <em>locatorType</em><b>=</b><em>argument</em> We support the following strategies for locating elements:"
+- !ruby/object:SM::Flow::LIST 
+  contents: 
+  - !ruby/struct:SM::Flow::LI 
+    label: "*"
+    body: "<b>identifier</b>=<em>id</em>:"
+  type: :BULLET
+- !ruby/struct:SM::Flow::P 
+  body: Select the element with the specified @id attribute. If no match is found, select the first element whose @name attribute is <em>id</em>. (This is normally the default; see below.)
+- !ruby/object:SM::Flow::LIST 
+  contents: 
+  - !ruby/struct:SM::Flow::LI 
+    label: "*"
+    body: "<b>id</b>=<em>id</em>:"
+  type: :BULLET
+- !ruby/struct:SM::Flow::P 
+  body: Select the element with the specified @id attribute.
+- !ruby/object:SM::Flow::LIST 
+  contents: 
+  - !ruby/struct:SM::Flow::LI 
+    label: "*"
+    body: "<b>name</b>=<em>name</em>:"
+  type: :BULLET
+- !ruby/struct:SM::Flow::P 
+  body: Select the first element with the specified @name attribute.
+- !ruby/object:SM::Flow::LIST 
+  contents: 
+  - !ruby/struct:SM::Flow::LI 
+    label: "*"
+    body: username
+  - !ruby/struct:SM::Flow::LI 
+    label: "*"
+    body: name=username
+  type: :BULLET
+- !ruby/struct:SM::Flow::P 
+  body: The name may optionally be followed by one or more <em>element-filters</em>, separated from the name by whitespace. If the <em>filterType</em> is not specified, <b>value</b> is assumed.
+- !ruby/object:SM::Flow::LIST 
+  contents: 
+  - !ruby/struct:SM::Flow::LI 
+    label: "*"
+    body: name=flavour value=chocolate
+  - !ruby/struct:SM::Flow::LI 
+    label: "*"
+    body: "<b>dom</b>=<em>javascriptExpression</em>:"
+  type: :BULLET
+- !ruby/struct:SM::Flow::P 
+  body: Find an element by evaluating the specified string. This allows you to traverse the HTML Document Object Model using JavaScript. Note that you must not return a value in this string; simply make it the last expression in the block.
+- !ruby/object:SM::Flow::LIST 
+  contents: 
+  - !ruby/struct:SM::Flow::LI 
+    label: "*"
+    body: dom=document.forms['myForm'].myDropdown
+  - !ruby/struct:SM::Flow::LI 
+    label: "*"
+    body: dom=document.images[56]
+  - !ruby/struct:SM::Flow::LI 
+    label: "*"
+    body: dom=function foo() { return document.links[1]; }; foo();
+  - !ruby/struct:SM::Flow::LI 
+    label: "*"
+    body: "<b>xpath</b>=<em>xpathExpression</em>:"
+  type: :BULLET
+- !ruby/struct:SM::Flow::P 
+  body: Locate an element using an XPath expression.
+- !ruby/object:SM::Flow::LIST 
+  contents: 
+  - !ruby/struct:SM::Flow::LI 
+    label: "*"
+    body: xpath=//img[@alt='The image alt text']
+  - !ruby/struct:SM::Flow::LI 
+    label: "*"
+    body: xpath=//table[@id='table1']//tr[4]/td[2]
+  - !ruby/struct:SM::Flow::LI 
+    label: "*"
+    body: xpath=//a[contains(@href,'#id1')]
+  - !ruby/struct:SM::Flow::LI 
+    label: "*"
+    body: xpath=//a[contains(@href,'#id1')]/@class
+  - !ruby/struct:SM::Flow::LI 
+    label: "*"
+    body: xpath=(//table[@class='stylee'])//th[text()='theHeaderText']/../td
+  - !ruby/struct:SM::Flow::LI 
+    label: "*"
+    body: xpath=//input[@name='name2' and @value='yes']
+  - !ruby/struct:SM::Flow::LI 
+    label: "*"
+    body: xpath=//*[text()=&quot;right&quot;]
+  - !ruby/struct:SM::Flow::LI 
+    label: "*"
+    body: "<b>link</b>=<em>textPattern</em>:"
+  type: :BULLET
+- !ruby/struct:SM::Flow::P 
+  body: Select the link (anchor) element which contains text matching the specified <em>pattern</em>.
+- !ruby/object:SM::Flow::LIST 
+  contents: 
+  - !ruby/struct:SM::Flow::LI 
+    label: "*"
+    body: link=The link text
+  - !ruby/struct:SM::Flow::LI 
+    label: "*"
+    body: "<b>css</b>=<em>cssSelectorSyntax</em>:"
+  type: :BULLET
+- !ruby/struct:SM::Flow::P 
+  body: Select the element using css selectors. Please refer to CSS2 selectors, CSS3 selectors for more information. You can also check the TestCssLocators test in the selenium test suite for an example of usage, which is included in the downloaded selenium core package.
+- !ruby/object:SM::Flow::LIST 
+  contents: 
+  - !ruby/struct:SM::Flow::LI 
+    label: "*"
+    body: css=a[href=&quot;#id3&quot;]
+  - !ruby/struct:SM::Flow::LI 
+    label: "*"
+    body: css=span#firstChild + span
+  type: :BULLET
+- !ruby/struct:SM::Flow::P 
+  body: Currently the css selector locator supports all css1, css2 and css3 selectors except namespace in css3, some pseudo classes(:nth-of-type, :nth-last-of-type, :first-of-type, :last-of-type, :only-of-type, :visited, :hover, :active, :focus, :indeterminate) and pseudo elements(::first-line, ::first-letter, ::selection, ::before, ::after).
+- !ruby/struct:SM::Flow::P 
+  body: "Without an explicit locator prefix, Selenium uses the following default strategies:"
+- !ruby/object:SM::Flow::LIST 
+  contents: 
+  - !ruby/struct:SM::Flow::LI 
+    label: "*"
+    body: <b>dom</b>, for locators starting with &quot;document.&quot;
+  - !ruby/struct:SM::Flow::LI 
+    label: "*"
+    body: <b>xpath</b>, for locators starting with &quot;//&quot;
+  - !ruby/struct:SM::Flow::LI 
+    label: "*"
+    body: <b>identifier</b>, otherwise
+  type: :BULLET
+- !ruby/struct:SM::Flow::H 
+  level: 3
+  text: Element FiltersElement filters can be used with a locator to refine a list of candidate elements. They are currently used only in the 'name' element-locator.
+- !ruby/struct:SM::Flow::P 
+  body: "Filters look much like locators, ie. <em>filterType</em><b>=</b><em>argument</em>Supported element-filters are: <b>value=</b><em>valuePattern</em>"
+- !ruby/struct:SM::Flow::P 
+  body: Matches elements based on their values. This is particularly useful for refining a list of similarly-named toggle-buttons.<b>index=</b><em>index</em>
+- !ruby/struct:SM::Flow::P 
+  body: "Selects a single element based on its position in the list (offset from zero).===String-match Patterns Various Pattern syntaxes are available for matching string values:"
+- !ruby/object:SM::Flow::LIST 
+  contents: 
+  - !ruby/struct:SM::Flow::LI 
+    label: "*"
+    body: "<b>glob:</b><em>pattern</em>:"
+  type: :BULLET
+- !ruby/struct:SM::Flow::P 
+  body: Match a string against a &quot;glob&quot; (aka &quot;wildmat&quot;) pattern. &quot;Glob&quot; is a kind of limited regular-expression syntax typically used in command-line shells. In a glob pattern, &quot;*&quot; represents any sequence of characters, and &quot;?&quot; represents any single character. Glob patterns match against the entire string.
+- !ruby/object:SM::Flow::LIST 
+  contents: 
+  - !ruby/struct:SM::Flow::LI 
+    label: "*"
+    body: "<b>regexp:</b><em>regexp</em>:"
+  type: :BULLET
+- !ruby/struct:SM::Flow::P 
+  body: Match a string using a regular-expression. The full power of JavaScript regular-expressions is available.
+- !ruby/object:SM::Flow::LIST 
+  contents: 
+  - !ruby/struct:SM::Flow::LI 
+    label: "*"
+    body: "<b>regexpi:</b><em>regexpi</em>:"
+  type: :BULLET
+- !ruby/struct:SM::Flow::P 
+  body: Match a string using a case-insensitive regular-expression.
+- !ruby/object:SM::Flow::LIST 
+  contents: 
+  - !ruby/struct:SM::Flow::LI 
+    label: "*"
+    body: "<b>exact:</b><em>string</em>:"
+  type: :BULLET
+- !ruby/struct:SM::Flow::P 
+  body: Match a string exactly, verbatim, without any of that fancy wildcard stuff.
+- !ruby/struct:SM::Flow::P 
+  body: If no pattern prefix is specified, Selenium assumes that it's a &quot;glob&quot; pattern.
+- !ruby/struct:SM::Flow::P 
+  body: For commands that return multiple values (such as verifySelectOptions), the string being matched is a comma-separated list of the return values, where both commas and backslashes in the values are backslash-escaped. When providing a pattern, the optional matching syntax (i.e. glob, regexp, etc.) is specified once, as usual, at the beginning of the pattern.
+constants: 
+- !ruby/object:RI::Constant 
+  comment: 
+  name: SeleneseInterpreter
+  value: "SeleniumDriver # for backward compatibility"
+full_name: Selenium
+includes: []
+
+instance_methods: []
+
+name: Selenium
+superclass: 

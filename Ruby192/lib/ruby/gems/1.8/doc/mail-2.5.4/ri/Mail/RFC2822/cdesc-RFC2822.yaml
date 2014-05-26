@@ -1,0 +1,177 @@
+--- !ruby/object:RI::ClassDescription 
+attributes: []
+
+class_methods: []
+
+comment: 
+constants: []
+
+full_name: Mail::RFC2822
+includes: 
+- !ruby/object:RI::IncludedModule 
+  name: Treetop::Runtime
+- !ruby/object:RI::IncludedModule 
+  name: RFC2822Obsolete
+instance_methods: 
+- !ruby/object:RI::MethodSummary 
+  name: _nt_ALPHA
+- !ruby/object:RI::MethodSummary 
+  name: _nt_CFWS
+- !ruby/object:RI::MethodSummary 
+  name: _nt_CR
+- !ruby/object:RI::MethodSummary 
+  name: _nt_CRLF
+- !ruby/object:RI::MethodSummary 
+  name: _nt_DIGIT
+- !ruby/object:RI::MethodSummary 
+  name: _nt_DQUOTE
+- !ruby/object:RI::MethodSummary 
+  name: _nt_FWS
+- !ruby/object:RI::MethodSummary 
+  name: _nt_LF
+- !ruby/object:RI::MethodSummary 
+  name: _nt_NO_WS_CTL
+- !ruby/object:RI::MethodSummary 
+  name: _nt_WSP
+- !ruby/object:RI::MethodSummary 
+  name: _nt_addr_spec
+- !ruby/object:RI::MethodSummary 
+  name: _nt_address
+- !ruby/object:RI::MethodSummary 
+  name: _nt_address_list
+- !ruby/object:RI::MethodSummary 
+  name: _nt_angle_addr
+- !ruby/object:RI::MethodSummary 
+  name: _nt_atext
+- !ruby/object:RI::MethodSummary 
+  name: _nt_atom
+- !ruby/object:RI::MethodSummary 
+  name: _nt_ccontent
+- !ruby/object:RI::MethodSummary 
+  name: _nt_comment
+- !ruby/object:RI::MethodSummary 
+  name: _nt_ctext
+- !ruby/object:RI::MethodSummary 
+  name: _nt_date
+- !ruby/object:RI::MethodSummary 
+  name: _nt_date_time
+- !ruby/object:RI::MethodSummary 
+  name: _nt_day
+- !ruby/object:RI::MethodSummary 
+  name: _nt_day_name
+- !ruby/object:RI::MethodSummary 
+  name: _nt_day_of_week
+- !ruby/object:RI::MethodSummary 
+  name: _nt_dcontent
+- !ruby/object:RI::MethodSummary 
+  name: _nt_display_name
+- !ruby/object:RI::MethodSummary 
+  name: _nt_domain
+- !ruby/object:RI::MethodSummary 
+  name: _nt_domain_literal
+- !ruby/object:RI::MethodSummary 
+  name: _nt_domain_text
+- !ruby/object:RI::MethodSummary 
+  name: _nt_dot_atom
+- !ruby/object:RI::MethodSummary 
+  name: _nt_dot_atom_text
+- !ruby/object:RI::MethodSummary 
+  name: _nt_dtext
+- !ruby/object:RI::MethodSummary 
+  name: _nt_group
+- !ruby/object:RI::MethodSummary 
+  name: _nt_hour
+- !ruby/object:RI::MethodSummary 
+  name: _nt_id_left
+- !ruby/object:RI::MethodSummary 
+  name: _nt_id_right
+- !ruby/object:RI::MethodSummary 
+  name: _nt_item_name
+- !ruby/object:RI::MethodSummary 
+  name: _nt_item_value
+- !ruby/object:RI::MethodSummary 
+  name: _nt_local_dot_atom
+- !ruby/object:RI::MethodSummary 
+  name: _nt_local_dot_atom_text
+- !ruby/object:RI::MethodSummary 
+  name: _nt_local_part
+- !ruby/object:RI::MethodSummary 
+  name: _nt_mailbox
+- !ruby/object:RI::MethodSummary 
+  name: _nt_mailbox_list
+- !ruby/object:RI::MethodSummary 
+  name: _nt_mailbox_list_group
+- !ruby/object:RI::MethodSummary 
+  name: _nt_message_id_text
+- !ruby/object:RI::MethodSummary 
+  name: _nt_message_ids
+- !ruby/object:RI::MethodSummary 
+  name: _nt_minute
+- !ruby/object:RI::MethodSummary 
+  name: _nt_month
+- !ruby/object:RI::MethodSummary 
+  name: _nt_month_name
+- !ruby/object:RI::MethodSummary 
+  name: _nt_msg_id
+- !ruby/object:RI::MethodSummary 
+  name: _nt_msg_id_atext
+- !ruby/object:RI::MethodSummary 
+  name: _nt_msg_id_domain_text
+- !ruby/object:RI::MethodSummary 
+  name: _nt_msg_id_dot_atom_text
+- !ruby/object:RI::MethodSummary 
+  name: _nt_msg_id_value
+- !ruby/object:RI::MethodSummary 
+  name: _nt_mtext
+- !ruby/object:RI::MethodSummary 
+  name: _nt_name_addr
+- !ruby/object:RI::MethodSummary 
+  name: _nt_name_val_list
+- !ruby/object:RI::MethodSummary 
+  name: _nt_name_val_pair
+- !ruby/object:RI::MethodSummary 
+  name: _nt_no_fold_literal
+- !ruby/object:RI::MethodSummary 
+  name: _nt_no_fold_quote
+- !ruby/object:RI::MethodSummary 
+  name: _nt_path
+- !ruby/object:RI::MethodSummary 
+  name: _nt_phrase
+- !ruby/object:RI::MethodSummary 
+  name: _nt_phrase_list
+- !ruby/object:RI::MethodSummary 
+  name: _nt_qcontent
+- !ruby/object:RI::MethodSummary 
+  name: _nt_qdcontent
+- !ruby/object:RI::MethodSummary 
+  name: _nt_qtext
+- !ruby/object:RI::MethodSummary 
+  name: _nt_quoted_domain
+- !ruby/object:RI::MethodSummary 
+  name: _nt_quoted_pair
+- !ruby/object:RI::MethodSummary 
+  name: _nt_quoted_string
+- !ruby/object:RI::MethodSummary 
+  name: _nt_received
+- !ruby/object:RI::MethodSummary 
+  name: _nt_return
+- !ruby/object:RI::MethodSummary 
+  name: _nt_second
+- !ruby/object:RI::MethodSummary 
+  name: _nt_specials
+- !ruby/object:RI::MethodSummary 
+  name: _nt_text
+- !ruby/object:RI::MethodSummary 
+  name: _nt_time
+- !ruby/object:RI::MethodSummary 
+  name: _nt_time_of_day
+- !ruby/object:RI::MethodSummary 
+  name: _nt_word
+- !ruby/object:RI::MethodSummary 
+  name: _nt_year
+- !ruby/object:RI::MethodSummary 
+  name: _nt_zone
+- !ruby/object:RI::MethodSummary 
+  name: root
+name: RFC2822
+superclass: 

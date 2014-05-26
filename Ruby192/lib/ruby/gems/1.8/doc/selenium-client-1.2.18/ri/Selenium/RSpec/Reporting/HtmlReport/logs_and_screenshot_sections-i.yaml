@@ -1,0 +1,10 @@
+--- !ruby/object:RI::MethodDescription 
+aliases: []
+
+block_params: 
+comment: 
+full_name: Selenium::RSpec::Reporting::HtmlReport#logs_and_screenshot_sections
+is_singleton: false
+name: logs_and_screenshot_sections
+params: (example)
+visibility: public

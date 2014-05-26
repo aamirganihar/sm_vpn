@@ -1,0 +1,12 @@
+--- !ruby/object:RI::MethodDescription 
+aliases: []
+
+block_params: 
+comment: 
+- !ruby/struct:SM::Flow::P 
+  body: Assert that the <em>boolean</em> is false.
+full_name: Test::Unit::Assertions#assert_false
+is_singleton: false
+name: assert_false
+params: (boolean, message = nil)
+visibility: public

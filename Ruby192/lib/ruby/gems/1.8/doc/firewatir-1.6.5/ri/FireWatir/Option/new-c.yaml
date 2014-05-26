@@ -1,0 +1,18 @@
+--- !ruby/object:RI::MethodDescription 
+aliases: []
+
+block_params: 
+comment: 
+- !ruby/struct:SM::Flow::P 
+  body: "Description:"
+- !ruby/struct:SM::Flow::VERB 
+  body: "  Initializes the instance of option object.\n"
+- !ruby/struct:SM::Flow::P 
+  body: "Input:"
+- !ruby/struct:SM::Flow::VERB 
+  body: "  - select_list - instance of select list element.\n  - attribute - Attribute to identify the option.\n  - value - Value of that attribute.\n"
+full_name: FireWatir::Option::new
+is_singleton: true
+name: new
+params: (select_list, attribute, value)
+visibility: public

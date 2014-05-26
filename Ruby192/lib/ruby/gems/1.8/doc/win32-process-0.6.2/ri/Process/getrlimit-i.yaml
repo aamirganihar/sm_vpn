@@ -1,0 +1,20 @@
+--- !ruby/object:RI::MethodDescription 
+aliases: []
+
+block_params: 
+comment: 
+- !ruby/struct:SM::Flow::P 
+  body: Gets the resource limit of the current process. Only a limited number of flags are supported.
+- !ruby/struct:SM::Flow::P 
+  body: Process::RLIMIT_CPU Process::RLIMIT_FSIZE Process::RLIMIT_AS Process::RLIMIT_RSS Process::RLIMIT_VMEM
+- !ruby/struct:SM::Flow::P 
+  body: The Process:RLIMIT_AS, Process::RLIMIT_RSS and Process::VMEM constants all refer to the Process memory limit. The Process::RLIMIT_CPU constant refers to the per process user time limit. The Process::RLIMIT_FSIZE constant is hard coded to the maximum file size on an NTFS filesystem, approximately 4TB.
+- !ruby/struct:SM::Flow::P 
+  body: While a two element array is returned in order to comply with the spec, there is no separate hard and soft limit. The values will always be the same.
+- !ruby/struct:SM::Flow::P 
+  body: If [0,0] is returned then it means no limit has been set.
+full_name: Process#getrlimit
+is_singleton: false
+name: getrlimit
+params: (resource)
+visibility: public

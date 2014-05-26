@@ -1,0 +1,10 @@
+--- !ruby/object:RI::MethodDescription 
+aliases: []
+
+block_params: 
+comment: 
+full_name: UserChoices::PosixCommandLineSource#fill
+is_singleton: false
+name: fill
+params: ()
+visibility: public

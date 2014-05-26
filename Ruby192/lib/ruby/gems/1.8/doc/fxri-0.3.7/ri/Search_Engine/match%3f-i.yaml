@@ -1,0 +1,12 @@
+--- !ruby/object:RI::MethodDescription 
+aliases: []
+
+block_params: 
+comment: 
+- !ruby/struct:SM::Flow::P 
+  body: Find out if item is matched by current search criteria.
+full_name: Search_Engine#match?
+is_singleton: false
+name: match?
+params: (item, match_data)
+visibility: public

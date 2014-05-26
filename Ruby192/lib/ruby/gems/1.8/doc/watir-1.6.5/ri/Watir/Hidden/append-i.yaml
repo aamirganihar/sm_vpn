@@ -1,0 +1,12 @@
+--- !ruby/object:RI::MethodDescription 
+aliases: []
+
+block_params: 
+comment: 
+- !ruby/struct:SM::Flow::P 
+  body: override the append method, so that focus isnt set to the hidden object
+full_name: Watir::Hidden#append
+is_singleton: false
+name: append
+params: (n)
+visibility: public

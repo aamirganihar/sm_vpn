@@ -1,0 +1,16 @@
+--- !ruby/object:RI::MethodDescription 
+aliases: []
+
+block_params: 
+comment: 
+- !ruby/struct:SM::Flow::P 
+  body: Returns the header object of the message object. Or, if passed a parameter sets the value.
+- !ruby/struct:SM::Flow::P 
+  body: "Example:"
+- !ruby/struct:SM::Flow::VERB 
+  body: " mail = Mail::Message.new('To: mikel\\r\\nFrom: you')\n mail.header #=&gt; #&lt;Mail::Header:0x13ce14 @raw_source=&quot;To: mikel\\r\\nFr...\n\n mail.header #=&gt; nil\n mail.header 'To: mikel\\r\\nFrom: you'\n mail.header #=&gt; #&lt;Mail::Header:0x13ce14 @raw_source=&quot;To: mikel\\r\\nFr...\n"
+full_name: Mail::Message#header
+is_singleton: false
+name: header
+params: (value = nil)
+visibility: public

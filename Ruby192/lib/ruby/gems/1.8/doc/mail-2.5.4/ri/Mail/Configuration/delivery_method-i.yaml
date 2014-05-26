@@ -1,0 +1,10 @@
+--- !ruby/object:RI::MethodDescription 
+aliases: []
+
+block_params: 
+comment: 
+full_name: Mail::Configuration#delivery_method
+is_singleton: false
+name: delivery_method
+params: (method = nil, settings = {})
+visibility: public

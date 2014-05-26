@@ -1,0 +1,12 @@
+--- !ruby/object:RI::MethodDescription 
+aliases: []
+
+block_params: 
+comment: 
+- !ruby/struct:SM::Flow::P 
+  body: Decode the string from Quoted-Printable. Cope with hard line breaks that were incorrectly encoded as hex instead of literal CRLF.
+full_name: Mail::Encodings::QuotedPrintable::decode
+is_singleton: true
+name: decode
+params: (str)
+visibility: public

@@ -1,0 +1,10 @@
+--- !ruby/object:RI::MethodDescription 
+aliases: []
+
+block_params: 
+comment: 
+full_name: Selenium::SeleniumServer#port_number
+is_singleton: false
+name: port_number
+params: ()
+visibility: public

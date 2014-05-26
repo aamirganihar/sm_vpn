@@ -1,0 +1,79 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+<!DOCTYPE html 
+     PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+     "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html>
+<head>
+  <title>read_socket (JsshSocket)</title>
+  <meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" />
+  <link rel="stylesheet" href="../.././rdoc-style.css" type="text/css" media="screen" />
+</head>
+<body class="standalone-code">
+  <pre><span class="ruby-comment cmt"># File lib/firewatir/jssh_socket.rb, line 37</span>
+  <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">read_socket</span>(<span class="ruby-identifier">socket</span> = <span class="ruby-identifier">jssh_socket</span>)
+    <span class="ruby-identifier">return_value</span> = <span class="ruby-value str">&quot;&quot;</span>
+    <span class="ruby-identifier">data</span> = <span class="ruby-value str">&quot;&quot;</span>
+    <span class="ruby-identifier">receive</span> = <span class="ruby-keyword kw">true</span>
+    <span class="ruby-comment cmt">#puts Thread.list</span>
+    <span class="ruby-identifier">s</span> = <span class="ruby-keyword kw">nil</span>
+    <span class="ruby-keyword kw">while</span>(<span class="ruby-identifier">s</span> <span class="ruby-operator">==</span> <span class="ruby-keyword kw">nil</span>) <span class="ruby-keyword kw">do</span>
+      <span class="ruby-identifier">s</span> = <span class="ruby-constant">Kernel</span>.<span class="ruby-identifier">select</span>([<span class="ruby-identifier">socket</span>] , <span class="ruby-keyword kw">nil</span> , <span class="ruby-keyword kw">nil</span>, <span class="ruby-value">1</span>)
+    <span class="ruby-keyword kw">end</span>
+    <span class="ruby-comment cmt">#if(s != nil)</span>
+    <span class="ruby-keyword kw">for</span> <span class="ruby-identifier">stream</span> <span class="ruby-keyword kw">in</span> <span class="ruby-identifier">s</span>[<span class="ruby-value">0</span>]
+      <span class="ruby-identifier">data</span> = <span class="ruby-identifier">stream</span>.<span class="ruby-identifier">recv</span>(<span class="ruby-value">1024</span>)
+      <span class="ruby-comment cmt">#puts &quot;data is : #{data}&quot;</span>
+      <span class="ruby-keyword kw">while</span>(<span class="ruby-identifier">receive</span>)
+        <span class="ruby-comment cmt">#while(data.length == 1024)</span>
+        <span class="ruby-identifier">return_value</span> <span class="ruby-operator">+=</span> <span class="ruby-identifier">data</span>
+        <span class="ruby-keyword kw">if</span>(<span class="ruby-identifier">return_value</span>.<span class="ruby-identifier">include?</span>(<span class="ruby-value str">&quot;\n&gt; &quot;</span>))
+          <span class="ruby-identifier">receive</span> = <span class="ruby-keyword kw">false</span>
+        <span class="ruby-keyword kw">else</span>
+          <span class="ruby-identifier">data</span> = <span class="ruby-identifier">stream</span>.<span class="ruby-identifier">recv</span>(<span class="ruby-value">1024</span>)
+        <span class="ruby-keyword kw">end</span>
+        <span class="ruby-comment cmt">#puts &quot;return_value is : #{return_value}&quot;</span>
+        <span class="ruby-comment cmt">#puts &quot;data length is : #{data.length}&quot;</span>
+      <span class="ruby-keyword kw">end</span>
+    <span class="ruby-keyword kw">end</span>
+
+    <span class="ruby-comment cmt"># If received data is less than 1024 characters or for last data</span>
+    <span class="ruby-comment cmt"># we read in the above loop</span>
+    <span class="ruby-comment cmt">#return_value += data</span>
+
+    <span class="ruby-comment cmt"># Get the command prompt inserted by JSSH</span>
+    <span class="ruby-comment cmt">#s = Kernel.select([socket] , nil , nil, 0.3)</span>
+
+    <span class="ruby-comment cmt">#if(s != nil)</span>
+    <span class="ruby-comment cmt">#    for stream in s[0]</span>
+    <span class="ruby-comment cmt">#        return_value += socket.recv(1024)</span>
+    <span class="ruby-comment cmt">#    end</span>
+    <span class="ruby-comment cmt">#end</span>
+
+    <span class="ruby-identifier">length</span> = <span class="ruby-identifier">return_value</span>.<span class="ruby-identifier">length</span>
+    <span class="ruby-comment cmt">#puts &quot;Return value before removing command prompt is : #{return_value}&quot;</span>
+
+    <span class="ruby-comment cmt">#Remove the command prompt. Every result returned by JSSH has &quot;\n&gt; &quot; at the end.</span>
+    <span class="ruby-keyword kw">if</span> <span class="ruby-identifier">length</span> <span class="ruby-operator">&lt;=</span> <span class="ruby-value">3</span>
+      <span class="ruby-identifier">return_value</span> = <span class="ruby-value str">&quot;&quot;</span>
+    <span class="ruby-keyword kw">elsif</span>(<span class="ruby-identifier">return_value</span>[<span class="ruby-value">0</span><span class="ruby-operator">..</span><span class="ruby-value">2</span>] <span class="ruby-operator">==</span> <span class="ruby-value str">&quot;\n&gt; &quot;</span>)
+      <span class="ruby-identifier">return_value</span> = <span class="ruby-identifier">return_value</span>[<span class="ruby-value">3</span><span class="ruby-operator">..</span><span class="ruby-identifier">length</span><span class="ruby-operator">-</span><span class="ruby-value">1</span>]
+    <span class="ruby-keyword kw">else</span>
+      <span class="ruby-comment cmt">#return_value = return_value[0..length-3]</span>
+      <span class="ruby-identifier">return_value</span> = <span class="ruby-identifier">return_value</span>[<span class="ruby-value">0</span><span class="ruby-operator">..</span><span class="ruby-identifier">length</span><span class="ruby-operator">-</span><span class="ruby-value">4</span>]
+    <span class="ruby-keyword kw">end</span>
+    <span class="ruby-comment cmt">#puts &quot;Return value after removing command prompt is : #{return_value}&quot;</span>
+    <span class="ruby-comment cmt">#socket.flush</span>
+
+    <span class="ruby-comment cmt"># make sure that command prompt doesn't get there.</span>
+    <span class="ruby-keyword kw">if</span>(<span class="ruby-identifier">return_value</span>[<span class="ruby-identifier">return_value</span>.<span class="ruby-identifier">length</span> <span class="ruby-operator">-</span> <span class="ruby-value">3</span><span class="ruby-operator">..</span><span class="ruby-identifier">return_value</span>.<span class="ruby-identifier">length</span> <span class="ruby-operator">-</span> <span class="ruby-value">1</span>] <span class="ruby-operator">==</span> <span class="ruby-value str">&quot;\n&gt; &quot;</span>)
+      <span class="ruby-identifier">return_value</span> = <span class="ruby-identifier">return_value</span>[<span class="ruby-value">0</span><span class="ruby-operator">..</span><span class="ruby-identifier">return_value</span>.<span class="ruby-identifier">length</span> <span class="ruby-operator">-</span> <span class="ruby-value">4</span>]
+    <span class="ruby-keyword kw">end</span>
+    <span class="ruby-keyword kw">if</span>(<span class="ruby-identifier">return_value</span>[<span class="ruby-value">0</span><span class="ruby-operator">..</span><span class="ruby-value">2</span>] <span class="ruby-operator">==</span> <span class="ruby-value str">&quot;\n&gt; &quot;</span>)
+      <span class="ruby-identifier">return_value</span> = <span class="ruby-identifier">return_value</span>[<span class="ruby-value">3</span><span class="ruby-operator">..</span><span class="ruby-identifier">return_value</span>.<span class="ruby-identifier">length</span> <span class="ruby-operator">-</span> <span class="ruby-value">1</span>]
+    <span class="ruby-keyword kw">end</span>
+    <span class="ruby-comment cmt">#puts &quot;return value is : #{return_value}&quot;</span>
+    <span class="ruby-keyword kw">return</span> <span class="ruby-identifier">return_value</span>
+  <span class="ruby-keyword kw">end</span></pre>
+</body>
+</html>

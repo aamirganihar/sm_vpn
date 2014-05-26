@@ -1,0 +1,28 @@
+--- !ruby/object:RI::ClassDescription 
+attributes: []
+
+class_methods: []
+
+comment: 
+- !ruby/struct:SM::Flow::P 
+  body: "Use an YAML file as a source of choices. Note: because the YAML parser can produce something out of many typo-filled YAML files, it's a good idea to check that your file looks like you'd expect before trusting in it. Do that with:"
+- !ruby/struct:SM::Flow::VERB 
+  body: "   irb&gt; require 'yaml'\n   irb&gt; YAML.load_file('config.yaml')\n"
+constants: []
+
+full_name: UserChoices::YamlConfigFileSource
+includes: []
+
+instance_methods: 
+- !ruby/object:RI::MethodSummary 
+  name: ensure_array_values_are_strings
+- !ruby/object:RI::MethodSummary 
+  name: ensure_element_is_string
+- !ruby/object:RI::MethodSummary 
+  name: ensure_hash_values_are_strings
+- !ruby/object:RI::MethodSummary 
+  name: format_specific_exception?
+- !ruby/object:RI::MethodSummary 
+  name: format_specific_reading
+name: YamlConfigFileSource
+superclass: FileSource

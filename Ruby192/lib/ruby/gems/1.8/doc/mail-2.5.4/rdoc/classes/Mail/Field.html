@@ -1,0 +1,423 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+<!DOCTYPE html 
+     PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+     "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+  <title>Class: Mail::Field</title>
+  <meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" />
+  <meta http-equiv="Content-Script-Type" content="text/javascript" />
+  <link rel="stylesheet" href="../.././rdoc-style.css" type="text/css" media="screen" />
+  <script type="text/javascript">
+  // <![CDATA[
+
+  function popupCode( url ) {
+    window.open(url, "Code", "resizable=yes,scrollbars=yes,toolbar=no,status=no,height=150,width=400")
+  }
+
+  function toggleCode( id ) {
+    if ( document.getElementById )
+      elem = document.getElementById( id );
+    else if ( document.all )
+      elem = eval( "document.all." + id );
+    else
+      return false;
+
+    elemStyle = elem.style;
+    
+    if ( elemStyle.display != "block" ) {
+      elemStyle.display = "block"
+    } else {
+      elemStyle.display = "none"
+    }
+
+    return true;
+  }
+  
+  // Make codeblocks hidden by default
+  document.writeln( "<style type=\"text/css\">div.method-source-code { display: none }</style>" )
+  
+  // ]]>
+  </script>
+
+</head>
+<body>
+
+
+
+    <div id="classHeader">
+        <table class="header-table">
+        <tr class="top-aligned-row">
+          <td><strong>Class</strong></td>
+          <td class="class-name-in-header">Mail::Field</td>
+        </tr>
+        <tr class="top-aligned-row">
+            <td><strong>In:</strong></td>
+            <td>
+                <a href="../../files/lib/mail/field_rb.html">
+                lib/mail/field.rb
+                </a>
+        <br />
+            </td>
+        </tr>
+
+        <tr class="top-aligned-row">
+            <td><strong>Parent:</strong></td>
+            <td>
+                <a href="../Object.html">
+                Object
+               </a>
+            </td>
+        </tr>
+        </table>
+    </div>
+  <!-- banner header -->
+
+  <div id="bodyContent">
+
+
+
+  <div id="contextContent">
+
+    <div id="description">
+      <p>
+Provides a single class to call to create a <a
+href="Field.html#M000931">new</a> structured or unstructured <a
+href="Field.html#M000933">field</a>. Works out per RFC what <a
+href="Field.html#M000933">field</a> of <a
+href="Field.html#M000933">field</a> it is being given and returns the
+correct <a href="Field.html#M000933">field</a> of class back on <a
+href="Field.html#M000931">new</a>.
+</p>
+<h3>Per RFC 2822</h3>
+<pre>
+ 2.2. Header Fields
+
+    Header fields are lines composed of a field name, followed by a colon
+    (&quot;:&quot;), followed by a field body, and terminated by CRLF.  A field
+    name MUST be composed of printable US-ASCII characters (i.e.,
+    characters that have values between 33 and 126, inclusive), except
+    colon.  A field body may be composed of any US-ASCII characters,
+    except for CR and LF.  However, a field body may contain CRLF when
+    used in header &quot;folding&quot; and  &quot;unfolding&quot; as described in section
+    2.2.3.  All field bodies MUST conform to the syntax described in
+    sections 3 and 4 of this standard.
+</pre>
+
+    </div>
+
+
+   </div>
+
+    <div id="method-list">
+      <h3 class="section-bar">Methods</h3>
+
+      <div class="name-list">
+      <a href="#M000941">&lt;=&gt;</a>&nbsp;&nbsp;
+      <a href="#M000940">==</a>&nbsp;&nbsp;
+      <a href="#M000933">field</a>&nbsp;&nbsp;
+      <a href="#M000932">field=</a>&nbsp;&nbsp;
+      <a href="#M000942">field_order_id</a>&nbsp;&nbsp;
+      <a href="#M000943">method_missing</a>&nbsp;&nbsp;
+      <a href="#M000934">name</a>&nbsp;&nbsp;
+      <a href="#M000931">new</a>&nbsp;&nbsp;
+      <a href="#M000939">same</a>&nbsp;&nbsp;
+      <a href="#M000937">to_s</a>&nbsp;&nbsp;
+      <a href="#M000938">update</a>&nbsp;&nbsp;
+      <a href="#M000935">value</a>&nbsp;&nbsp;
+      <a href="#M000936">value=</a>&nbsp;&nbsp;
+      </div>
+    </div>
+
+  </div>
+
+
+    <!-- if includes -->
+    <div id="includes">
+      <h3 class="section-bar">Included Modules</h3>
+
+      <div id="includes-list">
+        <span class="include-name"><a href="Patterns.html">Patterns</a></span>
+        <span class="include-name">Comparable</span>
+      </div>
+    </div>
+
+    <div id="section">
+
+    <div id="class-list">
+      <h3 class="section-bar">Classes and Modules</h3>
+
+      Class <a href="Field/FieldError.html" class="link">Mail::Field::FieldError</a><br />
+
+    </div>
+
+    <div id="constants-list">
+      <h3 class="section-bar">Constants</h3>
+
+      <div class="name-list">
+        <table summary="Constants">
+        <tr class="top-aligned-row context-row">
+          <td class="context-item-name">STRUCTURED_FIELDS</td>
+          <td>=</td>
+          <td class="context-item-value">%w[ bcc cc content-description content-disposition                             content-id content-location content-transfer-encoding                             content-type date from in-reply-to keywords message-id                             mime-version received references reply-to                             resent-bcc resent-cc resent-date resent-from                             resent-message-id resent-sender resent-to                             return-path sender to ]</td>
+        </tr>
+        <tr class="top-aligned-row context-row">
+          <td class="context-item-name">KNOWN_FIELDS</td>
+          <td>=</td>
+          <td class="context-item-value">STRUCTURED_FIELDS + ['comments', 'subject']</td>
+        </tr>
+        <tr class="top-aligned-row context-row">
+          <td class="context-item-name">FIELDS_MAP</td>
+          <td>=</td>
+          <td class="context-item-value">{       &quot;to&quot; =&gt; ToField,       &quot;cc&quot; =&gt; CcField,       &quot;bcc&quot; =&gt; BccField,       &quot;message-id&quot; =&gt; MessageIdField,       &quot;in-reply-to&quot; =&gt; InReplyToField,       &quot;references&quot; =&gt; ReferencesField,       &quot;subject&quot; =&gt; SubjectField,       &quot;comments&quot; =&gt; CommentsField,       &quot;keywords&quot; =&gt; KeywordsField,       &quot;date&quot; =&gt; DateField,       &quot;from&quot; =&gt; FromField,       &quot;sender&quot; =&gt; SenderField,       &quot;reply-to&quot; =&gt; ReplyToField,       &quot;resent-date&quot; =&gt; ResentDateField,       &quot;resent-from&quot; =&gt; ResentFromField,       &quot;resent-sender&quot; =&gt;  ResentSenderField,       &quot;resent-to&quot; =&gt; ResentToField,       &quot;resent-cc&quot; =&gt; ResentCcField,       &quot;resent-bcc&quot; =&gt; ResentBccField,       &quot;resent-message-id&quot; =&gt; ResentMessageIdField,       &quot;return-path&quot; =&gt; ReturnPathField,       &quot;received&quot; =&gt; ReceivedField,       &quot;mime-version&quot; =&gt; MimeVersionField,       &quot;content-transfer-encoding&quot; =&gt; ContentTransferEncodingField,       &quot;content-description&quot; =&gt; ContentDescriptionField,       &quot;content-disposition&quot; =&gt; ContentDispositionField,       &quot;content-type&quot; =&gt; ContentTypeField,       &quot;content-id&quot; =&gt; ContentIdField,       &quot;content-location&quot; =&gt; ContentLocationField,     }</td>
+        </tr>
+        <tr class="top-aligned-row context-row">
+          <td class="context-item-name">FIELD_ORDER</td>
+          <td>=</td>
+          <td class="context-item-value">%w[ return-path received                       resent-date resent-from resent-sender resent-to                       resent-cc resent-bcc resent-message-id                       date from sender reply-to to cc bcc                       message-id in-reply-to references                       subject comments keywords                       mime-version content-type content-transfer-encoding                       content-location content-disposition content-description ]</td>
+        </tr>
+        <tr class="top-aligned-row context-row">
+          <td class="context-item-name">FIELD_ORDER_LOOKUP</td>
+          <td>=</td>
+          <td class="context-item-value">Hash[FIELD_ORDER.each_with_index.to_a]</td>
+        </tr>
+        </table>
+      </div>
+    </div>
+
+
+
+      
+
+
+    <!-- if method_list -->
+    <div id="methods">
+      <h3 class="section-bar">Public Class methods</h3>
+
+      <div id="method-M000931" class="method-detail">
+        <a name="M000931"></a>
+
+        <div class="method-heading">
+          <a href="Field.src/M000931.html" target="Code" class="method-signature"
+            onclick="popupCode('Field.src/M000931.html');return false;">
+          <span class="method-name">new</span><span class="method-args">(name, value = nil, charset = 'utf-8')</span>
+          </a>
+        </div>
+      
+        <div class="method-description">
+          <p>
+Accepts a string:
+</p>
+<pre>
+ Field.new(&quot;field-name: field data&quot;)
+</pre>
+<p>
+Or <a href="Field.html#M000934">name</a>, <a
+href="Field.html#M000935">value</a> pair:
+</p>
+<pre>
+ Field.new(&quot;field-name&quot;, &quot;value&quot;)
+</pre>
+<p>
+Or a <a href="Field.html#M000934">name</a> by itself:
+</p>
+<pre>
+ Field.new(&quot;field-name&quot;)
+</pre>
+<p>
+Note, does not want a terminating carriage return. Returns self
+appropriately parsed. If <a href="Field.html#M000935">value</a> is not a
+string, then it will be passed through as is, for example, content-type <a
+href="Field.html#M000933">field</a> can accept an array with the type and a
+hash of parameters:
+</p>
+<pre>
+ Field.new('content-type', ['text', 'plain', {:charset =&gt; 'UTF-8'}])
+</pre>
+        </div>
+      </div>
+
+      <h3 class="section-bar">Public Instance methods</h3>
+
+      <div id="method-M000941" class="method-detail">
+        <a name="M000941"></a>
+
+        <div class="method-heading">
+          <a href="Field.src/M000941.html" target="Code" class="method-signature"
+            onclick="popupCode('Field.src/M000941.html');return false;">
+          <span class="method-name">&lt;=&gt;</span><span class="method-args">( other )</span>
+          </a>
+        </div>
+      
+        <div class="method-description">
+        </div>
+      </div>
+
+      <div id="method-M000940" class="method-detail">
+        <a name="M000940"></a>
+
+        <div class="method-heading">
+          <span class="method-name">==</span><span class="method-args">( other )</span>
+        </div>
+      
+        <div class="method-description">
+          <p>
+Alias for <a href="Field.html#M000939">same</a>
+</p>
+        </div>
+      </div>
+
+      <div id="method-M000933" class="method-detail">
+        <a name="M000933"></a>
+
+        <div class="method-heading">
+          <a href="Field.src/M000933.html" target="Code" class="method-signature"
+            onclick="popupCode('Field.src/M000933.html');return false;">
+          <span class="method-name">field</span><span class="method-args">()</span>
+          </a>
+        </div>
+      
+        <div class="method-description">
+        </div>
+      </div>
+
+      <div id="method-M000932" class="method-detail">
+        <a name="M000932"></a>
+
+        <div class="method-heading">
+          <a href="Field.src/M000932.html" target="Code" class="method-signature"
+            onclick="popupCode('Field.src/M000932.html');return false;">
+          <span class="method-name">field=</span><span class="method-args">(value)</span>
+          </a>
+        </div>
+      
+        <div class="method-description">
+        </div>
+      </div>
+
+      <div id="method-M000942" class="method-detail">
+        <a name="M000942"></a>
+
+        <div class="method-heading">
+          <a href="Field.src/M000942.html" target="Code" class="method-signature"
+            onclick="popupCode('Field.src/M000942.html');return false;">
+          <span class="method-name">field_order_id</span><span class="method-args">()</span>
+          </a>
+        </div>
+      
+        <div class="method-description">
+        </div>
+      </div>
+
+      <div id="method-M000943" class="method-detail">
+        <a name="M000943"></a>
+
+        <div class="method-heading">
+          <a href="Field.src/M000943.html" target="Code" class="method-signature"
+            onclick="popupCode('Field.src/M000943.html');return false;">
+          <span class="method-name">method_missing</span><span class="method-args">(name, *args, &amp;block)</span>
+          </a>
+        </div>
+      
+        <div class="method-description">
+        </div>
+      </div>
+
+      <div id="method-M000934" class="method-detail">
+        <a name="M000934"></a>
+
+        <div class="method-heading">
+          <a href="Field.src/M000934.html" target="Code" class="method-signature"
+            onclick="popupCode('Field.src/M000934.html');return false;">
+          <span class="method-name">name</span><span class="method-args">()</span>
+          </a>
+        </div>
+      
+        <div class="method-description">
+        </div>
+      </div>
+
+      <div id="method-M000939" class="method-detail">
+        <a name="M000939"></a>
+
+        <div class="method-heading">
+          <a href="Field.src/M000939.html" target="Code" class="method-signature"
+            onclick="popupCode('Field.src/M000939.html');return false;">
+          <span class="method-name">same</span><span class="method-args">( other )</span>
+          </a>
+        </div>
+      
+        <div class="method-description">
+        </div>
+      </div>
+
+      <div id="method-M000937" class="method-detail">
+        <a name="M000937"></a>
+
+        <div class="method-heading">
+          <a href="Field.src/M000937.html" target="Code" class="method-signature"
+            onclick="popupCode('Field.src/M000937.html');return false;">
+          <span class="method-name">to_s</span><span class="method-args">()</span>
+          </a>
+        </div>
+      
+        <div class="method-description">
+        </div>
+      </div>
+
+      <div id="method-M000938" class="method-detail">
+        <a name="M000938"></a>
+
+        <div class="method-heading">
+          <a href="Field.src/M000938.html" target="Code" class="method-signature"
+            onclick="popupCode('Field.src/M000938.html');return false;">
+          <span class="method-name">update</span><span class="method-args">(name, value)</span>
+          </a>
+        </div>
+      
+        <div class="method-description">
+        </div>
+      </div>
+
+      <div id="method-M000935" class="method-detail">
+        <a name="M000935"></a>
+
+        <div class="method-heading">
+          <a href="Field.src/M000935.html" target="Code" class="method-signature"
+            onclick="popupCode('Field.src/M000935.html');return false;">
+          <span class="method-name">value</span><span class="method-args">()</span>
+          </a>
+        </div>
+      
+        <div class="method-description">
+        </div>
+      </div>
+
+      <div id="method-M000936" class="method-detail">
+        <a name="M000936"></a>
+
+        <div class="method-heading">
+          <a href="Field.src/M000936.html" target="Code" class="method-signature"
+            onclick="popupCode('Field.src/M000936.html');return false;">
+          <span class="method-name">value=</span><span class="method-args">(val)</span>
+          </a>
+        </div>
+      
+        <div class="method-description">
+        </div>
+      </div>
+
+
+    </div>
+
+
+  </div>
+
+
+<div id="validator-badges">
+  <p><small><a href="http://validator.w3.org/check/referer">[Validate]</a></small></p>
+</div>
+
+</body>
+</html>

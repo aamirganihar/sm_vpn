@@ -1,0 +1,12 @@
+--- !ruby/object:RI::MethodDescription 
+aliases: []
+
+block_params: 
+comment: 
+- !ruby/struct:SM::Flow::P 
+  body: The <em>usage_lines</em> will be used to produce the output from --help (or on error).
+full_name: UserChoices::CommandLineSource#usage
+is_singleton: false
+name: usage
+params: (*usage_lines)
+visibility: public

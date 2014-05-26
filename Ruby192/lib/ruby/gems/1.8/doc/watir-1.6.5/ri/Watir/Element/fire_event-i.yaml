@@ -1,0 +1,14 @@
+--- !ruby/object:RI::MethodDescription 
+aliases: []
+
+block_params: 
+comment: 
+- !ruby/struct:SM::Flow::P 
+  body: Executes a user defined &quot;fireEvent&quot; for objects with JavaScript events tied to them such as DHTML menus.
+- !ruby/struct:SM::Flow::VERB 
+  body: "  usage: allows a generic way to fire javascript events on page objects such as &quot;onMouseOver&quot;, &quot;onClick&quot;, etc.\n  raises: UnknownObjectException  if the object is not found\n          ObjectDisabledException if the object is currently disabled\n"
+full_name: Watir::Element#fire_event
+is_singleton: false
+name: fire_event
+params: (event)
+visibility: public

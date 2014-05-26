@@ -1,0 +1,24 @@
+--- !ruby/object:RI::MethodDescription 
+aliases: []
+
+block_params: 
+comment: 
+- !ruby/struct:SM::Flow::P 
+  body: Returns the SMTP Envelope To value of the mail object.
+- !ruby/struct:SM::Flow::P 
+  body: "Defaults to #destinations: To, Cc, and Bcc addresses."
+- !ruby/struct:SM::Flow::P 
+  body: "Example:"
+- !ruby/struct:SM::Flow::VERB 
+  body: " mail.smtp_envelope_to = 'Mikel &lt;mikel@test.lindsaar.net&gt;'\n mail.smtp_envelope_to #=&gt; 'mikel@test.lindsaar.net'\n"
+- !ruby/struct:SM::Flow::P 
+  body: Also allows you to set the value by passing a value as a parameter
+- !ruby/struct:SM::Flow::P 
+  body: "Example:"
+- !ruby/struct:SM::Flow::VERB 
+  body: " mail.smtp_envelope_to ['Mikel &lt;mikel@test.lindsaar.net&gt;', 'Lindsaar &lt;lindsaar@test.lindsaar.net&gt;']\n mail.smtp_envelope_to #=&gt; ['mikel@test.lindsaar.net', 'lindsaar@test.lindsaar.net']\n"
+full_name: Mail::Message#smtp_envelope_to
+is_singleton: false
+name: smtp_envelope_to
+params: ( val = nil )
+visibility: public

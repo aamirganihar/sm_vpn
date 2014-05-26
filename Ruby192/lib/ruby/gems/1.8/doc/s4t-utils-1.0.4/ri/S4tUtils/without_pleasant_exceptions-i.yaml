@@ -1,0 +1,12 @@
+--- !ruby/object:RI::MethodDescription 
+aliases: []
+
+block_params: ""
+comment: 
+- !ruby/struct:SM::Flow::P 
+  body: with_pleasant_exceptions swallows the stack trace, which you want to see during debugging. The easy way to see it is to add 'out' to that message, producing this one. To reduce the chance you'll forget to make exceptions pleasant again, a note that exceptions are turned off is always printed to $stderr.
+full_name: S4tUtils#without_pleasant_exceptions
+is_singleton: false
+name: without_pleasant_exceptions
+params: () {|| ...}
+visibility: public

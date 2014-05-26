@@ -1,0 +1,12 @@
+--- !ruby/object:RI::MethodDescription 
+aliases: []
+
+block_params: 
+comment: 
+- !ruby/struct:SM::Flow::P 
+  body: Open up a browser and point it at a certain URL.
+full_name: Watir::Simple#new_browser_at
+is_singleton: false
+name: new_browser_at
+params: (url)
+visibility: public

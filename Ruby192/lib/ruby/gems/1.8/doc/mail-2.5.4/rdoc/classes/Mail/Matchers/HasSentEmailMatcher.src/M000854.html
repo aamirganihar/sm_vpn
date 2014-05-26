@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+<!DOCTYPE html 
+     PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+     "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html>
+<head>
+  <title>filter_matched_deliveries (Mail::Matchers::HasSentEmailMatcher)</title>
+  <meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" />
+  <link rel="stylesheet" href="../../../.././rdoc-style.css" type="text/css" media="screen" />
+</head>
+<body class="standalone-code">
+  <pre><span class="ruby-comment cmt"># File lib/mail/matchers/has_sent_mail.rb, line 73</span>
+      <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">filter_matched_deliveries</span>(<span class="ruby-identifier">deliveries</span>)
+        <span class="ruby-identifier">candidate_deliveries</span> = <span class="ruby-identifier">deliveries</span>
+
+        <span class="ruby-node">%w(sender recipients subject subject_matcher body body_matcher)</span>.<span class="ruby-identifier">each</span> <span class="ruby-keyword kw">do</span> <span class="ruby-operator">|</span><span class="ruby-identifier">modifier_name</span><span class="ruby-operator">|</span>
+          <span class="ruby-keyword kw">next</span> <span class="ruby-keyword kw">unless</span> <span class="ruby-identifier">instance_variable_defined?</span>(<span class="ruby-node">&quot;@#{modifier_name}&quot;</span>)
+          <span class="ruby-identifier">candidate_deliveries</span> = <span class="ruby-identifier">candidate_deliveries</span>.<span class="ruby-identifier">select</span>{<span class="ruby-operator">|</span><span class="ruby-identifier">matching_delivery</span><span class="ruby-operator">|</span> <span class="ruby-keyword kw">self</span>.<span class="ruby-identifier">send</span>(<span class="ruby-node">&quot;matches_on_#{modifier_name}?&quot;</span>, <span class="ruby-identifier">matching_delivery</span>)}
+        <span class="ruby-keyword kw">end</span>
+
+        <span class="ruby-identifier">candidate_deliveries</span>
+      <span class="ruby-keyword kw">end</span></pre>
+</body>
+</html>

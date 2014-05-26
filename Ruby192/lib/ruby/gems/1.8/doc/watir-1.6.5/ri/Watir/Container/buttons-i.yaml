@@ -1,0 +1,16 @@
+--- !ruby/object:RI::MethodDescription 
+aliases: []
+
+block_params: 
+comment: 
+- !ruby/struct:SM::Flow::P 
+  body: this is the main method for accessing the buttons iterator. It returns a Buttons object
+- !ruby/struct:SM::Flow::P 
+  body: "Typical usage:"
+- !ruby/struct:SM::Flow::VERB 
+  body: "  ie.buttons.each { |b| puts b.to_s }                   # iterate through all the buttons on the page\n  ie.buttons[1].to_s                                    # goto the first button on the page\n  ie.buttons.length                                     # show how many buttons are on the page.\n"
+full_name: Watir::Container#buttons
+is_singleton: false
+name: buttons
+params: ()
+visibility: public

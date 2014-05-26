@@ -1,0 +1,12 @@
+--- !ruby/object:RI::MethodDescription 
+aliases: []
+
+block_params: 
+comment: 
+- !ruby/struct:SM::Flow::P 
+  body: Returns the raw source that the body was initialized with, without any tampering
+full_name: Mail::Body#raw_source
+is_singleton: false
+name: raw_source
+params: ()
+visibility: public

@@ -1,0 +1,82 @@
+--- !ruby/object:RI::ClassDescription 
+attributes: []
+
+class_methods: 
+- !ruby/object:RI::MethodSummary 
+  name: new
+comment: 
+- !ruby/struct:SM::Flow::H 
+  level: 1
+  text: Body
+- !ruby/struct:SM::Flow::P 
+  body: The body is where the text of the email is stored. Mail treats the body as a single object. The body itself has no information about boundaries used in the MIME standard, it just looks at its content as either a single block of text, or (if it is a multipart message) as an array of blocks of text.
+- !ruby/struct:SM::Flow::P 
+  body: "A body has to be told to split itself up into a multipart message by calling #split with the correct boundary. This is because the body object has no way of knowing what the correct boundary is for itself (there could be many boundaries in a body in the case of a nested MIME text)."
+- !ruby/struct:SM::Flow::P 
+  body: Once split is called, Mail::Body will slice itself up on this boundary, assigning anything that appears before the first part to the preamble, and anything that appears after the closing boundary to the epilogue, then each part gets initialized into a Mail::Part object.
+- !ruby/struct:SM::Flow::P 
+  body: The boundary that is used to split up the Body is also stored in the Body object for use on encoding itself back out to a string. You can overwrite this if it needs to be changed.
+- !ruby/struct:SM::Flow::P 
+  body: On encoding, the body will return the preamble, then each part joined by the boundary, followed by a closing boundary string and then the epilogue.
+constants: []
+
+full_name: Mail::Body
+includes: []
+
+instance_methods: 
+- !ruby/object:RI::MethodSummary 
+  name: "<<"
+- !ruby/object:RI::MethodSummary 
+  name: ==
+- !ruby/object:RI::MethodSummary 
+  name: =~
+- !ruby/object:RI::MethodSummary 
+  name: boundary
+- !ruby/object:RI::MethodSummary 
+  name: boundary=
+- !ruby/object:RI::MethodSummary 
+  name: charset
+- !ruby/object:RI::MethodSummary 
+  name: charset=
+- !ruby/object:RI::MethodSummary 
+  name: decoded
+- !ruby/object:RI::MethodSummary 
+  name: empty?
+- !ruby/object:RI::MethodSummary 
+  name: encoded
+- !ruby/object:RI::MethodSummary 
+  name: encoding
+- !ruby/object:RI::MethodSummary 
+  name: encoding=
+- !ruby/object:RI::MethodSummary 
+  name: epilogue
+- !ruby/object:RI::MethodSummary 
+  name: epilogue=
+- !ruby/object:RI::MethodSummary 
+  name: get_best_encoding
+- !ruby/object:RI::MethodSummary 
+  name: include?
+- !ruby/object:RI::MethodSummary 
+  name: match
+- !ruby/object:RI::MethodSummary 
+  name: multipart?
+- !ruby/object:RI::MethodSummary 
+  name: only_us_ascii?
+- !ruby/object:RI::MethodSummary 
+  name: parts
+- !ruby/object:RI::MethodSummary 
+  name: preamble
+- !ruby/object:RI::MethodSummary 
+  name: preamble=
+- !ruby/object:RI::MethodSummary 
+  name: raw_source
+- !ruby/object:RI::MethodSummary 
+  name: set_sort_order
+- !ruby/object:RI::MethodSummary 
+  name: sort_parts!
+- !ruby/object:RI::MethodSummary 
+  name: split!
+- !ruby/object:RI::MethodSummary 
+  name: to_s
+name: Body
+superclass: Object

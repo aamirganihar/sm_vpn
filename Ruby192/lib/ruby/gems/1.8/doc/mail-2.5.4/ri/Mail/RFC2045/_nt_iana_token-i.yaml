@@ -1,0 +1,10 @@
+--- !ruby/object:RI::MethodDescription 
+aliases: []
+
+block_params: 
+comment: 
+full_name: Mail::RFC2045#_nt_iana_token
+is_singleton: false
+name: _nt_iana_token
+params: ()
+visibility: public

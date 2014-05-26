@@ -1,0 +1,12 @@
+--- !ruby/object:RI::MethodDescription 
+aliases: []
+
+block_params: 
+comment: 
+- !ruby/struct:SM::Flow::P 
+  body: Create a new IE Window, starting at the specified url. If no url is given, start empty.
+full_name: Watir::IE::start
+is_singleton: true
+name: start
+params: (url=nil)
+visibility: public

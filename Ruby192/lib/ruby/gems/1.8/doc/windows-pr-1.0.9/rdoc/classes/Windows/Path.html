@@ -1,0 +1,357 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+<!DOCTYPE html 
+     PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+     "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+  <title>Module: Windows::Path</title>
+  <meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" />
+  <meta http-equiv="Content-Script-Type" content="text/javascript" />
+  <link rel="stylesheet" href="../.././rdoc-style.css" type="text/css" media="screen" />
+  <script type="text/javascript">
+  // <![CDATA[
+
+  function popupCode( url ) {
+    window.open(url, "Code", "resizable=yes,scrollbars=yes,toolbar=no,status=no,height=150,width=400")
+  }
+
+  function toggleCode( id ) {
+    if ( document.getElementById )
+      elem = document.getElementById( id );
+    else if ( document.all )
+      elem = eval( "document.all." + id );
+    else
+      return false;
+
+    elemStyle = elem.style;
+    
+    if ( elemStyle.display != "block" ) {
+      elemStyle.display = "block"
+    } else {
+      elemStyle.display = "none"
+    }
+
+    return true;
+  }
+  
+  // Make codeblocks hidden by default
+  document.writeln( "<style type=\"text/css\">div.method-source-code { display: none }</style>" )
+  
+  // ]]>
+  </script>
+
+</head>
+<body>
+
+
+
+    <div id="classHeader">
+        <table class="header-table">
+        <tr class="top-aligned-row">
+          <td><strong>Module</strong></td>
+          <td class="class-name-in-header">Windows::Path</td>
+        </tr>
+        <tr class="top-aligned-row">
+            <td><strong>In:</strong></td>
+            <td>
+                <a href="../../files/lib/windows/path_rb.html">
+                lib/windows/path.rb
+                </a>
+        <br />
+            </td>
+        </tr>
+
+        </table>
+    </div>
+  <!-- banner header -->
+
+  <div id="bodyContent">
+
+
+
+  <div id="contextContent">
+
+
+
+   </div>
+
+    <div id="method-list">
+      <h3 class="section-bar">Methods</h3>
+
+      <div class="name-list">
+      <a href="#M000179">UrlEscapeSpaces</a>&nbsp;&nbsp;
+      <a href="#M000180">UrlIsFileUrl</a>&nbsp;&nbsp;
+      <a href="#M000181">UrlUnescapeInPlace</a>&nbsp;&nbsp;
+      </div>
+    </div>
+
+  </div>
+
+
+    <!-- if includes -->
+
+    <div id="section">
+
+
+    <div id="constants-list">
+      <h3 class="section-bar">Constants</h3>
+
+      <div class="name-list">
+        <table summary="Constants">
+        <tr class="top-aligned-row context-row">
+          <td class="context-item-name">GCT_INVALID</td>
+          <td>=</td>
+          <td class="context-item-value">0x0000</td>
+          <td width="3em">&nbsp;</td>
+          <td class="context-item-desc">
+These constants are for use by the PathGetCharType() function.
+
+</td>
+        </tr>
+        <tr class="top-aligned-row context-row">
+          <td class="context-item-name">GCT_LFNCHAR</td>
+          <td>=</td>
+          <td class="context-item-value">0x0001</td>
+        </tr>
+        <tr class="top-aligned-row context-row">
+          <td class="context-item-name">GCT_SHORTCHAR</td>
+          <td>=</td>
+          <td class="context-item-value">0x0002</td>
+        </tr>
+        <tr class="top-aligned-row context-row">
+          <td class="context-item-name">GCT_WILD</td>
+          <td>=</td>
+          <td class="context-item-value">0x0004</td>
+        </tr>
+        <tr class="top-aligned-row context-row">
+          <td class="context-item-name">GCT_SEPARATOR</td>
+          <td>=</td>
+          <td class="context-item-value">0x0008</td>
+        </tr>
+        <tr class="top-aligned-row context-row">
+          <td class="context-item-name">URL_UNESCAPE</td>
+          <td>=</td>
+          <td class="context-item-value">0x10000000</td>
+        </tr>
+        <tr class="top-aligned-row context-row">
+          <td class="context-item-name">URL_ESCAPE_UNSAFE</td>
+          <td>=</td>
+          <td class="context-item-value">0x20000000</td>
+        </tr>
+        <tr class="top-aligned-row context-row">
+          <td class="context-item-name">URL_PLUGGABLE_PROTOCOL</td>
+          <td>=</td>
+          <td class="context-item-value">0x40000000</td>
+        </tr>
+        <tr class="top-aligned-row context-row">
+          <td class="context-item-name">URL_WININET_COMPATIBILITY</td>
+          <td>=</td>
+          <td class="context-item-value">0x80000000</td>
+        </tr>
+        <tr class="top-aligned-row context-row">
+          <td class="context-item-name">URL_DONT_ESCAPE_EXTRA_INFO</td>
+          <td>=</td>
+          <td class="context-item-value">0x02000000</td>
+        </tr>
+        <tr class="top-aligned-row context-row">
+          <td class="context-item-name">URL_DONT_UNESCAPE_EXTRA_INFO</td>
+          <td>=</td>
+          <td class="context-item-value">URL_DONT_ESCAPE_EXTRA_INFO</td>
+        </tr>
+        <tr class="top-aligned-row context-row">
+          <td class="context-item-name">URL_BROWSER_MODE</td>
+          <td>=</td>
+          <td class="context-item-value">URL_DONT_ESCAPE_EXTRA_INFO</td>
+        </tr>
+        <tr class="top-aligned-row context-row">
+          <td class="context-item-name">URL_ESCAPE_SPACES_ONLY</td>
+          <td>=</td>
+          <td class="context-item-value">0x04000000</td>
+        </tr>
+        <tr class="top-aligned-row context-row">
+          <td class="context-item-name">URL_DONT_SIMPLIFY</td>
+          <td>=</td>
+          <td class="context-item-value">0x08000000</td>
+        </tr>
+        <tr class="top-aligned-row context-row">
+          <td class="context-item-name">URL_NO_META</td>
+          <td>=</td>
+          <td class="context-item-value">URL_DONT_SIMPLIFY</td>
+        </tr>
+        <tr class="top-aligned-row context-row">
+          <td class="context-item-name">URL_UNESCAPE_INPLACE</td>
+          <td>=</td>
+          <td class="context-item-value">0x00100000</td>
+        </tr>
+        <tr class="top-aligned-row context-row">
+          <td class="context-item-name">URL_CONVERT_IF_DOSPATH</td>
+          <td>=</td>
+          <td class="context-item-value">0x00200000</td>
+        </tr>
+        <tr class="top-aligned-row context-row">
+          <td class="context-item-name">URL_UNESCAPE_HIGH_ANSI_ONLY</td>
+          <td>=</td>
+          <td class="context-item-value">0x00400000</td>
+        </tr>
+        <tr class="top-aligned-row context-row">
+          <td class="context-item-name">URL_INTERNAL_PATH</td>
+          <td>=</td>
+          <td class="context-item-value">0x00800000</td>
+        </tr>
+        <tr class="top-aligned-row context-row">
+          <td class="context-item-name">URL_FILE_USE_PATHURL</td>
+          <td>=</td>
+          <td class="context-item-value">0x00010000</td>
+        </tr>
+        <tr class="top-aligned-row context-row">
+          <td class="context-item-name">URL_DONT_UNESCAPE</td>
+          <td>=</td>
+          <td class="context-item-value">0x00020000</td>
+        </tr>
+        <tr class="top-aligned-row context-row">
+          <td class="context-item-name">URL_ESCAPE_PERCENT</td>
+          <td>=</td>
+          <td class="context-item-value">0x00001000</td>
+        </tr>
+        <tr class="top-aligned-row context-row">
+          <td class="context-item-name">URL_ESCAPE_SEGMENT_ONLY</td>
+          <td>=</td>
+          <td class="context-item-value">0x00002000</td>
+        </tr>
+        <tr class="top-aligned-row context-row">
+          <td class="context-item-name">URL_PARTFLAG_KEEPSCHEME</td>
+          <td>=</td>
+          <td class="context-item-value">0x00000001</td>
+        </tr>
+        <tr class="top-aligned-row context-row">
+          <td class="context-item-name">URL_APPLY_DEFAULT</td>
+          <td>=</td>
+          <td class="context-item-value">0x00000001</td>
+        </tr>
+        <tr class="top-aligned-row context-row">
+          <td class="context-item-name">URL_APPLY_GUESSSCHEME</td>
+          <td>=</td>
+          <td class="context-item-value">0x00000002</td>
+        </tr>
+        <tr class="top-aligned-row context-row">
+          <td class="context-item-name">URL_APPLY_GUESSFILE</td>
+          <td>=</td>
+          <td class="context-item-value">0x00000004</td>
+        </tr>
+        <tr class="top-aligned-row context-row">
+          <td class="context-item-name">URL_APPLY_FORCEAPPLY</td>
+          <td>=</td>
+          <td class="context-item-value">0x00000008</td>
+        </tr>
+        <tr class="top-aligned-row context-row">
+          <td class="context-item-name">URLIS_URL</td>
+          <td>=</td>
+          <td class="context-item-value">1</td>
+          <td width="3em">&nbsp;</td>
+          <td class="context-item-desc">
+URLIS enum
+
+</td>
+        </tr>
+        <tr class="top-aligned-row context-row">
+          <td class="context-item-name">URLIS_OPAQUE</td>
+          <td>=</td>
+          <td class="context-item-value">2</td>
+        </tr>
+        <tr class="top-aligned-row context-row">
+          <td class="context-item-name">URLIS_NOHISTORY</td>
+          <td>=</td>
+          <td class="context-item-value">3</td>
+        </tr>
+        <tr class="top-aligned-row context-row">
+          <td class="context-item-name">URLIS_FILEURL</td>
+          <td>=</td>
+          <td class="context-item-value">4</td>
+        </tr>
+        <tr class="top-aligned-row context-row">
+          <td class="context-item-name">URLIS_APPLIABLE</td>
+          <td>=</td>
+          <td class="context-item-value">5</td>
+        </tr>
+        <tr class="top-aligned-row context-row">
+          <td class="context-item-name">URLIS_DIRECTORY</td>
+          <td>=</td>
+          <td class="context-item-value">6</td>
+        </tr>
+        <tr class="top-aligned-row context-row">
+          <td class="context-item-name">URLIS_HASQUERY</td>
+          <td>=</td>
+          <td class="context-item-value">7</td>
+        </tr>
+        </table>
+      </div>
+    </div>
+
+
+
+      
+
+
+    <!-- if method_list -->
+    <div id="methods">
+      <h3 class="section-bar">Public Instance methods</h3>
+
+      <div id="method-M000179" class="method-detail">
+        <a name="M000179"></a>
+
+        <div class="method-heading">
+          <a href="Path.src/M000179.html" target="Code" class="method-signature"
+            onclick="popupCode('Path.src/M000179.html');return false;">
+          <span class="method-name">UrlEscapeSpaces</span><span class="method-args">(pszUrl, pszEscaped, pcchEscaped)</span>
+          </a>
+        </div>
+      
+        <div class="method-description">
+          <p>
+Macros
+</p>
+        </div>
+      </div>
+
+      <div id="method-M000180" class="method-detail">
+        <a name="M000180"></a>
+
+        <div class="method-heading">
+          <a href="Path.src/M000180.html" target="Code" class="method-signature"
+            onclick="popupCode('Path.src/M000180.html');return false;">
+          <span class="method-name">UrlIsFileUrl</span><span class="method-args">(pszUrl)</span>
+          </a>
+        </div>
+      
+        <div class="method-description">
+        </div>
+      </div>
+
+      <div id="method-M000181" class="method-detail">
+        <a name="M000181"></a>
+
+        <div class="method-heading">
+          <a href="Path.src/M000181.html" target="Code" class="method-signature"
+            onclick="popupCode('Path.src/M000181.html');return false;">
+          <span class="method-name">UrlUnescapeInPlace</span><span class="method-args">(pszUrl, dwFlags)</span>
+          </a>
+        </div>
+      
+        <div class="method-description">
+        </div>
+      </div>
+
+
+    </div>
+
+
+  </div>
+
+
+<div id="validator-badges">
+  <p><small><a href="http://validator.w3.org/check/referer">[Validate]</a></small></p>
+</div>
+
+</body>
+</html>

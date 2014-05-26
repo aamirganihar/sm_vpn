@@ -1,0 +1,14 @@
+--- !ruby/object:RI::MethodDescription 
+aliases: []
+
+block_params: 
+comment: 
+- !ruby/struct:SM::Flow::P 
+  body: Return a randomly-chosen (using Kernel.rand) element from the array.
+- !ruby/struct:SM::Flow::VERB 
+  body: "  arr = [48, 71, 3, 39, 15]\n  arr.rand     # -&gt; 71\n  arr.rand     # -&gt; 39\n  arr.rand     # -&gt; 48\n  # etc.\n"
+full_name: Array#rand
+is_singleton: false
+name: rand
+params: ()
+visibility: public

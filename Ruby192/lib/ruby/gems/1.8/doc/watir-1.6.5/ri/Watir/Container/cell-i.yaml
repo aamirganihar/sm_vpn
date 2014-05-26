@@ -1,0 +1,16 @@
+--- !ruby/object:RI::MethodDescription 
+aliases: []
+
+block_params: 
+comment: 
+- !ruby/struct:SM::Flow::P 
+  body: this method accesses a table cell. how - symbol - how we access the cell, valid values are
+- !ruby/struct:SM::Flow::VERB 
+  body: "   :id       - find the table cell with given id.\n   :xpath    - find the table cell using xpath query.\n"
+- !ruby/struct:SM::Flow::P 
+  body: returns a TableCell Object
+full_name: Watir::Container#cell
+is_singleton: false
+name: cell
+params: (how, what=nil)
+visibility: public

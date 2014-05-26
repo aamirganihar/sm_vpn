@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+<!DOCTYPE html 
+     PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+     "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html>
+<head>
+  <title>startClicker (FireWatir::Firefox)</title>
+  <meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" />
+  <link rel="stylesheet" href="../../.././rdoc-style.css" type="text/css" media="screen" />
+</head>
+<body class="standalone-code">
+  <pre><span class="ruby-comment cmt"># File lib/firewatir/firefox.rb, line 612</span>
+    <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">startClicker</span>(<span class="ruby-identifier">button</span>, <span class="ruby-identifier">waitTime</span> = <span class="ruby-value">1</span>, <span class="ruby-identifier">userInput</span> = <span class="ruby-keyword kw">nil</span>, <span class="ruby-identifier">text</span> = <span class="ruby-keyword kw">nil</span>)
+      <span class="ruby-identifier">jssh_command</span> = <span class="ruby-node">&quot;var win = #{browser_var}.contentWindow;&quot;</span>
+      <span class="ruby-keyword kw">if</span>(<span class="ruby-identifier">button</span> <span class="ruby-operator">=~</span> <span class="ruby-regexp re">/ok/i</span>)
+        <span class="ruby-identifier">jssh_command</span> <span class="ruby-operator">&lt;&lt;</span> <span class="ruby-value str">&quot;var popuptext = '';
+                                 var old_alert = win.alert;
+                                 var old_confirm = win.confirm;
+                                 win.alert = function(param) {&quot;</span>
+        <span class="ruby-keyword kw">if</span>(<span class="ruby-identifier">text</span> <span class="ruby-operator">!=</span> <span class="ruby-keyword kw">nil</span>)
+          <span class="ruby-identifier">jssh_command</span> <span class="ruby-operator">&lt;&lt;</span>          <span class="ruby-node">&quot;if(param == \&quot;#{text}\&quot;) {
+                                                popuptext = param;
+                                                return true;
+                                              }
+                                              else {
+                                                popuptext = param;
+                                                win.alert = old_alert;
+                                                win.alert(param);
+                                              }&quot;</span>
+        <span class="ruby-keyword kw">else</span>
+          <span class="ruby-identifier">jssh_command</span> <span class="ruby-operator">&lt;&lt;</span>          <span class="ruby-value str">&quot;popuptext = param; return true;&quot;</span>
+        <span class="ruby-keyword kw">end</span>
+        <span class="ruby-identifier">jssh_command</span> <span class="ruby-operator">&lt;&lt;</span> <span class="ruby-value str">&quot;};
+                                 win.confirm = function(param) {&quot;</span>
+        <span class="ruby-keyword kw">if</span>(<span class="ruby-identifier">text</span> <span class="ruby-operator">!=</span> <span class="ruby-keyword kw">nil</span>)
+          <span class="ruby-identifier">jssh_command</span> <span class="ruby-operator">&lt;&lt;</span>          <span class="ruby-node">&quot;if(param == \&quot;#{text}\&quot;) {
+                                                popuptext = param;
+                                                return true;
+                                              }
+                                              else {
+                                                win.confirm = old_confirm;
+                                                win.confirm(param);
+                                              }&quot;</span>
+        <span class="ruby-keyword kw">else</span>
+          <span class="ruby-identifier">jssh_command</span> <span class="ruby-operator">&lt;&lt;</span>          <span class="ruby-value str">&quot;popuptext = param; return true;&quot;</span>
+        <span class="ruby-keyword kw">end</span>
+        <span class="ruby-identifier">jssh_command</span> <span class="ruby-operator">&lt;&lt;</span> <span class="ruby-value str">&quot;};&quot;</span>
+
+      <span class="ruby-keyword kw">elsif</span>(<span class="ruby-identifier">button</span> <span class="ruby-operator">=~</span> <span class="ruby-regexp re">/cancel/i</span>)
+        <span class="ruby-identifier">jssh_command</span> = <span class="ruby-value str">&quot;var old_confirm = win.confirm;
+                                              win.confirm = function(param) {&quot;</span>
+        <span class="ruby-keyword kw">if</span>(<span class="ruby-identifier">text</span> <span class="ruby-operator">!=</span> <span class="ruby-keyword kw">nil</span>)
+          <span class="ruby-identifier">jssh_command</span> <span class="ruby-operator">&lt;&lt;</span>          <span class="ruby-node">&quot;if(param == \&quot;#{text}\&quot;) {
+                                                popuptext = param;
+                                                return false;
+                                              }
+                                              else {
+                                                win.confirm = old_confirm;
+                                                win.confirm(param);
+                                              }&quot;</span>
+        <span class="ruby-keyword kw">else</span>
+          <span class="ruby-identifier">jssh_command</span> <span class="ruby-operator">&lt;&lt;</span>          <span class="ruby-value str">&quot;popuptext = param; return false;&quot;</span>
+        <span class="ruby-keyword kw">end</span>
+        <span class="ruby-identifier">jssh_command</span> <span class="ruby-operator">&lt;&lt;</span> <span class="ruby-value str">&quot;};&quot;</span>
+      <span class="ruby-keyword kw">end</span>
+      <span class="ruby-identifier">js_eval</span> <span class="ruby-identifier">jssh_command</span>
+    <span class="ruby-keyword kw">end</span></pre>
+</body>
+</html>

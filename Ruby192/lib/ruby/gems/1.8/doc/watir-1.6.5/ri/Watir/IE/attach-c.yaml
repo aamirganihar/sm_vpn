@@ -1,0 +1,12 @@
+--- !ruby/object:RI::MethodDescription 
+aliases: []
+
+block_params: 
+comment: 
+- !ruby/struct:SM::Flow::P 
+  body: Return a Watir::IE object for an existing IE window. Window can be referenced by url, title, or window handle. Second argument can be either a string or a regular expression in the case of of :url or :title. IE.attach(:url, 'http://www.google.com') IE.attach(:title, 'Google') IE.attach(:hwnd, 528140) This method will not work when Watir/Ruby is run under a service (instead of a user).
+full_name: Watir::IE::attach
+is_singleton: true
+name: attach
+params: (how, what)
+visibility: public

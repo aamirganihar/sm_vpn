@@ -1,0 +1,10 @@
+--- !ruby/object:RI::MethodDescription 
+aliases: []
+
+block_params: 
+comment: 
+full_name: Mail::Encodings::QuotedPrintable::can_encode?
+is_singleton: true
+name: can_encode?
+params: (str)
+visibility: public

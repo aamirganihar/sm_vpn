@@ -1,0 +1,10 @@
+--- !ruby/object:RI::MethodDescription 
+aliases: []
+
+block_params: Element.new(ole_element)
+comment: 
+full_name: Watir::TaggedElementLocator#each_element
+is_singleton: false
+name: each_element
+params: (tag) {|Element.new(ole_element)| ...}
+visibility: public

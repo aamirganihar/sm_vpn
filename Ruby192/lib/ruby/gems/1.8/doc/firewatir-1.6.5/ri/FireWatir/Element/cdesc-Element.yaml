@@ -1,0 +1,192 @@
+--- !ruby/object:RI::ClassDescription 
+attributes: 
+- !ruby/object:RI::Attribute 
+  comment: 
+  - !ruby/struct:SM::Flow::P 
+    body: Return the action of form
+  name: action
+  rw: R
+- !ruby/object:RI::Attribute 
+  comment: 
+  - !ruby/struct:SM::Flow::P 
+    body: Returns the value of 'alt' attribute in case of Image element.
+  name: alt
+  rw: R
+- !ruby/object:RI::Attribute 
+  comment: 
+  - !ruby/struct:SM::Flow::P 
+    body: Returns the state of the element
+  name: checked
+  rw: R
+- !ruby/object:RI::Attribute 
+  comment: 
+  - !ruby/struct:SM::Flow::P 
+    body: Returns the class name of the element
+  name: className
+  rw: R
+- !ruby/object:RI::Attribute 
+  comment: 
+  - !ruby/struct:SM::Flow::P 
+    body: Returns the class name of the element
+  name: class_name
+  rw: R
+- !ruby/object:RI::Attribute 
+  comment: 
+  - !ruby/struct:SM::Flow::VERB 
+    body: " This stores the name of the element that is about to trigger an Javascript pop up.\n"
+  - !ruby/struct:SM::Flow::P 
+    body: "@@current_js_object = nil"
+  name: element_name
+  rw: RW
+- !ruby/object:RI::Attribute 
+  comment: 
+  - !ruby/struct:SM::Flow::P 
+    body: Return the ID of the control that this label is associated with
+  name: for
+  rw: R
+- !ruby/object:RI::Attribute 
+  comment: 
+  - !ruby/struct:SM::Flow::P 
+    body: Returns the url the Anchor element points to.
+  name: href
+  rw: R
+- !ruby/object:RI::Attribute 
+  comment: 
+  - !ruby/struct:SM::Flow::P 
+    body: Return the html of the object
+  name: html
+  rw: R
+- !ruby/object:RI::Attribute 
+  comment: 
+  - !ruby/struct:SM::Flow::P 
+    body: Return the ID of the control that this label is associated with
+  name: htmlFor
+  rw: R
+- !ruby/object:RI::Attribute 
+  comment: 
+  - !ruby/struct:SM::Flow::P 
+    body: Returns the id of the element
+  name: id
+  rw: R
+- !ruby/object:RI::Attribute 
+  comment: 
+  - !ruby/struct:SM::Flow::P 
+    body: Return the html of the object
+  name: innerHTML
+  rw: R
+- !ruby/object:RI::Attribute 
+  comment: 
+  - !ruby/struct:SM::Flow::P 
+    body: Returns the name of the element (as defined in html)
+  name: name
+  rw: R
+- !ruby/object:RI::Attribute 
+  comment: 
+  - !ruby/struct:SM::Flow::P 
+    body: Returns the value of 'href' attribute in case of Anchor element.
+  name: src
+  rw: R
+- !ruby/object:RI::Attribute 
+  comment: 
+  - !ruby/struct:SM::Flow::P 
+    body: Returns the title of the element
+  name: title
+  rw: R
+- !ruby/object:RI::Attribute 
+  comment: 
+  - !ruby/struct:SM::Flow::P 
+    body: Returns the type of the element. Use in case of Input element only.
+  name: type
+  rw: R
+- !ruby/object:RI::Attribute 
+  comment: 
+  - !ruby/struct:SM::Flow::P 
+    body: Returns the value of the element
+  name: value
+  rw: R
+class_methods: 
+- !ruby/object:RI::MethodSummary 
+  name: new
+comment: 
+- !ruby/struct:SM::Flow::P 
+  body: Base class for html elements. This is not a class that users would normally access.
+constants: 
+- !ruby/object:RI::Constant 
+  comment: 
+  - !ruby/struct:SM::Flow::P 
+    body: Number of spaces that separate the property from the value in the to_s method
+  name: TO_S_SIZE
+  value: "14"
+- !ruby/object:RI::Constant 
+  comment: 
+  - !ruby/struct:SM::Flow::P 
+    body: How to get the nodes using XPath in mozilla.
+  name: ORDERED_NODE_ITERATOR_TYPE
+  value: "5"
+- !ruby/object:RI::Constant 
+  comment: 
+  - !ruby/struct:SM::Flow::P 
+    body: To get the number of nodes returned by the xpath expression
+  name: NUMBER_TYPE
+  value: "1"
+- !ruby/object:RI::Constant 
+  comment: 
+  - !ruby/struct:SM::Flow::P 
+    body: To get single node value
+  name: FIRST_ORDERED_NODE_TYPE
+  value: "9"
+full_name: FireWatir::Element
+includes: 
+- !ruby/object:RI::IncludedModule 
+  name: FireWatir::Container
+instance_methods: 
+- !ruby/object:RI::MethodSummary 
+  name: assert_enabled
+- !ruby/object:RI::MethodSummary 
+  name: assert_exists
+- !ruby/object:RI::MethodSummary 
+  name: attribute_value
+- !ruby/object:RI::MethodSummary 
+  name: click
+- !ruby/object:RI::MethodSummary 
+  name: contains_text
+- !ruby/object:RI::MethodSummary 
+  name: disabled
+- !ruby/object:RI::MethodSummary 
+  name: disabled?
+- !ruby/object:RI::MethodSummary 
+  name: document_var
+- !ruby/object:RI::MethodSummary 
+  name: element_by_xpath
+- !ruby/object:RI::MethodSummary 
+  name: element_type
+- !ruby/object:RI::MethodSummary 
+  name: elements_by_xpath
+- !ruby/object:RI::MethodSummary 
+  name: enabled?
+- !ruby/object:RI::MethodSummary 
+  name: exist?
+- !ruby/object:RI::MethodSummary 
+  name: exists?
+- !ruby/object:RI::MethodSummary 
+  name: fireEvent
+- !ruby/object:RI::MethodSummary 
+  name: fire_event
+- !ruby/object:RI::MethodSummary 
+  name: highlight
+- !ruby/object:RI::MethodSummary 
+  name: innerText
+- !ruby/object:RI::MethodSummary 
+  name: inspect
+- !ruby/object:RI::MethodSummary 
+  name: method_missing
+- !ruby/object:RI::MethodSummary 
+  name: text
+- !ruby/object:RI::MethodSummary 
+  name: to_s
+- !ruby/object:RI::MethodSummary 
+  name: visible?
+- !ruby/object:RI::MethodSummary 
+  name: wait
+name: Element
+superclass: Object

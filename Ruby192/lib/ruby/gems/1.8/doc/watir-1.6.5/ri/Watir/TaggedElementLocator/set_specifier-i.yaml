@@ -1,0 +1,10 @@
+--- !ruby/object:RI::MethodDescription 
+aliases: []
+
+block_params: 
+comment: 
+full_name: Watir::TaggedElementLocator#set_specifier
+is_singleton: false
+name: set_specifier
+params: (how, what)
+visibility: public

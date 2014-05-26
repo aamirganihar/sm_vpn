@@ -1,0 +1,182 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+<!DOCTYPE html 
+     PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+     "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+  <title>File: History.txt</title>
+  <meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" />
+  <meta http-equiv="Content-Script-Type" content="text/javascript" />
+  <link rel="stylesheet" href=".././rdoc-style.css" type="text/css" media="screen" />
+  <script type="text/javascript">
+  // <![CDATA[
+
+  function popupCode( url ) {
+    window.open(url, "Code", "resizable=yes,scrollbars=yes,toolbar=no,status=no,height=150,width=400")
+  }
+
+  function toggleCode( id ) {
+    if ( document.getElementById )
+      elem = document.getElementById( id );
+    else if ( document.all )
+      elem = eval( "document.all." + id );
+    else
+      return false;
+
+    elemStyle = elem.style;
+    
+    if ( elemStyle.display != "block" ) {
+      elemStyle.display = "block"
+    } else {
+      elemStyle.display = "none"
+    }
+
+    return true;
+  }
+  
+  // Make codeblocks hidden by default
+  document.writeln( "<style type=\"text/css\">div.method-source-code { display: none }</style>" )
+  
+  // ]]>
+  </script>
+
+</head>
+<body>
+
+
+
+  <div id="fileHeader">
+    <h1>History.txt</h1>
+    <table class="header-table">
+    <tr class="top-aligned-row">
+      <td><strong>Path:</strong></td>
+      <td>History.txt
+      </td>
+    </tr>
+    <tr class="top-aligned-row">
+      <td><strong>Last Update:</strong></td>
+      <td>Thu Aug 12 10:39:46 +0530 2010</td>
+    </tr>
+    </table>
+  </div>
+  <!-- banner header -->
+
+  <div id="bodyContent">
+
+
+
+  <div id="contextContent">
+
+    <div id="description">
+      <p>
+Version 1.1.6.1
+</p>
+<pre>
+  * fix the old style tokens for 'case' statement from ':' to 'then' for Ruby 1.9
+</pre>
+<p>
+Version 1.1.6
+</p>
+<pre>
+  * Allow a :string type conversion (user request). It does nothing.
+</pre>
+<p>
+Version 1.1.5
+</p>
+<pre>
+  * Improved example files so that they don't include old S4TUtils load-path
+    setting. Not needed by the people who'll use them.
+  * Example slowtests didn't set the libpath, so they used the gem version.
+  * Better release process Rakefile.
+</pre>
+<p>
+Version 1.1.4
+</p>
+<pre>
+  * Enable better command_line documentation: ChoicesBuilder#add_help_line,
+        ChoicesBuilder#section, ChoicesBuilder#section_specific_to_script.
+  * One Rakefile instead of two.
+  * Give up on using extensions/string: too many name conflicts, too hard to
+    avoid. Facets didn't solve the problem.
+</pre>
+<p>
+Version 1.1.3
+</p>
+<pre>
+  * Bugfix: PosixCommandLineSource was not uniformly treated as a
+    CommandLineSource.
+  * activesupport includes xmlsimple in its vendor directory, which can
+    lead to &quot;constant already defined&quot; warnings. Don't require xmlsimple
+    if it's already been required under a different name. We bow before you,
+    ActiveSupport!
+</pre>
+<p>
+Version 1.1.2
+</p>
+<pre>
+  * Another stupid typo.
+</pre>
+<p>
+Version 1.1.1
+</p>
+<pre>
+  * Minor error in dependency list.
+</pre>
+<p>
+Version 1.1.0
+</p>
+<pre>
+  * Handles YAML files as well as XML.
+  * Minor, incompatible changes to the API.
+  * Command-line arglist handling now works with other sources the
+    way options do. In particular, an empty arglist can, for example,
+    have its value given by defaults rather than locking the value
+    of the choice down to the empty array.
+  * Command-line arglists used to have their length specified independently
+    of all other sources. Now there's a :length &quot;type&quot; that applies to all
+    sources, including the command line. From the user's point of view,
+    though, wrong-sized arglists look like they're caught by OptionParser.
+  * These relatively minor changes required a bigger overhaul to the
+    internals. They're less stupid, but I suspect they're still stupid.
+  * A tutorial.
+</pre>
+<p>
+Version 1.0.0
+</p>
+<pre>
+  * Version from _Everyday Scripting with Ruby_
+</pre>
+
+    </div>
+
+
+   </div>
+
+
+  </div>
+
+
+    <!-- if includes -->
+
+    <div id="section">
+
+
+
+
+
+      
+
+
+    <!-- if method_list -->
+
+
+  </div>
+
+
+<div id="validator-badges">
+  <p><small><a href="http://validator.w3.org/check/referer">[Validate]</a></small></p>
+</div>
+
+</body>
+</html>

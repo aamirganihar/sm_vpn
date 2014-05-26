@@ -1,0 +1,16 @@
+--- !ruby/object:RI::MethodDescription 
+aliases: []
+
+block_params: 
+comment: 
+- !ruby/struct:SM::Flow::P 
+  body: Test this object for inclusion in a given collection.
+- !ruby/struct:SM::Flow::VERB 
+  body: "  45.in? (1...100)             =&gt; true\n"
+- !ruby/struct:SM::Flow::P 
+  body: This method is contained in <tt>object.rb</tt> and <tt>enumerable.rb</tt>, because it logically belongs in both.
+full_name: Object#in?
+is_singleton: false
+name: in?
+params: (enumerable)
+visibility: public

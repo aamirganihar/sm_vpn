@@ -1,0 +1,744 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+<!DOCTYPE html 
+     PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+     "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+  <title>Module: Windows::MSVCRT::Time</title>
+  <meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" />
+  <meta http-equiv="Content-Script-Type" content="text/javascript" />
+  <link rel="stylesheet" href="../../.././rdoc-style.css" type="text/css" media="screen" />
+  <script type="text/javascript">
+  // <![CDATA[
+
+  function popupCode( url ) {
+    window.open(url, "Code", "resizable=yes,scrollbars=yes,toolbar=no,status=no,height=150,width=400")
+  }
+
+  function toggleCode( id ) {
+    if ( document.getElementById )
+      elem = document.getElementById( id );
+    else if ( document.all )
+      elem = eval( "document.all." + id );
+    else
+      return false;
+
+    elemStyle = elem.style;
+    
+    if ( elemStyle.display != "block" ) {
+      elemStyle.display = "block"
+    } else {
+      elemStyle.display = "none"
+    }
+
+    return true;
+  }
+  
+  // Make codeblocks hidden by default
+  document.writeln( "<style type=\"text/css\">div.method-source-code { display: none }</style>" )
+  
+  // ]]>
+  </script>
+
+</head>
+<body>
+
+
+
+    <div id="classHeader">
+        <table class="header-table">
+        <tr class="top-aligned-row">
+          <td><strong>Module</strong></td>
+          <td class="class-name-in-header">Windows::MSVCRT::Time</td>
+        </tr>
+        <tr class="top-aligned-row">
+            <td><strong>In:</strong></td>
+            <td>
+                <a href="../../../files/lib/windows/msvcrt/time_rb.html">
+                lib/windows/msvcrt/time.rb
+                </a>
+        <br />
+            </td>
+        </tr>
+
+        </table>
+    </div>
+  <!-- banner header -->
+
+  <div id="bodyContent">
+
+
+
+  <div id="contextContent">
+
+
+
+   </div>
+
+    <div id="method-list">
+      <h3 class="section-bar">Methods</h3>
+
+      <div class="name-list">
+      <a href="#M000190">asctime</a>&nbsp;&nbsp;
+      <a href="#M000191">clock</a>&nbsp;&nbsp;
+      <a href="#M000192">ctime</a>&nbsp;&nbsp;
+      <a href="#M000193">ctime64</a>&nbsp;&nbsp;
+      <a href="#M000194">difftime</a>&nbsp;&nbsp;
+      <a href="#M000195">ftime</a>&nbsp;&nbsp;
+      <a href="#M000196">ftime64</a>&nbsp;&nbsp;
+      <a href="#M000197">futime</a>&nbsp;&nbsp;
+      <a href="#M000198">futime64</a>&nbsp;&nbsp;
+      <a href="#M000199">gmtime</a>&nbsp;&nbsp;
+      <a href="#M000200">gmtime64</a>&nbsp;&nbsp;
+      <a href="#M000201">localtime</a>&nbsp;&nbsp;
+      <a href="#M000202">localtime64</a>&nbsp;&nbsp;
+      <a href="#M000203">mktime</a>&nbsp;&nbsp;
+      <a href="#M000204">mktime64</a>&nbsp;&nbsp;
+      <a href="#M000205">strdate</a>&nbsp;&nbsp;
+      <a href="#M000206">strftime</a>&nbsp;&nbsp;
+      <a href="#M000207">strtime</a>&nbsp;&nbsp;
+      <a href="#M000208">time</a>&nbsp;&nbsp;
+      <a href="#M000209">time64</a>&nbsp;&nbsp;
+      <a href="#M000210">tzset</a>&nbsp;&nbsp;
+      <a href="#M000211">utime</a>&nbsp;&nbsp;
+      <a href="#M000212">utime64</a>&nbsp;&nbsp;
+      <a href="#M000213">wasctime</a>&nbsp;&nbsp;
+      <a href="#M000214">wcsftime</a>&nbsp;&nbsp;
+      <a href="#M000215">wctime</a>&nbsp;&nbsp;
+      <a href="#M000216">wctime64</a>&nbsp;&nbsp;
+      <a href="#M000217">wstrdate</a>&nbsp;&nbsp;
+      <a href="#M000218">wstrtime</a>&nbsp;&nbsp;
+      <a href="#M000219">wutime</a>&nbsp;&nbsp;
+      <a href="#M000220">wutime64</a>&nbsp;&nbsp;
+      </div>
+    </div>
+
+  </div>
+
+
+    <!-- if includes -->
+
+    <div id="section">
+
+
+    <div id="constants-list">
+      <h3 class="section-bar">Constants</h3>
+
+      <div class="name-list">
+        <table summary="Constants">
+        <tr class="top-aligned-row context-row">
+          <td class="context-item-name">Asctime</td>
+          <td>=</td>
+          <td class="context-item-value">API.new('asctime', 'P', 'P', MSVCRT_DLL)</td>
+        </tr>
+        <tr class="top-aligned-row context-row">
+          <td class="context-item-name">Clock</td>
+          <td>=</td>
+          <td class="context-item-value">API.new('clock', 'V', 'L', MSVCRT_DLL)</td>
+        </tr>
+        <tr class="top-aligned-row context-row">
+          <td class="context-item-name">Ctime</td>
+          <td>=</td>
+          <td class="context-item-value">API.new('ctime', 'P', 'P', 'msvcrt')</td>
+        </tr>
+        <tr class="top-aligned-row context-row">
+          <td class="context-item-name">Ctime64</td>
+          <td>=</td>
+          <td class="context-item-value">API.new('_ctime64', 'P', 'P', MSVCRT_DLL)</td>
+        </tr>
+        <tr class="top-aligned-row context-row">
+          <td class="context-item-name">Difftime</td>
+          <td>=</td>
+          <td class="context-item-value">API.new('difftime', 'LL', 'L', 'msvcrt')</td>
+        </tr>
+        <tr class="top-aligned-row context-row">
+          <td class="context-item-name">Ftime</td>
+          <td>=</td>
+          <td class="context-item-value">API.new('_ftime', 'P', 'L', 'msvcrt')</td>
+        </tr>
+        <tr class="top-aligned-row context-row">
+          <td class="context-item-name">Ftime64</td>
+          <td>=</td>
+          <td class="context-item-value">API.new('_ftime64', 'P', 'L', MSVCRT_DLL)</td>
+        </tr>
+        <tr class="top-aligned-row context-row">
+          <td class="context-item-name">Futime</td>
+          <td>=</td>
+          <td class="context-item-value">API.new('_futime', 'IP', 'I', 'msvcrt')</td>
+        </tr>
+        <tr class="top-aligned-row context-row">
+          <td class="context-item-name">Futime64</td>
+          <td>=</td>
+          <td class="context-item-value">API.new('_futime64', 'IP', 'I', MSVCRT_DLL)</td>
+        </tr>
+        <tr class="top-aligned-row context-row">
+          <td class="context-item-name">Gmtime</td>
+          <td>=</td>
+          <td class="context-item-value">API.new('gmtime', 'P', 'P', 'msvcrt')</td>
+        </tr>
+        <tr class="top-aligned-row context-row">
+          <td class="context-item-name">Gmtime64</td>
+          <td>=</td>
+          <td class="context-item-value">API.new('_gmtime64', 'P', 'P', MSVCRT_DLL)</td>
+        </tr>
+        <tr class="top-aligned-row context-row">
+          <td class="context-item-name">Localtime</td>
+          <td>=</td>
+          <td class="context-item-value">API.new('localtime', 'P', 'P', 'msvcrt')</td>
+        </tr>
+        <tr class="top-aligned-row context-row">
+          <td class="context-item-name">Localtime64</td>
+          <td>=</td>
+          <td class="context-item-value">API.new('_localtime64', 'P', 'P', MSVCRT_DLL)</td>
+        </tr>
+        <tr class="top-aligned-row context-row">
+          <td class="context-item-name">Mktime</td>
+          <td>=</td>
+          <td class="context-item-value">API.new('mktime', 'P', 'L', 'msvcrt')</td>
+        </tr>
+        <tr class="top-aligned-row context-row">
+          <td class="context-item-name">Mktime64</td>
+          <td>=</td>
+          <td class="context-item-value">API.new('_mktime64', 'P', 'L', MSVCRT_DLL)</td>
+        </tr>
+        <tr class="top-aligned-row context-row">
+          <td class="context-item-name">Strdate</td>
+          <td>=</td>
+          <td class="context-item-value">API.new('_strdate', 'P', 'P', MSVCRT_DLL)</td>
+        </tr>
+        <tr class="top-aligned-row context-row">
+          <td class="context-item-name">Strftime</td>
+          <td>=</td>
+          <td class="context-item-value">API.new('strftime', 'PLPP', 'L', MSVCRT_DLL)</td>
+        </tr>
+        <tr class="top-aligned-row context-row">
+          <td class="context-item-name">Strtime</td>
+          <td>=</td>
+          <td class="context-item-value">API.new('_strtime', 'P', 'P', MSVCRT_DLL)</td>
+        </tr>
+        <tr class="top-aligned-row context-row">
+          <td class="context-item-name">WinTime</td>
+          <td>=</td>
+          <td class="context-item-value">API.new('time', 'P', 'L', 'msvcrt')</td>
+        </tr>
+        <tr class="top-aligned-row context-row">
+          <td class="context-item-name">WinTime64</td>
+          <td>=</td>
+          <td class="context-item-value">API.new('_time64', 'P', 'L', MSVCRT_DLL)</td>
+        </tr>
+        <tr class="top-aligned-row context-row">
+          <td class="context-item-name">Tzset</td>
+          <td>=</td>
+          <td class="context-item-value">API.new('_tzset', 'V', 'V', MSVCRT_DLL)</td>
+        </tr>
+        <tr class="top-aligned-row context-row">
+          <td class="context-item-name">Utime</td>
+          <td>=</td>
+          <td class="context-item-value">API.new('_utime', 'PP', 'I', 'msvcrt')</td>
+        </tr>
+        <tr class="top-aligned-row context-row">
+          <td class="context-item-name">Utime64</td>
+          <td>=</td>
+          <td class="context-item-value">API.new('_utime64', 'PP', 'I', MSVCRT_DLL)</td>
+        </tr>
+        <tr class="top-aligned-row context-row">
+          <td class="context-item-name">Wasctime</td>
+          <td>=</td>
+          <td class="context-item-value">API.new('_wasctime', 'P', 'P', MSVCRT_DLL)</td>
+        </tr>
+        <tr class="top-aligned-row context-row">
+          <td class="context-item-name">Wctime</td>
+          <td>=</td>
+          <td class="context-item-value">API.new('_wctime', 'P', 'P', 'msvcrt')</td>
+        </tr>
+        <tr class="top-aligned-row context-row">
+          <td class="context-item-name">Wctime64</td>
+          <td>=</td>
+          <td class="context-item-value">API.new('_wctime64', 'P', 'P', MSVCRT_DLL)</td>
+        </tr>
+        <tr class="top-aligned-row context-row">
+          <td class="context-item-name">Wstrdate</td>
+          <td>=</td>
+          <td class="context-item-value">API.new('_wstrdate', 'P', 'L', MSVCRT_DLL)</td>
+        </tr>
+        <tr class="top-aligned-row context-row">
+          <td class="context-item-name">Wcsftime</td>
+          <td>=</td>
+          <td class="context-item-value">API.new('wcsftime', 'PLPP', 'L', MSVCRT_DLL)</td>
+        </tr>
+        <tr class="top-aligned-row context-row">
+          <td class="context-item-name">Wstrtime</td>
+          <td>=</td>
+          <td class="context-item-value">API.new('_wstrtime', 'P', 'P', MSVCRT_DLL)</td>
+        </tr>
+        <tr class="top-aligned-row context-row">
+          <td class="context-item-name">Wutime</td>
+          <td>=</td>
+          <td class="context-item-value">API.new('_wutime', 'PP', 'I', 'msvcrt')</td>
+        </tr>
+        <tr class="top-aligned-row context-row">
+          <td class="context-item-name">Wutime64</td>
+          <td>=</td>
+          <td class="context-item-value">API.new('_wutime64', 'PP', 'I', MSVCRT_DLL)</td>
+        </tr>
+        </table>
+      </div>
+    </div>
+
+
+
+      
+
+
+    <!-- if method_list -->
+    <div id="methods">
+      <h3 class="section-bar">Public Instance methods</h3>
+
+      <div id="method-M000190" class="method-detail">
+        <a name="M000190"></a>
+
+        <div class="method-heading">
+          <a href="Time.src/M000190.html" target="Code" class="method-signature"
+            onclick="popupCode('Time.src/M000190.html');return false;">
+          <span class="method-name">asctime</span><span class="method-args">(timeptr)</span>
+          </a>
+        </div>
+      
+        <div class="method-description">
+        </div>
+      </div>
+
+      <div id="method-M000191" class="method-detail">
+        <a name="M000191"></a>
+
+        <div class="method-heading">
+          <a href="Time.src/M000191.html" target="Code" class="method-signature"
+            onclick="popupCode('Time.src/M000191.html');return false;">
+          <span class="method-name">clock</span><span class="method-args">()</span>
+          </a>
+        </div>
+      
+        <div class="method-description">
+        </div>
+      </div>
+
+      <div id="method-M000192" class="method-detail">
+        <a name="M000192"></a>
+
+        <div class="method-heading">
+          <a href="Time.src/M000192.html" target="Code" class="method-signature"
+            onclick="popupCode('Time.src/M000192.html');return false;">
+          <span class="method-name">ctime</span><span class="method-args">(timer)</span>
+          </a>
+        </div>
+      
+        <div class="method-description">
+        </div>
+      </div>
+
+      <div id="method-M000193" class="method-detail">
+        <a name="M000193"></a>
+
+        <div class="method-heading">
+          <a href="Time.src/M000193.html" target="Code" class="method-signature"
+            onclick="popupCode('Time.src/M000193.html');return false;">
+          <span class="method-name">ctime64</span><span class="method-args">(timer)</span>
+          </a>
+        </div>
+      
+        <div class="method-description">
+        </div>
+      </div>
+
+      <div id="method-M000194" class="method-detail">
+        <a name="M000194"></a>
+
+        <div class="method-heading">
+          <a href="Time.src/M000194.html" target="Code" class="method-signature"
+            onclick="popupCode('Time.src/M000194.html');return false;">
+          <span class="method-name">difftime</span><span class="method-args">(timer1, timer0)</span>
+          </a>
+        </div>
+      
+        <div class="method-description">
+        </div>
+      </div>
+
+      <div id="method-M000195" class="method-detail">
+        <a name="M000195"></a>
+
+        <div class="method-heading">
+          <a href="Time.src/M000195.html" target="Code" class="method-signature"
+            onclick="popupCode('Time.src/M000195.html');return false;">
+          <span class="method-name">ftime</span><span class="method-args">(timeptr)</span>
+          </a>
+        </div>
+      
+        <div class="method-description">
+        </div>
+      </div>
+
+      <div id="method-M000196" class="method-detail">
+        <a name="M000196"></a>
+
+        <div class="method-heading">
+          <a href="Time.src/M000196.html" target="Code" class="method-signature"
+            onclick="popupCode('Time.src/M000196.html');return false;">
+          <span class="method-name">ftime64</span><span class="method-args">(timeptr)</span>
+          </a>
+        </div>
+      
+        <div class="method-description">
+        </div>
+      </div>
+
+      <div id="method-M000197" class="method-detail">
+        <a name="M000197"></a>
+
+        <div class="method-heading">
+          <a href="Time.src/M000197.html" target="Code" class="method-signature"
+            onclick="popupCode('Time.src/M000197.html');return false;">
+          <span class="method-name">futime</span><span class="method-args">(fd, filetime)</span>
+          </a>
+        </div>
+      
+        <div class="method-description">
+        </div>
+      </div>
+
+      <div id="method-M000198" class="method-detail">
+        <a name="M000198"></a>
+
+        <div class="method-heading">
+          <a href="Time.src/M000198.html" target="Code" class="method-signature"
+            onclick="popupCode('Time.src/M000198.html');return false;">
+          <span class="method-name">futime64</span><span class="method-args">(fd, filetime)</span>
+          </a>
+        </div>
+      
+        <div class="method-description">
+        </div>
+      </div>
+
+      <div id="method-M000199" class="method-detail">
+        <a name="M000199"></a>
+
+        <div class="method-heading">
+          <a href="Time.src/M000199.html" target="Code" class="method-signature"
+            onclick="popupCode('Time.src/M000199.html');return false;">
+          <span class="method-name">gmtime</span><span class="method-args">(timer)</span>
+          </a>
+        </div>
+      
+        <div class="method-description">
+        </div>
+      </div>
+
+      <div id="method-M000200" class="method-detail">
+        <a name="M000200"></a>
+
+        <div class="method-heading">
+          <a href="Time.src/M000200.html" target="Code" class="method-signature"
+            onclick="popupCode('Time.src/M000200.html');return false;">
+          <span class="method-name">gmtime64</span><span class="method-args">(timer)</span>
+          </a>
+        </div>
+      
+        <div class="method-description">
+        </div>
+      </div>
+
+      <div id="method-M000201" class="method-detail">
+        <a name="M000201"></a>
+
+        <div class="method-heading">
+          <a href="Time.src/M000201.html" target="Code" class="method-signature"
+            onclick="popupCode('Time.src/M000201.html');return false;">
+          <span class="method-name">localtime</span><span class="method-args">(timer)</span>
+          </a>
+        </div>
+      
+        <div class="method-description">
+        </div>
+      </div>
+
+      <div id="method-M000202" class="method-detail">
+        <a name="M000202"></a>
+
+        <div class="method-heading">
+          <a href="Time.src/M000202.html" target="Code" class="method-signature"
+            onclick="popupCode('Time.src/M000202.html');return false;">
+          <span class="method-name">localtime64</span><span class="method-args">(timer)</span>
+          </a>
+        </div>
+      
+        <div class="method-description">
+        </div>
+      </div>
+
+      <div id="method-M000203" class="method-detail">
+        <a name="M000203"></a>
+
+        <div class="method-heading">
+          <a href="Time.src/M000203.html" target="Code" class="method-signature"
+            onclick="popupCode('Time.src/M000203.html');return false;">
+          <span class="method-name">mktime</span><span class="method-args">(timeptr)</span>
+          </a>
+        </div>
+      
+        <div class="method-description">
+        </div>
+      </div>
+
+      <div id="method-M000204" class="method-detail">
+        <a name="M000204"></a>
+
+        <div class="method-heading">
+          <a href="Time.src/M000204.html" target="Code" class="method-signature"
+            onclick="popupCode('Time.src/M000204.html');return false;">
+          <span class="method-name">mktime64</span><span class="method-args">(timeptr)</span>
+          </a>
+        </div>
+      
+        <div class="method-description">
+        </div>
+      </div>
+
+      <div id="method-M000205" class="method-detail">
+        <a name="M000205"></a>
+
+        <div class="method-heading">
+          <a href="Time.src/M000205.html" target="Code" class="method-signature"
+            onclick="popupCode('Time.src/M000205.html');return false;">
+          <span class="method-name">strdate</span><span class="method-args">(datestr)</span>
+          </a>
+        </div>
+      
+        <div class="method-description">
+        </div>
+      </div>
+
+      <div id="method-M000206" class="method-detail">
+        <a name="M000206"></a>
+
+        <div class="method-heading">
+          <a href="Time.src/M000206.html" target="Code" class="method-signature"
+            onclick="popupCode('Time.src/M000206.html');return false;">
+          <span class="method-name">strftime</span><span class="method-args">(dest, maxsize, format, timeptr)</span>
+          </a>
+        </div>
+      
+        <div class="method-description">
+        </div>
+      </div>
+
+      <div id="method-M000207" class="method-detail">
+        <a name="M000207"></a>
+
+        <div class="method-heading">
+          <a href="Time.src/M000207.html" target="Code" class="method-signature"
+            onclick="popupCode('Time.src/M000207.html');return false;">
+          <span class="method-name">strtime</span><span class="method-args">(timestr)</span>
+          </a>
+        </div>
+      
+        <div class="method-description">
+        </div>
+      </div>
+
+      <div id="method-M000208" class="method-detail">
+        <a name="M000208"></a>
+
+        <div class="method-heading">
+          <a href="Time.src/M000208.html" target="Code" class="method-signature"
+            onclick="popupCode('Time.src/M000208.html');return false;">
+          <span class="method-name">time</span><span class="method-args">(timer)</span>
+          </a>
+        </div>
+      
+        <div class="method-description">
+        </div>
+      </div>
+
+      <div id="method-M000209" class="method-detail">
+        <a name="M000209"></a>
+
+        <div class="method-heading">
+          <a href="Time.src/M000209.html" target="Code" class="method-signature"
+            onclick="popupCode('Time.src/M000209.html');return false;">
+          <span class="method-name">time64</span><span class="method-args">(timer)</span>
+          </a>
+        </div>
+      
+        <div class="method-description">
+        </div>
+      </div>
+
+      <div id="method-M000210" class="method-detail">
+        <a name="M000210"></a>
+
+        <div class="method-heading">
+          <a href="Time.src/M000210.html" target="Code" class="method-signature"
+            onclick="popupCode('Time.src/M000210.html');return false;">
+          <span class="method-name">tzset</span><span class="method-args">()</span>
+          </a>
+        </div>
+      
+        <div class="method-description">
+        </div>
+      </div>
+
+      <div id="method-M000211" class="method-detail">
+        <a name="M000211"></a>
+
+        <div class="method-heading">
+          <a href="Time.src/M000211.html" target="Code" class="method-signature"
+            onclick="popupCode('Time.src/M000211.html');return false;">
+          <span class="method-name">utime</span><span class="method-args">(filename, times)</span>
+          </a>
+        </div>
+      
+        <div class="method-description">
+        </div>
+      </div>
+
+      <div id="method-M000212" class="method-detail">
+        <a name="M000212"></a>
+
+        <div class="method-heading">
+          <a href="Time.src/M000212.html" target="Code" class="method-signature"
+            onclick="popupCode('Time.src/M000212.html');return false;">
+          <span class="method-name">utime64</span><span class="method-args">(filename, times)</span>
+          </a>
+        </div>
+      
+        <div class="method-description">
+        </div>
+      </div>
+
+      <div id="method-M000213" class="method-detail">
+        <a name="M000213"></a>
+
+        <div class="method-heading">
+          <a href="Time.src/M000213.html" target="Code" class="method-signature"
+            onclick="popupCode('Time.src/M000213.html');return false;">
+          <span class="method-name">wasctime</span><span class="method-args">(timeptr)</span>
+          </a>
+        </div>
+      
+        <div class="method-description">
+        </div>
+      </div>
+
+      <div id="method-M000214" class="method-detail">
+        <a name="M000214"></a>
+
+        <div class="method-heading">
+          <a href="Time.src/M000214.html" target="Code" class="method-signature"
+            onclick="popupCode('Time.src/M000214.html');return false;">
+          <span class="method-name">wcsftime</span><span class="method-args">(dest, maxsize, format, timeptr)</span>
+          </a>
+        </div>
+      
+        <div class="method-description">
+        </div>
+      </div>
+
+      <div id="method-M000215" class="method-detail">
+        <a name="M000215"></a>
+
+        <div class="method-heading">
+          <a href="Time.src/M000215.html" target="Code" class="method-signature"
+            onclick="popupCode('Time.src/M000215.html');return false;">
+          <span class="method-name">wctime</span><span class="method-args">(timer)</span>
+          </a>
+        </div>
+      
+        <div class="method-description">
+        </div>
+      </div>
+
+      <div id="method-M000216" class="method-detail">
+        <a name="M000216"></a>
+
+        <div class="method-heading">
+          <a href="Time.src/M000216.html" target="Code" class="method-signature"
+            onclick="popupCode('Time.src/M000216.html');return false;">
+          <span class="method-name">wctime64</span><span class="method-args">(timer)</span>
+          </a>
+        </div>
+      
+        <div class="method-description">
+        </div>
+      </div>
+
+      <div id="method-M000217" class="method-detail">
+        <a name="M000217"></a>
+
+        <div class="method-heading">
+          <a href="Time.src/M000217.html" target="Code" class="method-signature"
+            onclick="popupCode('Time.src/M000217.html');return false;">
+          <span class="method-name">wstrdate</span><span class="method-args">(datestr)</span>
+          </a>
+        </div>
+      
+        <div class="method-description">
+        </div>
+      </div>
+
+      <div id="method-M000218" class="method-detail">
+        <a name="M000218"></a>
+
+        <div class="method-heading">
+          <a href="Time.src/M000218.html" target="Code" class="method-signature"
+            onclick="popupCode('Time.src/M000218.html');return false;">
+          <span class="method-name">wstrtime</span><span class="method-args">(timestr)</span>
+          </a>
+        </div>
+      
+        <div class="method-description">
+        </div>
+      </div>
+
+      <div id="method-M000219" class="method-detail">
+        <a name="M000219"></a>
+
+        <div class="method-heading">
+          <a href="Time.src/M000219.html" target="Code" class="method-signature"
+            onclick="popupCode('Time.src/M000219.html');return false;">
+          <span class="method-name">wutime</span><span class="method-args">(filename, times)</span>
+          </a>
+        </div>
+      
+        <div class="method-description">
+        </div>
+      </div>
+
+      <div id="method-M000220" class="method-detail">
+        <a name="M000220"></a>
+
+        <div class="method-heading">
+          <a href="Time.src/M000220.html" target="Code" class="method-signature"
+            onclick="popupCode('Time.src/M000220.html');return false;">
+          <span class="method-name">wutime64</span><span class="method-args">(filename, times)</span>
+          </a>
+        </div>
+      
+        <div class="method-description">
+        </div>
+      </div>
+
+
+    </div>
+
+
+  </div>
+
+
+<div id="validator-badges">
+  <p><small><a href="http://validator.w3.org/check/referer">[Validate]</a></small></p>
+</div>
+
+</body>
+</html>

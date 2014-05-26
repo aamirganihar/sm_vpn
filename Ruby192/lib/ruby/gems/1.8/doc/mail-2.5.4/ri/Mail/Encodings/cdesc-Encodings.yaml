@@ -1,0 +1,43 @@
+--- !ruby/object:RI::ClassDescription 
+attributes: []
+
+class_methods: 
+- !ruby/object:RI::MethodSummary 
+  name: address_encode
+- !ruby/object:RI::MethodSummary 
+  name: b_value_encode
+- !ruby/object:RI::MethodSummary 
+  name: decode_encode
+- !ruby/object:RI::MethodSummary 
+  name: defined?
+- !ruby/object:RI::MethodSummary 
+  name: encode_non_usascii
+- !ruby/object:RI::MethodSummary 
+  name: get_all
+- !ruby/object:RI::MethodSummary 
+  name: get_encoding
+- !ruby/object:RI::MethodSummary 
+  name: get_name
+- !ruby/object:RI::MethodSummary 
+  name: param_decode
+- !ruby/object:RI::MethodSummary 
+  name: param_encode
+- !ruby/object:RI::MethodSummary 
+  name: q_value_encode
+- !ruby/object:RI::MethodSummary 
+  name: register
+- !ruby/object:RI::MethodSummary 
+  name: unquote_and_convert_to
+- !ruby/object:RI::MethodSummary 
+  name: value_decode
+comment: 
+constants: []
+
+full_name: Mail::Encodings
+includes: 
+- !ruby/object:RI::IncludedModule 
+  name: Mail::Patterns
+instance_methods: []
+
+name: Encodings
+superclass: 

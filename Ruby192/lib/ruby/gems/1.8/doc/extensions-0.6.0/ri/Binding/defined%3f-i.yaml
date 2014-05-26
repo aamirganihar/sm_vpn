@@ -1,0 +1,12 @@
+--- !ruby/object:RI::MethodDescription 
+aliases: []
+
+block_params: 
+comment: 
+- !ruby/struct:SM::Flow::P 
+  body: Evaluates <tt>defined?</tt> in this binding.
+full_name: Binding#defined?
+is_singleton: false
+name: defined?
+params: (variable)
+visibility: public

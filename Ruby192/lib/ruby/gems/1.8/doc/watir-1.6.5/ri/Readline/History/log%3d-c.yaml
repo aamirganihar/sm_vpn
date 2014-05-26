@@ -1,0 +1,10 @@
+--- !ruby/object:RI::MethodDescription 
+aliases: []
+
+block_params: 
+comment: 
+full_name: Readline::History::log=
+is_singleton: true
+name: log=
+params: (log)
+visibility: public

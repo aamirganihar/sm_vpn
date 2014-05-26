@@ -1,0 +1,80 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+<!DOCTYPE html 
+     PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+     "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html>
+<head>
+  <title>getrlimit (Process)</title>
+  <meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" />
+  <link rel="stylesheet" href="../.././rdoc-style.css" type="text/css" media="screen" />
+</head>
+<body class="standalone-code">
+  <pre><span class="ruby-comment cmt"># File lib/win32/process.rb, line 151</span>
+  <span class="ruby-keyword kw">def</span> <span class="ruby-identifier">getrlimit</span>(<span class="ruby-identifier">resource</span>)
+    <span class="ruby-comment cmt"># Strictly for API compatibility (actually 4 GB on FAT32)</span>
+    <span class="ruby-comment cmt"># TODO: Check FS type. If FAT32, return 4 GB.</span>
+    <span class="ruby-keyword kw">if</span> <span class="ruby-identifier">resource</span> <span class="ruby-operator">==</span> <span class="ruby-constant">RLIMIT_FSIZE</span>
+      <span class="ruby-keyword kw">return</span> ((<span class="ruby-value">1024</span><span class="ruby-operator">**</span><span class="ruby-value">4</span>) <span class="ruby-operator">*</span> <span class="ruby-value">4</span>) <span class="ruby-operator">-</span> (<span class="ruby-value">1024</span> <span class="ruby-operator">*</span> <span class="ruby-value">64</span>)
+    <span class="ruby-keyword kw">end</span>
+
+    <span class="ruby-comment cmt"># Put the current Ruby process in its own job unless it's already</span>
+    <span class="ruby-comment cmt"># part of a job.</span>
+    <span class="ruby-identifier">bool</span> = <span class="ruby-value">0</span>.<span class="ruby-identifier">chr</span> <span class="ruby-operator">*</span> <span class="ruby-value">4</span>
+    <span class="ruby-constant">IsProcessInJob</span>(<span class="ruby-constant">GetCurrentProcess</span>(), <span class="ruby-keyword kw">nil</span>, <span class="ruby-identifier">bool</span>)
+    <span class="ruby-identifier">bool</span> = <span class="ruby-identifier">bool</span>.<span class="ruby-identifier">unpack</span>(<span class="ruby-value str">'L'</span>).<span class="ruby-identifier">first</span> <span class="ruby-operator">==</span> <span class="ruby-value">0</span> <span class="ruby-operator">?</span> <span class="ruby-keyword kw">false</span> <span class="ruby-operator">:</span> <span class="ruby-keyword kw">true</span>
+
+    <span class="ruby-keyword kw">unless</span> <span class="ruby-identifier">bool</span>
+      <span class="ruby-identifier">job_name</span> = <span class="ruby-value str">'ruby_'</span> <span class="ruby-operator">+</span> <span class="ruby-constant">Time</span>.<span class="ruby-identifier">now</span>.<span class="ruby-identifier">to_s</span>
+
+      <span class="ruby-comment cmt"># Create a job object and add the current process to it</span>
+      <span class="ruby-identifier">handle</span> = <span class="ruby-constant">CreateJobObject</span>(<span class="ruby-keyword kw">nil</span>, <span class="ruby-identifier">job_name</span>)
+
+      <span class="ruby-keyword kw">if</span> <span class="ruby-identifier">handle</span> <span class="ruby-operator">==</span> <span class="ruby-value">0</span>
+        <span class="ruby-identifier">raise</span> <span class="ruby-constant">Error</span>, <span class="ruby-identifier">get_last_error</span>
+      <span class="ruby-keyword kw">end</span>
+    <span class="ruby-keyword kw">end</span>
+
+    <span class="ruby-keyword kw">begin</span>
+      <span class="ruby-keyword kw">unless</span> <span class="ruby-identifier">bool</span>
+        <span class="ruby-keyword kw">unless</span> <span class="ruby-constant">AssignProcessToJobObject</span>(<span class="ruby-identifier">handle</span>, <span class="ruby-constant">GetCurrentProcess</span>())
+          <span class="ruby-identifier">raise</span> <span class="ruby-constant">Error</span>, <span class="ruby-identifier">get_last_error</span>
+        <span class="ruby-keyword kw">end</span>
+      <span class="ruby-keyword kw">end</span>
+
+      <span class="ruby-identifier">buf</span> = <span class="ruby-value">0</span>.<span class="ruby-identifier">chr</span> <span class="ruby-operator">*</span> <span class="ruby-value">112</span> <span class="ruby-comment cmt"># sizeof(struct JOBJECT_EXTENDED_LIMIT_INFORMATION)</span>
+      <span class="ruby-identifier">val</span> = <span class="ruby-keyword kw">nil</span>         <span class="ruby-comment cmt"># value returned at end of method</span>
+
+      <span class="ruby-keyword kw">case</span> <span class="ruby-identifier">resource</span>
+        <span class="ruby-keyword kw">when</span> <span class="ruby-constant">RLIMIT_CPU</span>
+          <span class="ruby-identifier">buf</span>[<span class="ruby-value">16</span>,<span class="ruby-value">4</span>] = [<span class="ruby-constant">JOB_OBJECT_LIMIT_PROCESS_TIME</span>].<span class="ruby-identifier">pack</span>(<span class="ruby-value str">'L'</span>)
+        <span class="ruby-keyword kw">when</span> <span class="ruby-constant">RLIMIT_AS</span>, <span class="ruby-constant">RLIMIT_VMEM</span>, <span class="ruby-constant">RLIMIT_RSS</span>
+          <span class="ruby-identifier">buf</span>[<span class="ruby-value">16</span>,<span class="ruby-value">4</span>] = [<span class="ruby-constant">JOB_OBJECT_LIMIT_PROCESS_MEMORY</span>].<span class="ruby-identifier">pack</span>(<span class="ruby-value str">'L'</span>)
+      <span class="ruby-keyword kw">end</span>
+
+      <span class="ruby-identifier">bool</span> = <span class="ruby-constant">QueryInformationJobObject</span>(
+        <span class="ruby-identifier">handle</span>,
+        <span class="ruby-constant">JobObjectExtendedLimitInformation</span>,
+        <span class="ruby-identifier">buf</span>,
+        <span class="ruby-identifier">buf</span>.<span class="ruby-identifier">size</span>,
+        <span class="ruby-keyword kw">nil</span>
+      )
+
+      <span class="ruby-keyword kw">unless</span> <span class="ruby-identifier">bool</span>
+        <span class="ruby-identifier">raise</span> <span class="ruby-constant">Error</span>, <span class="ruby-identifier">get_last_error</span>
+      <span class="ruby-keyword kw">end</span>
+
+      <span class="ruby-keyword kw">case</span> <span class="ruby-identifier">resource</span>
+        <span class="ruby-keyword kw">when</span> <span class="ruby-constant">Process</span><span class="ruby-operator">::</span><span class="ruby-constant">RLIMIT_CPU</span>
+          <span class="ruby-identifier">val</span> = <span class="ruby-identifier">buf</span>[<span class="ruby-value">0</span>,<span class="ruby-value">8</span>].<span class="ruby-identifier">unpack</span>(<span class="ruby-value str">'Q'</span>).<span class="ruby-identifier">first</span>
+        <span class="ruby-keyword kw">when</span> <span class="ruby-constant">RLIMIT_AS</span>, <span class="ruby-constant">RLIMIT_VMEM</span>, <span class="ruby-constant">RLIMIT_RSS</span>
+          <span class="ruby-identifier">val</span> = <span class="ruby-identifier">buf</span>[<span class="ruby-value">96</span>,<span class="ruby-value">4</span>].<span class="ruby-identifier">unpack</span>(<span class="ruby-value str">'L'</span>).<span class="ruby-identifier">first</span>
+      <span class="ruby-keyword kw">end</span>
+    <span class="ruby-keyword kw">ensure</span>
+      <span class="ruby-constant">CloseHandle</span>(<span class="ruby-identifier">handle</span>)
+    <span class="ruby-keyword kw">end</span>
+
+    [<span class="ruby-identifier">val</span>, <span class="ruby-identifier">val</span>] <span class="ruby-comment cmt"># Return an array of two values to comply with spec</span>
+  <span class="ruby-keyword kw">end</span></pre>
+</body>
+</html>

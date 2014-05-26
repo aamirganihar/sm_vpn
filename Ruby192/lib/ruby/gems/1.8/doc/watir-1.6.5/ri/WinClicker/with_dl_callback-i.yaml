@@ -1,0 +1,10 @@
+--- !ruby/object:RI::MethodDescription 
+aliases: []
+
+block_params: callback
+comment: 
+full_name: WinClicker#with_dl_callback
+is_singleton: false
+name: with_dl_callback
+params: (type, prc) {|callback| ...}
+visibility: public

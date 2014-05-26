@@ -1,0 +1,14 @@
+--- !ruby/object:RI::MethodDescription 
+aliases: []
+
+block_params: 
+comment: 
+- !ruby/struct:SM::Flow::P 
+  body: Navigate to the specified URL.
+- !ruby/struct:SM::Flow::VERB 
+  body: " * url - string - the URL to navigate to\n"
+full_name: Watir::IE#goto
+is_singleton: false
+name: goto
+params: (url)
+visibility: public

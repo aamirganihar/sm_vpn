@@ -1,0 +1,30 @@
+--- !ruby/object:RI::ClassDescription 
+attributes: []
+
+class_methods: []
+
+comment: 
+- !ruby/struct:SM::Flow::P 
+  body: Process command-line choices according to POSIX rules. Consider
+- !ruby/struct:SM::Flow::P 
+  body: ruby copy.rb file1 --odd-file-name
+- !ruby/struct:SM::Flow::P 
+  body: "Ordinarily, that's permuted so that --odd-file-name is expected to be an option or switch, not an argument. One way to make CommandLineSource parsing treat it as an argument is to use a -- to signal the end of option parsing:"
+- !ruby/struct:SM::Flow::P 
+  body: ruby copy.rb -- file1 --odd-file-name
+- !ruby/struct:SM::Flow::P 
+  body: Another is to rely on the user to set environment variable POSIXLY_CORRECT.
+- !ruby/struct:SM::Flow::P 
+  body: Since both of those require the user to do something, they're error-prone.
+- !ruby/struct:SM::Flow::P 
+  body: Another way is to use this class, which obeys POSIX-standard rules. Under those rules, the first word on the command line that does not begin with a dash marks the end of all options. In that case, the first command line above would parse into two arguments and no options.
+constants: []
+
+full_name: UserChoices::PosixCommandLineSource
+includes: []
+
+instance_methods: 
+- !ruby/object:RI::MethodSummary 
+  name: fill
+name: PosixCommandLineSource
+superclass: CommandLineSource

@@ -1,0 +1,33 @@
+--- !ruby/object:RI::ClassDescription 
+attributes: []
+
+class_methods: []
+
+comment: 
+constants: []
+
+full_name: Mail::ContentDisposition
+includes: 
+- !ruby/object:RI::IncludedModule 
+  name: Treetop::Runtime
+- !ruby/object:RI::IncludedModule 
+  name: RFC2822
+- !ruby/object:RI::IncludedModule 
+  name: RFC2045
+instance_methods: 
+- !ruby/object:RI::MethodSummary 
+  name: _nt_attribute
+- !ruby/object:RI::MethodSummary 
+  name: _nt_content_disposition
+- !ruby/object:RI::MethodSummary 
+  name: _nt_disposition_type
+- !ruby/object:RI::MethodSummary 
+  name: _nt_extension_token
+- !ruby/object:RI::MethodSummary 
+  name: _nt_parameter
+- !ruby/object:RI::MethodSummary 
+  name: _nt_value
+- !ruby/object:RI::MethodSummary 
+  name: root
+name: ContentDisposition
+superclass: 

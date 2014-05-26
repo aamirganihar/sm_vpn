@@ -1,0 +1,16 @@
+--- !ruby/object:RI::MethodDescription 
+aliases: []
+
+block_params: 
+comment: 
+- !ruby/struct:SM::Flow::P 
+  body: this is the main method for accessing the dls iterator. Returns a Dls collection
+- !ruby/struct:SM::Flow::P 
+  body: "Typical usage:"
+- !ruby/struct:SM::Flow::VERB 
+  body: "  ie.dls.each { |d| puts d.to_s }            # iterate through all the dls on the page\n  ie.dls[1].to_s                             # goto the first dl on the page\n  ie.dls.length                              # show how many dls are on the page.\n"
+full_name: Watir::Container#dls
+is_singleton: false
+name: dls
+params: ()
+visibility: public

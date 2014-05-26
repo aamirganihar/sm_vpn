@@ -1,0 +1,16 @@
+--- !ruby/object:RI::MethodDescription 
+aliases: []
+
+block_params: 
+comment: 
+- !ruby/struct:SM::Flow::VERB 
+  body: "  Used for attaching pop up window to an existing Firefox window, either by url or title.\n  ff.attach(:url, 'http://www.google.com')\n  ff.attach(:title, 'Google')\n"
+- !ruby/struct:SM::Flow::P 
+  body: "Output:"
+- !ruby/struct:SM::Flow::VERB 
+  body: "  Instance of newly attached window.\n"
+full_name: FireWatir::Firefox#attach
+is_singleton: false
+name: attach
+params: (how, what)
+visibility: public

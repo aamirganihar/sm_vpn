@@ -1,0 +1,12 @@
+--- !ruby/object:RI::MethodDescription 
+aliases: []
+
+block_params: 
+comment: 
+- !ruby/struct:SM::Flow::P 
+  body: Click on a dialog with title of &quot;Internet Explorer&quot; Default button to click is &quot;OK&quot; parenthWnd not used
+full_name: WinClicker#clickJavaScriptDialog
+is_singleton: false
+name: clickJavaScriptDialog
+params: (button="OK" , parenthWnd = -1)
+visibility: public

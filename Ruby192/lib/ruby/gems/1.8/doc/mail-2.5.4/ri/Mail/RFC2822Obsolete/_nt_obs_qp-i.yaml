@@ -1,0 +1,10 @@
+--- !ruby/object:RI::MethodDescription 
+aliases: []
+
+block_params: 
+comment: 
+full_name: Mail::RFC2822Obsolete#_nt_obs_qp
+is_singleton: false
+name: _nt_obs_qp
+params: ()
+visibility: public

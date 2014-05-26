@@ -1,0 +1,10 @@
+--- !ruby/object:RI::MethodDescription 
+aliases: []
+
+block_params: 
+comment: 
+full_name: Windows::MSVCRT::String#strchr
+is_singleton: false
+name: strchr
+params: (string, char)
+visibility: public

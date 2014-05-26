@@ -1,0 +1,12 @@
+--- !ruby/object:RI::MethodDescription 
+aliases: []
+
+block_params: 
+comment: 
+- !ruby/struct:SM::Flow::P 
+  body: Send key events to IE window. See http://www.autoitscript.com/autoit3/docs/appendix/SendKeys.htm for complete documentation on keys supported and syntax.
+full_name: Watir::IE#send_keys
+is_singleton: false
+name: send_keys
+params: (key_string)
+visibility: public
