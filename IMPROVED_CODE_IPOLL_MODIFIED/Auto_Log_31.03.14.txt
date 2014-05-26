@@ -1,0 +1,38 @@
+
+D:\IMPROVED_CODE_AAMIR>copy "D:\IMPROVED_CODE_AAMIR\Output Repository\Non4S_Test_Report.html" "D:\IMPROVED_CODE_AAMIR\Output Repository Archive\Non4s_Report_03/41/_25290.html" 
+        0 file(s) copied.
+Loaded suite Test_01_Project_QG_Create
+Started
+.Started InternetExplorerDriver server (32-bit)
+2.39.0.0
+Listening on port 5555
+Unexpected error launching Internet Explorer. Browser zoom level was set to 104%. It should be set to 100%
+["C:/Ruby192/lib/ruby/gems/1.9.1/gems/selenium-webdriver-2.31.0/lib/selenium/webdriver/remote/response.rb:52:in `assert_ok'", "C:/Ruby192/lib/ruby/gems/1.9.1/gems/selenium-webdriver-2.31.0/lib/selenium/webdriver/remote/response.rb:15:in `initialize'", "C:/Ruby192/lib/ruby/gems/1.9.1/gems/selenium-webdriver-2.31.0/lib/selenium/webdriver/remote/http/common.rb:59:in `new'", "C:/Ruby192/lib/ruby/gems/1.9.1/gems/selenium-webdriver-2.31.0/lib/selenium/webdriver/remote/http/common.rb:59:in `create_response'", "C:/Ruby192/lib/ruby/gems/1.9.1/gems/selenium-webdriver-2.31.0/lib/selenium/webdriver/remote/http/default.rb:66:in `request'", "C:/Ruby192/lib/ruby/gems/1.9.1/gems/selenium-webdriver-2.31.0/lib/selenium/webdriver/remote/http/common.rb:40:in `call'", "C:/Ruby192/lib/ruby/gems/1.9.1/gems/selenium-webdriver-2.31.0/lib/selenium/webdriver/remote/bridge.rb:616:in `raw_execute'", "C:/Ruby192/lib/ruby/gems/1.9.1/gems/selenium-webdriver-2.31.0/lib/selenium/webdriver/remote/bridge.rb:93:in `create_session'", "C:/Ruby192/lib/ruby/gems/1.9.1/gems/selenium-webdriver-2.31.0/lib/selenium/webdriver/remote/bridge.rb:68:in `initialize'", "C:/Ruby192/lib/ruby/gems/1.9.1/gems/selenium-webdriver-2.31.0/lib/selenium/webdriver/ie/bridge.rb:47:in `initialize'", "C:/Ruby192/lib/ruby/gems/1.9.1/gems/selenium-webdriver-2.31.0/lib/selenium/webdriver/common/driver.rb:35:in `new'", "C:/Ruby192/lib/ruby/gems/1.9.1/gems/selenium-webdriver-2.31.0/lib/selenium/webdriver/common/driver.rb:35:in `for'", "C:/Ruby192/lib/ruby/gems/1.9.1/gems/selenium-webdriver-2.31.0/lib/selenium/webdriver.rb:67:in `for'", "D:/IMPROVED_CODE_AAMIR/Usamp_lib.rb:71:in `Usampadmin_login'", "Test_01_Project_QG_Create.rb:42:in `test_02_Project_Create'", "C:/Ruby192/lib/ruby/1.9.1/minitest/unit.rb:695:in `run'", "C:/Ruby192/lib/ruby/1.9.1/minitest/unit.rb:656:in `block (2 levels) in run_test_suites'", "C:/Ruby192/lib/ruby/1.9.1/minitest/unit.rb:650:in `each'", "C:/Ruby192/lib/ruby/1.9.1/minitest/unit.rb:650:in `block in run_test_suites'", "C:/Ruby192/lib/ruby/1.9.1/minitest/unit.rb:649:in `each'", "C:/Ruby192/lib/ruby/1.9.1/minitest/unit.rb:649:in `run_test_suites'", "C:/Ruby192/lib/ruby/1.9.1/minitest/unit.rb:609:in `run'", "C:/Ruby192/lib/ruby/1.9.1/minitest/unit.rb:508:in `block in autorun'"]
+Ecan't convert nil into String
+["C:/Ruby192/lib/ruby/1.9.1/base64.rb:38:in `pack'", "C:/Ruby192/lib/ruby/1.9.1/base64.rb:38:in `encode64'", "Test_01_Project_QG_Create.rb:125:in `test_03_QG_Create'", "C:/Ruby192/lib/ruby/1.9.1/minitest/unit.rb:695:in `run'", "C:/Ruby192/lib/ruby/1.9.1/minitest/unit.rb:656:in `block (2 levels) in run_test_suites'", "C:/Ruby192/lib/ruby/1.9.1/minitest/unit.rb:650:in `each'", "C:/Ruby192/lib/ruby/1.9.1/minitest/unit.rb:650:in `block in run_test_suites'", "C:/Ruby192/lib/ruby/1.9.1/minitest/unit.rb:649:in `each'", "C:/Ruby192/lib/ruby/1.9.1/minitest/unit.rb:649:in `run_test_suites'", "C:/Ruby192/lib/ruby/1.9.1/minitest/unit.rb:609:in `run'", "C:/Ruby192/lib/ruby/1.9.1/minitest/unit.rb:508:in `block in autorun'"]
+Ecan't convert nil into String
+["C:/Ruby192/lib/ruby/1.9.1/base64.rb:38:in `pack'", "C:/Ruby192/lib/ruby/1.9.1/base64.rb:38:in `encode64'", "Test_01_Project_QG_Create.rb:192:in `test_04_Save_criteria'", "C:/Ruby192/lib/ruby/1.9.1/minitest/unit.rb:695:in `run'", "C:/Ruby192/lib/ruby/1.9.1/minitest/unit.rb:656:in `block (2 levels) in run_test_suites'", "C:/Ruby192/lib/ruby/1.9.1/minitest/unit.rb:650:in `each'", "C:/Ruby192/lib/ruby/1.9.1/minitest/unit.rb:650:in `block in run_test_suites'", "C:/Ruby192/lib/ruby/1.9.1/minitest/unit.rb:649:in `each'", "C:/Ruby192/lib/ruby/1.9.1/minitest/unit.rb:649:in `run_test_suites'", "C:/Ruby192/lib/ruby/1.9.1/minitest/unit.rb:609:in `run'", "C:/Ruby192/lib/ruby/1.9.1/minitest/unit.rb:508:in `block in autorun'"]
+E
+Finished in 4.484489 seconds.
+
+  1) Error:
+test_02_Project_Create(Test_01_Project_QG_Create):
+NoMethodError: undefined method `close' for nil:NilClass
+    Test_01_Project_QG_Create.rb:112:in `rescue in test_02_Project_Create'
+    Test_01_Project_QG_Create.rb:39:in `test_02_Project_Create'
+
+  2) Error:
+test_03_QG_Create(Test_01_Project_QG_Create):
+NoMethodError: undefined method `close' for nil:NilClass
+    Test_01_Project_QG_Create.rb:176:in `rescue in test_03_QG_Create'
+    Test_01_Project_QG_Create.rb:124:in `test_03_QG_Create'
+
+  3) Error:
+test_04_Save_criteria(Test_01_Project_QG_Create):
+NoMethodError: undefined method `close' for nil:NilClass
+    Test_01_Project_QG_Create.rb:270:in `rescue in test_04_Save_criteria'
+    Test_01_Project_QG_Create.rb:191:in `test_04_Save_criteria'
+
+4 tests, 0 assertions, 0 failures, 3 errors, 0 skips
+
+Test run options: --seed 5098

@@ -1,0 +1,199 @@
+
+D:\IMPROVED_CODE_AAMIR>copy "D:\IMPROVED_CODE_AAMIR\Output Repository\Non4S_Test_Report.html" "D:\IMPROVED_CODE_AAMIR\Output Repository Archive\Non4s_Report_02/40/_23247.html" 
+        0 file(s) copied.
+Loaded suite Test_01_Project_QG_Create
+Started
+.Started InternetExplorerDriver server (32-bit)
+2.39.0.0
+Listening on port 5555
+Successful Login to Usampadmin
+25569
+.QG CREATION PASS
+********
+GROUP DETAILS: QG116704
+********
+116704
+..
+Finished in 335.729493 seconds.
+
+4 tests, 0 assertions, 0 failures, 0 errors, 0 skips
+
+Test run options: --seed 38295
+Loaded suite Test_02_Auto_Open_QG
+Started
+.25569
+116704
+Started InternetExplorerDriver server (32-bit)
+2.39.0.0
+Listening on port 5555
+Successful Login to Usampadmin
+03
+53
+28
+03
+55
+28
+.
+Finished in 281.055868 seconds.
+
+2 tests, 0 assertions, 0 failures, 0 errors, 0 skips
+
+Test run options: --seed 1047
+Loaded suite Test_03_Auto_Close_QG
+Started
+.25569
+116704
+Started InternetExplorerDriver server (32-bit)
+2.39.0.0
+Listening on port 5555
+Successful Login to Usampadmin
+03
+58
+45
+04
+Time Settings Saved
+TIME_SET_PASSED
+.25569
+116704
+Started InternetExplorerDriver server (32-bit)
+2.39.0.0
+Listening on port 5556
+Successful Login to Usampadmin
+Clicks Settings Saved1
+.25569
+116704
+Started InternetExplorerDriver server (32-bit)
+2.39.0.0
+Listening on port 5555
+Successful Login to Usampadmin
+Completes Settings Saved2
+.
+Finished in 797.572396 seconds.
+
+4 tests, 0 assertions, 0 failures, 0 errors, 0 skips
+
+Test run options: --seed 45643
+Loaded suite Test_04_Non_member_survey_complete
+Started
+.25569
+116704
+Started InternetExplorerDriver server (32-bit)
+2.39.0.0
+Listening on port 5555
+Successful Login to Usampadmin
+.25569
+116704
+Started InternetExplorerDriver server (32-bit)
+2.39.0.0
+Listening on port 5556
+Successful Login to Usampadmin
+.25569
+116704
+Started InternetExplorerDriver server (32-bit)
+2.39.0.0
+Listening on port 5555
+Successful Login to Usampadmin
+.
+Finished in 277.977645 seconds.
+
+4 tests, 0 assertions, 0 failures, 0 errors, 0 skips
+
+Test run options: --seed 15929
+Loaded suite Test_05_Member_registration
+Started
+.test string
+auto_test22.desnew2014-02-200416@mailop.com
+**** Waiting for surveys to load ****
+Timeout::Error
+["C:/Ruby192/lib/ruby/1.9.1/net/protocol.rb:140:in `rescue in rbuf_fill'", "C:/Ruby192/lib/ruby/1.9.1/net/protocol.rb:134:in `rbuf_fill'", "C:/Ruby192/lib/ruby/1.9.1/net/protocol.rb:116:in `readuntil'", "C:/Ruby192/lib/ruby/1.9.1/net/protocol.rb:126:in `readline'", "C:/Ruby192/lib/ruby/1.9.1/net/http.rb:2219:in `read_status_line'", "C:/Ruby192/lib/ruby/1.9.1/net/http.rb:2208:in `read_new'", "C:/Ruby192/lib/ruby/1.9.1/net/http.rb:1191:in `transport_request'", "C:/Ruby192/lib/ruby/1.9.1/net/http.rb:1177:in `request'", "C:/Ruby192/lib/ruby/1.9.1/net/http.rb:1170:in `block in request'", "C:/Ruby192/lib/ruby/1.9.1/net/http.rb:627:in `start'", "C:/Ruby192/lib/ruby/1.9.1/net/http.rb:1168:in `request'", "C:/Ruby192/lib/ruby/gems/1.9.1/gems/selenium-webdriver-2.31.0/lib/selenium/webdriver/remote/http/default.rb:83:in `response_for'", "C:/Ruby192/lib/ruby/gems/1.9.1/gems/selenium-webdriver-2.31.0/lib/selenium/webdriver/remote/http/default.rb:39:in `request'", "C:/Ruby192/lib/ruby/gems/1.9.1/gems/selenium-webdriver-2.31.0/lib/selenium/webdriver/remote/http/common.rb:40:in `call'", "C:/Ruby192/lib/ruby/gems/1.9.1/gems/selenium-webdriver-2.31.0/lib/selenium/webdriver/remote/bridge.rb:616:in `raw_execute'", "C:/Ruby192/lib/ruby/gems/1.9.1/gems/selenium-webdriver-2.31.0/lib/selenium/webdriver/remote/bridge.rb:594:in `execute'", "C:/Ruby192/lib/ruby/gems/1.9.1/gems/selenium-webdriver-2.31.0/lib/selenium/webdriver/remote/bridge.rb:505:in `getElementText'", "C:/Ruby192/lib/ruby/gems/1.9.1/gems/selenium-webdriver-2.31.0/lib/selenium/webdriver/common/element.rb:108:in `text'", "C:/Ruby192/lib/ruby/gems/1.9.1/gems/watir-webdriver-0.6.1/lib/watir-webdriver/browser.rb:97:in `text'", "Test_05_Member_registration.rb:122:in `test_02_member_signup_SH'", "C:/Ruby192/lib/ruby/1.9.1/minitest/unit.rb:695:in `run'", "C:/Ruby192/lib/ruby/1.9.1/minitest/unit.rb:656:in `block (2 levels) in run_test_suites'", "C:/Ruby192/lib/ruby/1.9.1/minitest/unit.rb:650:in `each'", "C:/Ruby192/lib/ruby/1.9.1/minitest/unit.rb:650:in `block in run_test_suites'", "C:/Ruby192/lib/ruby/1.9.1/minitest/unit.rb:649:in `each'", "C:/Ruby192/lib/ruby/1.9.1/minitest/unit.rb:649:in `run_test_suites'", "C:/Ruby192/lib/ruby/1.9.1/minitest/unit.rb:609:in `run'", "C:/Ruby192/lib/ruby/1.9.1/minitest/unit.rb:508:in `block in autorun'"]
+.Started InternetExplorerDriver server (32-bit)
+2.39.0.0
+Listening on port 5555
+Successful Login to Usampadmin
+auto_test22.desnew2014-02-200416@mailop.com
+M24607937
+.Element is not currently visible and so may not be interacted with
+["[remote server] file:///C:/DOCUME~1/ADMINI~1/LOCALS~1/Temp/2/webdriver-rb-profilecopy20140220-9328-d2gndf/extensions/fxdriver@googlecode.com/components/command_processor.js:7567:in `unknown'", "[remote server] file:///C:/DOCUME~1/ADMINI~1/LOCALS~1/Temp/2/webdriver-rb-profilecopy20140220-9328-d2gndf/extensions/fxdriver@googlecode.com/components/command_processor.js:10256:in `unknown'", "[remote server] file:///C:/DOCUME~1/ADMINI~1/LOCALS~1/Temp/2/webdriver-rb-profilecopy20140220-9328-d2gndf/extensions/fxdriver@googlecode.com/components/command_processor.js:10275:in `unknown'", "[remote server] file:///C:/DOCUME~1/ADMINI~1/LOCALS~1/Temp/2/webdriver-rb-profilecopy20140220-9328-d2gndf/extensions/fxdriver@googlecode.com/components/command_processor.js:10280:in `unknown'", "[remote server] file:///C:/DOCUME~1/ADMINI~1/LOCALS~1/Temp/2/webdriver-rb-profilecopy20140220-9328-d2gndf/extensions/fxdriver@googlecode.com/components/command_processor.js:10220:in `unknown'", "C:/Ruby192/lib/ruby/gems/1.9.1/gems/selenium-webdriver-2.31.0/lib/selenium/webdriver/remote/response.rb:52:in `assert_ok'", "C:/Ruby192/lib/ruby/gems/1.9.1/gems/selenium-webdriver-2.31.0/lib/selenium/webdriver/remote/response.rb:15:in `initialize'", "C:/Ruby192/lib/ruby/gems/1.9.1/gems/selenium-webdriver-2.31.0/lib/selenium/webdriver/remote/http/common.rb:59:in `new'", "C:/Ruby192/lib/ruby/gems/1.9.1/gems/selenium-webdriver-2.31.0/lib/selenium/webdriver/remote/http/common.rb:59:in `create_response'", "C:/Ruby192/lib/ruby/gems/1.9.1/gems/selenium-webdriver-2.31.0/lib/selenium/webdriver/remote/http/default.rb:66:in `request'", "C:/Ruby192/lib/ruby/gems/1.9.1/gems/selenium-webdriver-2.31.0/lib/selenium/webdriver/remote/http/common.rb:40:in `call'", "C:/Ruby192/lib/ruby/gems/1.9.1/gems/selenium-webdriver-2.31.0/lib/selenium/webdriver/remote/bridge.rb:616:in `raw_execute'", "C:/Ruby192/lib/ruby/gems/1.9.1/gems/selenium-webdriver-2.31.0/lib/selenium/webdriver/remote/bridge.rb:594:in `execute'", "C:/Ruby192/lib/ruby/gems/1.9.1/gems/selenium-webdriver-2.31.0/lib/selenium/webdriver/remote/bridge.rb:413:in `clearElement'", "C:/Ruby192/lib/ruby/gems/1.9.1/gems/selenium-webdriver-2.31.0/lib/selenium/webdriver/common/element.rb:141:in `clear'", "C:/Ruby192/lib/ruby/gems/1.9.1/gems/watir-webdriver-0.6.1/lib/watir-webdriver/user_editable.rb:11:in `set'", "Test_05_Member_registration.rb:233:in `test_04_member_signup_Focusline'", "C:/Ruby192/lib/ruby/1.9.1/minitest/unit.rb:695:in `run'", "C:/Ruby192/lib/ruby/1.9.1/minitest/unit.rb:656:in `block (2 levels) in run_test_suites'", "C:/Ruby192/lib/ruby/1.9.1/minitest/unit.rb:650:in `each'", "C:/Ruby192/lib/ruby/1.9.1/minitest/unit.rb:650:in `block in run_test_suites'", "C:/Ruby192/lib/ruby/1.9.1/minitest/unit.rb:649:in `each'", "C:/Ruby192/lib/ruby/1.9.1/minitest/unit.rb:649:in `run_test_suites'", "C:/Ruby192/lib/ruby/1.9.1/minitest/unit.rb:609:in `run'", "C:/Ruby192/lib/ruby/1.9.1/minitest/unit.rb:508:in `block in autorun'"]
+.Started InternetExplorerDriver server (32-bit)
+2.39.0.0
+Listening on port 5555
+Successful Login to Usampadmin
+auto_test22.des2014-02-160525@mailop.com
+M24607836
+Element is no longer valid
+["C:/Ruby192/lib/ruby/gems/1.9.1/gems/selenium-webdriver-2.31.0/lib/selenium/webdriver/remote/response.rb:52:in `assert_ok'", "C:/Ruby192/lib/ruby/gems/1.9.1/gems/selenium-webdriver-2.31.0/lib/selenium/webdriver/remote/response.rb:15:in `initialize'", "C:/Ruby192/lib/ruby/gems/1.9.1/gems/selenium-webdriver-2.31.0/lib/selenium/webdriver/remote/http/common.rb:59:in `new'", "C:/Ruby192/lib/ruby/gems/1.9.1/gems/selenium-webdriver-2.31.0/lib/selenium/webdriver/remote/http/common.rb:59:in `create_response'", "C:/Ruby192/lib/ruby/gems/1.9.1/gems/selenium-webdriver-2.31.0/lib/selenium/webdriver/remote/http/default.rb:66:in `request'", "C:/Ruby192/lib/ruby/gems/1.9.1/gems/selenium-webdriver-2.31.0/lib/selenium/webdriver/remote/http/common.rb:40:in `call'", "C:/Ruby192/lib/ruby/gems/1.9.1/gems/selenium-webdriver-2.31.0/lib/selenium/webdriver/remote/bridge.rb:616:in `raw_execute'", "C:/Ruby192/lib/ruby/gems/1.9.1/gems/selenium-webdriver-2.31.0/lib/selenium/webdriver/remote/bridge.rb:594:in `execute'", "C:/Ruby192/lib/ruby/gems/1.9.1/gems/selenium-webdriver-2.31.0/lib/selenium/webdriver/remote/bridge.rb:493:in `getElementTagName'", "C:/Ruby192/lib/ruby/gems/1.9.1/gems/selenium-webdriver-2.31.0/lib/selenium/webdriver/common/element.rb:68:in `tag_name'", "C:/Ruby192/lib/ruby/gems/1.9.1/gems/watir-webdriver-0.6.1/lib/watir-webdriver/locators/element_locator.rb:379:in `validate_element'", "C:/Ruby192/lib/ruby/gems/1.9.1/gems/watir-webdriver-0.6.1/lib/watir-webdriver/locators/element_locator.rb:37:in `locate'", "C:/Ruby192/lib/ruby/gems/1.9.1/gems/watir-webdriver-0.6.1/lib/watir-webdriver/elements/element.rb:384:in `locate'", "C:/Ruby192/lib/ruby/gems/1.9.1/gems/watir-webdriver-0.6.1/lib/watir-webdriver/elements/element.rb:362:in `assert_exists'", "C:/Ruby192/lib/ruby/gems/1.9.1/gems/watir-webdriver-0.6.1/lib/watir-webdriver/elements/element.rb:95:in `click'", "Test_05_Member_registration.rb:339:in `test_05_member_in_admin_Focusline'", "C:/Ruby192/lib/ruby/1.9.1/minitest/unit.rb:695:in `run'", "C:/Ruby192/lib/ruby/1.9.1/minitest/unit.rb:656:in `block (2 levels) in run_test_suites'", "C:/Ruby192/lib/ruby/1.9.1/minitest/unit.rb:650:in `each'", "C:/Ruby192/lib/ruby/1.9.1/minitest/unit.rb:650:in `block in run_test_suites'", "C:/Ruby192/lib/ruby/1.9.1/minitest/unit.rb:649:in `each'", "C:/Ruby192/lib/ruby/1.9.1/minitest/unit.rb:649:in `run_test_suites'", "C:/Ruby192/lib/ruby/1.9.1/minitest/unit.rb:609:in `run'", "C:/Ruby192/lib/ruby/1.9.1/minitest/unit.rb:508:in `block in autorun'"]
+.auto_test22.desnew2014-02-200416@mailop.com
+auto_test22.desnew2014-02-2004
+.auto_test22.des2014-02-160525@mailop.com
+auto_test22.des2014-02-1605
+.
+Finished in 413.075718 seconds.
+
+7 tests, 0 assertions, 0 failures, 0 errors, 0 skips
+
+Test run options: --seed 24155
+Loaded suite Test_07_Publisher_category_filer
+Started
+.Started InternetExplorerDriver server (32-bit)
+2.39.0.0
+Listening on port 5555
+Successful Login to Usampadmin
+25569
+116704
+Element is not currently visible and so may not be interacted with
+["[remote server] file:///C:/DOCUME~1/ADMINI~1/LOCALS~1/Temp/2/webdriver-rb-profilecopy20140220-10832-1u3w1y2/extensions/fxdriver@googlecode.com/components/command_processor.js:7567:in `unknown'", "[remote server] file:///C:/DOCUME~1/ADMINI~1/LOCALS~1/Temp/2/webdriver-rb-profilecopy20140220-10832-1u3w1y2/extensions/fxdriver@googlecode.com/components/command_processor.js:10256:in `unknown'", "[remote server] file:///C:/DOCUME~1/ADMINI~1/LOCALS~1/Temp/2/webdriver-rb-profilecopy20140220-10832-1u3w1y2/extensions/fxdriver@googlecode.com/components/command_processor.js:10275:in `unknown'", "[remote server] file:///C:/DOCUME~1/ADMINI~1/LOCALS~1/Temp/2/webdriver-rb-profilecopy20140220-10832-1u3w1y2/extensions/fxdriver@googlecode.com/components/command_processor.js:10280:in `unknown'", "[remote server] file:///C:/DOCUME~1/ADMINI~1/LOCALS~1/Temp/2/webdriver-rb-profilecopy20140220-10832-1u3w1y2/extensions/fxdriver@googlecode.com/components/command_processor.js:10220:in `unknown'", "C:/Ruby192/lib/ruby/gems/1.9.1/gems/selenium-webdriver-2.31.0/lib/selenium/webdriver/remote/response.rb:52:in `assert_ok'", "C:/Ruby192/lib/ruby/gems/1.9.1/gems/selenium-webdriver-2.31.0/lib/selenium/webdriver/remote/response.rb:15:in `initialize'", "C:/Ruby192/lib/ruby/gems/1.9.1/gems/selenium-webdriver-2.31.0/lib/selenium/webdriver/remote/http/common.rb:59:in `new'", "C:/Ruby192/lib/ruby/gems/1.9.1/gems/selenium-webdriver-2.31.0/lib/selenium/webdriver/remote/http/common.rb:59:in `create_response'", "C:/Ruby192/lib/ruby/gems/1.9.1/gems/selenium-webdriver-2.31.0/lib/selenium/webdriver/remote/http/default.rb:66:in `request'", "C:/Ruby192/lib/ruby/gems/1.9.1/gems/selenium-webdriver-2.31.0/lib/selenium/webdriver/remote/http/common.rb:40:in `call'", "C:/Ruby192/lib/ruby/gems/1.9.1/gems/selenium-webdriver-2.31.0/lib/selenium/webdriver/remote/bridge.rb:616:in `raw_execute'", "C:/Ruby192/lib/ruby/gems/1.9.1/gems/selenium-webdriver-2.31.0/lib/selenium/webdriver/remote/bridge.rb:594:in `execute'", "C:/Ruby192/lib/ruby/gems/1.9.1/gems/selenium-webdriver-2.31.0/lib/selenium/webdriver/remote/bridge.rb:413:in `clearElement'", "C:/Ruby192/lib/ruby/gems/1.9.1/gems/selenium-webdriver-2.31.0/lib/selenium/webdriver/common/element.rb:141:in `clear'", "C:/Ruby192/lib/ruby/gems/1.9.1/gems/watir-webdriver-0.6.1/lib/watir-webdriver/user_editable.rb:11:in `set'", "D:/IMPROVED_CODE_AAMIR/Usamp_lib.rb:164:in `Focusline_login'", "Test_07_Publisher_category_filer.rb:71:in `test_02_publisher_category_filter_match'", "C:/Ruby192/lib/ruby/1.9.1/minitest/unit.rb:695:in `run'", "C:/Ruby192/lib/ruby/1.9.1/minitest/unit.rb:656:in `block (2 levels) in run_test_suites'", "C:/Ruby192/lib/ruby/1.9.1/minitest/unit.rb:650:in `each'", "C:/Ruby192/lib/ruby/1.9.1/minitest/unit.rb:650:in `block in run_test_suites'", "C:/Ruby192/lib/ruby/1.9.1/minitest/unit.rb:649:in `each'", "C:/Ruby192/lib/ruby/1.9.1/minitest/unit.rb:649:in `run_test_suites'", "C:/Ruby192/lib/ruby/1.9.1/minitest/unit.rb:609:in `run'", "C:/Ruby192/lib/ruby/1.9.1/minitest/unit.rb:508:in `block in autorun'"]
+.Started InternetExplorerDriver server (32-bit)
+2.39.0.0
+Listening on port 5556
+Successful Login to Usampadmin
+25569
+116704
+Element is not currently visible and so may not be interacted with
+["[remote server] file:///C:/DOCUME~1/ADMINI~1/LOCALS~1/Temp/2/webdriver-rb-profilecopy20140220-10832-1wy3myz/extensions/fxdriver@googlecode.com/components/command_processor.js:7567:in `unknown'", "[remote server] file:///C:/DOCUME~1/ADMINI~1/LOCALS~1/Temp/2/webdriver-rb-profilecopy20140220-10832-1wy3myz/extensions/fxdriver@googlecode.com/components/command_processor.js:10256:in `unknown'", "[remote server] file:///C:/DOCUME~1/ADMINI~1/LOCALS~1/Temp/2/webdriver-rb-profilecopy20140220-10832-1wy3myz/extensions/fxdriver@googlecode.com/components/command_processor.js:10275:in `unknown'", "[remote server] file:///C:/DOCUME~1/ADMINI~1/LOCALS~1/Temp/2/webdriver-rb-profilecopy20140220-10832-1wy3myz/extensions/fxdriver@googlecode.com/components/command_processor.js:10280:in `unknown'", "[remote server] file:///C:/DOCUME~1/ADMINI~1/LOCALS~1/Temp/2/webdriver-rb-profilecopy20140220-10832-1wy3myz/extensions/fxdriver@googlecode.com/components/command_processor.js:10220:in `unknown'", "C:/Ruby192/lib/ruby/gems/1.9.1/gems/selenium-webdriver-2.31.0/lib/selenium/webdriver/remote/response.rb:52:in `assert_ok'", "C:/Ruby192/lib/ruby/gems/1.9.1/gems/selenium-webdriver-2.31.0/lib/selenium/webdriver/remote/response.rb:15:in `initialize'", "C:/Ruby192/lib/ruby/gems/1.9.1/gems/selenium-webdriver-2.31.0/lib/selenium/webdriver/remote/http/common.rb:59:in `new'", "C:/Ruby192/lib/ruby/gems/1.9.1/gems/selenium-webdriver-2.31.0/lib/selenium/webdriver/remote/http/common.rb:59:in `create_response'", "C:/Ruby192/lib/ruby/gems/1.9.1/gems/selenium-webdriver-2.31.0/lib/selenium/webdriver/remote/http/default.rb:66:in `request'", "C:/Ruby192/lib/ruby/gems/1.9.1/gems/selenium-webdriver-2.31.0/lib/selenium/webdriver/remote/http/common.rb:40:in `call'", "C:/Ruby192/lib/ruby/gems/1.9.1/gems/selenium-webdriver-2.31.0/lib/selenium/webdriver/remote/bridge.rb:616:in `raw_execute'", "C:/Ruby192/lib/ruby/gems/1.9.1/gems/selenium-webdriver-2.31.0/lib/selenium/webdriver/remote/bridge.rb:594:in `execute'", "C:/Ruby192/lib/ruby/gems/1.9.1/gems/selenium-webdriver-2.31.0/lib/selenium/webdriver/remote/bridge.rb:413:in `clearElement'", "C:/Ruby192/lib/ruby/gems/1.9.1/gems/selenium-webdriver-2.31.0/lib/selenium/webdriver/common/element.rb:141:in `clear'", "C:/Ruby192/lib/ruby/gems/1.9.1/gems/watir-webdriver-0.6.1/lib/watir-webdriver/user_editable.rb:11:in `set'", "D:/IMPROVED_CODE_AAMIR/Usamp_lib.rb:164:in `Focusline_login'", "Test_07_Publisher_category_filer.rb:127:in `test_03_publisher_category_filter_mismatch'", "C:/Ruby192/lib/ruby/1.9.1/minitest/unit.rb:695:in `run'", "C:/Ruby192/lib/ruby/1.9.1/minitest/unit.rb:656:in `block (2 levels) in run_test_suites'", "C:/Ruby192/lib/ruby/1.9.1/minitest/unit.rb:650:in `each'", "C:/Ruby192/lib/ruby/1.9.1/minitest/unit.rb:650:in `block in run_test_suites'", "C:/Ruby192/lib/ruby/1.9.1/minitest/unit.rb:649:in `each'", "C:/Ruby192/lib/ruby/1.9.1/minitest/unit.rb:649:in `run_test_suites'", "C:/Ruby192/lib/ruby/1.9.1/minitest/unit.rb:609:in `run'", "C:/Ruby192/lib/ruby/1.9.1/minitest/unit.rb:508:in `block in autorun'"]
+E
+Finished in 142.504560 seconds.
+
+  1) Error:
+test_03_publisher_category_filter_mismatch(Test_07_Publisher_filter_category):
+NoMethodError: undefined method `close' for nil:NilClass
+    Test_07_Publisher_category_filer.rb:157:in `rescue in test_03_publisher_category_filter_mismatch'
+    Test_07_Publisher_category_filer.rb:100:in `test_03_publisher_category_filter_mismatch'
+
+3 tests, 0 assertions, 0 failures, 1 errors, 0 skips
+
+Test run options: --seed 60508
+Loaded suite Test_08_Publisher_margin_%
+Started
+.Started InternetExplorerDriver server (32-bit)
+2.39.0.0
+Listening on port 5555
+Successful Login to Usampadmin
+25569
+116704
+Element is not currently visible and so may not be interacted with
+["[remote server] file:///C:/DOCUME~1/ADMINI~1/LOCALS~1/Temp/2/webdriver-rb-profilecopy20140220-10616-1lx09j/extensions/fxdriver@googlecode.com/components/command_processor.js:7567:in `unknown'", "[remote server] file:///C:/DOCUME~1/ADMINI~1/LOCALS~1/Temp/2/webdriver-rb-profilecopy20140220-10616-1lx09j/extensions/fxdriver@googlecode.com/components/command_processor.js:10256:in `unknown'", "[remote server] file:///C:/DOCUME~1/ADMINI~1/LOCALS~1/Temp/2/webdriver-rb-profilecopy20140220-10616-1lx09j/extensions/fxdriver@googlecode.com/components/command_processor.js:10275:in `unknown'", "[remote server] file:///C:/DOCUME~1/ADMINI~1/LOCALS~1/Temp/2/webdriver-rb-profilecopy20140220-10616-1lx09j/extensions/fxdriver@googlecode.com/components/command_processor.js:10280:in `unknown'", "[remote server] file:///C:/DOCUME~1/ADMINI~1/LOCALS~1/Temp/2/webdriver-rb-profilecopy20140220-10616-1lx09j/extensions/fxdriver@googlecode.com/components/command_processor.js:10220:in `unknown'", "C:/Ruby192/lib/ruby/gems/1.9.1/gems/selenium-webdriver-2.31.0/lib/selenium/webdriver/remote/response.rb:52:in `assert_ok'", "C:/Ruby192/lib/ruby/gems/1.9.1/gems/selenium-webdriver-2.31.0/lib/selenium/webdriver/remote/response.rb:15:in `initialize'", "C:/Ruby192/lib/ruby/gems/1.9.1/gems/selenium-webdriver-2.31.0/lib/selenium/webdriver/remote/http/common.rb:59:in `new'", "C:/Ruby192/lib/ruby/gems/1.9.1/gems/selenium-webdriver-2.31.0/lib/selenium/webdriver/remote/http/common.rb:59:in `create_response'", "C:/Ruby192/lib/ruby/gems/1.9.1/gems/selenium-webdriver-2.31.0/lib/selenium/webdriver/remote/http/default.rb:66:in `request'", "C:/Ruby192/lib/ruby/gems/1.9.1/gems/selenium-webdriver-2.31.0/lib/selenium/webdriver/remote/http/common.rb:40:in `call'", "C:/Ruby192/lib/ruby/gems/1.9.1/gems/selenium-webdriver-2.31.0/lib/selenium/webdriver/remote/bridge.rb:616:in `raw_execute'", "C:/Ruby192/lib/ruby/gems/1.9.1/gems/selenium-webdriver-2.31.0/lib/selenium/webdriver/remote/bridge.rb:594:in `execute'", "C:/Ruby192/lib/ruby/gems/1.9.1/gems/selenium-webdriver-2.31.0/lib/selenium/webdriver/remote/bridge.rb:413:in `clearElement'", "C:/Ruby192/lib/ruby/gems/1.9.1/gems/selenium-webdriver-2.31.0/lib/selenium/webdriver/common/element.rb:141:in `clear'", "C:/Ruby192/lib/ruby/gems/1.9.1/gems/watir-webdriver-0.6.1/lib/watir-webdriver/user_editable.rb:11:in `set'", "D:/IMPROVED_CODE_AAMIR/Usamp_lib.rb:164:in `Focusline_login'", "Test_08_Publisher_margin_%.rb:79:in `test_02_publisher_margin_match'", "C:/Ruby192/lib/ruby/1.9.1/minitest/unit.rb:695:in `run'", "C:/Ruby192/lib/ruby/1.9.1/minitest/unit.rb:656:in `block (2 levels) in run_test_suites'", "C:/Ruby192/lib/ruby/1.9.1/minitest/unit.rb:650:in `each'", "C:/Ruby192/lib/ruby/1.9.1/minitest/unit.rb:650:in `block in run_test_suites'", "C:/Ruby192/lib/ruby/1.9.1/minitest/unit.rb:649:in `each'", "C:/Ruby192/lib/ruby/1.9.1/minitest/unit.rb:649:in `run_test_suites'", "C:/Ruby192/lib/ruby/1.9.1/minitest/unit.rb:609:in `run'", "C:/Ruby192/lib/ruby/1.9.1/minitest/unit.rb:508:in `block in autorun'"]
+Started InternetExplorerDriver server (32-bit)
+2.39.0.0
+Listening on port 5556
+.Started InternetExplorerDriver server (32-bit)
+2.39.0.0
+Listening on port 5557
+Successful Login to Usampadmin
+25569
+116704
+Element is not currently visible and so may not be interacted with
+["[remote server] file:///C:/DOCUME~1/ADMINI~1/LOCALS~1/Temp/2/webdriver-rb-profilecopy20140220-10616-k5gnvk/extensions/fxdriver@googlecode.com/components/command_processor.js:7567:in `unknown'", "[remote server] file:///C:/DOCUME~1/ADMINI~1/LOCALS~1/Temp/2/webdriver-rb-profilecopy20140220-10616-k5gnvk/extensions/fxdriver@googlecode.com/components/command_processor.js:10256:in `unknown'", "[remote server] file:///C:/DOCUME~1/ADMINI~1/LOCALS~1/Temp/2/webdriver-rb-profilecopy20140220-10616-k5gnvk/extensions/fxdriver@googlecode.com/components/command_processor.js:10275:in `unknown'", "[remote server] file:///C:/DOCUME~1/ADMINI~1/LOCALS~1/Temp/2/webdriver-rb-profilecopy20140220-10616-k5gnvk/extensions/fxdriver@googlecode.com/components/command_processor.js:10280:in `unknown'", "[remote server] file:///C:/DOCUME~1/ADMINI~1/LOCALS~1/Temp/2/webdriver-rb-profilecopy20140220-10616-k5gnvk/extensions/fxdriver@googlecode.com/components/command_processor.js:10220:in `unknown'", "C:/Ruby192/lib/ruby/gems/1.9.1/gems/selenium-webdriver-2.31.0/lib/selenium/webdriver/remote/response.rb:52:in `assert_ok'", "C:/Ruby192/lib/ruby/gems/1.9.1/gems/selenium-webdriver-2.31.0/lib/selenium/webdriver/remote/response.rb:15:in `initialize'", "C:/Ruby192/lib/ruby/gems/1.9.1/gems/selenium-webdriver-2.31.0/lib/selenium/webdriver/remote/http/common.rb:59:in `new'", "C:/Ruby192/lib/ruby/gems/1.9.1/gems/selenium-webdriver-2.31.0/lib/selenium/webdriver/remote/http/common.rb:59:in `create_response'", "C:/Ruby192/lib/ruby/gems/1.9.1/gems/selenium-webdriver-2.31.0/lib/selenium/webdriver/remote/http/default.rb:66:in `request'", "C:/Ruby192/lib/ruby/gems/1.9.1/gems/selenium-webdriver-2.31.0/lib/selenium/webdriver/remote/http/common.rb:40:in `call'", "C:/Ruby192/lib/ruby/gems/1.9.1/gems/selenium-webdriver-2.31.0/lib/selenium/webdriver/remote/bridge.rb:616:in `raw_execute'", "C:/Ruby192/lib/ruby/gems/1.9.1/gems/selenium-webdriver-2.31.0/lib/selenium/webdriver/remote/bridge.rb:594:in `execute'", "C:/Ruby192/lib/ruby/gems/1.9.1/gems/selenium-webdriver-2.31.0/lib/selenium/webdriver/remote/bridge.rb:413:in `clearElement'", "C:/Ruby192/lib/ruby/gems/1.9.1/gems/selenium-webdriver-2.31.0/lib/selenium/webdriver/common/element.rb:141:in `clear'", "C:/Ruby192/lib/ruby/gems/1.9.1/gems/watir-webdriver-0.6.1/lib/watir-webdriver/user_editable.rb:11:in `set'", "D:/IMPROVED_CODE_AAMIR/Usamp_lib.rb:164:in `Focusline_login'", "Test_08_Publisher_margin_%.rb:136:in `test_03_publisher_margin_mismatch'", "C:/Ruby192/lib/ruby/1.9.1/minitest/unit.rb:695:in `run'", "C:/Ruby192/lib/ruby/1.9.1/minitest/unit.rb:656:in `block (2 levels) in run_test_suites'", "C:/Ruby192/lib/ruby/1.9.1/minitest/unit.rb:650:in `each'", "C:/Ruby192/lib/ruby/1.9.1/minitest/unit.rb:650:in `block in run_test_suites'", "C:/Ruby192/lib/ruby/1.9.1/minitest/unit.rb:649:in `each'", "C:/Ruby192/lib/ruby/1.9.1/minitest/unit.rb:649:in `run_test_suites'", "C:/Ruby192/lib/ruby/1.9.1/minitest/unit.rb:609:in `run'", "C:/Ruby192/lib/ruby/1.9.1/minitest/unit.rb:508:in `block in autorun'"]
+Started InternetExplorerDriver server (32-bit)
+2.39.0.0
+Listening on port 5558
+.
+Finished in 145.707787 seconds.
+
+3 tests, 0 assertions, 0 failures, 0 errors, 0 skips
+
+Test run options: --seed 62723
+Loaded suite Test_09_US_getcount
+Started
+.Successful Login to Usampadmin
+25569
+116704

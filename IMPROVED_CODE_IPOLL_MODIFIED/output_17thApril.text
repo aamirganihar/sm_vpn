@@ -1,0 +1,9 @@
+
+D:\IMPROVED_CODE_AAMIR>copy "D:\IMPROVED_CODE_AAMIR\Output Repository\Non4S_Test_Report.html" "D:\IMPROVED_CODE_AAMIR\Output Repository Archive\Non4s_Report_04/47/_1510.html" 
+        0 file(s) copied.
+Loaded suite Test_01_Project_QG_Create
+Started
+.Started InternetExplorerDriver server (32-bit)
+2.39.0.0
+Listening on port 5555
+Successful Login to Usampadmin

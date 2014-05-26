@@ -1,0 +1,1459 @@
+
+D:\IMPROVED_CODE_AAMIR>copy "D:\IMPROVED_CODE_AAMIR\Output Repository\Non4S_Test_Report.html" "D:\IMPROVED_CODE_AAMIR\Output Repository Archive\Non4s_Report_02/42/_8237.html" 
+        0 file(s) copied.
+Loaded suite Test_01_Project_QG_Create
+Started
+.Started InternetExplorerDriver server (32-bit)
+2.39.0.0
+Listening on port 5555
+Sorry! System Failed to login to Usampadmin
+undefined method `goto' for nil:NilClass
+["Test_01_Project_QG_Create.rb:43:in `test_02_Project_Create'", "C:/Ruby192/lib/ruby/1.9.1/minitest/unit.rb:695:in `run'", "C:/Ruby192/lib/ruby/1.9.1/minitest/unit.rb:656:in `block (2 levels) in run_test_suites'", "C:/Ruby192/lib/ruby/1.9.1/minitest/unit.rb:650:in `each'", "C:/Ruby192/lib/ruby/1.9.1/minitest/unit.rb:650:in `block in run_test_suites'", "C:/Ruby192/lib/ruby/1.9.1/minitest/unit.rb:649:in `each'", "C:/Ruby192/lib/ruby/1.9.1/minitest/unit.rb:649:in `run_test_suites'", "C:/Ruby192/lib/ruby/1.9.1/minitest/unit.rb:609:in `run'", "C:/Ruby192/lib/ruby/1.9.1/minitest/unit.rb:508:in `block in autorun'"]
+Ecan't convert nil into String
+["C:/Ruby192/lib/ruby/1.9.1/base64.rb:38:in `pack'", "C:/Ruby192/lib/ruby/1.9.1/base64.rb:38:in `encode64'", "Test_01_Project_QG_Create.rb:125:in `test_03_QG_Create'", "C:/Ruby192/lib/ruby/1.9.1/minitest/unit.rb:695:in `run'", "C:/Ruby192/lib/ruby/1.9.1/minitest/unit.rb:656:in `block (2 levels) in run_test_suites'", "C:/Ruby192/lib/ruby/1.9.1/minitest/unit.rb:650:in `each'", "C:/Ruby192/lib/ruby/1.9.1/minitest/unit.rb:650:in `block in run_test_suites'", "C:/Ruby192/lib/ruby/1.9.1/minitest/unit.rb:649:in `each'", "C:/Ruby192/lib/ruby/1.9.1/minitest/unit.rb:649:in `run_test_suites'", "C:/Ruby192/lib/ruby/1.9.1/minitest/unit.rb:609:in `run'", "C:/Ruby192/lib/ruby/1.9.1/minitest/unit.rb:508:in `block in autorun'"]
+Ecan't convert nil into String
+["C:/Ruby192/lib/ruby/1.9.1/base64.rb:38:in `pack'", "C:/Ruby192/lib/ruby/1.9.1/base64.rb:38:in `encode64'", "Test_01_Project_QG_Create.rb:192:in `test_04_Save_criteria'", "C:/Ruby192/lib/ruby/1.9.1/minitest/unit.rb:695:in `run'", "C:/Ruby192/lib/ruby/1.9.1/minitest/unit.rb:656:in `block (2 levels) in run_test_suites'", "C:/Ruby192/lib/ruby/1.9.1/minitest/unit.rb:650:in `each'", "C:/Ruby192/lib/ruby/1.9.1/minitest/unit.rb:650:in `block in run_test_suites'", "C:/Ruby192/lib/ruby/1.9.1/minitest/unit.rb:649:in `each'", "C:/Ruby192/lib/ruby/1.9.1/minitest/unit.rb:649:in `run_test_suites'", "C:/Ruby192/lib/ruby/1.9.1/minitest/unit.rb:609:in `run'", "C:/Ruby192/lib/ruby/1.9.1/minitest/unit.rb:508:in `block in autorun'"]
+E
+Finished in 22.735248 seconds.
+
+  1) Error:
+test_02_Project_Create(Test_01_Project_QG_Create):
+NoMethodError: undefined method `close' for nil:NilClass
+    Test_01_Project_QG_Create.rb:112:in `rescue in test_02_Project_Create'
+    Test_01_Project_QG_Create.rb:39:in `test_02_Project_Create'
+
+  2) Error:
+test_03_QG_Create(Test_01_Project_QG_Create):
+NoMethodError: undefined method `close' for nil:NilClass
+    Test_01_Project_QG_Create.rb:176:in `rescue in test_03_QG_Create'
+    Test_01_Project_QG_Create.rb:124:in `test_03_QG_Create'
+
+  3) Error:
+test_04_Save_criteria(Test_01_Project_QG_Create):
+NoMethodError: undefined method `close' for nil:NilClass
+    Test_01_Project_QG_Create.rb:270:in `rescue in test_04_Save_criteria'
+    Test_01_Project_QG_Create.rb:191:in `test_04_Save_criteria'
+
+4 tests, 0 assertions, 0 failures, 3 errors, 0 skips
+
+Test run options: --seed 29269
+Loaded suite Test_02_Auto_Open_QG
+Started
+.25345
+115332
+Started InternetExplorerDriver server (32-bit)
+2.39.0.0
+Listening on port 5555
+Successful Login to Usampadmin
+04
+59
+22
+can't convert Fixnum into String
+["Test_02_Auto_Open_QG.rb:102:in `+'", "Test_02_Auto_Open_QG.rb:102:in `test_02_auto_open'", "C:/Ruby192/lib/ruby/1.9.1/minitest/unit.rb:695:in `run'", "C:/Ruby192/lib/ruby/1.9.1/minitest/unit.rb:656:in `block (2 levels) in run_test_suites'", "C:/Ruby192/lib/ruby/1.9.1/minitest/unit.rb:650:in `each'", "C:/Ruby192/lib/ruby/1.9.1/minitest/unit.rb:650:in `block in run_test_suites'", "C:/Ruby192/lib/ruby/1.9.1/minitest/unit.rb:649:in `each'", "C:/Ruby192/lib/ruby/1.9.1/minitest/unit.rb:649:in `run_test_suites'", "C:/Ruby192/lib/ruby/1.9.1/minitest/unit.rb:609:in `run'", "C:/Ruby192/lib/ruby/1.9.1/minitest/unit.rb:508:in `block in autorun'"]
+.
+Finished in 46.236150 seconds.
+
+2 tests, 0 assertions, 0 failures, 0 errors, 0 skips
+
+Test run options: --seed 60862
+Loaded suite Test_03_Auto_Close_QG
+Started
+.25345
+115332
+Started InternetExplorerDriver server (32-bit)
+2.39.0.0
+Listening on port 5555
+Successful Login to Usampadmin
+05
+00
+44
+05
+Time Settings Saved
+TIME_SET_PASSED
+.25345
+115332
+Started InternetExplorerDriver server (32-bit)
+2.39.0.0
+Listening on port 5555
+Successful Login to Usampadmin
+Modal dialog present
+["C:/Ruby192/lib/ruby/gems/1.9.1/gems/selenium-webdriver-2.31.0/lib/selenium/webdriver/remote/response.rb:52:in `assert_ok'", "C:/Ruby192/lib/ruby/gems/1.9.1/gems/selenium-webdriver-2.31.0/lib/selenium/webdriver/remote/response.rb:15:in `initialize'", "C:/Ruby192/lib/ruby/gems/1.9.1/gems/selenium-webdriver-2.31.0/lib/selenium/webdriver/remote/http/common.rb:59:in `new'", "C:/Ruby192/lib/ruby/gems/1.9.1/gems/selenium-webdriver-2.31.0/lib/selenium/webdriver/remote/http/common.rb:59:in `create_response'", "C:/Ruby192/lib/ruby/gems/1.9.1/gems/selenium-webdriver-2.31.0/lib/selenium/webdriver/remote/http/default.rb:66:in `request'", "C:/Ruby192/lib/ruby/gems/1.9.1/gems/selenium-webdriver-2.31.0/lib/selenium/webdriver/remote/http/common.rb:40:in `call'", "C:/Ruby192/lib/ruby/gems/1.9.1/gems/selenium-webdriver-2.31.0/lib/selenium/webdriver/remote/bridge.rb:616:in `raw_execute'", "C:/Ruby192/lib/ruby/gems/1.9.1/gems/selenium-webdriver-2.31.0/lib/selenium/webdriver/remote/bridge.rb:594:in `execute'", "C:/Ruby192/lib/ruby/gems/1.9.1/gems/selenium-webdriver-2.31.0/lib/selenium/webdriver/remote/bridge.rb:562:in `find_element_by'", "C:/Ruby192/lib/ruby/gems/1.9.1/gems/selenium-webdriver-2.31.0/lib/selenium/webdriver/common/search_context.rb:42:in `find_element'", "C:/Ruby192/lib/ruby/gems/1.9.1/gems/watir-webdriver-0.6.1/lib/watir-webdriver/browser.rb:97:in `text'", "Test_03_Auto_Close_QG.rb:208:in `test_03_autoclose_clicks'", "C:/Ruby192/lib/ruby/1.9.1/minitest/unit.rb:695:in `run'", "C:/Ruby192/lib/ruby/1.9.1/minitest/unit.rb:656:in `block (2 levels) in run_test_suites'", "C:/Ruby192/lib/ruby/1.9.1/minitest/unit.rb:650:in `each'", "C:/Ruby192/lib/ruby/1.9.1/minitest/unit.rb:650:in `block in run_test_suites'", "C:/Ruby192/lib/ruby/1.9.1/minitest/unit.rb:649:in `each'", "C:/Ruby192/lib/ruby/1.9.1/minitest/unit.rb:649:in `run_test_suites'", "C:/Ruby192/lib/ruby/1.9.1/minitest/unit.rb:609:in `run'", "C:/Ruby192/lib/ruby/1.9.1/minitest/unit.rb:508:in `block in autorun'"]
+.25345
+115332
+Started InternetExplorerDriver server (32-bit)
+2.39.0.0
+Listening on port 5556
+Successful Login to Usampadmin
+Modal dialog present
+["C:/Ruby192/lib/ruby/gems/1.9.1/gems/selenium-webdriver-2.31.0/lib/selenium/webdriver/remote/response.rb:52:in `assert_ok'", "C:/Ruby192/lib/ruby/gems/1.9.1/gems/selenium-webdriver-2.31.0/lib/selenium/webdriver/remote/response.rb:15:in `initialize'", "C:/Ruby192/lib/ruby/gems/1.9.1/gems/selenium-webdriver-2.31.0/lib/selenium/webdriver/remote/http/common.rb:59:in `new'", "C:/Ruby192/lib/ruby/gems/1.9.1/gems/selenium-webdriver-2.31.0/lib/selenium/webdriver/remote/http/common.rb:59:in `create_response'", "C:/Ruby192/lib/ruby/gems/1.9.1/gems/selenium-webdriver-2.31.0/lib/selenium/webdriver/remote/http/default.rb:66:in `request'", "C:/Ruby192/lib/ruby/gems/1.9.1/gems/selenium-webdriver-2.31.0/lib/selenium/webdriver/remote/http/common.rb:40:in `call'", "C:/Ruby192/lib/ruby/gems/1.9.1/gems/selenium-webdriver-2.31.0/lib/selenium/webdriver/remote/bridge.rb:616:in `raw_execute'", "C:/Ruby192/lib/ruby/gems/1.9.1/gems/selenium-webdriver-2.31.0/lib/selenium/webdriver/remote/bridge.rb:594:in `execute'", "C:/Ruby192/lib/ruby/gems/1.9.1/gems/selenium-webdriver-2.31.0/lib/selenium/webdriver/remote/bridge.rb:562:in `find_element_by'", "C:/Ruby192/lib/ruby/gems/1.9.1/gems/selenium-webdriver-2.31.0/lib/selenium/webdriver/common/search_context.rb:42:in `find_element'", "C:/Ruby192/lib/ruby/gems/1.9.1/gems/watir-webdriver-0.6.1/lib/watir-webdriver/browser.rb:97:in `text'", "Test_03_Auto_Close_QG.rb:274:in `test_04_autoclose_completes'", "C:/Ruby192/lib/ruby/1.9.1/minitest/unit.rb:695:in `run'", "C:/Ruby192/lib/ruby/1.9.1/minitest/unit.rb:656:in `block (2 levels) in run_test_suites'", "C:/Ruby192/lib/ruby/1.9.1/minitest/unit.rb:650:in `each'", "C:/Ruby192/lib/ruby/1.9.1/minitest/unit.rb:650:in `block in run_test_suites'", "C:/Ruby192/lib/ruby/1.9.1/minitest/unit.rb:649:in `each'", "C:/Ruby192/lib/ruby/1.9.1/minitest/unit.rb:649:in `run_test_suites'", "C:/Ruby192/lib/ruby/1.9.1/minitest/unit.rb:609:in `run'", "C:/Ruby192/lib/ruby/1.9.1/minitest/unit.rb:508:in `block in autorun'"]
+.
+Finished in 442.720125 seconds.
+
+4 tests, 0 assertions, 0 failures, 0 errors, 0 skips
+
+Test run options: --seed 27862
+Loaded suite Test_04_Non_member_survey_complete
+Started
+.25345
+115332
+Started InternetExplorerDriver server (32-bit)
+2.39.0.0
+Listening on port 5555
+Successful Login to Usampadmin
+.25345
+115332
+Started InternetExplorerDriver server (32-bit)
+2.39.0.0
+Listening on port 5556
+Successful Login to Usampadmin
+.25345
+115332
+Started InternetExplorerDriver server (32-bit)
+2.39.0.0
+Listening on port 5555
+Successful Login to Usampadmin
+.
+Finished in 267.572774 seconds.
+
+4 tests, 0 assertions, 0 failures, 0 errors, 0 skips
+
+Test run options: --seed 45354
+Loaded suite Test_05_Member_registration
+Started
+.test string
+auto_test22.desnew2014-02-120512@mailop.com
+**** Waiting for surveys to load ****
+pass
+.Started InternetExplorerDriver server (32-bit)
+2.39.0.0
+Listening on port 5555
+
+D:\IMPROVED_CODE_AAMIR>copy "D:\IMPROVED_CODE_AAMIR\Output Repository\Non4S_Test_Report.html" "D:\IMPROVED_CODE_AAMIR\Output Repository Archive\Non4s_Report_02/42/_11701.html" 
+        0 file(s) copied.
+Loaded suite Test_01_Project_QG_Create
+Started
+.Started InternetExplorerDriver server (32-bit)
+2.39.0.0
+Listening on port 5555
+Successful Login to Usampadmin
+25351
+.QG CREATION PASS
+********
+GROUP DETAILS: QG115343
+********
+115343
+..
+Finished in 326.121897 seconds.
+
+4 tests, 0 assertions, 0 failures, 0 errors, 0 skips
+
+Test run options: --seed 44310
+Loaded suite Test_02_Auto_Open_QG
+Started
+.25351
+115343
+Started InternetExplorerDriver server (32-bit)
+2.39.0.0
+Listening on port 5555
+Successful Login to Usampadmin
+05
+22
+06
+05
+24
+06
+.
+Finished in 280.135757 seconds.
+
+2 tests, 0 assertions, 0 failures, 0 errors, 0 skips
+
+Test run options: --seed 45234
+Loaded suite Test_03_Auto_Close_QG
+Started
+.25351
+115343
+Started InternetExplorerDriver server (32-bit)
+2.39.0.0
+Listening on port 5555
+Successful Login to Usampadmin
+05
+27
+22
+05
+Time Settings Saved
+TIME_SET_PASSED
+.25351
+115343
+Started InternetExplorerDriver server (32-bit)
+2.39.0.0
+Listening on port 5555
+Successful Login to Usampadmin
+Clicks Settings Saved1
+.25351
+115343
+Started InternetExplorerDriver server (32-bit)
+2.39.0.0
+Listening on port 5556
+Successful Login to Usampadmin
+Completes Settings Saved2
+.
+Finished in 780.811232 seconds.
+
+4 tests, 0 assertions, 0 failures, 0 errors, 0 skips
+
+Test run options: --seed 31754
+Loaded suite Test_04_Non_member_survey_complete
+Started
+.25351
+115343
+Started InternetExplorerDriver server (32-bit)
+2.39.0.0
+Listening on port 5555
+Successful Login to Usampadmin
+.25351
+115343
+Started InternetExplorerDriver server (32-bit)
+2.39.0.0
+Listening on port 5555
+Successful Login to Usampadmin
+.25351
+115343
+Started InternetExplorerDriver server (32-bit)
+2.39.0.0
+Listening on port 5556
+Successful Login to Usampadmin
+.
+Finished in 270.666643 seconds.
+
+4 tests, 0 assertions, 0 failures, 0 errors, 0 skips
+
+Test run options: --seed 10051
+Loaded suite Test_05_Member_registration
+Started
+.test string
+auto_test22.desnew2014-02-120544@mailop.com
+**** Waiting for surveys to load ****
+pass
+.Started InternetExplorerDriver server (32-bit)
+2.39.0.0
+Listening on port 5555
+Successful Login to Usampadmin
+auto_test22.desnew2014-02-120544@mailop.com
+M24606541
+.test string
+auto_test22.des2014-02-120549@mailop.com
+**** Waiting for surveys to load ****
+Timeout::Error
+["C:/Ruby192/lib/ruby/1.9.1/net/protocol.rb:140:in `rescue in rbuf_fill'", "C:/Ruby192/lib/ruby/1.9.1/net/protocol.rb:134:in `rbuf_fill'", "C:/Ruby192/lib/ruby/1.9.1/net/protocol.rb:116:in `readuntil'", "C:/Ruby192/lib/ruby/1.9.1/net/protocol.rb:126:in `readline'", "C:/Ruby192/lib/ruby/1.9.1/net/http.rb:2219:in `read_status_line'", "C:/Ruby192/lib/ruby/1.9.1/net/http.rb:2208:in `read_new'", "C:/Ruby192/lib/ruby/1.9.1/net/http.rb:1191:in `transport_request'", "C:/Ruby192/lib/ruby/1.9.1/net/http.rb:1177:in `request'", "C:/Ruby192/lib/ruby/1.9.1/net/http.rb:1170:in `block in request'", "C:/Ruby192/lib/ruby/1.9.1/net/http.rb:627:in `start'", "C:/Ruby192/lib/ruby/1.9.1/net/http.rb:1168:in `request'", "C:/Ruby192/lib/ruby/gems/1.9.1/gems/selenium-webdriver-2.31.0/lib/selenium/webdriver/remote/http/default.rb:83:in `response_for'", "C:/Ruby192/lib/ruby/gems/1.9.1/gems/selenium-webdriver-2.31.0/lib/selenium/webdriver/remote/http/default.rb:39:in `request'", "C:/Ruby192/lib/ruby/gems/1.9.1/gems/selenium-webdriver-2.31.0/lib/selenium/webdriver/remote/http/common.rb:40:in `call'", "C:/Ruby192/lib/ruby/gems/1.9.1/gems/selenium-webdriver-2.31.0/lib/selenium/webdriver/remote/bridge.rb:616:in `raw_execute'", "C:/Ruby192/lib/ruby/gems/1.9.1/gems/selenium-webdriver-2.31.0/lib/selenium/webdriver/remote/bridge.rb:594:in `execute'", "C:/Ruby192/lib/ruby/gems/1.9.1/gems/selenium-webdriver-2.31.0/lib/selenium/webdriver/remote/bridge.rb:505:in `getElementText'", "C:/Ruby192/lib/ruby/gems/1.9.1/gems/selenium-webdriver-2.31.0/lib/selenium/webdriver/common/element.rb:108:in `text'", "C:/Ruby192/lib/ruby/gems/1.9.1/gems/watir-webdriver-0.6.1/lib/watir-webdriver/browser.rb:97:in `text'", "Test_05_Member_registration.rb:276:in `test_04_member_signup_Focusline'", "C:/Ruby192/lib/ruby/1.9.1/minitest/unit.rb:695:in `run'", "C:/Ruby192/lib/ruby/1.9.1/minitest/unit.rb:656:in `block (2 levels) in run_test_suites'", "C:/Ruby192/lib/ruby/1.9.1/minitest/unit.rb:650:in `each'", "C:/Ruby192/lib/ruby/1.9.1/minitest/unit.rb:650:in `block in run_test_suites'", "C:/Ruby192/lib/ruby/1.9.1/minitest/unit.rb:649:in `each'", "C:/Ruby192/lib/ruby/1.9.1/minitest/unit.rb:649:in `run_test_suites'", "C:/Ruby192/lib/ruby/1.9.1/minitest/unit.rb:609:in `run'", "C:/Ruby192/lib/ruby/1.9.1/minitest/unit.rb:508:in `block in autorun'"]
+.Started InternetExplorerDriver server (32-bit)
+2.39.0.0
+Listening on port 5555
+Successful Login to Usampadmin
+auto_test22.des2014-02-120549@mailop.com
+M24606542
+.auto_test22.desnew2014-02-120544@mailop.com
+auto_test22.desnew2014-02-1205
+.auto_test22.des2014-02-120549@mailop.com
+auto_test22.des2014-02-1205
+.
+Finished in 582.069226 seconds.
+
+7 tests, 0 assertions, 0 failures, 0 errors, 0 skips
+
+Test run options: --seed 61785
+Loaded suite Test_07_Publisher_category_filer
+Started
+.Started InternetExplorerDriver server (32-bit)
+2.39.0.0
+Listening on port 5555
+Successful Login to Usampadmin
+25351
+115343
+Successful Login to Focusline site
+PASS
+.Started InternetExplorerDriver server (32-bit)
+2.39.0.0
+Listening on port 5555
+Successful Login to Usampadmin
+25351
+115343
+waiting for surveys to load
+Successful Login to Focusline site
+.
+Finished in 273.729261 seconds.
+
+3 tests, 0 assertions, 0 failures, 0 errors, 0 skips
+
+Test run options: --seed 43020
+Loaded suite Test_08_Publisher_margin_%
+Started
+.Started InternetExplorerDriver server (32-bit)
+2.39.0.0
+Listening on port 5555
+Successful Login to Usampadmin
+25351
+115343
+waiting for surveys to load
+waiting for surveys to load
+Successful Login to Focusline site
+Timeout::Error
+["C:/Ruby192/lib/ruby/1.9.1/net/protocol.rb:140:in `rescue in rbuf_fill'", "C:/Ruby192/lib/ruby/1.9.1/net/protocol.rb:134:in `rbuf_fill'", "C:/Ruby192/lib/ruby/1.9.1/net/protocol.rb:116:in `readuntil'", "C:/Ruby192/lib/ruby/1.9.1/net/protocol.rb:126:in `readline'", "C:/Ruby192/lib/ruby/1.9.1/net/http.rb:2219:in `read_status_line'", "C:/Ruby192/lib/ruby/1.9.1/net/http.rb:2208:in `read_new'", "C:/Ruby192/lib/ruby/1.9.1/net/http.rb:1191:in `transport_request'", "C:/Ruby192/lib/ruby/1.9.1/net/http.rb:1177:in `request'", "C:/Ruby192/lib/ruby/1.9.1/net/http.rb:1170:in `block in request'", "C:/Ruby192/lib/ruby/1.9.1/net/http.rb:627:in `start'", "C:/Ruby192/lib/ruby/1.9.1/net/http.rb:1168:in `request'", "C:/Ruby192/lib/ruby/gems/1.9.1/gems/selenium-webdriver-2.31.0/lib/selenium/webdriver/remote/http/default.rb:83:in `response_for'", "C:/Ruby192/lib/ruby/gems/1.9.1/gems/selenium-webdriver-2.31.0/lib/selenium/webdriver/remote/http/default.rb:39:in `request'", "C:/Ruby192/lib/ruby/gems/1.9.1/gems/selenium-webdriver-2.31.0/lib/selenium/webdriver/remote/http/common.rb:40:in `call'", "C:/Ruby192/lib/ruby/gems/1.9.1/gems/selenium-webdriver-2.31.0/lib/selenium/webdriver/remote/bridge.rb:616:in `raw_execute'", "C:/Ruby192/lib/ruby/gems/1.9.1/gems/selenium-webdriver-2.31.0/lib/selenium/webdriver/remote/bridge.rb:594:in `execute'", "C:/Ruby192/lib/ruby/gems/1.9.1/gems/selenium-webdriver-2.31.0/lib/selenium/webdriver/remote/bridge.rb:505:in `getElementText'", "C:/Ruby192/lib/ruby/gems/1.9.1/gems/selenium-webdriver-2.31.0/lib/selenium/webdriver/common/element.rb:108:in `text'", "C:/Ruby192/lib/ruby/gems/1.9.1/gems/watir-webdriver-0.6.1/lib/watir-webdriver/browser.rb:97:in `text'", "Test_08_Publisher_margin_%.rb:81:in `test_02_publisher_margin_match'", "C:/Ruby192/lib/ruby/1.9.1/minitest/unit.rb:695:in `run'", "C:/Ruby192/lib/ruby/1.9.1/minitest/unit.rb:656:in `block (2 levels) in run_test_suites'", "C:/Ruby192/lib/ruby/1.9.1/minitest/unit.rb:650:in `each'", "C:/Ruby192/lib/ruby/1.9.1/minitest/unit.rb:650:in `block in run_test_suites'", "C:/Ruby192/lib/ruby/1.9.1/minitest/unit.rb:649:in `each'", "C:/Ruby192/lib/ruby/1.9.1/minitest/unit.rb:649:in `run_test_suites'", "C:/Ruby192/lib/ruby/1.9.1/minitest/unit.rb:609:in `run'", "C:/Ruby192/lib/ruby/1.9.1/minitest/unit.rb:508:in `block in autorun'"]
+Started InternetExplorerDriver server (32-bit)
+2.39.0.0
+Listening on port 5556
+.Started InternetExplorerDriver server (32-bit)
+2.39.0.0
+Listening on port 5557
+Successful Login to Usampadmin
+25351
+115343
+waiting for surveys to load
+Successful Login to Focusline site
+.
+Finished in 382.030294 seconds.
+
+3 tests, 0 assertions, 0 failures, 0 errors, 0 skips
+
+Test run options: --seed 39142
+Loaded suite Test_09_US_getcount
+Started
+.Successful Login to Usampadmin
+25351
+115343
+*** Waiting for count to load ***
+************
+								<tr>
+
+0
+test string
+**** Waiting for surveys to load ****
+Timeout::Error
+["C:/Ruby192/lib/ruby/1.9.1/net/protocol.rb:140:in `rescue in rbuf_fill'", "C:/Ruby192/lib/ruby/1.9.1/net/protocol.rb:134:in `rbuf_fill'", "C:/Ruby192/lib/ruby/1.9.1/net/protocol.rb:116:in `readuntil'", "C:/Ruby192/lib/ruby/1.9.1/net/protocol.rb:126:in `readline'", "C:/Ruby192/lib/ruby/1.9.1/net/http.rb:2219:in `read_status_line'", "C:/Ruby192/lib/ruby/1.9.1/net/http.rb:2208:in `read_new'", "C:/Ruby192/lib/ruby/1.9.1/net/http.rb:1191:in `transport_request'", "C:/Ruby192/lib/ruby/1.9.1/net/http.rb:1177:in `request'", "C:/Ruby192/lib/ruby/1.9.1/net/http.rb:1170:in `block in request'", "C:/Ruby192/lib/ruby/1.9.1/net/http.rb:627:in `start'", "C:/Ruby192/lib/ruby/1.9.1/net/http.rb:1168:in `request'", "C:/Ruby192/lib/ruby/gems/1.9.1/gems/selenium-webdriver-2.31.0/lib/selenium/webdriver/remote/http/default.rb:83:in `response_for'", "C:/Ruby192/lib/ruby/gems/1.9.1/gems/selenium-webdriver-2.31.0/lib/selenium/webdriver/remote/http/default.rb:39:in `request'", "C:/Ruby192/lib/ruby/gems/1.9.1/gems/selenium-webdriver-2.31.0/lib/selenium/webdriver/remote/http/common.rb:40:in `call'", "C:/Ruby192/lib/ruby/gems/1.9.1/gems/selenium-webdriver-2.31.0/lib/selenium/webdriver/remote/bridge.rb:616:in `raw_execute'", "C:/Ruby192/lib/ruby/gems/1.9.1/gems/selenium-webdriver-2.31.0/lib/selenium/webdriver/remote/bridge.rb:594:in `execute'", "C:/Ruby192/lib/ruby/gems/1.9.1/gems/selenium-webdriver-2.31.0/lib/selenium/webdriver/remote/bridge.rb:505:in `getElementText'", "C:/Ruby192/lib/ruby/gems/1.9.1/gems/selenium-webdriver-2.31.0/lib/selenium/webdriver/common/element.rb:108:in `text'", "C:/Ruby192/lib/ruby/gems/1.9.1/gems/watir-webdriver-0.6.1/lib/watir-webdriver/browser.rb:97:in `text'", "Test_09_US_getcount.rb:231:in `test_02_US_getcount'", "C:/Ruby192/lib/ruby/1.9.1/minitest/unit.rb:695:in `run'", "C:/Ruby192/lib/ruby/1.9.1/minitest/unit.rb:656:in `block (2 levels) in run_test_suites'", "C:/Ruby192/lib/ruby/1.9.1/minitest/unit.rb:650:in `each'", "C:/Ruby192/lib/ruby/1.9.1/minitest/unit.rb:650:in `block in run_test_suites'", "C:/Ruby192/lib/ruby/1.9.1/minitest/unit.rb:649:in `each'", "C:/Ruby192/lib/ruby/1.9.1/minitest/unit.rb:649:in `run_test_suites'", "C:/Ruby192/lib/ruby/1.9.1/minitest/unit.rb:609:in `run'", "C:/Ruby192/lib/ruby/1.9.1/minitest/unit.rb:508:in `block in autorun'"]
+.Started InternetExplorerDriver server (32-bit)
+2.39.0.0
+Listening on port 5555
+Successful Login to Usampadmin
+25351
+115343
+.Started InternetExplorerDriver server (32-bit)
+2.39.0.0
+Listening on port 5555
+Successful Login to Usampadmin
+25351
+115343
+*** Waiting for count to load ***
+************
+<TD>Total members found: 82
+82
+82
+test string
+**** Waiting for surveys to load ****
+Timeout::Error
+["C:/Ruby192/lib/ruby/1.9.1/net/protocol.rb:140:in `rescue in rbuf_fill'", "C:/Ruby192/lib/ruby/1.9.1/net/protocol.rb:134:in `rbuf_fill'", "C:/Ruby192/lib/ruby/1.9.1/net/protocol.rb:116:in `readuntil'", "C:/Ruby192/lib/ruby/1.9.1/net/protocol.rb:126:in `readline'", "C:/Ruby192/lib/ruby/1.9.1/net/http.rb:2219:in `read_status_line'", "C:/Ruby192/lib/ruby/1.9.1/net/http.rb:2208:in `read_new'", "C:/Ruby192/lib/ruby/1.9.1/net/http.rb:1191:in `transport_request'", "C:/Ruby192/lib/ruby/1.9.1/net/http.rb:1177:in `request'", "C:/Ruby192/lib/ruby/1.9.1/net/http.rb:1170:in `block in request'", "C:/Ruby192/lib/ruby/1.9.1/net/http.rb:627:in `start'", "C:/Ruby192/lib/ruby/1.9.1/net/http.rb:1168:in `request'", "C:/Ruby192/lib/ruby/gems/1.9.1/gems/selenium-webdriver-2.31.0/lib/selenium/webdriver/remote/http/default.rb:83:in `response_for'", "C:/Ruby192/lib/ruby/gems/1.9.1/gems/selenium-webdriver-2.31.0/lib/selenium/webdriver/remote/http/default.rb:39:in `request'", "C:/Ruby192/lib/ruby/gems/1.9.1/gems/selenium-webdriver-2.31.0/lib/selenium/webdriver/remote/http/common.rb:40:in `call'", "C:/Ruby192/lib/ruby/gems/1.9.1/gems/selenium-webdriver-2.31.0/lib/selenium/webdriver/remote/bridge.rb:616:in `raw_execute'", "C:/Ruby192/lib/ruby/gems/1.9.1/gems/selenium-webdriver-2.31.0/lib/selenium/webdriver/remote/bridge.rb:594:in `execute'", "C:/Ruby192/lib/ruby/gems/1.9.1/gems/selenium-webdriver-2.31.0/lib/selenium/webdriver/remote/bridge.rb:505:in `getElementText'", "C:/Ruby192/lib/ruby/gems/1.9.1/gems/selenium-webdriver-2.31.0/lib/selenium/webdriver/common/element.rb:108:in `text'", "C:/Ruby192/lib/ruby/gems/1.9.1/gems/watir-webdriver-0.6.1/lib/watir-webdriver/browser.rb:97:in `text'", "Test_09_US_getcount.rb:725:in `test_04_us_getcnt_mempub'", "C:/Ruby192/lib/ruby/1.9.1/minitest/unit.rb:695:in `run'", "C:/Ruby192/lib/ruby/1.9.1/minitest/unit.rb:656:in `block (2 levels) in run_test_suites'", "C:/Ruby192/lib/ruby/1.9.1/minitest/unit.rb:650:in `each'", "C:/Ruby192/lib/ruby/1.9.1/minitest/unit.rb:650:in `block in run_test_suites'", "C:/Ruby192/lib/ruby/1.9.1/minitest/unit.rb:649:in `each'", "C:/Ruby192/lib/ruby/1.9.1/minitest/unit.rb:649:in `run_test_suites'", "C:/Ruby192/lib/ruby/1.9.1/minitest/unit.rb:609:in `run'", "C:/Ruby192/lib/ruby/1.9.1/minitest/unit.rb:508:in `block in autorun'"]
+.Started InternetExplorerDriver server (32-bit)
+2.39.0.0
+Listening on port 5555
+Successful Login to Usampadmin
+25351
+115343
+No connection could be made because the target machine actively refused it. - connect(2)
+["C:/Ruby192/lib/ruby/1.9.1/net/http.rb:644:in `initialize'", "C:/Ruby192/lib/ruby/1.9.1/net/http.rb:644:in `open'", "C:/Ruby192/lib/ruby/1.9.1/net/http.rb:644:in `block in connect'", "C:/Ruby192/lib/ruby/1.9.1/timeout.rb:44:in `timeout'", "C:/Ruby192/lib/ruby/1.9.1/timeout.rb:89:in `timeout'", "C:/Ruby192/lib/ruby/1.9.1/net/http.rb:644:in `connect'", "C:/Ruby192/lib/ruby/1.9.1/net/http.rb:637:in `do_start'", "C:/Ruby192/lib/ruby/1.9.1/net/http.rb:626:in `start'", "C:/Ruby192/lib/ruby/1.9.1/net/http.rb:1168:in `request'", "C:/Ruby192/lib/ruby/gems/1.9.1/gems/selenium-webdriver-2.31.0/lib/selenium/webdriver/remote/http/default.rb:83:in `response_for'", "C:/Ruby192/lib/ruby/gems/1.9.1/gems/selenium-webdriver-2.31.0/lib/selenium/webdriver/remote/http/default.rb:39:in `request'", "C:/Ruby192/lib/ruby/gems/1.9.1/gems/selenium-webdriver-2.31.0/lib/selenium/webdriver/remote/http/common.rb:40:in `call'", "C:/Ruby192/lib/ruby/gems/1.9.1/gems/selenium-webdriver-2.31.0/lib/selenium/webdriver/remote/bridge.rb:616:in `raw_execute'", "C:/Ruby192/lib/ruby/gems/1.9.1/gems/selenium-webdriver-2.31.0/lib/selenium/webdriver/remote/bridge.rb:594:in `execute'", "C:/Ruby192/lib/ruby/gems/1.9.1/gems/selenium-webdriver-2.31.0/lib/selenium/webdriver/remote/bridge.rb:359:in `clickElement'", "C:/Ruby192/lib/ruby/gems/1.9.1/gems/selenium-webdriver-2.31.0/lib/selenium/webdriver/common/element.rb:54:in `click'", "C:/Ruby192/lib/ruby/gems/1.9.1/gems/watir-webdriver-0.6.1/lib/watir-webdriver/elements/element.rb:108:in `click'", "Test_09_US_getcount.rb:923:in `test_05_qg_reset'", "C:/Ruby192/lib/ruby/1.9.1/minitest/unit.rb:695:in `run'", "C:/Ruby192/lib/ruby/1.9.1/minitest/unit.rb:656:in `block (2 levels) in run_test_suites'", "C:/Ruby192/lib/ruby/1.9.1/minitest/unit.rb:650:in `each'", "C:/Ruby192/lib/ruby/1.9.1/minitest/unit.rb:650:in `block in run_test_suites'", "C:/Ruby192/lib/ruby/1.9.1/minitest/unit.rb:649:in `each'", "C:/Ruby192/lib/ruby/1.9.1/minitest/unit.rb:649:in `run_test_suites'", "C:/Ruby192/lib/ruby/1.9.1/minitest/unit.rb:609:in `run'", "C:/Ruby192/lib/ruby/1.9.1/minitest/unit.rb:508:in `block in autorun'"]
+E
+Finished in 1388.912707 seconds.
+
+  1) Error:
+test_05_qg_reset(Test_09_US_getcount):
+Errno::ECONNREFUSED: No connection could be made because the target machine actively refused it. - connect(2)
+    C:/Ruby192/lib/ruby/gems/1.9.1/gems/selenium-webdriver-2.31.0/lib/selenium/webdriver/remote/http/default.rb:83:in `response_for'
+    C:/Ruby192/lib/ruby/gems/1.9.1/gems/selenium-webdriver-2.31.0/lib/selenium/webdriver/remote/http/default.rb:39:in `request'
+    C:/Ruby192/lib/ruby/gems/1.9.1/gems/selenium-webdriver-2.31.0/lib/selenium/webdriver/remote/http/common.rb:40:in `call'
+    C:/Ruby192/lib/ruby/gems/1.9.1/gems/selenium-webdriver-2.31.0/lib/selenium/webdriver/remote/bridge.rb:616:in `raw_execute'
+    C:/Ruby192/lib/ruby/gems/1.9.1/gems/selenium-webdriver-2.31.0/lib/selenium/webdriver/remote/bridge.rb:594:in `execute'
+    C:/Ruby192/lib/ruby/gems/1.9.1/gems/selenium-webdriver-2.31.0/lib/selenium/webdriver/remote/bridge.rb:190:in `quit'
+    C:/Ruby192/lib/ruby/gems/1.9.1/gems/selenium-webdriver-2.31.0/lib/selenium/webdriver/ie/bridge.rb:59:in `quit'
+    C:/Ruby192/lib/ruby/gems/1.9.1/gems/selenium-webdriver-2.31.0/lib/selenium/webdriver/common/driver.rb:168:in `quit'
+    C:/Ruby192/lib/ruby/gems/1.9.1/gems/watir-webdriver-0.6.1/lib/watir-webdriver/browser.rb:87:in `close'
+    Test_09_US_getcount.rb:937:in `rescue in test_05_qg_reset'
+    Test_09_US_getcount.rb:898:in `test_05_qg_reset'
+
+5 tests, 0 assertions, 0 failures, 1 errors, 0 skips
+
+Test run options: --seed 22641
+Loaded suite Test_10_CAN_getcount
+Started
+.Successful Login to Usampadmin
+25351
+115343
+*** Waiting for count to load ***
+************
+								<tr>
+
+0
+test string
+**** Waiting for surveys to load ****
+PASS
+************
+								<tr>
+
+0
+GET COUNT FAIL
+PASS
+FSA_MISMATCH:PASS
+FSA_MATCH:PASS
+AREA_MATCH:PASS
+STATE_MISMATCH:PASS
+STATE_MATCH:PASS
+************
+								<tr>
+
+0
+PROF_MATCH:PASS
+************
+								<tr>
+
+0
+PRF GET COUNT FAIL
+PROF_MISMATCH:PASS
+.Started InternetExplorerDriver server (32-bit)
+2.39.0.0
+Listening on port 5555
+Successful Login to Usampadmin
+25351
+115343
+.Started InternetExplorerDriver server (32-bit)
+2.39.0.0
+Listening on port 5556
+Successful Login to Usampadmin
+25351
+115343
+*** Waiting for count to load ***
+************
+<TD>Total members found: 208
+208
+208
+test string
+**** Waiting for surveys to load ****
+FAIL
+************
+<TD>Total members found: 208
+208
+208
+GET COUNT PASS
+EStarted InternetExplorerDriver server (32-bit)
+2.39.0.0
+Listening on port 5555
+Successful Login to Usampadmin
+25351
+115343
+.
+Finished in 2214.756919 seconds.
+
+  1) Error:
+test_04_cangetcnt_mempub(Test_10_CAN_getcount):
+Watir::Exception::ObjectDisabledException: object is disabled {:value=>"Y", :tag_name=>"input", :type=>"radio"}
+    C:/Ruby192/lib/ruby/gems/1.9.1/gems/watir-webdriver-0.6.1/lib/watir-webdriver/elements/element.rb:403:in `assert_enabled'
+    C:/Ruby192/lib/ruby/gems/1.9.1/gems/watir-webdriver-0.6.1/lib/watir-webdriver/elements/element.rb:96:in `click'
+    Test_10_CAN_getcount.rb:714:in `test_04_cangetcnt_mempub'
+
+5 tests, 0 assertions, 0 failures, 1 errors, 0 skips
+
+Test run options: --seed 29751
+Loaded suite Test_11_CP_Project
+Started
+.Logged it to Network site
+..Started InternetExplorerDriver server (32-bit)
+2.39.0.0
+Listening on port 5555
+Started InternetExplorerDriver server (32-bit)
+2.39.0.0
+Listening on port 5556
+Started InternetExplorerDriver server (32-bit)
+2.39.0.0
+Listening on port 5555
+.Successful Login to Usampadmin
+Search Passed
+Element not found in the cache - perhaps the page has changed since it was looked up
+["[remote server] resource://fxdriver/modules/web_element_cache.js:7234:in `unknown'", "[remote server] file:///C:/DOCUME~1/ADMINI~1/LOCALS~1/Temp/3/webdriver-profile20140212-8804-11z0w67/extensions/fxdriver@googlecode.com/components/command_processor.js:6839:in `unknown'", "[remote server] file:///C:/DOCUME~1/ADMINI~1/LOCALS~1/Temp/3/webdriver-profile20140212-8804-11z0w67/extensions/fxdriver@googlecode.com/components/command_processor.js:9748:in `unknown'", "[remote server] file:///C:/DOCUME~1/ADMINI~1/LOCALS~1/Temp/3/webdriver-profile20140212-8804-11z0w67/extensions/fxdriver@googlecode.com/components/command_processor.js:10275:in `unknown'", "[remote server] file:///C:/DOCUME~1/ADMINI~1/LOCALS~1/Temp/3/webdriver-profile20140212-8804-11z0w67/extensions/fxdriver@googlecode.com/components/command_processor.js:10280:in `unknown'", "[remote server] file:///C:/DOCUME~1/ADMINI~1/LOCALS~1/Temp/3/webdriver-profile20140212-8804-11z0w67/extensions/fxdriver@googlecode.com/components/command_processor.js:10220:in `unknown'", "C:/Ruby192/lib/ruby/gems/1.9.1/gems/selenium-webdriver-2.31.0/lib/selenium/webdriver/remote/response.rb:52:in `assert_ok'", "C:/Ruby192/lib/ruby/gems/1.9.1/gems/selenium-webdriver-2.31.0/lib/selenium/webdriver/remote/response.rb:15:in `initialize'", "C:/Ruby192/lib/ruby/gems/1.9.1/gems/selenium-webdriver-2.31.0/lib/selenium/webdriver/remote/http/common.rb:59:in `new'", "C:/Ruby192/lib/ruby/gems/1.9.1/gems/selenium-webdriver-2.31.0/lib/selenium/webdriver/remote/http/common.rb:59:in `create_response'", "C:/Ruby192/lib/ruby/gems/1.9.1/gems/selenium-webdriver-2.31.0/lib/selenium/webdriver/remote/http/default.rb:66:in `request'", "C:/Ruby192/lib/ruby/gems/1.9.1/gems/selenium-webdriver-2.31.0/lib/selenium/webdriver/remote/http/common.rb:40:in `call'", "C:/Ruby192/lib/ruby/gems/1.9.1/gems/selenium-webdriver-2.31.0/lib/selenium/webdriver/remote/bridge.rb:616:in `raw_execute'", "C:/Ruby192/lib/ruby/gems/1.9.1/gems/selenium-webdriver-2.31.0/lib/selenium/webdriver/remote/bridge.rb:594:in `execute'", "C:/Ruby192/lib/ruby/gems/1.9.1/gems/selenium-webdriver-2.31.0/lib/selenium/webdriver/remote/bridge.rb:493:in `getElementTagName'", "C:/Ruby192/lib/ruby/gems/1.9.1/gems/selenium-webdriver-2.31.0/lib/selenium/webdriver/common/element.rb:68:in `tag_name'", "C:/Ruby192/lib/ruby/gems/1.9.1/gems/watir-webdriver-0.6.1/lib/watir-webdriver/locators/element_locator.rb:248:in `by_id'", "C:/Ruby192/lib/ruby/gems/1.9.1/gems/watir-webdriver-0.6.1/lib/watir-webdriver/locators/element_locator.rb:26:in `locate'", "C:/Ruby192/lib/ruby/gems/1.9.1/gems/watir-webdriver-0.6.1/lib/watir-webdriver/elements/element.rb:384:in `locate'", "C:/Ruby192/lib/ruby/gems/1.9.1/gems/watir-webdriver-0.6.1/lib/watir-webdriver/elements/element.rb:362:in `assert_exists'", "C:/Ruby192/lib/ruby/gems/1.9.1/gems/watir-webdriver-0.6.1/lib/watir-webdriver/elements/select.rb:37:in `options'", "C:/Ruby192/lib/ruby/gems/1.9.1/gems/watir-webdriver-0.6.1/lib/watir-webdriver/elements/select.rb:108:in `value'", "Test_11_CP_Project.rb:354:in `test_05_cp_project_admin'", "C:/Ruby192/lib/ruby/1.9.1/minitest/unit.rb:695:in `run'", "C:/Ruby192/lib/ruby/1.9.1/minitest/unit.rb:656:in `block (2 levels) in run_test_suites'", "C:/Ruby192/lib/ruby/1.9.1/minitest/unit.rb:650:in `each'", "C:/Ruby192/lib/ruby/1.9.1/minitest/unit.rb:650:in `block in run_test_suites'", "C:/Ruby192/lib/ruby/1.9.1/minitest/unit.rb:649:in `each'", "C:/Ruby192/lib/ruby/1.9.1/minitest/unit.rb:649:in `run_test_suites'", "C:/Ruby192/lib/ruby/1.9.1/minitest/unit.rb:609:in `run'", "C:/Ruby192/lib/ruby/1.9.1/minitest/unit.rb:508:in `block in autorun'"]
+.No connection could be made because the target machine actively refused it. - connect(2)
+["C:/Ruby192/lib/ruby/1.9.1/net/http.rb:644:in `initialize'", "C:/Ruby192/lib/ruby/1.9.1/net/http.rb:644:in `open'", "C:/Ruby192/lib/ruby/1.9.1/net/http.rb:644:in `block in connect'", "C:/Ruby192/lib/ruby/1.9.1/timeout.rb:44:in `timeout'", "C:/Ruby192/lib/ruby/1.9.1/timeout.rb:89:in `timeout'", "C:/Ruby192/lib/ruby/1.9.1/net/http.rb:644:in `connect'", "C:/Ruby192/lib/ruby/1.9.1/net/http.rb:637:in `do_start'", "C:/Ruby192/lib/ruby/1.9.1/net/http.rb:626:in `start'", "C:/Ruby192/lib/ruby/1.9.1/net/http.rb:1168:in `request'", "C:/Ruby192/lib/ruby/gems/1.9.1/gems/selenium-webdriver-2.31.0/lib/selenium/webdriver/remote/http/default.rb:83:in `response_for'", "C:/Ruby192/lib/ruby/gems/1.9.1/gems/selenium-webdriver-2.31.0/lib/selenium/webdriver/remote/http/default.rb:39:in `request'", "C:/Ruby192/lib/ruby/gems/1.9.1/gems/selenium-webdriver-2.31.0/lib/selenium/webdriver/remote/http/common.rb:40:in `call'", "C:/Ruby192/lib/ruby/gems/1.9.1/gems/selenium-webdriver-2.31.0/lib/selenium/webdriver/remote/bridge.rb:616:in `raw_execute'", "C:/Ruby192/lib/ruby/gems/1.9.1/gems/selenium-webdriver-2.31.0/lib/selenium/webdriver/remote/bridge.rb:594:in `execute'", "C:/Ruby192/lib/ruby/gems/1.9.1/gems/selenium-webdriver-2.31.0/lib/selenium/webdriver/remote/bridge.rb:100:in `get'", "C:/Ruby192/lib/ruby/gems/1.9.1/gems/selenium-webdriver-2.31.0/lib/selenium/webdriver/common/navigation.rb:14:in `to'", "C:/Ruby192/lib/ruby/gems/1.9.1/gems/watir-webdriver-0.6.1/lib/watir-webdriver/browser.rb:63:in `goto'", "Test_11_CP_Project.rb:462:in `test_06_project_close'", "C:/Ruby192/lib/ruby/1.9.1/minitest/unit.rb:695:in `run'", "C:/Ruby192/lib/ruby/1.9.1/minitest/unit.rb:656:in `block (2 levels) in run_test_suites'", "C:/Ruby192/lib/ruby/1.9.1/minitest/unit.rb:650:in `each'", "C:/Ruby192/lib/ruby/1.9.1/minitest/unit.rb:650:in `block in run_test_suites'", "C:/Ruby192/lib/ruby/1.9.1/minitest/unit.rb:649:in `each'", "C:/Ruby192/lib/ruby/1.9.1/minitest/unit.rb:649:in `run_test_suites'", "C:/Ruby192/lib/ruby/1.9.1/minitest/unit.rb:609:in `run'", "C:/Ruby192/lib/ruby/1.9.1/minitest/unit.rb:508:in `block in autorun'"]
+.
+Finished in 269.775984 seconds.
+
+6 tests, 0 assertions, 0 failures, 0 errors, 0 skips
+
+Test run options: --seed 36391
+Loaded suite Test_12_CP_rule_processing
+Started
+.Logged it to Network site
+Project created
+.Supplier added
+.**** 5656 *****
+1
+0
+0
+0
+0
+0
+Started InternetExplorerDriver server (32-bit)
+2.39.0.0
+Listening on port 5555
+Started InternetExplorerDriver server (32-bit)
+2.39.0.0
+Listening on port 5556
+MAX_CLICKS: PASS
+Started InternetExplorerDriver server (32-bit)
+2.39.0.0
+Listening on port 5555
+DUP PANEL ACC: PASS
+Started InternetExplorerDriver server (32-bit)
+2.39.0.0
+Listening on port 5555
+Started InternetExplorerDriver server (32-bit)
+2.39.0.0
+Listening on port 5555
+DUP COMPL: PASS
+Started InternetExplorerDriver server (32-bit)
+2.39.0.0
+Listening on port 5555
+GEO_IP: FAIL
+Started InternetExplorerDriver server (32-bit)
+2.39.0.0
+Listening on port 5555
+PROF:PASS
+PROXY:PASS
+Started InternetExplorerDriver server (32-bit)
+2.39.0.0
+Listening on port 5555
+SPAMMER:PASS
+..
+Finished in 481.393485 seconds.
+
+5 tests, 0 assertions, 0 failures, 0 errors, 0 skips
+
+Test run options: --seed 63357
+Loaded suite Test_13_Curl_pixel
+Started
+.Successful Login to Usampadmin
+*** PIXEL SETTINGS DONE  ***
+.Started InternetExplorerDriver server (32-bit)
+2.39.0.0
+Listening on port 5555
+test string
+auto_test.des2014-02-12072157@mailop.com
+**** Waiting for surveys to load ****
+.auto_test.des2014-02-12072157@mailop.com
+Successful Login to ipoll site
+115343
+linkMTE1MzQz
+pass
+.Successful Login to Usampadmin
+25351
+115343
+.
+Finished in 329.340771 seconds.
+
+5 tests, 0 assertions, 0 failures, 0 errors, 0 skips
+
+Test run options: --seed 14227
+Loaded suite Test_14_Traditional_pixel
+Started
+.Started InternetExplorerDriver server (32-bit)
+2.39.0.0
+Listening on port 5555
+Successful Login to Usampadmin
+*** PIXEL SETTINGS DONE  ***
+.test string
+auto_test.des2014-02-12072743@mailop.com
+**** Waiting for surveys to load ****
+*** Check Pixels ***
+.auto_test.des2014-02-12072743@mailop.com
+Successful Login to ipoll site
+115343
+linkMTE1MzQz
+.Started InternetExplorerDriver server (32-bit)
+2.39.0.0
+Listening on port 5555
+Successful Login to Usampadmin
+25351
+115343
+.auto_test.des2014-02-12072743@mailop.com
+Successful Login to ipoll site
+https://www.p.ipoll.com/profile.php?PrId=81e6ffeed42b6a37c045da4d35fa7943&PrLId=b656998ee46e68cc2b18f7a1f82eec4f
+.Started InternetExplorerDriver server (32-bit)
+2.39.0.0
+Listening on port 5555
+Successful Login to Usampadmin
+*** PIXEL RESETTINGS DONE  ***
+Element is no longer valid
+["C:/Ruby192/lib/ruby/gems/1.9.1/gems/selenium-webdriver-2.31.0/lib/selenium/webdriver/remote/response.rb:52:in `assert_ok'", "C:/Ruby192/lib/ruby/gems/1.9.1/gems/selenium-webdriver-2.31.0/lib/selenium/webdriver/remote/response.rb:15:in `initialize'", "C:/Ruby192/lib/ruby/gems/1.9.1/gems/selenium-webdriver-2.31.0/lib/selenium/webdriver/remote/http/common.rb:59:in `new'", "C:/Ruby192/lib/ruby/gems/1.9.1/gems/selenium-webdriver-2.31.0/lib/selenium/webdriver/remote/http/common.rb:59:in `create_response'", "C:/Ruby192/lib/ruby/gems/1.9.1/gems/selenium-webdriver-2.31.0/lib/selenium/webdriver/remote/http/default.rb:66:in `request'", "C:/Ruby192/lib/ruby/gems/1.9.1/gems/selenium-webdriver-2.31.0/lib/selenium/webdriver/remote/http/common.rb:40:in `call'", "C:/Ruby192/lib/ruby/gems/1.9.1/gems/selenium-webdriver-2.31.0/lib/selenium/webdriver/remote/bridge.rb:616:in `raw_execute'", "C:/Ruby192/lib/ruby/gems/1.9.1/gems/selenium-webdriver-2.31.0/lib/selenium/webdriver/remote/bridge.rb:594:in `execute'", "C:/Ruby192/lib/ruby/gems/1.9.1/gems/selenium-webdriver-2.31.0/lib/selenium/webdriver/remote/bridge.rb:527:in `isElementEnabled'", "C:/Ruby192/lib/ruby/gems/1.9.1/gems/selenium-webdriver-2.31.0/lib/selenium/webdriver/common/element.rb:151:in `enabled?'", "C:/Ruby192/lib/ruby/gems/1.9.1/gems/watir-webdriver-0.6.1/lib/watir-webdriver/elements/element.rb:403:in `assert_enabled'", "C:/Ruby192/lib/ruby/gems/1.9.1/gems/watir-webdriver-0.6.1/lib/watir-webdriver/elements/element.rb:96:in `click'", "Test_14_Traditional_pixel.rb:338:in `test_08_pixel_reset'", "C:/Ruby192/lib/ruby/1.9.1/minitest/unit.rb:695:in `run'", "C:/Ruby192/lib/ruby/1.9.1/minitest/unit.rb:656:in `block (2 levels) in run_test_suites'", "C:/Ruby192/lib/ruby/1.9.1/minitest/unit.rb:650:in `each'", "C:/Ruby192/lib/ruby/1.9.1/minitest/unit.rb:650:in `block in run_test_suites'", "C:/Ruby192/lib/ruby/1.9.1/minitest/unit.rb:649:in `each'", "C:/Ruby192/lib/ruby/1.9.1/minitest/unit.rb:649:in `run_test_suites'", "C:/Ruby192/lib/ruby/1.9.1/minitest/unit.rb:609:in `run'", "C:/Ruby192/lib/ruby/1.9.1/minitest/unit.rb:508:in `block in autorun'"]
+.
+Finished in 450.548551 seconds.
+
+7 tests, 0 assertions, 0 failures, 0 errors, 0 skips
+
+Test run options: --seed 26126
+Loaded suite Test_16_Reward_creation
+Started
+.Started InternetExplorerDriver server (32-bit)
+2.39.0.0
+Listening on port 5555
+Successful Login to Usampadmin
+Donation_2014-02-12 07:34:05
+Don_passed
+1976
+.Started InternetExplorerDriver server (32-bit)
+2.39.0.0
+Listening on port 5556
+Successful Login to Usampadmin
+GIFT_CERT_2014-02-12 07:35:47
+Gift_passed
+1977
+.Donation_2014-02-12 07:34:05
+GIFT_CERT_2014-02-12 07:35:47
+Successful Login to ipoll site
+waiting for rewards1 to load
+waiting for rewards2 to load
+gift_pl_passed1
+Donation
+waiting for rewards3 to load
+waiting for rewards4 to load
+donation_pl_passed3
+waiting for surveys5 to load
+waiting for rewards6 to load
+gift_pl_passed5
+waiting for rewards7 to load
+donation_pl_passed7
+.
+Finished in 365.123395 seconds.
+
+4 tests, 0 assertions, 0 failures, 0 errors, 0 skips
+
+Test run options: --seed 57158
+Loaded suite Test_17_Member_data_review
+Started
+.Started InternetExplorerDriver server (32-bit)
+2.39.0.0
+Listening on port 5555
+Successful Login to Usampadmin
+25351
+115343
+QG COPIED
+ESuccessful Login to ipoll site
+## Waiting for surveys to load ##
+can't convert nil into String
+["C:/Ruby192/lib/ruby/1.9.1/base64.rb:38:in `pack'", "C:/Ruby192/lib/ruby/1.9.1/base64.rb:38:in `encode64'", "Test_17_Member_data_review.rb:178:in `test_03_member_data_review'", "C:/Ruby192/lib/ruby/1.9.1/minitest/unit.rb:695:in `run'", "C:/Ruby192/lib/ruby/1.9.1/minitest/unit.rb:656:in `block (2 levels) in run_test_suites'", "C:/Ruby192/lib/ruby/1.9.1/minitest/unit.rb:650:in `each'", "C:/Ruby192/lib/ruby/1.9.1/minitest/unit.rb:650:in `block in run_test_suites'", "C:/Ruby192/lib/ruby/1.9.1/minitest/unit.rb:649:in `each'", "C:/Ruby192/lib/ruby/1.9.1/minitest/unit.rb:649:in `run_test_suites'", "C:/Ruby192/lib/ruby/1.9.1/minitest/unit.rb:609:in `run'", "C:/Ruby192/lib/ruby/1.9.1/minitest/unit.rb:508:in `block in autorun'"]
+.Successful Login to ipoll site
+## Waiting for surveys to load ##
+can't convert nil into String
+["C:/Ruby192/lib/ruby/1.9.1/base64.rb:38:in `pack'", "C:/Ruby192/lib/ruby/1.9.1/base64.rb:38:in `encode64'", "Test_17_Member_data_review.rb:298:in `test_04_member_data_invalid'", "C:/Ruby192/lib/ruby/1.9.1/minitest/unit.rb:695:in `run'", "C:/Ruby192/lib/ruby/1.9.1/minitest/unit.rb:656:in `block (2 levels) in run_test_suites'", "C:/Ruby192/lib/ruby/1.9.1/minitest/unit.rb:650:in `each'", "C:/Ruby192/lib/ruby/1.9.1/minitest/unit.rb:650:in `block in run_test_suites'", "C:/Ruby192/lib/ruby/1.9.1/minitest/unit.rb:649:in `each'", "C:/Ruby192/lib/ruby/1.9.1/minitest/unit.rb:649:in `run_test_suites'", "C:/Ruby192/lib/ruby/1.9.1/minitest/unit.rb:609:in `run'", "C:/Ruby192/lib/ruby/1.9.1/minitest/unit.rb:508:in `block in autorun'"]
+.Started InternetExplorerDriver server (32-bit)
+2.39.0.0
+Listening on port 5556
+Successful Login to Usampadmin
+25351
+
+can't convert nil into String
+["C:/Ruby192/lib/ruby/1.9.1/base64.rb:38:in `pack'", "C:/Ruby192/lib/ruby/1.9.1/base64.rb:38:in `encode64'", "Test_17_Member_data_review.rb:415:in `test_05_qg_reset'", "C:/Ruby192/lib/ruby/1.9.1/minitest/unit.rb:695:in `run'", "C:/Ruby192/lib/ruby/1.9.1/minitest/unit.rb:656:in `block (2 levels) in run_test_suites'", "C:/Ruby192/lib/ruby/1.9.1/minitest/unit.rb:650:in `each'", "C:/Ruby192/lib/ruby/1.9.1/minitest/unit.rb:650:in `block in run_test_suites'", "C:/Ruby192/lib/ruby/1.9.1/minitest/unit.rb:649:in `each'", "C:/Ruby192/lib/ruby/1.9.1/minitest/unit.rb:649:in `run_test_suites'", "C:/Ruby192/lib/ruby/1.9.1/minitest/unit.rb:609:in `run'", "C:/Ruby192/lib/ruby/1.9.1/minitest/unit.rb:508:in `block in autorun'"]
+.
+Finished in 253.556611 seconds.
+
+  1) Error:
+test_02_copy_qg_change_reward(Test_17_Member_data_review):
+Timeout::Error: Timeout::Error
+    C:/Ruby192/lib/ruby/gems/1.9.1/gems/selenium-webdriver-2.31.0/lib/selenium/webdriver/remote/http/default.rb:83:in `response_for'
+    C:/Ruby192/lib/ruby/gems/1.9.1/gems/selenium-webdriver-2.31.0/lib/selenium/webdriver/remote/http/default.rb:39:in `request'
+    C:/Ruby192/lib/ruby/gems/1.9.1/gems/selenium-webdriver-2.31.0/lib/selenium/webdriver/remote/http/common.rb:40:in `call'
+    C:/Ruby192/lib/ruby/gems/1.9.1/gems/selenium-webdriver-2.31.0/lib/selenium/webdriver/remote/bridge.rb:616:in `raw_execute'
+    C:/Ruby192/lib/ruby/gems/1.9.1/gems/selenium-webdriver-2.31.0/lib/selenium/webdriver/remote/bridge.rb:594:in `execute'
+    C:/Ruby192/lib/ruby/gems/1.9.1/gems/selenium-webdriver-2.31.0/lib/selenium/webdriver/remote/bridge.rb:505:in `getElementText'
+    C:/Ruby192/lib/ruby/gems/1.9.1/gems/selenium-webdriver-2.31.0/lib/selenium/webdriver/common/element.rb:108:in `text'
+    C:/Ruby192/lib/ruby/gems/1.9.1/gems/watir-webdriver-0.6.1/lib/watir-webdriver/browser.rb:97:in `text'
+    Test_17_Member_data_review.rb:108:in `test_02_copy_qg_change_reward'
+
+5 tests, 0 assertions, 0 failures, 1 errors, 0 skips
+
+Test run options: --seed 12301
+Loaded suite Test_18_Publisher_bids
+Started
+.25351
+
+can't convert nil into String
+["C:/Ruby192/lib/ruby/1.9.1/base64.rb:38:in `pack'", "C:/Ruby192/lib/ruby/1.9.1/base64.rb:38:in `encode64'", "Test_18_Publisher_bids.rb:53:in `test_02_request_bid'", "C:/Ruby192/lib/ruby/1.9.1/minitest/unit.rb:695:in `run'", "C:/Ruby192/lib/ruby/1.9.1/minitest/unit.rb:656:in `block (2 levels) in run_test_suites'", "C:/Ruby192/lib/ruby/1.9.1/minitest/unit.rb:650:in `each'", "C:/Ruby192/lib/ruby/1.9.1/minitest/unit.rb:650:in `block in run_test_suites'", "C:/Ruby192/lib/ruby/1.9.1/minitest/unit.rb:649:in `each'", "C:/Ruby192/lib/ruby/1.9.1/minitest/unit.rb:649:in `run_test_suites'", "C:/Ruby192/lib/ruby/1.9.1/minitest/unit.rb:609:in `run'", "C:/Ruby192/lib/ruby/1.9.1/minitest/unit.rb:508:in `block in autorun'"]
+ELogged it to Network site
+unable to locate element, using {:href=>/bid_live_projects_email.php/, :tag_name=>"a"}
+["C:/Ruby192/lib/ruby/gems/1.9.1/gems/watir-webdriver-0.6.1/lib/watir-webdriver/elements/element.rb:365:in `assert_exists'", "C:/Ruby192/lib/ruby/gems/1.9.1/gems/watir-webdriver-0.6.1/lib/watir-webdriver/elements/element.rb:95:in `click'", "Test_18_Publisher_bids.rb:125:in `test_03_reject_bid'", "C:/Ruby192/lib/ruby/1.9.1/minitest/unit.rb:695:in `run'", "C:/Ruby192/lib/ruby/1.9.1/minitest/unit.rb:656:in `block (2 levels) in run_test_suites'", "C:/Ruby192/lib/ruby/1.9.1/minitest/unit.rb:650:in `each'", "C:/Ruby192/lib/ruby/1.9.1/minitest/unit.rb:650:in `block in run_test_suites'", "C:/Ruby192/lib/ruby/1.9.1/minitest/unit.rb:649:in `each'", "C:/Ruby192/lib/ruby/1.9.1/minitest/unit.rb:649:in `run_test_suites'", "C:/Ruby192/lib/ruby/1.9.1/minitest/unit.rb:609:in `run'", "C:/Ruby192/lib/ruby/1.9.1/minitest/unit.rb:508:in `block in autorun'"]
+.Started InternetExplorerDriver server (32-bit)
+2.39.0.0
+Listening on port 5555
+Successful Login to Usampadmin
+Modal dialog present
+["C:/Ruby192/lib/ruby/gems/1.9.1/gems/selenium-webdriver-2.31.0/lib/selenium/webdriver/remote/response.rb:52:in `assert_ok'", "C:/Ruby192/lib/ruby/gems/1.9.1/gems/selenium-webdriver-2.31.0/lib/selenium/webdriver/remote/response.rb:15:in `initialize'", "C:/Ruby192/lib/ruby/gems/1.9.1/gems/selenium-webdriver-2.31.0/lib/selenium/webdriver/remote/http/common.rb:59:in `new'", "C:/Ruby192/lib/ruby/gems/1.9.1/gems/selenium-webdriver-2.31.0/lib/selenium/webdriver/remote/http/common.rb:59:in `create_response'", "C:/Ruby192/lib/ruby/gems/1.9.1/gems/selenium-webdriver-2.31.0/lib/selenium/webdriver/remote/http/default.rb:66:in `request'", "C:/Ruby192/lib/ruby/gems/1.9.1/gems/selenium-webdriver-2.31.0/lib/selenium/webdriver/remote/http/common.rb:40:in `call'", "C:/Ruby192/lib/ruby/gems/1.9.1/gems/selenium-webdriver-2.31.0/lib/selenium/webdriver/remote/bridge.rb:616:in `raw_execute'", "C:/Ruby192/lib/ruby/gems/1.9.1/gems/selenium-webdriver-2.31.0/lib/selenium/webdriver/remote/bridge.rb:594:in `execute'", "C:/Ruby192/lib/ruby/gems/1.9.1/gems/selenium-webdriver-2.31.0/lib/selenium/webdriver/remote/bridge.rb:156:in `getCurrentUrl'", "C:/Ruby192/lib/ruby/gems/1.9.1/gems/selenium-webdriver-2.31.0/lib/selenium/webdriver/common/driver.rb:120:in `current_url'", "C:/Ruby192/lib/ruby/gems/1.9.1/gems/watir-webdriver-0.6.1/lib/watir-webdriver/browser.rb:78:in `url'", "C:/Ruby192/lib/ruby/gems/1.9.1/gems/watir-webdriver-0.6.1/lib/watir-webdriver/browser.rb:66:in `goto'", "Test_18_Publisher_bids.rb:165:in `test_04_check_admin'", "C:/Ruby192/lib/ruby/1.9.1/minitest/unit.rb:695:in `run'", "C:/Ruby192/lib/ruby/1.9.1/minitest/unit.rb:656:in `block (2 levels) in run_test_suites'", "C:/Ruby192/lib/ruby/1.9.1/minitest/unit.rb:650:in `each'", "C:/Ruby192/lib/ruby/1.9.1/minitest/unit.rb:650:in `block in run_test_suites'", "C:/Ruby192/lib/ruby/1.9.1/minitest/unit.rb:649:in `each'", "C:/Ruby192/lib/ruby/1.9.1/minitest/unit.rb:649:in `run_test_suites'", "C:/Ruby192/lib/ruby/1.9.1/minitest/unit.rb:609:in `run'", "C:/Ruby192/lib/ruby/1.9.1/minitest/unit.rb:508:in `block in autorun'"]
+.Started InternetExplorerDriver server (32-bit)
+2.39.0.0
+Listening on port 5555
+Successful Login to Usampadmin
+Modal dialog present
+["C:/Ruby192/lib/ruby/gems/1.9.1/gems/selenium-webdriver-2.31.0/lib/selenium/webdriver/remote/response.rb:52:in `assert_ok'", "C:/Ruby192/lib/ruby/gems/1.9.1/gems/selenium-webdriver-2.31.0/lib/selenium/webdriver/remote/response.rb:15:in `initialize'", "C:/Ruby192/lib/ruby/gems/1.9.1/gems/selenium-webdriver-2.31.0/lib/selenium/webdriver/remote/http/common.rb:59:in `new'", "C:/Ruby192/lib/ruby/gems/1.9.1/gems/selenium-webdriver-2.31.0/lib/selenium/webdriver/remote/http/common.rb:59:in `create_response'", "C:/Ruby192/lib/ruby/gems/1.9.1/gems/selenium-webdriver-2.31.0/lib/selenium/webdriver/remote/http/default.rb:66:in `request'", "C:/Ruby192/lib/ruby/gems/1.9.1/gems/selenium-webdriver-2.31.0/lib/selenium/webdriver/remote/http/common.rb:40:in `call'", "C:/Ruby192/lib/ruby/gems/1.9.1/gems/selenium-webdriver-2.31.0/lib/selenium/webdriver/remote/bridge.rb:616:in `raw_execute'", "C:/Ruby192/lib/ruby/gems/1.9.1/gems/selenium-webdriver-2.31.0/lib/selenium/webdriver/remote/bridge.rb:594:in `execute'", "C:/Ruby192/lib/ruby/gems/1.9.1/gems/selenium-webdriver-2.31.0/lib/selenium/webdriver/remote/bridge.rb:156:in `getCurrentUrl'", "C:/Ruby192/lib/ruby/gems/1.9.1/gems/selenium-webdriver-2.31.0/lib/selenium/webdriver/common/driver.rb:120:in `current_url'", "C:/Ruby192/lib/ruby/gems/1.9.1/gems/watir-webdriver-0.6.1/lib/watir-webdriver/browser.rb:78:in `url'", "C:/Ruby192/lib/ruby/gems/1.9.1/gems/watir-webdriver-0.6.1/lib/watir-webdriver/browser.rb:66:in `goto'", "Test_18_Publisher_bids.rb:209:in `test_05_request_second_bid'", "C:/Ruby192/lib/ruby/1.9.1/minitest/unit.rb:695:in `run'", "C:/Ruby192/lib/ruby/1.9.1/minitest/unit.rb:656:in `block (2 levels) in run_test_suites'", "C:/Ruby192/lib/ruby/1.9.1/minitest/unit.rb:650:in `each'", "C:/Ruby192/lib/ruby/1.9.1/minitest/unit.rb:650:in `block in run_test_suites'", "C:/Ruby192/lib/ruby/1.9.1/minitest/unit.rb:649:in `each'", "C:/Ruby192/lib/ruby/1.9.1/minitest/unit.rb:649:in `run_test_suites'", "C:/Ruby192/lib/ruby/1.9.1/minitest/unit.rb:609:in `run'", "C:/Ruby192/lib/ruby/1.9.1/minitest/unit.rb:508:in `block in autorun'"]
+.Logged it to Network site
+unable to locate element, using {:href=>/bid_live_projects_email.php/, :tag_name=>"a"}
+["C:/Ruby192/lib/ruby/gems/1.9.1/gems/watir-webdriver-0.6.1/lib/watir-webdriver/elements/element.rb:365:in `assert_exists'", "C:/Ruby192/lib/ruby/gems/1.9.1/gems/watir-webdriver-0.6.1/lib/watir-webdriver/elements/element.rb:95:in `click'", "Test_18_Publisher_bids.rb:265:in `test_06_respond_bid'", "C:/Ruby192/lib/ruby/1.9.1/minitest/unit.rb:695:in `run'", "C:/Ruby192/lib/ruby/1.9.1/minitest/unit.rb:656:in `block (2 levels) in run_test_suites'", "C:/Ruby192/lib/ruby/1.9.1/minitest/unit.rb:650:in `each'", "C:/Ruby192/lib/ruby/1.9.1/minitest/unit.rb:650:in `block in run_test_suites'", "C:/Ruby192/lib/ruby/1.9.1/minitest/unit.rb:649:in `each'", "C:/Ruby192/lib/ruby/1.9.1/minitest/unit.rb:649:in `run_test_suites'", "C:/Ruby192/lib/ruby/1.9.1/minitest/unit.rb:609:in `run'", "C:/Ruby192/lib/ruby/1.9.1/minitest/unit.rb:508:in `block in autorun'"]
+.Started InternetExplorerDriver server (32-bit)
+2.39.0.0
+Listening on port 5555
+Successful Login to Usampadmin
+Modal dialog present
+["C:/Ruby192/lib/ruby/gems/1.9.1/gems/selenium-webdriver-2.31.0/lib/selenium/webdriver/remote/response.rb:52:in `assert_ok'", "C:/Ruby192/lib/ruby/gems/1.9.1/gems/selenium-webdriver-2.31.0/lib/selenium/webdriver/remote/response.rb:15:in `initialize'", "C:/Ruby192/lib/ruby/gems/1.9.1/gems/selenium-webdriver-2.31.0/lib/selenium/webdriver/remote/http/common.rb:59:in `new'", "C:/Ruby192/lib/ruby/gems/1.9.1/gems/selenium-webdriver-2.31.0/lib/selenium/webdriver/remote/http/common.rb:59:in `create_response'", "C:/Ruby192/lib/ruby/gems/1.9.1/gems/selenium-webdriver-2.31.0/lib/selenium/webdriver/remote/http/default.rb:66:in `request'", "C:/Ruby192/lib/ruby/gems/1.9.1/gems/selenium-webdriver-2.31.0/lib/selenium/webdriver/remote/http/common.rb:40:in `call'", "C:/Ruby192/lib/ruby/gems/1.9.1/gems/selenium-webdriver-2.31.0/lib/selenium/webdriver/remote/bridge.rb:616:in `raw_execute'", "C:/Ruby192/lib/ruby/gems/1.9.1/gems/selenium-webdriver-2.31.0/lib/selenium/webdriver/remote/bridge.rb:594:in `execute'", "C:/Ruby192/lib/ruby/gems/1.9.1/gems/selenium-webdriver-2.31.0/lib/selenium/webdriver/remote/bridge.rb:156:in `getCurrentUrl'", "C:/Ruby192/lib/ruby/gems/1.9.1/gems/selenium-webdriver-2.31.0/lib/selenium/webdriver/common/driver.rb:120:in `current_url'", "C:/Ruby192/lib/ruby/gems/1.9.1/gems/watir-webdriver-0.6.1/lib/watir-webdriver/browser.rb:78:in `url'", "C:/Ruby192/lib/ruby/gems/1.9.1/gems/watir-webdriver-0.6.1/lib/watir-webdriver/browser.rb:66:in `goto'", "Test_18_Publisher_bids.rb:307:in `test_07_check_admin'", "C:/Ruby192/lib/ruby/1.9.1/minitest/unit.rb:695:in `run'", "C:/Ruby192/lib/ruby/1.9.1/minitest/unit.rb:656:in `block (2 levels) in run_test_suites'", "C:/Ruby192/lib/ruby/1.9.1/minitest/unit.rb:650:in `each'", "C:/Ruby192/lib/ruby/1.9.1/minitest/unit.rb:650:in `block in run_test_suites'", "C:/Ruby192/lib/ruby/1.9.1/minitest/unit.rb:649:in `each'", "C:/Ruby192/lib/ruby/1.9.1/minitest/unit.rb:649:in `run_test_suites'", "C:/Ruby192/lib/ruby/1.9.1/minitest/unit.rb:609:in `run'", "C:/Ruby192/lib/ruby/1.9.1/minitest/unit.rb:508:in `block in autorun'"]
+.
+Finished in 152.240221 seconds.
+
+  1) Error:
+test_02_request_bid(Test_18_Publisher_bid):
+NoMethodError: undefined method `close' for nil:NilClass
+    Test_18_Publisher_bids.rb:108:in `rescue in test_02_request_bid'
+    Test_18_Publisher_bids.rb:40:in `test_02_request_bid'
+
+7 tests, 0 assertions, 0 failures, 1 errors, 0 skips
+
+Test run options: --seed 13690
+Loaded suite Test_19_Virtual_currency_reflection
+Started
+.Started InternetExplorerDriver server (32-bit)
+2.39.0.0
+Listening on port 5555
+Successful Login to Usampadmin
+Successful Login to Focusline site
+VC ON V1.0 PASS
+.Started InternetExplorerDriver server (32-bit)
+2.39.0.0
+Listening on port 5555
+Successful Login to Usampadmin
+Successful Login to Focusline site
+VC ON V2.0 PASS
+.Started InternetExplorerDriver server (32-bit)
+2.39.0.0
+Listening on port 5555
+Successful Login to Usampadmin
+.
+Finished in 217.305219 seconds.
+
+4 tests, 0 assertions, 0 failures, 0 errors, 0 skips
+
+Test run options: --seed 24940
+Loaded suite Test_20_Custom_reward
+Started
+.Started InternetExplorerDriver server (32-bit)
+2.39.0.0
+Listening on port 5555
+Successful Login to Usampadmin
+Successful Login to Focusline site
+PASS
+No connection could be made because the target machine actively refused it. - connect(2)
+["C:/Ruby192/lib/ruby/1.9.1/net/http.rb:644:in `initialize'", "C:/Ruby192/lib/ruby/1.9.1/net/http.rb:644:in `open'", "C:/Ruby192/lib/ruby/1.9.1/net/http.rb:644:in `block in connect'", "C:/Ruby192/lib/ruby/1.9.1/timeout.rb:44:in `timeout'", "C:/Ruby192/lib/ruby/1.9.1/timeout.rb:89:in `timeout'", "C:/Ruby192/lib/ruby/1.9.1/net/http.rb:644:in `connect'", "C:/Ruby192/lib/ruby/1.9.1/net/http.rb:637:in `do_start'", "C:/Ruby192/lib/ruby/1.9.1/net/http.rb:626:in `start'", "C:/Ruby192/lib/ruby/1.9.1/net/http.rb:1168:in `request'", "C:/Ruby192/lib/ruby/gems/1.9.1/gems/selenium-webdriver-2.31.0/lib/selenium/webdriver/remote/http/default.rb:83:in `response_for'", "C:/Ruby192/lib/ruby/gems/1.9.1/gems/selenium-webdriver-2.31.0/lib/selenium/webdriver/remote/http/default.rb:39:in `request'", "C:/Ruby192/lib/ruby/gems/1.9.1/gems/selenium-webdriver-2.31.0/lib/selenium/webdriver/remote/http/common.rb:40:in `call'", "C:/Ruby192/lib/ruby/gems/1.9.1/gems/selenium-webdriver-2.31.0/lib/selenium/webdriver/remote/bridge.rb:616:in `raw_execute'", "C:/Ruby192/lib/ruby/gems/1.9.1/gems/selenium-webdriver-2.31.0/lib/selenium/webdriver/remote/bridge.rb:594:in `execute'", "C:/Ruby192/lib/ruby/gems/1.9.1/gems/selenium-webdriver-2.31.0/lib/selenium/webdriver/remote/bridge.rb:359:in `clickElement'", "C:/Ruby192/lib/ruby/gems/1.9.1/gems/selenium-webdriver-2.31.0/lib/selenium/webdriver/common/element.rb:54:in `click'", "C:/Ruby192/lib/ruby/gems/1.9.1/gems/watir-webdriver-0.6.1/lib/watir-webdriver/elements/element.rb:108:in `click'", "Test_20_Custom_reward.rb:80:in `test_02_custom_reward'", "C:/Ruby192/lib/ruby/1.9.1/minitest/unit.rb:695:in `run'", "C:/Ruby192/lib/ruby/1.9.1/minitest/unit.rb:656:in `block (2 levels) in run_test_suites'", "C:/Ruby192/lib/ruby/1.9.1/minitest/unit.rb:650:in `each'", "C:/Ruby192/lib/ruby/1.9.1/minitest/unit.rb:650:in `block in run_test_suites'", "C:/Ruby192/lib/ruby/1.9.1/minitest/unit.rb:649:in `each'", "C:/Ruby192/lib/ruby/1.9.1/minitest/unit.rb:649:in `run_test_suites'", "C:/Ruby192/lib/ruby/1.9.1/minitest/unit.rb:609:in `run'", "C:/Ruby192/lib/ruby/1.9.1/minitest/unit.rb:508:in `block in autorun'"]
+E
+Finished in 126.801744 seconds.
+
+  1) Error:
+test_02_custom_reward(Test_20_Custom_reward):
+Errno::ECONNREFUSED: No connection could be made because the target machine actively refused it. - connect(2)
+    C:/Ruby192/lib/ruby/gems/1.9.1/gems/selenium-webdriver-2.31.0/lib/selenium/webdriver/remote/http/default.rb:83:in `response_for'
+    C:/Ruby192/lib/ruby/gems/1.9.1/gems/selenium-webdriver-2.31.0/lib/selenium/webdriver/remote/http/default.rb:39:in `request'
+    C:/Ruby192/lib/ruby/gems/1.9.1/gems/selenium-webdriver-2.31.0/lib/selenium/webdriver/remote/http/common.rb:40:in `call'
+    C:/Ruby192/lib/ruby/gems/1.9.1/gems/selenium-webdriver-2.31.0/lib/selenium/webdriver/remote/bridge.rb:616:in `raw_execute'
+    C:/Ruby192/lib/ruby/gems/1.9.1/gems/selenium-webdriver-2.31.0/lib/selenium/webdriver/remote/bridge.rb:594:in `execute'
+    C:/Ruby192/lib/ruby/gems/1.9.1/gems/selenium-webdriver-2.31.0/lib/selenium/webdriver/remote/bridge.rb:190:in `quit'
+    C:/Ruby192/lib/ruby/gems/1.9.1/gems/selenium-webdriver-2.31.0/lib/selenium/webdriver/ie/bridge.rb:59:in `quit'
+    C:/Ruby192/lib/ruby/gems/1.9.1/gems/selenium-webdriver-2.31.0/lib/selenium/webdriver/common/driver.rb:168:in `quit'
+    C:/Ruby192/lib/ruby/gems/1.9.1/gems/watir-webdriver-0.6.1/lib/watir-webdriver/browser.rb:87:in `close'
+    Test_20_Custom_reward.rb:86:in `rescue in test_02_custom_reward'
+    Test_20_Custom_reward.rb:38:in `test_02_custom_reward'
+
+2 tests, 0 assertions, 0 failures, 1 errors, 0 skips
+
+Test run options: --seed 16619
+Loaded suite Test_21_Registration_management
+Started
+.PASS
+test string
+PASS
+.Started InternetExplorerDriver server (32-bit)
+2.39.0.0
+Listening on port 5555
+Successful Login to Usampadmin
+PASS
+.COUNTRY/LANGUAGE DOES NOT EXIST
+Failed on page 1
+Failed on page 2
+.Started InternetExplorerDriver server (32-bit)
+2.39.0.0
+Listening on port 5555
+Successful Login to Usampadmin
+Element is no longer valid
+["C:/Ruby192/lib/ruby/gems/1.9.1/gems/selenium-webdriver-2.31.0/lib/selenium/webdriver/remote/response.rb:52:in `assert_ok'", "C:/Ruby192/lib/ruby/gems/1.9.1/gems/selenium-webdriver-2.31.0/lib/selenium/webdriver/remote/response.rb:15:in `initialize'", "C:/Ruby192/lib/ruby/gems/1.9.1/gems/selenium-webdriver-2.31.0/lib/selenium/webdriver/remote/http/common.rb:59:in `new'", "C:/Ruby192/lib/ruby/gems/1.9.1/gems/selenium-webdriver-2.31.0/lib/selenium/webdriver/remote/http/common.rb:59:in `create_response'", "C:/Ruby192/lib/ruby/gems/1.9.1/gems/selenium-webdriver-2.31.0/lib/selenium/webdriver/remote/http/default.rb:66:in `request'", "C:/Ruby192/lib/ruby/gems/1.9.1/gems/selenium-webdriver-2.31.0/lib/selenium/webdriver/remote/http/common.rb:40:in `call'", "C:/Ruby192/lib/ruby/gems/1.9.1/gems/selenium-webdriver-2.31.0/lib/selenium/webdriver/remote/bridge.rb:616:in `raw_execute'", "C:/Ruby192/lib/ruby/gems/1.9.1/gems/selenium-webdriver-2.31.0/lib/selenium/webdriver/remote/bridge.rb:594:in `execute'", "C:/Ruby192/lib/ruby/gems/1.9.1/gems/selenium-webdriver-2.31.0/lib/selenium/webdriver/remote/bridge.rb:493:in `getElementTagName'", "C:/Ruby192/lib/ruby/gems/1.9.1/gems/selenium-webdriver-2.31.0/lib/selenium/webdriver/common/element.rb:68:in `tag_name'", "C:/Ruby192/lib/ruby/gems/1.9.1/gems/watir-webdriver-0.6.1/lib/watir-webdriver/locators/element_locator.rb:379:in `validate_element'", "C:/Ruby192/lib/ruby/gems/1.9.1/gems/watir-webdriver-0.6.1/lib/watir-webdriver/locators/element_locator.rb:37:in `locate'", "C:/Ruby192/lib/ruby/gems/1.9.1/gems/watir-webdriver-0.6.1/lib/watir-webdriver/elements/element.rb:384:in `locate'", "C:/Ruby192/lib/ruby/gems/1.9.1/gems/watir-webdriver-0.6.1/lib/watir-webdriver/elements/element.rb:362:in `assert_exists'", "C:/Ruby192/lib/ruby/gems/1.9.1/gems/watir-webdriver-0.6.1/lib/watir-webdriver/elements/checkbox.rb:19:in `set'", "Test_21_Registration_management.rb:309:in `test_05_revert_registration_mgmnt_settings'", "C:/Ruby192/lib/ruby/1.9.1/minitest/unit.rb:695:in `run'", "C:/Ruby192/lib/ruby/1.9.1/minitest/unit.rb:656:in `block (2 levels) in run_test_suites'", "C:/Ruby192/lib/ruby/1.9.1/minitest/unit.rb:650:in `each'", "C:/Ruby192/lib/ruby/1.9.1/minitest/unit.rb:650:in `block in run_test_suites'", "C:/Ruby192/lib/ruby/1.9.1/minitest/unit.rb:649:in `each'", "C:/Ruby192/lib/ruby/1.9.1/minitest/unit.rb:649:in `run_test_suites'", "C:/Ruby192/lib/ruby/1.9.1/minitest/unit.rb:609:in `run'", "C:/Ruby192/lib/ruby/1.9.1/minitest/unit.rb:508:in `block in autorun'"]
+.
+Finished in 209.570547 seconds.
+
+5 tests, 0 assertions, 0 failures, 0 errors, 0 skips
+
+Test run options: --seed 63537
+Loaded suite Test_22_Profile_redirection_on_signup
+Started
+.Successful Login to Usampadmin
+test string
+.Started InternetExplorerDriver server (32-bit)
+2.39.0.0
+Listening on port 5555
+Successful Login to Usampadmin
+test string
+.
+Finished in 342.106887 seconds.
+
+3 tests, 0 assertions, 0 failures, 0 errors, 0 skips
+
+Test run options: --seed 63285
+Loaded suite Test_23_Request_cash_out
+Started
+.GIFT_CERT_2014-02-12 07:35:47
+waiting for surveys to load
+waiting for surveys to load
+waiting for surveys to load
+waiting for surveys to load
+waiting for surveys to load
+waiting for surveys to load
+waiting for surveys to load
+waiting for surveys to load
+waiting for surveys to load
+waiting for surveys to load
+waiting for surveys to load
+waiting for surveys to load
+waiting for surveys to load
+waiting for surveys to load
+waiting for surveys to load
+waiting for surveys to load
+waiting for surveys to load
+waiting for surveys to load
+Successful Login to ipoll site
+unable to locate element, using {:name=>"btnCashOut", :tag_name=>"button"}
+["C:/Ruby192/lib/ruby/gems/1.9.1/gems/watir-webdriver-0.6.1/lib/watir-webdriver/elements/element.rb:365:in `assert_exists'", "C:/Ruby192/lib/ruby/gems/1.9.1/gems/watir-webdriver-0.6.1/lib/watir-webdriver/elements/element.rb:95:in `click'", "Test_23_Request_cash_out.rb:63:in `test_02_request_gift_cert'", "C:/Ruby192/lib/ruby/1.9.1/minitest/unit.rb:695:in `run'", "C:/Ruby192/lib/ruby/1.9.1/minitest/unit.rb:656:in `block (2 levels) in run_test_suites'", "C:/Ruby192/lib/ruby/1.9.1/minitest/unit.rb:650:in `each'", "C:/Ruby192/lib/ruby/1.9.1/minitest/unit.rb:650:in `block in run_test_suites'", "C:/Ruby192/lib/ruby/1.9.1/minitest/unit.rb:649:in `each'", "C:/Ruby192/lib/ruby/1.9.1/minitest/unit.rb:649:in `run_test_suites'", "C:/Ruby192/lib/ruby/1.9.1/minitest/unit.rb:609:in `run'", "C:/Ruby192/lib/ruby/1.9.1/minitest/unit.rb:508:in `block in autorun'"]
+EDonation_2014-02-12 07:34:05
+Successful Login to ipoll site
+Pass
+.Donation_2014-02-12 07:34:05
+GIFT_CERT_2014-02-12 07:35:47
+Successful Login to ipoll site
+.GIFT_CERT_2014-02-12 07:35:47
+Successful Login to ipoll site
+unable to locate element, using {:id=>"btnCashOut", :tag_name=>"button"}
+["C:/Ruby192/lib/ruby/gems/1.9.1/gems/watir-webdriver-0.6.1/lib/watir-webdriver/elements/element.rb:365:in `assert_exists'", "C:/Ruby192/lib/ruby/gems/1.9.1/gems/watir-webdriver-0.6.1/lib/watir-webdriver/elements/element.rb:95:in `click'", "Test_23_Request_cash_out.rb:245:in `test_05_request_gift_cert_for_rejection_later'", "C:/Ruby192/lib/ruby/1.9.1/minitest/unit.rb:695:in `run'", "C:/Ruby192/lib/ruby/1.9.1/minitest/unit.rb:656:in `block (2 levels) in run_test_suites'", "C:/Ruby192/lib/ruby/1.9.1/minitest/unit.rb:650:in `each'", "C:/Ruby192/lib/ruby/1.9.1/minitest/unit.rb:650:in `block in run_test_suites'", "C:/Ruby192/lib/ruby/1.9.1/minitest/unit.rb:649:in `each'", "C:/Ruby192/lib/ruby/1.9.1/minitest/unit.rb:649:in `run_test_suites'", "C:/Ruby192/lib/ruby/1.9.1/minitest/unit.rb:609:in `run'", "C:/Ruby192/lib/ruby/1.9.1/minitest/unit.rb:508:in `block in autorun'"]
+.Donation_2014-02-12 07:34:05
+Successful Login to ipoll site
+unable to locate element, using {:id=>"btnCashOut", :tag_name=>"button"}
+["C:/Ruby192/lib/ruby/gems/1.9.1/gems/watir-webdriver-0.6.1/lib/watir-webdriver/elements/element.rb:365:in `assert_exists'", "C:/Ruby192/lib/ruby/gems/1.9.1/gems/watir-webdriver-0.6.1/lib/watir-webdriver/elements/element.rb:95:in `click'", "Test_23_Request_cash_out.rb:287:in `test_06_request_donation_for_rejection_later'", "C:/Ruby192/lib/ruby/1.9.1/minitest/unit.rb:695:in `run'", "C:/Ruby192/lib/ruby/1.9.1/minitest/unit.rb:656:in `block (2 levels) in run_test_suites'", "C:/Ruby192/lib/ruby/1.9.1/minitest/unit.rb:650:in `each'", "C:/Ruby192/lib/ruby/1.9.1/minitest/unit.rb:650:in `block in run_test_suites'", "C:/Ruby192/lib/ruby/1.9.1/minitest/unit.rb:649:in `each'", "C:/Ruby192/lib/ruby/1.9.1/minitest/unit.rb:649:in `run_test_suites'", "C:/Ruby192/lib/ruby/1.9.1/minitest/unit.rb:609:in `run'", "C:/Ruby192/lib/ruby/1.9.1/minitest/unit.rb:508:in `block in autorun'"]
+.
+Finished in 428.125814 seconds.
+
+  1) Error:
+test_02_request_gift_cert(Test_23_Request_cash_out):
+TypeError: can't convert nil into String
+    Test_23_Request_cash_out.rb:83:in `+'
+    Test_23_Request_cash_out.rb:83:in `rescue in test_02_request_gift_cert'
+    Test_23_Request_cash_out.rb:44:in `test_02_request_gift_cert'
+
+6 tests, 0 assertions, 0 failures, 1 errors, 0 skips
+
+Test run options: --seed 10643
+Loaded suite Test_24_Survey_redirection
+Started
+.Started InternetExplorerDriver server (32-bit)
+2.39.0.0
+Listening on port 5555
+Successful Login to Usampadmin
+25351
+115343
+.Started InternetExplorerDriver server (32-bit)
+2.39.0.0
+Listening on port 5556
+Successful Login to Usampadmin
+.Successful Login to Focusline site
+STD:PASS
+.Started InternetExplorerDriver server (32-bit)
+2.39.0.0
+Listening on port 5555
+Successful Login to Usampadmin
+.Successful Login to Focusline site
+IFRM:PASS
+.Started InternetExplorerDriver server (32-bit)
+2.39.0.0
+Listening on port 5555
+Successful Login to Usampadmin
+.Started InternetExplorerDriver server (32-bit)
+2.39.0.0
+Listening on port 5555
+Successful Login to Usampadmin
+25351
+115343
+.
+Finished in 534.848663 seconds.
+
+8 tests, 0 assertions, 0 failures, 0 errors, 0 skips
+
+Test run options: --seed 37758
+Loaded suite Test_27_Dashboard_on_off
+Started
+.115343
+Started InternetExplorerDriver server (32-bit)
+2.39.0.0
+Listening on port 5555
+Successful Login to Usampadmin
+Successful Login to ipoll site
+OFF: PASSED
+.115343
+Started InternetExplorerDriver server (32-bit)
+2.39.0.0
+Listening on port 5555
+Successful Login to Usampadmin
+Successful Login to ipoll site
+Timeout::Error
+["C:/Ruby192/lib/ruby/1.9.1/net/protocol.rb:140:in `rescue in rbuf_fill'", "C:/Ruby192/lib/ruby/1.9.1/net/protocol.rb:134:in `rbuf_fill'", "C:/Ruby192/lib/ruby/1.9.1/net/protocol.rb:116:in `readuntil'", "C:/Ruby192/lib/ruby/1.9.1/net/protocol.rb:126:in `readline'", "C:/Ruby192/lib/ruby/1.9.1/net/http.rb:2219:in `read_status_line'", "C:/Ruby192/lib/ruby/1.9.1/net/http.rb:2208:in `read_new'", "C:/Ruby192/lib/ruby/1.9.1/net/http.rb:1191:in `transport_request'", "C:/Ruby192/lib/ruby/1.9.1/net/http.rb:1177:in `request'", "C:/Ruby192/lib/ruby/1.9.1/net/http.rb:1170:in `block in request'", "C:/Ruby192/lib/ruby/1.9.1/net/http.rb:627:in `start'", "C:/Ruby192/lib/ruby/1.9.1/net/http.rb:1168:in `request'", "C:/Ruby192/lib/ruby/gems/1.9.1/gems/selenium-webdriver-2.31.0/lib/selenium/webdriver/remote/http/default.rb:83:in `response_for'", "C:/Ruby192/lib/ruby/gems/1.9.1/gems/selenium-webdriver-2.31.0/lib/selenium/webdriver/remote/http/default.rb:39:in `request'", "C:/Ruby192/lib/ruby/gems/1.9.1/gems/selenium-webdriver-2.31.0/lib/selenium/webdriver/remote/http/common.rb:40:in `call'", "C:/Ruby192/lib/ruby/gems/1.9.1/gems/selenium-webdriver-2.31.0/lib/selenium/webdriver/remote/bridge.rb:616:in `raw_execute'", "C:/Ruby192/lib/ruby/gems/1.9.1/gems/selenium-webdriver-2.31.0/lib/selenium/webdriver/remote/bridge.rb:594:in `execute'", "C:/Ruby192/lib/ruby/gems/1.9.1/gems/selenium-webdriver-2.31.0/lib/selenium/webdriver/remote/bridge.rb:505:in `getElementText'", "C:/Ruby192/lib/ruby/gems/1.9.1/gems/selenium-webdriver-2.31.0/lib/selenium/webdriver/common/element.rb:108:in `text'", "C:/Ruby192/lib/ruby/gems/1.9.1/gems/watir-webdriver-0.6.1/lib/watir-webdriver/browser.rb:97:in `text'", "Test_27_Dashboard_on_off.rb:120:in `test_03_dash_on'", "C:/Ruby192/lib/ruby/1.9.1/minitest/unit.rb:695:in `run'", "C:/Ruby192/lib/ruby/1.9.1/minitest/unit.rb:656:in `block (2 levels) in run_test_suites'", "C:/Ruby192/lib/ruby/1.9.1/minitest/unit.rb:650:in `each'", "C:/Ruby192/lib/ruby/1.9.1/minitest/unit.rb:650:in `block in run_test_suites'", "C:/Ruby192/lib/ruby/1.9.1/minitest/unit.rb:649:in `each'", "C:/Ruby192/lib/ruby/1.9.1/minitest/unit.rb:649:in `run_test_suites'", "C:/Ruby192/lib/ruby/1.9.1/minitest/unit.rb:609:in `run'", "C:/Ruby192/lib/ruby/1.9.1/minitest/unit.rb:508:in `block in autorun'"]
+.
+Finished in 344.388224 seconds.
+
+3 tests, 0 assertions, 0 failures, 0 errors, 0 skips
+
+Test run options: --seed 56258
+Loaded suite Test_28_Disable_pub_account
+Started
+.Started InternetExplorerDriver server (32-bit)
+2.39.0.0
+Listening on port 5555
+Successful Login to Usampadmin
+Pass
+.Pass
+.Pass
+.Sorry! System Failed to login to Network site
+Pass
+.115343
+Pass
+.Started InternetExplorerDriver server (32-bit)
+2.39.0.0
+Listening on port 5555
+Successful Login to Usampadmin
+Pass
+.Pass
+.Pass
+.Logged it to Network site
+Pass
+.115343
+Pass
+.
+Finished in 263.666374 seconds.
+
+11 tests, 0 assertions, 0 failures, 0 errors, 0 skips
+
+Test run options: --seed 24135
+Loaded suite Test_29_Enable_disable_queue2
+Started
+.Started InternetExplorerDriver server (32-bit)
+2.39.0.0
+Listening on port 5555
+Successful Login to Usampadmin
+Q2:Enabled
+.https://www.p.ipoll.com/queue2.php
+PASS
+.Started InternetExplorerDriver server (32-bit)
+2.39.0.0
+Listening on port 5555
+Successful Login to Usampadmin
+Q2:Disabled
+.https://www.p.ipoll.com/queue4.php
+PASS
+.
+Finished in 178.928745 seconds.
+
+5 tests, 0 assertions, 0 failures, 0 errors, 0 skips
+
+Test run options: --seed 1698
+Loaded suite Test_30_External_prescreener
+Started
+.Started InternetExplorerDriver server (32-bit)
+2.39.0.0
+Listening on port 5555
+Successful Login to Usampadmin
+25351
+115343
+MjUzNTEK
+MTE1MzQz
+.Started InternetExplorerDriver server (32-bit)
+2.39.0.0
+Listening on port 5555
+Successful Login to Usampadmin
+25351
+115343
+MjUzNTEK
+MTE1MzQz
+{:title=>"Welcome Back! Survey is closed"}
+["C:/Ruby192/lib/ruby/gems/1.9.1/gems/watir-webdriver-0.6.1/lib/watir-webdriver/window.rb:122:in `locate'", "C:/Ruby192/lib/ruby/gems/1.9.1/gems/watir-webdriver-0.6.1/lib/watir-webdriver/window.rb:106:in `handle'", "C:/Ruby192/lib/ruby/gems/1.9.1/gems/watir-webdriver-0.6.1/lib/watir-webdriver/window.rb:99:in `use'", "Test_30_External_prescreener.rb:139:in `test_03_presurvey_complete'", "C:/Ruby192/lib/ruby/1.9.1/minitest/unit.rb:695:in `run'", "C:/Ruby192/lib/ruby/1.9.1/minitest/unit.rb:656:in `block (2 levels) in run_test_suites'", "C:/Ruby192/lib/ruby/1.9.1/minitest/unit.rb:650:in `each'", "C:/Ruby192/lib/ruby/1.9.1/minitest/unit.rb:650:in `block in run_test_suites'", "C:/Ruby192/lib/ruby/1.9.1/minitest/unit.rb:649:in `each'", "C:/Ruby192/lib/ruby/1.9.1/minitest/unit.rb:649:in `run_test_suites'", "C:/Ruby192/lib/ruby/1.9.1/minitest/unit.rb:609:in `run'", "C:/Ruby192/lib/ruby/1.9.1/minitest/unit.rb:508:in `block in autorun'"]
+.Started InternetExplorerDriver server (32-bit)
+2.39.0.0
+Listening on port 5555
+Successful Login to Usampadmin
+25351
+115343
+MjUzNTEK
+MTE1MzQz
+{:title=>"Welcome Back! Survey is closed"}
+["C:/Ruby192/lib/ruby/gems/1.9.1/gems/watir-webdriver-0.6.1/lib/watir-webdriver/window.rb:122:in `locate'", "C:/Ruby192/lib/ruby/gems/1.9.1/gems/watir-webdriver-0.6.1/lib/watir-webdriver/window.rb:106:in `handle'", "C:/Ruby192/lib/ruby/gems/1.9.1/gems/watir-webdriver-0.6.1/lib/watir-webdriver/window.rb:99:in `use'", "Test_30_External_prescreener.rb:230:in `test_04_presurvey_fail'", "C:/Ruby192/lib/ruby/1.9.1/minitest/unit.rb:695:in `run'", "C:/Ruby192/lib/ruby/1.9.1/minitest/unit.rb:656:in `block (2 levels) in run_test_suites'", "C:/Ruby192/lib/ruby/1.9.1/minitest/unit.rb:650:in `each'", "C:/Ruby192/lib/ruby/1.9.1/minitest/unit.rb:650:in `block in run_test_suites'", "C:/Ruby192/lib/ruby/1.9.1/minitest/unit.rb:649:in `each'", "C:/Ruby192/lib/ruby/1.9.1/minitest/unit.rb:649:in `run_test_suites'", "C:/Ruby192/lib/ruby/1.9.1/minitest/unit.rb:609:in `run'", "C:/Ruby192/lib/ruby/1.9.1/minitest/unit.rb:508:in `block in autorun'"]
+.Started InternetExplorerDriver server (32-bit)
+2.39.0.0
+Listening on port 5556
+Successful Login to Usampadmin
+25351
+115343
+MjUzNTEK
+MTE1MzQz
+.
+Finished in 263.900758 seconds.
+
+5 tests, 0 assertions, 0 failures, 0 errors, 0 skips
+
+Test run options: --seed 1587
+Loaded suite Test_31_Merge_field_survey_url
+Started
+.Started InternetExplorerDriver server (32-bit)
+2.39.0.0
+Listening on port 5555
+Successful Login to Usampadmin
+25351
+115343
+MjUzNTEK
+MTE1MzQz
+.Successful Login to ipoll site
+115343
+linkMTE1MzQz
+New URL
+http://203.199.26.75/usamp/TEST_SURVEY.php?SHA=218dc9724725dfc0f1ba4d3da606ee266d3ade60&MEM_NO=10598227&ENC_MEM_NO=Y4vwDOmmu&AGE=38&CHILDRN=2&ETHNICITY=9&EDUC=6&GEN=1&INCOME=22&MAR_STATUS=1&ZIP=90001&PID=0&SP_ID=&EMAIL=gsk@hk.com&COUNTY=06037&STATE=06&DMA=803&TOKEN=9c5bfd9ef0faf4e7e1ae30139963263f
+http://203.199.26.75/usamp/TEST_SURVEY.php?SHA=218dc9724725dfc0f1ba4d3da606ee266d3ade60&MEM_NO=10598227&ENC_MEM_NO=Y4vwDOmmu&AGE=38&CHILDRN=2&ETHNICITY=9&EDUC=6&GEN=1&INCOME=22&MAR_STATUS=1&ZIP=90001&PID=0&SP_ID=&EMAIL=gsk@hk.com&COUNTY=06037&STATE=06&DMA=803&TOKEN=
+pass
+.Started InternetExplorerDriver server (32-bit)
+2.39.0.0
+Listening on port 5555
+Successful Login to Usampadmin
+25351
+115343
+MjUzNTEK
+MTE1MzQz
+.
+Finished in 239.087305 seconds.
+
+4 tests, 0 assertions, 0 failures, 0 errors, 0 skips
+
+Test run options: --seed 5056
+Loaded suite Test_33_Custom_homepage_render
+Started
+.Started InternetExplorerDriver server (32-bit)
+2.39.0.0
+Listening on port 5555
+Successful Login to Usampadmin
+Config settings saved
+.PASS
+.Started InternetExplorerDriver server (32-bit)
+2.39.0.0
+Listening on port 5555
+Successful Login to Usampadmin
+.
+Finished in 135.208317 seconds.
+
+4 tests, 0 assertions, 0 failures, 0 errors, 0 skips
+
+Test run options: --seed 16719
+Loaded suite Test_34_Add_publisher
+Started
+.Started InternetExplorerDriver server (32-bit)
+2.39.0.0
+Listening on port 5555
+Successful Login to Usampadmin
+Pass
+.Successful Login to Usampadmin
+TEST AUTO PUB_4751
+PU2208
+unable to locate element, using {:name=>"optCountryId[]", :tag_name=>"select"}
+["C:/Ruby192/lib/ruby/gems/1.9.1/gems/watir-webdriver-0.6.1/lib/watir-webdriver/elements/element.rb:365:in `assert_exists'", "C:/Ruby192/lib/ruby/gems/1.9.1/gems/watir-webdriver-0.6.1/lib/watir-webdriver/elements/select.rb:125:in `select_by'", "C:/Ruby192/lib/ruby/gems/1.9.1/gems/watir-webdriver-0.6.1/lib/watir-webdriver/elements/select.rb:64:in `select'", "Test_34_Add_publisher.rb:136:in `test_03_search_pub'", "C:/Ruby192/lib/ruby/1.9.1/minitest/unit.rb:695:in `run'", "C:/Ruby192/lib/ruby/1.9.1/minitest/unit.rb:656:in `block (2 levels) in run_test_suites'", "C:/Ruby192/lib/ruby/1.9.1/minitest/unit.rb:650:in `each'", "C:/Ruby192/lib/ruby/1.9.1/minitest/unit.rb:650:in `block in run_test_suites'", "C:/Ruby192/lib/ruby/1.9.1/minitest/unit.rb:649:in `each'", "C:/Ruby192/lib/ruby/1.9.1/minitest/unit.rb:649:in `run_test_suites'", "C:/Ruby192/lib/ruby/1.9.1/minitest/unit.rb:609:in `run'", "C:/Ruby192/lib/ruby/1.9.1/minitest/unit.rb:508:in `block in autorun'"]
+.
+Finished in 173.444160 seconds.
+
+3 tests, 0 assertions, 0 failures, 0 errors, 0 skips
+
+Test run options: --seed 53822
+Loaded suite Test_36_Project_search
+Started
+.Successful Login to Usampadmin
+Pass
+.
+Finished in 91.956656 seconds.
+
+2 tests, 0 assertions, 0 failures, 0 errors, 0 skips
+
+Test run options: --seed 25802
+Loaded suite Test_37_Add_publisher_group
+Started
+.Started InternetExplorerDriver server (32-bit)
+2.39.0.0
+Listening on port 5555
+Successful Login to Usampadmin
+TEST AUTO PUB_4751
+Fail
+.Started InternetExplorerDriver server (32-bit)
+2.39.0.0
+Listening on port 5556
+Successful Login to Usampadmin
+TEST_PUB_GRP_5300
+TEST_PUB_GRP_5300
+Pass
+TEST TEMP GRP NAME:53:00
+TEST TEMP GRP NAME:53:00
+Pass
+.
+Finished in 105.691558 seconds.
+
+3 tests, 0 assertions, 0 failures, 0 errors, 0 skips
+
+Test run options: --seed 24307
+Loaded suite Test_38_Add_employee
+Started
+.Started InternetExplorerDriver server (32-bit)
+2.39.0.0
+Listening on port 5555
+Successful Login to Usampadmin
+Pass
+.Started InternetExplorerDriver server (32-bit)
+2.39.0.0
+Listening on port 5555
+Successful Login to Usampadmin
+auto_test_emp.des2014-02-12085514@mailop.com
+Pass
+Pass
+.
+Finished in 100.535110 seconds.
+
+3 tests, 0 assertions, 0 failures, 0 errors, 0 skips
+
+Test run options: --seed 39787
+Loaded suite Test_39_Add_client
+Started
+.Started InternetExplorerDriver server (32-bit)
+2.39.0.0
+Listening on port 5555
+Successful Login to Usampadmin
+Pass
+.Started InternetExplorerDriver server (32-bit)
+2.39.0.0
+Listening on port 5556
+Successful Login to Usampadmin
+Pass
+Pass
+.
+Finished in 105.613431 seconds.
+
+3 tests, 0 assertions, 0 failures, 0 errors, 0 skips
+
+Test run options: --seed 28715
+Loaded suite Test_40_Simulate_completes
+Started
+.25351
+115343
+Started InternetExplorerDriver server (32-bit)
+2.39.0.0
+Listening on port 5555
+Successful Login to Usampadmin
+Fail
+.25351
+115343
+Started InternetExplorerDriver server (32-bit)
+2.39.0.0
+Listening on port 5556
+Successful Login to Usampadmin
+Fail
+.25351
+115343
+Started InternetExplorerDriver server (32-bit)
+2.39.0.0
+Listening on port 5555
+Successful Login to Usampadmin
+Fail
+.
+Finished in 310.433795 seconds.
+
+4 tests, 0 assertions, 0 failures, 0 errors, 0 skips
+
+Test run options: --seed 3260
+Loaded suite Test_41_Member_search
+Started
+.Started InternetExplorerDriver server (32-bit)
+2.39.0.0
+Listening on port 5555
+Successful Login to Usampadmin
+Pass
+Pass
+.
+Finished in 106.972858 seconds.
+
+2 tests, 0 assertions, 0 failures, 0 errors, 0 skips
+
+Test run options: --seed 33297
+Loaded suite Test_42_QG_notifications
+Started
+.Started InternetExplorerDriver server (32-bit)
+2.39.0.0
+Listening on port 5555
+Successful Login to Usampadmin
+25351
+115343
+QG COPIED
+Timeout::Error
+["C:/Ruby192/lib/ruby/1.9.1/net/protocol.rb:140:in `rescue in rbuf_fill'", "C:/Ruby192/lib/ruby/1.9.1/net/protocol.rb:134:in `rbuf_fill'", "C:/Ruby192/lib/ruby/1.9.1/net/protocol.rb:116:in `readuntil'", "C:/Ruby192/lib/ruby/1.9.1/net/protocol.rb:126:in `readline'", "C:/Ruby192/lib/ruby/1.9.1/net/http.rb:2219:in `read_status_line'", "C:/Ruby192/lib/ruby/1.9.1/net/http.rb:2208:in `read_new'", "C:/Ruby192/lib/ruby/1.9.1/net/http.rb:1191:in `transport_request'", "C:/Ruby192/lib/ruby/1.9.1/net/http.rb:1177:in `request'", "C:/Ruby192/lib/ruby/1.9.1/net/http.rb:1170:in `block in request'", "C:/Ruby192/lib/ruby/1.9.1/net/http.rb:627:in `start'", "C:/Ruby192/lib/ruby/1.9.1/net/http.rb:1168:in `request'", "C:/Ruby192/lib/ruby/gems/1.9.1/gems/selenium-webdriver-2.31.0/lib/selenium/webdriver/remote/http/default.rb:83:in `response_for'", "C:/Ruby192/lib/ruby/gems/1.9.1/gems/selenium-webdriver-2.31.0/lib/selenium/webdriver/remote/http/default.rb:39:in `request'", "C:/Ruby192/lib/ruby/gems/1.9.1/gems/selenium-webdriver-2.31.0/lib/selenium/webdriver/remote/http/common.rb:40:in `call'", "C:/Ruby192/lib/ruby/gems/1.9.1/gems/selenium-webdriver-2.31.0/lib/selenium/webdriver/remote/bridge.rb:616:in `raw_execute'", "C:/Ruby192/lib/ruby/gems/1.9.1/gems/selenium-webdriver-2.31.0/lib/selenium/webdriver/remote/bridge.rb:594:in `execute'", "C:/Ruby192/lib/ruby/gems/1.9.1/gems/selenium-webdriver-2.31.0/lib/selenium/webdriver/remote/bridge.rb:505:in `getElementText'", "C:/Ruby192/lib/ruby/gems/1.9.1/gems/selenium-webdriver-2.31.0/lib/selenium/webdriver/common/element.rb:108:in `text'", "C:/Ruby192/lib/ruby/gems/1.9.1/gems/watir-webdriver-0.6.1/lib/watir-webdriver/browser.rb:97:in `text'", "Test_42_QG_notifications.rb:86:in `test_02_make_QG_copy'", "C:/Ruby192/lib/ruby/1.9.1/minitest/unit.rb:695:in `run'", "C:/Ruby192/lib/ruby/1.9.1/minitest/unit.rb:656:in `block (2 levels) in run_test_suites'", "C:/Ruby192/lib/ruby/1.9.1/minitest/unit.rb:650:in `each'", "C:/Ruby192/lib/ruby/1.9.1/minitest/unit.rb:650:in `block in run_test_suites'", "C:/Ruby192/lib/ruby/1.9.1/minitest/unit.rb:649:in `each'", "C:/Ruby192/lib/ruby/1.9.1/minitest/unit.rb:649:in `run_test_suites'", "C:/Ruby192/lib/ruby/1.9.1/minitest/unit.rb:609:in `run'", "C:/Ruby192/lib/ruby/1.9.1/minitest/unit.rb:508:in `block in autorun'"]
+EStarted InternetExplorerDriver server (32-bit)
+2.39.0.0
+Listening on port 5556
+Successful Login to Usampadmin
+25351
+
+can't convert nil into String
+["C:/Ruby192/lib/ruby/1.9.1/base64.rb:38:in `pack'", "C:/Ruby192/lib/ruby/1.9.1/base64.rb:38:in `encode64'", "Test_42_QG_notifications.rb:147:in `test_03_set_QG_notifications_no_redirection_activity'", "C:/Ruby192/lib/ruby/1.9.1/minitest/unit.rb:695:in `run'", "C:/Ruby192/lib/ruby/1.9.1/minitest/unit.rb:656:in `block (2 levels) in run_test_suites'", "C:/Ruby192/lib/ruby/1.9.1/minitest/unit.rb:650:in `each'", "C:/Ruby192/lib/ruby/1.9.1/minitest/unit.rb:650:in `block in run_test_suites'", "C:/Ruby192/lib/ruby/1.9.1/minitest/unit.rb:649:in `each'", "C:/Ruby192/lib/ruby/1.9.1/minitest/unit.rb:649:in `run_test_suites'", "C:/Ruby192/lib/ruby/1.9.1/minitest/unit.rb:609:in `run'", "C:/Ruby192/lib/ruby/1.9.1/minitest/unit.rb:508:in `block in autorun'"]
+E25351
+
+can't convert nil into String
+["C:/Ruby192/lib/ruby/1.9.1/base64.rb:38:in `pack'", "C:/Ruby192/lib/ruby/1.9.1/base64.rb:38:in `encode64'", "Test_42_QG_notifications.rb:198:in `test_04_achieve_no_clicks_with_no_redirection'", "C:/Ruby192/lib/ruby/1.9.1/minitest/unit.rb:695:in `run'", "C:/Ruby192/lib/ruby/1.9.1/minitest/unit.rb:656:in `block (2 levels) in run_test_suites'", "C:/Ruby192/lib/ruby/1.9.1/minitest/unit.rb:650:in `each'", "C:/Ruby192/lib/ruby/1.9.1/minitest/unit.rb:650:in `block in run_test_suites'", "C:/Ruby192/lib/ruby/1.9.1/minitest/unit.rb:649:in `each'", "C:/Ruby192/lib/ruby/1.9.1/minitest/unit.rb:649:in `run_test_suites'", "C:/Ruby192/lib/ruby/1.9.1/minitest/unit.rb:609:in `run'", "C:/Ruby192/lib/ruby/1.9.1/minitest/unit.rb:508:in `block in autorun'"]
+E
+Finished in 232.040160 seconds.
+
+  1) Error:
+test_02_make_QG_copy(Test_42_QG_notifications):
+Selenium::WebDriver::Error::WebDriverError: unexpected response, code=401, content-type=""
+    C:/Ruby192/lib/ruby/gems/1.9.1/gems/selenium-webdriver-2.31.0/lib/selenium/webdriver/remote/http/common.rb:66:in `create_response'
+    C:/Ruby192/lib/ruby/gems/1.9.1/gems/selenium-webdriver-2.31.0/lib/selenium/webdriver/remote/http/default.rb:66:in `request'
+    C:/Ruby192/lib/ruby/gems/1.9.1/gems/selenium-webdriver-2.31.0/lib/selenium/webdriver/remote/http/common.rb:40:in `call'
+    C:/Ruby192/lib/ruby/gems/1.9.1/gems/selenium-webdriver-2.31.0/lib/selenium/webdriver/remote/bridge.rb:616:in `raw_execute'
+    C:/Ruby192/lib/ruby/gems/1.9.1/gems/selenium-webdriver-2.31.0/lib/selenium/webdriver/remote/bridge.rb:594:in `execute'
+    C:/Ruby192/lib/ruby/gems/1.9.1/gems/selenium-webdriver-2.31.0/lib/selenium/webdriver/remote/bridge.rb:190:in `quit'
+    C:/Ruby192/lib/ruby/gems/1.9.1/gems/selenium-webdriver-2.31.0/lib/selenium/webdriver/ie/bridge.rb:59:in `quit'
+    C:/Ruby192/lib/ruby/gems/1.9.1/gems/selenium-webdriver-2.31.0/lib/selenium/webdriver/common/driver.rb:168:in `quit'
+    C:/Ruby192/lib/ruby/gems/1.9.1/gems/watir-webdriver-0.6.1/lib/watir-webdriver/browser.rb:87:in `close'
+    Test_42_QG_notifications.rb:116:in `rescue in test_02_make_QG_copy'
+    Test_42_QG_notifications.rb:39:in `test_02_make_QG_copy'
+
+  2) Error:
+test_03_set_QG_notifications_no_redirection_activity(Test_42_QG_notifications):
+TypeError: can't convert nil into String
+    Test_42_QG_notifications.rb:178:in `+'
+    Test_42_QG_notifications.rb:178:in `rescue in test_03_set_QG_notifications_no_redirection_activity'
+    Test_42_QG_notifications.rb:125:in `test_03_set_QG_notifications_no_redirection_activity'
+
+  3) Error:
+test_04_achieve_no_clicks_with_no_redirection(Test_42_QG_notifications):
+TypeError: can't convert nil into String
+    Test_42_QG_notifications.rb:256:in `+'
+    Test_42_QG_notifications.rb:256:in `rescue in test_04_achieve_no_clicks_with_no_redirection'
+    Test_42_QG_notifications.rb:186:in `test_04_achieve_no_clicks_with_no_redirection'
+
+4 tests, 0 assertions, 0 failures, 3 errors, 0 skips
+
+Test run options: --seed 31897
+Loaded suite Test_43_Add_tools
+Started
+.Started InternetExplorerDriver server (32-bit)
+2.39.0.0
+Listening on port 5555
+Successful Login to Usampadmin
+Pass
+.Started InternetExplorerDriver server (32-bit)
+2.39.0.0
+Listening on port 5555
+Successful Login to Usampadmin
+Unable to get element text
+["C:/Ruby192/lib/ruby/gems/1.9.1/gems/selenium-webdriver-2.31.0/lib/selenium/webdriver/remote/response.rb:52:in `assert_ok'", "C:/Ruby192/lib/ruby/gems/1.9.1/gems/selenium-webdriver-2.31.0/lib/selenium/webdriver/remote/response.rb:15:in `initialize'", "C:/Ruby192/lib/ruby/gems/1.9.1/gems/selenium-webdriver-2.31.0/lib/selenium/webdriver/remote/http/common.rb:59:in `new'", "C:/Ruby192/lib/ruby/gems/1.9.1/gems/selenium-webdriver-2.31.0/lib/selenium/webdriver/remote/http/common.rb:59:in `create_response'", "C:/Ruby192/lib/ruby/gems/1.9.1/gems/selenium-webdriver-2.31.0/lib/selenium/webdriver/remote/http/default.rb:66:in `request'", "C:/Ruby192/lib/ruby/gems/1.9.1/gems/selenium-webdriver-2.31.0/lib/selenium/webdriver/remote/http/common.rb:40:in `call'", "C:/Ruby192/lib/ruby/gems/1.9.1/gems/selenium-webdriver-2.31.0/lib/selenium/webdriver/remote/bridge.rb:616:in `raw_execute'", "C:/Ruby192/lib/ruby/gems/1.9.1/gems/selenium-webdriver-2.31.0/lib/selenium/webdriver/remote/bridge.rb:594:in `execute'", "C:/Ruby192/lib/ruby/gems/1.9.1/gems/selenium-webdriver-2.31.0/lib/selenium/webdriver/remote/bridge.rb:505:in `getElementText'", "C:/Ruby192/lib/ruby/gems/1.9.1/gems/selenium-webdriver-2.31.0/lib/selenium/webdriver/common/element.rb:108:in `text'", "C:/Ruby192/lib/ruby/gems/1.9.1/gems/watir-webdriver-0.6.1/lib/watir-webdriver/elements/select.rb:208:in `safe_text'", "C:/Ruby192/lib/ruby/gems/1.9.1/gems/watir-webdriver-0.6.1/lib/watir-webdriver/elements/select.rb:155:in `select_by_string'", "C:/Ruby192/lib/ruby/gems/1.9.1/gems/watir-webdriver-0.6.1/lib/watir-webdriver/elements/select.rb:129:in `select_by'", "C:/Ruby192/lib/ruby/gems/1.9.1/gems/watir-webdriver-0.6.1/lib/watir-webdriver/elements/select.rb:64:in `select'", "Test_43_Add_tools.rb:94:in `test_03_token_member_lookup'", "C:/Ruby192/lib/ruby/1.9.1/minitest/unit.rb:695:in `run'", "C:/Ruby192/lib/ruby/1.9.1/minitest/unit.rb:656:in `block (2 levels) in run_test_suites'", "C:/Ruby192/lib/ruby/1.9.1/minitest/unit.rb:650:in `each'", "C:/Ruby192/lib/ruby/1.9.1/minitest/unit.rb:650:in `block in run_test_suites'", "C:/Ruby192/lib/ruby/1.9.1/minitest/unit.rb:649:in `each'", "C:/Ruby192/lib/ruby/1.9.1/minitest/unit.rb:649:in `run_test_suites'", "C:/Ruby192/lib/ruby/1.9.1/minitest/unit.rb:609:in `run'", "C:/Ruby192/lib/ruby/1.9.1/minitest/unit.rb:508:in `block in autorun'"]
+.
+Finished in 110.926134 seconds.
+
+3 tests, 0 assertions, 0 failures, 0 errors, 0 skips
+
+Test run options: --seed 45855
+Loaded suite Test_44_Pub_client_association
+Started
+.Started InternetExplorerDriver server (32-bit)
+2.39.0.0
+Listening on port 5555
+Successful Login to Usampadmin
+Publisher not added
+"TEST CLIENT COMPANY (RRH)" not found in select list
+["C:/Ruby192/lib/ruby/gems/1.9.1/gems/watir-webdriver-0.6.1/lib/watir-webdriver/elements/select.rb:216:in `no_value_found'", "C:/Ruby192/lib/ruby/gems/1.9.1/gems/watir-webdriver-0.6.1/lib/watir-webdriver/elements/select.rb:142:in `select_by_string'", "C:/Ruby192/lib/ruby/gems/1.9.1/gems/watir-webdriver-0.6.1/lib/watir-webdriver/elements/select.rb:129:in `select_by'", "C:/Ruby192/lib/ruby/gems/1.9.1/gems/watir-webdriver-0.6.1/lib/watir-webdriver/elements/select.rb:64:in `select'", "Test_44_Pub_client_association.rb:68:in `test_02_make_pub_level_setting'", "C:/Ruby192/lib/ruby/1.9.1/minitest/unit.rb:695:in `run'", "C:/Ruby192/lib/ruby/1.9.1/minitest/unit.rb:656:in `block (2 levels) in run_test_suites'", "C:/Ruby192/lib/ruby/1.9.1/minitest/unit.rb:650:in `each'", "C:/Ruby192/lib/ruby/1.9.1/minitest/unit.rb:650:in `block in run_test_suites'", "C:/Ruby192/lib/ruby/1.9.1/minitest/unit.rb:649:in `each'", "C:/Ruby192/lib/ruby/1.9.1/minitest/unit.rb:649:in `run_test_suites'", "C:/Ruby192/lib/ruby/1.9.1/minitest/unit.rb:609:in `run'", "C:/Ruby192/lib/ruby/1.9.1/minitest/unit.rb:508:in `block in autorun'"]
+EStarted InternetExplorerDriver server (32-bit)
+2.39.0.0
+Listening on port 5555
+Successful Login to Usampadmin
+Fail
+.Started InternetExplorerDriver server (32-bit)
+2.39.0.0
+Listening on port 5555
+Successful Login to Usampadmin
+Pass
+.Started InternetExplorerDriver server (32-bit)
+2.39.0.0
+Listening on port 5555
+Successful Login to Usampadmin
+Pass
+.
+Finished in 218.227129 seconds.
+
+  1) Error:
+test_02_make_pub_level_setting(Test_44_Pub_client_association):
+TypeError: can't convert nil into String
+    Test_44_Pub_client_association.rb:107:in `+'
+    Test_44_Pub_client_association.rb:107:in `rescue in test_02_make_pub_level_setting'
+    Test_44_Pub_client_association.rb:38:in `test_02_make_pub_level_setting'
+
+5 tests, 0 assertions, 0 failures, 1 errors, 0 skips
+
+Test run options: --seed 27822
+Loaded suite Test_45_Email_link_pub
+Started
+.Started InternetExplorerDriver server (32-bit)
+2.39.0.0
+Listening on port 5555
+Successful Login to Usampadmin
+25351
+115343
+Pass
+.115343
+MAIL PASSED
+.
+Finished in 126.817369 seconds.
+
+3 tests, 0 assertions, 0 failures, 0 errors, 0 skips
+
+Test run options: --seed 22562
+Loaded suite Test_46_Donot_include_member_last_hour
+Started
+.Started InternetExplorerDriver server (32-bit)
+2.39.0.0
+Listening on port 5555
+Successful Login to Usampadmin
+25351
+115343
+MjUzNTEK
+MTE1MzQz
+Started InternetExplorerDriver server (32-bit)
+2.39.0.0
+Listening on port 5556
+Successful Login to Usampadmin
+p.usampadmin.com/add_quota_group.php?project_id=MjUzNTEK
+&quota_group_id=MTE1MzQz
+object is disabled {:id=>"txtExcludeMembersHours", :tag_name=>"input or textarea", :type=>"(any text type)"}
+["C:/Ruby192/lib/ruby/gems/1.9.1/gems/watir-webdriver-0.6.1/lib/watir-webdriver/elements/element.rb:403:in `assert_enabled'", "C:/Ruby192/lib/ruby/gems/1.9.1/gems/watir-webdriver-0.6.1/lib/watir-webdriver/elements/element.rb:407:in `assert_writable'", "C:/Ruby192/lib/ruby/gems/1.9.1/gems/watir-webdriver-0.6.1/lib/watir-webdriver/user_editable.rb:9:in `set'", "Test_46_Donot_include_member_last_hour.rb:78:in `test_02_qg_setup'", "C:/Ruby192/lib/ruby/1.9.1/minitest/unit.rb:695:in `run'", "C:/Ruby192/lib/ruby/1.9.1/minitest/unit.rb:656:in `block (2 levels) in run_test_suites'", "C:/Ruby192/lib/ruby/1.9.1/minitest/unit.rb:650:in `each'", "C:/Ruby192/lib/ruby/1.9.1/minitest/unit.rb:650:in `block in run_test_suites'", "C:/Ruby192/lib/ruby/1.9.1/minitest/unit.rb:649:in `each'", "C:/Ruby192/lib/ruby/1.9.1/minitest/unit.rb:649:in `run_test_suites'", "C:/Ruby192/lib/ruby/1.9.1/minitest/unit.rb:609:in `run'", "C:/Ruby192/lib/ruby/1.9.1/minitest/unit.rb:508:in `block in autorun'"]
+.test string
+115343
+**** Waiting for surveys to load ****
+Fail
+.Started InternetExplorerDriver server (32-bit)
+2.39.0.0
+Listening on port 5556
+Successful Login to Usampadmin
+25351
+115343
+Started InternetExplorerDriver server (32-bit)
+2.39.0.0
+Listening on port 5557
+Successful Login to Usampadmin
+Updated message shown
+Pass
+.Successful Login to ipoll site
+115343
+**** Waiting for surveys to load ****
+Pass
+.
+Finished in 480.815337 seconds.
+
+5 tests, 0 assertions, 0 failures, 0 errors, 0 skips
+
+Test run options: --seed 1716
+Loaded suite Test_47_QG_Publisher_redirect
+Started
+.Started InternetExplorerDriver server (32-bit)
+2.39.0.0
+Listening on port 5555
+Successful Login to Usampadmin
+Pass
+25351
+115343
+.115343
+Started InternetExplorerDriver server (32-bit)
+2.39.0.0
+Listening on port 5555
+Pass
+Started InternetExplorerDriver server (32-bit)
+2.39.0.0
+Listening on port 5556
+Pass
+Started InternetExplorerDriver server (32-bit)
+2.39.0.0
+Listening on port 5555
+Pass
+.Started InternetExplorerDriver server (32-bit)
+2.39.0.0
+Listening on port 5556
+Successful Login to Usampadmin
+25351
+115343
+Modal dialog present
+["C:/Ruby192/lib/ruby/gems/1.9.1/gems/selenium-webdriver-2.31.0/lib/selenium/webdriver/remote/response.rb:52:in `assert_ok'", "C:/Ruby192/lib/ruby/gems/1.9.1/gems/selenium-webdriver-2.31.0/lib/selenium/webdriver/remote/response.rb:15:in `initialize'", "C:/Ruby192/lib/ruby/gems/1.9.1/gems/selenium-webdriver-2.31.0/lib/selenium/webdriver/remote/http/common.rb:59:in `new'", "C:/Ruby192/lib/ruby/gems/1.9.1/gems/selenium-webdriver-2.31.0/lib/selenium/webdriver/remote/http/common.rb:59:in `create_response'", "C:/Ruby192/lib/ruby/gems/1.9.1/gems/selenium-webdriver-2.31.0/lib/selenium/webdriver/remote/http/default.rb:66:in `request'", "C:/Ruby192/lib/ruby/gems/1.9.1/gems/selenium-webdriver-2.31.0/lib/selenium/webdriver/remote/http/common.rb:40:in `call'", "C:/Ruby192/lib/ruby/gems/1.9.1/gems/selenium-webdriver-2.31.0/lib/selenium/webdriver/remote/bridge.rb:616:in `raw_execute'", "C:/Ruby192/lib/ruby/gems/1.9.1/gems/selenium-webdriver-2.31.0/lib/selenium/webdriver/remote/bridge.rb:594:in `execute'", "C:/Ruby192/lib/ruby/gems/1.9.1/gems/selenium-webdriver-2.31.0/lib/selenium/webdriver/remote/bridge.rb:184:in `switchToDefaultContent'", "C:/Ruby192/lib/ruby/gems/1.9.1/gems/selenium-webdriver-2.31.0/lib/selenium/webdriver/common/target_locator.rb:68:in `default_content'", "C:/Ruby192/lib/ruby/gems/1.9.1/gems/watir-webdriver-0.6.1/lib/watir-webdriver/browser.rb:180:in `assert_exists'", "C:/Ruby192/lib/ruby/gems/1.9.1/gems/watir-webdriver-0.6.1/lib/watir-webdriver/elements/element.rb:383:in `locate'", "C:/Ruby192/lib/ruby/gems/1.9.1/gems/watir-webdriver-0.6.1/lib/watir-webdriver/elements/element.rb:362:in `assert_exists'", "C:/Ruby192/lib/ruby/gems/1.9.1/gems/watir-webdriver-0.6.1/lib/watir-webdriver/elements/element.rb:95:in `click'", "Test_47_QG_Publisher_redirect.rb:235:in `test_04_check_pub_redirect'", "C:/Ruby192/lib/ruby/1.9.1/minitest/unit.rb:695:in `run'", "C:/Ruby192/lib/ruby/1.9.1/minitest/unit.rb:656:in `block (2 levels) in run_test_suites'", "C:/Ruby192/lib/ruby/1.9.1/minitest/unit.rb:650:in `each'", "C:/Ruby192/lib/ruby/1.9.1/minitest/unit.rb:650:in `block in run_test_suites'", "C:/Ruby192/lib/ruby/1.9.1/minitest/unit.rb:649:in `each'", "C:/Ruby192/lib/ruby/1.9.1/minitest/unit.rb:649:in `run_test_suites'", "C:/Ruby192/lib/ruby/1.9.1/minitest/unit.rb:609:in `run'", "C:/Ruby192/lib/ruby/1.9.1/minitest/unit.rb:508:in `block in autorun'"]
+.Started InternetExplorerDriver server (32-bit)
+2.39.0.0
+Listening on port 5555
+unable to connect to IE server within 30 seconds
+["C:/Ruby192/lib/ruby/gems/1.9.1/gems/selenium-webdriver-2.31.0/lib/selenium/webdriver/ie/server.rb:46:in `start'", "C:/Ruby192/lib/ruby/gems/1.9.1/gems/selenium-webdriver-2.31.0/lib/selenium/webdriver/ie/bridge.rb:32:in `initialize'", "C:/Ruby192/lib/ruby/gems/1.9.1/gems/selenium-webdriver-2.31.0/lib/selenium/webdriver/common/driver.rb:35:in `new'", "C:/Ruby192/lib/ruby/gems/1.9.1/gems/selenium-webdriver-2.31.0/lib/selenium/webdriver/common/driver.rb:35:in `for'", "C:/Ruby192/lib/ruby/gems/1.9.1/gems/selenium-webdriver-2.31.0/lib/selenium/webdriver.rb:67:in `for'", "D:/IMPROVED_CODE_AAMIR/Usamp_lib.rb:71:in `Usampadmin_login'", "Test_47_QG_Publisher_redirect.rb:322:in `test_05_reset_pub_settings'", "C:/Ruby192/lib/ruby/1.9.1/minitest/unit.rb:695:in `run'", "C:/Ruby192/lib/ruby/1.9.1/minitest/unit.rb:656:in `block (2 levels) in run_test_suites'", "C:/Ruby192/lib/ruby/1.9.1/minitest/unit.rb:650:in `each'", "C:/Ruby192/lib/ruby/1.9.1/minitest/unit.rb:650:in `block in run_test_suites'", "C:/Ruby192/lib/ruby/1.9.1/minitest/unit.rb:649:in `each'", "C:/Ruby192/lib/ruby/1.9.1/minitest/unit.rb:649:in `run_test_suites'", "C:/Ruby192/lib/ruby/1.9.1/minitest/unit.rb:609:in `run'", "C:/Ruby192/lib/ruby/1.9.1/minitest/unit.rb:508:in `block in autorun'"]
+.
+Finished in 260.431876 seconds.
+
+5 tests, 0 assertions, 0 failures, 0 errors, 0 skips
+
+Test run options: --seed 29166
+Loaded suite Test_49_Supplier_add_show_hide
+Started
+.Started InternetExplorerDriver server (32-bit)
+2.39.0.0
+Listening on port 5556
+unable to connect to IE server within 30 seconds
+["C:/Ruby192/lib/ruby/gems/1.9.1/gems/selenium-webdriver-2.31.0/lib/selenium/webdriver/ie/server.rb:46:in `start'", "C:/Ruby192/lib/ruby/gems/1.9.1/gems/selenium-webdriver-2.31.0/lib/selenium/webdriver/ie/bridge.rb:32:in `initialize'", "C:/Ruby192/lib/ruby/gems/1.9.1/gems/selenium-webdriver-2.31.0/lib/selenium/webdriver/common/driver.rb:35:in `new'", "C:/Ruby192/lib/ruby/gems/1.9.1/gems/selenium-webdriver-2.31.0/lib/selenium/webdriver/common/driver.rb:35:in `for'", "C:/Ruby192/lib/ruby/gems/1.9.1/gems/selenium-webdriver-2.31.0/lib/selenium/webdriver.rb:67:in `for'", "D:/IMPROVED_CODE_AAMIR/Usamp_lib.rb:71:in `Usampadmin_login'", "Test_49_Supplier_add_show_hide.rb:47:in `test_02_add_supplier'", "C:/Ruby192/lib/ruby/1.9.1/minitest/unit.rb:695:in `run'", "C:/Ruby192/lib/ruby/1.9.1/minitest/unit.rb:656:in `block (2 levels) in run_test_suites'", "C:/Ruby192/lib/ruby/1.9.1/minitest/unit.rb:650:in `each'", "C:/Ruby192/lib/ruby/1.9.1/minitest/unit.rb:650:in `block in run_test_suites'", "C:/Ruby192/lib/ruby/1.9.1/minitest/unit.rb:649:in `each'", "C:/Ruby192/lib/ruby/1.9.1/minitest/unit.rb:649:in `run_test_suites'", "C:/Ruby192/lib/ruby/1.9.1/minitest/unit.rb:609:in `run'", "C:/Ruby192/lib/ruby/1.9.1/minitest/unit.rb:508:in `block in autorun'"]
+ELogged it to Network site
+undefined method `select_list' for nil:NilClass
+["Test_49_Supplier_add_show_hide.rb:112:in `test_03_supplier_reflection'", "C:/Ruby192/lib/ruby/1.9.1/minitest/unit.rb:695:in `run'", "C:/Ruby192/lib/ruby/1.9.1/minitest/unit.rb:656:in `block (2 levels) in run_test_suites'", "C:/Ruby192/lib/ruby/1.9.1/minitest/unit.rb:650:in `each'", "C:/Ruby192/lib/ruby/1.9.1/minitest/unit.rb:650:in `block in run_test_suites'", "C:/Ruby192/lib/ruby/1.9.1/minitest/unit.rb:649:in `each'", "C:/Ruby192/lib/ruby/1.9.1/minitest/unit.rb:649:in `run_test_suites'", "C:/Ruby192/lib/ruby/1.9.1/minitest/unit.rb:609:in `run'", "C:/Ruby192/lib/ruby/1.9.1/minitest/unit.rb:508:in `block in autorun'"]
+.unable to connect to IE server within 30 seconds
+["C:/Ruby192/lib/ruby/gems/1.9.1/gems/selenium-webdriver-2.31.0/lib/selenium/webdriver/ie/server.rb:46:in `start'", "C:/Ruby192/lib/ruby/gems/1.9.1/gems/selenium-webdriver-2.31.0/lib/selenium/webdriver/ie/bridge.rb:32:in `initialize'", "C:/Ruby192/lib/ruby/gems/1.9.1/gems/selenium-webdriver-2.31.0/lib/selenium/webdriver/common/driver.rb:35:in `new'", "C:/Ruby192/lib/ruby/gems/1.9.1/gems/selenium-webdriver-2.31.0/lib/selenium/webdriver/common/driver.rb:35:in `for'", "C:/Ruby192/lib/ruby/gems/1.9.1/gems/selenium-webdriver-2.31.0/lib/selenium/webdriver.rb:67:in `for'", "D:/IMPROVED_CODE_AAMIR/Usamp_lib.rb:71:in `Usampadmin_login'", "Test_49_Supplier_add_show_hide.rb:155:in `test_04_show_hide'", "C:/Ruby192/lib/ruby/1.9.1/minitest/unit.rb:695:in `run'", "C:/Ruby192/lib/ruby/1.9.1/minitest/unit.rb:656:in `block (2 levels) in run_test_suites'", "C:/Ruby192/lib/ruby/1.9.1/minitest/unit.rb:650:in `each'", "C:/Ruby192/lib/ruby/1.9.1/minitest/unit.rb:650:in `block in run_test_suites'", "C:/Ruby192/lib/ruby/1.9.1/minitest/unit.rb:649:in `each'", "C:/Ruby192/lib/ruby/1.9.1/minitest/unit.rb:649:in `run_test_suites'", "C:/Ruby192/lib/ruby/1.9.1/minitest/unit.rb:609:in `run'", "C:/Ruby192/lib/ruby/1.9.1/minitest/unit.rb:508:in `block in autorun'"]
+E
+Finished in 215.773910 seconds.
+
+  1) Error:
+test_02_add_supplier(Test_49_Supplier_add_show_hide):
+NoMethodError: undefined method `close' for nil:NilClass
+    Test_49_Supplier_add_show_hide.rb:82:in `rescue in test_02_add_supplier'
+    Test_49_Supplier_add_show_hide.rb:39:in `test_02_add_supplier'
+
+  2) Error:
+test_04_show_hide(Test_49_Supplier_add_show_hide):
+NoMethodError: undefined method `close' for nil:NilClass
+    Test_49_Supplier_add_show_hide.rb:238:in `rescue in test_04_show_hide'
+    Test_49_Supplier_add_show_hide.rb:147:in `test_04_show_hide'
+
+4 tests, 0 assertions, 0 failures, 2 errors, 0 skips
+
+Test run options: --seed 3905
+Started InternetExplorerDriver server (32-bit)
+2.39.0.0
+Listening on port 5557
+D:/IMPROVED_CODE_AAMIR/Output Repository/Non4S_Test_Report.html
+Loaded suite IM_Suite
+Started
+
+Finished in 0.000000 seconds.
+
+0 tests, 0 assertions, 0 failures, 0 errors, 0 skips
+
+Test run options: --seed 24389

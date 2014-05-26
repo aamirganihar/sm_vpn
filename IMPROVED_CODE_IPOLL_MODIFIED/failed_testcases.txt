@@ -1,0 +1,3 @@
+#42    - QG copy pop up
+55 - timeout - generate report
+#71 - pop up kill
