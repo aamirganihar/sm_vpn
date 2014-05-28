@@ -1,0 +1,97 @@
+Waiting for counts to load
+Waiting for counts to load
+Waiting for counts to load
+Waiting for counts to load
+waiting for element
+waiting for element
+https://p.network.u-samp.com/SelfServe/index.php?mode=group/run&prid=NTgzNTE=&groupid=NzU4OTk=#dashboard
+NzU4OTk=
+"one:NzU4OTk="
+http://p.sm1mr.com/smsup.php?grpId=NzU4OTk=&supId=MzYy=
+actual
+http://p.sm1mr.com/smsup.php?grpId=NzU4OTk=&supId=MzYy=
+uSamp Sample Market
+HOME SAMPLEMARKET™ PANELSHIELD™ ACCOUNT
+Welcome Nitin Kumar Log Out
+Projects
+Reports
+Settings
+Mailbox
+Test Automation Project_2012-11-14 23:23:07
+Test Automation Group_2012-11-14 23:23:31
+GROUP STATUS:
+Live
+NEXT ACTION:
+Close when N= has been reached
+Pause
+All Groups:
+Go Live
+Pause
+Close
+Copy this group
+Delete this group
+Group Details
+Dashboard
+Email Invites
+Group Stats
+Transactions
+Change Settings
+Automatically Go Live: OFF
+Automatically Close: When 25 Completes
+Group Snapshot
+Refresh Stats
+Channels   N= Clicks Completes Fails Over
+Quota Actual
+Incidence Emails in
+Queue / Sent On Panel Dashboard
+FocuslineSurveys
+5 0 0 0 0 0.0% 0 / 0 yes
+Surveyhead
+5 0 0 0 0 0.0% 0 / 0 yes
+uSamp
+5 0 0 0 0 0.0% automatic yes
+Test Sup 1
+10 3 0 0 0 0.0% -- --
+Total   25 3 0 0 0 Avg. 0.0% 0 / 0 --
+Add / Edit Channels
+Add / Edit Channels
+Group Cost Report
+Download this report
+Channels Completes Fails Over Quota Email Costs Reward Costs Actual CPI Total
+FocuslineSurveys 0 0 0 $0.00 $0.00 $1.00 $0.00
+Surveyhead 0 0 0 $0.00 $0.00 $1.00 $0.00
+uSamp 0 0 0 Included Included $5.85 $0.00
+Test Sup 1 0 0 0 n/a n/a $1.25 $0.00
+Total 0 0 0 $0.00 $0.00 Avg. $2.28 $0.00
+Reward & CPI History
+Sample Channel Reward Actual CPI Created By Date/Time Created
+FocuslineSurveys $1.50 $1.00 Nitin Kumar 11/14/2012 11:24 PM
+Surveyhead $1.50 $1.00 Nitin Kumar 11/14/2012 11:24 PM
+uSamp Included $5.85 Nitin Kumar 11/14/2012 11:24 PM
+Project
+Test Automation Project_2012-11-14 23:23:07
+Test Automation Group_2012-11-14 23:23:31
+Add a new project
+All Projects
+Recent
+In Consideration (146)
+Setting Up (72)
+Ready to Go Live (0)
+Live (25)
+Paused (1)
+Closed (197)
+Completed (22)
+Search by Project, Group or Number
+Search
+Advanced Search »
+uSamp Support
+If this is an urgent issue, please use uSamp On Call and your message will be sent to the first available Project Manager.
+Contact your Project Manager
+Help us improve this site. Send us your feedback.
+HOME SAMPLEMARKET™ PANELSHIELD™ ACCOUNT USAMP.COM
+Office: +1 (818) 524-1218 x610 Sales: sales@uSamp.com
+© 2012 uSamp (United Sample, Inc). All rights reserved. Privacy policy.
+http://p.sm1mr.com/smsup.php?grpId=NzU4OTk=&supId=MzYy=&test=1
+11111111111111111111111111111111
+11111111111111111111111111111111
+Test case 40 has completed

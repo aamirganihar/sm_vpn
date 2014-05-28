@@ -1,0 +1,509 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html
+  PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+  <title>RSpec results</title>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <meta http-equiv="Expires" content="-1" />
+  <meta http-equiv="Pragma" content="no-cache" />
+  <style type="text/css">
+  body {
+    margin: 0;
+    padding: 0;
+    background: #fff;
+    font-size: 80%;
+  }
+  </style>
+  <script type="text/javascript">
+    // <![CDATA[
+
+function addClass(element_id, classname) {
+  document.getElementById(element_id).className += (" " + classname);
+}
+
+function removeClass(element_id, classname) {
+  var elem = document.getElementById(element_id);
+  var classlist = elem.className.replace(classname,'');
+  elem.className = classlist;
+}
+
+function moveProgressBar(percentDone) {
+  document.getElementById("rspec-header").style.width = percentDone +"%";
+}
+
+function makeRed(element_id) {
+  removeClass(element_id, 'passed');
+  removeClass(element_id, 'not_implemented');
+  addClass(element_id,'failed');
+}
+
+function makeYellow(element_id) {
+  var elem = document.getElementById(element_id);
+  if (elem.className.indexOf("failed") == -1) {  // class doesn't includes failed
+    if (elem.className.indexOf("not_implemented") == -1) { // class doesn't include not_implemented
+      removeClass(element_id, 'passed');
+      addClass(element_id,'not_implemented');
+    }
+  }
+}
+
+function apply_filters() {
+  var passed_filter = document.getElementById('passed_checkbox').checked;
+  var failed_filter = document.getElementById('failed_checkbox').checked;
+  var pending_filter = document.getElementById('pending_checkbox').checked;
+
+  assign_display_style("example passed", passed_filter);
+  assign_display_style("example failed", failed_filter);
+  assign_display_style("example not_implemented", pending_filter);
+
+  assign_display_style_for_group("example_group passed", passed_filter);
+  assign_display_style_for_group("example_group not_implemented", pending_filter, pending_filter || passed_filter);
+  assign_display_style_for_group("example_group failed", failed_filter, failed_filter || pending_filter || passed_filter);
+}
+
+function get_display_style(display_flag) {
+  var style_mode = 'none';
+  if (display_flag == true) {
+    style_mode = 'block';
+  }
+  return style_mode;
+}
+
+function assign_display_style(classname, display_flag) {
+  var style_mode = get_display_style(display_flag);
+  var elems = document.getElementsByClassName(classname)
+  for (var i=0; i<elems.length;i++) {
+    elems[i].style.display = style_mode;
+  }
+}
+
+function assign_display_style_for_group(classname, display_flag, subgroup_flag) {
+  var display_style_mode = get_display_style(display_flag);
+  var subgroup_style_mode = get_display_style(subgroup_flag);
+  var elems = document.getElementsByClassName(classname)
+  for (var i=0; i<elems.length;i++) {
+    var style_mode = display_style_mode;
+    if ((display_flag != subgroup_flag) && (elems[i].getElementsByTagName('dt')[0].innerHTML.indexOf(", ") != -1)) {
+      elems[i].style.display = subgroup_style_mode;
+    } else {
+      elems[i].style.display = display_style_mode;
+    }
+  }
+}
+
+    // ]]>
+  </script>
+  <style type="text/css">
+#rspec-header {
+  background: #65C400; color: #fff; height: 4em;
+}
+
+.rspec-report h1 {
+  margin: 0px 10px 0px 10px;
+  padding: 10px;
+  font-family: "Lucida Grande", Helvetica, sans-serif;
+  font-size: 1.8em;
+  position: absolute;
+}
+
+#label {
+  float:left;
+}
+
+#display-filters {
+  float:left;
+  padding: 28px 0 0 40%;
+  font-family: "Lucida Grande", Helvetica, sans-serif;
+}
+
+#summary {
+  float:right;
+  padding: 5px 10px;
+  font-family: "Lucida Grande", Helvetica, sans-serif;
+  text-align: right;
+}
+
+#summary p {
+  margin: 0 0 0 2px;
+}
+
+#summary #totals {
+  font-size: 1.2em;
+}
+
+.example_group {
+  margin: 0 10px 5px;
+  background: #fff;
+}
+
+dl {
+  margin: 0; padding: 0 0 5px;
+  font: normal 11px "Lucida Grande", Helvetica, sans-serif;
+}
+
+dt {
+  padding: 3px;
+  background: #65C400;
+  color: #fff;
+  font-weight: bold;
+}
+
+dd {
+  margin: 5px 0 5px 5px;
+  padding: 3px 3px 3px 18px;
+}
+
+dd .duration {
+  padding-left: 5px;
+  text-align: right;
+  right: 0px;
+  float:right;
+}
+
+dd.example.passed {
+  border-left: 5px solid #65C400;
+  border-bottom: 1px solid #65C400;
+  background: #DBFFB4; color: #3D7700;
+}
+
+dd.example.not_implemented {
+  border-left: 5px solid #FAF834;
+  border-bottom: 1px solid #FAF834;
+  background: #FCFB98; color: #131313;
+}
+
+dd.example.pending_fixed {
+  border-left: 5px solid #0000C2;
+  border-bottom: 1px solid #0000C2;
+  color: #0000C2; background: #D3FBFF;
+}
+
+dd.example.failed {
+  border-left: 5px solid #C20000;
+  border-bottom: 1px solid #C20000;
+  color: #C20000; background: #FFFBD3;
+}
+
+
+dt.not_implemented {
+  color: #000000; background: #FAF834;
+}
+
+dt.pending_fixed {
+  color: #FFFFFF; background: #C40D0D;
+}
+
+dt.failed {
+  color: #FFFFFF; background: #C40D0D;
+}
+
+
+#rspec-header.not_implemented {
+  color: #000000; background: #FAF834;
+}
+
+#rspec-header.pending_fixed {
+  color: #FFFFFF; background: #C40D0D;
+}
+
+#rspec-header.failed {
+  color: #FFFFFF; background: #C40D0D;
+}
+
+
+.backtrace {
+  color: #000;
+  font-size: 12px;
+}
+
+a {
+  color: #BE5C00;
+}
+
+/* Ruby code, style similar to vibrant ink */
+.ruby {
+  font-size: 12px;
+  font-family: monospace;
+  color: white;
+  background-color: black;
+  padding: 0.1em 0 0.2em 0;
+}
+
+.ruby .keyword { color: #FF6600; }
+.ruby .constant { color: #339999; }
+.ruby .attribute { color: white; }
+.ruby .global { color: white; }
+.ruby .module { color: white; }
+.ruby .class { color: white; }
+.ruby .string { color: #66FF00; }
+.ruby .ident { color: white; }
+.ruby .method { color: #FFCC00; }
+.ruby .number { color: white; }
+.ruby .char { color: white; }
+.ruby .comment { color: #9933CC; }
+.ruby .symbol { color: white; }
+.ruby .regex { color: #44B4CC; }
+.ruby .punct { color: white; }
+.ruby .escape { color: white; }
+.ruby .interp { color: white; }
+.ruby .expr { color: white; }
+
+.ruby .offending { background-color: gray; }
+.ruby .linenum {
+  width: 75px;
+  padding: 0.1em 1em 0.2em 0;
+  color: #000000;
+  background-color: #FFFBD3;
+}
+
+  </style>
+</head>
+<body>
+<div class="rspec-report">
+
+<div id="rspec-header">
+  <div id="label">
+    <h1>RSpec Code Examples</h1>
+  </div>
+
+  <div id="display-filters">
+    <input id="passed_checkbox" name="passed_checkbox" type="checkbox" checked onchange="apply_filters()" value="1"> <label for="passed_checkbox">Passed</label>
+    <input id="failed_checkbox" name="failed_checkbox" type="checkbox" checked onchange="apply_filters()" value="2"> <label for="failed_checkbox">Failed</label>
+    <input id="pending_checkbox" name="pending_checkbox" type="checkbox" checked onchange="apply_filters()" value="3"> <label for="pending_checkbox">Pending</label>
+  </div>
+
+  <div id="summary">
+    <p id="totals">&nbsp;</p>
+    <p id="duration">&nbsp;</p>
+  </div>
+</div>
+
+
+<div class="results">
+<div id="div_group_1" class="example_group passed">
+  <dl style="margin-left: 0px;">
+  <dt id="example_group_1" class="passed">Production Panelshield tests</dt>
+    <script type="text/javascript">moveProgressBar('14.2');</script>
+    <dd class="example passed"><span class="passed_spec_name">To successfully create a Panelshield project</span><span class='duration'>28.44152s</span></dd>
+    <script type="text/javascript">moveProgressBar('28.5');</script>
+    <dd class="example passed"><span class="passed_spec_name">To successfully add a supplier to a Panelshield project</span><span class='duration'>17.59995s</span></dd>
+    <script type="text/javascript">makeRed('rspec-header');</script>
+    <script type="text/javascript">makeRed('div_group_1');</script>
+    <script type="text/javascript">makeRed('example_group_1');</script>
+    <script type="text/javascript">moveProgressBar('42.8');</script>
+    <dd class="example failed">
+      <span class="failed_spec_name">To Simulate Maximum clicks</span>
+      <span class="duration">30.61609s</span>
+      <div class="failure" id="failure_1">
+        <div class="message"><pre>expected &quot;The survey you have attempted is now closed.\nLo sentimos, pero la encuesta est\u00E1 cerrado.\n\u6211\u4EEC\u5F88\u62B1\u6B49\uFF0C\u8FD9\u9879\u7EDF\u8BA1\u8C03\u67E5\u662F\u73B0\u5DF2\u5173\u95ED\u3002\nVi er kede af det, den unders\u00F8gelse er nu afsluttet.\nHet spijt ons, de enqu\u00EAte is nu gesloten.\nOlemme pahoillamme, kysely on nyt p\u00E4\u00E4ttynyt.\nNous sommes d\u00E9sol\u00E9s, mais l'enqu\u00EAte est maintenant termin\u00E9e.\nWir bedauern, die Umfrage ist jetzt geschlossen.\n\u039B\u03C5\u03C0\u03BF\u03CD\u03BC\u03B1\u03C3\u03C4\u03B5, \u03B7 \u03AD\u03C1\u03B5\u03C5\u03BD\u03B1 \u03AD\u03C7\u03B5\u03B9 \u03C0\u03BB\u03AD\u03BF\u03BD \u03BA\u03BB\u03B5\u03AF\u03C3\u03B5\u03B9.\n\u0939\u092E\u0947\u0902 \u0916\u0947\u0926 \u0939\u0948 , \u0907\u0938 \u0938\u0930\u094D\u0935\u0947\u0915\u094D\u0937\u0923 \u0905\u092C \u092C\u0902\u0926 \u0939\u0948.\nSiamo spiacenti, l'indagine \u00E8 chiusa.\n\u7533\u3057\u8A33\u3042\u308A\u307E\u305B\u3093\u304C\u3001\u3053\u306E\u8ABF\u67FB\u306F\u3001\u73FE\u5728\u53D7\u3051\u4ED8\u3051\u3066\u3044\u307E\u305B\u3093\u3002.\n\uC8C4\uC1A1\uD558\uC9C0\uB9CC\uC774\uC870\uC0AC\uB294\uC9C0\uAE08\uD3D0\uC1C4\uD569\uB2C8\uB2E4.\nVi beklager, unders\u00F8kelsen er n\u00E5 stengt.\nNiestety, badanie jest teraz zamknieta.\nLamentamos, mas o inqu\uFFFDrito j\u00E1 foi encerrado.\n\u041A \u0441\u043E\u0436\u0430\u043B\u0435\u043D\u0438\u044E, \u043E\u0431\u0441\u043B\u0435\u0434\u043E\u0432\u0430\u043D\u0438\u0435 \u0432 \u043D\u0430\u0441\u0442\u043E\u044F\u0449\u0435\u0435 \u0432\u0440\u0435\u043C\u044F \u0437\u0430\u043A\u0440\u044B\u0442\u044B.\nTyv\u00E4rr unders\u00F6kningen \u00E4r nu avslutad.&quot; to include &quot;Rediff&quot;
+Diff:
+@@ -1,2 +1,19 @@
+-Rediff
++The survey you have attempted is now closed.
++Lo sentimos, pero la encuesta está cerrado.
++我们很抱歉，这项统计调查是现已关闭。
++Vi er kede af det, den undersøgelse er nu afsluttet.
++Het spijt ons, de enquête is nu gesloten.
++Olemme pahoillamme, kysely on nyt päättynyt.
++Nous sommes désolés, mais l'enquête est maintenant terminée.
++Wir bedauern, die Umfrage ist jetzt geschlossen.
++Λυπούμαστε, η έρευνα έχει πλέον κλείσει.
++हमें खेद है , इस सर्वेक्षण अब बंद है.
++Siamo spiacenti, l'indagine è chiusa.
++申し訳ありませんが、この調査は、現在受け付けていません。.
++죄송하지만이조사는지금폐쇄합니다.
++Vi beklager, undersøkelsen er nå stengt.
++Niestety, badanie jest teraz zamknieta.
++Lamentamos, mas o inqu�rito já foi encerrado.
++К сожалению, обследование в настоящее время закрыты.
++Tyvärr undersökningen är nu avslutad.
+</pre></div>
+        <div class="backtrace"><pre>./panelshield_stage.rb:100:in `block (2 levels) in <top (required)>'</pre></div>
+    <pre class="ruby"><code><span class="linenum">98</span>		@browser1.goto("#{@supplier_url}")
+<span class="linenum">99</span>		sleep 10
+<span class="offending"><span class="linenum">100</span>		@browser1.text.should include ("Rediff")</span>
+<span class="linenum">101</span>		@browser1.cookies.clear
+<span class="linenum">102</span>		#@browser1.close
+<span class="linenum">103</span><span class="comment"># gem install syntax to get syntax highlighting</span></code></pre>
+      </div>
+    </dd>
+    <script type="text/javascript">moveProgressBar('57.1');</script>
+    <dd class="example failed">
+      <span class="failed_spec_name">To Simulate Duplicate Survey Complete Attempts</span>
+      <span class="duration">27.92525s</span>
+      <div class="failure" id="failure_2">
+        <div class="message"><pre>expected &quot;The survey you have attempted is now closed.\nLo sentimos, pero la encuesta est\u00E1 cerrado.\n\u6211\u4EEC\u5F88\u62B1\u6B49\uFF0C\u8FD9\u9879\u7EDF\u8BA1\u8C03\u67E5\u662F\u73B0\u5DF2\u5173\u95ED\u3002\nVi er kede af det, den unders\u00F8gelse er nu afsluttet.\nHet spijt ons, de enqu\u00EAte is nu gesloten.\nOlemme pahoillamme, kysely on nyt p\u00E4\u00E4ttynyt.\nNous sommes d\u00E9sol\u00E9s, mais l'enqu\u00EAte est maintenant termin\u00E9e.\nWir bedauern, die Umfrage ist jetzt geschlossen.\n\u039B\u03C5\u03C0\u03BF\u03CD\u03BC\u03B1\u03C3\u03C4\u03B5, \u03B7 \u03AD\u03C1\u03B5\u03C5\u03BD\u03B1 \u03AD\u03C7\u03B5\u03B9 \u03C0\u03BB\u03AD\u03BF\u03BD \u03BA\u03BB\u03B5\u03AF\u03C3\u03B5\u03B9.\n\u0939\u092E\u0947\u0902 \u0916\u0947\u0926 \u0939\u0948 , \u0907\u0938 \u0938\u0930\u094D\u0935\u0947\u0915\u094D\u0937\u0923 \u0905\u092C \u092C\u0902\u0926 \u0939\u0948.\nSiamo spiacenti, l'indagine \u00E8 chiusa.\n\u7533\u3057\u8A33\u3042\u308A\u307E\u305B\u3093\u304C\u3001\u3053\u306E\u8ABF\u67FB\u306F\u3001\u73FE\u5728\u53D7\u3051\u4ED8\u3051\u3066\u3044\u307E\u305B\u3093\u3002.\n\uC8C4\uC1A1\uD558\uC9C0\uB9CC\uC774\uC870\uC0AC\uB294\uC9C0\uAE08\uD3D0\uC1C4\uD569\uB2C8\uB2E4.\nVi beklager, unders\u00F8kelsen er n\u00E5 stengt.\nNiestety, badanie jest teraz zamknieta.\nLamentamos, mas o inqu\uFFFDrito j\u00E1 foi encerrado.\n\u041A \u0441\u043E\u0436\u0430\u043B\u0435\u043D\u0438\u044E, \u043E\u0431\u0441\u043B\u0435\u0434\u043E\u0432\u0430\u043D\u0438\u0435 \u0432 \u043D\u0430\u0441\u0442\u043E\u044F\u0449\u0435\u0435 \u0432\u0440\u0435\u043C\u044F \u0437\u0430\u043A\u0440\u044B\u0442\u044B.\nTyv\u00E4rr unders\u00F6kningen \u00E4r nu avslutad.&quot; to include &quot;Rediff&quot;
+Diff:
+@@ -1,2 +1,19 @@
+-Rediff
++The survey you have attempted is now closed.
++Lo sentimos, pero la encuesta está cerrado.
++我们很抱歉，这项统计调查是现已关闭。
++Vi er kede af det, den undersøgelse er nu afsluttet.
++Het spijt ons, de enquête is nu gesloten.
++Olemme pahoillamme, kysely on nyt päättynyt.
++Nous sommes désolés, mais l'enquête est maintenant terminée.
++Wir bedauern, die Umfrage ist jetzt geschlossen.
++Λυπούμαστε, η έρευνα έχει πλέον κλείσει.
++हमें खेद है , इस सर्वेक्षण अब बंद है.
++Siamo spiacenti, l'indagine è chiusa.
++申し訳ありませんが、この調査は、現在受け付けていません。.
++죄송하지만이조사는지금폐쇄합니다.
++Vi beklager, undersøkelsen er nå stengt.
++Niestety, badanie jest teraz zamknieta.
++Lamentamos, mas o inqu�rito já foi encerrado.
++К сожалению, обследование в настоящее время закрыты.
++Tyvärr undersökningen är nu avslutad.
+</pre></div>
+        <div class="backtrace"><pre>./panelshield_stage.rb:128:in `block (2 levels) in <top (required)>'</pre></div>
+    <pre class="ruby"><code><span class="linenum">126</span>		#@browser1.goto("#{@success_url}")
+<span class="linenum">127</span>		sleep 10
+<span class="offending"><span class="linenum">128</span>		@browser1.text.should include ("Rediff")</span>
+<span class="linenum">129</span>		@browser1.cookies.clear
+<span class="linenum">130</span>		#@browser1.close
+<span class="linenum">131</span><span class="comment"># gem install syntax to get syntax highlighting</span></code></pre>
+      </div>
+    </dd>
+    <script type="text/javascript">moveProgressBar('71.4');</script>
+    <dd class="example failed">
+      <span class="failed_spec_name">To Simulate Geo-IP Detection Attempts</span>
+      <span class="duration">18.10057s</span>
+      <div class="failure" id="failure_3">
+        <div class="message"><pre>expected &quot;The survey you have attempted is now closed.\nLo sentimos, pero la encuesta est\u00E1 cerrado.\n\u6211\u4EEC\u5F88\u62B1\u6B49\uFF0C\u8FD9\u9879\u7EDF\u8BA1\u8C03\u67E5\u662F\u73B0\u5DF2\u5173\u95ED\u3002\nVi er kede af det, den unders\u00F8gelse er nu afsluttet.\nHet spijt ons, de enqu\u00EAte is nu gesloten.\nOlemme pahoillamme, kysely on nyt p\u00E4\u00E4ttynyt.\nNous sommes d\u00E9sol\u00E9s, mais l'enqu\u00EAte est maintenant termin\u00E9e.\nWir bedauern, die Umfrage ist jetzt geschlossen.\n\u039B\u03C5\u03C0\u03BF\u03CD\u03BC\u03B1\u03C3\u03C4\u03B5, \u03B7 \u03AD\u03C1\u03B5\u03C5\u03BD\u03B1 \u03AD\u03C7\u03B5\u03B9 \u03C0\u03BB\u03AD\u03BF\u03BD \u03BA\u03BB\u03B5\u03AF\u03C3\u03B5\u03B9.\n\u0939\u092E\u0947\u0902 \u0916\u0947\u0926 \u0939\u0948 , \u0907\u0938 \u0938\u0930\u094D\u0935\u0947\u0915\u094D\u0937\u0923 \u0905\u092C \u092C\u0902\u0926 \u0939\u0948.\nSiamo spiacenti, l'indagine \u00E8 chiusa.\n\u7533\u3057\u8A33\u3042\u308A\u307E\u305B\u3093\u304C\u3001\u3053\u306E\u8ABF\u67FB\u306F\u3001\u73FE\u5728\u53D7\u3051\u4ED8\u3051\u3066\u3044\u307E\u305B\u3093\u3002.\n\uC8C4\uC1A1\uD558\uC9C0\uB9CC\uC774\uC870\uC0AC\uB294\uC9C0\uAE08\uD3D0\uC1C4\uD569\uB2C8\uB2E4.\nVi beklager, unders\u00F8kelsen er n\u00E5 stengt.\nNiestety, badanie jest teraz zamknieta.\nLamentamos, mas o inqu\uFFFDrito j\u00E1 foi encerrado.\n\u041A \u0441\u043E\u0436\u0430\u043B\u0435\u043D\u0438\u044E, \u043E\u0431\u0441\u043B\u0435\u0434\u043E\u0432\u0430\u043D\u0438\u0435 \u0432 \u043D\u0430\u0441\u0442\u043E\u044F\u0449\u0435\u0435 \u0432\u0440\u0435\u043C\u044F \u0437\u0430\u043A\u0440\u044B\u0442\u044B.\nTyv\u00E4rr unders\u00F6kningen \u00E4r nu avslutad.&quot; to include &quot;Rediff&quot;
+Diff:
+@@ -1,2 +1,19 @@
+-Rediff
++The survey you have attempted is now closed.
++Lo sentimos, pero la encuesta está cerrado.
++我们很抱歉，这项统计调查是现已关闭。
++Vi er kede af det, den undersøgelse er nu afsluttet.
++Het spijt ons, de enquête is nu gesloten.
++Olemme pahoillamme, kysely on nyt päättynyt.
++Nous sommes désolés, mais l'enquête est maintenant terminée.
++Wir bedauern, die Umfrage ist jetzt geschlossen.
++Λυπούμαστε, η έρευνα έχει πλέον κλείσει.
++हमें खेद है , इस सर्वेक्षण अब बंद है.
++Siamo spiacenti, l'indagine è chiusa.
++申し訳ありませんが、この調査は、現在受け付けていません。.
++죄송하지만이조사는지금폐쇄합니다.
++Vi beklager, undersøkelsen er nå stengt.
++Niestety, badanie jest teraz zamknieta.
++Lamentamos, mas o inqu�rito já foi encerrado.
++К сожалению, обследование в настоящее время закрыты.
++Tyvärr undersökningen är nu avslutad.
+</pre></div>
+        <div class="backtrace"><pre>./panelshield_stage.rb:151:in `block (2 levels) in <top (required)>'</pre></div>
+    <pre class="ruby"><code><span class="linenum">149</span>		@browser2.goto("#{@supplier_url}")
+<span class="linenum">150</span>		sleep 10
+<span class="offending"><span class="linenum">151</span>		@browser2.text.should include ("Rediff")</span>
+<span class="linenum">152</span>		@browser2.cookies.clear
+<span class="linenum">153</span>		@browser2.close
+<span class="linenum">154</span><span class="comment"># gem install syntax to get syntax highlighting</span></code></pre>
+      </div>
+    </dd>
+    <script type="text/javascript">moveProgressBar('85.7');</script>
+    <dd class="example failed">
+      <span class="failed_spec_name">To Simulate Professionals Attempts</span>
+      <span class="duration">19.14875s</span>
+      <div class="failure" id="failure_4">
+        <div class="message"><pre>expected &quot;The survey you have attempted is now closed.\nLo sentimos, pero la encuesta est\u00E1 cerrado.\n\u6211\u4EEC\u5F88\u62B1\u6B49\uFF0C\u8FD9\u9879\u7EDF\u8BA1\u8C03\u67E5\u662F\u73B0\u5DF2\u5173\u95ED\u3002\nVi er kede af det, den unders\u00F8gelse er nu afsluttet.\nHet spijt ons, de enqu\u00EAte is nu gesloten.\nOlemme pahoillamme, kysely on nyt p\u00E4\u00E4ttynyt.\nNous sommes d\u00E9sol\u00E9s, mais l'enqu\u00EAte est maintenant termin\u00E9e.\nWir bedauern, die Umfrage ist jetzt geschlossen.\n\u039B\u03C5\u03C0\u03BF\u03CD\u03BC\u03B1\u03C3\u03C4\u03B5, \u03B7 \u03AD\u03C1\u03B5\u03C5\u03BD\u03B1 \u03AD\u03C7\u03B5\u03B9 \u03C0\u03BB\u03AD\u03BF\u03BD \u03BA\u03BB\u03B5\u03AF\u03C3\u03B5\u03B9.\n\u0939\u092E\u0947\u0902 \u0916\u0947\u0926 \u0939\u0948 , \u0907\u0938 \u0938\u0930\u094D\u0935\u0947\u0915\u094D\u0937\u0923 \u0905\u092C \u092C\u0902\u0926 \u0939\u0948.\nSiamo spiacenti, l'indagine \u00E8 chiusa.\n\u7533\u3057\u8A33\u3042\u308A\u307E\u305B\u3093\u304C\u3001\u3053\u306E\u8ABF\u67FB\u306F\u3001\u73FE\u5728\u53D7\u3051\u4ED8\u3051\u3066\u3044\u307E\u305B\u3093\u3002.\n\uC8C4\uC1A1\uD558\uC9C0\uB9CC\uC774\uC870\uC0AC\uB294\uC9C0\uAE08\uD3D0\uC1C4\uD569\uB2C8\uB2E4.\nVi beklager, unders\u00F8kelsen er n\u00E5 stengt.\nNiestety, badanie jest teraz zamknieta.\nLamentamos, mas o inqu\uFFFDrito j\u00E1 foi encerrado.\n\u041A \u0441\u043E\u0436\u0430\u043B\u0435\u043D\u0438\u044E, \u043E\u0431\u0441\u043B\u0435\u0434\u043E\u0432\u0430\u043D\u0438\u0435 \u0432 \u043D\u0430\u0441\u0442\u043E\u044F\u0449\u0435\u0435 \u0432\u0440\u0435\u043C\u044F \u0437\u0430\u043A\u0440\u044B\u0442\u044B.\nTyv\u00E4rr unders\u00F6kningen \u00E4r nu avslutad.&quot; to include &quot;Rediff&quot;
+Diff:
+@@ -1,2 +1,19 @@
+-Rediff
++The survey you have attempted is now closed.
++Lo sentimos, pero la encuesta está cerrado.
++我们很抱歉，这项统计调查是现已关闭。
++Vi er kede af det, den undersøgelse er nu afsluttet.
++Het spijt ons, de enquête is nu gesloten.
++Olemme pahoillamme, kysely on nyt päättynyt.
++Nous sommes désolés, mais l'enquête est maintenant terminée.
++Wir bedauern, die Umfrage ist jetzt geschlossen.
++Λυπούμαστε, η έρευνα έχει πλέον κλείσει.
++हमें खेद है , इस सर्वेक्षण अब बंद है.
++Siamo spiacenti, l'indagine è chiusa.
++申し訳ありませんが、この調査は、現在受け付けていません。.
++죄송하지만이조사는지금폐쇄합니다.
++Vi beklager, undersøkelsen er nå stengt.
++Niestety, badanie jest teraz zamknieta.
++Lamentamos, mas o inqu�rito já foi encerrado.
++К сожалению, обследование в настоящее время закрыты.
++Tyvärr undersökningen är nu avslutad.
+</pre></div>
+        <div class="backtrace"><pre>./panelshield_stage.rb:178:in `block (2 levels) in <top (required)>'</pre></div>
+    <pre class="ruby"><code><span class="linenum">176</span>		#@browser1.goto("#{@success_url}")
+<span class="linenum">177</span>		sleep 10
+<span class="offending"><span class="linenum">178</span>		@browser1.text.should include ("Rediff")</span>
+<span class="linenum">179</span>		@browser1.cookies.clear
+<span class="linenum">180</span>		@browser1.close
+<span class="linenum">181</span><span class="comment"># gem install syntax to get syntax highlighting</span></code></pre>
+      </div>
+    </dd>
+    <script type="text/javascript">moveProgressBar('100.0');</script>
+    <dd class="example failed">
+      <span class="failed_spec_name">To check the counts for Maximum clicks, Duplicate Survey Complete Attempts, Geo-IP Detection Attempts and  Professionals Attempts</span>
+      <span class="duration">8.57313s</span>
+      <div class="failure" id="failure_5">
+        <div class="message"><pre>expected &quot;uSamp Panelshield\nHOMESAMPLEMARKET\u2122PANELSHIELD\u2122 ACCOUNT\nWelcome Nitin Kumar Log Out\nCreate New Project\nOpen Projects\nClosed Projects\nReports\nTest Project - 20131129032514 - 5308\nPROJECT DETAILS\nSUPPLIERS\nPIXEL\nSTATS\nCONTROL PANEL\nNOTE: PanelShield\u2122 protection capabilities reflect counts based on the rules activated/set in the control panel.\nDOWNLOAD ALL SUPPLIER TRANSACTIONS\nOverall Stats\n# of Clicks # Rejected # Allowed # Completes # Fails # Over Quota Mean Survey Length\n0 0 0 0 0 0 N/A\nMaximum\nClicks\nDuplicate Panel\nAccounts\nDuplicate Survey\nComplete Attempts\nGeo-IP\nProxies\nProfessionals\nSpeeders\nPast\nParticipation\n0 0 0 0 0 0 0 0\nJump to Supplier:\nAll Suppliers\nTest RH\nExpand All Supplier Stats\n\nTest RH\nHOME SAMPLEMARKET\u2122 PANELSHIELD\u2122 ACCOUNT\nOffice: +1 (818) 524-1218 x610 SALES: SALES@USAMP.COM\n\u00A9 Copyright 2013 uSamp (United Sample Inc.). All Rights Reserved. PRIVACY POLICY.&quot; to include &quot;6 4 2 1 0 0&quot;
+Diff:
+@@ -1,2 +1,41 @@
+-6 4 2 1 0 0
++uSamp Panelshield
++HOMESAMPLEMARKET™PANELSHIELD™ ACCOUNT
++Welcome Nitin Kumar Log Out
++Create New Project
++Open Projects
++Closed Projects
++Reports
++Test Project - 20131129032514 - 5308
++PROJECT DETAILS
++SUPPLIERS
++PIXEL
++STATS
++CONTROL PANEL
++NOTE: PanelShield™ protection capabilities reflect counts based on the rules activated/set in the control panel.
++DOWNLOAD ALL SUPPLIER TRANSACTIONS
++Overall Stats
++# of Clicks # Rejected # Allowed # Completes # Fails # Over Quota Mean Survey Length
++0 0 0 0 0 0 N/A
++Maximum
++Clicks
++Duplicate Panel
++Accounts
++Duplicate Survey
++Complete Attempts
++Geo-IP
++Proxies
++Professionals
++Speeders
++Past
++Participation
++0 0 0 0 0 0 0 0
++Jump to Supplier:
++All Suppliers
++Test RH
++Expand All Supplier Stats
++
++Test RH
++HOME SAMPLEMARKET™ PANELSHIELD™ ACCOUNT
++Office: +1 (818) 524-1218 x610 SALES: SALES@USAMP.COM
++© Copyright 2013 uSamp (United Sample Inc.). All Rights Reserved. PRIVACY POLICY.
+</pre></div>
+        <div class="backtrace"><pre>./panelshield_stage.rb:187:in `block (2 levels) in <top (required)>'</pre></div>
+    <pre class="ruby"><code><span class="linenum">185</span>		sleep 3
+<span class="linenum">186</span>		@browser.text.should include ("# of Clicks # Rejected # Allowed # Completes # Fails # Over Quota Mean Survey Length")
+<span class="offending"><span class="linenum">187</span>		@browser.text.should include ("6 4 2 1 0 0")</span>
+<span class="linenum">188</span>		@browser.text.should include ("1 0 1 1 0 1 1 0")
+<span class="linenum">189</span>		
+<span class="linenum">190</span><span class="comment"># gem install syntax to get syntax highlighting</span></code></pre>
+      </div>
+    </dd>
+  </dl>
+</div>
+<script type="text/javascript">document.getElementById('duration').innerHTML = "Finished in <strong>188.28035 seconds</strong>";</script>
+<script type="text/javascript">document.getElementById('totals').innerHTML = "7 examples, 5 failures";</script>
+</div>
+</div>
+</body>
+</html>

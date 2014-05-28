@@ -1,0 +1,44 @@
+#DESCRIPTION: This file contains data that is required by the "" script , to verify whether #
+
+#NOTE: All the lines enclosed within two '#' characters are comments.#
+#      The lines with actual data are without '#' characters and,#
+#      In the data, text before the '::' character (text to the left of the '::' character) are FIELD NAME#
+#      And text after the '::' character (text to the right of '::' character) are ACTUAL DATA#
+#      The '::' character is a separator between the Field name and the actual data and hence is very important#
+#      Make sure the '::' chracter is not modified#
+#      Do not alter the sequence in which the test data is written #
+
+#UNITED SAMPLE LOGIN DETAILS#
+EMAIL-ID	:: vipul_paikane@persistent.co.in
+PASSWORD	:: test
+
+#PUBLISHER AND PROJECT DETAILS#
+PUBLISHER ID	:: PU594
+PROJECT  	:: PR7373
+
+#SURVEYHEAD MEMBER DETAILS#
+
+#MEMBER 1 for checking Success redirect pixels#
+EMAIL-ID	:: Cashout_Mail_Test.des@mailop.com
+PASSWORD	:: test
+MEMBER ID	:: M2895533
+
+
+#MEMBER 2 for checking fail redirect pixels#
+EMAIL-ID	:: vipul_paikane@persistent.co.in	
+PASSWORD	:: test
+MEMBER ID	:: M2894548
+
+
+#MEMBER 3 for checking overquota redirect pixel#
+EMAIL-ID	:: Automated2@usertest.com
+PASSWORD	:: test
+MEMBER ID	:: M2894509
+
+#UNITED SAMPLE PROJECT CLOSING DATE #
+PROJECT ID      :: 2011-09-30
+	
+
+	
+
+	

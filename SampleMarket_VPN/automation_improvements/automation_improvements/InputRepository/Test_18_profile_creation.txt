@@ -1,0 +1,105 @@
+#DESCRIPTION: This file contains details needed to login functionality which is required by the "Test_15_Check_add_to_queue_functionality.rb" script# 
+
+#NOTE: All the lines enclosed within two '#' characters are comments.#
+#      The lines with actual data are without '#' characters and,#
+#      In the data, text before the '::' character (text to the left of the '::' character) are FIELD NAME#
+#      And text after the '::' character (text to the right of '::' character) are ACTUAL DATA#
+#      The '::' character is a separator between the Field name and the actual data and hence is very important#
+#      Make sure the '::' chracter is not modified#
+#      Do not alter the sequence in which the test data is written #
+
+
+#PROFILE CREATION DETAILS#
+PROFILENAME	:: test profile
+PROFILEREWARD	:: 2
+QUESTIONPERPAGE	:: 2
+PROFILEICON	:: C:\Winter.jpg
+PROFILEEXPIRY	:: 0
+AGERANGEMIN	:: 10
+AGERANGEMAX	:: 99
+
+#ADDING INDUSTRY DETAILS#
+#USER CAN SELECT MULTIPLE OPTIONS #
+INDUSTRYOPTIONS	:: Aerospace & Defense
+INDUSTRYOPTIONS	:: Agribusiness
+INDUSTRYOPTIONS	:: Computers: Software / Services
+
+#ADDING ETHNICITY DETAILS#
+#USER CAN SELECT MULTIPLE OPTIONS #
+
+ETHNICITY 	:: African American
+ETHNICITY 	:: Asian (non Pacific Islander)
+ETHNICITY 	:: Caucasian
+
+#ADDING ROLE/DEPARTMENT DETAILS#
+#USER CAN SELECT MULTIPLE OPTIONS #
+ROLE		:: Administration / Management
+ROLE		:: Construction / Maintenance / Real Estate
+ROLE		:: Executives
+
+#ADDING EDUCATION DETAILS#
+#USER CAN SELECT MULTIPLE OPTIONS #
+
+EDUCATION	:: High school graduate
+EDUCATION	:: Some college or university
+EDUCATION	:: College graduate with a 4 year degree
+
+#ADDING EMPLOYMENT DETAILS#
+#USER CAN SELECT MULTIPLE OPTIONS #
+EMPLOYMENT	:: Full-Time Employee
+EMPLOYMENT	:: Homemaker
+EMPLOYMENT	:: Part-Time Employee
+
+#ADDING MARITIAL STATUS#
+#USER CAN SELECT MULTIPLE OPTIONS #
+
+MARITIAL	:: Never married
+MARITIAL	:: Married
+MARITIAL	:: Living with Partner
+
+# ADDING QUESTIONS #
+QUESTION	:: Which car do you own?
+
+# ANSWERS #
+
+ANSWER		:: BMW
+ANSWER		:: AUDI
+ANSWER		:: MERC
+ANSWER		:: FERRARI
+
+QUESTION	:: What is your Date of birth?
+
+QUESTION	:: What is your nationality?
+
+ANSWER		:: AMERICAN
+ANSWER		:: FRENCH
+ANSWER		:: INDIAN
+ANSWER		:: CHINESE
+
+QUESTION	:: How is your new car?
+
+GRID		:: Excellent
+GRID		:: Good
+GRID		:: Average
+
+QUESTION	:: Do you wish to buy a car?
+QUESTION	:: How do you travel?
+QUESTION	:: Do you wish to buy another car?
+
+ANSWER		:: YES
+ANSWER		:: NO
+#44#
+QUESTION	:: Select the water power for your state ?
+ANSWER		:: %%STATE_WATRPWR%%
+QUESTION	:: Select the hospital in your area ?
+ANSWER		:: %%STATE_HOSPITAL%%
+QUESTION	:: Select the gas provider for your state ?
+ANSWER		:: %%STATE_GAS%%
+QUESTION	:: Select the utility provider for your state ?
+ANSWER		:: %%STATE_UTILITY%%
+#52#
+QUESTION	:: Do you have more than 1 car?
+QUESTION	:: Do you wish to buy one more car?
+
+QUESTION	:: Which all cars do you have ?
+QUESTION	:: Which car do you wish to buy?

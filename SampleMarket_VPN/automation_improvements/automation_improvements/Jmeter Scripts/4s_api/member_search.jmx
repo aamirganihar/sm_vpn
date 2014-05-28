@@ -1,0 +1,190 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jmeterTestPlan version="1.2" properties="2.1">
+  <hashTree>
+    <TestPlan guiclass="TestPlanGui" testclass="TestPlan" testname="Test Plan" enabled="true">
+      <stringProp name="TestPlan.comments"></stringProp>
+      <boolProp name="TestPlan.functional_mode">false</boolProp>
+      <boolProp name="TestPlan.serialize_threadgroups">false</boolProp>
+      <elementProp name="TestPlan.user_defined_variables" elementType="Arguments" guiclass="ArgumentsPanel" testclass="Arguments" testname="User Defined Variables" enabled="true">
+        <collectionProp name="Arguments.arguments"/>
+      </elementProp>
+      <stringProp name="TestPlan.user_define_classpath"></stringProp>
+    </TestPlan>
+    <hashTree>
+      <ThreadGroup guiclass="ThreadGroupGui" testclass="ThreadGroup" testname="Thread Group" enabled="true">
+        <elementProp name="ThreadGroup.main_controller" elementType="LoopController" guiclass="LoopControlPanel" testclass="LoopController" testname="Loop Controller" enabled="true">
+          <boolProp name="LoopController.continue_forever">false</boolProp>
+          <stringProp name="LoopController.loops">1</stringProp>
+        </elementProp>
+        <stringProp name="ThreadGroup.num_threads">10</stringProp>
+        <stringProp name="ThreadGroup.ramp_time">2</stringProp>
+        <longProp name="ThreadGroup.start_time">1299474808000</longProp>
+        <longProp name="ThreadGroup.end_time">1299474808000</longProp>
+        <boolProp name="ThreadGroup.scheduler">false</boolProp>
+        <stringProp name="ThreadGroup.on_sample_error">continue</stringProp>
+        <stringProp name="ThreadGroup.duration"></stringProp>
+        <stringProp name="ThreadGroup.delay"></stringProp>
+      </ThreadGroup>
+      <hashTree>
+        <smartrics.jmeter.sampler.RestSampler guiclass="smartrics.jmeter.sampler.gui.RestGui" testclass="smartrics.jmeter.sampler.RestSampler" testname="Rest Sampler" enabled="true">
+          <elementProp name="HTTPsampler.Arguments" elementType="Arguments">
+            <collectionProp name="Arguments.arguments"/>
+          </elementProp>
+          <stringProp name="RestSampler.request_body">jsonData={&quot;searchType&quot;:&quot;users&quot;,&quot;searchOptions&quot;:{&quot;ids&quot;:[290,355,386,448,626,639,686,884,1036,1110,1245,1260,1353,1421,1531,1575,1662,2128,2313,2348,2466,2984,3658,4161,4532,4615,5080,5197,5302,5460,5836,5886,6051,8989,9005,10143,11511,11695,11705,12068,12143,12541,14002,14012,14492,14746,14800,15845,15850,16328,16425,16516,17070,17139,17349,17563,18132,18297,18548,19224,19790,21160,22501,22634,22636,24004,24631,24828,24907,25330,25562,26212,26766,26807,26865,26871,26955,27006,27060,27086,27101,27164,27297,27313,27585,27589,28228,28371,28444,28637,28928,29038,29047,29216,29218,29221,29280,29345,29420,29541,35975,36373,37407,38027,38372,41912,42782,43450,46266,46448,46895,47538,48425,48470,48486,48489,48533,48535,48550,48568,48581,48586,48587,48601,48602,48604,48613,48615,48616,48642,48652,48705,50367,50553,50878,51029,51743,51779,51781,51784,51789,51790,51796,51799,51805,51815,51825,51827,51831,51833,51840,52226,52227,52233,53127,54043,54550,55394,56547,57401,58935,59020,60099,60931,61370,61544,62418,63422,63654,65667,67371,68340,68424,69330,69584,69854,69859,72509,73550,74006,76441,76522,76663,77065,77205,77702,77860,78288,78438,78557,79142,79268,79320,79754,79878,80002,80865,81285,82992,83260,83938,84069,84603,85067,86170,87149,87252,87750,87848,88456,88806,89672,89847,89888,90218,90307,91723,92057,92328,92516,93292,93912,94138,94244,94721,95229,95261,95728,95816,96359,96512,96520,96541,96566,96908,97090,97306,99872,100160,100629,101160,101672,101855,103421,104378,105485,105734,106463,107277,108144,108632,109327,109526,109892,110220,110439,110723,112017,113576,114100,114208,114471,115713,117162,117418,118873,119285,119940,120327,121224,121722,121841,121952,122513,123618,123686,124566,124693,124758,124913,124944,125021,125042,125143,125180,125996,126409,126540,126735,126931,127051,127099,127185,127519,127584,128093,128680,128695,128730,129116,129533,129549,129727,129751,129843,130054,130844,133010,133943,134270,134969,135108,135191,135284,135921,136014,136527,136800,136827,137328,137562,137693,137880,138069,138128,138626,138749,139055,142512,142552,142634,143144,143658,151920,152150,152883,152971,154657,154989,155086,155625,156073,157549,157721,157818,158062,158261,159023,160196,164531,165491,165663,165787,166034,166087,166662,166968,167447,169124,170609,172407,172739,172750,172780,172822,172900,173580,173688,173769,173836,173861,174281,175881,177276,177347,177514,177570,177669,177685,178098,178449,180229,181453,181848,182511,184620,189875,194486,194566,194718,194876,195055,195069,195464,195481,196019,196087,196157,196463,197322,200334,201847,202197,203140,203243,204088,204522,205329,205412,206966,214984,220445,220810,221327,221461,222089,223730,224470,227640,227784,227878,227984,228214,228506,228602,229335,230733,231360,233586,233752,234432,234803,235293,236647,238022,241285,243776,246835,247195,247228,247342,248472,250049,250960,251214,252212,253957,253973,254512,256342,261303,264269,265381,265431,266170,266361,266423,268196,268206,268233,268759,269644,269777,269958,271797,272000,273391,273681,274425,278592,282624,285568,285712,285769,287910,289442,290201,290730,291049,291138,291794,292763,293927,294750,294876,297094,297995,298480,298986,299238,299337,301226,302294,302591,302703,303449,305862,307079,308403,308828,309536,310149,310182,311742,311752,312142,312678,312983,313742,315078,315722,316148,316852,316947,317041,317133,318035,319505,321878,323855,325951,328768,329801,330174,330242,330279,330459,330913,332119,332125,332866,333739,334406,334624,334934,335313,336103,338653,338755,340029,342382,342870,344063,346417,348672,349304,351187,352013,353248,355290,356984,357592,357774,359002,360245,360752,360976,361395,362084,363782,366531,366576,367012,367361,367774,367851,368019,368956,369735,370152,370813,371096,373217,373361,376162,377722,378937,379953,381580,382462,382949,383453,384863,385350,386549,386975,389206,390149,390902,390963,391436,391991,392418,392878,393054,393775,393971,393986,396611,396839,397874,403038,404860,405010,405592,406028,406550,406693,407149,407466,409440,410686,411032,411078,411345,414365,414519,414622,415721,418701,418910,419941,419997,420069,420160,420591,421454,422266,422504,423462,425259,425428,426642,426658,426967,427680,428682,428844,429059,430449,432472,434261,434393,434852,434978,434983,435023,435417,435553,435757,435821,436495,436993,438818,440522,440566,440814,441529,442673,442965,442980,443010,443756,443871,443927,445985,447318,447559,447627,448338,448429,448491,449039,449151,449672,450080,450207,450909,452308,452703,453704,453726,453783,453920,454609,454906,456113,456190,456223,456283,457616,457758,458125,458211,458692,458822,459128,459134,459371,460419,461376,461716,461756,461959,462950,463667,465215,465313,466075,468359,468586,469527,469770,469985,470335,470402,470532,472066,472397,473020,475443,476526,478223,478609,480180,480690,481161,481724,481960,482098,483256,484894,485697,487023,488372,488531,489018,491913,494279,494381,494851,497834,497909,498906,499335,499398,499808,500155,500630,501713,502936,503256,504565,507432,508472,509459,510928,511210,511429,512227,512470,513300,513426,513431,513799,513811,513898,514100,514153,514165,514213,514228,514658,514960,515624,515981,516262,516274,516297,519109,519978,520494,520570,521739,522293,522851,523573,524130,525629,525741,527378,527490,527554,527689,528880,530836,530963,538241,538445,538791,539468,539557,539894,540747,542710,547795,548817,548876,548946,550563,551009,551041,551698,551837,551838,553777,554082,554879,556147,557331,557332,557503,557612,559602,560739,562296,562425,562665,562980,563568,564973,566770,567648,567911,568205,568490,568821,569237,569333,569354,570268,570298,570342,571562,571829,572717,572836,572842,573170,573509,573711,575518,576080,578154,580626,581733,581775,582684,583817,584100,584328,584619,584874,585441,586016,586301,587012,587535,587682,587877,588172,588497,588536,589363,591041,591138,593183,593818,596855,596905,596945,597126,597212,597823,597971,599804,600160,601372,601889,602126,602780,602786,603151,603169,604073,604955,605169,605245,605255,605477,605742,605847,605877,605895,606147,606180,606639,606762,606926,606930,607089,607301,608172,608176,608590,608896,609273,609468,610812,610976,611093,611105,611353,611446,611539,611562,612088,612247,612755,613385,613973,614076,614661,615420,616665,617835,619284,619871,620050,620055,620263,620339,620345,620472,620739,621075,621325,621520,622629,622730,622801,622832,623019,623210,623314,623793,623798,623851,623928,623941,623984,624213,624574,624581,624626,624706,625224,625264,625478,625845,625867,626270,626413,626743,626836,627260,627569,627781,627887,628525,628660,629408,629500,630099,630445,630482,630510,630969,630986,631590,631785,646202,646710,646822,646910,647024,647080,647130,647634,647712]}}</stringProp>
+          <stringProp name="HTTPSampler.method">POST</stringProp>
+          <boolProp name="HTTPSampler.use_keepalive">false</boolProp>
+          <boolProp name="HTTPSampler.auto_redirects">false</boolProp>
+          <stringProp name="RestSampler.base_host">https://p.api.samplemarket.com/client/search</stringProp>
+          <stringProp name="RestSampler.resource"></stringProp>
+          <stringProp name="HTTPSampler.contentEncoding"></stringProp>
+          <stringProp name="RestSampler.query_string"></stringProp>
+          <stringProp name="RestSampler.request_headers">Accept: application/json
+X-API-VERSION:2
+content-type:application/x-www-form-urlencoded
+</stringProp>
+        </smartrics.jmeter.sampler.RestSampler>
+        <hashTree/>
+        <ResultCollector guiclass="SummaryReport" testclass="ResultCollector" testname="Summary Report" enabled="true">
+          <boolProp name="ResultCollector.error_logging">false</boolProp>
+          <objProp>
+            <name>saveConfig</name>
+            <value class="SampleSaveConfiguration">
+              <time>true</time>
+              <latency>true</latency>
+              <timestamp>true</timestamp>
+              <success>true</success>
+              <label>true</label>
+              <code>true</code>
+              <message>true</message>
+              <threadName>true</threadName>
+              <dataType>true</dataType>
+              <encoding>false</encoding>
+              <assertions>true</assertions>
+              <subresults>true</subresults>
+              <responseData>false</responseData>
+              <samplerData>false</samplerData>
+              <xml>true</xml>
+              <fieldNames>false</fieldNames>
+              <responseHeaders>false</responseHeaders>
+              <requestHeaders>false</requestHeaders>
+              <responseDataOnError>false</responseDataOnError>
+              <saveAssertionResultsFailureMessage>false</saveAssertionResultsFailureMessage>
+              <assertionsResultsToSave>0</assertionsResultsToSave>
+              <bytes>true</bytes>
+            </value>
+          </objProp>
+          <stringProp name="filename"></stringProp>
+        </ResultCollector>
+        <hashTree/>
+        <ResultCollector guiclass="ViewResultsFullVisualizer" testclass="ResultCollector" testname="View Results Tree" enabled="true">
+          <boolProp name="ResultCollector.error_logging">false</boolProp>
+          <objProp>
+            <name>saveConfig</name>
+            <value class="SampleSaveConfiguration">
+              <time>true</time>
+              <latency>true</latency>
+              <timestamp>true</timestamp>
+              <success>true</success>
+              <label>true</label>
+              <code>true</code>
+              <message>true</message>
+              <threadName>true</threadName>
+              <dataType>true</dataType>
+              <encoding>false</encoding>
+              <assertions>true</assertions>
+              <subresults>true</subresults>
+              <responseData>false</responseData>
+              <samplerData>false</samplerData>
+              <xml>true</xml>
+              <fieldNames>false</fieldNames>
+              <responseHeaders>false</responseHeaders>
+              <requestHeaders>false</requestHeaders>
+              <responseDataOnError>false</responseDataOnError>
+              <saveAssertionResultsFailureMessage>false</saveAssertionResultsFailureMessage>
+              <assertionsResultsToSave>0</assertionsResultsToSave>
+              <bytes>true</bytes>
+            </value>
+          </objProp>
+          <stringProp name="filename"></stringProp>
+        </ResultCollector>
+        <hashTree/>
+        <ResultCollector guiclass="TableVisualizer" testclass="ResultCollector" testname="View Results in Table" enabled="true">
+          <boolProp name="ResultCollector.error_logging">false</boolProp>
+          <objProp>
+            <name>saveConfig</name>
+            <value class="SampleSaveConfiguration">
+              <time>true</time>
+              <latency>true</latency>
+              <timestamp>true</timestamp>
+              <success>true</success>
+              <label>true</label>
+              <code>true</code>
+              <message>true</message>
+              <threadName>true</threadName>
+              <dataType>true</dataType>
+              <encoding>false</encoding>
+              <assertions>true</assertions>
+              <subresults>true</subresults>
+              <responseData>false</responseData>
+              <samplerData>false</samplerData>
+              <xml>true</xml>
+              <fieldNames>false</fieldNames>
+              <responseHeaders>false</responseHeaders>
+              <requestHeaders>false</requestHeaders>
+              <responseDataOnError>false</responseDataOnError>
+              <saveAssertionResultsFailureMessage>false</saveAssertionResultsFailureMessage>
+              <assertionsResultsToSave>0</assertionsResultsToSave>
+              <bytes>true</bytes>
+            </value>
+          </objProp>
+          <stringProp name="filename"></stringProp>
+        </ResultCollector>
+        <hashTree/>
+        <ResultCollector guiclass="GraphAccumVisualizer" testclass="ResultCollector" testname="Graph Full Results" enabled="true">
+          <boolProp name="ResultCollector.error_logging">false</boolProp>
+          <objProp>
+            <name>saveConfig</name>
+            <value class="SampleSaveConfiguration">
+              <time>true</time>
+              <latency>true</latency>
+              <timestamp>true</timestamp>
+              <success>true</success>
+              <label>true</label>
+              <code>true</code>
+              <message>true</message>
+              <threadName>true</threadName>
+              <dataType>true</dataType>
+              <encoding>false</encoding>
+              <assertions>true</assertions>
+              <subresults>true</subresults>
+              <responseData>false</responseData>
+              <samplerData>false</samplerData>
+              <xml>true</xml>
+              <fieldNames>false</fieldNames>
+              <responseHeaders>false</responseHeaders>
+              <requestHeaders>false</requestHeaders>
+              <responseDataOnError>false</responseDataOnError>
+              <saveAssertionResultsFailureMessage>false</saveAssertionResultsFailureMessage>
+              <assertionsResultsToSave>0</assertionsResultsToSave>
+              <bytes>true</bytes>
+            </value>
+          </objProp>
+          <stringProp name="filename"></stringProp>
+        </ResultCollector>
+        <hashTree/>
+        <AuthManager guiclass="AuthPanel" testclass="AuthManager" testname="HTTP Authorization Manager" enabled="true">
+          <collectionProp name="AuthManager.auth_list">
+            <elementProp name="" elementType="Authorization">
+              <stringProp name="Authorization.url"></stringProp>
+              <stringProp name="Authorization.username">test@test.com</stringProp>
+              <stringProp name="Authorization.password">test</stringProp>
+              <stringProp name="Authorization.domain"></stringProp>
+              <stringProp name="Authorization.realm"></stringProp>
+            </elementProp>
+          </collectionProp>
+        </AuthManager>
+        <hashTree/>
+      </hashTree>
+    </hashTree>
+  </hashTree>
+</jmeterTestPlan>

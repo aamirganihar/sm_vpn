@@ -1,0 +1,3274 @@
+Loaded suite Test_01_Project_QG_Create
+Started
+.Successful Login to Usampadmin
+21304
+.2011-12-24
+QG CREATION PASS
+100542
+..
+Finished in 178.407 seconds.
+
+4 tests, 0 assertions, 0 failures, 0 errors
+Loaded suite Test_02_Auto_Open_QG
+Started
+.21304
+100542
+Successful Login to Usampadmin
+20
+05
+44
+20
+07
+44
+.
+Finished in 278.703 seconds.
+
+2 tests, 0 assertions, 0 failures, 0 errors
+Loaded suite Test_03_Auto_Close_QG
+Started
+.21304
+100542
+Successful Login to Usampadmin
+20
+10
+47
+Time Settings Saved
+.21304
+100542
+Successful Login to Usampadmin
+Clicks Settings Saved
+.21304
+100542
+Successful Login to Usampadmin
+Completes Settings Saved
+.
+Finished in 612.485 seconds.
+
+4 tests, 0 assertions, 0 failures, 0 errors
+Loaded suite Test_04_Non_member_survey_complete
+Started
+.21304
+100542
+Successful Login to Usampadmin
+.21304
+100542
+Successful Login to Usampadmin
+.21304
+100542
+Successful Login to Usampadmin
+.
+Finished in 252.015 seconds.
+
+4 tests, 0 assertions, 0 failures, 0 errors
+Loaded suite Test_05_Member_registration
+Started
+.test string
+auto_test.desWedDec14202529@mailinator.com
+**** Waiting for surveys to load ****
+.Successful Login to Usampadmin
+auto_test.desWedDec14202529@mailinator.com
+M10628760
+.auto_test.desWedDec14202529@mailinator.com
+.test string
+auto_test.desWedDec14202802@mailinator.com
+**** Waiting for surveys to load ****
+.Successful Login to Usampadmin
+auto_test.desWedDec14202802@mailinator.com
+M10628761
+.auto_test.desWedDec14202802@mailinator.com
+.
+Finished in 352.266 seconds.
+
+7 tests, 0 assertions, 0 failures, 0 errors
+Loaded suite Test_06_Survey_complete
+Started
+.auto_test.desWedDec14202529@mailinator.com
+Successful Login to Surveyhead site
+100542
+linkMTAwNTQy
+.
+Finished in 134.219 seconds.
+
+2 tests, 0 assertions, 0 failures, 0 errors
+Loaded suite Test_07_Publisher_category_filer
+Started
+.Successful Login to Usampadmin
+21304
+100542
+Successful Login to Focusline site
+.Successful Login to Usampadmin
+21304
+100542
+Successful Login to Focusline site
+.
+Finished in 423.172 seconds.
+
+3 tests, 0 assertions, 0 failures, 0 errors
+Loaded suite Test_08_Publisher_margin_%
+Started
+.Successful Login to Usampadmin
+21304
+100542
+Successful Login to Focusline site
+.Successful Login to Usampadmin
+21304
+100542
+Page Load Timeout
+["c:/ruby/lib/ruby/gems/1.8/gems/firewatir-1.6.5/lib/firewatir/firefox.rb:516:in `wait'", "c:/ruby/lib/ruby/gems/1.8/gems/firewatir-1.6.5/lib/firewatir/firefox.rb:196:in `goto'", "./Usamp_lib.rb:93:in `Focusline_login'", "Test_08_Publisher_margin_%.rb:132:in `test_03_publisher_margin_mismatch'", "c:/ruby/lib/ruby/1.8/test/unit/testcase.rb:78:in `__send__'", "c:/ruby/lib/ruby/1.8/test/unit/testcase.rb:78:in `run'", "c:/ruby/lib/ruby/1.8/test/unit/testsuite.rb:34:in `run'", "c:/ruby/lib/ruby/1.8/test/unit/testsuite.rb:33:in `each'", "c:/ruby/lib/ruby/1.8/test/unit/testsuite.rb:33:in `run'", "c:/ruby/lib/ruby/1.8/test/unit/testsuite.rb:34:in `run'", "c:/ruby/lib/ruby/1.8/test/unit/testsuite.rb:33:in `each'", "c:/ruby/lib/ruby/1.8/test/unit/testsuite.rb:33:in `run'", "c:/ruby/lib/ruby/1.8/test/unit/ui/testrunnermediator.rb:46:in `run_suite'", "c:/ruby/lib/ruby/1.8/test/unit/ui/console/testrunner.rb:67:in `start_mediator'", "c:/ruby/lib/ruby/1.8/test/unit/ui/console/testrunner.rb:41:in `start'", "c:/ruby/lib/ruby/1.8/test/unit/ui/testrunnerutilities.rb:29:in `run'", "c:/ruby/lib/ruby/1.8/test/unit/autorunner.rb:216:in `run'", "c:/ruby/lib/ruby/1.8/test/unit/autorunner.rb:12:in `run'", "c:/ruby/lib/ruby/1.8/test/unit.rb:278", "Test_08_Publisher_margin_%.rb:100"]
+.
+Finished in 455.172 seconds.
+
+3 tests, 0 assertions, 0 failures, 0 errors
+Loaded suite Test_09_US_getcount
+Started
+.Successful Login to Usampadmin
+21304
+100542
+*** Waiting for count to load ***
+************
+<TD>Total members found: 1136
+1136
+1136
+test string
+**** Waiting for surveys to load ****
+FAIL
+************
+<TD>Total members found: 1137
+1137
+1137
+GET COUNT PASS
+test string
+PASS
+************
+<TD>Total members found: 7
+7
+7
+Successful Login to Focusline site
+FAIL
+************
+<TD>Total members found: 8
+8
+8
+PRF GET COUNT PASS
+PASS
+.Successful Login to Usampadmin
+21304
+100542
+.Successful Login to Usampadmin
+21304
+100542
+*** Waiting for count to load ***
+************
+<TD>Total members found: 91
+91
+91
+test string
+**** Waiting for surveys to load ****
+PASS
+************
+<TD>Total members found: 91
+91
+91
+GET COUNT PASS
+Successful Login to Focusline site
+Waiting for surveys to load...
+FAIL
+************
+<TD>Total members found: 92
+92
+92
+GET COUNT PASS
+.Successful Login to Usampadmin
+21304
+100542
+.
+Finished in 1521.265 seconds.
+
+5 tests, 0 assertions, 0 failures, 0 errors
+Loaded suite Test_10_CAN_getcount
+Started
+.Successful Login to Usampadmin
+21304
+100542
+*** Waiting for count to load ***
+************
+<TD>Total members found: 157
+157
+157
+test string
+**** Waiting for surveys to load ****
+FAIL
+************
+<TD>Total members found: 158
+158
+158
+GET COUNT PASS
+PASS
+FSA_MISMATCH:PASS
+FSA_MATCH:FAIL
+AREA_MATCH:FAIL
+STATE_MISMATCH:PASS
+STATE_MATCH:FAIL
+************
+<TD>Total members found: 0
+0
+0
+PROF_MATCH:FAIL
+************
+<TD>Total members found: 1
+1
+1
+PRF GET COUNT PASS
+PROF_MISMATCH:PASS
+.Successful Login to Usampadmin
+21304
+100542
+.Successful Login to Usampadmin
+21304
+100542
+*** Waiting for count to load ***
+************
+<TD>Total members found: 60
+60
+60
+test string
+**** Waiting for surveys to load ****
+PASS
+************
+<TD>Total members found: 60
+60
+60
+GET COUNT PASS
+Successful Login to Focusline site
+Waiting for surveys to load...
+FAIL
+************
+<TD>Total members found: 61
+61
+61
+GET COUNT PASS
+.Successful Login to Usampadmin
+21304
+100542
+.
+Finished in 1419.546 seconds.
+
+5 tests, 0 assertions, 0 failures, 0 errors
+Loaded suite Test_11_CP_Project
+Started
+.Logged it to Network site
+...Successful Login to Usampadmin
+Search Passed
+Project Update passed
+Supplier add passed
+Stats passed
+.Search Passed
+.
+Finished in 210.781 seconds.
+
+6 tests, 0 assertions, 0 failures, 0 errors
+Loaded suite Test_12_CP_rule_processing
+Started
+.Logged it to Network site
+Project created
+.Supplier added
+.**** 5656 *****
+1
+0
+0
+0
+0
+0
+MAX_CLICKS: PASS
+DUP PANEL ACC: PASS
+DUP COMPL: PASS
+GEO_IP: PASS
+PROF:PASS
+PROXY:FAIL
+SPAMMER:PASS
+..
+Finished in 366.657 seconds.
+
+5 tests, 0 assertions, 0 failures, 0 errors
+Loaded suite Test_13_Curl_pixel
+Started
+.Successful Login to Usampadmin
+*** PIXEL SETTINGS DONE  ***
+.test string
+auto_test.desWedDec14214916@mailop.com
+**** Waiting for surveys to load ****
+.auto_test.desWedDec14214916@mailop.com
+Successful Login to Surveyhead site
+100542
+linkMTAwNTQy
+pass
+.Successful Login to Usampadmin
+21304
+100542
+.auto_test.desWedDec14214916@mailop.com
+Successful Login to Surveyhead site
+p.surveyhead.com/profile.php?PrId=MzAw
+&PrLId=Mg==
+..Successful Login to Usampadmin
+*** PIXEL RESETTINGS DONE  ***
+.
+Finished in 401.157 seconds.
+
+8 tests, 0 assertions, 0 failures, 0 errors
+Loaded suite Test_14_Traditional_pixel
+Started
+.Successful Login to Usampadmin
+*** PIXEL SETTINGS DONE  ***
+.test string
+auto_test.desWedDec14215611@mailop.com
+**** Waiting for surveys to load ****
+*** Check Pixels ***
+.auto_test.desWedDec14215611@mailop.com
+Successful Login to Surveyhead site
+100542
+linkMTAwNTQy
+.Successful Login to Usampadmin
+21304
+100542
+.auto_test.desWedDec14215611@mailop.com
+Successful Login to Surveyhead site
+p.surveyhead.com/profile.php?PrId=MzAw
+&PrLId=Mg==
+.Successful Login to Usampadmin
+*** PIXEL RESETTINGS DONE  ***
+.
+Finished in 416.938 seconds.
+
+7 tests, 0 assertions, 0 failures, 0 errors
+Loaded suite Test_15_Profile_creation
+Started
+.Successful Login to Usampadmin
+Test_ProfileWed_Dec_14_220256
+BMW
+AUDI
+MERC
+FERRARI
+.
+Finished in 196.594 seconds.
+
+2 tests, 0 assertions, 0 failures, 0 errors
+Loaded suite Test_16_Reward_creation
+Started
+.Successful Login to Usampadmin
+Donation_Wed Dec 14 22:06:34
+Don_passed
+395
+.Successful Login to Usampadmin
+GIFT_CERT_Wed Dec 14 22:07:31
+Gift_passed
+396
+.Donation_Wed Dec 14 22:06:34
+GIFT_CERT_Wed Dec 14 22:07:31
+Successful Login to Surveyhead site
+gift_pl_passed
+don_pl_passed
+gift_pl_passed
+don_pl_passed
+.
+Finished in 309.093 seconds.
+
+4 tests, 0 assertions, 0 failures, 0 errors
+Loaded suite Test_17_Member_data_review
+Started
+.Successful Login to Usampadmin
+21304
+100542
+QG COPIED
+2011-12-24
+100543
+.Successful Login to Surveyhead site
+## Waiting for surveys to load ##
+linkMTAwNTQz
+Successful Login to Usampadmin
+<TD>COPIED AUTO TEST SURVEY</TD>
+***
+<TD>Earned</TD>
+PASS
+PASS
+.Successful Login to Surveyhead site
+## Waiting for surveys to load ##
+linkMTAwNTQz
+Successful Login to Usampadmin
+<TD>COPIED AUTO TEST SURVEY</TD>
+***
+<TD>Invalid</TD>
+PASS
+PASS
+.Successful Login to Usampadmin
+21304
+100543
+.
+Finished in 488.875 seconds.
+
+5 tests, 0 assertions, 0 failures, 0 errors
+Loaded suite Test_18_Publisher_bids
+Started
+.21304
+100543
+Successful Login to Usampadmin
+Pass
+.Logged it to Network site
+Pass
+.Successful Login to Usampadmin
+Pass
+.Successful Login to Usampadmin
+Pass
+.Logged it to Network site
+Pass
+.Successful Login to Usampadmin
+Pass
+.
+Finished in 276.766 seconds.
+
+7 tests, 0 assertions, 0 failures, 0 errors
+Loaded suite Test_19_Virtual_currency_reflection
+Started
+.Successful Login to Usampadmin
+Successful Login to Focusline site
+VC ON V1.0 PASS
+.Successful Login to Usampadmin
+Successful Login to Focusline site
+VC ON V2.0 FAIL (Rewards page)
+.Successful Login to Usampadmin
+.
+Finished in 217.735 seconds.
+
+4 tests, 0 assertions, 0 failures, 0 errors
+Loaded suite Test_20_Custom_reward
+Started
+.Successful Login to Usampadmin
+Successful Login to Focusline site
+PASS
+.
+Finished in 115.625 seconds.
+
+2 tests, 0 assertions, 0 failures, 0 errors
+Loaded suite Test_21_Registration_management
+Started
+.PASS
+test string
+PASS
+.Successful Login to Usampadmin
+PASS
+.PASS
+test string
+Pass1
+.Successful Login to Usampadmin
+PASS
+.
+Finished in 215.281 seconds.
+
+5 tests, 0 assertions, 0 failures, 0 errors
+Loaded suite Test_22_Profile_redirection_on_signup
+Started
+.Successful Login to Usampadmin
+test string
+.Successful Login to Usampadmin
+test string
+.
+Finished in 238.11 seconds.
+
+3 tests, 0 assertions, 0 failures, 0 errors
+Loaded suite Test_23_Request_cash_out
+Started
+.GIFT_CERT_Wed Dec 14 22:07:31
+Successful Login to Surveyhead site
+Fail
+.Donation_Wed Dec 14 22:06:34
+Successful Login to Surveyhead site
+Fail
+.Donation_Wed Dec 14 22:06:34
+GIFT_CERT_Wed Dec 14 22:07:31
+Successful Login to Surveyhead site
+.GIFT_CERT_Wed Dec 14 22:07:31
+Successful Login to Surveyhead site
+2nd Gift Fail
+.Donation_Wed Dec 14 22:06:34
+Successful Login to Surveyhead site
+2nd Don Fail
+.
+Finished in 396.672 seconds.
+
+6 tests, 0 assertions, 0 failures, 0 errors
+Loaded suite Test_24_Survey_redirection
+Started
+.Successful Login to Usampadmin
+21304
+100542
+.Successful Login to Usampadmin
+.Successful Login to Focusline site
+FAIL** SURVEY NOT SHOWN ON DASHBOARD
+undefined method `close' for nil:NilClass
+["Test_24_Survey_redirection.rb:145:in `test_04_std_redirection'", "c:/ruby/lib/ruby/1.8/test/unit/testcase.rb:78:in `__send__'", "c:/ruby/lib/ruby/1.8/test/unit/testcase.rb:78:in `run'", "c:/ruby/lib/ruby/1.8/test/unit/testsuite.rb:34:in `run'", "c:/ruby/lib/ruby/1.8/test/unit/testsuite.rb:33:in `each'", "c:/ruby/lib/ruby/1.8/test/unit/testsuite.rb:33:in `run'", "c:/ruby/lib/ruby/1.8/test/unit/testsuite.rb:34:in `run'", "c:/ruby/lib/ruby/1.8/test/unit/testsuite.rb:33:in `each'", "c:/ruby/lib/ruby/1.8/test/unit/testsuite.rb:33:in `run'", "c:/ruby/lib/ruby/1.8/test/unit/ui/testrunnermediator.rb:46:in `run_suite'", "c:/ruby/lib/ruby/1.8/test/unit/ui/console/testrunner.rb:67:in `start_mediator'", "c:/ruby/lib/ruby/1.8/test/unit/ui/console/testrunner.rb:41:in `start'", "c:/ruby/lib/ruby/1.8/test/unit/ui/testrunnerutilities.rb:29:in `run'", "c:/ruby/lib/ruby/1.8/test/unit/autorunner.rb:216:in `run'", "c:/ruby/lib/ruby/1.8/test/unit/autorunner.rb:12:in `run'", "c:/ruby/lib/ruby/1.8/test/unit.rb:278", "Test_24_Survey_redirection.rb:249"]
+.Successful Login to Usampadmin
+.Successful Login to Focusline site
+FAIL** SURVEY NOT SHOWN ON DASHBOARD
+undefined method `close' for nil:NilClass
+["Test_24_Survey_redirection.rb:212:in `test_06_iframe_redirection'", "c:/ruby/lib/ruby/1.8/test/unit/testcase.rb:78:in `__send__'", "c:/ruby/lib/ruby/1.8/test/unit/testcase.rb:78:in `run'", "c:/ruby/lib/ruby/1.8/test/unit/testsuite.rb:34:in `run'", "c:/ruby/lib/ruby/1.8/test/unit/testsuite.rb:33:in `each'", "c:/ruby/lib/ruby/1.8/test/unit/testsuite.rb:33:in `run'", "c:/ruby/lib/ruby/1.8/test/unit/testsuite.rb:34:in `run'", "c:/ruby/lib/ruby/1.8/test/unit/testsuite.rb:33:in `each'", "c:/ruby/lib/ruby/1.8/test/unit/testsuite.rb:33:in `run'", "c:/ruby/lib/ruby/1.8/test/unit/ui/testrunnermediator.rb:46:in `run_suite'", "c:/ruby/lib/ruby/1.8/test/unit/ui/console/testrunner.rb:67:in `start_mediator'", "c:/ruby/lib/ruby/1.8/test/unit/ui/console/testrunner.rb:41:in `start'", "c:/ruby/lib/ruby/1.8/test/unit/ui/testrunnerutilities.rb:29:in `run'", "c:/ruby/lib/ruby/1.8/test/unit/autorunner.rb:216:in `run'", "c:/ruby/lib/ruby/1.8/test/unit/autorunner.rb:12:in `run'", "c:/ruby/lib/ruby/1.8/test/unit.rb:278", "Test_24_Survey_redirection.rb:249"]
+.Successful Login to Usampadmin
+.Successful Login to Usampadmin
+21304
+100542
+.
+Finished in 446.844 seconds.
+
+8 tests, 0 assertions, 0 failures, 0 errors
+Loaded suite Test_25_Profile_answering
+Started
+.Test_ProfileWed_Dec_14_220256
+711
+Successful Login to Usampadmin
+.Successful Login to Focusline site
+NzEx
+.
+Finished in 119.375 seconds.
+
+3 tests, 0 assertions, 0 failures, 0 errors
+Loaded suite Test_26_Site_rendering
+Started
+.Espanol Test Passed
+.Deutch Test Passed
+.French Test Passed
+.Italian Test Passed
+.Portuguese Test Passed
+.
+Finished in 64.687 seconds.
+
+6 tests, 0 assertions, 0 failures, 0 errors
+Loaded suite Test_27_Dashboard_on_off
+Started
+.100542
+Successful Login to Usampadmin
+Successful Login to Surveyhead site
+OFF: PASSED
+.100542
+Successful Login to Usampadmin
+Successful Login to Surveyhead site
+ON: FAILED
+.
+Finished in 174.422 seconds.
+
+3 tests, 0 assertions, 0 failures, 0 errors
+Loaded suite Test_28_Disable_pub_account
+Started
+.Successful Login to Usampadmin
+Pass
+.Pass
+.Pass
+.Sorry! System Failed to login to Network site
+Pass
+.100542
+Pass
+.Successful Login to Usampadmin
+Pass
+.Pass
+.Pass
+.Logged it to Network site
+Pass
+.100542
+Pass
+.
+Finished in 164.125 seconds.
+
+11 tests, 0 assertions, 0 failures, 0 errors
+Loaded suite Test_29_Enable_disable_queue2
+Started
+.Successful Login to Usampadmin
+Q2:Enabled
+.http://www.p.surveyhead.com/queue2.php
+PASS
+.Successful Login to Usampadmin
+Q2:Disabled
+.http://www.p.surveyhead.com/queue3.php
+PASS
+.
+Finished in 117.312 seconds.
+
+5 tests, 0 assertions, 0 failures, 0 errors
+Loaded suite Test_30_External_prescreener
+Started
+.Successful Login to Usampadmin
+21304
+100542
+MjEzMDQK
+MTAwNTQy
+.Successful Login to Usampadmin
+21304
+100542
+MjEzMDQK
+MTAwNTQy
+.Successful Login to Usampadmin
+21304
+100542
+MjEzMDQK
+MTAwNTQy
+.Successful Login to Usampadmin
+21304
+100542
+MjEzMDQK
+MTAwNTQy
+.
+Finished in 230.437 seconds.
+
+5 tests, 0 assertions, 0 failures, 0 errors
+Loaded suite Test_31_Merge_field_survey_url
+Started
+.Successful Login to Usampadmin
+21304
+100542
+MjEzMDQK
+MTAwNTQy
+.Successful Login to Surveyhead site
+100542
+linkMTAwNTQy
+http://203.199.26.75/usamp/TEST_SURVEY.php?SHA=218dc9724725dfc0f1ba4d3da606ee266d3ade60&MEM_NO=10598227&ENC_MEM_NO=Y4vwDOmmu&AGE=36&CHILDRN=2&ETHNICITY=9&EDUC=6&GEN=1&INCOME=22&MAR_STATUS=1&ZIP=90001&PID=0&SP_ID=&EMAIL=gsk@hk.com&COUNTY=06037&STATE=06&DMA=803&TOKEN=a75f8efdc606d51c41c375425ec03961
+http://203.199.26.75/usamp/TEST_SURVEY.php?SHA=218dc9724725dfc0f1ba4d3da606ee266d3ade60&MEM_NO=10598227&ENC_MEM_NO=Y4vwDOmmu&AGE=36&CHILDRN=2&ETHNICITY=9&EDUC=6&GEN=1&INCOME=22&MAR_STATUS=1&ZIP=90001&PID=0&SP_ID=&EMAIL=gsk@hk.com&COUNTY=06037&STATE=06&DMA=803&TOKEN=
+pass
+.Successful Login to Usampadmin
+21304
+100542
+MjEzMDQK
+MTAwNTQy
+.
+Finished in 246.422 seconds.
+
+4 tests, 0 assertions, 0 failures, 0 errors
+Loaded suite Test_32_Panel_book_search
+Started
+.Fail
+.
+Finished in 34.734 seconds.
+
+2 tests, 0 assertions, 0 failures, 0 errors
+Loaded suite Test_33_Custom_homepage_render
+Started
+.Successful Login to Usampadmin
+Config settings saved
+.PASS
+.Successful Login to Usampadmin
+.
+Finished in 73.031 seconds.
+
+4 tests, 0 assertions, 0 failures, 0 errors
+Loaded suite Test_34_Add_publisher
+Started
+.Successful Login to Usampadmin
+Pass
+.Successful Login to Usampadmin
+TEST AUTO PUB_1643
+PU1315
+Pass
+Pass
+.
+Finished in 66.625 seconds.
+
+3 tests, 0 assertions, 0 failures, 0 errors
+Loaded suite Test_35_SH_email_update
+Started
+.Successful Login to Surveyhead site
+PASS
+..Successful Login to Surveyhead site
+.
+Finished in 231.125 seconds.
+
+4 tests, 0 assertions, 0 failures, 0 errors
+Loaded suite Test_36_Project_search
+Started
+.Successful Login to Usampadmin
+Pass
+.
+Finished in 180.343 seconds.
+
+2 tests, 0 assertions, 0 failures, 0 errors
+Loaded suite Test_37_Add_publisher_group
+Started
+.Successful Login to Usampadmin
+TEST AUTO PUB_1643
+Pass
+.Successful Login to Usampadmin
+TEST_PUB_GRP_2527
+TEST_PUB_GRP_2527
+Pass
+TEST TEMP GROUP NAME
+Pass
+.
+Finished in 58.438 seconds.
+
+3 tests, 0 assertions, 0 failures, 0 errors
+Loaded suite Test_38_Add_employee
+Started
+.Successful Login to Usampadmin
+Pass
+.Successful Login to Usampadmin
+Pass
+Pass
+.
+Finished in 40.5 seconds.
+
+3 tests, 0 assertions, 0 failures, 0 errors
+Loaded suite Test_39_Add_client
+Started
+.Successful Login to Usampadmin
+Pass
+.Successful Login to Usampadmin
+Pass
+Pass
+.
+Finished in 59.375 seconds.
+
+3 tests, 0 assertions, 0 failures, 0 errors
+Loaded suite Test_40_Simulate_completes
+Started
+.21304
+100542
+Successful Login to Usampadmin
+Pass
+.21304
+100542
+Successful Login to Usampadmin
+Pass
+.21304
+100542
+Successful Login to Usampadmin
+Pass
+.
+Finished in 165.203 seconds.
+
+4 tests, 0 assertions, 0 failures, 0 errors
+Loaded suite Test_41_Member_search
+Started
+.Successful Login to Usampadmin
+Pass
+Pass
+.
+Finished in 70.719 seconds.
+
+2 tests, 0 assertions, 0 failures, 0 errors
+Loaded suite Test_42_QG_notifications
+Started
+.Successful Login to Usampadmin
+21304
+100542
+QG COPIED
+2011-12-24
+100544
+.Successful Login to Usampadmin
+21304
+100544
+Pass
+.21304
+100544
+Successful Login to Usampadmin
+Pass
+.
+Finished in 197.656 seconds.
+
+4 tests, 0 assertions, 0 failures, 0 errors
+Loaded suite Test_43_Add_tools
+Started
+.Successful Login to Usampadmin
+Pass
+.Successful Login to Usampadmin
+Pass
+.
+Finished in 35.938 seconds.
+
+3 tests, 0 assertions, 0 failures, 0 errors
+Loaded suite Test_44_Pub_client_association
+Started
+.Successful Login to Usampadmin
+Publisher already added
+Pass
+.Successful Login to Usampadmin
+Pass
+.Successful Login to Usampadmin
+Pass
+.Successful Login to Usampadmin
+Pass
+.
+Finished in 104.171 seconds.
+
+5 tests, 0 assertions, 0 failures, 0 errors
+Loaded suite Test_45_Email_link_pub
+Started
+.Successful Login to Usampadmin
+21304
+100542
+Pass
+.100542
+MAIL PASSED
+.
+Finished in 111.766 seconds.
+
+3 tests, 0 assertions, 0 failures, 0 errors
+Loaded suite Test_46_Donot_include_member_last_hour
+Started
+.Successful Login to Usampadmin
+21304
+100542
+Pass
+.test string
+100542
+**** Waiting for surveys to load ****
+Pass
+.Successful Login to Usampadmin
+21304
+100542
+Updated message shown
+Pass
+.Successful Login to Surveyhead site
+100542
+**** Waiting for surveys to load ****
+Pass
+.
+Finished in 312.578 seconds.
+
+5 tests, 0 assertions, 0 failures, 0 errors
+Loaded suite Test_47_QG_Publisher_redirect
+Started
+.Successful Login to Usampadmin
+Pass
+21304
+100542
+.100542
+Pass
+Pass
+Pass
+.Successful Login to Usampadmin
+21304
+100542
+Pass
+Pass
+Pass
+.Successful Login to Usampadmin
+21304
+100542
+Pass
+.
+Finished in 175.157 seconds.
+
+5 tests, 0 assertions, 0 failures, 0 errors
+Loaded suite Test_48_Profile_linked_survey
+Started
+.Test_ProfileWed_Dec_14_220256
+711
+Successful Login to Usampadmin
+.Successful Login to Usampadmin
+21304
+100542
+Test_ProfileWed_Dec_14_220256
+Pass
+.Successful Login to Surveyhead site
+100542
+linkMTAwNTQy
+.Successful Login to Usampadmin
+21304
+100542
+Pass
+.
+Finished in 302.281 seconds.
+
+5 tests, 0 assertions, 0 failures, 0 errors
+Loaded suite Test_49_Supplier_add_show_hide
+Started
+.Successful Login to Usampadmin
+Test_Auto_Glob_Supp_WedDec14235551
+Pass
+.Logged it to Network site
+Pass
+.Successful Login to Usampadmin
+Logged it to Network site
+Pass
+Pass
+.
+Finished in 112.125 seconds.
+
+4 tests, 0 assertions, 0 failures, 0 errors
+Loaded suite Test_50_Add_prescreener
+Started
+.Successful Login to Usampadmin
+21304
+100542
+Pass
+Pass
+.21304
+100542
+Successful Login to Usampadmin
+Pass
+Pass
+.21304
+100542
+Successful Login to Usampadmin
+Pass
+Pass
+.
+Finished in 254.547 seconds.
+
+4 tests, 0 assertions, 0 failures, 0 errors
+Loaded suite Test_51_Setup_live_closed_QG
+Started
+.Successful Login to Usampadmin
+21304
+100542
+Unable to locate element, using :name, "optQuotaStatus"
+["c:/ruby/lib/ruby/gems/1.8/gems/watir-1.6.5/lib/watir/element.rb:56:in `assert_exists'", "c:/ruby/lib/ruby/gems/1.8/gems/watir-1.6.5/lib/watir/input_elements.rb:62:in `select_item_in_select_list'", "c:/ruby/lib/ruby/gems/1.8/gems/watir-1.6.5/lib/watir/input_elements.rb:46:in `set'", "Test_51_Setup_live_closed_QG.rb:61:in `test_02_check_setting_up_QG'", "c:/ruby/lib/ruby/1.8/test/unit/testcase.rb:78:in `__send__'", "c:/ruby/lib/ruby/1.8/test/unit/testcase.rb:78:in `run'", "c:/ruby/lib/ruby/1.8/test/unit/testsuite.rb:34:in `run'", "c:/ruby/lib/ruby/1.8/test/unit/testsuite.rb:33:in `each'", "c:/ruby/lib/ruby/1.8/test/unit/testsuite.rb:33:in `run'", "c:/ruby/lib/ruby/1.8/test/unit/testsuite.rb:34:in `run'", "c:/ruby/lib/ruby/1.8/test/unit/testsuite.rb:33:in `each'", "c:/ruby/lib/ruby/1.8/test/unit/testsuite.rb:33:in `run'", "c:/ruby/lib/ruby/1.8/test/unit/ui/testrunnermediator.rb:46:in `run_suite'", "c:/ruby/lib/ruby/1.8/test/unit/ui/console/testrunner.rb:67:in `start_mediator'", "c:/ruby/lib/ruby/1.8/test/unit/ui/console/testrunner.rb:41:in `start'", "c:/ruby/lib/ruby/1.8/test/unit/ui/testrunnerutilities.rb:29:in `run'", "c:/ruby/lib/ruby/1.8/test/unit/autorunner.rb:216:in `run'", "c:/ruby/lib/ruby/1.8/test/unit/autorunner.rb:12:in `run'", "c:/ruby/lib/ruby/1.8/test/unit.rb:278", "Test_51_Setup_live_closed_QG.rb:247"]
+.Successful Login to Usampadmin
+21304
+100542
+Pass
+Logged it to Network site
+Pass
+.Successful Login to Usampadmin
+21304
+100542
+Pass
+Logged it to Network site
+Pass
+.Successful Login to Usampadmin
+21304
+100542
+.
+Finished in 185.953 seconds.
+
+5 tests, 0 assertions, 0 failures, 0 errors
+Loaded suite Test_52_Profile_criteria_cases
+Started
+.Successful Login to Usampadmin
+Test_Profile_2_Thu_Dec_15_000543
+Test_ProfileWed_Dec_14_220256
+PASS
+PASS
+PASS
+.Test_Profile_2_Thu_Dec_15_000543
+712
+Successful Login to Usampadmin
+.Test_ProfileWed_Dec_14_220256
+711
+Test_Profile_2_Thu_Dec_15_000543
+712
+Successful Login to Focusline site
+NzEx
+PASS
+PASS
+NzEy
+PASS
+PASS
+.Test_Profile_2_Thu_Dec_15_000543
+712
+Successful Login to Usampadmin
+NzEy
+Successful Login to Focusline site
+PASS
+PASS
+PASS
+PASS
+PASS
+PASS
+711
+NzEx
+.
+Finished in 408.546 seconds.
+
+5 tests, 0 assertions, 0 failures, 0 errors
+Loaded suite Test_53_List_projects
+Started
+.Successful Login to Usampadmin
+Pass
+.Successful Login to Usampadmin
+Pass
+.Successful Login to Usampadmin
+Pass
+.
+Finished in 125.578 seconds.
+
+4 tests, 0 assertions, 0 failures, 0 errors
+Loaded suite Test_54_EX_ST_Links
+Started
+.21304
+100542
+Successful Login to Usampadmin
+test string
+**** Waiting for surveys to load ****
+.100542
+test string
+**** Waiting for surveys to load ****
+.100542
+test string
+**** Waiting for surveys to load ****
+.100542
+Successful Login to Usampadmin
+test string
+**** Waiting for surveys to load ****
+.100542
+test string
+**** Waiting for surveys to load ****
+.100542
+test string
+**** Waiting for surveys to load ****
+.Successful Login to Usampadmin
+.
+Finished in 799.297 seconds.
+
+8 tests, 0 assertions, 0 failures, 0 errors
+Loaded suite Test_55_Member_ID_report
+Started
+.Logged it to Network site
+Fail
+.
+Finished in 38.766 seconds.
+
+2 tests, 0 assertions, 0 failures, 0 errors
+Loaded suite Test_56_Profile_mapping_on_corp
+Started
+.712
+Successful Login to Usampadmin
+.Test_Profile_2_Thu_Dec_15_000543
+Test_Profile_2_Thu_Dec_15_000543-ENG
+FAIL
+.712
+Successful Login to Usampadmin
+.Test_Profile_2_Thu_Dec_15_000543
+Unable to locate element, using :id, "panel_search_box"
+["c:/ruby/lib/ruby/gems/1.8/gems/firewatir-1.6.5/lib/firewatir/element.rb:907:in `assert_exists'", "c:/ruby/lib/ruby/gems/1.8/gems/firewatir-1.6.5/lib/firewatir/elements/text_field.rb:149:in `set'", "Test_56_Profile_mapping_on_corp.rb:168:in `test_05_check_prof_on_corp'", "c:/ruby/lib/ruby/1.8/test/unit/testcase.rb:78:in `__send__'", "c:/ruby/lib/ruby/1.8/test/unit/testcase.rb:78:in `run'", "c:/ruby/lib/ruby/1.8/test/unit/testsuite.rb:34:in `run'", "c:/ruby/lib/ruby/1.8/test/unit/testsuite.rb:33:in `each'", "c:/ruby/lib/ruby/1.8/test/unit/testsuite.rb:33:in `run'", "c:/ruby/lib/ruby/1.8/test/unit/testsuite.rb:34:in `run'", "c:/ruby/lib/ruby/1.8/test/unit/testsuite.rb:33:in `each'", "c:/ruby/lib/ruby/1.8/test/unit/testsuite.rb:33:in `run'", "c:/ruby/lib/ruby/1.8/test/unit/ui/testrunnermediator.rb:46:in `run_suite'", "c:/ruby/lib/ruby/1.8/test/unit/ui/console/testrunner.rb:67:in `start_mediator'", "c:/ruby/lib/ruby/1.8/test/unit/ui/console/testrunner.rb:41:in `start'", "c:/ruby/lib/ruby/1.8/test/unit/ui/testrunnerutilities.rb:29:in `run'", "c:/ruby/lib/ruby/1.8/test/unit/autorunner.rb:216:in `run'", "c:/ruby/lib/ruby/1.8/test/unit/autorunner.rb:12:in `run'", "c:/ruby/lib/ruby/1.8/test/unit.rb:278", "Test_56_Profile_mapping_on_corp.rb:153"]
+.
+Finished in 123.875 seconds.
+
+5 tests, 0 assertions, 0 failures, 0 errors
+Loaded suite Test_57_Success_fail_oq_rewards
+Started
+.Successful Login to Usampadmin
+21304
+100542
+PASS
+PASS
+PASS
+.100542
+Successful Login to Surveyhead site
+## Waiting for surveys to load ##
+linkMTAwNTQy
+Successful Login to Usampadmin
+<SCRIPT language=JavaScript>
+***
+You'll also want to include a stylesheet that makes the datepicker elements
+** CHK AMT **
+                            								<td class="cellBorder3" align="left">																	$190.00 
+																									</td>
+							                            <td class="cellBorder2"><span class="earned">&nbsp;
+							<!-- added Vivek - 20th April, 2009 start-->
+********
+FAIL
+.100542
+Successful Login to Surveyhead site
+## Waiting for surveys to load ##
+linkMTAwNTQy
+** CHK AMT **
+                            								<td class="cellBorder3" align="left">																	$2.00 
+																									</td>
+							                            <td class="cellBorder2"><span class="earned">&nbsp;
+							<!-- added Vivek - 20th April, 2009 start-->
+********
+PASS
+.100542
+Successful Login to Surveyhead site
+## Waiting for surveys to load ##
+linkMTAwNTQy
+** CHK AMT **
+                            								<td class="cellBorder3" align="left">																	$3.00 
+																									</td>
+							                            <td class="cellBorder2"><span class="earned">&nbsp;
+							<!-- added Vivek - 20th April, 2009 start-->
+********
+PASS
+.
+Finished in 562.343 seconds.
+
+5 tests, 0 assertions, 0 failures, 0 errors
+Loaded suite Test_58_Confirmit_code_url
+Started
+.Successful Login to Usampadmin
+21304
+100543
+PASS
+PASS
+.100543
+Successful Login to Surveyhead site
+## Waiting for surveys to load ##
+linkMTAwNTQz
+http://203.199.26.75/usamp/TEST_SURVEY.php?CLIENT_CODE=X422300003&TOKEN=1f08b0643c63f999a1cc789c9d779548
+PASS
+104
+1f08b0643c63f999a1cc789c9d779548
+.21304
+100543
+Successful Login to Surveyhead site
+## Waiting for surveys to load ##
+linkMTAwNTQz
+PASS
+Successful Login to Usampadmin
+Pass
+.Successful Login to Usampadmin
+21304
+100543
+PASS
+PASS
+.100543
+Successful Login to Surveyhead site
+## Waiting for surveys to load ##
+linkMTAwNTQz
+http://203.199.26.75/usamp/CONF_URL_1.php?TOKEN=1100629c7b5c96ac8300bc8b63793899
+PASS
+80
+1100629c7b5c96ac8300bc8b63793899
+.21304
+100543
+Successful Login to Surveyhead site
+## Waiting for surveys to load ##
+linkMTAwNTQz
+PASS
+Successful Login to Usampadmin
+Pass
+.21304
+100543
+Successful Login to Usampadmin
+.
+Finished in 894.891 seconds.
+
+8 tests, 0 assertions, 0 failures, 0 errors
+Loaded suite Test_59_Confirmit_code_url_recontact
+Started
+.Successful Login to Usampadmin
+21304
+100543
+QG COPIED
+2011-12-25
+100550
+.Successful Login to Usampadmin
+21304
+100550
+PASS
+1f08b0643c63f999a1cc789c9d779548
+PASS
+PASS
+.100550
+Successful Login to Surveyhead site
+## Waiting for surveys to load ##
+PASS
+.100550
+Successful Login to Surveyhead site
+## Waiting for surveys to load ##
+linkMTAwNTUw
+http://203.199.26.75/usamp/TEST_SURVEY.php?CLIENT_CODE=X422300008&TOKEN=5fe452f6f671f6c0ad1865942e802d17
+PASS
+.Successful Login to Usampadmin
+21304
+100550
+PASS
+1100629c7b5c96ac8300bc8b63793899
+PASS
+PASS
+.100550
+Successful Login to Surveyhead site
+## Waiting for surveys to load ##
+PASS
+.100550
+Successful Login to Surveyhead site
+## Waiting for surveys to load ##
+linkMTAwNTUw
+http://203.199.26.75/usamp/RECONTACT_CONF_URL.php
+PASS
+.Successful Login to Usampadmin
+21304
+100550
+.
+Finished in 887.891 seconds.
+
+9 tests, 0 assertions, 0 failures, 0 errors
+Loaded suite Test_60_Survey_complete_invalid_token
+Started
+.21304
+100542
+Successful Login to Usampadmin
+Unable to locate a window with title of TEST_AUTOMATION_SURVEY
+["c:/ruby/lib/ruby/gems/1.8/gems/watir-1.6.5/lib/watir/ie-class.rb:297:in `attach_browser_window'", "c:/ruby/lib/ruby/gems/1.8/gems/watir-1.6.5/lib/watir/ie-class.rb:149:in `_attach_init'", "c:/ruby/lib/ruby/gems/1.8/gems/watir-1.6.5/lib/watir/ie-class.rb:143:in `attach'", "Test_60_Survey_complete_invalid_token.rb:70:in `test_02_survey_complete'", "c:/ruby/lib/ruby/1.8/test/unit/testcase.rb:78:in `__send__'", "c:/ruby/lib/ruby/1.8/test/unit/testcase.rb:78:in `run'", "c:/ruby/lib/ruby/1.8/test/unit/testsuite.rb:34:in `run'", "c:/ruby/lib/ruby/1.8/test/unit/testsuite.rb:33:in `each'", "c:/ruby/lib/ruby/1.8/test/unit/testsuite.rb:33:in `run'", "c:/ruby/lib/ruby/1.8/test/unit/testsuite.rb:34:in `run'", "c:/ruby/lib/ruby/1.8/test/unit/testsuite.rb:33:in `each'", "c:/ruby/lib/ruby/1.8/test/unit/testsuite.rb:33:in `run'", "c:/ruby/lib/ruby/1.8/test/unit/ui/testrunnermediator.rb:46:in `run_suite'", "c:/ruby/lib/ruby/1.8/test/unit/ui/console/testrunner.rb:67:in `start_mediator'", "c:/ruby/lib/ruby/1.8/test/unit/ui/console/testrunner.rb:41:in `start'", "c:/ruby/lib/ruby/1.8/test/unit/ui/testrunnerutilities.rb:29:in `run'", "c:/ruby/lib/ruby/1.8/test/unit/autorunner.rb:216:in `run'", "c:/ruby/lib/ruby/1.8/test/unit/autorunner.rb:12:in `run'", "c:/ruby/lib/ruby/1.8/test/unit.rb:278", "Test_60_Survey_complete_invalid_token.rb:99"]
+.21304
+100542
+Successful Login to Usampadmin
+.
+Finished in 203.843 seconds.
+
+3 tests, 0 assertions, 0 failures, 0 errors
+Loaded suite Test_61_Rewards_at_site_level
+Started
+.Successful Login to Usampadmin
+21304
+100542
+PASS
+PASS
+.100542
+Successful Login to Surveyhead site
+## Waiting for surveys to load ##
+linkMTAwNTQy
+Successful Login to Usampadmin
+<SCRIPT language=JavaScript>
+***
+You'll also want to include a stylesheet that makes the datepicker elements
+** CHK AMT **
+                            								<td class="cellBorder3" align="left">																	$0.75 
+																									</td>
+							                            <td class="cellBorder2"><span class="earned">&nbsp;
+							<!-- added Vivek - 20th April, 2009 start-->
+********
+PASS
+.100542
+Successful Login to Surveyhead site
+## Waiting for surveys to load ##
+linkMTAwNTQy
+** CHK AMT **
+                            								<td class="cellBorder3" align="left">																	$0.25 
+																									</td>
+							                            <td class="cellBorder2"><span class="earned">&nbsp;
+							<!-- added Vivek - 20th April, 2009 start-->
+********
+PASS
+.100542
+Successful Login to Surveyhead site
+## Waiting for surveys to load ##
+linkMTAwNTQy
+** CHK AMT **
+                            								<td class="cellBorder3" align="left">																	$0.25 
+																									</td>
+							                            <td class="cellBorder2"><span class="earned">&nbsp;
+							<!-- added Vivek - 20th April, 2009 start-->
+********
+PASS
+.Successful Login to Usampadmin
+.
+Finished in 536.578 seconds.
+
+6 tests, 0 assertions, 0 failures, 0 errors
+Loaded suite Test_62_Reward_config_foriegn_lang
+Started
+.Successful Login to Usampadmin
+395
+passed
+Donacion espanola
+passed
+.Sorry! System Failed to login to Surveyhead site
+desc_pl_passed
+don_pl_passed
+.
+Finished in 141.563 seconds.
+
+3 tests, 0 assertions, 0 failures, 0 errors
+Loaded suite Test_63_Broadcasts
+Started
+.Successful Login to Usampadmin
+21304
+100542
+PASS
+.Successful Login to Usampadmin
+21304
+100542
+PASS
+PASS
+132212
+Waiting for system to send email..
+.Successful Login to Usampadmin
+21304
+100542
+PASS
+PASS
+132213
+.132212
+100542
+http://p.surveyhead.com/al.php?e=usamp_bcast1@rediffmail.com&memid=10606227&QGID=MTAwNTQy
+=&broadcast_id=MTMyMjEyCg==
+PASS
+.Successful Login to Usampadmin
+21304
+100542
+PASS
+.Successful Login to Usampadmin
+21304
+100542
+2011-12-15
+01
+38
+46
+**
+1
+45
+PASS
+PASS
+.Successful Login to Usampadmin
+21304
+100542
+132212
+132213
+Waiting for system to send broadcast...
+Waiting for system to send broadcast...
+Bcast:100542 (Complete)
+PASS
+Rem:100542 (Complete)
+FAIL:TAKING TOO LONG
+.PASS
+PASS
+.Successful Login to Usampadmin
+21304
+100542
+.
+Finished in 1028.422 seconds.
+
+10 tests, 0 assertions, 0 failures, 0 errors
+Loaded suite Test_64_Email_clicks_allowed
+Started
+.Successful Login to Usampadmin
+21304
+100543
+PASS
+.Successful Login to Usampadmin
+21304
+100543
+PASS
+.Successful Login to Usampadmin
+21304
+100543
+PASS
+PASS
+132215
+Waiting for system to send email..
+.132215
+100543
+http://p.surveyhead.com/al.php?e=usamp_bcast1@rediffmail.com&memid=10606227&QGID=MTAwNTQz
+=&broadcast_id=MTMyMjE1Cg==
+Waiting..
+PASS
+.Successful Login to Usampadmin
+21304
+100543
+PASS
+.132215
+100543
+http://p.surveyhead.com/al.php?e=usamp_bcast1@rediffmail.com&memid=10606227&QGID=MTAwNTQz
+=&broadcast_id=MTMyMjE1Cg==
+PASS
+.Successful Login to Usampadmin
+21304
+100543
+.
+Finished in 511.469 seconds.
+
+8 tests, 0 assertions, 0 failures, 0 errors
+Loaded suite Test_65_Project_QG_Create
+Started
+.Successful Login to Usampadmin
+21305
+.2011-12-25
+QG CREATION PASS
+100551
+..
+Finished in 206.681 seconds.
+
+4 tests, 0 assertions, 0 failures, 0 errors
+Loaded suite Test_66_Config_setting_cases
+Started
+.Successful Login to Usampadmin
+PASS
+21305
+100551
+.Successful Login to Surveyhead site
+100551
+linkMTAwNTUx
+.Successful Login to Usampadmin
+21305
+100551
+Pass
+.Successful Login to Usampadmin
+Pass
+.
+Finished in 222.348 seconds.
+
+5 tests, 0 assertions, 0 failures, 0 errors
+Loaded suite Test_67_No_of_QG_clicks_allowed
+Started
+.Successful Login to Usampadmin
+21305
+100551
+PASS
+.Successful Login to Surveyhead site
+100551
+linkMTAwNTUx
+Successful Login to Surveyhead site
+100551
+linkMTAwNTUx
+Successful Login to Surveyhead site
+100551
+PASS
+.Successful Login to Usampadmin
+21305
+100551
+PASS
+.Successful Login to Surveyhead site
+100551
+PASS
+linkMTAwNTUx
+.Successful Login to Surveyhead site
+100551
+PASS
+.Successful Login to Usampadmin
+21305
+100551
+PASS
+.
+Finished in 698.002 seconds.
+
+7 tests, 0 assertions, 0 failures, 0 errors
+Loaded suite Test_68_QG_cpi_cases
+Started
+.Successful Login to Usampadmin
+21305
+100551
+QG COPIED
+2011-12-25
+100553
+.Successful Login to Usampadmin
+PASS
+.264
+test string
+auto_test.desThuDec15021514@mailinator.com
+**** Waiting for surveys to load ****
+.Successful Login to Usampadmin
+21305
+100551
+100553
+.auto_test.desThuDec15021514@mailinator.com
+Successful Login to Surveyhead site
+100551
+linkMTAwNTUx
+81
+4b1615766b74c39d354a8f5a6fd04f22
+.Successful Login to Usampadmin
+21305
+100551
+Pass
+***
+<TD class=Tablerow>$0.40&nbsp;</TD>
+PASS
+.auto_test.desThuDec15021514@mailinator.com
+Successful Login to Surveyhead site
+100553
+linkMTAwNTUz
+81
+251cf2e6e6bab09e6a1ab52c27b25933
+.Successful Login to Usampadmin
+21305
+100553
+***
+<TD class=Tablerow>$0.30</TD>
+PASS
+.
+Finished in 578.784 seconds.
+
+9 tests, 0 assertions, 0 failures, 0 errors
+Loaded suite Test_69_QG_notif_email
+Started
+.21304
+100544
+PASS: MAIL RECEIVED
+PASS
+.Successful Login to Usampadmin
+21304
+100544
+Pass
+.
+Finished in 99.534 seconds.
+
+3 tests, 0 assertions, 0 failures, 0 errors
+Loaded suite Test_70_FBconnect
+Started
+.DASHBOARD REDIRECTION FAILED
+Unable to locate element, using :text, "Account"
+["c:/ruby/lib/ruby/gems/1.8/gems/firewatir-1.6.5/lib/firewatir/element.rb:907:in `assert_exists'", "c:/ruby/lib/ruby/gems/1.8/gems/firewatir-1.6.5/lib/firewatir/element.rb:1066:in `click'", "Test_70_FBconnect.rb:71:in `test_02_fbconnect'", "c:/ruby/lib/ruby/1.8/test/unit/testcase.rb:78:in `__send__'", "c:/ruby/lib/ruby/1.8/test/unit/testcase.rb:78:in `run'", "c:/ruby/lib/ruby/1.8/test/unit/testsuite.rb:34:in `run'", "c:/ruby/lib/ruby/1.8/test/unit/testsuite.rb:33:in `each'", "c:/ruby/lib/ruby/1.8/test/unit/testsuite.rb:33:in `run'", "c:/ruby/lib/ruby/1.8/test/unit/testsuite.rb:34:in `run'", "c:/ruby/lib/ruby/1.8/test/unit/testsuite.rb:33:in `each'", "c:/ruby/lib/ruby/1.8/test/unit/testsuite.rb:33:in `run'", "c:/ruby/lib/ruby/1.8/test/unit/ui/testrunnermediator.rb:46:in `run_suite'", "c:/ruby/lib/ruby/1.8/test/unit/ui/console/testrunner.rb:67:in `start_mediator'", "c:/ruby/lib/ruby/1.8/test/unit/ui/console/testrunner.rb:41:in `start'", "c:/ruby/lib/ruby/1.8/test/unit/ui/testrunnerutilities.rb:29:in `run'", "c:/ruby/lib/ruby/1.8/test/unit/autorunner.rb:216:in `run'", "c:/ruby/lib/ruby/1.8/test/unit/autorunner.rb:12:in `run'", "c:/ruby/lib/ruby/1.8/test/unit.rb:278", "Test_70_FBconnect.rb:36"]
+.
+Finished in 62.15 seconds.
+
+2 tests, 0 assertions, 0 failures, 0 errors
+Loaded suite Test_71_Routing_qns_QG
+Started
+.Successful Login to Usampadmin
+21305
+100551
+PASS
+.Successful Login to Surveyhead site
+100551
+linkMTAwNTUx
+PASS
+Pass
+.264
+test string
+**** Waiting for surveys to load ****
+Reg:Pass
+100551
+linkMTAwNTUx
+PASS
+Pass
+.Successful Login to Usampadmin
+21305
+100551
+PASS
+.
+Finished in 543.433 seconds.
+
+5 tests, 0 assertions, 0 failures, 0 errors
+Loaded suite Test_XX_Project_QG_status_change
+Started
+.21304
+100542
+Successful Login to Usampadmin
+PASS
+PASS
+PASS
+PASS
+.21304
+100542
+Successful Login to Usampadmin
+PASS
+PASS
+PASS
+PASS
+.
+Finished in 288.439 seconds.
+
+3 tests, 0 assertions, 0 failures, 0 errors
+Loaded suite Test_XX_Profiles_rewards_inactivate
+Started
+.711
+712
+Successful Login to Usampadmin
+PASS
+PASS
+.395
+396
+Successful Login to Usampadmin
+PASS
+PASS
+.
+Finished in 108.899 seconds.
+
+3 tests, 0 assertions, 0 failures, 0 errors
+***
+<TD class=td3><FONT color=green>TEST PASSED</FONT></TD></TR>
+***
+1
+***
+***
+<TD class=td3><FONT color=green>TEST PASSED</FONT></TD></TR>
+***
+2
+***
+***
+<TD class=td3><FONT color=green>TEST PASSED</FONT></TD></TR>
+***
+3
+***
+***
+<TD class=td3><FONT color=green>TEST PASSED</FONT></TD></TR>
+***
+4
+***
+***
+<TD class=td3><FONT color=green>TEST PASSED</FONT></TD></TR>
+***
+5
+***
+***
+<TD class=td3><FONT color=green>TEST PASSED</FONT></TD></TR>
+***
+6
+***
+***
+<TD class=td3><FONT color=green>TEST PASSED</FONT></TD></TR>
+***
+7
+***
+***
+<TD class=td3><FONT color=green>TEST PASSED</FONT></TD></TR>
+***
+8
+***
+***
+<TD class=td3><FONT color=green>TEST PASSED</FONT></TD></TR>
+***
+9
+***
+***
+<TD class=td3><FONT color=green>TEST PASSED</FONT></TD></TR>
+***
+10
+***
+***
+<TD class=td3><FONT color=green>TEST PASSED</FONT></TD></TR>
+***
+11
+***
+***
+<TD class=td3><FONT color=green>TEST PASSED</FONT></TD></TR>
+***
+12
+***
+***
+<TD class=td3><FONT color=red>TEST FAILED</FONT></TD></TR>
+***
+1
+***
+***
+<TD class=td3><FONT color=red>TEST FAILED</FONT></TD></TR>
+***
+2
+***
+***
+<TD class=td3><FONT color=green>TEST PASSED</FONT></TD></TR>
+***
+13
+***
+***
+<TD class=td3><FONT color=red>TEST FAILED</FONT></TD></TR>
+***
+3
+***
+***
+<TD class=td3><FONT color=red>TEST FAILED</FONT></TD></TR>
+***
+4
+***
+***
+<TD class=td3><FONT color=green>TEST PASSED</FONT></TD></TR>
+***
+14
+***
+***
+<TD class=td3><FONT color=green>TEST PASSED</FONT></TD></TR>
+***
+15
+***
+***
+<TD class=td3><FONT color=green>TEST PASSED</FONT></TD></TR>
+***
+16
+***
+***
+<TD class=td3><FONT color=red>TEST FAILED</FONT></TD></TR>
+***
+5
+***
+***
+<TD class=td3><FONT color=green>TEST PASSED</FONT></TD></TR>
+***
+17
+***
+***
+<TD class=td3><FONT color=green>TEST PASSED</FONT></TD></TR>
+***
+18
+***
+***
+<TD class=td3><FONT color=red>TEST FAILED</FONT></TD></TR>
+***
+6
+***
+***
+<TD class=td3><FONT color=green>TEST PASSED</FONT></TD></TR>
+***
+19
+***
+***
+<TD class=td3><FONT color=green>TEST PASSED</FONT></TD></TR>
+***
+20
+***
+***
+<TD class=td3><FONT color=green>TEST PASSED</FONT></TD></TR>
+***
+21
+***
+***
+<TD class=td3><FONT color=green>TEST PASSED</FONT></TD></TR>
+***
+22
+***
+***
+<TD class=td3><FONT color=red>TEST FAILED</FONT></TD></TR>
+***
+7
+***
+***
+<TD class=td3><FONT color=green>TEST PASSED</FONT></TD></TR>
+***
+23
+***
+***
+<TD class=td3><FONT color=red>TEST FAILED</FONT></TD></TR>
+***
+8
+***
+***
+<TD class=td3><FONT color=green>TEST PASSED</FONT></TD></TR>
+***
+24
+***
+***
+<TD class=td3><FONT color=green>TEST PASSED</FONT></TD></TR>
+***
+25
+***
+***
+<TD class=td3><FONT color=green>TEST PASSED</FONT></TD></TR>
+***
+26
+***
+***
+<TD class=td3><FONT color=red>TEST FAILED</FONT></TD></TR>
+***
+9
+***
+***
+<TD class=td3><FONT color=red>TEST FAILED</FONT></TD></TR>
+***
+10
+***
+***
+<TD class=td3><FONT color=green>TEST PASSED</FONT></TD></TR>
+***
+27
+***
+***
+<TD class=td3><FONT color=green>TEST PASSED</FONT></TD></TR>
+***
+28
+***
+***
+<TD class=td3><FONT color=red>TEST FAILED</FONT></TD></TR>
+***
+11
+***
+***
+<TD class=td3><FONT color=red>TEST FAILED</FONT></TD></TR>
+***
+12
+***
+***
+<TD class=td3><FONT color=green>TEST PASSED</FONT></TD></TR>
+***
+29
+***
+***
+<TD class=td3><FONT color=green>TEST PASSED</FONT></TD></TR>
+***
+30
+***
+***
+<TD class=td3><FONT color=green>TEST PASSED</FONT></TD></TR>
+***
+31
+***
+***
+<TD class=td3><FONT color=green>TEST PASSED</FONT></TD></TR>
+***
+32
+***
+***
+<TD class=td3><FONT color=red>TEST FAILED</FONT></TD></TR>
+***
+13
+***
+***
+<TD class=td3><FONT color=green>TEST PASSED</FONT></TD></TR>
+***
+33
+***
+***
+<TD class=td3><FONT color=green>TEST PASSED</FONT></TD></TR>
+***
+34
+***
+***
+<TD class=td3><FONT color=green>TEST PASSED</FONT></TD></TR>
+***
+35
+***
+***
+<TD class=td3><FONT color=green>TEST PASSED</FONT></TD></TR>
+***
+36
+***
+***
+<TD class=td3><FONT color=green>TEST PASSED</FONT></TD></TR>
+***
+37
+***
+***
+<TD class=td3><FONT color=green>TEST PASSED</FONT></TD></TR>
+***
+38
+***
+***
+<TD class=td3><FONT color=green>TEST PASSED</FONT></TD></TR>
+***
+39
+***
+***
+<TD class=td3><FONT color=green>TEST PASSED</FONT></TD></TR>
+***
+40
+***
+***
+<TD class=td3><FONT color=green>TEST PASSED</FONT></TD></TR>
+***
+41
+***
+***
+<TD class=td3><FONT color=green>TEST PASSED</FONT></TD></TR>
+***
+42
+***
+***
+<TD class=td3><FONT color=green>TEST PASSED</FONT></TD></TR>
+***
+43
+***
+***
+<TD class=td3><FONT color=green>TEST PASSED</FONT></TD></TR>
+***
+44
+***
+***
+<TD class=td3><FONT color=green>TEST PASSED</FONT></TD></TR>
+***
+45
+***
+***
+<TD class=td3><FONT color=green>TEST PASSED</FONT></TD></TR>
+***
+46
+***
+***
+<TD class=td3><FONT color=green>TEST PASSED</FONT></TD></TR>
+***
+47
+***
+***
+<TD class=td3><FONT color=red>TEST FAILED</FONT></TD></TR>
+***
+14
+***
+***
+<TD class=td3><FONT color=green>TEST PASSED</FONT></TD></TR>
+***
+48
+***
+***
+<TD class=td3><FONT color=green>TEST PASSED</FONT></TD></TR>
+***
+49
+***
+***
+<TD class=td3><FONT color=green>TEST PASSED</FONT></TD></TR>
+***
+50
+***
+***
+<TD class=td3><FONT color=green>TEST PASSED</FONT></TD></TR>
+***
+51
+***
+***
+<TD class=td3><FONT color=green>TEST PASSED</FONT></TD></TR>
+***
+52
+***
+***
+<TD class=td3><FONT color=green>TEST PASSED</FONT></TD></TR>
+***
+53
+***
+***
+<TD class=td3><FONT color=green>TEST PASSED</FONT></TD></TR>
+***
+54
+***
+***
+<TD class=td3><FONT color=green>TEST PASSED</FONT></TD></TR>
+***
+55
+***
+***
+<TD class=td3><FONT color=green>TEST PASSED</FONT></TD></TR>
+***
+56
+***
+***
+<TD class=td3><FONT color=green>TEST PASSED</FONT></TD></TR>
+***
+57
+***
+***
+<TD class=td3><FONT color=green>TEST PASSED</FONT></TD></TR>
+***
+58
+***
+***
+<TD class=td3><FONT color=green>TEST PASSED</FONT></TD></TR>
+***
+59
+***
+***
+<TD class=td3><FONT color=green>TEST PASSED</FONT></TD></TR>
+***
+60
+***
+***
+<TD class=td3><FONT color=green>TEST PASSED</FONT></TD></TR>
+***
+61
+***
+***
+<TD class=td3><FONT color=green>TEST PASSED</FONT></TD></TR>
+***
+62
+***
+***
+<TD class=td3><FONT color=green>TEST PASSED</FONT></TD></TR>
+***
+63
+***
+***
+<TD class=td3><FONT color=green>TEST PASSED</FONT></TD></TR>
+***
+64
+***
+***
+<TD class=td3><FONT color=green>TEST PASSED</FONT></TD></TR>
+***
+65
+***
+***
+<TD class=td3><FONT color=green>TEST PASSED</FONT></TD></TR>
+***
+66
+***
+***
+<TD class=td3><FONT color=green>TEST PASSED</FONT></TD></TR>
+***
+67
+***
+***
+<TD class=td3><FONT color=green>TEST PASSED</FONT></TD></TR>
+***
+68
+***
+***
+<TD class=td3><FONT color=green>TEST PASSED</FONT></TD></TR>
+***
+69
+***
+***
+<TD class=td3><FONT color=green>TEST PASSED</FONT></TD></TR>
+***
+70
+***
+***
+<TD class=td3><FONT color=green>TEST PASSED</FONT></TD></TR>
+***
+71
+***
+***
+<TD class=td3><FONT color=green>TEST PASSED</FONT></TD></TR>
+***
+72
+***
+***
+<TD class=td3><FONT color=green>TEST PASSED</FONT></TD></TR>
+***
+73
+***
+***
+<TD class=td3><FONT color=green>TEST PASSED</FONT></TD></TR>
+***
+74
+***
+***
+<TD class=td3><FONT color=green>TEST PASSED</FONT></TD></TR>
+***
+75
+***
+***
+<TD class=td3><FONT color=green>TEST PASSED</FONT></TD></TR>
+***
+76
+***
+***
+<TD class=td3><FONT color=green>TEST PASSED</FONT></TD></TR>
+***
+77
+***
+***
+<TD class=td3><FONT color=green>TEST PASSED</FONT></TD></TR>
+***
+78
+***
+***
+<TD class=td3><FONT color=green>TEST PASSED</FONT></TD></TR>
+***
+79
+***
+***
+<TD class=td3><FONT color=green>TEST PASSED</FONT></TD></TR>
+***
+80
+***
+***
+<TD class=td3><FONT color=green>TEST PASSED</FONT></TD></TR>
+***
+81
+***
+***
+<TD class=td3><FONT color=green>TEST PASSED</FONT></TD></TR>
+***
+82
+***
+***
+<TD class=td3><FONT color=green>TEST PASSED</FONT></TD></TR>
+***
+83
+***
+***
+<TD class=td3><FONT color=green>TEST PASSED</FONT></TD></TR>
+***
+84
+***
+***
+<TD class=td3><FONT color=green>TEST PASSED</FONT></TD></TR>
+***
+85
+***
+***
+<TD class=td3><FONT color=green>TEST PASSED</FONT></TD></TR>
+***
+86
+***
+***
+<TD class=td3><FONT color=green>TEST PASSED</FONT></TD></TR>
+***
+87
+***
+***
+<TD class=td3><FONT color=green>TEST PASSED</FONT></TD></TR>
+***
+88
+***
+***
+<TD class=td3><FONT color=green>TEST PASSED</FONT></TD></TR>
+***
+89
+***
+***
+<TD class=td3><FONT color=green>TEST PASSED</FONT></TD></TR>
+***
+90
+***
+***
+<TD class=td3><FONT color=green>TEST PASSED</FONT></TD></TR>
+***
+91
+***
+***
+<TD class=td3><FONT color=green>TEST PASSED</FONT></TD></TR>
+***
+92
+***
+***
+<TD class=td3><FONT color=red>TEST FAILED (Rewards page)</FONT></TD></TR>
+***
+***
+<TD class=td3><FONT color=green>TEST PASSED</FONT></TD></TR>
+***
+93
+***
+***
+<TD class=td3><FONT color=green>TEST PASSED</FONT></TD></TR>
+***
+94
+***
+***
+<TD class=td3><FONT color=green>TEST PASSED</FONT></TD></TR>
+***
+95
+***
+***
+<TD class=td3><FONT color=green>TEST PASSED</FONT></TD></TR>
+***
+96
+***
+***
+<TD class=td3><FONT color=green>TEST PASSED</FONT></TD></TR>
+***
+97
+***
+***
+<TD class=td3><FONT color=green>TEST PASSED</FONT></TD></TR>
+***
+98
+***
+***
+<TD class=td3><FONT color=green>TEST PASSED</FONT></TD></TR>
+***
+99
+***
+***
+<TD class=td3><FONT color=green>TEST PASSED</FONT></TD></TR>
+***
+100
+***
+***
+<TD class=td3><FONT color=green>TEST PASSED</FONT></TD></TR>
+***
+101
+***
+***
+<TD class=td3><FONT color=red>TEST FAILED</FONT></TD></TR>
+***
+15
+***
+***
+<TD class=td3><FONT color=red>TEST FAILED</FONT></TD></TR>
+***
+16
+***
+***
+<TD class=td3><FONT color=red>TEST FAILED (Survey not shown)</FONT></TD></TR>
+***
+***
+<TD class=td3><FONT color=red>TEST FAILED (Survey not shown)</FONT></TD></TR>
+***
+***
+<TD class=td3><FONT color=red>TEST FAILED</FONT></TD></TR>
+***
+17
+***
+***
+<TD class=td3><FONT color=green>TEST PASSED</FONT></TD></TR>
+***
+102
+***
+***
+<TD class=td3><FONT color=green>TEST PASSED</FONT></TD></TR>
+***
+103
+***
+***
+<TD class=td3><FONT color=green>TEST PASSED</FONT></TD></TR>
+***
+104
+***
+***
+<TD class=td3><FONT color=green>TEST PASSED</FONT></TD></TR>
+***
+105
+***
+***
+<TD class=td3><FONT color=green>TEST PASSED</FONT></TD></TR>
+***
+106
+***
+***
+<TD class=td3><FONT color=green>TEST PASSED</FONT></TD></TR>
+***
+107
+***
+***
+<TD class=td3><FONT color=green>TEST PASSED</FONT></TD></TR>
+***
+108
+***
+***
+<TD class=td3><FONT color=red>TEST FAILED</FONT></TD></TR>
+***
+18
+***
+***
+<TD class=td3><FONT color=green>TEST PASSED</FONT></TD></TR>
+***
+109
+***
+***
+<TD class=td3><FONT color=green>TEST PASSED</FONT></TD></TR>
+***
+110
+***
+***
+<TD class=td3><FONT color=green>TEST PASSED</FONT></TD></TR>
+***
+111
+***
+***
+<TD class=td3><FONT color=green>TEST PASSED</FONT></TD></TR>
+***
+112
+***
+***
+<TD class=td3><FONT color=green>TEST PASSED</FONT></TD></TR>
+***
+113
+***
+***
+<TD class=td3><FONT color=green>TEST PASSED</FONT></TD></TR>
+***
+114
+***
+***
+<TD class=td3><FONT color=green>TEST PASSED</FONT></TD></TR>
+***
+115
+***
+***
+<TD class=td3><FONT color=green>TEST PASSED</FONT></TD></TR>
+***
+116
+***
+***
+<TD class=td3><FONT color=green>TEST PASSED</FONT></TD></TR>
+***
+117
+***
+***
+<TD class=td3><FONT color=green>TEST PASSED</FONT></TD></TR>
+***
+118
+***
+***
+<TD class=td3><FONT color=green>TEST PASSED</FONT></TD></TR>
+***
+119
+***
+***
+<TD class=td3><FONT color=green>TEST PASSED</FONT></TD></TR>
+***
+120
+***
+***
+<TD class=td3><FONT color=green>TEST PASSED</FONT></TD></TR>
+***
+121
+***
+***
+<TD class=td3><FONT color=green>TEST PASSED</FONT></TD></TR>
+***
+122
+***
+***
+<TD class=td3><FONT color=green>TEST PASSED</FONT></TD></TR>
+***
+123
+***
+***
+<TD class=td3><FONT color=green>TEST PASSED</FONT></TD></TR>
+***
+124
+***
+***
+<TD class=td3><FONT color=green>TEST PASSED</FONT></TD></TR>
+***
+125
+***
+***
+<TD class=td3><FONT color=green>TEST PASSED</FONT></TD></TR>
+***
+126
+***
+***
+<TD class=td3><FONT color=red>TEST FAILED</FONT></TD></TR>
+***
+19
+***
+***
+<TD class=td3><FONT color=green>TEST PASSED</FONT></TD></TR>
+***
+127
+***
+***
+<TD class=td3><FONT color=green>TEST PASSED</FONT></TD></TR>
+***
+128
+***
+***
+<TD class=td3><FONT color=green>TEST PASSED</FONT></TD></TR>
+***
+129
+***
+***
+<TD class=td3><FONT color=green>TEST PASSED</FONT></TD></TR>
+***
+130
+***
+***
+<TD class=td3><FONT color=green>TEST PASSED</FONT></TD></TR>
+***
+131
+***
+***
+<TD class=td3><FONT color=green>TEST PASSED</FONT></TD></TR>
+***
+132
+***
+***
+<TD class=td3><FONT color=green>TEST PASSED</FONT></TD></TR>
+***
+133
+***
+***
+<TD class=td3><FONT color=green>TEST PASSED</FONT></TD></TR>
+***
+134
+***
+***
+<TD class=td3><FONT color=green>TEST PASSED</FONT></TD></TR>
+***
+135
+***
+***
+<TD class=td3><FONT color=green>TEST PASSED</FONT></TD></TR>
+***
+136
+***
+***
+<TD class=td3><FONT color=green>TEST PASSED</FONT></TD></TR>
+***
+137
+***
+***
+<TD class=td3><FONT color=green>TEST PASSED</FONT></TD></TR>
+***
+138
+***
+***
+<TD class=td3><FONT color=green>TEST PASSED</FONT></TD></TR>
+***
+139
+***
+***
+<TD class=td3><FONT color=green>TEST PASSED</FONT></TD></TR>
+***
+140
+***
+***
+<TD class=td3><FONT color=green>TEST PASSED</FONT></TD></TR>
+***
+141
+***
+***
+<TD class=td3><FONT color=green>TEST PASSED</FONT></TD></TR>
+***
+142
+***
+***
+<TD class=td3><FONT color=green>TEST PASSED</FONT></TD></TR>
+***
+143
+***
+***
+<TD class=td3><FONT color=green>TEST PASSED</FONT></TD></TR>
+***
+144
+***
+***
+<TD class=td3><FONT color=green>TEST PASSED</FONT></TD></TR>
+***
+145
+***
+***
+<TD class=td3><FONT color=green>TEST PASSED</FONT></TD></TR>
+***
+146
+***
+***
+<TD class=td3><FONT color=green>TEST PASSED</FONT></TD></TR>
+***
+147
+***
+***
+<TD class=td3><FONT color=green>TEST PASSED</FONT></TD></TR>
+***
+148
+***
+***
+<TD class=td3><FONT color=green>TEST PASSED</FONT></TD></TR>
+***
+149
+***
+***
+<TD class=td3><FONT color=green>TEST PASSED</FONT></TD></TR>
+***
+150
+***
+***
+<TD class=td3><FONT color=green>TEST PASSED</FONT></TD></TR>
+***
+151
+***
+***
+<TD class=td3><FONT color=green>TEST PASSED</FONT></TD></TR>
+***
+152
+***
+***
+<TD class=td3><FONT color=green>TEST PASSED</FONT></TD></TR>
+***
+153
+***
+***
+<TD class=td3><FONT color=green>TEST PASSED</FONT></TD></TR>
+***
+154
+***
+***
+<TD class=td3><FONT color=green>TEST PASSED</FONT></TD></TR>
+***
+155
+***
+***
+<TD class=td3><FONT color=green>TEST PASSED</FONT></TD></TR>
+***
+156
+***
+***
+<TD class=td3><FONT color=green>TEST PASSED</FONT></TD></TR>
+***
+157
+***
+***
+<TD class=td3><FONT color=green>TEST PASSED</FONT></TD></TR>
+***
+158
+***
+***
+<TD class=td3><FONT color=green>TEST PASSED</FONT></TD></TR>
+***
+159
+***
+***
+<TD class=td3><FONT color=green>TEST PASSED</FONT></TD></TR>
+***
+160
+***
+***
+<TD class=td3><FONT color=green>TEST PASSED</FONT></TD></TR>
+***
+161
+***
+***
+<TD class=td3><FONT color=green>TEST PASSED</FONT></TD></TR>
+***
+162
+***
+***
+<TD class=td3><FONT color=green>TEST PASSED</FONT></TD></TR>
+***
+163
+***
+***
+<TD class=td3><FONT color=green>TEST PASSED</FONT></TD></TR>
+***
+164
+***
+***
+<TD class=td3><FONT color=green>TEST PASSED</FONT></TD></TR>
+***
+165
+***
+***
+<TD class=td3><FONT color=green>TEST PASSED</FONT></TD></TR>
+***
+166
+***
+***
+<TD class=td3><FONT color=green>TEST PASSED</FONT></TD></TR>
+***
+167
+***
+***
+<TD class=td3><FONT color=green>TEST PASSED</FONT></TD></TR>
+***
+168
+***
+***
+<TD class=td3><FONT color=green>TEST PASSED</FONT></TD></TR>
+***
+169
+***
+***
+<TD class=td3><FONT color=green>TEST PASSED</FONT></TD></TR>
+***
+170
+***
+***
+<TD class=td3><FONT color=green>TEST PASSED</FONT></TD></TR>
+***
+171
+***
+***
+<TD class=td3><FONT color=green>TEST PASSED</FONT></TD></TR>
+***
+172
+***
+***
+<TD class=td3><FONT color=green>TEST PASSED</FONT></TD></TR>
+***
+173
+***
+***
+<TD class=td3><FONT color=green>TEST PASSED</FONT></TD></TR>
+***
+174
+***
+***
+<TD class=td3><FONT color=green>TEST PASSED</FONT></TD></TR>
+***
+175
+***
+***
+<TD class=td3><FONT color=green>TEST PASSED</FONT></TD></TR>
+***
+176
+***
+***
+<TD class=td3><FONT color=green>TEST PASSED</FONT></TD></TR>
+***
+177
+***
+***
+<TD class=td3><FONT color=green>TEST PASSED</FONT></TD></TR>
+***
+178
+***
+***
+<TD class=td3><FONT color=green>TEST PASSED</FONT></TD></TR>
+***
+179
+***
+***
+<TD class=td3><FONT color=green>TEST PASSED</FONT></TD></TR>
+***
+180
+***
+***
+<TD class=td3><FONT color=green>TEST PASSED</FONT></TD></TR>
+***
+181
+***
+***
+<TD class=td3><FONT color=green>TEST PASSED</FONT></TD></TR>
+***
+182
+***
+***
+<TD class=td3><FONT color=green>TEST PASSED</FONT></TD></TR>
+***
+183
+***
+***
+<TD class=td3><FONT color=green>TEST PASSED</FONT></TD></TR>
+***
+184
+***
+***
+<TD class=td3><FONT color=green>TEST PASSED</FONT></TD></TR>
+***
+185
+***
+***
+<TD class=td3><FONT color=green>TEST PASSED</FONT></TD></TR>
+***
+186
+***
+***
+<TD class=td3><FONT color=green>TEST PASSED</FONT></TD></TR>
+***
+187
+***
+***
+<TD class=td3><FONT color=green>TEST PASSED</FONT></TD></TR>
+***
+188
+***
+***
+<TD class=td3><FONT color=green>TEST PASSED</FONT></TD></TR>
+***
+189
+***
+***
+<TD class=td3><FONT color=green>TEST PASSED</FONT></TD></TR>
+***
+190
+***
+***
+<TD class=td3><FONT color=green>TEST PASSED</FONT></TD></TR>
+***
+191
+***
+***
+<TD class=td3><FONT color=green>TEST PASSED</FONT></TD></TR>
+***
+192
+***
+***
+<TD class=td3><FONT color=green>TEST PASSED</FONT></TD></TR>
+***
+193
+***
+***
+<TD class=td3><FONT color=green>TEST PASSED</FONT></TD></TR>
+***
+194
+***
+***
+<TD class=td3><FONT color=green>TEST PASSED</FONT></TD></TR>
+***
+195
+***
+***
+<TD class=td3><FONT color=green>TEST PASSED</FONT></TD></TR>
+***
+196
+***
+***
+<TD class=td3><FONT color=green>TEST PASSED</FONT></TD></TR>
+***
+197
+***
+***
+<TD class=td3><FONT color=green>TEST PASSED</FONT></TD></TR>
+***
+198
+***
+***
+<TD class=td3><FONT color=green>TEST PASSED</FONT></TD></TR>
+***
+199
+***
+***
+<TD class=td3><FONT color=green>TEST PASSED</FONT></TD></TR>
+***
+200
+***
+***
+<TD class=td3><FONT color=green>TEST PASSED</FONT></TD></TR>
+***
+201
+***
+***
+<TD class=td3><FONT color=green>TEST PASSED</FONT></TD></TR>
+***
+202
+***
+***
+<TD class=td3><FONT color=green>TEST PASSED</FONT></TD></TR>
+***
+203
+***
+***
+<TD class=td3><FONT color=green>TEST PASSED</FONT></TD></TR>
+***
+204
+***
+***
+<TD class=td3><FONT color=green>TEST PASSED</FONT></TD></TR>
+***
+205
+***
+***
+<TD class=td3><FONT color=green>TEST PASSED</FONT></TD></TR>
+***
+206
+***
+***
+<TD class=td3><FONT color=green>TEST PASSED</FONT></TD></TR>
+***
+207
+***
+***
+<TD class=td3><FONT color=green>TEST PASSED</FONT></TD></TR>
+***
+208
+***
+***
+<TD class=td3><FONT color=green>TEST PASSED</FONT></TD></TR>
+***
+209
+***
+***
+<TD class=td3><FONT color=green>TEST PASSED</FONT></TD></TR>
+***
+210
+***
+***
+<TD class=td3><FONT color=green>TEST PASSED</FONT></TD></TR>
+***
+211
+***
+***
+<TD class=td3><FONT color=red>TEST FAILED</FONT></TD></TR>
+***
+20
+***
+***
+<TD class=td3><FONT color=green>TEST PASSED</FONT></TD></TR>
+***
+212
+***
+***
+<TD class=td3><FONT color=red>TEST FAILED</FONT></TD></TR>
+***
+21
+***
+***
+<TD class=td3><FONT color=green>TEST PASSED</FONT></TD></TR>
+***
+213
+***
+***
+<TD class=td3><FONT color=green>TEST PASSED</FONT></TD></TR>
+***
+214
+***
+***
+<TD class=td3><FONT color=green>TEST PASSED</FONT></TD></TR>
+***
+215
+***
+***
+<TD class=td3><FONT color=green>TEST PASSED</FONT></TD></TR>
+***
+216
+***
+***
+<TD class=td3><FONT color=red>TEST FAILED</FONT></TD></TR>
+***
+22
+***
+***
+<TD class=td3><FONT color=green>TEST PASSED</FONT></TD></TR>
+***
+217
+***
+***
+<TD class=td3><FONT color=green>TEST PASSED</FONT></TD></TR>
+***
+218
+***
+***
+<TD class=td3><FONT color=green>TEST PASSED</FONT></TD></TR>
+***
+219
+***
+***
+<TD class=td3><FONT color=green>TEST PASSED</FONT></TD></TR>
+***
+220
+***
+***
+<TD class=td3><FONT color=green>TEST PASSED</FONT></TD></TR>
+***
+221
+***
+***
+<TD class=td3><FONT color=green>TEST PASSED</FONT></TD></TR>
+***
+222
+***
+***
+<TD class=td3><FONT color=green>TEST PASSED</FONT></TD></TR>
+***
+223
+***
+***
+<TD class=td3><FONT color=green>TEST PASSED</FONT></TD></TR>
+***
+224
+***
+***
+<TD class=td3><FONT color=green>TEST PASSED</FONT></TD></TR>
+***
+225
+***
+***
+<TD class=td3><FONT color=green>TEST PASSED</FONT></TD></TR>
+***
+226
+***
+***
+<TD class=td3><FONT color=green>TEST PASSED</FONT></TD></TR>
+***
+227
+***
+***
+<TD class=td3><FONT color=green>TEST PASSED</FONT></TD></TR>
+***
+228
+***
+***
+<TD class=td3><FONT color=green>TEST PASSED</FONT></TD></TR>
+***
+229
+***
+***
+<TD class=td3><FONT color=green>TEST PASSED</FONT></TD></TR>
+***
+230
+***
+***
+<TD class=td3><FONT color=green>TEST PASSED</FONT></TD></TR>
+***
+231
+***
+***
+<TD class=td3><FONT color=green>TEST PASSED</FONT></TD></TR>
+***
+232
+***
+***
+<TD class=td3><FONT color=green>TEST PASSED</FONT></TD></TR>
+***
+233
+***
+***
+<TD class=td3><FONT color=green>TEST PASSED</FONT></TD></TR>
+***
+234
+***
+***
+<TD class=td3><FONT color=green>TEST PASSED</FONT></TD></TR>
+***
+235
+***
+***
+<TD class=td3><FONT color=green>TEST PASSED</FONT></TD></TR>
+***
+236
+***
+***
+<TD class=td3><FONT color=green>TEST PASSED</FONT></TD></TR>
+***
+237
+***
+***
+<TD class=td3><FONT color=green>TEST PASSED</FONT></TD></TR>
+***
+238
+***
+***
+<TD class=td3><FONT color=green>TEST PASSED</FONT></TD></TR>
+***
+239
+***
+***
+<TD class=td3><FONT color=green>TEST PASSED</FONT></TD></TR>
+***
+240
+***
+***
+<TD class=td3><FONT color=green>TEST PASSED</FONT></TD></TR>
+***
+241
+***
+***
+<TD class=td3><FONT color=green>TEST PASSED</FONT></TD></TR>
+***
+242
+***
+***
+<TD class=td3><FONT color=green>TEST PASSED</FONT></TD></TR>
+***
+243
+***
+***
+<TD class=td3><FONT color=green>TEST PASSED</FONT></TD></TR>
+***
+244
+***
+***
+<TD class=td3><FONT color=green>TEST PASSED</FONT></TD></TR>
+***
+245
+***
+***
+<TD class=td3><FONT color=green>TEST PASSED</FONT></TD></TR>
+***
+246
+***
+***
+<TD class=td3><FONT color=green>TEST PASSED</FONT></TD></TR>
+***
+247
+***
+***
+<TD class=td3><FONT color=green>TEST PASSED</FONT></TD></TR>
+***
+248
+***
+***
+<TD class=td3><FONT color=green>TEST PASSED</FONT></TD></TR>
+***
+249
+***
+***
+<TD class=td3><FONT color=green>TEST PASSED</FONT></TD></TR>
+***
+250
+***
+***
+<TD class=td3><FONT color=green>TEST PASSED</FONT></TD></TR>
+***
+251
+***
+***
+<TD class=td3><FONT color=green>TEST PASSED</FONT></TD></TR>
+***
+252
+***
+***
+<TD class=td3><FONT color=green>TEST PASSED</FONT></TD></TR>
+***
+253
+***
+***
+<TD class=td3><FONT color=green>TEST PASSED</FONT></TD></TR>
+***
+254
+***
+***
+<TD class=td3><FONT color=green>TEST PASSED</FONT></TD></TR>
+***
+255
+***
+***
+<TD class=td3><FONT color=green>TEST PASSED</FONT></TD></TR>
+***
+256
+***
+***
+<TD class=td3><FONT color=green>TEST PASSED</FONT></TD></TR>
+***
+257
+***
+***
+<TD class=td3><FONT color=red>TEST FAILED(Mail sending taking too long)</FONT></TD></TR>
+***
+***
+<TD class=td3><FONT color=green>TEST PASSED</FONT></TD></TR>
+***
+258
+***
+***
+<TD class=td3><FONT color=green>TEST PASSED</FONT></TD></TR>
+***
+259
+***
+***
+<TD class=td3><FONT color=green>TEST PASSED</FONT></TD></TR>
+***
+260
+***
+***
+<TD class=td3><FONT color=green>TEST PASSED</FONT></TD></TR>
+***
+261
+***
+***
+<TD class=td3><FONT color=green>TEST PASSED</FONT></TD></TR>
+***
+262
+***
+***
+<TD class=td3><FONT color=green>TEST PASSED</FONT></TD></TR>
+***
+263
+***
+***
+<TD class=td3><FONT color=green>TEST PASSED</FONT></TD></TR>
+***
+264
+***
+***
+<TD class=td3><FONT color=green>TEST PASSED</FONT></TD></TR>
+***
+265
+***
+***
+<TD class=td3><FONT color=green>TEST PASSED</FONT></TD></TR>
+***
+266
+***
+***
+<TD class=td3><FONT color=green>TEST PASSED</FONT></TD></TR>
+***
+267
+***
+***
+<TD class=td3><FONT color=green>TEST PASSED</FONT></TD></TR>
+***
+268
+***
+***
+<TD class=td3><FONT color=green>TEST PASSED</FONT></TD></TR>
+***
+269
+***
+***
+<TD class=td3><FONT color=green>TEST PASSED</FONT></TD></TR>
+***
+270
+***
+***
+<TD class=td3><FONT color=green>TEST PASSED</FONT></TD></TR>
+***
+271
+***
+***
+<TD class=td3><FONT color=green>TEST PASSED</FONT></TD></TR>
+***
+272
+***
+***
+<TD class=td3><FONT color=green>TEST PASSED</FONT></TD></TR>
+***
+273
+***
+***
+<TD class=td3><FONT color=green>TEST PASSED</FONT></TD></TR>
+***
+274
+***
+***
+<TD class=td3><FONT color=green>TEST PASSED</FONT></TD></TR>
+***
+275
+***
+***
+<TD class=td3><FONT color=green>TEST PASSED</FONT></TD></TR>
+***
+276
+***
+***
+<TD class=td3><FONT color=green>TEST PASSED</FONT></TD></TR>
+***
+277
+***
+***
+<TD class=td3><FONT color=green>TEST PASSED</FONT></TD></TR>
+***
+278
+***
+***
+<TD class=td3><FONT color=green>TEST PASSED</FONT></TD></TR>
+***
+279
+***
+***
+<TD class=td3><FONT color=green>TEST PASSED</FONT></TD></TR>
+***
+280
+***
+***
+<TD class=td3><FONT color=green>TEST PASSED</FONT></TD></TR>
+***
+281
+***
+***
+<TD class=td3><FONT color=green>TEST PASSED</FONT></TD></TR>
+***
+282
+***
+***
+<TD class=td3><FONT color=green>TEST PASSED</FONT></TD></TR>
+***
+283
+***
+***
+<TD class=td3><FONT color=green>TEST PASSED</FONT></TD></TR>
+***
+284
+***
+***
+<TD class=td3><FONT color=green>TEST PASSED</FONT></TD></TR>
+***
+285
+***
+***
+<TD class=td3><FONT color=green>TEST PASSED</FONT></TD></TR>
+***
+286
+***
+***
+<TD class=td3><FONT color=green>TEST PASSED</FONT></TD></TR>
+***
+287
+***
+***
+<TD class=td3><FONT color=green>TEST PASSED</FONT></TD></TR>
+***
+288
+***
+***
+<TD class=td3><FONT color=green>TEST PASSED</FONT></TD></TR>
+***
+289
+***
+***
+<TD class=td3><FONT color=red>TEST FAILED</FONT></TD></TR>
+***
+23
+***
+***
+<TD class=td3><FONT color=green>TEST PASSED</FONT></TD></TR>
+***
+290
+***
+***
+<TD class=td3><FONT color=green>TEST PASSED</FONT></TD></TR>
+***
+291
+***
+***
+<TD class=td3><FONT color=green>TEST PASSED</FONT></TD></TR>
+***
+292
+***
+***
+<TD class=td3><FONT color=green>TEST PASSED</FONT></TD></TR>
+***
+293
+***
+***
+<TD class=td3><FONT color=green>TEST PASSED</FONT></TD></TR>
+***
+294
+***
+***
+<TD class=td3><FONT color=green>TEST PASSED</FONT></TD></TR>
+***
+295
+***
+***
+<TD class=td3><FONT color=green>TEST PASSED</FONT></TD></TR>
+***
+296
+***
+***
+<TD class=td3><FONT color=green>TEST PASSED</FONT></TD></TR>
+***
+297
+***
+***
+<TD class=td3><FONT color=green>TEST PASSED</FONT></TD></TR>
+***
+298
+***
+***
+<TD class=td3><FONT color=green>TEST PASSED</FONT></TD></TR>
+***
+299
+***
+***
+<TD class=td3><FONT color=green>TEST PASSED</FONT></TD></TR>
+***
+300
+***
+***
+<TD class=td3><FONT color=green>TEST PASSED</FONT></TD></TR>
+***
+301
+***
+***
+<TD class=td3><FONT color=green>TEST PASSED</FONT></TD></TR>
+***
+302
+***
+***
+<TD class=td3><FONT color=green>TEST PASSED</FONT></TD></TR>
+***
+303
+***
+***
+<TD class=td3><FONT color=green>TEST PASSED</FONT></TD></TR>
+***
+304
+***
+***
+<TD class=td3><FONT color=green>TEST PASSED</FONT></TD></TR>
+***
+305
+***
+***
+<TD class=td3><FONT color=green>TEST PASSED</FONT></TD></TR>
+***
+306
+***
+***
+<TD class=td3><FONT color=green>TEST PASSED</FONT></TD></TR>
+***
+307
+***
+***
+<TD class=td3><FONT color=green>TEST PASSED</FONT></TD></TR></TR></TBODY></TABLE></CENTER></CENTER></BODY></HTML>
+***
+308
+***
+***
+<TD class=td3><FONT color=black>NOT COMPLETED SUCCESSFULY!{Please check the log for details}</FONT></TD></TR>
+***
+1
+***
+***
+<TD class=td3><FONT color=black>NOT COMPLETED SUCCESSFULY!{Please check the log for details}</FONT></TD></TR>
+***
+2
+***
+***
+<TD class=td3><FONT color=black>NOT COMPLETED SUCCESSFULY!{Please check the log for details}</FONT></TD></TR>
+***
+3
+***
+***
+<TD class=td3><FONT color=black>NOT COMPLETED SUCCESSFULY!{Please check the log for details}</FONT></TD></TR>
+***
+4
+***
+***
+<TD class=td3><FONT color=black>NOT COMPLETED SUCCESSFULY!{Please check the log for details}</FONT></TD></TR>
+***
+5
+***
+***
+<TD class=td3><FONT color=black>NOT COMPLETED SUCCESSFULY!{Please check the log for details}</FONT></TD></TR>
+***
+6
+***
+***
+<TD class=td3><FONT color=black>NOT COMPLETED SUCCESSFULY!{Please check the log for details}</FONT></TD></TR>
+***
+7
+***
+308
+23
+7
+Loaded suite IM_Suite
+Started
+
+Finished in 0.0 seconds.
+
+0 tests, 0 assertions, 0 failures, 0 errors

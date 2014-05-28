@@ -1,0 +1,35 @@
+#DESCRIPTION: This file contains details needed to login to Network site, functionality which is required by the "Test_CP_Project_Creation_Supplier_addition.rb" script#
+
+#NOTE: All the lines enclosed within two '#' characters are comments.#
+#      The lines with actual data are without '#' characters and,#
+#      In the data, text before the '::' character (text to the left of the '::' character) are FIELD NAME#
+#      And text after the '::' character (text to the right of '::' character) are ACTUAL DATA#
+#      The '::' character is a separator between the Field name and the actual data and hence is very important#
+#      Make sure the '::' chracter is not modified#
+#      Do not alter the sequence in which the test data is written #
+
+
+#NETWORK SITE CLIENT LOGIN DETAILS#
+
+EMAIL 		:: rahul_halankar@persistent.co.in
+PASSWORD	:: 1234
+TYPE		:: Client
+
+#CLIENT PANELSHIELD PROJECT DETAILS#
+
+COUNTRY		:: INDIA
+SURVEYLENGTH	:: 5
+
+#SUPPLIER ADDITION DETAILS#
+
+SUPPLIER NAME 		:: Clear Voice
+SUPPLIER ALLOWED LINK	:: http://203.199.26.75/usamp/Test_auto/TEST_CP_SURVEY.php
+SUPPLIER REJECT LINK	:: http://www.google.com?rej=1
+SUPPLIER ID		:: 59
+#ADMIN LOGIN CREDENTIALS#
+
+USA_EMAIL	:: rahul_halankar@persistent.co.in
+USA_PASSWORD	:: rahul123
+
+CLIENT NAME	:: Test_New_Client (PShield)
+SUPPLEIR NAME	:: Luth

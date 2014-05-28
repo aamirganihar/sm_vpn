@@ -1,0 +1,887 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html
+  PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+  <title>RSpec results</title>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <meta http-equiv="Expires" content="-1" />
+  <meta http-equiv="Pragma" content="no-cache" />
+  <style type="text/css">
+  body {
+    margin: 0;
+    padding: 0;
+    background: #fff;
+    font-size: 80%;
+  }
+  </style>
+  <script type="text/javascript">
+    // <![CDATA[
+
+function addClass(element_id, classname) {
+  document.getElementById(element_id).className += (" " + classname);
+}
+
+function removeClass(element_id, classname) {
+  var elem = document.getElementById(element_id);
+  var classlist = elem.className.replace(classname,'');
+  elem.className = classlist;
+}
+
+function moveProgressBar(percentDone) {
+  document.getElementById("rspec-header").style.width = percentDone +"%";
+}
+
+function makeRed(element_id) {
+  removeClass(element_id, 'passed');
+  removeClass(element_id, 'not_implemented');
+  addClass(element_id,'failed');
+}
+
+function makeYellow(element_id) {
+  var elem = document.getElementById(element_id);
+  if (elem.className.indexOf("failed") == -1) {  // class doesn't includes failed
+    if (elem.className.indexOf("not_implemented") == -1) { // class doesn't include not_implemented
+      removeClass(element_id, 'passed');
+      addClass(element_id,'not_implemented');
+    }
+  }
+}
+
+function apply_filters() {
+  var passed_filter = document.getElementById('passed_checkbox').checked;
+  var failed_filter = document.getElementById('failed_checkbox').checked;
+  var pending_filter = document.getElementById('pending_checkbox').checked;
+
+  assign_display_style("example passed", passed_filter);
+  assign_display_style("example failed", failed_filter);
+  assign_display_style("example not_implemented", pending_filter);
+
+  assign_display_style_for_group("example_group passed", passed_filter);
+  assign_display_style_for_group("example_group not_implemented", pending_filter, pending_filter || passed_filter);
+  assign_display_style_for_group("example_group failed", failed_filter, failed_filter || pending_filter || passed_filter);
+}
+
+function get_display_style(display_flag) {
+  var style_mode = 'none';
+  if (display_flag == true) {
+    style_mode = 'block';
+  }
+  return style_mode;
+}
+
+function assign_display_style(classname, display_flag) {
+  var style_mode = get_display_style(display_flag);
+  var elems = document.getElementsByClassName(classname)
+  for (var i=0; i<elems.length;i++) {
+    elems[i].style.display = style_mode;
+  }
+}
+
+function assign_display_style_for_group(classname, display_flag, subgroup_flag) {
+  var display_style_mode = get_display_style(display_flag);
+  var subgroup_style_mode = get_display_style(subgroup_flag);
+  var elems = document.getElementsByClassName(classname)
+  for (var i=0; i<elems.length;i++) {
+    var style_mode = display_style_mode;
+    if ((display_flag != subgroup_flag) && (elems[i].getElementsByTagName('dt')[0].innerHTML.indexOf(", ") != -1)) {
+      elems[i].style.display = subgroup_style_mode;
+    } else {
+      elems[i].style.display = display_style_mode;
+    }
+  }
+}
+
+    // ]]>
+  </script>
+  <style type="text/css">
+#rspec-header {
+  background: #65C400; color: #fff; height: 4em;
+}
+
+.rspec-report h1 {
+  margin: 0px 10px 0px 10px;
+  padding: 10px;
+  font-family: "Lucida Grande", Helvetica, sans-serif;
+  font-size: 1.8em;
+  position: absolute;
+}
+
+#label {
+  float:left;
+}
+
+#display-filters {
+  float:left;
+  padding: 28px 0 0 40%;
+  font-family: "Lucida Grande", Helvetica, sans-serif;
+}
+
+#summary {
+  float:right;
+  padding: 5px 10px;
+  font-family: "Lucida Grande", Helvetica, sans-serif;
+  text-align: right;
+}
+
+#summary p {
+  margin: 0 0 0 2px;
+}
+
+#summary #totals {
+  font-size: 1.2em;
+}
+
+.example_group {
+  margin: 0 10px 5px;
+  background: #fff;
+}
+
+dl {
+  margin: 0; padding: 0 0 5px;
+  font: normal 11px "Lucida Grande", Helvetica, sans-serif;
+}
+
+dt {
+  padding: 3px;
+  background: #65C400;
+  color: #fff;
+  font-weight: bold;
+}
+
+dd {
+  margin: 5px 0 5px 5px;
+  padding: 3px 3px 3px 18px;
+}
+
+dd .duration {
+  padding-left: 5px;
+  text-align: right;
+  right: 0px;
+  float:right;
+}
+
+dd.example.passed {
+  border-left: 5px solid #65C400;
+  border-bottom: 1px solid #65C400;
+  background: #DBFFB4; color: #3D7700;
+}
+
+dd.example.not_implemented {
+  border-left: 5px solid #FAF834;
+  border-bottom: 1px solid #FAF834;
+  background: #FCFB98; color: #131313;
+}
+
+dd.example.pending_fixed {
+  border-left: 5px solid #0000C2;
+  border-bottom: 1px solid #0000C2;
+  color: #0000C2; background: #D3FBFF;
+}
+
+dd.example.failed {
+  border-left: 5px solid #C20000;
+  border-bottom: 1px solid #C20000;
+  color: #C20000; background: #FFFBD3;
+}
+
+
+dt.not_implemented {
+  color: #000000; background: #FAF834;
+}
+
+dt.pending_fixed {
+  color: #FFFFFF; background: #C40D0D;
+}
+
+dt.failed {
+  color: #FFFFFF; background: #C40D0D;
+}
+
+
+#rspec-header.not_implemented {
+  color: #000000; background: #FAF834;
+}
+
+#rspec-header.pending_fixed {
+  color: #FFFFFF; background: #C40D0D;
+}
+
+#rspec-header.failed {
+  color: #FFFFFF; background: #C40D0D;
+}
+
+
+.backtrace {
+  color: #000;
+  font-size: 12px;
+}
+
+a {
+  color: #BE5C00;
+}
+
+/* Ruby code, style similar to vibrant ink */
+.ruby {
+  font-size: 12px;
+  font-family: monospace;
+  color: white;
+  background-color: black;
+  padding: 0.1em 0 0.2em 0;
+}
+
+.ruby .keyword { color: #FF6600; }
+.ruby .constant { color: #339999; }
+.ruby .attribute { color: white; }
+.ruby .global { color: white; }
+.ruby .module { color: white; }
+.ruby .class { color: white; }
+.ruby .string { color: #66FF00; }
+.ruby .ident { color: white; }
+.ruby .method { color: #FFCC00; }
+.ruby .number { color: white; }
+.ruby .char { color: white; }
+.ruby .comment { color: #9933CC; }
+.ruby .symbol { color: white; }
+.ruby .regex { color: #44B4CC; }
+.ruby .punct { color: white; }
+.ruby .escape { color: white; }
+.ruby .interp { color: white; }
+.ruby .expr { color: white; }
+
+.ruby .offending { background-color: gray; }
+.ruby .linenum {
+  width: 75px;
+  padding: 0.1em 1em 0.2em 0;
+  color: #000000;
+  background-color: #FFFBD3;
+}
+
+  </style>
+</head>
+<body>
+<div class="rspec-report">
+
+<div id="rspec-header">
+  <div id="label">
+    <h1>RSpec Code Examples</h1>
+  </div>
+
+  <div id="display-filters">
+    <input id="passed_checkbox" name="passed_checkbox" type="checkbox" checked onchange="apply_filters()" value="1"> <label for="passed_checkbox">Passed</label>
+    <input id="failed_checkbox" name="failed_checkbox" type="checkbox" checked onchange="apply_filters()" value="2"> <label for="failed_checkbox">Failed</label>
+    <input id="pending_checkbox" name="pending_checkbox" type="checkbox" checked onchange="apply_filters()" value="3"> <label for="pending_checkbox">Pending</label>
+  </div>
+
+  <div id="summary">
+    <p id="totals">&nbsp;</p>
+    <p id="duration">&nbsp;</p>
+  </div>
+</div>
+
+
+<div class="results">
+<div id="div_group_1" class="example_group passed">
+  <dl style="margin-left: 0px;">
+  <dt id="example_group_1" class="passed">Test 01: Project creation</dt>
+    <script type="text/javascript">moveProgressBar('1.7');</script>
+    <dd class="example passed"><span class="passed_spec_name">Test to confirm if an error is reported if the mandatory fields which inclueds date and survey length are left blank on the project creation page</span><span class='duration'>14.65700s</span></dd>
+    <script type="text/javascript">moveProgressBar('3.5');</script>
+    <dd class="example passed"><span class="passed_spec_name">Test to check if an error is reported if the project start date is greater than end date on the project creation page</span><span class='duration'>13.93821s</span></dd>
+    <script type="text/javascript">moveProgressBar('5.3');</script>
+    <dd class="example passed"><span class="passed_spec_name">Test to check if time in field are correctly displayed based on the start and end dates on the project creation page</span><span class='duration'>10.31303s</span></dd>
+    <script type="text/javascript">moveProgressBar('7.1');</script>
+    <dd class="example passed"><span class="passed_spec_name">Test to check if a project is successfully created on the network site</span><span class='duration'>12.29750s</span></dd>
+  </dl>
+</div>
+<div id="div_group_2" class="example_group passed">
+  <dl style="margin-left: 0px;">
+  <dt id="example_group_2" class="passed">Test 02: Group creation</dt>
+    <script type="text/javascript">moveProgressBar('8.9');</script>
+    <dd class="example passed"><span class="passed_spec_name">Test to confirm if the language and country criteria are present by default</span><span class='duration'>12.59440s</span></dd>
+    <script type="text/javascript">moveProgressBar('10.7');</script>
+    <dd class="example passed"><span class="passed_spec_name">Test to check if an error is reported when the group name, number of completes and Incidence estimate fields are left blank</span><span class='duration'>15.61017s</span></dd>
+    <script type="text/javascript">moveProgressBar('12.5');</script>
+    <dd class="example passed"><span class="passed_spec_name">Test to check if a user is allowed to save group with demographic criteria</span><span class='duration'>7.64102s</span></dd>
+    <script type="text/javascript">moveProgressBar('14.2');</script>
+    <dd class="example passed"><span class="passed_spec_name">Test to check if a user is allowed to save group with Geo Targeting  criteria</span><span class='duration'>8.20355s</span></dd>
+    <script type="text/javascript">moveProgressBar('16.0');</script>
+    <dd class="example passed"><span class="passed_spec_name">Test to check if a user is allowed to save group with  Profile criteria</span><span class='duration'>33.45484s</span></dd>
+    <script type="text/javascript">moveProgressBar('17.8');</script>
+    <dd class="example passed"><span class="passed_spec_name">Test to check if exlusion rules are displayed on selecting Yes option for Would you like to set Exclusion / Inclusion Rules?</span><span class='duration'>5.18777s</span></dd>
+    <script type="text/javascript">moveProgressBar('19.6');</script>
+    <dd class="example passed"><span class="passed_spec_name">Test to check if user can add a group with recontact member ids,recontact tokens and recontact completed groups</span><span class='duration'>5.40653s</span></dd>
+    <script type="text/javascript">moveProgressBar('21.4');</script>
+    <dd class="example passed"><span class="passed_spec_name">Test to check if the test link options are displayed in case data is entered correctly</span><span class='duration'>77.64460s</span></dd>
+    <script type="text/javascript">moveProgressBar('23.2');</script>
+    <dd class="example passed"><span class="passed_spec_name">Test to check if the success links works</span><span class='duration'>16.92274s</span></dd>
+    <script type="text/javascript">moveProgressBar('25.0');</script>
+    <dd class="example passed"><span class="passed_spec_name">Test to check if the failure link works</span><span class='duration'>14.17260s</span></dd>
+    <script type="text/javascript">moveProgressBar('26.7');</script>
+    <dd class="example passed"><span class="passed_spec_name">Test to check if a project is allowed to go live once all the data is entered</span><span class='duration'>7.40663s</span></dd>
+    <script type="text/javascript">moveProgressBar('28.5');</script>
+    <dd class="example passed"><span class="passed_spec_name">Test to check if a client is able to make a group live</span><span class='duration'>21.68861s</span></dd>
+    <script type="text/javascript">moveProgressBar('30.3');</script>
+    <dd class="example passed"><span class="passed_spec_name">To successfully close a project</span><span class='duration'>6.01593s</span></dd>
+  </dl>
+</div>
+<div id="div_group_3" class="example_group passed">
+  <dl style="margin-left: 0px;">
+  <dt id="example_group_3" class="passed">Test 03: Copying an existing project</dt>
+    <script type="text/javascript">moveProgressBar('32.1');</script>
+    <dd class="example passed"><span class="passed_spec_name">Test to check if client is able to copy an existing project using the Copy Project option</span><span class='duration'>26.84512s</span></dd>
+    <script type="text/javascript">makeRed('rspec-header');</script>
+    <script type="text/javascript">makeRed('div_group_3');</script>
+    <script type="text/javascript">makeRed('example_group_3');</script>
+    <script type="text/javascript">moveProgressBar('33.9');</script>
+    <dd class="example failed">
+      <span class="failed_spec_name">Test to check if a client is able to successfully save a copied project</span>
+      <span class="duration">4.78149s</span>
+      <div class="failure" id="failure_1">
+        <div class="message"><pre>unable to locate element, using {:text=&gt;&quot;Save&quot;, :tag_name=&gt;&quot;a&quot;}</pre></div>
+        <div class="backtrace"><pre>./4s_specs/Test_03_copy_project.rb:58:in `block (2 levels) in <top (required)>'</pre></div>
+    <pre class="ruby"><code><span class="linenum">56</span>    sleep 3
+<span class="linenum">57</span>    @browser.link(:text,'Save').click
+<span class="offending"><span class="linenum">58</span>    @browser.link(:text,'Save').click</span>
+<span class="linenum">59</span>    sleep 10
+<span class="linenum">60</span>    body_text = @browser.text
+<span class="linenum">61</span><span class="comment"># gem install syntax to get syntax highlighting</span></code></pre>
+      </div>
+    </dd>
+    <script type="text/javascript">moveProgressBar('35.7');</script>
+    <dd class="example passed"><span class="passed_spec_name">Test to check if the group setting for a copied project are copied successfully</span><span class='duration'>60.03432s</span></dd>
+    <script type="text/javascript">moveProgressBar('37.5');</script>
+    <dd class="example failed">
+      <span class="failed_spec_name">Test to check if the success links works for a copied project</span>
+      <span class="duration">12.71940s</span>
+      <div class="failure" id="failure_2">
+        <div class="message"><pre>{:title=&gt;/Google/}</pre></div>
+        <div class="backtrace"><pre>./4s_specs/Test_03_copy_project.rb:106:in `block (2 levels) in <top (required)>'</pre></div>
+    <pre class="ruby"><code><span class="linenum">104</span>    @browser.link(:id,"succes_status").click
+<span class="linenum">105</span>    sleep 10
+<span class="offending"><span class="linenum">106</span>    @browser.window(:title => /Google/).use do</span>
+<span class="linenum">107</span>    @browser.goto("http://p.sm1mr.com/ssred.php?S=1&ID=")
+<span class="linenum">108</span>
+<span class="linenum">109</span><span class="comment"># gem install syntax to get syntax highlighting</span></code></pre>
+      </div>
+    </dd>
+    <script type="text/javascript">moveProgressBar('39.2');</script>
+    <dd class="example failed">
+      <span class="failed_spec_name">Test to check if the failure link works for copied project</span>
+      <span class="duration">10.51616s</span>
+      <div class="failure" id="failure_3">
+        <div class="message"><pre>{:title=&gt;/Google/}</pre></div>
+        <div class="backtrace"><pre>./4s_specs/Test_03_copy_project.rb:122:in `block (2 levels) in <top (required)>'</pre></div>
+    <pre class="ruby"><code><span class="linenum">120</span>    @browser.link(:id,"fail_status").click
+<span class="linenum">121</span>    sleep 10
+<span class="offending"><span class="linenum">122</span>    @browser.window(:title => /Google/).use do</span>
+<span class="linenum">123</span>    @browser.goto("http://p.sm1mr.com/ssred.php?S=2&ID=")
+<span class="linenum">124</span>
+<span class="linenum">125</span><span class="comment"># gem install syntax to get syntax highlighting</span></code></pre>
+      </div>
+    </dd>
+    <script type="text/javascript">moveProgressBar('41.0');</script>
+    <dd class="example passed"><span class="passed_spec_name">Test to check if a project is allowed to go live once all the data is entered for a copied project</span><span class='duration'>5.89093s</span></dd>
+    <script type="text/javascript">moveProgressBar('42.8');</script>
+    <dd class="example passed"><span class="passed_spec_name">Test to confirm if a client is able to make a copied project live</span><span class='duration'>20.96982s</span></dd>
+    <script type="text/javascript">moveProgressBar('44.6');</script>
+    <dd class="example passed"><span class="passed_spec_name">To successfully close a project</span><span class='duration'>5.68779s</span></dd>
+  </dl>
+</div>
+<div id="div_group_4" class="example_group passed">
+  <dl style="margin-left: 0px;">
+  <dt id="example_group_4" class="passed">Test 04: Group creation with Demographic Criteria</dt>
+    <script type="text/javascript">moveProgressBar('46.4');</script>
+    <dd class="example passed"><span class="passed_spec_name">Test to create a project on network site and add a demographic criteria</span><span class='duration'>35.64245s</span></dd>
+    <script type="text/javascript">moveProgressBar('48.2');</script>
+    <dd class="example passed"><span class="passed_spec_name">Test to check if client can successfully complete creating the survey with a specific Demographic criteria</span><span class='duration'>120.94369s</span></dd>
+    <script type="text/javascript">moveProgressBar('50.0');</script>
+    <dd class="example passed"><span class="passed_spec_name">Test to check if a member satisfying the demographic criteria is able to see the survey</span><span class='duration'>65.20646s</span></dd>
+    <script type="text/javascript">moveProgressBar('51.7');</script>
+    <dd class="example passed"><span class="passed_spec_name">Test to check if a member who does not satisfy the demographic criteria is unable to see the survey</span><span class='duration'>58.15923s</span></dd>
+  </dl>
+</div>
+<div id="div_group_5" class="example_group passed">
+  <dl style="margin-left: 0px;">
+  <dt id="example_group_5" class="passed">Test 05: Group creation with Geo graphic Criteria</dt>
+    <script type="text/javascript">moveProgressBar('53.5');</script>
+    <dd class="example passed"><span class="passed_spec_name">Test to create a project on network site and add a Geo graphic criteria</span><span class='duration'>42.28341s</span></dd>
+    <script type="text/javascript">moveProgressBar('55.3');</script>
+    <dd class="example passed"><span class="passed_spec_name">Test to check if client can successfully complete creating the survey with a specific Geo graphic criteria</span><span class='duration'>133.75685s</span></dd>
+    <script type="text/javascript">moveProgressBar('57.1');</script>
+    <dd class="example passed"><span class="passed_spec_name">Test to check if a member satisfying the Geo graphic criteria is able to see the survey</span><span class='duration'>64.28454s</span></dd>
+    <script type="text/javascript">moveProgressBar('58.9');</script>
+    <dd class="example passed"><span class="passed_spec_name">Test to check if a member who does not satisfy the Geo graphic criteria is unable to see the survey</span><span class='duration'>56.12787s</span></dd>
+  </dl>
+</div>
+<div id="div_group_6" class="example_group passed">
+  <dl style="margin-left: 0px;">
+  <dt id="example_group_6" class="passed">Test 06: Group creation with Profile Criteria</dt>
+    <script type="text/javascript">moveProgressBar('60.7');</script>
+    <dd class="example passed"><span class="passed_spec_name">Test to create a project on network site and add a Profile criteria</span><span class='duration'>58.48737s</span></dd>
+    <script type="text/javascript">makeRed('div_group_6');</script>
+    <script type="text/javascript">makeRed('example_group_6');</script>
+    <script type="text/javascript">moveProgressBar('62.5');</script>
+    <dd class="example failed">
+      <span class="failed_spec_name">Test to check if client can successfully complete creating the survey with a specific Profile criteria</span>
+      <span class="duration">128.55346s</span>
+      <div class="failure" id="failure_4">
+        <div class="message"><pre>expected #&lt;Watir::Anchor:0x..fe5713afa located=false selector={:text=&gt;&quot;Pause&quot;, :tag_name=&gt;&quot;a&quot;}&gt; to exist</pre></div>
+        <div class="backtrace"><pre>./4s_specs/Test_06_Profile_criteria_test.rb:174:in `block (2 levels) in <top (required)>'</pre></div>
+    <pre class="ruby"><code><span class="linenum">172</span>    @browser.link(:text,/golive/).click
+<span class="linenum">173</span>    sleep 2
+<span class="offending"><span class="linenum">174</span>    @browser.link(:text,"Pause").should exist</span>
+<span class="linenum">175</span>    @browser.link(:text,"Close").should exist
+<span class="linenum">176</span>    @browser.link(:text,"Log Out").click
+<span class="linenum">177</span><span class="comment"># gem install syntax to get syntax highlighting</span></code></pre>
+      </div>
+    </dd>
+    <script type="text/javascript">moveProgressBar('64.2');</script>
+    <dd class="example failed">
+      <span class="failed_spec_name">Test to check if a member satisfying the Profile criteria is able to see the survey</span>
+      <span class="duration">59.79994s</span>
+      <div class="failure" id="failure_5">
+        <div class="message"><pre>expected &quot;  English\n  Dashboard\nMy Rewards\nMy Account\nPrivacy Policy\nAbout Us\nLogout\nWelcome back, Nitin. If you are not Nitin, click here.\nTotal Earnings: 471 Points\nSurveys Profiles\nAs of today 07/17/12, there are 222 surveys available for you to take.\nSurvey Name Odds of Your Being\nAllowed to Participate * Approximate\nLength Reward Amount **  \n New Survey 100% 5 Minutes 10 Points\n New Survey 100% 5 Minutes 10 Points\n New Survey 33% 33 Minutes 25 Points\n Test Automation Group_Wed Jul 11 17:22:18 50% 10 Minutes 15 Points\n Test Automation Group_Wed Jul 11 17:26:34 50% 10 Minutes 15 Points\n New Survey 33% 3 Minutes 10 Points\n New Survey 100% 2 Minutes 10 Points\n DemographicWed Jul 11 17:14:51 50% 10 Minutes 15 Points\n Test Automation Survey 50% 10 Minutes 15 Points\n New Survey 100% 2 Minutes 10 Points\n New Survey 100% 15 Minutes 10 Points\n New Survey 100% 3 Minutes 3 Points\n New Survey 100% 2 Minutes 10 Points\n New Survey 100% 2 Minutes 10 Points\n Demographic2012-07-16 04:44:30 50% 10 Minutes 15 Points\n ss 100% 2 Minutes 10 Points\n New Survey 100% 5 Minutes 10 Points\n New Survey 100% 3 Minutes 10 Points\n Demographic2012-07-16 04:54:58 50% 10 Minutes 15 Points\n New Survey 100% 13 Minutes 8 Points\n New Survey 100% 2 Minutes 10 Points\n New Survey 100% 2 Minutes 10 Points\n Geo_Targetting_2012-07-16 05:12:08 50% 10 Minutes 20 Points\n New Survey 100% 2 Minutes 10 Points\n Demographic2012-07-16 05:08:01 50% 10 Minutes 15 Points\n New Survey 100% 3 Minutes 10 Points\n New Survey 100% 3 Minutes 10 Points\n New Survey 100% 2 Minutes 10 Points\n Auto Test 50% 1 Minute 10 Points\n New Survey 50% 10 Minutes 15 Points\n Auto Test 50% 1 Minute 10 Points\n Auto Test 50% 1 Minute 10 Points\n New Survey 100% 3 Minutes 10 Points\n New Survey 100% 2 Minutes 10 Points\n New Survey 100% 10 Minutes 15 Points\n Demographic2012-07-17 04:16:18 50% 10 Minutes 15 Points\n Geo_Targetting_2012-07-17 04:21:15 50% 10 Minutes 20 Points\n New Survey 100% 1 Minute 10 Points\n New Survey 100% 2 Minutes 10 Points\n New Survey 100% 5 Minutes 10 Points\n New Survey 100% 2 Minutes 10 Points\n Demographic2012-07-17 03:54:10 50% 10 Minutes 15 Points\n New Survey 100% 2 Minutes 10 Points\n New Survey 100% 2 Minutes 10 Points\n Demographic2012-07-17 02:59:08 50% 10 Minutes 15 Points\n Demographic2012-07-17 02:13:23 50% 10 Minutes 15 Points\n New Survey 100% 2 Minutes 10 Points\n New Survey 100% 1 Minute 5 Points\n 2012-07-17 00:57:08 50% 10 Minutes 15 Points\n New Survey 100% 2 Minutes 10 Points\n Demographic2012-07-17 00:32:47 50% 10 Minutes 15 Points\n New Survey 33% 1 Minute 10 Points\n New Survey 100% 2 Minutes 10 Points\n New Survey 100% 2 Minutes 10 Points\n New Survey 100% 1 Minute 5 Points\n Wed Jul 11 17:57:31 50% 10 Minutes 15 Points\n New Survey 100% 2 Minutes 10 Points\n New Survey 100% 1 Minute 10 Points\n New Survey 100% 2 Minutes 10 Points\n New Survey 100% 10 Minutes 15 Points\n New Survey 80% 21 Minutes 20 Points\n Test 6% 20 Minutes 20 Points\n10639 10% 10 Minutes 0 Points\nGreat Opportunity For You! 90% 2 Minutes 0 Points\nExcellent Opportunity for You! 90% 2 Minutes 0 Points\nExciting New Survey Opportunity! 3% 30 Minutes 20 Points\nExciting New Survey! 48% 30 Minutes 25 Points\nShare Some Insight Today 50% 30 Minutes 50 Points\nNew Opportunity! 7% 5 Minutes 50 Points\nNew Health Survey 9% 30 Minutes 25 Points\nCome Take Our New Survey! 20% 15 Minutes 10 Points\nEarn A Reward For Participating In This Fun Survey! 20% 15 Minutes 10 Points\nNew Survey Selected for You! 20% 15 Minutes 10 Points\nExciting New Survey! 20% 15 Minutes 10 Points\nAnother New Survey For A Select Few! 20% 15 Minutes 10 Points\nExciting New Survey! 20% 15 Minutes 10 Points\nSuper fun survey!! 20% 15 Minutes 10 Points\nPass the time with a survey! 20% 15 Minutes 10 Points\nExciting New Survey! 20% 15 Minutes 10 Points\nExciting New Survey! 20% 15 Minutes 10 Points\nBored? Try a survey! 20% 15 Minutes 10 Points\nCome Take Our New Survey! 20% 15 Minutes 10 Points\nExciting New Survey! 20% 15 Minutes 10 Points\nExciting New Survey! 20% 15 Minutes 10 Points\nExciting New Survey! 20% 15 Minutes 10 Points\nExciting New Survey For You. 20% 15 Minutes 10 Points\nExciting New Survey Opportunity! 20% 15 Minutes 10 Points\nExciting New Survey Opportunity! 20% 15 Minutes 10 Points\nExciting New Survey Opportunity! 20% 15 Minutes 10 Points\nNew Survey for You! 20% 15 Minutes 10 Points\nExciting New Survey Opportunity! 20% 15 Minutes 10 Points\nExciting New Survey Opportunity! 20% 15 Minutes 10 Points\nWe Need Your Opinion! 20% 15 Minutes 10 Points\nNew Survey for You! 20% 15 Minutes 10 Points\nExciting New Survey! 20% 15 Minutes 10 Points\nExciting New Survey Opportunity! 20% 15 Minutes 10 Points\nExciting New Survey Opportunity! 20% 15 Minutes 10 Points\nExciting New Survey! 20% 15 Minutes 10 Points\nExciting New Survey! 20% 15 Minutes 10 Points\nExciting New Survey Opportunity! 20% 15 Minutes 10 Points\nNew Survey Selected for You! 20% 15 Minutes 10 Points\nNew Survey Selected for You! 20% 15 Minutes 10 Points\nNew Survey Opportunity 20% 30 Minutes 70 Points\nExciting New Survey For You! 6% 15 Minutes 20 Points\nNew Survey 50% 30 Minutes 100 Points\nExciting New Survey Opportunity! 20% 15 Minutes 10 Points\nExciting New Survey Opportunity! 20% 15 Minutes 10 Points\nloyalty 10% 10 Minutes 10 Points\n99568 90% 1 Minute 10 Points\nNO CRITERIA (PROF) 5% 3 Minutes 20 Points\nTest Survey ETL 90% 1 Minute 13 Points\nTest Survey ETL 90% 1 Minute 13 Points\nTEST LOAD 2 4% 5 Minutes 50 Points\nthe whiteboard invite only panel 100% 1 Minute 750 Points\n101459 90% 1 Minute 10 Points\n101472 90% 1 Minute 10 Points\n101495 90% 1 Minute 13 Points\n101496 90% 1 Minute 13 Points\n101497 90% 1 Minute 13 Points\n101498 90% 1 Minute 13 Points\n101499 90% 1 Minute 13 Points\n101500 90% 1 Minute 13 Points\n101501 90% 1 Minute 13 Points\ntest 100% 2 Minutes 10 Points\n101534 90% 1 Minute 13 Points\ntest 100% 2 Minutes 10 Points\n101660 90% 1 Minute 10 Points\ntest 100% 2 Minutes 10 Points\n102026 90% 25 Minutes 38 Points\nQG zero CPI 10% 10 Minutes 10 Points\nQG102125 4% 5 Minutes 20 Points\nTEST DEMO 18 APR 90% 23 Minutes 50 Points\nTEST ACLOSE 2 3% 2 Minutes 30 Points\nTEST ACLOSE 3 33% 2 Minutes 30 Points\ntest123 67% 123 Minutes 1500 Points\nTEST Load 30% 2 Minutes 30 Points\nTEST Load 30% 2 Minutes 30 Points\nTEST Load 30% 2 Minutes 30 Points\nTEST Load 30% 2 Minutes 30 Points\ntestSurvey1 100% 1 Minute 50 Points\ntestSurvey1 100% 1 Minute 50 Points\ntestSurvey1 100% 1 Minute 50 Points\nchanged to survey 56% 1 Minute 40 Points\nchanged to survey 56% 1 Minute 40 Points\nName00000 1% 1 Minute 2000 Points\nName0dd0000 1% 1 Minute 500 Points\nJune6-1 3% 3 Minutes 10 Points\nTEST Load 30% 2 Minutes 20 Points\nTEST Load 30% 2 Minutes 30 Points\nTEST 1 6% 3 Minutes 10 Points\nTEST US 2% 5 Minutes 10 Points\nLoadTest2 100% 5 Minutes 20 Points\nLoadTest2 100% 5 Minutes 20 Points\nLoadTest2 100% 5 Minutes 20 Points\nLoadTest2 100% 5 Minutes 20 Points\nLoadTest2 100% 5 Minutes 20 Points\nLoadTest2 100% 5 Minutes 20 Points\nLoadTest2 100% 5 Minutes 20 Points\nLoadTest2 100% 5 Minutes 20 Points\nLoadTest2 100% 5 Minutes 20 Points\nLoadTest2 100% 5 Minutes 20 Points\nLoadTest2 100% 5 Minutes 20 Points\nLoadTest2 100% 5 Minutes 20 Points\nLoadTest2 100% 5 Minutes 20 Points\nLoadTest2 100% 5 Minutes 20 Points\nLoadTest2 100% 5 Minutes 20 Points\nLoadTest2 100% 5 Minutes 20 Points\nLoadTest2 100% 5 Minutes 20 Points\nLoadTest2 100% 5 Minutes 20 Points\nQG100294 4% 5 Minutes 50 Points\nQG100295 4% 5 Minutes 50 Points\nQG100294 4% 5 Minutes 50 Points\nQG100294 4% 5 Minutes 50 Points\nQG100295 4% 5 Minutes 50 Points\nQG100295 4% 5 Minutes 50 Points\nQG100294 4% 5 Minutes 50 Points\n103061 90% 1 Minute 10 Points\ntest 100% 5 Minutes 20 Points\ntest 100% 2 Minutes 20 Points\n103135 10% 4 Minutes 1 Points\nTEST 25 June 12% 5 Minutes 20 Points\nQG103150 10% 1 Minute 0 Points\nQG103188 90% 1 Minute 500 Points\nQG103188 90% 1 Minute 500 Points\nabc-1 90% 1 Minute 0 Points\nT2 3% 3 Minutes 20 Points\nT4 3% 3 Minutes 20 Points\nT5 3% 3 Minutes 20 Points\nOTX1 4% 5 Minutes 20 Points\nOTX2 4% 5 Minutes 10 Points\n9 July opt 1 1% 5 Minutes 50 Points\nPUB 1 4% 5 Minutes 10 Points\nPUB 2 4% 5 Minutes 10 Points\nPUB 3 3% 5 Minutes 10 Points\nPUB 4 3% 5 Minutes 10 Points\nTEST 1-2 6% 3 Minutes 10 Points\nTEST 1-3 6% 3 Minutes 10 Points\nNew Survey Opportunity! 70% 30 Minutes 25 Points\nFantastic Opportunity in Your Area! 90% 2 Minutes 0 Points\nNew Survey Opportunity! 18% 21 Minutes 20 Points\nNew Survey Opportunity! 18% 21 Minutes 20 Points\nNew Survey Opportunity! 18% 21 Minutes 20 Points\nNew Survey Opportunity! 18% 21 Minutes 20 Points\nNew Survey for You 80% 15 Minutes 10 Points\nPROF_CRIT_TEST 4% 23 Minutes 50 Points\nus target grp 5% 5 Minutes 50 Points\nus target grp 5% 5 Minutes 50 Points\nus target grp 5% 5 Minutes 50 Points\nus target grp 5% 5 Minutes 50 Points\nus target grp 5% 5 Minutes 50 Points\nus target grp 5% 5 Minutes 50 Points\nus target grp 5% 5 Minutes 50 Points\nus target grp 5% 5 Minutes 50 Points\nus target grp 5% 5 Minutes 50 Points\nus target grp 5% 5 Minutes 50 Points\nQG100294 4% 5 Minutes 50 Points\nQG100294 4% 5 Minutes 50 Points\nQG100295 4% 5 Minutes 50 Points\nQG100295 4% 5 Minutes 50 Points\nTEST 25 June - 2 12% 5 Minutes 0 Points\nQG103349 4% 5 Minutes 20 Points\nT1 3% 3 Minutes 20 Points\n* Each survey is looking for a unique type of person to complete the questionnaire.There may be times when you do not qualify for a survey based on the answers you enter. The \&quot;Odds\&quot; percentage gives you an indication of how difficult it may be to qualify for that survey. The higher the odds, the greater the likelihood that you'll qualify for the survey.\n\n** Rewards are offered upon successfully completing a survey. There are times when you may not qualify for a survey based on your specific answers.\n      Dashboard  |  My Rewards |  My Account |  Privacy Policy  |  Help  |  About Us\n\u00A9 2011 Focusline.com/FocuslineSurveys.com - all rights reserved.&quot; to include &quot;Profile_criteria2012-07-17 04:26:37&quot;
+Diff:
+@@ -1,2 +1,242 @@
+-Profile_criteria2012-07-17 04:26:37
++  English
++  Dashboard
++My Rewards
++My Account
++Privacy Policy
++About Us
++Logout
++Welcome back, Nitin. If you are not Nitin, click here.
++Total Earnings: 471 Points
++Surveys Profiles
++As of today 07/17/12, there are 222 surveys available for you to take.
++Survey Name Odds of Your Being
++Allowed to Participate * Approximate
++Length Reward Amount **  
++ New Survey 100% 5 Minutes 10 Points
++ New Survey 100% 5 Minutes 10 Points
++ New Survey 33% 33 Minutes 25 Points
++ Test Automation Group_Wed Jul 11 17:22:18 50% 10 Minutes 15 Points
++ Test Automation Group_Wed Jul 11 17:26:34 50% 10 Minutes 15 Points
++ New Survey 33% 3 Minutes 10 Points
++ New Survey 100% 2 Minutes 10 Points
++ DemographicWed Jul 11 17:14:51 50% 10 Minutes 15 Points
++ Test Automation Survey 50% 10 Minutes 15 Points
++ New Survey 100% 2 Minutes 10 Points
++ New Survey 100% 15 Minutes 10 Points
++ New Survey 100% 3 Minutes 3 Points
++ New Survey 100% 2 Minutes 10 Points
++ New Survey 100% 2 Minutes 10 Points
++ Demographic2012-07-16 04:44:30 50% 10 Minutes 15 Points
++ ss 100% 2 Minutes 10 Points
++ New Survey 100% 5 Minutes 10 Points
++ New Survey 100% 3 Minutes 10 Points
++ Demographic2012-07-16 04:54:58 50% 10 Minutes 15 Points
++ New Survey 100% 13 Minutes 8 Points
++ New Survey 100% 2 Minutes 10 Points
++ New Survey 100% 2 Minutes 10 Points
++ Geo_Targetting_2012-07-16 05:12:08 50% 10 Minutes 20 Points
++ New Survey 100% 2 Minutes 10 Points
++ Demographic2012-07-16 05:08:01 50% 10 Minutes 15 Points
++ New Survey 100% 3 Minutes 10 Points
++ New Survey 100% 3 Minutes 10 Points
++ New Survey 100% 2 Minutes 10 Points
++ Auto Test 50% 1 Minute 10 Points
++ New Survey 50% 10 Minutes 15 Points
++ Auto Test 50% 1 Minute 10 Points
++ Auto Test 50% 1 Minute 10 Points
++ New Survey 100% 3 Minutes 10 Points
++ New Survey 100% 2 Minutes 10 Points
++ New Survey 100% 10 Minutes 15 Points
++ Demographic2012-07-17 04:16:18 50% 10 Minutes 15 Points
++ Geo_Targetting_2012-07-17 04:21:15 50% 10 Minutes 20 Points
++ New Survey 100% 1 Minute 10 Points
++ New Survey 100% 2 Minutes 10 Points
++ New Survey 100% 5 Minutes 10 Points
++ New Survey 100% 2 Minutes 10 Points
++ Demographic2012-07-17 03:54:10 50% 10 Minutes 15 Points
++ New Survey 100% 2 Minutes 10 Points
++ New Survey 100% 2 Minutes 10 Points
++ Demographic2012-07-17 02:59:08 50% 10 Minutes 15 Points
++ Demographic2012-07-17 02:13:23 50% 10 Minutes 15 Points
++ New Survey 100% 2 Minutes 10 Points
++ New Survey 100% 1 Minute 5 Points
++ 2012-07-17 00:57:08 50% 10 Minutes 15 Points
++ New Survey 100% 2 Minutes 10 Points
++ Demographic2012-07-17 00:32:47 50% 10 Minutes 15 Points
++ New Survey 33% 1 Minute 10 Points
++ New Survey 100% 2 Minutes 10 Points
++ New Survey 100% 2 Minutes 10 Points
++ New Survey 100% 1 Minute 5 Points
++ Wed Jul 11 17:57:31 50% 10 Minutes 15 Points
++ New Survey 100% 2 Minutes 10 Points
++ New Survey 100% 1 Minute 10 Points
++ New Survey 100% 2 Minutes 10 Points
++ New Survey 100% 10 Minutes 15 Points
++ New Survey 80% 21 Minutes 20 Points
++ Test 6% 20 Minutes 20 Points
++10639 10% 10 Minutes 0 Points
++Great Opportunity For You! 90% 2 Minutes 0 Points
++Excellent Opportunity for You! 90% 2 Minutes 0 Points
++Exciting New Survey Opportunity! 3% 30 Minutes 20 Points
++Exciting New Survey! 48% 30 Minutes 25 Points
++Share Some Insight Today 50% 30 Minutes 50 Points
++New Opportunity! 7% 5 Minutes 50 Points
++New Health Survey 9% 30 Minutes 25 Points
++Come Take Our New Survey! 20% 15 Minutes 10 Points
++Earn A Reward For Participating In This Fun Survey! 20% 15 Minutes 10 Points
++New Survey Selected for You! 20% 15 Minutes 10 Points
++Exciting New Survey! 20% 15 Minutes 10 Points
++Another New Survey For A Select Few! 20% 15 Minutes 10 Points
++Exciting New Survey! 20% 15 Minutes 10 Points
++Super fun survey!! 20% 15 Minutes 10 Points
++Pass the time with a survey! 20% 15 Minutes 10 Points
++Exciting New Survey! 20% 15 Minutes 10 Points
++Exciting New Survey! 20% 15 Minutes 10 Points
++Bored? Try a survey! 20% 15 Minutes 10 Points
++Come Take Our New Survey! 20% 15 Minutes 10 Points
++Exciting New Survey! 20% 15 Minutes 10 Points
++Exciting New Survey! 20% 15 Minutes 10 Points
++Exciting New Survey! 20% 15 Minutes 10 Points
++Exciting New Survey For You. 20% 15 Minutes 10 Points
++Exciting New Survey Opportunity! 20% 15 Minutes 10 Points
++Exciting New Survey Opportunity! 20% 15 Minutes 10 Points
++Exciting New Survey Opportunity! 20% 15 Minutes 10 Points
++New Survey for You! 20% 15 Minutes 10 Points
++Exciting New Survey Opportunity! 20% 15 Minutes 10 Points
++Exciting New Survey Opportunity! 20% 15 Minutes 10 Points
++We Need Your Opinion! 20% 15 Minutes 10 Points
++New Survey for You! 20% 15 Minutes 10 Points
++Exciting New Survey! 20% 15 Minutes 10 Points
++Exciting New Survey Opportunity! 20% 15 Minutes 10 Points
++Exciting New Survey Opportunity! 20% 15 Minutes 10 Points
++Exciting New Survey! 20% 15 Minutes 10 Points
++Exciting New Survey! 20% 15 Minutes 10 Points
++Exciting New Survey Opportunity! 20% 15 Minutes 10 Points
++New Survey Selected for You! 20% 15 Minutes 10 Points
++New Survey Selected for You! 20% 15 Minutes 10 Points
++New Survey Opportunity 20% 30 Minutes 70 Points
++Exciting New Survey For You! 6% 15 Minutes 20 Points
++New Survey 50% 30 Minutes 100 Points
++Exciting New Survey Opportunity! 20% 15 Minutes 10 Points
++Exciting New Survey Opportunity! 20% 15 Minutes 10 Points
++loyalty 10% 10 Minutes 10 Points
++99568 90% 1 Minute 10 Points
++NO CRITERIA (PROF) 5% 3 Minutes 20 Points
++Test Survey ETL 90% 1 Minute 13 Points
++Test Survey ETL 90% 1 Minute 13 Points
++TEST LOAD 2 4% 5 Minutes 50 Points
++the whiteboard invite only panel 100% 1 Minute 750 Points
++101459 90% 1 Minute 10 Points
++101472 90% 1 Minute 10 Points
++101495 90% 1 Minute 13 Points
++101496 90% 1 Minute 13 Points
++101497 90% 1 Minute 13 Points
++101498 90% 1 Minute 13 Points
++101499 90% 1 Minute 13 Points
++101500 90% 1 Minute 13 Points
++101501 90% 1 Minute 13 Points
++test 100% 2 Minutes 10 Points
++101534 90% 1 Minute 13 Points
++test 100% 2 Minutes 10 Points
++101660 90% 1 Minute 10 Points
++test 100% 2 Minutes 10 Points
++102026 90% 25 Minutes 38 Points
++QG zero CPI 10% 10 Minutes 10 Points
++QG102125 4% 5 Minutes 20 Points
++TEST DEMO 18 APR 90% 23 Minutes 50 Points
++TEST ACLOSE 2 3% 2 Minutes 30 Points
++TEST ACLOSE 3 33% 2 Minutes 30 Points
++test123 67% 123 Minutes 1500 Points
++TEST Load 30% 2 Minutes 30 Points
++TEST Load 30% 2 Minutes 30 Points
++TEST Load 30% 2 Minutes 30 Points
++TEST Load 30% 2 Minutes 30 Points
++testSurvey1 100% 1 Minute 50 Points
++testSurvey1 100% 1 Minute 50 Points
++testSurvey1 100% 1 Minute 50 Points
++changed to survey 56% 1 Minute 40 Points
++changed to survey 56% 1 Minute 40 Points
++Name00000 1% 1 Minute 2000 Points
++Name0dd0000 1% 1 Minute 500 Points
++June6-1 3% 3 Minutes 10 Points
++TEST Load 30% 2 Minutes 20 Points
++TEST Load 30% 2 Minutes 30 Points
++TEST 1 6% 3 Minutes 10 Points
++TEST US 2% 5 Minutes 10 Points
++LoadTest2 100% 5 Minutes 20 Points
++LoadTest2 100% 5 Minutes 20 Points
++LoadTest2 100% 5 Minutes 20 Points
++LoadTest2 100% 5 Minutes 20 Points
++LoadTest2 100% 5 Minutes 20 Points
++LoadTest2 100% 5 Minutes 20 Points
++LoadTest2 100% 5 Minutes 20 Points
++LoadTest2 100% 5 Minutes 20 Points
++LoadTest2 100% 5 Minutes 20 Points
++LoadTest2 100% 5 Minutes 20 Points
++LoadTest2 100% 5 Minutes 20 Points
++LoadTest2 100% 5 Minutes 20 Points
++LoadTest2 100% 5 Minutes 20 Points
++LoadTest2 100% 5 Minutes 20 Points
++LoadTest2 100% 5 Minutes 20 Points
++LoadTest2 100% 5 Minutes 20 Points
++LoadTest2 100% 5 Minutes 20 Points
++LoadTest2 100% 5 Minutes 20 Points
++QG100294 4% 5 Minutes 50 Points
++QG100295 4% 5 Minutes 50 Points
++QG100294 4% 5 Minutes 50 Points
++QG100294 4% 5 Minutes 50 Points
++QG100295 4% 5 Minutes 50 Points
++QG100295 4% 5 Minutes 50 Points
++QG100294 4% 5 Minutes 50 Points
++103061 90% 1 Minute 10 Points
++test 100% 5 Minutes 20 Points
++test 100% 2 Minutes 20 Points
++103135 10% 4 Minutes 1 Points
++TEST 25 June 12% 5 Minutes 20 Points
++QG103150 10% 1 Minute 0 Points
++QG103188 90% 1 Minute 500 Points
++QG103188 90% 1 Minute 500 Points
++abc-1 90% 1 Minute 0 Points
++T2 3% 3 Minutes 20 Points
++T4 3% 3 Minutes 20 Points
++T5 3% 3 Minutes 20 Points
++OTX1 4% 5 Minutes 20 Points
++OTX2 4% 5 Minutes 10 Points
++9 July opt 1 1% 5 Minutes 50 Points
++PUB 1 4% 5 Minutes 10 Points
++PUB 2 4% 5 Minutes 10 Points
++PUB 3 3% 5 Minutes 10 Points
++PUB 4 3% 5 Minutes 10 Points
++TEST 1-2 6% 3 Minutes 10 Points
++TEST 1-3 6% 3 Minutes 10 Points
++New Survey Opportunity! 70% 30 Minutes 25 Points
++Fantastic Opportunity in Your Area! 90% 2 Minutes 0 Points
++New Survey Opportunity! 18% 21 Minutes 20 Points
++New Survey Opportunity! 18% 21 Minutes 20 Points
++New Survey Opportunity! 18% 21 Minutes 20 Points
++New Survey Opportunity! 18% 21 Minutes 20 Points
++New Survey for You 80% 15 Minutes 10 Points
++PROF_CRIT_TEST 4% 23 Minutes 50 Points
++us target grp 5% 5 Minutes 50 Points
++us target grp 5% 5 Minutes 50 Points
++us target grp 5% 5 Minutes 50 Points
++us target grp 5% 5 Minutes 50 Points
++us target grp 5% 5 Minutes 50 Points
++us target grp 5% 5 Minutes 50 Points
++us target grp 5% 5 Minutes 50 Points
++us target grp 5% 5 Minutes 50 Points
++us target grp 5% 5 Minutes 50 Points
++us target grp 5% 5 Minutes 50 Points
++QG100294 4% 5 Minutes 50 Points
++QG100294 4% 5 Minutes 50 Points
++QG100295 4% 5 Minutes 50 Points
++QG100295 4% 5 Minutes 50 Points
++TEST 25 June - 2 12% 5 Minutes 0 Points
++QG103349 4% 5 Minutes 20 Points
++T1 3% 3 Minutes 20 Points
++* Each survey is looking for a unique type of person to complete the questionnaire.There may be times when you do not qualify for a survey based on the answers you enter. The &quot;Odds&quot; percentage gives you an indication of how difficult it may be to qualify for that survey. The higher the odds, the greater the likelihood that you'll qualify for the survey.
++
++** Rewards are offered upon successfully completing a survey. There are times when you may not qualify for a survey based on your specific answers.
++      Dashboard  |  My Rewards |  My Account |  Privacy Policy  |  Help  |  About Us
++© 2011 Focusline.com/FocuslineSurveys.com - all rights reserved.
+</pre></div>
+        <div class="backtrace"><pre>./4s_specs/Test_06_Profile_criteria_test.rb:189:in `block (2 levels) in <top (required)>'</pre></div>
+    <pre class="ruby"><code><span class="linenum">187</span>      sleep 3
+<span class="linenum">188</span>      body_text = @browser.text
+<span class="offending"><span class="linenum">189</span>      body_text.should include("#{grp_name}")</span>
+<span class="linenum">190</span>      @browser.link(:text,"Logout").click
+<span class="linenum">191</span>      @browser.close
+<span class="linenum">192</span><span class="comment"># gem install syntax to get syntax highlighting</span></code></pre>
+      </div>
+    </dd>
+    <script type="text/javascript">moveProgressBar('66.0');</script>
+    <dd class="example passed"><span class="passed_spec_name">Test to check if a member who does not satisfy the Profile criteria is unable to see the survey</span><span class='duration'>62.00317s</span></dd>
+  </dl>
+</div>
+<div id="div_group_7" class="example_group passed">
+  <dl style="margin-left: 0px;">
+  <dt id="example_group_7" class="passed">Test 25: Dashboard, Email invite survey cases and reward checking</dt>
+    <script type="text/javascript">makeRed('div_group_7');</script>
+    <script type="text/javascript">makeRed('example_group_7');</script>
+    <script type="text/javascript">moveProgressBar('67.8');</script>
+    <dd class="example failed">
+      <span class="failed_spec_name">should create a project on network site</span>
+      <span class="duration">16.07895s</span>
+      <div class="failure" id="failure_6">
+        <div class="message"><pre>unable to locate element, using {:text=&gt;&quot;Create Project&quot;, :tag_name=&gt;&quot;a&quot;}</pre></div>
+        <div class="backtrace"><pre>./4s_specs/Test_25_Project_Group_Stats.rb:62:in `block (2 levels) in <top (required)>'</pre></div>
+    <pre class="ruby"><code><span class="linenum">60</span>    sleep 3
+<span class="linenum">61</span>    @browser.link(:text,'Create Project').click
+<span class="offending"><span class="linenum">62</span>    @browser.link(:text,'Create Project').click</span>
+<span class="linenum">63</span>    sleep 5
+<span class="linenum">64</span>    body_text = @browser.text
+<span class="linenum">65</span><span class="comment"># gem install syntax to get syntax highlighting</span></code></pre>
+      </div>
+    </dd>
+    <script type="text/javascript">moveProgressBar('69.6');</script>
+    <dd class="example passed"><span class="passed_spec_name">To Create a group for Dashboard test</span><span class='duration'>87.89512s</span></dd>
+    <script type="text/javascript">moveProgressBar('71.4');</script>
+    <dd class="example passed"><span class="passed_spec_name">To Enter PanelShield data</span><span class='duration'>6.51596s</span></dd>
+    <script type="text/javascript">moveProgressBar('73.2');</script>
+    <dd class="example passed"><span class="passed_spec_name">To enter survey name and live close settings</span><span class='duration'>29.18899s</span></dd>
+    <script type="text/javascript">moveProgressBar('75.0');</script>
+    <dd class="example passed"><span class="passed_spec_name">Check if the success links works</span><span class='duration'>12.50064s</span></dd>
+    <script type="text/javascript">moveProgressBar('76.7');</script>
+    <dd class="example passed"><span class="passed_spec_name">Check if the failure link works</span><span class='duration'>10.01614s</span></dd>
+    <script type="text/javascript">moveProgressBar('78.5');</script>
+    <dd class="example failed">
+      <span class="failed_spec_name">Check if once all the data is entered, the project is allowed to go live</span>
+      <span class="duration">6.84410s</span>
+      <div class="failure" id="failure_7">
+        <div class="message"><pre>Unable to locate element: {&quot;method&quot;:&quot;tag name&quot;,&quot;selector&quot;:&quot;body&quot;}</pre></div>
+        <div class="backtrace"><pre>[remote server] file:///C:/DOCUME~1/ADMINI~1/LOCALS~1/Temp/webdriver-rb-profilecopy20120717-11480-1a695bo/extensions/fxdriver@googlecode.com/components/driver_component.js:5274:in `unknown'
+[remote server] file:///C:/DOCUME~1/ADMINI~1/LOCALS~1/Temp/webdriver-rb-profilecopy20120717-11480-1a695bo/extensions/fxdriver@googlecode.com/components/driver_component.js:6556:in `unknown'
+[remote server] file:///C:/DOCUME~1/ADMINI~1/LOCALS~1/Temp/webdriver-rb-profilecopy20120717-11480-1a695bo/extensions/fxdriver@googlecode.com/components/driver_component.js:6564:in `unknown'
+[remote server] file:///C:/DOCUME~1/ADMINI~1/LOCALS~1/Temp/webdriver-rb-profilecopy20120717-11480-1a695bo/extensions/fxdriver@googlecode.com/components/command_processor.js:273:in `unknown'
+[remote server] file:///C:/DOCUME~1/ADMINI~1/LOCALS~1/Temp/webdriver-rb-profilecopy20120717-11480-1a695bo/extensions/fxdriver@googlecode.com/components/command_processor.js:10055:in `unknown'
+[remote server] file:///C:/DOCUME~1/ADMINI~1/LOCALS~1/Temp/webdriver-rb-profilecopy20120717-11480-1a695bo/extensions/fxdriver@googlecode.com/components/command_processor.js:10060:in `unknown'
+[remote server] file:///C:/DOCUME~1/ADMINI~1/LOCALS~1/Temp/webdriver-rb-profilecopy20120717-11480-1a695bo/extensions/fxdriver@googlecode.com/components/command_processor.js:9998:in `unknown'
+./4s_specs/Test_25_Project_Group_Stats.rb:183:in `block (2 levels) in <top (required)>'</pre></div>
+    <pre class="ruby"><code><span class="linenum">5272</span># Couldn't get snippet for [remote server] file:///C:/DOCUME~1/ADMINI~1/LOCALS~1/Temp/webdriver-rb-profilecopy20120717-11480-1a695bo/extensions/fxdriver@googlecode.com/components/driver_component.js
+<span class="linenum">5273</span><span class="comment"># gem install syntax to get syntax highlighting</span></code></pre>
+      </div>
+    </dd>
+    <script type="text/javascript">moveProgressBar('80.3');</script>
+    <dd class="example passed"><span class="passed_spec_name">Check if client is able to create and save a group</span><span class='duration'>22.40740s</span></dd>
+    <script type="text/javascript">moveProgressBar('82.1');</script>
+    <dd class="example failed">
+      <span class="failed_spec_name">To Get Project and group details for survey Taking and Get IDs</span>
+      <span class="duration">3.79707s</span>
+      <div class="failure" id="failure_8">
+        <div class="message"><pre>undefined method `unpack' for nil:NilClass</pre></div>
+        <div class="backtrace"><pre>./4s_specs/Test_25_Project_Group_Stats.rb:226:in `block (2 levels) in <top (required)>'</pre></div>
+    <pre class="ruby"><code><span class="linenum">224</span>     # puts @enc_group_name
+<span class="linenum">225</span>     @enc_group_name=@enc_group_name[8..15]
+<span class="offending"><span class="linenum">226</span>     @dec_group_id=Base64.decode64(@enc_group_name)</span>
+<span class="linenum">227</span>     #puts @dec_group_id
+<span class="linenum">228</span>     @dec_group_link="link"+@enc_group_name
+<span class="linenum">229</span><span class="comment"># gem install syntax to get syntax highlighting</span></code></pre>
+      </div>
+    </dd>
+    <script type="text/javascript">moveProgressBar('83.9');</script>
+    <dd class="example failed">
+      <span class="failed_spec_name">To check if a member is able to Complete a survey and check for reward</span>
+      <span class="duration">29.53276s</span>
+      <div class="failure" id="failure_9">
+        <div class="message"><pre>Modal dialog present</pre></div>
+        <div class="backtrace"><pre>[remote server] file:///C:/DOCUME~1/ADMINI~1/LOCALS~1/Temp/webdriver-rb-profilecopy20120717-11480-awm8d5/extensions/fxdriver@googlecode.com/components/command_processor.js:5202:in `unknown'
+[remote server] file:///C:/DOCUME~1/ADMINI~1/LOCALS~1/Temp/webdriver-rb-profilecopy20120717-11480-awm8d5/extensions/fxdriver@googlecode.com/components/command_processor.js:10114:in `unknown'
+[remote server] :0:in `execute'
+[remote server] file:///C:/DOCUME~1/ADMINI~1/LOCALS~1/Temp/webdriver-rb-profilecopy20120717-11480-awm8d5/extensions/fxdriver@googlecode.com/components/driver_component.js:5752:in `unknown'
+[remote server] file:///C:/DOCUME~1/ADMINI~1/LOCALS~1/Temp/webdriver-rb-profilecopy20120717-11480-awm8d5/extensions/fxdriver@googlecode.com/components/driver_component.js:5909:in `unknown'
+[remote server] file:///C:/DOCUME~1/ADMINI~1/LOCALS~1/Temp/webdriver-rb-profilecopy20120717-11480-awm8d5/extensions/fxdriver@googlecode.com/components/driver_component.js:5856:in `unknown'
+[remote server] file:///C:/DOCUME~1/ADMINI~1/LOCALS~1/Temp/webdriver-rb-profilecopy20120717-11480-awm8d5/extensions/fxdriver@googlecode.com/components/driver_component.js:9914:in `unknown'
+[remote server] :0:in `handle'
+[remote server] file:///C:/DOCUME~1/ADMINI~1/LOCALS~1/Temp/webdriver-rb-profilecopy20120717-11480-awm8d5/extensions/fxdriver@googlecode.com/components/httpd.js:1935:in `unknown'
+[remote server] file:///C:/DOCUME~1/ADMINI~1/LOCALS~1/Temp/webdriver-rb-profilecopy20120717-11480-awm8d5/extensions/fxdriver@googlecode.com/components/httpd.js:2261:in `unknown'
+[remote server] file:///C:/DOCUME~1/ADMINI~1/LOCALS~1/Temp/webdriver-rb-profilecopy20120717-11480-awm8d5/extensions/fxdriver@googlecode.com/components/httpd.js:1168:in `unknown'
+[remote server] file:///C:/DOCUME~1/ADMINI~1/LOCALS~1/Temp/webdriver-rb-profilecopy20120717-11480-awm8d5/extensions/fxdriver@googlecode.com/components/httpd.js:1616:in `unknown'
+[remote server] file:///C:/DOCUME~1/ADMINI~1/LOCALS~1/Temp/webdriver-rb-profilecopy20120717-11480-awm8d5/extensions/fxdriver@googlecode.com/components/httpd.js:1464:in `unknown'
+[remote server] file:///C:/DOCUME~1/ADMINI~1/LOCALS~1/Temp/webdriver-rb-profilecopy20120717-11480-awm8d5/extensions/fxdriver@googlecode.com/components/httpd.js:1333:in `unknown'
+./lib/Usamp_lib.rb:60:in `Surveyhead_login'
+./4s_specs/Test_25_Project_Group_Stats.rb:252:in `block (2 levels) in <top (required)>'</pre></div>
+    <pre class="ruby"><code><span class="linenum">5200</span># Couldn't get snippet for [remote server] file:///C:/DOCUME~1/ADMINI~1/LOCALS~1/Temp/webdriver-rb-profilecopy20120717-11480-awm8d5/extensions/fxdriver@googlecode.com/components/command_processor.js
+<span class="linenum">5201</span><span class="comment"># gem install syntax to get syntax highlighting</span></code></pre>
+      </div>
+    </dd>
+    <script type="text/javascript">moveProgressBar('85.7');</script>
+    <dd class="example failed">
+      <span class="failed_spec_name">To check for the group cost calculation</span>
+      <span class="duration">20.61043s</span>
+      <div class="failure" id="failure_10">
+        <div class="message"><pre>expected &quot;uSamp 0 0 0 Included Included $7.90 $0.00&quot; to include &quot;6&quot;</pre></div>
+        <div class="backtrace"><pre>./4s_specs/Test_25_Project_Group_Stats.rb:313:in `block (3 levels) in <top (required)>'
+./4s_specs/Test_25_Project_Group_Stats.rb:307:in `upto'
+./4s_specs/Test_25_Project_Group_Stats.rb:307:in `block (2 levels) in <top (required)>'</pre></div>
+    <pre class="ruby"><code><span class="linenum">311</span>                     if(@c==3)
+<span class="linenum">312</span>                                 
+<span class="offending"><span class="linenum">313</span>                           @text_array[index].should include("6")</span>
+<span class="linenum">314</span>                           @text_array[index].should include("1")
+<span class="linenum">315</span>                           @text_array[index].should include("1")
+<span class="linenum">316</span><span class="comment"># gem install syntax to get syntax highlighting</span></code></pre>
+      </div>
+    </dd>
+    <script type="text/javascript">moveProgressBar('87.5');</script>
+    <dd class="example failed">
+      <span class="failed_spec_name">To Check for Demographic Group Stats: Gender</span>
+      <span class="duration">9.73487s</span>
+      <div class="failure" id="failure_11">
+        <div class="message"><pre>unable to locate element, using {:text=&gt;/Demographic Stats/, :tag_name=&gt;&quot;a&quot;}</pre></div>
+        <div class="backtrace"><pre>./4s_specs/Test_25_Project_Group_Stats.rb:336:in `block (2 levels) in <top (required)>'</pre></div>
+    <pre class="ruby"><code><span class="linenum">334</span>  it "To Check for Demographic Group Stats: Gender" do
+<span class="linenum">335</span>     @browser.link(:text,/Group Stats/).click
+<span class="offending"><span class="linenum">336</span>     @browser.link(:text,/Demographic Stats/).click</span>
+<span class="linenum">337</span>     sleep 3
+<span class="linenum">338</span>
+<span class="linenum">339</span><span class="comment"># gem install syntax to get syntax highlighting</span></code></pre>
+      </div>
+    </dd>
+    <script type="text/javascript">moveProgressBar('89.2');</script>
+    <dd class="example passed"><span class="passed_spec_name">To Check for Demographic Group Stats: Age</span><span class='duration'>16.87586s</span></dd>
+    <script type="text/javascript">moveProgressBar('91.0');</script>
+    <dd class="example passed"><span class="passed_spec_name">To Check for Demographic Group Stats: Children</span><span class='duration'>16.71961s</span></dd>
+    <script type="text/javascript">moveProgressBar('92.8');</script>
+    <dd class="example passed"><span class="passed_spec_name">To Check for Demographic Group Stats: Ethnicity</span><span class='duration'>17.04775s</span></dd>
+    <script type="text/javascript">moveProgressBar('94.6');</script>
+    <dd class="example passed"><span class="passed_spec_name">To Check for Demographic Group Stats: Income</span><span class='duration'>17.09463s</span></dd>
+    <script type="text/javascript">moveProgressBar('96.4');</script>
+    <dd class="example failed">
+      <span class="failed_spec_name">To Check for Group Activity Stats</span>
+      <span class="duration">7.64102s</span>
+      <div class="failure" id="failure_12">
+        <div class="message"><pre>unable to locate element, using {:text=&gt;/Activity Stats/, :tag_name=&gt;&quot;a&quot;}</pre></div>
+        <div class="backtrace"><pre>./4s_specs/Test_25_Project_Group_Stats.rb:444:in `block (2 levels) in <top (required)>'</pre></div>
+    <pre class="ruby"><code><span class="linenum">442</span>      @browser.link(:text,/Group Stats/).click
+<span class="linenum">443</span>      sleep 1
+<span class="offending"><span class="linenum">444</span>      @browser.link(:text,/Activity Stats/).click</span>
+<span class="linenum">445</span>      sleep 5
+<span class="linenum">446</span>      #Checking Income Stats
+<span class="linenum">447</span><span class="comment"># gem install syntax to get syntax highlighting</span></code></pre>
+      </div>
+    </dd>
+    <script type="text/javascript">moveProgressBar('98.2');</script>
+    <dd class="example failed">
+      <span class="failed_spec_name">To Check for Demographic Project Stats</span>
+      <span class="duration">18.78221s</span>
+      <div class="failure" id="failure_13">
+        <div class="message"><pre>unable to locate element, using {:text=&gt;/Demographic Stats/, :tag_name=&gt;&quot;a&quot;}</pre></div>
+        <div class="backtrace"><pre>./4s_specs/Test_25_Project_Group_Stats.rb:474:in `block (2 levels) in <top (required)>'</pre></div>
+    <pre class="ruby"><code><span class="linenum">472</span>     @browser.link(:text,/Project Stats/).click
+<span class="linenum">473</span>     sleep 1
+<span class="offending"><span class="linenum">474</span>     @browser.link(:text,/Demographic Stats/).click</span>
+<span class="linenum">475</span>     sleep 5
+<span class="linenum">476</span>
+<span class="linenum">477</span><span class="comment"># gem install syntax to get syntax highlighting</span></code></pre>
+      </div>
+    </dd>
+    <script type="text/javascript">moveProgressBar('100.0');</script>
+    <dd class="example failed">
+      <span class="failed_spec_name">To Check for Project Activity Stats</span>
+      <span class="duration">2.87515s</span>
+      <div class="failure" id="failure_14">
+        <div class="message"><pre>unable to locate element, using {:text=&gt;/Activity Stats/, :tag_name=&gt;&quot;a&quot;}</pre></div>
+        <div class="backtrace"><pre>./4s_specs/Test_25_Project_Group_Stats.rb:565:in `block (2 levels) in <top (required)>'</pre></div>
+    <pre class="ruby"><code><span class="linenum">563</span>   it "To Check for Project Activity Stats" do
+<span class="linenum">564</span>
+<span class="offending"><span class="linenum">565</span>      @browser.link(:text,/Activity Stats/).click</span>
+<span class="linenum">566</span>      sleep 5
+<span class="linenum">567</span>      #Checking Income Stats
+<span class="linenum">568</span><span class="comment"># gem install syntax to get syntax highlighting</span></code></pre>
+      </div>
+    </dd>
+  </dl>
+</div>
+<script type="text/javascript">document.getElementById('duration').innerHTML = "Finished in <strong>1767.94989 seconds</strong>";</script>
+<script type="text/javascript">document.getElementById('totals').innerHTML = "56 examples, 14 failures";</script>
+</div>
+</div>
+</body>
+</html>

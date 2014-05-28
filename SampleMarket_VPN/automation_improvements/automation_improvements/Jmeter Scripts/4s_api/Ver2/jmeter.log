@@ -1,0 +1,12 @@
+2011/02/24 22:34:38 INFO  - jmeter.util.JMeterUtils: Setting Locale to en_US 
+2011/02/24 22:34:38 INFO  - jmeter.JMeter: Loading user properties from: D:\jakarta-jmeter-2.3.4\bin\user.properties 
+2011/02/24 22:34:38 INFO  - jmeter.JMeter: Loading system properties from: D:\jakarta-jmeter-2.3.4\bin\system.properties 
+2011/02/24 22:34:38 FATAL - jmeter.JMeter: An error occurred:  java.lang.IllegalArgumentException: Unknown arg: API\Ver2\2_All_APIs_One_Click.jmx
+	at org.apache.jmeter.JMeter.initializeProperties(JMeter.java:563)
+	at org.apache.jmeter.JMeter.start(JMeter.java:273)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(Unknown Source)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(Unknown Source)
+	at java.lang.reflect.Method.invoke(Unknown Source)
+	at org.apache.jmeter.NewDriver.main(NewDriver.java:207)
+

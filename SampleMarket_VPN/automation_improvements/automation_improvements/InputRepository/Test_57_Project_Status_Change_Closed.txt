@@ -1,0 +1,16 @@
+#DESCRIPTION: This file contains details needed to login functionality which is required by the "Test_15_Check_add_to_queue_functionality.rb" script# 
+
+#NOTE: All the lines enclosed within two '#' characters are comments.#
+#      The lines with actual data are without '#' characters and,#
+#      In the data, text before the '::' character (text to the left of the '::' character) are FIELD NAME#
+#      And text after the '::' character (text to the right of '::' character) are ACTUAL DATA#
+#      The '::' character is a separator between the Field name and the actual data and hence is very important#
+#      Make sure the '::' chracter is not modified#
+#      Do not alter the sequence in which the test data is written #
+
+
+#SURVEYHEAD LOGIN DETAILS#
+EMAIL-ID	:: vipul_paikane@persistent.co.in
+PASSWORD	:: test
+LINK		:: http://www.p.surveyhead.com/
+PR ID		:: PR7368

@@ -1,0 +1,600 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html
+  PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+  <title>RSpec results</title>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <meta http-equiv="Expires" content="-1" />
+  <meta http-equiv="Pragma" content="no-cache" />
+  <style type="text/css">
+  body {
+    margin: 0;
+    padding: 0;
+    background: #fff;
+    font-size: 80%;
+  }
+  </style>
+  <script type="text/javascript">
+    // <![CDATA[
+
+function addClass(element_id, classname) {
+  document.getElementById(element_id).className += (" " + classname);
+}
+
+function removeClass(element_id, classname) {
+  var elem = document.getElementById(element_id);
+  var classlist = elem.className.replace(classname,'');
+  elem.className = classlist;
+}
+
+function moveProgressBar(percentDone) {
+  document.getElementById("rspec-header").style.width = percentDone +"%";
+}
+
+function makeRed(element_id) {
+  removeClass(element_id, 'passed');
+  removeClass(element_id, 'not_implemented');
+  addClass(element_id,'failed');
+}
+
+function makeYellow(element_id) {
+  var elem = document.getElementById(element_id);
+  if (elem.className.indexOf("failed") == -1) {  // class doesn't includes failed
+    if (elem.className.indexOf("not_implemented") == -1) { // class doesn't include not_implemented
+      removeClass(element_id, 'passed');
+      addClass(element_id,'not_implemented');
+    }
+  }
+}
+
+function apply_filters() {
+  var passed_filter = document.getElementById('passed_checkbox').checked;
+  var failed_filter = document.getElementById('failed_checkbox').checked;
+  var pending_filter = document.getElementById('pending_checkbox').checked;
+
+  assign_display_style("example passed", passed_filter);
+  assign_display_style("example failed", failed_filter);
+  assign_display_style("example not_implemented", pending_filter);
+
+  assign_display_style_for_group("example_group passed", passed_filter);
+  assign_display_style_for_group("example_group not_implemented", pending_filter, pending_filter || passed_filter);
+  assign_display_style_for_group("example_group failed", failed_filter, failed_filter || pending_filter || passed_filter);
+}
+
+function get_display_style(display_flag) {
+  var style_mode = 'none';
+  if (display_flag == true) {
+    style_mode = 'block';
+  }
+  return style_mode;
+}
+
+function assign_display_style(classname, display_flag) {
+  var style_mode = get_display_style(display_flag);
+  var elems = document.getElementsByClassName(classname)
+  for (var i=0; i<elems.length;i++) {
+    elems[i].style.display = style_mode;
+  }
+}
+
+function assign_display_style_for_group(classname, display_flag, subgroup_flag) {
+  var display_style_mode = get_display_style(display_flag);
+  var subgroup_style_mode = get_display_style(subgroup_flag);
+  var elems = document.getElementsByClassName(classname)
+  for (var i=0; i<elems.length;i++) {
+    var style_mode = display_style_mode;
+    if ((display_flag != subgroup_flag) && (elems[i].getElementsByTagName('dt')[0].innerHTML.indexOf(", ") != -1)) {
+      elems[i].style.display = subgroup_style_mode;
+    } else {
+      elems[i].style.display = display_style_mode;
+    }
+  }
+}
+
+    // ]]>
+  </script>
+  <style type="text/css">
+#rspec-header {
+  background: #65C400; color: #fff; height: 4em;
+}
+
+.rspec-report h1 {
+  margin: 0px 10px 0px 10px;
+  padding: 10px;
+  font-family: "Lucida Grande", Helvetica, sans-serif;
+  font-size: 1.8em;
+  position: absolute;
+}
+
+#label {
+  float:left;
+}
+
+#display-filters {
+  float:left;
+  padding: 28px 0 0 40%;
+  font-family: "Lucida Grande", Helvetica, sans-serif;
+}
+
+#summary {
+  float:right;
+  padding: 5px 10px;
+  font-family: "Lucida Grande", Helvetica, sans-serif;
+  text-align: right;
+}
+
+#summary p {
+  margin: 0 0 0 2px;
+}
+
+#summary #totals {
+  font-size: 1.2em;
+}
+
+.example_group {
+  margin: 0 10px 5px;
+  background: #fff;
+}
+
+dl {
+  margin: 0; padding: 0 0 5px;
+  font: normal 11px "Lucida Grande", Helvetica, sans-serif;
+}
+
+dt {
+  padding: 3px;
+  background: #65C400;
+  color: #fff;
+  font-weight: bold;
+}
+
+dd {
+  margin: 5px 0 5px 5px;
+  padding: 3px 3px 3px 18px;
+}
+
+dd .duration {
+  padding-left: 5px;
+  text-align: right;
+  right: 0px;
+  float:right;
+}
+
+dd.example.passed {
+  border-left: 5px solid #65C400;
+  border-bottom: 1px solid #65C400;
+  background: #DBFFB4; color: #3D7700;
+}
+
+dd.example.not_implemented {
+  border-left: 5px solid #FAF834;
+  border-bottom: 1px solid #FAF834;
+  background: #FCFB98; color: #131313;
+}
+
+dd.example.pending_fixed {
+  border-left: 5px solid #0000C2;
+  border-bottom: 1px solid #0000C2;
+  color: #0000C2; background: #D3FBFF;
+}
+
+dd.example.failed {
+  border-left: 5px solid #C20000;
+  border-bottom: 1px solid #C20000;
+  color: #C20000; background: #FFFBD3;
+}
+
+
+dt.not_implemented {
+  color: #000000; background: #FAF834;
+}
+
+dt.pending_fixed {
+  color: #FFFFFF; background: #C40D0D;
+}
+
+dt.failed {
+  color: #FFFFFF; background: #C40D0D;
+}
+
+
+#rspec-header.not_implemented {
+  color: #000000; background: #FAF834;
+}
+
+#rspec-header.pending_fixed {
+  color: #FFFFFF; background: #C40D0D;
+}
+
+#rspec-header.failed {
+  color: #FFFFFF; background: #C40D0D;
+}
+
+
+.backtrace {
+  color: #000;
+  font-size: 12px;
+}
+
+a {
+  color: #BE5C00;
+}
+
+/* Ruby code, style similar to vibrant ink */
+.ruby {
+  font-size: 12px;
+  font-family: monospace;
+  color: white;
+  background-color: black;
+  padding: 0.1em 0 0.2em 0;
+}
+
+.ruby .keyword { color: #FF6600; }
+.ruby .constant { color: #339999; }
+.ruby .attribute { color: white; }
+.ruby .global { color: white; }
+.ruby .module { color: white; }
+.ruby .class { color: white; }
+.ruby .string { color: #66FF00; }
+.ruby .ident { color: white; }
+.ruby .method { color: #FFCC00; }
+.ruby .number { color: white; }
+.ruby .char { color: white; }
+.ruby .comment { color: #9933CC; }
+.ruby .symbol { color: white; }
+.ruby .regex { color: #44B4CC; }
+.ruby .punct { color: white; }
+.ruby .escape { color: white; }
+.ruby .interp { color: white; }
+.ruby .expr { color: white; }
+
+.ruby .offending { background-color: gray; }
+.ruby .linenum {
+  width: 75px;
+  padding: 0.1em 1em 0.2em 0;
+  color: #000000;
+  background-color: #FFFBD3;
+}
+
+  </style>
+</head>
+<body>
+<div class="rspec-report">
+
+<div id="rspec-header">
+  <div id="label">
+    <h1>RSpec Code Examples</h1>
+  </div>
+
+  <div id="display-filters">
+    <input id="passed_checkbox" name="passed_checkbox" type="checkbox" checked onchange="apply_filters()" value="1"> <label for="passed_checkbox">Passed</label>
+    <input id="failed_checkbox" name="failed_checkbox" type="checkbox" checked onchange="apply_filters()" value="2"> <label for="failed_checkbox">Failed</label>
+    <input id="pending_checkbox" name="pending_checkbox" type="checkbox" checked onchange="apply_filters()" value="3"> <label for="pending_checkbox">Pending</label>
+  </div>
+
+  <div id="summary">
+    <p id="totals">&nbsp;</p>
+    <p id="duration">&nbsp;</p>
+  </div>
+</div>
+
+
+<div class="results">
+<div id="div_group_1" class="example_group passed">
+  <dl style="margin-left: 0px;">
+  <dt id="example_group_1" class="passed">Test 00: Production basic tests</dt>
+    <script type="text/javascript">moveProgressBar('6.6');</script>
+    <dd class="example passed"><span class="passed_spec_name">To successfully create a SM project</span><span class='duration'>40.20364s</span></dd>
+    <script type="text/javascript">moveProgressBar('13.3');</script>
+    <dd class="example passed"><span class="passed_spec_name">To successfully set Demographic criteria for a group</span><span class='duration'>49.17250s</span></dd>
+    <script type="text/javascript">moveProgressBar('20.0');</script>
+    <dd class="example passed"><span class="passed_spec_name">To successfully set Geographic criteria for a group</span><span class='duration'>35.62546s</span></dd>
+    <script type="text/javascript">moveProgressBar('26.6');</script>
+    <dd class="example passed"><span class="passed_spec_name">To check if the get sample counts displays proper count</span><span class='duration'>10.17201s</span></dd>
+    <script type="text/javascript">moveProgressBar('33.3');</script>
+    <dd class="example passed"><span class="passed_spec_name">To complete successful setup of group</span><span class='duration'>149.81442s</span></dd>
+    <script type="text/javascript">moveProgressBar('40.0');</script>
+    <dd class="example passed"><span class="passed_spec_name">To successfully create a email broadcast</span><span class='duration'>100.92317s</span></dd>
+    <script type="text/javascript">moveProgressBar('46.6');</script>
+    <dd class="example passed"><span class="passed_spec_name">Test to check user is able to set number of emails and include send me in email broadcast</span><span class='duration'>110.22016s</span></dd>
+    <script type="text/javascript">moveProgressBar('53.3');</script>
+    <dd class="example passed"><span class="passed_spec_name">To Get Project and group details for survey Taking and Get IDs</span><span class='duration'>21.20340s</span></dd>
+    <script type="text/javascript">makeRed('rspec-header');</script>
+    <script type="text/javascript">makeRed('div_group_1');</script>
+    <script type="text/javascript">makeRed('example_group_1');</script>
+    <script type="text/javascript">moveProgressBar('60.0');</script>
+    <dd class="example failed">
+      <span class="failed_spec_name">To check if a member is able to see the survey, click on it, complete it and check for the rewards</span>
+      <span class="duration">118.95465s</span>
+      <div class="failure" id="failure_1">
+        <div class="message"><pre>expected &quot;iPoll\nEnglish\nDashboard\nRewards\nAccount\nMobile\nLogout\nYour account details are incomplete. Update Now!\nSurveys\nWelcome back, san. If you are not san, click here.\n7\nNEW SURVEYS are available that you may qualify for. Click the button below to find out! The total value of these surveys is $9.00.\nQUALIFY FOR A NEW SURVEY\nBased on questions you have already answered, we believe that you may also qualify for these surveys:\nSurvey Number Reward Amount Approximate\nLength  \n291578 iPad Sweepstakes Entry 7 Minutes\nStart Survey\u00BB\n295026 $1.00 5 Minutes\nStart Survey\u00BB\n295752 iPad Sweepstakes Entry 2 Minutes\nStart Survey\u00BB\n295943 $0.75 2 Minutes\nStart Survey\u00BB\n297388 iPad Sweepstakes Entry 6 Minutes\nStart Survey\u00BB\n299034 iPad Sweepstakes Entry 4 Minutes\nStart Survey\u00BB\n299477 $1.25 10 Minutes\nStart Survey\u00BB\n299493 $1.00 15 Minutes\nStart Survey\u00BB\nProfiles\nCompleting our profiles will help us to get to know you better and target surveys that interest you most ...and provide you with more rewarding opportunities!\nThank you! We should have more surveys for you in the near future.\nTasks\nBoost your reward balance! Thousands of tasks are available each day for you to complete\nComplete Tasks\nRewards\nYour survey participation pays off!\nBy completing our surveys, you may select from a growing list of exciting rewards and charities!\nCurrent Balance\n$218.10\n(Includes Pending Rewards)\nReward History\nRewards\nSee All Rewards\nDonations\nSee All Donations\nActivity Feed\nEveryone\nFriends\nMe\nRecent user activity on ipoll.com:\nAgrim Chopra :\nlinked a social account to iPoll.\nless than an hour ago\nAgrim Chopra :\nis now a member of iPoll. Welcome!\nless than an hour ago\nFaron Weller :\nlinked a social account to iPoll.\nless than an hour ago\nFaron Weller :\nis now a member of iPoll. Welcome!\nless than an hour ago\nLemuel Arkilley :\nlinked a social account to iPoll.\nless than an hour ago\nTahira Shaikh :\nis now a member of iPoll. Welcome!\nan hour ago\nTahira Shaikh :\nlinked a social account to iPoll.\nan hour ago\nMonique Springer :\nlinked a social account to iPoll.\nan hour ago\nMonique Springer :\nis now a member of iPoll. Welcome!\nan hour ago\nJianguo Wu :\n\u94FE\u63A5\u793E\u4EA4\u8D26\u53F7\u81F3 iPoll\u3002\nan hour ago\nJianguo Wu :\n\u5DF2\u6210\u4E3A iPoll \u4F1A\u5458\uFF0C\u6B22\u8FCE\uFF01\nan hour ago\nBill Collens :\nearned $0.75 for completing a survey.\nan hour ago\nMelina Phillips :\nearned iPad Sweepstake\u00ADs Entry for completing a survey.\nan hour ago\nMelina Phillips :\nlinked a social account to iPoll.\n2 hours ago\nMelina Phillips :\nis now a member of iPoll. Welcome!\n2 hours ago\nSheri Euten :\nearned $2.00 for completing a survey.\n2 hours ago\nJanene Avery :\nearned iPad Sweepstake\u00ADs Entry for completing a survey.\n3 hours ago\nJessica Carroll :\nlinked a social account to iPoll.\n4 hours ago\nJessica Carroll :\nis now a member of iPoll. Welcome!\n4 hours ago\ntena stoute :\nlinked a social account to iPoll.\n4 hours ago\n\n\nOffers\nNot ready to cash out for rewards yet? iPoll members get exclusive access to hundreds of deals and discounts.\nStay Connected!\nLink your social accounts with just one click\nPrivacy Policy\nCookies Policy\nTerms and Conditions\niPad Sweepstakes Giveaway\nFacebook\nTwitter\nLinkedIn\nHome\nLogin\nRegistration\nForgot Password\nContact Us\nFAQ\nBlog\nRewards Program\nPaid Surveys\nOnline Surveys\nGet Paid\nMarket Research\nACCEPTED BUSINESS\nSite Map\n2013 iPoll.com&quot; to include &quot;928382&quot;
+Diff:
+@@ -1,2 +1,143 @@
+-928382
++iPoll
++English
++Dashboard
++Rewards
++Account
++Mobile
++Logout
++Your account details are incomplete. Update Now!
++Surveys
++Welcome back, san. If you are not san, click here.
++7
++NEW SURVEYS are available that you may qualify for. Click the button below to find out! The total value of these surveys is $9.00.
++QUALIFY FOR A NEW SURVEY
++Based on questions you have already answered, we believe that you may also qualify for these surveys:
++Survey Number Reward Amount Approximate
++Length  
++291578 iPad Sweepstakes Entry 7 Minutes
++Start Survey»
++295026 $1.00 5 Minutes
++Start Survey»
++295752 iPad Sweepstakes Entry 2 Minutes
++Start Survey»
++295943 $0.75 2 Minutes
++Start Survey»
++297388 iPad Sweepstakes Entry 6 Minutes
++Start Survey»
++299034 iPad Sweepstakes Entry 4 Minutes
++Start Survey»
++299477 $1.25 10 Minutes
++Start Survey»
++299493 $1.00 15 Minutes
++Start Survey»
++Profiles
++Completing our profiles will help us to get to know you better and target surveys that interest you most ...and provide you with more rewarding opportunities!
++Thank you! We should have more surveys for you in the near future.
++Tasks
++Boost your reward balance! Thousands of tasks are available each day for you to complete
++Complete Tasks
++Rewards
++Your survey participation pays off!
++By completing our surveys, you may select from a growing list of exciting rewards and charities!
++Current Balance
++$218.10
++(Includes Pending Rewards)
++Reward History
++Rewards
++See All Rewards
++Donations
++See All Donations
++Activity Feed
++Everyone
++Friends
++Me
++Recent user activity on ipoll.com:
++Agrim Chopra :
++linked a social account to iPoll.
++less than an hour ago
++Agrim Chopra :
++is now a member of iPoll. Welcome!
++less than an hour ago
++Faron Weller :
++linked a social account to iPoll.
++less than an hour ago
++Faron Weller :
++is now a member of iPoll. Welcome!
++less than an hour ago
++Lemuel Arkilley :
++linked a social account to iPoll.
++less than an hour ago
++Tahira Shaikh :
++is now a member of iPoll. Welcome!
++an hour ago
++Tahira Shaikh :
++linked a social account to iPoll.
++an hour ago
++Monique Springer :
++linked a social account to iPoll.
++an hour ago
++Monique Springer :
++is now a member of iPoll. Welcome!
++an hour ago
++Jianguo Wu :
++链接社交账号至 iPoll。
++an hour ago
++Jianguo Wu :
++已成为 iPoll 会员，欢迎！
++an hour ago
++Bill Collens :
++earned $0.75 for completing a survey.
++an hour ago
++Melina Phillips :
++earned iPad Sweepstake­s Entry for completing a survey.
++an hour ago
++Melina Phillips :
++linked a social account to iPoll.
++2 hours ago
++Melina Phillips :
++is now a member of iPoll. Welcome!
++2 hours ago
++Sheri Euten :
++earned $2.00 for completing a survey.
++2 hours ago
++Janene Avery :
++earned iPad Sweepstake­s Entry for completing a survey.
++3 hours ago
++Jessica Carroll :
++linked a social account to iPoll.
++4 hours ago
++Jessica Carroll :
++is now a member of iPoll. Welcome!
++4 hours ago
++tena stoute :
++linked a social account to iPoll.
++4 hours ago
++
++
++Offers
++Not ready to cash out for rewards yet? iPoll members get exclusive access to hundreds of deals and discounts.
++Stay Connected!
++Link your social accounts with just one click
++Privacy Policy
++Cookies Policy
++Terms and Conditions
++iPad Sweepstakes Giveaway
++Facebook
++Twitter
++LinkedIn
++Home
++Login
++Registration
++Forgot Password
++Contact Us
++FAQ
++Blog
++Rewards Program
++Paid Surveys
++Online Surveys
++Get Paid
++Market Research
++ACCEPTED BUSINESS
++Site Map
++2013 iPoll.com
+</pre></div>
+        <div class="backtrace"><pre>./production_script.rb:593:in `block (2 levels) in <top (required)>'</pre></div>
+    <pre class="ruby"><code><span class="linenum">591</span>      sleep 2
+<span class="linenum">592</span>        body_text = @browser1.text
+<span class="offending"><span class="linenum">593</span>        body_text.should include("#{@dec_group_id}")</span>
+<span class="linenum">594</span>            @browser1.link(:id,"#{@dec_group_link}").click
+<span class="linenum">595</span>        @browser1.button(:name,'Submit').click
+<span class="linenum">596</span><span class="comment"># gem install syntax to get syntax highlighting</span></code></pre>
+      </div>
+    </dd>
+    <script type="text/javascript">moveProgressBar('66.6');</script>
+    <dd class="example passed"><span class="passed_spec_name">To check if a member is able to fail the survey</span><span class='duration'>304.95805s</span></dd>
+    <script type="text/javascript">moveProgressBar('73.3');</script>
+    <dd class="example passed"><span class="passed_spec_name">To check if a member is able to generate over quota for a survey</span><span class='duration'>261.16628s</span></dd>
+    <script type="text/javascript">moveProgressBar('80.0');</script>
+    <dd class="example failed">
+      <span class="failed_spec_name">Test to check if the email broadcast is successfully received and a member is able to complete it</span>
+      <span class="duration">35.70450s</span>
+      <div class="failure" id="failure_2">
+        <div class="message"><pre>expected &quot;Mailinator\nHome\nFAQ\nAPI\nPricing\nSignup/Login\nInbox for: test_u1\nYou do not need to refresh this page. Emails load automatically.\nValid addresses for this Inbox:\nm8r-acmto3@mailinator.com\ntest_u1@mailinator.com\ntest_u1@monumentmail.com\n\nFrom\nSubject\nReceived\nTERMS OF SERVICE:\nBy using this service, you agree to the following terms: Mailinator and ManyBrain, Inc. makes no warranty of reliability or suitability for any purpose. Its availability or existence may be removed at any time by its owners. Any email sent through Mailinator may or may not be available for viewing, and/or may be altered. Mailinator provides no privacy whatsoever and understandably cannot by virtue of its open design. You agree to only access Mailinator data through the Mailinator website or Mailinator-provided facilities (i.e. Mailinator-mobile). You agree to not use Mailinator directly or indirectly for any unlawful purpose. You understand that any messages sent through Mailinator are in public view and anyone can see them. You understand that Mailinator/ManyBrain has no control over material put into mailboxes. You agree to hold ManyBrain, Inc./Mailinator harmless from any damages caused by loss of emails, content within emails, damage to your computer or innocence from viewing emails, direct or indirect use of this system, or anything else you can think of. Use at your own risk.\nPrivacy Policy:\nMailinator provides NO privacy. All emails can be read by anyone.\nChange Public Inbox:\nGo!\nSubscribe to this inbox: \nHave site feedback? Tell us here!\nSubmit\n\n\n\nMonetized by Skimlinks\nAndroid Obfuscator\nContact Us: support@manybrain.com     Mailinator(R) is property of ManyBrain, Inc. Copyright 2011-2014, ManyBrain, Inc. - Privacy Policy Design and UX by Tristan&quot; to include &quot;subject: test automation broadcast3&quot;
+Diff:
+@@ -1,2 +1,32 @@
+-subject: test automation broadcast3
++Mailinator
++Home
++FAQ
++API
++Pricing
++Signup/Login
++Inbox for: test_u1
++You do not need to refresh this page. Emails load automatically.
++Valid addresses for this Inbox:
++m8r-acmto3@mailinator.com
++test_u1@mailinator.com
++test_u1@monumentmail.com
++
++From
++Subject
++Received
++TERMS OF SERVICE:
++By using this service, you agree to the following terms: Mailinator and ManyBrain, Inc. makes no warranty of reliability or suitability for any purpose. Its availability or existence may be removed at any time by its owners. Any email sent through Mailinator may or may not be available for viewing, and/or may be altered. Mailinator provides no privacy whatsoever and understandably cannot by virtue of its open design. You agree to only access Mailinator data through the Mailinator website or Mailinator-provided facilities (i.e. Mailinator-mobile). You agree to not use Mailinator directly or indirectly for any unlawful purpose. You understand that any messages sent through Mailinator are in public view and anyone can see them. You understand that Mailinator/ManyBrain has no control over material put into mailboxes. You agree to hold ManyBrain, Inc./Mailinator harmless from any damages caused by loss of emails, content within emails, damage to your computer or innocence from viewing emails, direct or indirect use of this system, or anything else you can think of. Use at your own risk.
++Privacy Policy:
++Mailinator provides NO privacy. All emails can be read by anyone.
++Change Public Inbox:
++Go!
++Subscribe to this inbox: 
++Have site feedback? Tell us here!
++Submit
++
++
++
++Monetized by Skimlinks
++Android Obfuscator
++Contact Us: support@manybrain.com     Mailinator(R) is property of ManyBrain, Inc. Copyright 2011-2014, ManyBrain, Inc. - Privacy Policy Design and UX by Tristan
+</pre></div>
+        <div class="backtrace"><pre>./production_script.rb:800:in `block (2 levels) in <top (required)>'</pre></div>
+    <pre class="ruby"><code><span class="linenum">798</span>	    sleep 15
+<span class="linenum">799</span>	    #body_text = @browser1.text
+<span class="offending"><span class="linenum">800</span>	    @browser1.text.should include("subject: test automation broadcast3")	</span>
+<span class="linenum">801</span>		@browser1.link(:text,"subject: test automation broadcast3").click
+<span class="linenum">802</span>		
+<span class="linenum">803</span><span class="comment"># gem install syntax to get syntax highlighting</span></code></pre>
+      </div>
+    </dd>
+    <script type="text/javascript">moveProgressBar('86.6');</script>
+    <dd class="example failed">
+      <span class="failed_spec_name">To check if the stats(including the complete with email invite) are correctly shown correctly</span>
+      <span class="duration">10.85979s</span>
+      <div class="failure" id="failure_3">
+        <div class="message"><pre>expected &quot;uSamp Sample Market\nHOME SAMPLEMARKET\u2122 PANELSHIELD\u2122 ACCOUNT\nWelcome sangeeta pai Log Out\nProjects\nReports\nSettings\nMailbox\nProduction Automation2014-05-27 22:16:18\nProduction_Automation_Group2014-05-27 22:18:01\nGROUP STATUS:\nLive\nNEXT ACTION:\nClose when N= has been reached\nPause\nAll Groups:\nGo Live\nPause\nClose\nCopy this group\nDelete this group\nGroup Details\nDashboard\nEmail Invites\nGroup Stats\nTransactions\nProject\nProduction Automation2014-05-27 22:16:18\nProduction_Automation_Group2014-05-27 22:18:01\nAdd a new project\nAll Projects\nRecent\nIn Consideration (149)\nSetting Up (136)\nReady to Go Live (50)\nLive (1)\nPaused (27)\nClosed (1081)\nCompleted (195)\nSearch by Project, Group or Number\nSearch\nAdvanced Search \u00BB\nuSamp Support\nIf this is an urgent issue, please use uSamp On Call and your message will be sent to the first available Project Manager.\nContact your Project Manager\nHelp us improve this site. Send us your feedback.\nHOME SAMPLEMARKET\u2122 PANELSHIELD\u2122 ACCOUNT USAMP.COM\nOffice: +1 (818) 524-1218 x610 Sales: sales@uSamp.com\n\u00A9 2014 uSamp (United Sample, Inc). All rights reserved. Privacy policy.&quot; to include &quot;5 3 1 1 1 33.3%&quot;
+Diff:
+@@ -1,2 +1,49 @@
+-5 3 1 1 1 33.3%
++uSamp Sample Market
++HOME SAMPLEMARKET™ PANELSHIELD™ ACCOUNT
++Welcome sangeeta pai Log Out
++Projects
++Reports
++Settings
++Mailbox
++Production Automation2014-05-27 22:16:18
++Production_Automation_Group2014-05-27 22:18:01
++GROUP STATUS:
++Live
++NEXT ACTION:
++Close when N= has been reached
++Pause
++All Groups:
++Go Live
++Pause
++Close
++Copy this group
++Delete this group
++Group Details
++Dashboard
++Email Invites
++Group Stats
++Transactions
++Project
++Production Automation2014-05-27 22:16:18
++Production_Automation_Group2014-05-27 22:18:01
++Add a new project
++All Projects
++Recent
++In Consideration (149)
++Setting Up (136)
++Ready to Go Live (50)
++Live (1)
++Paused (27)
++Closed (1081)
++Completed (195)
++Search by Project, Group or Number
++Search
++Advanced Search »
++uSamp Support
++If this is an urgent issue, please use uSamp On Call and your message will be sent to the first available Project Manager.
++Contact your Project Manager
++Help us improve this site. Send us your feedback.
++HOME SAMPLEMARKET™ PANELSHIELD™ ACCOUNT USAMP.COM
++Office: +1 (818) 524-1218 x610 Sales: sales@uSamp.com
++© 2014 uSamp (United Sample, Inc). All rights reserved. Privacy policy.
+</pre></div>
+        <div class="backtrace"><pre>./production_script.rb:827:in `block (2 levels) in <top (required)>'</pre></div>
+    <pre class="ruby"><code><span class="linenum">825</span>        #puts @browser.text
+<span class="linenum">826</span>        @browser.text.should include("uSamp")
+<span class="offending"><span class="linenum">827</span>        @browser.text.should include("5 3 1 1 1 33.3%")</span>
+<span class="linenum">828</span>        @browser.text.should include("Total   10 4 2 1 1 Avg. 66.7%")
+<span class="linenum">829</span>    end
+<span class="linenum">830</span><span class="comment"># gem install syntax to get syntax highlighting</span></code></pre>
+      </div>
+    </dd>
+    <script type="text/javascript">moveProgressBar('93.3');</script>
+    <dd class="example passed"><span class="passed_spec_name">To successfully close a project</span><span class='duration'>3.37513s</span></dd>
+    <script type="text/javascript">moveProgressBar('100.0');</script>
+    <dd class="example passed"><span class="passed_spec_name">To check the feasibility report and the count</span><span class='duration'>56.09590s</span></dd>
+  </dl>
+</div>
+<script type="text/javascript">document.getElementById('duration').innerHTML = "Finished in <strong>1342.10579 seconds</strong>";</script>
+<script type="text/javascript">document.getElementById('totals').innerHTML = "15 examples, 3 failures";</script>
+</div>
+</div>
+</body>
+</html>

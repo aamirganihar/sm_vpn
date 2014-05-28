@@ -1,0 +1,3 @@
+sampler_label,aggregate_report_count,average,aggregate_report_min,aggregate_report_max,aggregate_report_stddev,aggregate_report_error%,aggregate_report_rate,aggregate_report_bandwidth,average_bytes
+Rest Sampler,10,81,33,163,35.95844824238108,0.0,5.302226935312832,5.690573634676564,1099.0
+TOTAL,10,81,33,163,35.95844824238108,0.0,5.302226935312832,5.690573634676564,1099.0

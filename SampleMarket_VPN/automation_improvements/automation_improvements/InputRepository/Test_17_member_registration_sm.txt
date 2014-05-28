@@ -1,0 +1,44 @@
+#DESCRIPTION: This file contains details needed to test the member registration functionality# 
+
+#NOTE: All the lines enclosed within two '#' characters are comments.#
+#      The lines with actual data are without '#' characters and,#
+#      In the data, text before the '::' character (text to the left of the '::' character) are FIELD NAME#
+#      And text after the '::' character (text to the right of '::' character) are ACTUAL DATA#
+#      The '::' character is a separator between the Field name and the actual data and hence is very important#
+#      Make sure the '::' chracter is not modified#
+#      Do not alter the sequence in which the test data is written #
+
+
+#MEMBER CREATION DETAILS#
+FNAME		:: Nitin
+LNAME		:: Kumar
+COUNTRY		:: Ireland
+LANGUAGE	:: English
+STATE		:: Mayo
+DATE		:: 04
+MONTH		:: July
+YEAR		:: 1985
+EMAIL-ID	:: test21_des@mailop.com
+MAIL:		:: test2212.des
+PASSWORD	:: test
+INCOME		:: 10,000- 19,999
+EDUCATION	:: High school graduate
+EMPLOYMENT	:: Full-Time Employee
+INDUSTRY	:: Computers: Software / Services
+ROLE		:: Executives
+JOB TITLE	:: Partner
+MARITIAL STATUS	:: Never married
+cOUNTRY ORIGIN	:: Ireland
+
+#The language speaking value depends from person to person. There are certain values that can be set#
+#I am using the values for English --> 2, French --> 3, #
+#Here it is default set to English as reading and writing and using the default values#
+CHILDREN	:: N
+#User invite #
+#I would like to receive a maximum of 1 email each week. --> 1#
+#I would like to receive a maximum of 2-3 emails each week.--> 3#
+#I would like to receive a maximum of 4-5 emails each week.--> 5#
+#I would like to receive a maximum of 6-7 emails each week.--> 7#
+#I do not have a preference in the maximum number of emails I receive each week.--> 0#
+INVITE		:: 0
+

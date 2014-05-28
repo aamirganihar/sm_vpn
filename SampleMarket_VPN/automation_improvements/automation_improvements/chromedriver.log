@@ -1,0 +1,50 @@
+[0.000][INFO]:      ChromeDriver 23.0.1240.0 C:\Ruby192\bin\chromedriver.exe
+[0.578][FINE]:      Initializing session with capabilities {
+   "browserName": "chrome",
+   "chrome.detach": true,
+   "chromeOptions": {
+      "detach": true
+   },
+   "cssSelectorsEnabled": true,
+   "javascriptEnabled": true,
+   "nativeEvents": false,
+   "platform": "ANY",
+   "rotatable": false,
+   "takesScreenshot": false,
+   "version": ""
+}
+
+[0.593][INFO]:      Using named testing interface
+[5.607][INFO]:      Connected to Chrome successfully. Version: 24.0.1312.56
+[6.659][FINE]:      Command received (/session/c181215e2b2a3229b4d466e15a06a056)
+[6.660][FINE]:      Command finished (/session/c181215e2b2a3229b4d466e15a06a056) with response {
+   "sessionId": "c181215e2b2a3229b4d466e15a06a056",
+   "status": 0,
+   "value": {
+      "acceptSslCerts": false,
+      "applicationCacheEnabled": false,
+      "browserConnectionEnabled": false,
+      "browserName": "chrome",
+      "chrome.chromedriverVersion": "23.0.1240.0",
+      "chrome.nativeEvents": false,
+      "cssSelectorsEnabled": true,
+      "databaseEnabled": false,
+      "handlesAlerts": true,
+      "javascriptEnabled": true,
+      "locationContextEnabled": false,
+      "nativeEvents": true,
+      "platform": "windows",
+      "rotatable": false,
+      "takesScreenshot": true,
+      "version": "24.0.1312.56",
+      "webStorageEnabled": true
+   }
+}
+
+[6.663][FINE]:      Command received (/session/c181215e2b2a3229b4d466e15a06a056/url) with params {
+   "url": "https://p.network.u-samp.com/login.php"
+}
+
+[6.663][FINER]:     Waiting for all views to stop loading...
+[6.664][FINER]:     Done waiting for all views to stop loading
+[10.525][FINER]:    Waiting for all views to stop loading...

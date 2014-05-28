@@ -1,0 +1,133 @@
+timeStamp,elapsed,label,responseCode,responseMessage,threadName,dataType,success,failureMessage,bytes,Latency
+1299147763226,173,Create Project,201,Created,Project 1-1,text,true,,612,173
+1299147763401,18,Project Get,200,OK,Project 1-1,text,true,,610,18
+1299147763420,2543,Create Group,201,Created,Project 1-1,text,true,,1755,2543
+1299147765964,197,PanelDashboard,200,OK,Project 1-1,text,true,,95,197
+1299147766162,1,LiveCloseSettings,Non HTTP response code: java.lang.IllegalArgumentException,Non HTTP response message: Invalid uri 'https://p.api.samplemarket.com/projects/${projectid}/liveCloseSettings': escaped absolute path not valid,Project 1-1,text,false,,1047,0
+1299147766164,54,PanelShield,200,OK,Project 1-1,text,true,,141,54
+1299147766219,65,SurveyUrl,200,OK,Project 1-1,text,true,,127,65
+1299147766286,155,Status,200,OK,Project 1-1,text,true,,19,154
+1299147766442,210,Copy Project,201,Created,Project 1-1,text,true,,78,210
+1299147766654,309,Delete Project,200,OK,Project 1-1,text,true,,51,309
+1299147766964,119,Soft Fail,200,OK,Project 1-1,text,true,,119,119
+1299147767085,34,Bonus,200,OK,Project 1-1,text,true,,113,34
+1299147783003,89,Create Project,201,Created,Project 1-1,text,true,,612,88
+1299147783093,27,Project Get,200,OK,Project 1-1,text,true,,610,27
+1299147783121,2409,Create Group,201,Created,Project 1-1,text,true,,1755,2409
+1299147785531,151,PanelDashboard,200,OK,Project 1-1,text,true,,97,151
+1299147785683,0,LiveCloseSettings,Non HTTP response code: java.lang.IllegalArgumentException,Non HTTP response message: Invalid uri 'https://p.api.samplemarket.com/projects/${projectid}/liveCloseSettings': escaped absolute path not valid,Project 1-1,text,false,,1047,0
+1299147785683,26,PanelShield,200,OK,Project 1-1,text,true,,141,26
+1299147785710,61,SurveyUrl,200,OK,Project 1-1,text,true,,127,60
+1299147785772,144,Status,200,OK,Project 1-1,text,true,,19,144
+1299147785917,256,Copy Project,201,Created,Project 1-1,text,true,,78,256
+1299147786174,200,Delete Project,200,OK,Project 1-1,text,true,,51,200
+1299147786376,33,Soft Fail,200,OK,Project 1-1,text,true,,119,33
+1299147786410,40,Bonus,200,OK,Project 1-1,text,true,,113,40
+1299148530811,459,Create Project,201,Created,Project 1-1,text,true,,612,458
+1299148531272,17,Project Get,200,OK,Project 1-1,text,true,,610,17
+1299148531290,2021,Create Group,201,Created,Project 1-1,text,true,,1755,2021
+1299148533312,459,PanelDashboard,200,OK,Project 1-1,text,true,,97,459
+1299148533773,0,LiveCloseSettings,Non HTTP response code: java.lang.IllegalArgumentException,Non HTTP response message: Invalid uri 'https://p.api.samplemarket.com/projects/${projectid}/liveCloseSettings': escaped absolute path not valid,Project 1-1,text,false,,1047,0
+1299148533773,62,PanelShield,200,OK,Project 1-1,text,true,,141,62
+1299148533836,77,SurveyUrl,200,OK,Project 1-1,text,true,,127,77
+1299148533914,166,Status,200,OK,Project 1-1,text,true,,19,166
+1299148534081,203,Copy Project,201,Created,Project 1-1,text,true,,78,203
+1299148534285,190,Delete Project,200,OK,Project 1-1,text,true,,51,190
+1299148534477,92,Soft Fail,200,OK,Project 1-1,text,true,,119,92
+1299148534570,42,Bonus,200,OK,Project 1-1,text,true,,113,41
+1299160271282,1304,Create Project,201,Created,Project 1-1,text,true,,612,1303
+1299160272605,82,Project Get,200,OK,Project 1-1,text,true,,610,82
+1299160272689,1691,Create Group,201,Created,Project 1-1,text,true,,1755,1691
+1299160274383,194,PanelDashboard,200,OK,Project 1-1,text,true,,97,193
+1299160274578,0,LiveCloseSettings,Non HTTP response code: java.lang.IllegalArgumentException,Non HTTP response message: Invalid uri 'https://p.api.samplemarket.com/projects/${projectid}/liveCloseSettings': escaped absolute path not valid,Project 1-1,text,false,,1048,0
+1299160274581,48,PanelShield,200,OK,Project 1-1,text,true,,141,48
+1299160274630,47,SurveyUrl,200,OK,Project 1-1,text,true,,127,47
+1299160274678,247,Status,200,OK,Project 1-1,text,true,,19,247
+1299160274928,232,Copy Project,201,Created,Project 1-1,text,true,,78,232
+1299160275162,203,Delete Project,200,OK,Project 1-1,text,true,,51,202
+1299160275367,43,Soft Fail,200,OK,Project 1-1,text,true,,119,43
+1299160275412,25,Bonus,200,OK,Project 1-1,text,true,,113,25
+1299160781099,124,Create Project,201,Created,Project 1-1,text,true,,612,124
+1299160781225,25,Project Get,200,OK,Project 1-1,text,true,,610,25
+1299160781251,68,Create Group,422,Unprocessable Entity,Project 1-1,text,false,,199,68
+1299160781320,0,PanelDashboard,Non HTTP response code: java.lang.IllegalArgumentException,Non HTTP response message: Invalid uri 'https://p.api.samplemarket.com/projects/2489/groups/${group_id}/panelDashboard': escaped absolute path not valid,Project 1-1,text,false,,1056,0
+1299160781321,0,LiveCloseSettings,Non HTTP response code: java.lang.IllegalArgumentException,Non HTTP response message: Invalid uri 'https://p.api.samplemarket.com/projects/${projectid}/liveCloseSettings': escaped absolute path not valid,Project 1-1,text,false,,1048,0
+1299160781321,33,PanelShield,422,Unprocessable Entity,Project 1-1,text,false,,36,33
+1299160781355,75,SurveyUrl,422,Unprocessable Entity,Project 1-1,text,false,,36,75
+1299160781431,15,Status,422,Unprocessable Entity,Project 1-1,text,false,,43,15
+1299160781447,244,Copy Project,201,Created,Project 1-1,text,true,,78,243
+1299160781692,206,Delete Project,200,OK,Project 1-1,text,true,,51,206
+1299160781900,19,Soft Fail,422,Unprocessable Entity,Project 1-1,text,false,,36,19
+1299160781920,14,Bonus,422,Unprocessable Entity,Project 1-1,text,false,,36,14
+1299160868600,79,Create Project,201,Created,Project 1-1,text,true,,612,79
+1299160868681,22,Project Get,200,OK,Project 1-1,text,true,,610,21
+1299160868704,17,Create Group,422,Unprocessable Entity,Project 1-1,text,false,,47,17
+1299160868722,0,PanelDashboard,Non HTTP response code: java.lang.IllegalArgumentException,Non HTTP response message: Invalid uri 'https://p.api.samplemarket.com/projects/2491/groups/${group_id}/panelDashboard': escaped absolute path not valid,Project 1-1,text,false,,1056,0
+1299160868722,0,LiveCloseSettings,Non HTTP response code: java.lang.IllegalArgumentException,Non HTTP response message: Invalid uri 'https://p.api.samplemarket.com/projects/${projectid}/liveCloseSettings': escaped absolute path not valid,Project 1-1,text,false,,1048,0
+1299160868723,37,PanelShield,422,Unprocessable Entity,Project 1-1,text,false,,36,37
+1299160868761,33,SurveyUrl,422,Unprocessable Entity,Project 1-1,text,false,,36,33
+1299160868795,23,Status,422,Unprocessable Entity,Project 1-1,text,false,,43,22
+1299160868818,137,Copy Project,201,Created,Project 1-1,text,true,,78,136
+1299160868956,38,Delete Project,200,OK,Project 1-1,text,true,,51,38
+1299160868995,26,Soft Fail,422,Unprocessable Entity,Project 1-1,text,false,,36,26
+1299160869021,21,Bonus,422,Unprocessable Entity,Project 1-1,text,false,,36,20
+1299160955126,77,Create Project,201,Created,Project 1-1,text,true,,612,77
+1299160955205,16,Project Get,200,OK,Project 1-1,text,true,,610,16
+1299160955222,25,Create Group,422,Unprocessable Entity,Project 1-1,text,false,,111,25
+1299160955248,0,PanelDashboard,Non HTTP response code: java.lang.IllegalArgumentException,Non HTTP response message: Invalid uri 'https://p.api.samplemarket.com/projects/2493/groups/${group_id}/panelDashboard': escaped absolute path not valid,Project 1-1,text,false,,1056,0
+1299160955249,0,LiveCloseSettings,Non HTTP response code: java.lang.IllegalArgumentException,Non HTTP response message: Invalid uri 'https://p.api.samplemarket.com/projects/${projectid}/liveCloseSettings': escaped absolute path not valid,Project 1-1,text,false,,1048,0
+1299160955250,21,PanelShield,422,Unprocessable Entity,Project 1-1,text,false,,36,21
+1299160955272,76,SurveyUrl,422,Unprocessable Entity,Project 1-1,text,false,,36,75
+1299160955348,14,Status,422,Unprocessable Entity,Project 1-1,text,false,,43,13
+1299160955362,158,Copy Project,201,Created,Project 1-1,text,true,,78,158
+1299160955522,45,Delete Project,200,OK,Project 1-1,text,true,,51,44
+1299160955568,14,Soft Fail,422,Unprocessable Entity,Project 1-1,text,false,,36,13
+1299160955582,84,Bonus,422,Unprocessable Entity,Project 1-1,text,false,,36,83
+1299160974405,53,Create Project,201,Created,Project 1-1,text,true,,612,53
+1299160974460,21,Project Get,200,OK,Project 1-1,text,true,,610,21
+1299160974482,1823,Create Group,201,Created,Project 1-1,text,true,,1762,1822
+1299160976306,226,PanelDashboard,200,OK,Project 1-1,text,true,,97,226
+1299160976533,0,LiveCloseSettings,Non HTTP response code: java.lang.IllegalArgumentException,Non HTTP response message: Invalid uri 'https://p.api.samplemarket.com/projects/${projectid}/liveCloseSettings': escaped absolute path not valid,Project 1-1,text,false,,1048,0
+1299160976534,36,PanelShield,200,OK,Project 1-1,text,true,,141,36
+1299160976571,52,SurveyUrl,200,OK,Project 1-1,text,true,,127,52
+1299160976624,243,Status,200,OK,Project 1-1,text,true,,19,243
+1299160976868,275,Copy Project,201,Created,Project 1-1,text,true,,78,275
+1299160977144,261,Delete Project,200,OK,Project 1-1,text,true,,51,260
+1299160977406,44,Soft Fail,200,OK,Project 1-1,text,true,,119,44
+1299160977452,23,Bonus,200,OK,Project 1-1,text,true,,113,23
+1299161151521,122,Create Project,201,Created,Project 1-1,text,true,,612,122
+1299161151645,23,Project Get,200,OK,Project 1-1,text,true,,610,23
+1299161151669,396,Create Group,201,Created,Project 1-1,text,true,,1762,395
+1299161152066,179,PanelDashboard,200,OK,Project 1-1,text,true,,97,178
+1299161152246,0,LiveCloseSettings,Non HTTP response code: java.lang.IllegalArgumentException,Non HTTP response message: Invalid uri 'https://p.api.samplemarket.com/projects/${projectid}/liveCloseSettings': escaped absolute path not valid,Project 1-1,text,false,,1048,0
+1299161152247,87,PanelShield,200,OK,Project 1-1,text,true,,141,86
+1299161152336,88,SurveyUrl,200,OK,Project 1-1,text,true,,127,88
+1299161152426,150,Status,200,OK,Project 1-1,text,true,,19,149
+1299161152577,226,Copy Project,201,Created,Project 1-1,text,true,,78,226
+1299161152805,279,Delete Project,200,OK,Project 1-1,text,true,,51,279
+1299161153086,49,Soft Fail,200,OK,Project 1-1,text,true,,119,49
+1299161153137,22,Bonus,200,OK,Project 1-1,text,true,,113,21
+1299216200173,89,Create Project,201,Created,Project 1-1,text,true,,612,88
+1299216200264,14,Project Get,200,OK,Project 1-1,text,true,,610,14
+1299216200279,4622,Create Group,201,Created,Project 1-1,text,true,,1674,4622
+1299216204903,151,PanelDashboard,200,OK,Project 1-1,text,true,,97,151
+1299216205055,0,LiveCloseSettings,Non HTTP response code: java.lang.IllegalArgumentException,Non HTTP response message: Invalid uri 'https://p.api.samplemarket.com/projects/${projectid}/liveCloseSettings': escaped absolute path not valid,Project 1-1,text,false,,1048,0
+1299216205056,66,PanelShield,200,OK,Project 1-1,text,true,,141,66
+1299216205131,54,SurveyUrl,200,OK,Project 1-1,text,true,,127,54
+1299216205186,186,Status,200,OK,Project 1-1,text,true,,19,186
+1299216205373,220,Copy Project,201,Created,Project 1-1,text,true,,78,219
+1299216205594,279,Delete Project,200,OK,Project 1-1,text,true,,51,279
+1299216205875,34,Soft Fail,200,OK,Project 1-1,text,true,,119,34
+1299216205910,31,Bonus,200,OK,Project 1-1,text,true,,113,31
+1299217234368,162,Create Project,201,Created,Project 1-1,text,true,,612,162
+1299217234532,21,Project Get,200,OK,Project 1-1,text,true,,610,21
+1299217234554,3174,Create Group,201,Created,Project 1-1,text,true,,1674,3174
+1299217237729,192,PanelDashboard,200,OK,Project 1-1,text,true,,97,192
+1299217237922,0,LiveCloseSettings,Non HTTP response code: java.lang.IllegalArgumentException,Non HTTP response message: Invalid uri 'https://p.api.samplemarket.com/projects/${projectid}/liveCloseSettings': escaped absolute path not valid,Project 1-1,text,false,,1048,0
+1299217237923,37,PanelShield,200,OK,Project 1-1,text,true,,141,37
+1299217237961,50,SurveyUrl,200,OK,Project 1-1,text,true,,127,50
+1299217238013,200,Status,200,OK,Project 1-1,text,true,,19,200
+1299217238214,225,Copy Project,201,Created,Project 1-1,text,true,,78,225
+1299217238441,289,Delete Project,200,OK,Project 1-1,text,true,,51,289
+1299217238731,40,Soft Fail,200,OK,Project 1-1,text,true,,119,40
+1299217238772,22,Bonus,200,OK,Project 1-1,text,true,,113,22
