@@ -1,0 +1,5 @@
+--- 
+supplier_url: http://mr1mr.com/?pr=NTg2OQ==&su=38&id=&id2=&id3=&id4=&id5=&id6=&id7=&id8=
+success_url: http://mr1mr.com/redirect.php?S=1&PRID=NTg2OQ==&ID=
+fail_url: http://mr1mr.com/redirect.php?S=2&PRID=NTg2OQ==&ID=
+overquota_url: http://mr1mr.com/redirect.php?S=3&PRID=NTg2OQ==&ID=

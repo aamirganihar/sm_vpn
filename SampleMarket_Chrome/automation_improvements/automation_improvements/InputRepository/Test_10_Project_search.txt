@@ -1,0 +1,35 @@
+#DESCRIPTION: This file contains data that is required by the "Test_140_Project_search_test.rb" script , to verify whether the project search functionality works successfully#
+
+#NOTE: All the lines enclosed within two '#' characters are comments.#
+#      The lines with actual data are without '#' characters and,#
+#      In the data, text before the '::' character (text to the left of the '::' character) are FIELD NAME#
+#      And text after the '::' character (text to the right of '::' character) are ACTUAL DATA#
+#      The '::' character is a separator between the Field name and the actual data and hence is very important#
+#      Make sure the '::' chracter is not modified#
+#      Do not alter the sequence in which the test data is written #
+
+#uNITED SAMPLE LOGIN DETAILS#
+EMAIL-ID	:: vipul_paikane@persistent.co.in
+PASSWORD	:: test
+
+
+#PROJECT DETAILS#
+
+PROJECT ID		:: PR6515
+PROJECT NAME		:: Samsung Cross Media XM (TRACKER) - 05/23
+STATUS			:: Archived
+
+
+#QUOTA GROUP BELONGING TO ABOVE PROJECT#
+QUOTA GROUP ID		:: QG25963
+QUOTA GROUP STATUS	:: Closed
+QUOTA CATEGORY		:: Consumer
+SUB-CATEGORY		:: --Select Sub Category--
+CLIENT			:: Dynamic Logic
+CLIENT PM		:: Jason Deutsch
+CLIENT PROJECT #	:: 
+CLIENT QG #		:: 
+
+START DATE 		:: 2010-03-01
+END DATE		:: 2010-07-01
+

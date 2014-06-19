@@ -1,0 +1,5 @@
+$Usamp_Login_Username='vipul_paikane@persistent.co.in'
+$Usamp_Login_Password='test'
+$Surveyhead_Login_Username='Automated3@usertest.com'
+$Surveyhead_Login_Password='test'
+$Surveyhead_Login_MID='M4583725'

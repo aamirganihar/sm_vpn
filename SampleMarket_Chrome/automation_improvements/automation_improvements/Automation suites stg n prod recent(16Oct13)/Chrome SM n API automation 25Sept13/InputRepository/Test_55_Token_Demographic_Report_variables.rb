@@ -1,0 +1,10 @@
+$Usamp_Login_Username='vipul_paikane@persistent.co.in'
+$Usamp_Login_Password='test'
+$Token='e68b4043e922628a83d14df04f77734b'
+$Age=24	
+$Gender='Male'	
+$Income='20,000-29,999	'
+$Ethnicity='Asian (non Pacific Islander)'
+$Marital_Status='Never married'
+$Zip_Code=60422
+$County='Illinois'

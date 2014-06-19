@@ -1,0 +1,5 @@
+$Usamp_Login_Username='vipul_paikane@persistent.co.in'
+$Usamp_Login_Password='test'
+$Publisher_Id='PU612'
+$Client_name='Test Client (Vipul Kane)'
+$Client_email='vipul_paikane@persistent.co.inxyz'

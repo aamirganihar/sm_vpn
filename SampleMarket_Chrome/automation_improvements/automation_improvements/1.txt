@@ -1,0 +1,317 @@
+Starting ChromeDriver (v2.8.241075) on port 9515
+iPoll
+English
+Dashboard
+Rewards
+Account
+Mobile
+Logout
+Tasks Home  
+  Privacy Policy
+Cookies Policy
+Terms and Conditions
+iPad Sweepstakes Giveaway
+Facebook
+Twitter
+LinkedIn
+Home
+Login
+Registration
+Forgot Password
+Contact Us
+FAQ
+Blog
+Rewards Program
+Paid Surveys
+Online Surveys
+Get Paid
+Market Research
+ACCEPTED BUSINESS
+Site Map
+2013 iPoll.com
+*********
+*********
+*********
+<!DOCTYPE html><html slick-uniqueid="3"><head>
+<title>Paid Surveys Online | Market Research Surveys | Take Online Surveys | Get Paid to Take Surveys | iPoll</title>
+    <meta name="Title" content=" Paid Online and Mobile Surveys, Take Surveys for Money | iPoll">
+    <meta name="Description" content="Take paid online and mobile surveys at iPoll.com. Complete online and mobile surveys for money in the comfort of your own home, or anywhere!">
+    <meta name="KEYWORDS" content="iPoll, Rewards, Paid Online Surveys, Paid Mobile Surveys, Take Surveys for Money, Online Survey for Money, Paid Online Survey, Paid Surveys, Online Surveys for Money, Surveys for Money, Paid Survey, Survey for Money, Survey Money, Taking Surveys for Money ,Survey Head, Surveyhead, formerly surveyhead">
+    <meta content="uSamp © 2013" http-equiv="Copyright">
+    <meta content=" Paid Online and Mobile Surveys, Take Surveys for Money | iPoll" name="title">
+    <link rel="canonical" href="http://www.ipoll.com/">
+	<meta http-equiv="Content-Type" content="text/html;charset=UTF-8">
+        <meta name="apple-itunes-app" content="app-id=422370120">
+    <link rel="shortcut icon" type="image/x-icon" href="//usampplsites.s3.amazonaws.com/img/favicon.ico">
+    <meta id="viewport" name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    <!-- New Relic header begin -->
+        <!-- New Relic header END -->
+
+	<script type="text/javascript" async="" src="https://ssl.google-analytics.com/ga.js"></script><script type="text/javascript" src="https://www.p.ipoll.com/language_tmp/en.js?1389934387" language="javascript" charset="UTF-8"></script>
+			<script type="text/javascript" src="//usampplsites.s3.amazonaws.com/js/updated/common.js?1389934387" language="javascript"></script>
+
+    <link rel="stylesheet" type="text/css" href="//usampplsites.s3.amazonaws.com/css/bootstrap/bootstrap.min.css">
+<link rel="stylesheet" type="text/css" href="//usampplsites.s3.amazonaws.com/css/bootstrap/bootstrap-responsive.min.css">
+<link rel="stylesheet" type="text/css" href="//fonts.googleapis.com/css?family=Comfortaa">
+<link rel="stylesheet" type="text/css" href="//fonts.googleapis.com/css?family=Lobster+Two:400,700italic">
+<link rel="stylesheet" type="text/css" href="//fonts.googleapis.com/css?family=Open+Sans:400,700">
+<link rel="stylesheet" type="text/css" href="//usampplsites.s3.amazonaws.com/css/ipoll/main.css">
+
+    <script type="text/javascript" src="//ajax.googleapis.com/ajax/libs/jquery/1.8.2/jquery.min.js?1389934387"></script>
+<script type="text/javascript" src="//ajax.googleapis.com/ajax/libs/mootools/1.4.5/mootools-yui-compressed.js?1389934387"></script>
+<script type="text/javascript" src="//usampplsites.s3.amazonaws.com/js/mt/mootools-more-1.4.0.1.js?1389934387"></script>
+<script type="text/javascript" src="//usampplsites.s3.amazonaws.com/js/ipoll/ipoll.js?1389934387"></script>
+<script type="text/javascript" src="//usampplsites.s3.amazonaws.com/js/updated/common.js?1389934387"></script>
+<script type="text/javascript" src="//usampplsites.s3.amazonaws.com/js/bootstrap/bootstrap.min.js?1389934387"></script>
+<script type="text/javascript" src="//usampplsites.s3.amazonaws.com/js/bootstrap/respond.min.js?1389934387"></script>
+<script type="text/javascript" src="https://cdns.gigya.com/js/socialize.js?apiKey=2_ZxGx6vy136mul3ofFRfggzhCJs7RGhI_7Cwc50SLdkAPZbXGt1waQUxgNnAFcHBi">
+ {
+    siteName: 'ipoll.com'
+   ,enabledProviders: 'facebook,twitter,google,linkedin'
+ }
+</script>
+
+
+    <!--[if lte IE 8]>
+        <link rel="stylesheet" type="text/css" href="//usampplsites.s3.amazonaws.com/css/ipoll/ie7.css" />
+    <![endif]-->
+
+    <script type="text/javascript" src="js/jquery.flash.js"></script>
+<script type="text/javascript" src="js/JavaScriptFlashGateway.js"></script>
+<script language="JavaScript">
+	//Declare global variables
+	var FlashCookieVal= '';
+	var nID = new Date().getTime();
+	var flash = new FlashProxy(nID, 'flash/JavaScriptFlashGateway.swf');
+	var isNewCookie;
+    //Function called by SWF
+    function fetchCookie(){
+         _call_process_flash_cookie(FlashCookieVal);
+    }
+</script><script src="https://c.compete.com/bootstrap/7aef8cd3bbb8833043cfd92aa8c6f1db/bootstrap.js" type="text/javascript" async=""></script><link rel="stylesheet" href="//www.p.ipoll.com/css/gigya.css?1389934438143" type="text/css"></head>
+<body class="en">
+
+
+<!-- Start : US1089 Call ICE only on landing pages and when returning from surveys -->
+<!-- END : US1089 Call ICE only on landing pages and when returning from surveys -->
+
+<div id="header" class="cf">
+	<div class="headContainer cf">
+        <a href="/" id="logo" class="ir" name="top">iPoll</a>
+        <nav id="navigation">
+            <ul id="showMenu" class="nav cf">
+                <li class="dropdown">
+                    <a href="#" class="dropdown-toggle">Menu<b class="caret"></b></a>
+                </li>
+            </ul>
+            <ul class="nav lang cf">
+                <li class="dropdown">
+	<a href="#" class="dropdown-toggle" data-toggle="dropdown">English <b class="caret"></b></a>
+	<ul class="dropdown-menu">
+									<li>
+                    <a href="/ccs_tasks.php?L=1">中文</a></li>
+												<li>
+                    <a href="/ccs_tasks.php?L=6">日本語</a></li>
+												<li>
+                    <a href="/ccs_tasks.php?L=32">Bahasa Indonesia</a></li>
+												<li>
+                    <a href="/ccs_tasks.php?L=4">Deutsch</a></li>
+												<li>
+                    <a href="/ccs_tasks.php?L=9">Русский</a></li>
+																	<li>
+                    <a href="/ccs_tasks.php?L=124">English - UK</a></li>
+												<li>
+                    <a href="/ccs_tasks.php?L=10">Español</a></li>
+												<li>
+                    <a href="/ccs_tasks.php?L=3">Français</a></li>
+												<li>
+                    <a href="/ccs_tasks.php?L=7">한글</a></li>
+												<li>
+                    <a href="/ccs_tasks.php?L=5">Italiano</a></li>
+												<li>
+                    <a href="/ccs_tasks.php?L=24">Nederlands</a></li>
+												<li>
+                    <a href="/ccs_tasks.php?L=37">Polski</a></li>
+												<li>
+                    <a href="/ccs_tasks.php?L=13">Português</a></li>
+												<li>
+                    <a href="/ccs_tasks.php?L=97">Română</a></li>
+												<li>
+                    <a href="/ccs_tasks.php?L=41">Svenska</a></li>
+												<li>
+                    <a href="/ccs_tasks.php?L=125">Vlaams</a></li>
+						</ul>
+</li>
+            </ul>
+            <ul class="nav main cf">
+                                    <li><a href="https://www.p.ipoll.com/dashboard.php">Dashboard</a></li>
+                                    <li><a href="https://www.p.ipoll.com/my_rewards.php">Rewards</a></li>
+                                    <li><a href="https://www.p.ipoll.com/my_account.php">Account</a></li>
+                                    <li><a href="/custom/ipoll/go/index.html" id="mobile" class="loggedin">Mobile</a></li>
+                                    <li><a href="/?mode=logout" onclick="logoutFacebookUser();">Logout</a></li>
+                            </ul>
+        </nav>
+        
+
+
+
+		
+	</div>
+</div>
+<div class="container">
+     <script type="text/javascript" src="https://www.p.ipoll.com/js/jquery.js?1389934387" language="javascript"></script>
+<script type="text/javascript" src="https://www.p.ipoll.com/js/dashboard.js?1389934387" language="javascript"></script>
+<div id="startSurvey" class="row">
+    
+        
+            <table width="100%" border="0" cellspacing="0" cellpadding="0">
+
+                <!-- Task Home Link -->
+                <tbody><tr>
+                    <td width="100%">
+                        <table width="100%" border="0" cellspacing="0" cellpadding="0">
+                            <tbody><tr>
+                                <td align="right" width="98%"><a href="https://usamp.crowdcomputingsystems.com/virtualizer-web-sandbox/channel/categories?desktop=true&amp;redirect_url=https://p.ipoll.com/ccs_tasks.php">Tasks Home</a></td>
+                                <td width="2%">&nbsp;</td>
+                            </tr>
+                        </tbody></table>
+                    </td>
+                </tr>
+                <!-- End-->
+
+                <tr><td>&nbsp;</td></tr>
+
+                <tr>
+                        <td width="100%" height="100%">
+                            <iframe src="https://usamp.crowdcomputingsystems.com/virtualizer-web-sandbox/channel/categories?desktop=true&amp;autoAccept=true" height="900px" width="1072px"></iframe>
+                        </td>
+                    </tr>
+                
+            </tbody></table>
+        
+    
+</div></div>
+
+<div class="footer" id="footer">
+    <div class="footContainer">
+        <noscript>
+            &lt;div class="alert alert-error"&gt;Please enable the JavaScript in your browser. Some functionality may not work as expected,if JavaScript is disabled. &lt;a href="enable_javascript_help.php" target="_blank" style="color:#0000FF; text-decoration:underline;font-family: Verdana;font-size: 12px;"&gt; Click Here &lt;/a&gt; to know more about enabling javascript in your browser.&lt;/div&gt;
+        </noscript>
+
+                <ul id="footerList" class="cf loggedIn">
+            <li class="line"><a href="/privacy_policy.php">Privacy Policy</a></li>
+            <li><a href="/page.php?template=cookies-policy.tpl">Cookies Policy</a></li>
+            <li><a href="/terms_and_conditions.php">Terms and Conditions</a></li>
+            <li><a href="http://www.ipadsweepstakesgiveaway.com/" target="_blank">iPad Sweepstakes Giveaway</a></li>
+            <li>
+                <div id="socialMediaIcons" class="cf">
+                    <a id="fb" class="ir" title="Connect with us on Facebook" href="//facebook.com/ipollmobile" target="_blank">Facebook</a>
+                    <a id="tw" class="ir" title="Follow our Twitter feed" href="//twitter.com/ipollmobile" target="_blank">Twitter</a>
+                    <a id="li" class="ir" title="Connect with us through LinkedIn" href="//linkedin.com/manageGroup?dispAddMbrs=&amp;gid=4950021&amp;invtActn=im-invite&amp;cntactSrc=cs-connections&amp;trk=grpmgrtab_invite" target="_blank">LinkedIn</a>
+                </div>
+            </li>
+
+                </ul>
+    </div>
+    <div id="subFooter" class="cf">
+        <ul>
+            <li><a href="/">Home</a></li>
+            <li><a href="#" onclick="document.id('login-form').toggle();">Login</a></li>
+            <li><a href="/registration_step1.php">Registration</a></li>
+            <li><a href="/forgot_password.php">Forgot Password</a></li>
+        </ul>
+        <ul>
+            <li><a href="/about_us.php">Contact Us</a></li>
+            <li><a href="/faq.php">FAQ</a></li>
+            <li><a href="//www.ipoll.com/blog/">Blog</a></li>
+            <li><a href="/reward_terms.php">Rewards Program</a></li>
+        </ul>
+        <ul>
+            <li><a href="/page.php?template=paid-surveys.tpl">Paid Surveys</a></li>
+            <li><a href="/page.php?template=online-surveys.tpl">Online Surveys</a></li>
+            <li><a href="/page.php?template=get-paid.tpl">Get Paid</a></li>
+            <li><a href="/page.php?template=marketing-research.tpl">Market Research</a></li>
+        </ul>
+        <ul>
+            <li><a href="http://www.bbb.org/los-angeles/business-reviews/market-research-and-analysis/united-sample-in-encino-ca-100076525" target="_blank" id="bbb" class="ir">ACCEPTED BUSINESS</a></li>
+            <li><a href="/page.php?template=sitemap.tpl">Site Map</a></li>
+            <li>2013 iPoll.com</li>
+        </ul>
+        <div></div>
+    </div>
+</div>
+<!-- Start Compete Tag -->
+
+<script type="text/javascript">
+    __compete_code = '7aef8cd3bbb8833043cfd92aa8c6f1db';
+    (function () {
+        var s = document.createElement('script'),
+            d = document.getElementsByTagName('head')[0] ||
+                document.getElementsByTagName('body')[0],
+            t = 'https:' == document.location.protocol ?
+                'https://c.compete.com/bootstrap/' :
+                'http://c.compete.com/bootstrap/';
+        s.src = t + __compete_code + '/bootstrap.js';
+        s.type = 'text/javascript';
+        s.async = 'async';
+        if (d) { d.appendChild(s); }
+    }());
+</script>
+
+<!-- End Compete Tag -->
+
+
+
+<script type="text/javascript">
+
+    
+
+</script>
+
+
+<!-- Google Analytics Tracking Code -->
+<script type="text/javascript" language="javascript" charset="UTF-8">
+			var _gaq = _gaq || [];
+		_gaq.push(['_setAccount', 'UA-552399-100']);
+
+		
+
+			
+			 
+					
+		  	_gaq.push(['_trackPageview']);
+			
+			<!-- Partner GA Tracking --> 
+_gaq.push(['partnertracker._setAccount','UA-5523769-137']); _gaq.push(['partnertracker._trackPageview']);
+<!-- End Partner GA Tracking -->
+	
+	  	_gaq.push(['rolluptracker._setAccount', 'UA-552369-54']);	
+  	_gaq.push(['rolluptracker._trackPageview']);	
+	
+	
+	(function() {
+    	var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+    	ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+    	var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+  	})();
+	
+
+</script>
+<!-- End Google Analytics Tracking Code -->
+
+
+<script type="text/javascript" src="//www.p.ipoll.com/js/gigya.js?1389934435" language="javascript"></script><iframe id="modalIframe" src="javascript:false" frameborder="0" scrolling="no" style="display: none;"></iframe><div id="modalWindow"></div><div id="modalBackground"></div>
+<!-- New Relic footer begin -->
+<!-- New Relic footer END -->
+
+
+</body></html>
+test 41 has completed
+Loaded suite C:/Ruby192/bin/rspec
+Started
+
+Finished in 0.000000 seconds.
+
+0 tests, 0 assertions, 0 failures, 0 errors, 0 skips
+
+Test run options: --seed 38180
